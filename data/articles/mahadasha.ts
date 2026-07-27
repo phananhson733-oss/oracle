@@ -130,7 +130,7 @@ They are not. The dasha system is specific to Vedic astrology and has no direct 
 
 New to the Vedic system? Start by reading [comparison of Vedic and Western astrology](/en/wiki/vedic-vs-western-astrology) to see why planetary periods belong to the Vedic tradition, then map your own Moon nakshatra to find which mahadasha is currently running in your chart. Doing both gives you a dated timeline of your life's chapters instead of a single scary headline — and, more usefully, it trains you to read any period as a season with a beginning and an end rather than a verdict about who you are.
 
-Read how Vedic and Western astrology differ, then find your current period: [https://astrologywiki.com/en/wiki/vedic-vs-western-astrology](https://astrologywiki.com/en/wiki/vedic-vs-western-astrology)
+Read how Vedic and Western astrology differ, then find your current period: [https://astrologywiki.com/en/wiki/vedic-vs-western-astrology](/en/wiki/vedic-vs-western-astrology)
 
 ## Sources
 
@@ -273,7 +273,7 @@ Mahadasha（玛哈达沙，中文常译作「大运」或「行星大运」）�
 
 ## 下一步行动
 
-刚接触吠陀这套体系？先花几分钟读懂 [吠陀占星与西方占星的差异](https://astrologywiki.com/zh/wiki/vedic-vs-western-astrology)，弄清大运为什么只存在于吠陀体系；接着你就能在自己的星盘里找到当前正在运行的那一段行星大运，知道它的开始、长度和结束。看清自己正站在哪一段时间里，往往比追问「会发生什么」更能让你从容地做选择。
+刚接触吠陀这套体系？先花几分钟读懂 [吠陀占星与西方占星的差异](/zh/wiki/vedic-vs-western-astrology)，弄清大运为什么只存在于吠陀体系；接着你就能在自己的星盘里找到当前正在运行的那一段行星大运，知道它的开始、长度和结束。看清自己正站在哪一段时间里，往往比追问「会发生什么」更能让你从容地做选择。
 
 ## 参考来源
 

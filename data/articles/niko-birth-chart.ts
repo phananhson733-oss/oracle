@@ -107,7 +107,7 @@ IEM Cologne Major 2026 made the Aquarius breakthrough arc easy to map onto a pub
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore the NiKo birth chart pattern in your own natal map with your confirmed birth time. A complete chart can show houses, angles, Moon placement, and major planetary contacts; a public-date reading like this one should stay narrower. From there, the breakthrough-after-isolation arc becomes readable in your own chart, not as a fixed outcome but as a developmental pattern worth recognizing before the moment arrives.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore the NiKo birth chart pattern in your own natal map with your confirmed birth time. A complete chart can show houses, angles, Moon placement, and major planetary contacts; a public-date reading like this one should stay narrower. From there, the breakthrough-after-isolation arc becomes readable in your own chart, not as a fixed outcome but as a developmental pattern worth recognizing before the moment arrives.
 
 ## Sources
 

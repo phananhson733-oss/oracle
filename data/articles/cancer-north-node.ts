@@ -125,7 +125,7 @@ Begin with small, low-stakes moments of letting someone help, and notice the urg
 
 ## Take Action
 
-Ready to see where this axis actually sits in your chart? [Generate your free birth chart to explore cancer north node](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and the houses your Cancer–Capricorn nodes activate will be laid out in front of you. One note: house placements need an accurate birth time — without it, you can still read the Cancer–Capricorn sign axis reliably, but not the specific life areas it touches. From there the work stops being abstract: growth here was never about becoming softer — it's about letting your strength finally include the freedom to need someone.
+Ready to see where this axis actually sits in your chart? [Generate your free birth chart to explore cancer north node](/en/wiki/how-to-read-birth-chart), and the houses your Cancer–Capricorn nodes activate will be laid out in front of you. One note: house placements need an accurate birth time — without it, you can still read the Cancer–Capricorn sign axis reliably, but not the specific life areas it touches. From there the work stops being abstract: growth here was never about becoming softer — it's about letting your strength finally include the freedom to need someone.
 
 ## Sources
 

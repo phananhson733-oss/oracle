@@ -5,9 +5,11 @@ import type { WikiArticle } from "../../types";
 export const egyptWorldCup2026AstrologyEn: WikiArticle = {
   slug: "egypt-world-cup-2026-astrology",
   image: "/images/blog/egypt-world-cup-2026-astrology.jpg",
-  image_alt: "Egyptian desert night with the Nile and Jupiter glowing under the stars of Cancer, evoking the 2026 World Cup astrology story",
+  image_alt:
+    "Egyptian desert night with the Nile and Jupiter glowing under the stars of Cancer, evoking the 2026 World Cup astrology story",
   title: "What Egypt World Cup 2026 Astrology Actually Tells You",
-  description: "Egypt World Cup 2026 Astrology is a symbolic way of reading Egypt's national team at the 2026 tournament through players' birth charts, the country's national chart, and the season's major transits — framed as cultural storytelling rather than a result forecast.",
+  description:
+    "Egypt World Cup 2026 Astrology is a symbolic way of reading Egypt's national team at the 2026 tournament through players' birth charts, the country's national chart, and the season's major transits — framed as cultural storytelling rather than a result forecast.",
   authorId: "marcus-orion",
   date: "2026-07-07",
   schema: "Article",
@@ -18,7 +20,7 @@ export const egyptWorldCup2026AstrologyEn: WikiArticle = {
     "egypt world cup 2026 astrology birth chart",
     "egypt world cup 2026 astrology zodiac",
     "egypt world cup 2026 astrology interpretation",
-    "world cup 2026 astrology prediction"
+    "world cup 2026 astrology prediction",
   ],
   content: `# What Egypt World Cup 2026 Astrology Actually Tells You
 
@@ -37,7 +39,7 @@ Sport is one of the few places where a whole country lets itself feel out loud, 
 That reflection tends to land in a few practical ways:
 
 1. **It names your projections.** The pride or worry you feel about a team often mirrors how you carry your own ambitions, so a match becomes a low-stakes place to notice them clearly.
-2. **It reframes timing.** Following the season's *overview of the Jupiter in Cancer 2026 transit* as a story of belonging, protection, and national memory can prompt you to notice when your own loyalties feel louder during the same weeks.
+2. **It reframes timing.** Following the season's [overview of the Jupiter in Cancer 2026 transit](/en/wiki/world-cup-2026-astrology-prediction) as a story of belonging, protection, and national memory can prompt you to notice when your own loyalties feel louder during the same weeks.
 3. **It separates hope from certainty.** Watching astrologers treat a national chart as mood rather than destiny is good practice for holding your own chart loosely, without turning every placement into a verdict.
 
 The value is not that a chart tells you the future. It is that a familiar event gives you a mirror, and mirrors are where self-awareness usually starts.
@@ -125,7 +127,7 @@ National charts are debated even among astrologers, so they are best held as a b
 
 ## Take Action
 
-Astrology here is a storytelling tool, not a diagnosis of anyone's psyche or a betting edge. This is not a clinical interpretation or mental health advice. The clearest way to understand any of this is to look at a real chart instead of a headline. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore egypt world cup 2026 astrology, and you'll have the same placements astrologers use for a team or a season sitting right in front of you. Seen that way, a tournament stops being only a scoreboard and becomes a mirror for how you carry hope, pressure, and belonging.
+Astrology here is a storytelling tool, not a diagnosis of anyone's psyche or a betting edge. This is not a clinical interpretation or mental health advice. The clearest way to understand any of this is to look at a real chart instead of a headline. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore egypt world cup 2026 astrology, and you'll have the same placements astrologers use for a team or a season sitting right in front of you. Seen that way, a tournament stops being only a scoreboard and becomes a mirror for how you carry hope, pressure, and belonging.
 
 ## Sources
 

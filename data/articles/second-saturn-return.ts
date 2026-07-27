@@ -128,7 +128,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Run your birth details through the [Explore Your Saturn Return](https://astrologywiki.com/en/saturn-return-calculator) tool to find the exact window when Saturn meets your natal placement. It returns your personal return dates along with the sign and house it activates, so the review lands on real ground instead of a rough age range. Knowing when this threshold opens gives you time to decide what to keep, on purpose, before the moment arrives.
+Run your birth details through the [Explore Your Saturn Return](/en/saturn-return-calculator) tool to find the exact window when Saturn meets your natal placement. It returns your personal return dates along with the sign and house it activates, so the review lands on real ground instead of a rough age range. Knowing when this threshold opens gives you time to decide what to keep, on purpose, before the moment arrives.
 
 ## Sources
 

@@ -109,7 +109,7 @@ No — it is an interpretive framework. It describes a recognisable style of mee
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see exactly where your Ascendant, your chart ruler, and your natal Mercury sit. From there you can trace your own connective style instead of settling for a generic gemini rising adjective list — and, more usefully, you build the habit of reading the engine behind a sign rather than the surface label.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see exactly where your Ascendant, your chart ruler, and your natal Mercury sit. From there you can trace your own connective style instead of settling for a generic gemini rising adjective list — and, more usefully, you build the habit of reading the engine behind a sign rather than the surface label.
 
 ## Sources
 
@@ -220,7 +220,7 @@ export const geminiRisingZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart),看看你的上升点、你的命主星与你的本命水星究竟落在哪里。从那里出发,你就能追踪属于自己的串联风格,而不必满足于一份笼统的双子上升形容词清单——更有用的是,你养成一个习惯:读一个星座时,先看它背后的引擎,而不是表层那张标签。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart),看看你的上升点、你的命主星与你的本命水星究竟落在哪里。从那里出发,你就能追踪属于自己的串联风格,而不必满足于一份笼统的双子上升形容词清单——更有用的是,你养成一个习惯:读一个星座时,先看它背后的引擎,而不是表层那张标签。
 
 ## 参考来源
 

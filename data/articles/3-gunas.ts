@@ -104,7 +104,7 @@ Practice points to lighter food, steadier breathing, and a regular rhythm of sle
 
 ## Take Action
 
-Ready to put this into practice? [Generate your free birth chart to explore 3 gunas](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and see how the sattvic, rajasic, and tamasic planets are weighted across your chart. The result gives you a personal starting point for reading your own state — and a working reminder that the balance you notice today is something you can keep turning, one choice at a time.
+Ready to put this into practice? [Generate your free birth chart to explore 3 gunas](/en/wiki/how-to-read-birth-chart) and see how the sattvic, rajasic, and tamasic planets are weighted across your chart. The result gives you a personal starting point for reading your own state — and a working reminder that the balance you notice today is something you can keep turning, one choice at a time.
 
 ## Sources
 

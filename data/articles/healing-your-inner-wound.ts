@@ -128,7 +128,7 @@ To go deeper into each signature that makes up the inner wound, these explainers
 
 ## Take Action
 
-To start Healing Your Inner Wound in practice, open your full birth chart and locate your own Chiron and Mars in the 12th house, then note which other placements touch them. Doing this gives you a reflective map of possible sore-spot themes and defensive patterns — your own version of the family described above. Seen clearly, that map is less a list of problems to solve than a quieter understanding of why you protect what you protect. Read the full guide to reading a birth chart at [reading a birth chart from scratch](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find these placements for yourself.
+To start Healing Your Inner Wound in practice, open your full birth chart and locate your own Chiron and Mars in the 12th house, then note which other placements touch them. Doing this gives you a reflective map of possible sore-spot themes and defensive patterns — your own version of the family described above. Seen clearly, that map is less a list of problems to solve than a quieter understanding of why you protect what you protect. Read the full guide to reading a birth chart at [reading a birth chart from scratch](/en/wiki/how-to-read-birth-chart) to find these placements for yourself.
 
 ## Sources
 
@@ -256,7 +256,7 @@ export const healingYourInnerWoundZh: WikiArticle = {
 
 ## 下一步行动
 
-要把照看 inner wound 落到实处，先打开你完整的出生星盘，找出你自己落在第十二宫的凯龙与火星，再记下还有哪些落点跟它们相邻。这样做，会给你一张反思用的地图，标出可能的旧痛主题与防御模式——就是上面那个家族的你自己的版本。看清之后，那张地图与其说是一串要解决的问题，不如说是更安静地明白了你为什么护着你所护着的东西。完整方法见[从零读懂出生星盘的指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，自己把这些落点找出来。
+要把照看 inner wound 落到实处，先打开你完整的出生星盘，找出你自己落在第十二宫的凯龙与火星，再记下还有哪些落点跟它们相邻。这样做，会给你一张反思用的地图，标出可能的旧痛主题与防御模式——就是上面那个家族的你自己的版本。看清之后，那张地图与其说是一串要解决的问题，不如说是更安静地明白了你为什么护着你所护着的东西。完整方法见[从零读懂出生星盘的指南](/zh/wiki/how-to-read-birth-chart)，自己把这些落点找出来。
 
 ## 参考来源
 

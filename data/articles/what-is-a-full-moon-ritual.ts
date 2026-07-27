@@ -152,7 +152,7 @@ Yes. Lunar energy across the three-day window around peak is functionally simila
 
 ## Take Action
 
-[Generate your free birth chart to explore full moon ritual](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). The chart shows where the current full moon is activating points in your natal placements — the specific houses, signs, and planets being asked for release this cycle. Knowing the activation site turns a generic monthly practice into a sharp, situated act of self-awareness, and the integration window that follows becomes much easier to read.
+[Generate your free birth chart to explore full moon ritual](/en/wiki/how-to-read-birth-chart). The chart shows where the current full moon is activating points in your natal placements — the specific houses, signs, and planets being asked for release this cycle. Knowing the activation site turns a generic monthly practice into a sharp, situated act of self-awareness, and the integration window that follows becomes much easier to read.
 
 ## Sources
 

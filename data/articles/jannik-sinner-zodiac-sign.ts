@@ -119,7 +119,7 @@ Yes. The Sun in Leo sets the headline, but the Moon shapes his emotional wiring 
 
 ## Take Action
 
-Ready to move past the one-word label? [Generate your free birth chart to explore jannik sinner zodiac sign](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you will get a full map of Sun, Moon, and rising placements instead of a single headline. Seeing how those pieces fit together can sharpen how you read your own drive, your visibility, and the persona you choose to show the world. This is not a clinical interpretation or mental health advice.
+Ready to move past the one-word label? [Generate your free birth chart to explore jannik sinner zodiac sign](/en/wiki/how-to-read-birth-chart), and you will get a full map of Sun, Moon, and rising placements instead of a single headline. Seeing how those pieces fit together can sharpen how you read your own drive, your visibility, and the persona you choose to show the world. This is not a clinical interpretation or mental health advice.
 
 ## Sources
 

@@ -2,25 +2,30 @@
 // Generated from flow-mvp _staging/ by tools/scripts/gg-md-to-oracle-ts.mjs.
 import type { WikiArticle } from "../../types";
 
-export const englandVsArgentinaWorldCup2026AstrologyPredictionEn: WikiArticle = {
-  slug: "england-vs-argentina-world-cup-2026-astrology-prediction",
-  image: "/images/blog/england-vs-argentina-world-cup-2026-astrology-prediction.jpg",
-  image_alt: "World Cup stadium night scene with England and Argentina players meeting on the pitch under a Jupiter-lit cosmic sky",
-  title: "What Two Birth Charts Reveal About the England vs Argentina World Cup 2026 Astrology Prediction",
-  description: "England vs Argentina World Cup 2026 astrology prediction is a symbolic reading of two national charts, not a scoreline forecast.",
-  authorId: "marcus-orion",
-  date: "2026-07-13",
-  schema: "Article",
-  lang: "en",
-  keywords: [
-    "england vs argentina world cup 2026 astrology prediction",
-    "england vs argentina world cup 2026 astrology prediction zodiac prediction",
-    "england vs argentina world cup 2026 astrology prediction match astrology",
-    "england vs argentina world cup 2026 astrology prediction team astrology",
-    "world cup 2026 astrology prediction",
-    "argentina world cup 2026 astrology"
-  ],
-  content: `# What Two Birth Charts Reveal About the England vs Argentina World Cup 2026 Astrology Prediction
+export const englandVsArgentinaWorldCup2026AstrologyPredictionEn: WikiArticle =
+  {
+    slug: "england-vs-argentina-world-cup-2026-astrology-prediction",
+    image:
+      "/images/blog/england-vs-argentina-world-cup-2026-astrology-prediction.jpg",
+    image_alt:
+      "World Cup stadium night scene with England and Argentina players meeting on the pitch under a Jupiter-lit cosmic sky",
+    title:
+      "What Two Birth Charts Reveal About the England vs Argentina World Cup 2026 Astrology Prediction",
+    description:
+      "England vs Argentina World Cup 2026 astrology prediction is a symbolic reading of two national charts, not a scoreline forecast.",
+    authorId: "marcus-orion",
+    date: "2026-07-13",
+    schema: "Article",
+    lang: "en",
+    keywords: [
+      "england vs argentina world cup 2026 astrology prediction",
+      "england vs argentina world cup 2026 astrology prediction zodiac prediction",
+      "england vs argentina world cup 2026 astrology prediction match astrology",
+      "england vs argentina world cup 2026 astrology prediction team astrology",
+      "world cup 2026 astrology prediction",
+      "argentina world cup 2026 astrology",
+    ],
+    content: `# What Two Birth Charts Reveal About the England vs Argentina World Cup 2026 Astrology Prediction
 
 ## What Is England vs Argentina World Cup 2026 Astrology Prediction?
 
@@ -105,6 +110,9 @@ No. Betting astrology gambles on a single signal, while symbolic reading stays w
 
 ## Related Reading
 
+- [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — the tournament pillar this fixture reading sits inside.
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Three Lions' squad-level chart behind one side.
+- [Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — the defending champion's national chart behind the other.
 - [ascendant and rising sign meaning](/en/wiki/ascendant-meaning) — the rising sign shapes the public identity each national chart plays out on the field.
 - [guide to how the twelve houses work in a birth chart](/en/wiki/astrology-houses) — houses show where a chart's story tends to concentrate.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup) — factual context for the event itself.
@@ -114,11 +122,11 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/birth-chart-calculator) to explore england vs argentina world cup 2026 astrology prediction. In seconds you'll get a full map of your Sun, Moon, and rising — the same building blocks these national charts are read through. From there you may notice how you personally carry rivalry, hope, and the long wait before a match that actually matters to you.
+[Generate your free birth chart](/en/birth-chart-calculator) to explore england vs argentina world cup 2026 astrology prediction. In seconds you'll get a full map of your Sun, Moon, and rising — the same building blocks these national charts are read through. From there you may notice how you personally carry rivalry, hope, and the long wait before a match that actually matters to you.
 
 ## Sources
 
 - Dane Rudhyar — shaped the cyclic, person-centered approach that reads charts as unfolding narrative rather than fixed fate
 - Robert Hand — advanced the modern study of mundane astrology, the branch that reads national and collective charts
 `,
-};
+  };

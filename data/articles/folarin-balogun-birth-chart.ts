@@ -116,7 +116,7 @@ Balogun's chart gives one player-level case study inside a larger team story. Fo
 
 Start with your own verified birth date, time, and place so the chart can separate confirmed placements from unknown angles. The output should show your Sun, Moon, rising sign when available, houses, and major aspects, giving you a clearer frame for identity, loyalty, and pressure choices. This is not a clinical interpretation or mental health advice.
 
-[Learn how to read your birth chart before comparing it with folarin balogun birth chart.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+[Learn how to read your birth chart before comparing it with folarin balogun birth chart.](/en/wiki/how-to-read-birth-chart)
 
 ## Sources
 

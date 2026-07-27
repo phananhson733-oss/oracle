@@ -105,7 +105,7 @@ Look for planets inside the house, a tightly aspected house ruler, or a stellium
 
 ## Take Action
 
-Map your own 12th house inside the full wheel: [read the full Astrological Houses guide to place this house within the whole chart](https://astrologywiki.com/en/wiki/astrology-houses). That guide gives you a clear picture of how this hidden sector connects to the eleven houses around it, and a steadier sense that what once looked like self-undoing is often the chart's invitation to grow.
+Map your own 12th house inside the full wheel: [read the full Astrological Houses guide to place this house within the whole chart](/en/wiki/astrology-houses). That guide gives you a clear picture of how this hidden sector connects to the eleven houses around it, and a steadier sense that what once looked like self-undoing is often the chart's invitation to grow.
 
 ## Sources
 
@@ -220,7 +220,7 @@ export const twelfthHouseAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-挑一块向内的领域，看它在真实星盘里怎么一步步铺开——[读懂占星十二宫如何在一张完整星盘里各就各位](https://astrologywiki.com/zh/wiki/astrology-houses)。你会拿到一套可复用的读法，把单一宫位放回整张盘里看；而当你能为第十二宫读出它的建设性功能，你看的就不再是命运的阴影，而是自己正在学着收尾与照顾的那部分人生。
+挑一块向内的领域，看它在真实星盘里怎么一步步铺开——[读懂占星十二宫如何在一张完整星盘里各就各位](/zh/wiki/astrology-houses)。你会拿到一套可复用的读法，把单一宫位放回整张盘里看；而当你能为第十二宫读出它的建设性功能，你看的就不再是命运的阴影，而是自己正在学着收尾与照顾的那部分人生。
 
 ## 参考来源
 

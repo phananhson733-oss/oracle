@@ -5,17 +5,19 @@ import type { WikiArticle } from "../../types";
 export const crystalsForEachChakraEn: WikiArticle = {
   slug: "crystals-for-each-chakra",
   image: "/images/chakra/crystals-for-each-chakra.jpg",
-  image_alt: "Seven faceted crystals in a rising line, each haloed with gold light of different intensity, showing crystals chosen by a center's energy state rather than color",
+  image_alt:
+    "Seven faceted crystals in a rising line, each haloed with gold light of different intensity, showing crystals chosen by a center's energy state rather than color",
   title: "How to Pick Crystals for Each Chakra by Energy, Not Just Color",
-  description: "Chakra crystals are stones paired with the seven energy centers of the body, where the idea of crystals for each chakra means matching a stone to a center...",
+  description:
+    "Chakra crystals are stones paired with the seven energy centers of the body, where the idea of crystals for each chakra means matching a stone to a center...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
   lang: "en",
   keywords: [
-    "\"crystals for each chakra\"",
-    "\"chakra stones\"",
-    "\"healing crystals guide\""
+    '"crystals for each chakra"',
+    '"chakra stones"',
+    '"healing crystals guide"',
   ],
   content: `# How to Pick Crystals for Each Chakra by Energy, Not Just Color
 
@@ -31,7 +33,7 @@ Chakra crystals are stones paired with the seven energy centers of the body, whe
 
 crystals for each chakra matters because most people shop the wrong way. They scan a color chart, grab a green stone for the heart center because green looks "heart-ish," and assume the match is done. The friction underneath is real: a stone helps when it meets the actual energy state of a center, and color alone never tells you whether a center is quiet and drained or loud and overworked. So the green stone for an over-active heart center that already gives too much can miss the point entirely, and the citrine someone buys to feel more confident can leave an already-restless solar plexus center even louder.
 
-Picking crystals for each chakra by feel instead of by chart turns the practice into self-observation. Take a few familiar moments. You notice your throat center going quiet in a tense meeting and reach for a calming stone when the truer need is something steadying. You feel your root center buzzing on a sleepless night after a long commute, and the chart tells you "red for root" while your body is actually asking to settle, not to be revved up further. The same color can sit at opposite ends of a center's needs depending on the week. That small shift, from "what color goes here" to "what is this center doing right now," is where the real awareness comes from. The stone becomes a prompt to check in, a way to keep your attention on one center long enough to notice its state, not a decoration that promises a result on its own.
+Picking crystals for each chakra by feel instead of by chart turns the practice into self-observation. Take a few familiar moments. You notice your [throat center](/en/wiki/throat-chakra-meaning) going quiet in a tense meeting and reach for a calming stone when the truer need is something steadying. You feel your [root center](/en/wiki/root-chakra-meaning) buzzing on a sleepless night after a long commute, and the chart tells you "red for root" while your body is actually asking to settle, not to be revved up further. The same color can sit at opposite ends of a center's needs depending on the week. That small shift, from "what color goes here" to "what is this center doing right now," is where the real awareness comes from. The stone becomes a prompt to check in, a way to keep your attention on one center long enough to notice its state, not a decoration that promises a result on its own.
 
 ## Chakra Crystals vs Adjacent Concepts: How It Works + Trade-offs
 
@@ -59,7 +61,7 @@ The honest way to pick crystals for each chakra is to read your own state first,
 
 A few myths keep readers stuck, and clearing them is the fastest fix for crystals for each chakra.
 
-1. **"Green stone, heart center, done."** Color is a clue, not the rule. A center that is already over-giving may want grounding support, not more of the same.
+1. **"Green stone, heart center, done."** Color is a clue, not the rule. A [heart center](/en/wiki/heart-chakra-meaning) that is already over-giving may want grounding support, not more of the same.
 2. **"More crystals work better."** A full grid of stones rarely beats one stone matched to the center that actually needs attention right now.
 3. **"The stone does the work for me."** The pairing is a focus tool for your own attention; the awareness comes from you noticing the center, not from the stone acting on its own.
 4. **"One stone fits a center forever."** A center shifts between under- and over-active across a week, so the stone that fit on Monday may not fit on Friday.
@@ -108,7 +110,7 @@ Hold it or rest it near the matching center while you sit quietly and notice tha
 
 ## Take Action
 
-Take the free Chakra Test to find which energy center is most under- or over-active right now, so you can pair your first stone with the center that needs it instead of guessing from a color chart: [Take the Chakra Test](https://astrologywiki.com/en/wiki/chakra-test). You walk away with a clear starting point, and over time that habit of reading your own state turns crystal work into a steady practice of self-awareness rather than a shopping list.
+Take the free Chakra Test to find which energy center is most under- or over-active right now, so you can pair your first stone with the center that needs it instead of guessing from a color chart: [Take the Chakra Test](/en/wiki/chakra-test). You walk away with a clear starting point, and over time that habit of reading your own state turns crystal work into a steady practice of self-awareness rather than a shopping list.
 
 ## Sources
 
@@ -119,17 +121,19 @@ Take the free Chakra Test to find which energy center is most under- or over-act
 export const crystalsForEachChakraZh: WikiArticle = {
   slug: "crystals-for-each-chakra",
   image: "/images/chakra/crystals-for-each-chakra.jpg",
-  image_alt: "七颗晶体沿斜线排开，金色光晕亮度各不相同，象征挑水晶要读能量状态而非只看颜色",
+  image_alt:
+    "七颗晶体沿斜线排开，金色光晕亮度各不相同，象征挑水晶要读能量状态而非只看颜色",
   title: "脉轮水晶：按能量状态挑选，而不是只看颜色",
-  description: "脉轮水晶（Chakra Crystals，对应身体七个能量中心的水晶）指的是按脉轮的能量状态来配对石头，而不是只看颜色。它把每个能量中心（脉轮，chakra，西方瑜伽与灵性传统里的能量中心概念）配上一两块常用石头，背后沿用的是 Anodea Judith 系统化的现代脉轮框架；要看懂单个配对，先得理解整套...",
+  description:
+    "脉轮水晶（Chakra Crystals，对应身体七个能量中心的水晶）指的是按脉轮的能量状态来配对石头，而不是只看颜色。它把每个能量中心（脉轮，chakra，西方瑜伽与灵性传统里的能量中心概念）配上一两块常用石头，背后沿用的是 Anodea Judith 系统化的现代脉轮框架；要看懂单个配对，先得理解整套...",
   authorId: "elena-vane",
   date: "2026-05-29",
   schema: "Article",
   lang: "zh",
   keywords: [
-    "\"crystals for each chakra\"",
-    "\"chakra stones\"",
-    "\"healing crystals guide\""
+    '"crystals for each chakra"',
+    '"chakra stones"',
+    '"healing crystals guide"',
   ],
   content: `# 脉轮水晶：按能量状态挑选，而不是只看颜色
 
@@ -222,7 +226,7 @@ export const crystalsForEachChakraZh: WikiArticle = {
 
 ## 下一步行动
 
-先做一次免费的脉轮测试，看看此刻哪个能量中心最偏弱或最偏旺，这样你就能把头一块石头配给真正需要它的中心，而不是对着色卡猜：[去做脉轮测试](https://astrologywiki.com/zh/wiki/chakra-test)。你会拿到一个清楚的起点；时间一长，这种"先读自己状态"的习惯，会把玩石头慢慢变成一份稳定的自我觉察练习，而不是一张购物清单。
+先做一次免费的脉轮测试，看看此刻哪个能量中心最偏弱或最偏旺，这样你就能把头一块石头配给真正需要它的中心，而不是对着色卡猜：[去做脉轮测试](/zh/wiki/chakra-test)。你会拿到一个清楚的起点；时间一长，这种"先读自己状态"的习惯，会把玩石头慢慢变成一份稳定的自我觉察练习，而不是一张购物清单。
 
 ## 参考来源
 

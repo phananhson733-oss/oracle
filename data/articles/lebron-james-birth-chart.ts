@@ -121,7 +121,7 @@ It is only as accurate as the birth data behind it, and honest about its limits.
 
 ## Take Action
 
-[Generate your free birth chart to explore LeBron James birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you get the same full-pattern map used here — Sun, Moon, angles, and clusters laid out side by side. Seeing your own placements in one view makes it easier to read yourself the way a portrait reads a person: as a set of tendencies you can work with, not a verdict you're stuck with.
+[Generate your free birth chart to explore LeBron James birth chart](/en/wiki/how-to-read-birth-chart), and you get the same full-pattern map used here — Sun, Moon, angles, and clusters laid out side by side. Seeing your own placements in one view makes it easier to read yourself the way a portrait reads a person: as a set of tendencies you can work with, not a verdict you're stuck with.
 
 This is not a clinical interpretation or mental health advice.
 

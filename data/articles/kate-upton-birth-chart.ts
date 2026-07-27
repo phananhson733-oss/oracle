@@ -119,7 +119,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-[Read our guide to reading your birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), then map your own Sun, Moon, and Rising with accurate birth data. You'll get a clearer picture of where identity, feelings, and public face align or pull apart — the same source-aware self-awareness this reading models, applied to you instead of a headline.
+[Read our guide to reading your birth chart](/en/wiki/how-to-read-birth-chart), then map your own Sun, Moon, and Rising with accurate birth data. You'll get a clearer picture of where identity, feelings, and public face align or pull apart — the same source-aware self-awareness this reading models, applied to you instead of a headline.
 
 ## Sources
 

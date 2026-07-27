@@ -125,7 +125,7 @@ Not really. The Rising routes the Sun's energy rather than canceling it, so an a
 
 ## Take Action
 
-Pull apart your own chart the way this read pulls apart the emma watson zodiac sign. [Generate your free birth chart to explore your Sun, Moon, and Rising layers](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you get a clear map of which placements drive you and which ones shape how you come across. Seeing that gap — between an assertive engine and a careful interface — is often where the most honest self-recognition begins.
+Pull apart your own chart the way this read pulls apart the emma watson zodiac sign. [Generate your free birth chart to explore your Sun, Moon, and Rising layers](/en/wiki/how-to-read-birth-chart), and you get a clear map of which placements drive you and which ones shape how you come across. Seeing that gap — between an assertive engine and a careful interface — is often where the most honest self-recognition begins.
 
 ## Sources
 

@@ -109,7 +109,7 @@ His Moon is most often placed in Pisces, which is associated with emotional sens
 
 ## Take Action
 
-Generate your free birth chart to explore the novak djokovic zodiac sign and see how a Gemini Sun actually behaves once the Moon, Mercury, Venus, and Mars are added in. [Start with the guide to reading your birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), then read your own Sun sign with the same care you would give a champion's. You will come away with a full placement map instead of a one-word label — and, more usefully, a clearer sense of where you lean on shorthand to explain yourself instead of looking at the whole picture.
+Generate your free birth chart to explore the novak djokovic zodiac sign and see how a Gemini Sun actually behaves once the Moon, Mercury, Venus, and Mars are added in. [Start with the guide to reading your birth chart](/en/wiki/how-to-read-birth-chart), then read your own Sun sign with the same care you would give a champion's. You will come away with a full placement map instead of a one-word label — and, more usefully, a clearer sense of where you lean on shorthand to explain yourself instead of looking at the whole picture.
 
 This is not a clinical interpretation or mental health advice.
 

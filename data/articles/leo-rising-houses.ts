@@ -114,7 +114,7 @@ Leo Sun places solar identity in the self-expression domain. Leo rising determin
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore leo rising houses in your own natal map. You'll see exactly where Saturn sits by sign and house — the two variables that most shape how the Saturnine partnership pattern plays out for your specific configuration. Once Saturn's position is visible alongside the 7th house cusp, recurring patterns in long-term relationships tend to become structurally legible rather than something to take personally.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore leo rising houses in your own natal map. You'll see exactly where Saturn sits by sign and house — the two variables that most shape how the Saturnine partnership pattern plays out for your specific configuration. Once Saturn's position is visible alongside the 7th house cusp, recurring patterns in long-term relationships tend to become structurally legible rather than something to take personally.
 
 ## Sources
 

@@ -5,9 +5,11 @@ import type { WikiArticle } from "../../types";
 export const worldCup2026JuneAstrologyEn: WikiArticle = {
   slug: "world-cup-2026-june-astrology",
   image: "/images/blog/world-cup-2026-june-astrology.jpg",
-  image_alt: "An atmospheric celestial landscape evoking Reading World Cup 2026 June Astrology Over the Opening Rounds.",
+  image_alt:
+    "An atmospheric celestial landscape evoking Reading World Cup 2026 June Astrology Over the Opening Rounds.",
   title: "Reading World Cup 2026 June Astrology Over the Opening Rounds",
-  description: "The June 2026 tournament sky is the set of transits and lunations overhead during the World Cup's opening month, led by Jupiter exalted in Cancer.",
+  description:
+    "The June 2026 tournament sky is the set of transits and lunations overhead during the World Cup's opening month, led by Jupiter exalted in Cancer.",
   authorId: "elena-vane",
   date: "2026-06-12",
   schema: "Article",
@@ -17,13 +19,13 @@ export const worldCup2026JuneAstrologyEn: WikiArticle = {
     "june 2026 astrology",
     "world cup astrology june",
     "2026 planetary transits june",
-    "jupiter cancer june 2026"
+    "jupiter cancer june 2026",
   ],
   content: `# Reading World Cup 2026 June Astrology Over the Opening Rounds
 
 ## What is the June 2026 Tournament Sky?
 
-The June 2026 tournament sky is **the set of transits and lunations overhead during the World Cup's opening month, led by Jupiter exalted in Cancer**. Looking at world cup 2026 june astrology means reading the actual planetary calendar over the group stage rather than guessing a champion. Read as a backdrop rather than a forecast, the *World Cup 2026 astrology themes pillar* uses the same June sky to frame mood, timing, and tone across the early rounds.
+The June 2026 tournament sky is **the set of transits and lunations overhead during the World Cup's opening month, led by Jupiter exalted in Cancer**. Looking at world cup 2026 june astrology means reading the actual planetary calendar over the group stage rather than guessing a champion. Read as a backdrop rather than a forecast, the [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) uses the same June sky to frame mood, timing, and tone across the early rounds.
 
 - Jupiter sits exalted in Cancer through June 30, favoring collective, home-soil themes
 - Saturn in Aries adds a steadying, testing undertone across the whole opening month
@@ -106,10 +108,12 @@ The mid-month New Moon works as a reset for the group stage, while the late-June
 ## Related Reading
 
 - [what Jupiter in Cancer means](/en/wiki/9th-house-astrology) — the standout transit behind the June mood
+- [Colombia vs Portugal match astrology](/en/wiki/colombia-vs-portugal) — a June group-stage fixture read through the same opening-month sky
+- [Jordan vs Argentina match astrology](/en/wiki/jordan-vs-argentina) — another opening-round match within this window
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see where the June 2026 sky lands in your own chart while you follow world cup 2026 june astrology over the opening rounds. You get a clear view of how Jupiter in Cancer and Saturn in Aries touch your own placements, and, more quietly, a way to read a month as a mood you can meet rather than a result you must wait for — a small habit of watching the sky for atmosphere that outlasts any single tournament.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see where the June 2026 sky lands in your own chart while you follow world cup 2026 june astrology over the opening rounds. You get a clear view of how Jupiter in Cancer and Saturn in Aries touch your own placements, and, more quietly, a way to read a month as a mood you can meet rather than a result you must wait for — a small habit of watching the sky for atmosphere that outlasts any single tournament.
 
 ## Sources
 
@@ -121,9 +125,11 @@ The mid-month New Moon works as a reset for the group stage, while the late-June
 export const worldCup2026JuneAstrologyZh: WikiArticle = {
   slug: "world-cup-2026-june-astrology",
   image: "/images/blog/world-cup-2026-june-astrology.jpg",
-  image_alt: "一幅氛围式星空风景，意象呼应「Reading World Cup 2026 June Astrology Over the Opening Rounds」。",
+  image_alt:
+    "一幅氛围式星空风景，意象呼应「Reading World Cup 2026 June Astrology Over the Opening Rounds」。",
   title: "2026世界杯六月占星：读开赛初的那片天空",
-  description: "2026年6月赛事天象，指的是世界杯开赛首月头顶的过运与朔望，由旺相于巨蟹座的木星领衔。所谓2026世界杯6月占星日历，是去读小组赛期间真实的行星日历，而不是去猜哪支球队夺冠。它不是哪个赛果模型，而是一段时间窗口的描述：哪几天天空偏暖、哪几天底色偏紧、哪两次月相分别标记重启与收束。",
+  description:
+    "2026年6月赛事天象，指的是世界杯开赛首月头顶的过运与朔望，由旺相于巨蟹座的木星领衔。所谓2026世界杯6月占星日历，是去读小组赛期间真实的行星日历，而不是去猜哪支球队夺冠。它不是哪个赛果模型，而是一段时间窗口的描述：哪几天天空偏暖、哪几天底色偏紧、哪两次月相分别标记重启与收束。",
   authorId: "elena-vane",
   date: "2026-06-13",
   schema: "Article",
@@ -132,7 +138,7 @@ export const worldCup2026JuneAstrologyZh: WikiArticle = {
     "world cup 2026 june astrology",
     "june 2026 astrology world cup",
     "world cup schedule astrology",
-    "world cup dates planetary transits"
+    "world cup dates planetary transits",
   ],
   content: `# 2026世界杯六月占星：读开赛初的那片天空
 
@@ -224,7 +230,7 @@ export const worldCup2026JuneAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，一边跟着2026世界杯六月占星看开赛几轮，一边看看这片六月天空落在你自己星盘的哪个位置。你会清楚看到木星在巨蟹座、土星在白羊座怎样触到你自己的落点，更安静地，得到一种把一个月读成"可以迎接的情绪"、而不是"必须枯等的结果"的方式——一个看天空看氛围的小习惯，比任何单届赛事都活得更久。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，一边跟着2026世界杯六月占星看开赛几轮，一边看看这片六月天空落在你自己星盘的哪个位置。你会清楚看到木星在巨蟹座、土星在白羊座怎样触到你自己的落点，更安静地，得到一种把一个月读成"可以迎接的情绪"、而不是"必须枯等的结果"的方式——一个看天空看氛围的小习惯，比任何单届赛事都活得更久。
 
 ## 参考来源
 

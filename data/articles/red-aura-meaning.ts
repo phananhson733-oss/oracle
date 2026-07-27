@@ -24,7 +24,7 @@ export const redAuraMeaningEn: WikiArticle = {
 
 ## What is Red Aura?
 
-In subtle-energy traditions, red aura meaning usually points to **a vital, grounded energy field tied to the root center and physical drive**. Most aura literature places red at the base of the chakra spectrum, commonly associated with the root chakra (Muladhara), which deals with survival, embodiment, and the will to act. A red reading is interpretive vocabulary, not a personality verdict or a measurable physical signal. It describes how someone shows up right now — assertive, alive, ready to move — and it shifts with shade. A clear, vibrant red reads very differently from a muddy or dark red, and reading red as one flat thing is where most articles go wrong.
+In subtle-energy traditions, red aura meaning usually points to **a vital, grounded energy field tied to the root center and physical drive**. Most aura literature places red at the base of the chakra spectrum, commonly associated with the [root chakra (Muladhara)](/en/wiki/root-chakra-meaning), which deals with survival, embodiment, and the will to act. A red reading is interpretive vocabulary, not a personality verdict or a measurable physical signal. It describes how someone shows up right now — assertive, alive, ready to move — and it shifts with shade. A clear, vibrant red reads very differently from a muddy or dark red, and reading red as one flat thing is where most articles go wrong.
 
 ## Why It Matters for Self-Awareness
 

@@ -118,7 +118,7 @@ Begin by noticing the moments you reach for control whenever something feels unc
 
 ## Take Action
 
-Open your birth chart, locate the Scorpio-Taurus node axis, and [read the North Node vs South Node guide to map both ends of your growth axis](https://astrologywiki.com/en/wiki/north-node-vs-south-node). The comparison gives you a clear picture of which comfort the South Node defends and which depth the node points toward, turning an abstract polarity into something you can actually work with. Seen side by side, the two ends stop reading like a fixed verdict about your fate and start working like a compass for the next honest step in front of you.
+Open your birth chart, locate the Scorpio-Taurus node axis, and [read the North Node vs South Node guide to map both ends of your growth axis](/en/wiki/north-node-vs-south-node). The comparison gives you a clear picture of which comfort the South Node defends and which depth the node points toward, turning an abstract polarity into something you can actually work with. Seen side by side, the two ends stop reading like a fixed verdict about your fate and start working like a compass for the next honest step in front of you.
 
 ## Sources
 
@@ -241,7 +241,7 @@ export const northNodeInScorpioZh: WikiArticle = {
 
 ## 下一步行动
 
-读一读这份 [南北交点成长轴完整指南](https://astrologywiki.com/zh/wiki/north-node-vs-south-node)，把你这辈子要放下的旧习惯和要练习的新方向同时摊在一张图上对照看。你会拿到一条清晰的功课主线，而不是零散的星座标签。看懂自己的成长轴，与其说是被命运安排，不如说是多了一份可以照着练的地图，让每一次"该松手了"的时刻，都不再只靠硬扛。
+读一读这份 [南北交点成长轴完整指南](/zh/wiki/north-node-vs-south-node)，把你这辈子要放下的旧习惯和要练习的新方向同时摊在一张图上对照看。你会拿到一条清晰的功课主线，而不是零散的星座标签。看懂自己的成长轴，与其说是被命运安排，不如说是多了一份可以照着练的地图，让每一次"该松手了"的时刻，都不再只靠硬扛。
 
 ## 参考来源
 

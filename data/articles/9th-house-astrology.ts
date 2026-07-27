@@ -109,7 +109,7 @@ The 3rd house gathers near-range facts and handles daily communication, while th
 
 ## Take Action
 
-Once you have traced your 9th-house ruler and read its planets as a cluster, set that picture back inside the larger map by reading the [full Astrological Houses guide to place this house within the whole chart](https://astrologywiki.com/en/wiki/astrology-houses). That single view shows how the 9th House connects to the eleven houses around it, and seeing the connection is often the moment a vague pull toward "meaning" sharpens into a worldview you can recognize and live with on purpose.
+Once you have traced your 9th-house ruler and read its planets as a cluster, set that picture back inside the larger map by reading the [full Astrological Houses guide to place this house within the whole chart](/en/wiki/astrology-houses). That single view shows how the 9th House connects to the eleven houses around it, and seeing the connection is often the moment a vague pull toward "meaning" sharpens into a worldview you can recognize and live with on purpose.
 
 ## Sources
 
@@ -226,7 +226,7 @@ export const ninthHouseAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-把第九宫放回整张星盘，看它怎么和其他宫位接成一套完整读法——[读懂占星宫位全图，把第九宫安放进你的整张星盘](https://astrologywiki.com/zh/wiki/astrology-houses)。你会拿到一套可复用的读盘顺序，把「宫位＋星座＋行星」拼成一句完整的话；而当你能为自己的求知冲动读出这句话，你看的就不再是命运的判词，而是自己一直在追寻意义的人生现场。
+把第九宫放回整张星盘，看它怎么和其他宫位接成一套完整读法——[读懂占星宫位全图，把第九宫安放进你的整张星盘](/zh/wiki/astrology-houses)。你会拿到一套可复用的读盘顺序，把「宫位＋星座＋行星」拼成一句完整的话；而当你能为自己的求知冲动读出这句话，你看的就不再是命运的判词，而是自己一直在追寻意义的人生现场。
 
 ## 参考来源
 

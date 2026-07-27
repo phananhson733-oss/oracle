@@ -123,7 +123,7 @@ The contrast between water-sign sensitivity and top-level competitive drive. It 
 
 ## Take Action
 
-Ready to move from reading about her chart to reading your own? [Generate your free birth chart to explore Coco Gauff birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising placements laid out side by side. Seeing your own contradictions in one picture — the way sensitivity and drive can coexist — is where a chart stops being celebrity trivia and starts becoming self-knowledge.
+Ready to move from reading about her chart to reading your own? [Generate your free birth chart to explore Coco Gauff birth chart](/en/wiki/how-to-read-birth-chart), and you'll get a full map of your Sun, Moon, and rising placements laid out side by side. Seeing your own contradictions in one picture — the way sensitivity and drive can coexist — is where a chart stops being celebrity trivia and starts becoming self-knowledge.
 
 This is not a clinical interpretation or mental health advice.
 

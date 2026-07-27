@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const sinnerVsZverevWimbledonFinalAstrologyEn: WikiArticle = {
   slug: "sinner-vs-zverev-wimbledon-final-astrology",
   image: "/images/blog/sinner-vs-zverev-wimbledon-final-astrology.jpg",
-  image_alt: "Painterly scene of two tennis players rallying on Centre Court beneath a starlit sky for the 2026 Wimbledon Final",
-  title: "What Sinner vs Zverev Wimbledon Final Astrology Reads Into the 2026 Match",
-  description: "The Sinner–Zverev Wimbledon Final Chart is a symbolic, side-by-side reading of the 2026 men's final that places each player's birth chart against the sky at the match moment.",
+  image_alt:
+    "Painterly scene of two tennis players rallying on Centre Court beneath a starlit sky for the 2026 Wimbledon Final",
+  title:
+    "What Sinner vs Zverev Wimbledon Final Astrology Reads Into the 2026 Match",
+  description:
+    "The Sinner–Zverev Wimbledon Final Chart is a symbolic, side-by-side reading of the 2026 men's final that places each player's birth chart against the sky at the match moment.",
   authorId: "marcus-orion",
   date: "2026-07-11",
   schema: "Article",
@@ -17,7 +20,7 @@ export const sinnerVsZverevWimbledonFinalAstrologyEn: WikiArticle = {
     "Sinner vs Zverev Wimbledon Final astrology meaning",
     "Sinner vs Zverev Wimbledon Final astrology birth chart",
     "Sinner vs Zverev Wimbledon Final astrology zodiac",
-    "Sinner vs Zverev Wimbledon Final astrology interpretation"
+    "Sinner vs Zverev Wimbledon Final astrology interpretation",
   ],
   content: `# What Sinner vs Zverev Wimbledon Final Astrology Reads Into the 2026 Match
 
@@ -113,13 +116,15 @@ The Sun, Moon, and Mars of each player carry the most weight for temperament and
 
 ## Related Reading
 
-- *meaning of the rising sign* — the rising sign refines how each player's on-court persona actually comes across.
-- *birth chart profile of Serena Williams* — a published athlete chart that shows how natal placements map onto a competitive career.
+- [Jannik Sinner zodiac sign](/en/wiki/jannik-sinner-zodiac-sign) — the natal-sign read behind one finalist's temperament.
+- [Alexander Zverev birth chart](/en/wiki/alexander-zverev-birth-chart) — the natal close-up on the other finalist.
+- [meaning of the rising sign](/en/wiki/ascendant-meaning) — the rising sign refines how each player's on-court persona actually comes across.
+- [birth chart profile of Serena Williams](/en/wiki/serena-williams-birth-chart) — a published athlete chart that shows how natal placements map onto a competitive career.
 - [Electional astrology (Wikipedia)](https://en.wikipedia.org/wiki/Electional_astrology) — outside context on the older tradition of charting chosen or notable moments.
 
 ## Take Action
 
-Generate your free birth chart to explore Sinner vs Zverev Wimbledon Final astrology, then set your own Sun, Moon, and Mars beside each finalist's. You'll get a clear map of your temperament and pressure style — and, more than any scoreline, a sharper sense of how you meet your own high-stakes moments. [Generate your free birth chart](https://astrologywiki.com/en/birth-chart-calculator) to begin the comparison.
+Generate your free birth chart to explore Sinner vs Zverev Wimbledon Final astrology, then set your own Sun, Moon, and Mars beside each finalist's. You'll get a clear map of your temperament and pressure style — and, more than any scoreline, a sharper sense of how you meet your own high-stakes moments. [Generate your free birth chart](/en/birth-chart-calculator) to begin the comparison.
 
 ## Sources
 

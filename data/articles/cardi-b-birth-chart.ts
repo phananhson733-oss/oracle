@@ -118,7 +118,7 @@ For the Sun and Moon, no. For the Rising sign and the house placements, yes — 
 
 ## Take Action
 
-This is a cultural reading meant for reflection, not a clinical interpretation or mental-health advice. Curious how your own placements compare? [Generate your own free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and you will get the same Sun–Moon–Rising map astrologers use for any public figure. Seeing your own contradictions named the way hers are can make them feel less like flaws and more like a portrait you can finally read on purpose.
+This is a cultural reading meant for reflection, not a clinical interpretation or mental-health advice. Curious how your own placements compare? [Generate your own free birth chart](/en/wiki/how-to-read-birth-chart) and you will get the same Sun–Moon–Rising map astrologers use for any public figure. Seeing your own contradictions named the way hers are can make them feel less like flaws and more like a portrait you can finally read on purpose.
 
 ## Sources
 

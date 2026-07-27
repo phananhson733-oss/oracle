@@ -109,7 +109,7 @@ As a question about reliability, not a fixed trait. Aryaman's contracts and patr
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own nakshatra and see where the Sun and its patrons sit in your own sky. You get a clear view of your lunar mansion and a reminder that an archetype is a mirror, not a label — and, more usefully, a habit of asking where your warmth turns into commitment before you call yourself generous.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own nakshatra and see where the Sun and its patrons sit in your own sky. You get a clear view of your lunar mansion and a reminder that an archetype is a mirror, not a label — and, more usefully, a habit of asking where your warmth turns into commitment before you call yourself generous.
 
 ## Sources
 
@@ -221,7 +221,7 @@ export const uttaraPhalguniNakshatraZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出你自己的星宿，看看太阳和它的那些靠山落在你自己的天空何处。你会清楚看到自己的月宿，也会记得：一个原型是镜子，不是标签——更有用的是，养成一个习惯，在称自己慷慨之前，先问问你的温情在哪里转成了许诺。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出你自己的星宿，看看太阳和它的那些靠山落在你自己的天空何处。你会清楚看到自己的月宿，也会记得：一个原型是镜子，不是标签——更有用的是，养成一个习惯，在称自己慷慨之前，先问问你的温情在哪里转成了许诺。
 
 ## 参考来源
 

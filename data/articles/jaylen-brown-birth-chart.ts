@@ -123,7 +123,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Ready to try the same method on your own placements? [Generate your free birth chart to explore Jaylen Brown birth chart.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) The tool lays out a full map of your planets the same way this reading treats his, and studying them together — rather than stopping at your Sun sign — can show you where your own intensity and conviction really live.
+Ready to try the same method on your own placements? [Generate your free birth chart to explore Jaylen Brown birth chart.](/en/wiki/how-to-read-birth-chart) The tool lays out a full map of your planets the same way this reading treats his, and studying them together — rather than stopping at your Sun sign — can show you where your own intensity and conviction really live.
 
 ## Sources
 

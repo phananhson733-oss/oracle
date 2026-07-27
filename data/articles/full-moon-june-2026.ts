@@ -131,7 +131,7 @@ The station point is the most energetically charged moment of any retrograde per
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see how this Capricorn full moon lands in your personal placements. You'll find exactly which natal house the June 29 lunar peak activates — giving you a specific area of life to audit and release, rather than a general energy to work with. That house is where this full moon's double-completion signal lands most directly in your experience.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see how this Capricorn full moon lands in your personal placements. You'll find exactly which natal house the June 29 lunar peak activates — giving you a specific area of life to audit and release, rather than a general energy to work with. That house is where this full moon's double-completion signal lands most directly in your experience.
 
 ## Sources
 

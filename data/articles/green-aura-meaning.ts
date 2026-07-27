@@ -30,7 +30,7 @@ Green Aura is the green band that practitioners describe seeing or sensing in a 
 - Most often tied to the heart center, called Anahata, in chakra-aura systems
 - Shifts in tone by shade, so the same green can read as growth or as resentment
 
-Green sits in the middle of the classic aura spectrum, between the warmer reds and oranges and the cooler blues, which is part of why it gets framed as the balancing point of the whole map. It belongs to the broader picture laid out in the [pillar page on all aura colors](/en/wiki/aura-colors-guide), where every color's energy sits side by side — a way of reading the human energy field that teachers like Barbara Ann Brennan helped bring into wider practice. Green is less about intensity and more about how naturally someone moves toward repair, nature, and the people around them.
+Green sits in the middle of the classic aura spectrum, between the warmer reds and oranges and the cooler blues, which is part of why it gets framed as the balancing point of the whole map. It belongs to the broader picture laid out in the [pillar page on all aura colors](/en/wiki/aura-colors-guide), where every color's energy sits side by side — a way of reading the human energy field that teachers like Barbara Ann Brennan helped bring into wider practice. Green is less about intensity and more about how naturally someone moves toward repair, nature, and the people around them. Astrology reaches for that same blend of healing and earthy, Venus-ruled steadiness in placements like [Chiron in Taurus](/en/wiki/chiron-in-taurus).
 
 ## Why It Matters for Self-Awareness
 
@@ -44,7 +44,7 @@ That last point matters most, because a label that doesn't match your real life 
 
 ## Green Aura vs Adjacent Concepts: How It Works + Trade-offs
 
-green aura meaning becomes clearer when you set it next to its neighbours on the spectrum, because the difference is mostly about where the energy is centred and what it asks of you. Green works through the heart center, so it pulls attention outward toward connection, repair, and balance — it's the person who senses a room has gone tense and quietly moves to smooth it. A nearby color like yellow aura works differently, running through the solar plexus and leading with confidence and personal drive. You can see that contrast in the [sibling entry on yellow aura](/en/wiki/yellow-aura-meaning). To lead with green's heart-led warmth, you give up some of yellow's self-forward momentum: the green reader tends to others first and themselves last, which steadies the group and slowly drains the individual.
+green aura meaning becomes clearer when you set it next to its neighbours on the spectrum, because the difference is mostly about where the energy is centred and what it asks of you. Green works through the [heart center](/en/wiki/heart-chakra-meaning), so it pulls attention outward toward connection, repair, and balance — it's the person who senses a room has gone tense and quietly moves to smooth it. A nearby color like yellow aura works differently, running through the solar plexus and leading with confidence and personal drive. You can see that contrast in the [sibling entry on yellow aura](/en/wiki/yellow-aura-meaning). To lead with green's heart-led warmth, you give up some of yellow's self-forward momentum: the green reader tends to others first and themselves last, which steadies the group and slowly drains the individual.
 
 ### Against blue aura
 

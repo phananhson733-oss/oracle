@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const franceVsSpainWorldCup2026AstrologyPredictionEn: WikiArticle = {
   slug: "france-vs-spain-world-cup-2026-astrology-prediction",
   image: "/images/blog/france-vs-spain-world-cup-2026-astrology-prediction.jpg",
-  image_alt: "France vs Spain World Cup 2026 astrology matchup — stadium scene with blue and red fan banks under a celestial Jupiter sky",
-  title: "Reading the France vs Spain World Cup 2026 Astrology Prediction as Story, Not Scoreline",
-  description: "France vs Spain World Cup 2026 astrology prediction is a symbolic way of reading the France–Spain fixture that compares each nation's natal chart and its key players' archetypes instead of forecasting the final score.",
+  image_alt:
+    "France vs Spain World Cup 2026 astrology matchup — stadium scene with blue and red fan banks under a celestial Jupiter sky",
+  title:
+    "Reading the France vs Spain World Cup 2026 Astrology Prediction as Story, Not Scoreline",
+  description:
+    "France vs Spain World Cup 2026 astrology prediction is a symbolic way of reading the France–Spain fixture that compares each nation's natal chart and its key players' archetypes instead of forecasting the final score.",
   authorId: "marcus-orion",
   date: "2026-07-13",
   schema: "Article",
@@ -18,7 +21,7 @@ export const franceVsSpainWorldCup2026AstrologyPredictionEn: WikiArticle = {
     "france vs spain world cup 2026 astrology prediction match astrology",
     "france vs spain world cup 2026 astrology prediction team astrology",
     "world cup 2026 astrology prediction",
-    "argentina world cup 2026 astrology"
+    "argentina world cup 2026 astrology",
   ],
   content: `# Reading the France vs Spain World Cup 2026 Astrology Prediction as Story, Not Scoreline
 
@@ -113,7 +116,9 @@ No. Betting analysis estimates probability from form and odds; this reads meanin
 ## Related Reading
 
 - [guide on how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the foundation for reading any national or player chart in this series
-- *overview of Argentina's World Cup 2026 astrology* — a sibling read applying the same symbolic lens to another contender
+- [overview of Argentina's World Cup 2026 astrology](/en/wiki/argentina-world-cup-2026-astrology) — a sibling read applying the same symbolic lens to another contender
+- [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the national-team chart behind one side of this fixture
+- [Kylian Mbappé's birth chart](/en/wiki/kylian-mbappe-birth-chart) — a natal close-up on France's talisman
 - [explainer on the ascendant and rising sign](/en/wiki/ascendant-meaning) — helps decode the "first impression" layer in any competitor's chart
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup)
 - [Jupiter (Wikipedia)](https://en.wikipedia.org/wiki/Jupiter)
@@ -124,7 +129,7 @@ This is a symbolic and cultural interpretation, not a prediction of the match re
 
 Cast the two sides for yourself: generate your free birth chart to explore france vs spain world cup 2026 astrology prediction and compare its themes against each team's style. You'll get a clear map of the tendencies and tensions astrologers read as character, laid out placement by placement. Seen honestly, that map says less about who wins on the day and more about how you make meaning out of the games you can't control.
 
-[Generate your free birth chart](https://astrologywiki.com/en/birth-chart-calculator)
+[Generate your free birth chart](/en/birth-chart-calculator)
 
 ## Sources
 

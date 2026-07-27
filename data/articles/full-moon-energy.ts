@@ -151,7 +151,7 @@ The full moon lines up with the brightest part of the cycle, which many people e
 
 ## Take Action
 
-The full moon shows you what is peaking; your birth chart shows you where it lands. [Generate your free birth chart to explore full moon energy](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you can see exactly which house each month's full moon lights up for you. Read together, they turn a vague monthly mood into a map of where your attention keeps returning — the first real step toward working with your own timing instead of being caught off guard by it.
+The full moon shows you what is peaking; your birth chart shows you where it lands. [Generate your free birth chart to explore full moon energy](/en/wiki/how-to-read-birth-chart), and you can see exactly which house each month's full moon lights up for you. Read together, they turn a vague monthly mood into a map of where your attention keeps returning — the first real step toward working with your own timing instead of being caught off guard by it.
 
 ## Sources
 

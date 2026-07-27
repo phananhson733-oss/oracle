@@ -114,7 +114,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Run your own numbers before you read one more celebrity profile. Generate your free birth chart to explore jeff bezos birth chart at [https://astrologywiki.com/en/birth-chart-calculator](https://astrologywiki.com/en/birth-chart-calculator), and you'll see your Sun, Moon, and any stelliums laid out on one wheel. Once your own structure-versus-restlessness split is in front of you, the same lens that maps his disciplined arc becomes a mirror for where you build slowly and where you're quietly betting big.
+Run your own numbers before you read one more celebrity profile. Generate your free birth chart to explore jeff bezos birth chart at [https://astrologywiki.com/en/birth-chart-calculator](/en/birth-chart-calculator), and you'll see your Sun, Moon, and any stelliums laid out on one wheel. Once your own structure-versus-restlessness split is in front of you, the same lens that maps his disciplined arc becomes a mirror for where you build slowly and where you're quietly betting big.
 
 ## Sources
 

@@ -110,7 +110,7 @@ Because this part of the chart is exactly where the authentic self steps into op
 
 ## Take Action
 
-[Read the full Astrological Houses guide to place the fifth house within the chart](https://astrologywiki.com/en/wiki/astrology-houses), and map how each of the twelve houses frames a different arena of your life. With that whole-chart view in front of you, you can see exactly where your drive to create and be seen fits among your other needs, pressures, and commitments. From there, self-expression stops feeling like a risk to be managed and quietly becomes a part of yourself you can choose to honour on purpose.
+[Read the full Astrological Houses guide to place the fifth house within the chart](/en/wiki/astrology-houses), and map how each of the twelve houses frames a different arena of your life. With that whole-chart view in front of you, you can see exactly where your drive to create and be seen fits among your other needs, pressures, and commitments. From there, self-expression stops feeling like a risk to be managed and quietly becomes a part of yourself you can choose to honour on purpose.
 
 ## Sources
 
@@ -226,7 +226,7 @@ export const fifthHouseZh: WikiArticle = {
 
 ## 下一步行动
 
-想真正读懂第五宫，下一步是把它放回整张星盘里看。读一读 [完整的占星十二宫指南](https://astrologywiki.com/zh/wiki/astrology-houses)，你会看清第五宫和其余十一宫如何彼此呼应、组成一张完整的自我地图。当你能在图里找到自己的第五宫，也就更清楚：你格外想被这个世界看见的，究竟是哪一部分的自己。
+想真正读懂第五宫，下一步是把它放回整张星盘里看。读一读 [完整的占星十二宫指南](/zh/wiki/astrology-houses)，你会看清第五宫和其余十一宫如何彼此呼应、组成一张完整的自我地图。当你能在图里找到自己的第五宫，也就更清楚：你格外想被这个世界看见的，究竟是哪一部分的自己。
 
 ## 参考来源
 

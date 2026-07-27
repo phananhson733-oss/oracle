@@ -115,7 +115,7 @@ Aries contains three nakshatras: Ashwini (Ketu-ruled), Bharani (Venus-ruled), an
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see where this lunar mansion lands in your own natal placements. Your chart will show which planets and angles fall in Ashwini's 0°00′–13°20′ Aries range — the specific data that determines how the Ketu-Aries structure actually shows up in your timing, decisions, and instinctive responses. Knowing which houses and signs the Ashwini degrees touch in your chart gives you a concrete, personal framework for recognizing patterns that have likely been operating since early in your life — just without a name for them until now.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see where this lunar mansion lands in your own natal placements. Your chart will show which planets and angles fall in Ashwini's 0°00′–13°20′ Aries range — the specific data that determines how the Ketu-Aries structure actually shows up in your timing, decisions, and instinctive responses. Knowing which houses and signs the Ashwini degrees touch in your chart gives you a concrete, personal framework for recognizing patterns that have likely been operating since early in your life — just without a name for them until now.
 
 ## Sources
 

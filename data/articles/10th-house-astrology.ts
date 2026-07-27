@@ -116,7 +116,7 @@ In the psychological tradition shaped by Greene and Sasportas, this sector can m
 
 ## Take Action
 
-Open your birth chart, find your Midheaven sign, and read it as a public role you are growing into rather than a job to lock down. Doing that turns a flat label into a working question you can return to as your standing in the world matures. [Read the full Astrological Houses guide to see how the 10th house shapes the chart](https://astrologywiki.com/en/wiki/astrology-houses), and you may begin to see your reputation as something you author over time rather than something handed to you.
+Open your birth chart, find your Midheaven sign, and read it as a public role you are growing into rather than a job to lock down. Doing that turns a flat label into a working question you can return to as your standing in the world matures. [Read the full Astrological Houses guide to see how the 10th house shapes the chart](/en/wiki/astrology-houses), and you may begin to see your reputation as something you author over time rather than something handed to you.
 
 ## Sources
 
@@ -233,7 +233,7 @@ The 10th House（第十宫）是星盘里代表公众角色与社会身份的区
 
 ## 下一步行动
 
-把第十宫单独拎出来看，永远只能看到半张图。读完整的 [占星宫位总览指南](https://astrologywiki.com/zh/wiki/astrology-houses)，你会看清第十宫如何和其余十一个宫位一起塑造整张星盘；到那时你大概率会发现，所谓的公众角色从来不是一个孤立的职业标签，而是你这一生的盘面共同长出来的位置。
+把第十宫单独拎出来看，永远只能看到半张图。读完整的 [占星宫位总览指南](/zh/wiki/astrology-houses)，你会看清第十宫如何和其余十一个宫位一起塑造整张星盘；到那时你大概率会发现，所谓的公众角色从来不是一个孤立的职业标签，而是你这一生的盘面共同长出来的位置。
 
 ## 参考来源
 

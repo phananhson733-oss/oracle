@@ -117,7 +117,7 @@ A Pisces sun describes personal identity — the character at your core and how 
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore neptune in pisces as it lands in your personal chart. You'll see exactly which house Pisces rules in your natal map — the life domain where the dissolving quality concentrates for you specifically. That single detail shifts the interpretation from a shared generational description to a chart-grounded read of what this era asks of you.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore neptune in pisces as it lands in your personal chart. You'll see exactly which house Pisces rules in your natal map — the life domain where the dissolving quality concentrates for you specifically. That single detail shifts the interpretation from a shared generational description to a chart-grounded read of what this era asks of you.
 
 ## Sources
 

@@ -109,7 +109,7 @@ A 3rd house reads as emphasized when planets sit inside it or when its ruling pl
 
 ## Take Action
 
-Map your own 3rd house this week: find its sign, note any planets inside it, and track how you gather and share information from morning to night. That gives you a plain-language picture of how your mind actually handles detail — not a fixed label, but a working description you can question and refine. [Read the full Astrological Houses guide to place the 3rd house in context](https://astrologywiki.com/en/wiki/astrology-houses) to see how this everyday-thinking house fits the larger chart, and the habit you once overlooked starts to read as one of the most decision-shaping parts of who you are.
+Map your own 3rd house this week: find its sign, note any planets inside it, and track how you gather and share information from morning to night. That gives you a plain-language picture of how your mind actually handles detail — not a fixed label, but a working description you can question and refine. [Read the full Astrological Houses guide to place the 3rd house in context](/en/wiki/astrology-houses) to see how this everyday-thinking house fits the larger chart, and the habit you once overlooked starts to read as one of the most decision-shaping parts of who you are.
 
 ## Sources
 
@@ -225,7 +225,7 @@ export const thirdHouseAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-想真正读懂第三宫，下一步可以打开[完整的占星十二宫指南](https://astrologywiki.com/zh/wiki/astrology-houses)，把这一宫放回整张星盘里对照着看。你会得到的，不只是一份宫位说明，而是一张能看清自己日常思维和沟通底色的地图。当你开始留意自己每天怎么收集信息、怎么开口，那些一直被你当成「天生性格」的东西，也就慢慢显出了脉络，原来有迹可循、也能调整。
+想真正读懂第三宫，下一步可以打开[完整的占星十二宫指南](/zh/wiki/astrology-houses)，把这一宫放回整张星盘里对照着看。你会得到的，不只是一份宫位说明，而是一张能看清自己日常思维和沟通底色的地图。当你开始留意自己每天怎么收集信息、怎么开口，那些一直被你当成「天生性格」的东西，也就慢慢显出了脉络，原来有迹可循、也能调整。
 
 ## 参考来源
 

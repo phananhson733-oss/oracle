@@ -123,7 +123,7 @@ Rahu amplifies desire in cycles rather than building steady accumulation. In Lib
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to see where this nakshatra falls in your own placements. Once you can locate the Rahu-Venus axis in your chart, the circulation pattern stops reading like a problem and starts reading like a map — one that shows you what structures to work with rather than against.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to see where this nakshatra falls in your own placements. Once you can locate the Rahu-Venus axis in your chart, the circulation pattern stops reading like a problem and starts reading like a map — one that shows you what structures to work with rather than against.
 
 ## Sources
 

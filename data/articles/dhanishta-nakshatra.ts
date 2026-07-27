@@ -110,7 +110,7 @@ The Capricorn degrees emphasize Mars-driven discipline, ambition, and structure,
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find where your Moon falls and whether the dhanishta nakshatra touches your placements. You get a clear view of your own degrees and a reminder that "wealth" in this star is about rhythm, and, more usefully, a habit of asking what your timing and coordination do for you before crediting fortune for a pattern that has a much steadier source.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find where your Moon falls and whether the dhanishta nakshatra touches your placements. You get a clear view of your own degrees and a reminder that "wealth" in this star is about rhythm, and, more usefully, a habit of asking what your timing and coordination do for you before crediting fortune for a pattern that has a much steadier source.
 
 ## Sources
 
@@ -223,7 +223,7 @@ export const dhanishtaNakshatraZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出你的月亮落在哪里，看看这颗第 23 宿是否触及你的位置。你会清楚看到自己的度数，也会记得这颗星里的"财富"关乎节奏，而更有用的是，养成一个习惯：在把一个规律归功于运气之前，先问一句你的时机与协调为你做了什么——那往往才是更稳的源头。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出你的月亮落在哪里，看看这颗第 23 宿是否触及你的位置。你会清楚看到自己的度数，也会记得这颗星里的"财富"关乎节奏，而更有用的是，养成一个习惯：在把一个规律归功于运气之前，先问一句你的时机与协调为你做了什么——那往往才是更稳的源头。
 
 ## 参考来源
 

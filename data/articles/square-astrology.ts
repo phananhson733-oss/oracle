@@ -103,7 +103,7 @@ It rarely disappears, but it can soften. Many people build a steady workaround a
 
 ## Take Action
 
-Open your own chart and mark every pair of planets sitting about 90 degrees apart, then write one sentence for each square naming the two drives in tension. You will end up with a short map of exactly where your chart asks for deliberate work, instead of a vague sense that something is wrong. That map tends to be the first time the square stops reading as a verdict and starts reading as a set of instructions for where you grow. Read the full guide to reading a birth chart to locate the squares in your own chart at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Open your own chart and mark every pair of planets sitting about 90 degrees apart, then write one sentence for each square naming the two drives in tension. You will end up with a short map of exactly where your chart asks for deliberate work, instead of a vague sense that something is wrong. That map tends to be the first time the square stops reading as a verdict and starts reading as a set of instructions for where you grow. Read the full guide to reading a birth chart to locate the squares in your own chart at [https://astrologywiki.com/en/wiki/how-to-read-birth-chart](/en/wiki/how-to-read-birth-chart).
 
 ## Sources
 
@@ -214,7 +214,7 @@ Square 在表面上很容易跟两个邻居搞混：一个是人人偏爱的柔�
 
 ## 下一步行动
 
-打开你自己的星盘，把每一对相距约 90 度的行星都标出来，再为每个角度写一句话，点名那两股在较劲的驱力。你会得到一张简短的地图，清清楚楚标出你的盘在哪些地方要你下有意的功夫，而不是只剩一种"哪里不对劲"的模糊感。这张地图，往往是它第一次不再读成判词、而开始读成一份"去哪里成长"的指令。想把自己盘里的每个张力点一一找出来，读这份完整的看盘入门指南： [https://astrologywiki.com/zh/wiki/how-to-read-birth-chart](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)
+打开你自己的星盘，把每一对相距约 90 度的行星都标出来，再为每个角度写一句话，点名那两股在较劲的驱力。你会得到一张简短的地图，清清楚楚标出你的盘在哪些地方要你下有意的功夫，而不是只剩一种"哪里不对劲"的模糊感。这张地图，往往是它第一次不再读成判词、而开始读成一份"去哪里成长"的指令。想把自己盘里的每个张力点一一找出来，读这份完整的看盘入门指南： [https://astrologywiki.com/zh/wiki/how-to-read-birth-chart](/zh/wiki/how-to-read-birth-chart)
 
 ## 参考来源
 

@@ -110,7 +110,7 @@ Most readers allow a margin of 4 to 5 degrees from the exact 60-degree angle. Th
 
 ## Take Action
 
-Open your own chart and circle every pair of planets sitting about two signs apart, then pick the single sextile that points to a skill you have been sitting on. You will walk away with a short list of openings the chart has been holding for you, and that list usually reframes "I never got lucky" into "I never took the step." Read the full guide to reading a birth chart to spot sextiles in your own chart at [the complete birth chart reading walkthrough](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Open your own chart and circle every pair of planets sitting about two signs apart, then pick the single sextile that points to a skill you have been sitting on. You will walk away with a short list of openings the chart has been holding for you, and that list usually reframes "I never got lucky" into "I never took the step." Read the full guide to reading a birth chart to spot sextiles in your own chart at [the complete birth chart reading walkthrough](/en/wiki/how-to-read-birth-chart).
 
 ## Sources
 
@@ -227,7 +227,7 @@ export const sextileAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-打开自己的星盘，把每一对大约相隔两个星座的行星圈出来，再挑出那个指向你一直搁置的技能的六分相。你会得到一份星盘替你留着的机会清单，而这份清单常常把「我从来没走运」重新读成「我从来没迈那一步」。想在自己盘里把它找出来，去读[完整的星盘解读入门指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)。
+打开自己的星盘，把每一对大约相隔两个星座的行星圈出来，再挑出那个指向你一直搁置的技能的六分相。你会得到一份星盘替你留着的机会清单，而这份清单常常把「我从来没走运」重新读成「我从来没迈那一步」。想在自己盘里把它找出来，去读[完整的星盘解读入门指南](/zh/wiki/how-to-read-birth-chart)。
 
 ## 参考来源
 

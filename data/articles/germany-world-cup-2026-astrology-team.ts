@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const germanyWorldCup2026AstrologyTeamEn: WikiArticle = {
   slug: "germany-world-cup-2026-astrology-team",
   image: "/images/blog/germany-world-cup-2026-astrology-team.jpg",
-  image_alt: "Amber lattice and teal nebula face each other across a deep indigo starfield — Saturn's structure meets Jupiter's spotlight",
-  title: "Germany's World Cup 2026 Team Astrology: An Aquarius System Between Saturn and Jupiter",
-  description: "Germany's World Cup 2026 team astrology is a mundane reading of the German Football Association's 1900 founding chart against the year's transits",
+  image_alt:
+    "Amber lattice and teal nebula face each other across a deep indigo starfield — Saturn's structure meets Jupiter's spotlight",
+  title:
+    "Germany's World Cup 2026 Team Astrology: An Aquarius System Between Saturn and Jupiter",
+  description:
+    "Germany's World Cup 2026 team astrology is a mundane reading of the German Football Association's 1900 founding chart against the year's transits",
   authorId: "aditi-sharma",
   date: "2026-06-16",
   schema: "Article",
@@ -17,7 +20,7 @@ export const germanyWorldCup2026AstrologyTeamEn: WikiArticle = {
     "dfb natal chart astrology",
     "germany national team astrology",
     "germany mundane astrology",
-    "germany world cup astrology"
+    "germany world cup astrology",
   ],
   content: `# Germany's World Cup 2026 Team Astrology: An Aquarius System Between Saturn and Jupiter
 
@@ -105,11 +108,12 @@ This reading uses the Western tropical founding chart. A Vedic sidereal mundane 
 
 - [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this founding chart in the wider tournament picture
 - [Argentina World Cup 2026 astrology national chart](/en/wiki/argentina-world-cup-2026-astrology) — a companion mundane reading of the defending champion's chart
+- [Germany's World Cup 2026 players' birth charts](/en/wiki/germany-world-cup-players-birth-chart-2026) — the natal close-up on the individuals behind the DFB system
 - [how to read a national or mundane chart](/en/wiki/how-to-read-birth-chart) — the method step behind reading an institution's chart
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Germany's World Cup 2026 team astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell steady structure apart from the pull of over-reach, long after the final whistle.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Germany's World Cup 2026 team astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell steady structure apart from the pull of over-reach, long after the final whistle.
 
 ## Sources
 
@@ -121,14 +125,13 @@ This reading uses the Western tropical founding chart. A Vedic sidereal mundane 
 export const germanyWorldCup2026AstrologyTeamZh: WikiArticle = {
   slug: "germany-world-cup-2026-astrology-team",
   title: "德国队的世界杯2026占星：水瓶座系统夹在土星与木星之间",
-  description: "德国世界杯2026占星，是把德国足协（DFB）1900 年的成立星盘放到当年行运下来读，核心锚点是一颗水瓶座太阳。世俗占星（mundane astrology）读的是机构与国家，依据成立星盘而非某人的本命盘，所以要问的不是某位球员的状态，而是 2026 年的星空，为一个\"重系统、不靠个别明星\"的足协激活了哪些集体主题。",
+  description:
+    '德国世界杯2026占星，是把德国足协（DFB）1900 年的成立星盘放到当年行运下来读，核心锚点是一颗水瓶座太阳。世俗占星（mundane astrology）读的是机构与国家，依据成立星盘而非某人的本命盘，所以要问的不是某位球员的状态，而是 2026 年的星空，为一个"重系统、不靠个别明星"的足协激活了哪些集体主题。',
   authorId: "aditi-sharma",
   date: "2026-06-16",
   schema: "Article",
   lang: "zh",
-  keywords: [
-    "germany world cup 2026 astrology team"
-  ],
+  keywords: ["germany world cup 2026 astrology team"],
   content: `# 德国队的世界杯2026占星：水瓶座系统夹在土星与木星之间
 
 ## 德国世界杯2026占星是什么？
@@ -212,7 +215,7 @@ export const germanyWorldCup2026AstrologyTeamZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇德国世界杯2026占星读德国队太阳那样去读你自己的太阳——把它当成一个被定时施压的主题，而不是一句判词。你会清楚看到自己太阳的星座，以及此刻正触碰它的行运；更安静地，你还会得到一种本领：在终场哨响很久之后，仍能把稳定的结构，和用力过猛的那股拉力分辨开来。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇德国世界杯2026占星读德国队太阳那样去读你自己的太阳——把它当成一个被定时施压的主题，而不是一句判词。你会清楚看到自己太阳的星座，以及此刻正触碰它的行运；更安静地，你还会得到一种本领：在终场哨响很久之后，仍能把稳定的结构，和用力过猛的那股拉力分辨开来。
 
 ## 参考来源
 

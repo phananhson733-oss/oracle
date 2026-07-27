@@ -116,7 +116,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to explore the Bruno Fernandes zodiac sign, and run the same three-layer read on your own placements. You get a labeled map of your Sun, Moon, and rising in one view, exactly as we separated his Virgo, Libra, and Scorpio layers above. That side-by-side is usually where people stop mistaking their first impression for their real character. Begin with our [step-by-step birth chart reading guide](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore the Bruno Fernandes zodiac sign, and run the same three-layer read on your own placements. You get a labeled map of your Sun, Moon, and rising in one view, exactly as we separated his Virgo, Libra, and Scorpio layers above. That side-by-side is usually where people stop mistaking their first impression for their real character. Begin with our [step-by-step birth chart reading guide](/en/wiki/how-to-read-birth-chart).
 
 ## Sources
 
@@ -239,7 +239,7 @@ export const brunoFernandesZodiacSignZh: WikiArticle = {
 
 ## 下一步行动
 
-生成你的免费出生星盘，去探索布鲁诺·费尔南德斯的星座这个主题，并对自己的位置跑同一套三层读法。你会在一个视图里得到太阳、月亮、上升的标注地图，正如我们上面把他的处女、天秤、天蝎三层分开那样。那张并排图，往往就是人们不再把第一印象误当成真实性格的地方。从我们的[一步步读出生星盘指南](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)开始。
+生成你的免费出生星盘，去探索布鲁诺·费尔南德斯的星座这个主题，并对自己的位置跑同一套三层读法。你会在一个视图里得到太阳、月亮、上升的标注地图，正如我们上面把他的处女、天秤、天蝎三层分开那样。那张并排图，往往就是人们不再把第一印象误当成真实性格的地方。从我们的[一步步读出生星盘指南](/en/wiki/how-to-read-birth-chart)开始。
 
 ## 参考来源
 

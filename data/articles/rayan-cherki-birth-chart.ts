@@ -122,7 +122,7 @@ It can offer a coherent symbolic story about a public persona, which is a curate
 
 ## Take Action
 
-Cast your own chart the same way this page reads his: [generate your free birth chart to explore Rayan Cherki birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and compare the symbolism side by side. You will get a labeled map of your Sun, Moon, and rising sign that you can actually test against your life — and in doing that, you may notice how quickly you assign stories to other people, and how much more honest a reading feels when you leave room for what you can't yet confirm.
+Cast your own chart the same way this page reads his: [generate your free birth chart to explore Rayan Cherki birth chart](/en/wiki/how-to-read-birth-chart) and compare the symbolism side by side. You will get a labeled map of your Sun, Moon, and rising sign that you can actually test against your life — and in doing that, you may notice how quickly you assign stories to other people, and how much more honest a reading feels when you leave room for what you can't yet confirm.
 
 ## Sources
 

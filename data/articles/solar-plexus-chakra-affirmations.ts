@@ -27,7 +27,7 @@ If you came here for affirmations you can actually use, skip ahead to the [20 so
 
 ## What Is the Solar Plexus Chakra?
 
-The Solar Plexus Chakra is the third energy center in the traditional seven-chakra system, sitting just above the navel and tied to confidence, willpower, and the felt sense that you are allowed to act on your own behalf. It anchors one corner of the broader [pillar overview of the whole chakra system](/en/wiki/chakra-system-overview), which maps how each center supports the others. People reach for affirmations here when confidence feels shaky and overlooked, or, just as often, when it has tipped the other way into needing to control everything around them. Put simply, **solar plexus chakra affirmations are spoken statements that rebuild personal power**.
+The Solar Plexus Chakra is the third energy center in the traditional seven-chakra system, sitting just above the navel and tied to confidence, willpower, and the felt sense that you are allowed to act on your own behalf. It anchors one corner of the broader [pillar overview of the whole chakra system](/en/wiki/chakra-system-overview), which maps how each center supports the others. People reach for affirmations here when confidence feels shaky and overlooked, or, just as often, when it has tipped the other way into needing to control everything around them. Put simply, **solar plexus chakra affirmations are spoken statements that rebuild personal power**. Astrology places that same solar, self-possessed quality under the Sun and Leo — the pattern a [Leo rising chart maps across its houses](/en/wiki/leo-rising-houses).
 
 - Rooted in the gut, where most people feel confidence or its absence physically
 - Spoken in the present tense to reinforce agency instead of wishing for it
@@ -178,7 +178,7 @@ Watch your behavior in low-stakes friction, like a small disagreement, and notic
 
 ## Take Action
 
-Pick one affirmation that fits your current state — something softening if you run hot, something empowering if you run low — and say it once, out loud, before the next situation that usually unsettles you. Notice that saying it aloud matters more than thinking it, because the body registers your own voice differently. Over a week you begin to notice which wording actually settles your gut and which simply bounces off, and that feedback is the real skill this practice builds. To place this single center inside the larger picture, read the [full Chakra System overview](https://astrologywiki.com/en/wiki/chakra-system-overview) and see how a steady solar plexus quietly supports every other part of who you are.
+Pick one affirmation that fits your current state — something softening if you run hot, something empowering if you run low — and say it once, out loud, before the next situation that usually unsettles you. Notice that saying it aloud matters more than thinking it, because the body registers your own voice differently. Over a week you begin to notice which wording actually settles your gut and which simply bounces off, and that feedback is the real skill this practice builds. To place this single center inside the larger picture, read the [full Chakra System overview](/en/wiki/chakra-system-overview) and see how a steady solar plexus quietly supports every other part of who you are.
 
 ## Sources
 
@@ -288,7 +288,7 @@ export const solarPlexusChakraAffirmationsZh: WikiArticle = {
 
 ## 下一步行动
 
-挑一句贴合你此刻状态的太阳轮（The Solar Plexus Chakra）的肯定语，今晚找个安静的时刻默念三次，再记下念完后情绪有没有松一点。这样你会慢慢攒下一份属于自己的"措辞清单"，知道哪一句在偏弱时管用、哪一句在过满时管用。当你能照着当下的能量挑话说，自我肯定就不再是空喊口号，而是一次次把"我可以做主"重新认回来的练习。想把太阳轮放回整套系统里理解，可以读这份[脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)。
+挑一句贴合你此刻状态的太阳轮（The Solar Plexus Chakra）的肯定语，今晚找个安静的时刻默念三次，再记下念完后情绪有没有松一点。这样你会慢慢攒下一份属于自己的"措辞清单"，知道哪一句在偏弱时管用、哪一句在过满时管用。当你能照着当下的能量挑话说，自我肯定就不再是空喊口号，而是一次次把"我可以做主"重新认回来的练习。想把太阳轮放回整套系统里理解，可以读这份[脉轮系统总览](/en/wiki/chakra-system-overview)。
 
 ## 参考来源
 

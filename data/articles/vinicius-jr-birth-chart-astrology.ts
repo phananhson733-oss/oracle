@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const viniciusJrBirthChartAstrologyEn: WikiArticle = {
   slug: "vinicius-jr-birth-chart-astrology",
   image: "/images/blog/vinicius-jr-birth-chart-astrology.jpg",
-  image_alt: "Coastal cliff at night where warm amber earth light and cool silver stars meet in one sky, evoking Cancer Sun and Sagittarius Moon",
-  title: "The Vinicius Jr Birth Chart in Astrology: A Cancer Sun, a Sagittarius Moon, and the 2026 Sky",
-  description: "The Vinicius Jr birth chart astrology is the full natal map of the Brazil and Real Madrid forward",
+  image_alt:
+    "Coastal cliff at night where warm amber earth light and cool silver stars meet in one sky, evoking Cancer Sun and Sagittarius Moon",
+  title:
+    "The Vinicius Jr Birth Chart in Astrology: A Cancer Sun, a Sagittarius Moon, and the 2026 Sky",
+  description:
+    "The Vinicius Jr birth chart astrology is the full natal map of the Brazil and Real Madrid forward",
   authorId: "aditi-sharma",
   date: "2026-06-16",
   schema: "Article",
@@ -17,7 +20,7 @@ export const viniciusJrBirthChartAstrologyEn: WikiArticle = {
     "vinicius junior birth chart",
     "vinicius jr natal chart",
     "vinicius cancer sun sagittarius moon",
-    "brazil world cup astrology 2026"
+    "brazil world cup astrology 2026",
   ],
   content: `# The Vinicius Jr Birth Chart in Astrology: A Cancer Sun, a Sagittarius Moon, and the 2026 Sky
 
@@ -106,11 +109,12 @@ This reading uses the Western tropical chart. A Vedic sidereal calculation would
 - [Vinicius Jr zodiac sign Sun sign reading](/en/wiki/vinicius-jr-zodiac-sign) — the Sun-only companion piece, so the two readings complement rather than overlap
 - [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the method step behind synthesising the luminaries
 - [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this chart in the wider tournament picture
+- [Scotland vs Brazil World Cup astrology](/en/wiki/scotland-brazil-world-cup-astrology) — a fixture reading featuring Vinícius's Brazil
 - [transit_events cluster Jupiter in Cancer and Saturn in Aries](/en/wiki/saturn-in-aries-2026) — the wider sky behind these two transits
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads the Vinicius Jr birth chart — as a synthesis of parts in tension rather than a single label. You get a clear view of your luminaries and the transits touching them now, and, more quietly, a way to tell a tender core apart from a daring instinct that can still grow together.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads the Vinicius Jr birth chart — as a synthesis of parts in tension rather than a single label. You get a clear view of your luminaries and the transits touching them now, and, more quietly, a way to tell a tender core apart from a daring instinct that can still grow together.
 
 ## Sources
 
@@ -122,14 +126,13 @@ This reading uses the Western tropical chart. A Vedic sidereal calculation would
 export const viniciusJrBirthChartAstrologyZh: WikiArticle = {
   slug: "vinicius-jr-birth-chart-astrology",
   title: "维尼修斯的出生星盘：一颗巨蟹太阳、一颗射手月亮，与 2026 年的天空",
-  description: "维尼修斯出生星盘指的是这位巴西与皇马前锋的完整本命图，以巨蟹座太阳与射手座月亮一同来读，而不是只看太阳一项。星座只是单独的太阳，星盘则是整幅图景——把发光体与更多要素合成进一份解读里。",
+  description:
+    "维尼修斯出生星盘指的是这位巴西与皇马前锋的完整本命图，以巨蟹座太阳与射手座月亮一同来读，而不是只看太阳一项。星座只是单独的太阳，星盘则是整幅图景——把发光体与更多要素合成进一份解读里。",
   authorId: "aditi-sharma",
   date: "2026-06-16",
   schema: "Article",
   lang: "zh",
-  keywords: [
-    "vinicius jr birth chart astrology"
-  ],
+  keywords: ["vinicius jr birth chart astrology"],
   content: `# 维尼修斯的出生星盘：一颗巨蟹太阳、一颗射手月亮，与 2026 年的天空
 
 ## 维尼修斯的出生星盘是什么？
@@ -214,7 +217,7 @@ export const viniciusJrBirthChartAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读维尼修斯出生星盘那样去读你自己的太阳与月亮——把它当成一组张力中的部分的合成，而不是一张单一标签。你会清楚看到自己的两颗发光体、以及此刻触碰它们的过运，更安静地，还会得到一种把温柔内核与冒险本能区分开来、又让两者一起生长的方式。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读维尼修斯出生星盘那样去读你自己的太阳与月亮——把它当成一组张力中的部分的合成，而不是一张单一标签。你会清楚看到自己的两颗发光体、以及此刻触碰它们的过运，更安静地，还会得到一种把温柔内核与冒险本能区分开来、又让两者一起生长的方式。
 
 ## 参考来源
 

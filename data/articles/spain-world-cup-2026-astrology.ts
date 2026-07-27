@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const spainWorldCup2026AstrologyEn: WikiArticle = {
   slug: "spain-world-cup-2026-astrology",
   image: "/images/blog/spain-world-cup-2026-astrology.jpg",
-  image_alt: "Spain 2026 World Cup astrology - crescent moon over ocean opposing mountain ridge, Jupiter-Cancer opposition tension at twilight",
-  title: "What Spain World Cup 2026 Astrology Says About La Roja's Defining Crisis",
-  description: "Spain World Cup 2026 astrology — 2026 outlook snapshot: Spain opened Group H on June 15 with a 0-0 draw against Cape Verde.",
+  image_alt:
+    "Spain 2026 World Cup astrology - crescent moon over ocean opposing mountain ridge, Jupiter-Cancer opposition tension at twilight",
+  title:
+    "What Spain World Cup 2026 Astrology Says About La Roja's Defining Crisis",
+  description:
+    "Spain World Cup 2026 astrology — 2026 outlook snapshot: Spain opened Group H on June 15 with a 0-0 draw against Cape Verde.",
   authorId: "julian-thorne",
   date: "2026-06-21",
   schema: "Article",
@@ -17,7 +20,7 @@ export const spainWorldCup2026AstrologyEn: WikiArticle = {
     "la roja astrology",
     "spain national team birth chart",
     "spain football zodiac 2026",
-    "jupiter in cancer 2026"
+    "jupiter in cancer 2026",
   ],
   content: `# What Spain World Cup 2026 Astrology Says About La Roja's Defining Crisis
 
@@ -103,11 +106,13 @@ In *Planets in Transit* (1976), Robert Hand systematized reading how transiting 
 
 - [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — foundational context for reading tournament progressions as symbolic timing frameworks
 - [June 2026 transit calendar](/en/wiki/world-cup-2026-june-astrology) — broader framework for how Jupiter in Cancer and other June transits shape the tournament window
+- [Spain vs France World Cup 2026 astrology](/en/wiki/spain-vs-france-world-cup-2026-astrology) — the same Capricorn-axis reading applied to a marquee fixture
+- [France vs Spain astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — the companion match analysis for the same pairing
 - [Spain national football team (Wikipedia)](https://en.wikipedia.org/wiki/Spain_national_football_team)
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore spain world cup 2026 astrology through the lens of your own natal placements. Reading how a Jupiter-Cancer opposition interacts with a Capricorn-associated chart gives you a working framework for recognizing the same cardinal opposition pressure in your own chart — where that pattern may be asking you to earn authority rather than assume it.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore spain world cup 2026 astrology through the lens of your own natal placements. Reading how a Jupiter-Cancer opposition interacts with a Capricorn-associated chart gives you a working framework for recognizing the same cardinal opposition pressure in your own chart — where that pattern may be asking you to earn authority rather than assume it.
 
 ## Sources
 
@@ -119,9 +124,11 @@ In *Planets in Transit* (1976), Robert Hand systematized reading how transiting 
 export const spainWorldCup2026AstrologyZh: WikiArticle = {
   slug: "spain-world-cup-2026-astrology",
   image: "/images/blog/spain-world-cup-2026-astrology.jpg",
-  image_alt: "西班牙2026世界杯占星 - 弯月悬于大洋之上与远山山脊对峙，木星巨蟹座对冲张力的黄昏图景",
+  image_alt:
+    "西班牙2026世界杯占星 - 弯月悬于大洋之上与远山山脊对峙，木星巨蟹座对冲张力的黄昏图景",
   title: "西班牙2026世界杯占星：斗牛士军团的危机与突破图景",
-  description: "西班牙2026世界杯占星，是一套以西班牙足协奠基日期为结构锚点、结合木星约27度巨蟹座对相位本届赛事窗口进行象征性解读的参考框架。",
+  description:
+    "西班牙2026世界杯占星，是一套以西班牙足协奠基日期为结构锚点、结合木星约27度巨蟹座对相位本届赛事窗口进行象征性解读的参考框架。",
   authorId: "julian-thorne",
   date: "2026-06-21",
   schema: "Article",
@@ -131,7 +138,7 @@ export const spainWorldCup2026AstrologyZh: WikiArticle = {
     "斗牛士军团占星",
     "西班牙国家队星盘",
     "西班牙足球星座2026",
-    "2026木星巨蟹"
+    "2026木星巨蟹",
   ],
   content: `# 西班牙2026世界杯占星：斗牛士军团的危机与突破图景
 
@@ -223,7 +230,7 @@ Robert Hand 在其著作中系统化了如何阅读行运行星通过相位激�
 
 ## 下一步行动
 
-[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，透过你自己本命落点的镜头去探索西班牙2026世界杯占星。读懂一组木星巨蟹座对冲如何与一张带摩羯座关联的星盘互动，会给你一套可用的框架，去在你自己的星盘里辨认同样这种基本宫对冲压力——看看那个模式可能正在哪里要求你去赢得权威，而不是假定拥有它。
+[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，透过你自己本命落点的镜头去探索西班牙2026世界杯占星。读懂一组木星巨蟹座对冲如何与一张带摩羯座关联的星盘互动，会给你一套可用的框架，去在你自己的星盘里辨认同样这种基本宫对冲压力——看看那个模式可能正在哪里要求你去赢得权威，而不是假定拥有它。
 
 ## 参考来源
 

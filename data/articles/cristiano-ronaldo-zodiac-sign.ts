@@ -6,8 +6,10 @@ export const cristianoRonaldoZodiacSignEn: WikiArticle = {
   slug: "cristiano-ronaldo-zodiac-sign",
   image: "/images/blog/cristiano-ronaldo-zodiac-sign.jpg",
   image_alt: "An atmospheric celestial landscape evoking Cristiano Ronaldo.",
-  title: "Cristiano Ronaldo's Zodiac Sign: An Aquarius Sun Under Saturn in Aries",
-  description: "Cristiano Ronaldo's zodiac sign is Aquarius, set by his February 5, 1985 birth date and traditionally ruled by Saturn.",
+  title:
+    "Cristiano Ronaldo's Zodiac Sign: An Aquarius Sun Under Saturn in Aries",
+  description:
+    "Cristiano Ronaldo's zodiac sign is Aquarius, set by his February 5, 1985 birth date and traditionally ruled by Saturn.",
   authorId: "marcus-orion",
   date: "2026-06-12",
   schema: "Article",
@@ -17,7 +19,7 @@ export const cristianoRonaldoZodiacSignEn: WikiArticle = {
     "ronaldo zodiac",
     "cristiano ronaldo astrology",
     "ronaldo birth chart",
-    "ronaldo star sign"
+    "ronaldo star sign",
   ],
   content: `# Cristiano Ronaldo's Zodiac Sign: An Aquarius Sun Under Saturn in Aries
 
@@ -103,14 +105,15 @@ The Moon's sign is widely reported as Aries, but its exact degree and house depe
 
 ## Related Reading
 
-- *World Cup 2026 astrology prediction pillar* — the hub that places this chart in the wider tournament picture
-- *Lionel Messi zodiac sign reading* — a contrasting Cancer-Sun chart from the same series
+- [World Cup 2026 astrology prediction pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this chart in the wider tournament picture
+- [Colombia vs Portugal match astrology](/en/wiki/colombia-vs-portugal) — a fixture reading featuring Ronaldo's Portugal
+- [Lionel Messi zodiac sign reading](/en/wiki/lionel-messi-zodiac-sign) — a contrasting Cancer-Sun chart from the same series
 - *how to read Saturn transits* — the method step behind reading a season of pressure
-- *transit_events cluster on Saturn in Aries* — the wider sky behind this consolidation window
+- [transit_events cluster on Saturn in Aries](/en/wiki/saturn-in-aries-2026) — the wider sky behind this consolidation window
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun and its ruler the way this piece reads Cristiano Ronaldo's zodiac sign — as a structure under timed pressure rather than a label. You get a clear view of your Sun's sign and ruler and the Saturn transits touching it now, and, more usefully, a way to tell a season of testing apart from a setback you cannot move.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and its ruler the way this piece reads Cristiano Ronaldo's zodiac sign — as a structure under timed pressure rather than a label. You get a clear view of your Sun's sign and ruler and the Saturn transits touching it now, and, more usefully, a way to tell a season of testing apart from a setback you cannot move.
 
 ## Sources
 
@@ -124,7 +127,8 @@ export const cristianoRonaldoZodiacSignZh: WikiArticle = {
   image: "/images/blog/cristiano-ronaldo-zodiac-sign.jpg",
   image_alt: "一幅氛围式星空风景，意象呼应「Cristiano Ronaldo」。",
   title: "C罗星座是一颗水瓶座太阳：在土星行经白羊的一年里读它",
-  description: "C罗星座是水瓶座太阳，守护星为土星，由 1985 年 2 月 5 日的出生日期确定。一颗水瓶座太阳把身份框定在个体性、长线目标和\"做出能熬过当下的东西\"上，这比常见的\"叛逆者\"标签更精确地交代了起点。",
+  description:
+    'C罗星座是水瓶座太阳，守护星为土星，由 1985 年 2 月 5 日的出生日期确定。一颗水瓶座太阳把身份框定在个体性、长线目标和"做出能熬过当下的东西"上，这比常见的"叛逆者"标签更精确地交代了起点。',
   authorId: "marcus-orion",
   date: "2026-06-13",
   schema: "Article",
@@ -134,7 +138,7 @@ export const cristianoRonaldoZodiacSignZh: WikiArticle = {
     "ronaldo birth chart",
     "ronaldo astrology",
     "cr7 zodiac",
-    "ronaldo star sign"
+    "ronaldo star sign",
   ],
   content: `# C罗星座是一颗水瓶座太阳：在土星行经白羊的一年里读它
 
@@ -227,7 +231,7 @@ C罗星座是**水瓶座太阳，守护星为土星**，由 1985 年 2 月 5 日
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读 C罗星盘那样去读你自己的太阳与它的守护星——把它当成一种被标定时机的结构，而不是一个标签。你会清楚看到太阳的星座与守护星、以及此刻触及它的土星过运，更有用的是，得到一种把"一段考验的季节"与"一次你搬不动的挫折"分开来的方式。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读 C罗星盘那样去读你自己的太阳与它的守护星——把它当成一种被标定时机的结构，而不是一个标签。你会清楚看到太阳的星座与守护星、以及此刻触及它的土星过运，更有用的是，得到一种把"一段考验的季节"与"一次你搬不动的挫折"分开来的方式。
 
 ## 参考来源
 

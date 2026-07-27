@@ -113,7 +113,7 @@ Most Western write-ups use the tropical zodiac, which is where the Taurus Sun–
 
 ## Take Action
 
-Curious how your own Sun lines up with your public image? [Generate your free birth chart to explore Carlos Alcaraz's chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and see where your identity and reputation meet on the wheel. That gives you a single, readable map of your own angles — and a clearer sense of how the story others see connects to the one you quietly tell yourself.
+Curious how your own Sun lines up with your public image? [Generate your free birth chart to explore Carlos Alcaraz's chart](/en/wiki/how-to-read-birth-chart) and see where your identity and reputation meet on the wheel. That gives you a single, readable map of your own angles — and a clearer sense of how the story others see connects to the one you quietly tell yourself.
 
 This is not a clinical interpretation or mental health advice.
 

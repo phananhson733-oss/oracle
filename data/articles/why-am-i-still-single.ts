@@ -119,7 +119,7 @@ Nothing in a chart is a permanent status. Placements describe patterns you can w
 
 ## Take Action
 
-Ready to move from asking why am I still single to reading your actual placements? [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) and you'll get a clear map of your seventh house, Venus, Moon, and Saturn contacts in one view. Seeing why I am still single laid out across those patterns often makes the question feel less like a verdict and more like a starting point for deciding how you want to connect next.
+Ready to move from asking why am I still single to reading your actual placements? [Generate Your Free Birth Chart](/en/birth-chart-calculator) and you'll get a clear map of your seventh house, Venus, Moon, and Saturn contacts in one view. Seeing why I am still single laid out across those patterns often makes the question feel less like a verdict and more like a starting point for deciding how you want to connect next.
 
 This is not a clinical interpretation or mental health advice.
 

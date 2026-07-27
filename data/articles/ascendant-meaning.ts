@@ -113,7 +113,7 @@ It tends to describe first impressions, physical bearing, and the reflexes that 
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own ascendant and watch how it sets the rest of the wheel. With an accurate birth time entered, the chart shows your rising sign on the left and numbers the houses out from it, turning the ascendant meaning from an abstract idea into the visible hinge your whole chart turns on.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own ascendant and watch how it sets the rest of the wheel. With an accurate birth time entered, the chart shows your rising sign on the left and numbers the houses out from it, turning the ascendant meaning from an abstract idea into the visible hinge your whole chart turns on.
 
 ## Sources
 
@@ -226,7 +226,7 @@ export const ascendantMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出你自己的上升点，看它如何为星盘其余部分定调。把准确的出生时间填进去之后，星盘会在左侧显示你的上升星座，并从它出发把宫位依次编号，让上升星座含义从一个抽象概念，变成你整张星盘围着旋转的那根看得见的轴。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出你自己的上升点，看它如何为星盘其余部分定调。把准确的出生时间填进去之后，星盘会在左侧显示你的上升星座，并从它出发把宫位依次编号，让上升星座含义从一个抽象概念，变成你整张星盘围着旋转的那根看得见的轴。
 
 ## 参考来源
 

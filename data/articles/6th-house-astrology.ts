@@ -154,7 +154,7 @@ The 10th house is your public career and status, while the 6th is the daily work
 
 ## Take Action
 
-Pick one routine this week — a single meal, a wind-down, or a start-of-work ritual — and track how it shapes both your output and your mood. Within a few days you'll start to see the loop the 6th house describes: the quiet exchange between what you do and how you feel. [Read the full Astrological Houses guide to see the 6th house in the whole chart](https://astrologywiki.com/en/wiki/astrology-houses), and the daily patterns you've been treating as separate will begin to read as one coherent design for a steadier, more deliberate life.
+Pick one routine this week — a single meal, a wind-down, or a start-of-work ritual — and track how it shapes both your output and your mood. Within a few days you'll start to see the loop the 6th house describes: the quiet exchange between what you do and how you feel. [Read the full Astrological Houses guide to see the 6th house in the whole chart](/en/wiki/astrology-houses), and the daily patterns you've been treating as separate will begin to read as one coherent design for a steadier, more deliberate life.
 
 ## Sources
 
@@ -271,7 +271,7 @@ The 6th House（第六宫）是星盘里掌管日常作息、工作方式与身�
 
 ## 下一步行动
 
-读完这块日常领域，不妨把它放回整张星盘里再看一次。点开 [完整的占星十二宫指南](https://astrologywiki.com/zh/wiki/astrology-houses)，对照其他宫位，你会看到自己的每日作息如何和事业、关系、家庭这些主题串成一条线。当你能把每天的小事和整张星图对上号，就会慢慢明白：好好照顾自己，本身就是一种踏实的成长。
+读完这块日常领域，不妨把它放回整张星盘里再看一次。点开 [完整的占星十二宫指南](/zh/wiki/astrology-houses)，对照其他宫位，你会看到自己的每日作息如何和事业、关系、家庭这些主题串成一条线。当你能把每天的小事和整张星图对上号，就会慢慢明白：好好照顾自己，本身就是一种踏实的成长。
 
 ## 参考来源
 

@@ -122,7 +122,7 @@ The active window runs about two years, building toward the exact return and eas
 
 ## Take Action
 
-Ready to pin down your own timing? Explore your Saturn return with the [Saturn return date calculator](https://astrologywiki.com/en/saturn-return-calculator). The tool gives you the exact window when your first pass builds and eases, so instead of guessing whether you are "behind," you get a concrete map of which commitments are actually due for an honest review — and a clearer sense of which parts of your life you would choose again on purpose. This is not a clinical interpretation or mental health advice.
+Ready to pin down your own timing? Explore your Saturn return with the [Saturn return date calculator](/en/saturn-return-calculator). The tool gives you the exact window when your first pass builds and eases, so instead of guessing whether you are "behind," you get a concrete map of which commitments are actually due for an honest review — and a clearer sense of which parts of your life you would choose again on purpose. This is not a clinical interpretation or mental health advice.
 
 ## Sources
 

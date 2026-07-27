@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const englandVsNorwayAstrologyEn: WikiArticle = {
   slug: "england-vs-norway-astrology",
   image: "/images/blog/england-vs-norway-astrology.jpg",
-  image_alt: "Two glowing coastal archetypes — a misty island and a fjord coast — facing each other under one shared twilight sky",
-  title: "What England vs Norway Astrology Reveals About Two National Temperaments",
-  description: "England vs Norway astrology is a symbolic side-by-side reading of each country's national character through astrological archetypes, framed as cultural reflection rather than a forecast of any match or event.",
+  image_alt:
+    "Two glowing coastal archetypes — a misty island and a fjord coast — facing each other under one shared twilight sky",
+  title:
+    "What England vs Norway Astrology Reveals About Two National Temperaments",
+  description:
+    "England vs Norway astrology is a symbolic side-by-side reading of each country's national character through astrological archetypes, framed as cultural reflection rather than a forecast of any match or event.",
   authorId: "julian-thorne",
   date: "2026-07-06",
   schema: "Article",
@@ -17,7 +20,7 @@ export const englandVsNorwayAstrologyEn: WikiArticle = {
     "England vs Norway astrology meaning",
     "England vs Norway astrology birth chart",
     "England vs Norway astrology zodiac",
-    "England vs Norway astrology interpretation"
+    "England vs Norway astrology interpretation",
   ],
   content: `# What England vs Norway Astrology Reveals About Two National Temperaments
 
@@ -115,13 +118,16 @@ No, and it makes no such claim. This is a symbolic, interpretive tradition meant
 
 ## Related Reading
 
+- [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — the tournament pillar this fixture sits inside.
+- [England's World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the Three Lions' squad-level chart behind one side.
+- [Erling Haaland's birth chart](/en/wiki/erling-haaland-birth-chart) — a natal close-up on Norway's talisman.
 - [explainer on the ascendant and rising sign](/en/wiki/ascendant-meaning) — the chart's outward "first impression," much like a nation's public reputation.
 - [guide to major chart aspects like trines and squares](/en/wiki/astrology-terms) — how the angles between planets add ease or tension to any comparison.
 - [Mundane astrology (Wikipedia)](https://en.wikipedia.org/wiki/Mundane_astrology) — neutral encyclopedic context for the branch this page draws on.
 
 ## Take Action
 
-Ready to turn this national mirror inward? [Generate your free birth chart to explore England vs Norway astrology](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you'll get your own houses, signs, and placements laid out the same way this comparison maps two countries. Seeing your chart beside these archetypes often makes your personal balance of reserve and openness far easier to recognize — and to work with on your own terms. This is not a clinical interpretation or mental health advice.
+Ready to turn this national mirror inward? [Generate your free birth chart to explore England vs Norway astrology](/en/wiki/how-to-read-birth-chart), and you'll get your own houses, signs, and placements laid out the same way this comparison maps two countries. Seeing your chart beside these archetypes often makes your personal balance of reserve and openness far easier to recognize — and to work with on your own terms. This is not a clinical interpretation or mental health advice.
 
 ## Sources
 

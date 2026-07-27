@@ -6,8 +6,10 @@ export const argentinaWorldCup2026AstrologyEn: WikiArticle = {
   slug: "argentina-world-cup-2026-astrology",
   image: "/images/blog/argentina-world-cup-2026-astrology.jpg",
   image_alt: "An atmospheric celestial landscape evoking Argentina.",
-  title: "Argentina's World Cup 2026 Astrology: A Cancer Nation Under Jupiter and Saturn",
-  description: "Argentina's World Cup 2026 astrology is a mundane reading of the country's 1816 national chart against the year's transits, led by a Cancer Sun.",
+  title:
+    "Argentina's World Cup 2026 Astrology: A Cancer Nation Under Jupiter and Saturn",
+  description:
+    "Argentina's World Cup 2026 astrology is a mundane reading of the country's 1816 national chart against the year's transits, led by a Cancer Sun.",
   authorId: "aditi-sharma",
   date: "2026-06-12",
   schema: "Article",
@@ -17,7 +19,7 @@ export const argentinaWorldCup2026AstrologyEn: WikiArticle = {
     "argentina astrology",
     "argentina national chart",
     "argentina world cup astrology",
-    "albiceleste astrology"
+    "albiceleste astrology",
   ],
   content: `# Argentina's World Cup 2026 Astrology: A Cancer Nation Under Jupiter and Saturn
 
@@ -103,14 +105,17 @@ This reading uses the Western tropical national chart. A Vedic mundane reading w
 
 ## Related Reading
 
-- *World Cup 2026 astrology themes pillar* — the hub that places this national chart in the wider tournament picture
-- *Lionel Messi zodiac sign reading* — the Argentine talisman's own Cancer-Sun chart
+- [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this national chart in the wider tournament picture
+- [Lionel Messi zodiac sign reading](/en/wiki/lionel-messi-zodiac-sign) — the Argentine talisman's own Cancer-Sun chart
+- [Messi's World Cup record astrology](/en/wiki/messi-world-cup-record-astrology) — the talisman's tournament history read through the same lens
+- [Jordan vs Argentina match astrology](/en/wiki/jordan-vs-argentina) — a single group-stage fixture within Argentina's campaign
+- [England vs Argentina match astrology](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction) — a marquee knockout pairing read through both charts
 - *how to read a national or mundane chart* — the method step behind reading a country
 - [transit_events cluster on Jupiter in Cancer and Saturn in Aries](/en/wiki/9th-house-astrology) — the wider sky behind these two transits
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Argentina's World Cup 2026 astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell the weight of a past win apart from a limit you can still grow past, long after the final whistle.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun the way this piece reads Argentina's World Cup 2026 astrology — as a theme under timed pressure rather than a verdict. You get a clear view of your Sun's sign and the transits touching it now, and, more quietly, a way to tell the weight of a past win apart from a limit you can still grow past, long after the final whistle.
 
 ## Sources
 
@@ -124,7 +129,8 @@ export const argentinaWorldCup2026AstrologyZh: WikiArticle = {
   image: "/images/blog/argentina-world-cup-2026-astrology.jpg",
   image_alt: "一幅氛围式星空风景，意象呼应「Argentina」。",
   title: "阿根廷世界杯占星：一颗巨蟹太阳同时被木星抬升、被土星考验",
-  description: "阿根廷世界杯占星，是用阿根廷1816年国家星盘去读这一年过运、以巨蟹座太阳为主轴的国运解读。国运占星（mundane）读的是国家与事件，用的是国家盘而非个人盘，所以问题不是某个球员状态好坏，而是2026年的天象替这支卫冕队点亮了哪些集体主题。这套读法不替奖杯下注，它只标定一张国家盘里的主题何时被天象激活。",
+  description:
+    "阿根廷世界杯占星，是用阿根廷1816年国家星盘去读这一年过运、以巨蟹座太阳为主轴的国运解读。国运占星（mundane）读的是国家与事件，用的是国家盘而非个人盘，所以问题不是某个球员状态好坏，而是2026年的天象替这支卫冕队点亮了哪些集体主题。这套读法不替奖杯下注，它只标定一张国家盘里的主题何时被天象激活。",
   authorId: "aditi-sharma",
   date: "2026-06-13",
   schema: "Article",
@@ -133,7 +139,7 @@ export const argentinaWorldCup2026AstrologyZh: WikiArticle = {
     "argentina world cup 2026 astrology",
     "argentina natal chart astrology",
     "messi argentina world cup astrology",
-    "copa del mundo 2026 astrologia"
+    "copa del mundo 2026 astrologia",
   ],
   content: `# 阿根廷世界杯占星：一颗巨蟹太阳同时被木星抬升、被土星考验
 
@@ -226,7 +232,7 @@ export const argentinaWorldCup2026AstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读阿根廷世界杯占星那样去读你自己的太阳——把它当成一个被时机施压的主题，而不是一句判词。你会清楚看到太阳的星座、以及此刻正触及它的过运是哪几个，更安静地，得到一种把"过往一场胜利的重量"和"一个你仍能成长越过的限制"分开来的方式，哪怕终场哨早已吹响，这种分辨也仍然有用。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读阿根廷世界杯占星那样去读你自己的太阳——把它当成一个被时机施压的主题，而不是一句判词。你会清楚看到太阳的星座、以及此刻正触及它的过运是哪几个，更安静地，得到一种把"过往一场胜利的重量"和"一个你仍能成长越过的限制"分开来的方式，哪怕终场哨早已吹响，这种分辨也仍然有用。
 
 ## 参考来源
 

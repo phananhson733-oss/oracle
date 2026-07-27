@@ -121,7 +121,7 @@ No. Treating it as a forecasting tool is the quickest way to misuse it. The fram
 
 ## Take Action
 
-Want to see how your own chart fits the tournament picture? [Generate your free birth chart to explore the 2026 World Cup through astrology](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and get a full map of your placements in minutes. Seeing your own patterns laid out makes it easier to read any chart — a squad's or your own — with a clearer, less superstitious eye.
+Want to see how your own chart fits the tournament picture? [Generate your free birth chart to explore the 2026 World Cup through astrology](/en/wiki/how-to-read-birth-chart) and get a full map of your placements in minutes. Seeing your own patterns laid out makes it easier to read any chart — a squad's or your own — with a clearer, less superstitious eye.
 
 This is not a clinical interpretation or mental health advice.
 

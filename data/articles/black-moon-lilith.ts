@@ -114,7 +114,7 @@ Mean Lilith changes signs roughly every nine months as it moves through the zodi
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your exact black moon lilith placement — and check which calculation method your chart is using. Knowing whether you are working with mean or true tells you which interpretive sources apply and where the contradictions in past readings actually came from.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your exact black moon lilith placement — and check which calculation method your chart is using. Knowing whether you are working with mean or true tells you which interpretive sources apply and where the contradictions in past readings actually came from.
 
 ## Sources
 

@@ -107,7 +107,7 @@ Yes — that is the healthier way to read it. Treat the Virgo Ascendant as a voc
 
 ## Take Action
 
-[查你的对应落座](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to confirm whether Virgo sits on your Ascendant and to find where Mercury, your chart ruler, actually lives. That single step turns the generic virgo rising label into something specific to your own chart, and it reminds you that the most useful read of any rising sign starts from its ruler, not from a stereotype about the sign on the cusp.
+[查你的对应落座](/en/wiki/how-to-read-birth-chart) to confirm whether Virgo sits on your Ascendant and to find where Mercury, your chart ruler, actually lives. That single step turns the generic virgo rising label into something specific to your own chart, and it reminds you that the most useful read of any rising sign starts from its ruler, not from a stereotype about the sign on the cusp.
 
 ## Sources
 
@@ -217,7 +217,7 @@ export const virgoRisingZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，确认处女座是否真的坐在你的上升点上，再找出你的命主星水星究竟落在哪里。这一步，就把笼统的处女座上升标签，变成了贴着你自己星盘的具体东西，也提醒你：对任何上升星座最有用的读法，都从它的命主星起步，而不是从宫头那个星座的刻板印象起步。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，确认处女座是否真的坐在你的上升点上，再找出你的命主星水星究竟落在哪里。这一步，就把笼统的处女座上升标签，变成了贴着你自己星盘的具体东西，也提醒你：对任何上升星座最有用的读法，都从它的命主星起步，而不是从宫头那个星座的刻板印象起步。
 
 ## 参考来源
 

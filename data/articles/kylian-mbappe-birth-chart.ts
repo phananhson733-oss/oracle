@@ -9,9 +9,11 @@ export const kylianMbappeBirthChartEn: WikiArticle = {
   // 一并合并排名信号：canonical 指向 winner + 移出 sitemap（页面仍在线服务）。
   seo: { canonicalPath: "/wiki/mbappe-birth-chart", sitemap: false },
   image: "/images/blog/kylian-mbappe-birth-chart.jpg",
-  image_alt: "Golden comet blazing across a deep indigo sky with teal nebulae — Kylian Mbappe birth chart",
+  image_alt:
+    "Golden comet blazing across a deep indigo sky with teal nebulae — Kylian Mbappe birth chart",
   title: "What the Kylian Mbappe Birth Chart Shows, and What It Can't Prove",
-  description: "The Kylian Mbappe birth chart is an astrological profile of the footballer born on December 20, 1998, read as a map of tendencies rather than proof of his career.",
+  description:
+    "The Kylian Mbappe birth chart is an astrological profile of the footballer born on December 20, 1998, read as a map of tendencies rather than proof of his career.",
   authorId: "marcus-orion",
   date: "2026-07-08",
   schema: "Article",
@@ -22,7 +24,7 @@ export const kylianMbappeBirthChartEn: WikiArticle = {
     "kylian mbappe birth chart astrology",
     "kylian mbappe birth chart zodiac",
     "kylian mbappe birth chart interpretation",
-    "mbappe birth chart"
+    "mbappe birth chart",
   ],
   content: `# What the Kylian Mbappe Birth Chart Shows, and What It Can't Prove
 
@@ -126,13 +128,15 @@ Mars and the Sun tend to get the most attention, since they speak to drive and c
 
 ## Related Reading
 
+- [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — the tournament pillar contextualizing his 2026 campaign.
+- [France vs Spain World Cup 2026 astrology prediction](/en/wiki/france-vs-spain-world-cup-2026-astrology-prediction) — a fixture reading featuring Mbappé's France.
 - [explainer on the rising sign and ascendant](/en/wiki/ascendant-meaning) — because his chart's houses hinge on a birth time, this covers the layer left open.
 - [guide to major aspects like squares and trines](/en/wiki/astrology-terms) — for reading the tensions between planets as inner dynamics.
 - [overview of the twelve astrological houses](/en/wiki/astrology-houses) — where placements land once a verified birth time is known.
 
 ## Take Action
 
-The clearest way to make any of this concrete is to build your own chart instead of only reading someone else's. You get a personalized wheel you can read placement by placement, and a sharper sense of which of your habits are workable tendencies rather than fixed fate. This is not a clinical interpretation or mental health advice. [Generate your free birth chart to explore kylian mbappe birth chart.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+The clearest way to make any of this concrete is to build your own chart instead of only reading someone else's. You get a personalized wheel you can read placement by placement, and a sharper sense of which of your habits are workable tendencies rather than fixed fate. This is not a clinical interpretation or mental health advice. [Generate your free birth chart to explore kylian mbappe birth chart.](/en/wiki/how-to-read-birth-chart)
 
 ## Sources
 

@@ -119,7 +119,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to explore the lamine yamal zodiac sign, and you get a full placement map — Sun, Moon, Mars, and the rest — laid out in minutes. Seeing every layer at once is how one label becomes real self-knowledge: not a verdict on who you are, but a clearer view of the patterns you already live. Start by learning [how to read your birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Generate your free birth chart to explore the lamine yamal zodiac sign, and you get a full placement map — Sun, Moon, Mars, and the rest — laid out in minutes. Seeing every layer at once is how one label becomes real self-knowledge: not a verdict on who you are, but a clearer view of the patterns you already live. Start by learning [how to read your birth chart](/en/wiki/how-to-read-birth-chart).
 
 ## Sources
 

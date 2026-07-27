@@ -124,7 +124,7 @@ A few nearby topics help you keep symbol and fact apart:
 
 ## Take Action
 
-Generate your free birth chart to explore Cole Palmer birth chart. In a few minutes you'll have your own placements laid out the same way, so you can [read your chart the way this guide reads his](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) — as themes to sit with rather than a headline about him. Seeing your own patterns as tendencies instead of a fixed script is where a chart stops being a label and starts being a mirror.
+Generate your free birth chart to explore Cole Palmer birth chart. In a few minutes you'll have your own placements laid out the same way, so you can [read your chart the way this guide reads his](/en/wiki/how-to-read-birth-chart) — as themes to sit with rather than a headline about him. Seeing your own patterns as tendencies instead of a fixed script is where a chart stops being a label and starts being a mirror.
 
 ## Sources
 

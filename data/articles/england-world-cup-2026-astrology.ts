@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const englandWorldCup2026AstrologyEn: WikiArticle = {
   slug: "england-world-cup-2026-astrology",
   image: "/images/blog/england-world-cup-2026-astrology.jpg",
-  image_alt: "English countryside at dusk under a vast sky washing from Cancer silver-blue to Leo amber-gold, bright stars scattered like a squad's constellation",
-  title: "England's World Cup 2026 Astrology: Sun Signs, Jupiter's Shift, and a Season of Themes",
-  description: "England world cup 2026 astrology is a symbolic, data-anchored framework that maps England's 2026 FIFA World Cup campaign through the verified Sun signs",
+  image_alt:
+    "English countryside at dusk under a vast sky washing from Cancer silver-blue to Leo amber-gold, bright stars scattered like a squad's constellation",
+  title:
+    "England's World Cup 2026 Astrology: Sun Signs, Jupiter's Shift, and a Season of Themes",
+  description:
+    "England world cup 2026 astrology is a symbolic, data-anchored framework that maps England's 2026 FIFA World Cup campaign through the verified Sun signs",
   authorId: "elena-vane",
   date: "2026-06-18",
   schema: "Article",
@@ -17,7 +20,7 @@ export const englandWorldCup2026AstrologyEn: WikiArticle = {
     "england world cup squad astrology",
     "england team zodiac signs",
     "harry kane leo sun",
-    "three lions astrology 2026"
+    "three lions astrology 2026",
   ],
   content: `# England's World Cup 2026 Astrology: Sun Signs, Jupiter's Shift, and a Season of Themes
 
@@ -109,10 +112,13 @@ Harry Kane's 2026 appearance is his third World Cup, equalling the record held b
 
 - [the Harry Kane birth chart](/en/wiki/harry-kane-birth-chart) — a fuller symbolic read of England's Leo-Sun captain, including the Jupiter-in-Leo alignment and what the third World Cup means in that frame
 - [the Jude Bellingham birth chart](/en/wiki/jude-bellingham-birth-chart) — a detailed Cancer-Sun reading of Bellingham's verified birth date, including the brief group-stage Jupiter-in-Cancer backdrop
+- [England vs Argentina match astrology](/en/wiki/england-vs-argentina-world-cup-2026-astrology-prediction) — the same squad read against a specific knockout-stage fixture
+- [England vs Norway astrology](/en/wiki/england-vs-norway-astrology) — a single-match reading inside England's campaign window
+- [Mexico vs England prediction](/en/wiki/mexico-vs-england-astrology-prediction) — the transit lens applied to another England fixture
 
 ## Take Action
 
-If england world cup 2026 astrology sparked your curiosity about how Jupiter transits map onto your own year, the next step is your own chart. [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Sun sign alongside the same Cancer-to-Leo ingress traced here. You get a clear view of where your Sun sits in relation to that 30 June 2026 shift, and a way to read the transition as a theme in your own year rather than as a verdict you should trust to a planet.
+If england world cup 2026 astrology sparked your curiosity about how Jupiter transits map onto your own year, the next step is your own chart. [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun sign alongside the same Cancer-to-Leo ingress traced here. You get a clear view of where your Sun sits in relation to that 30 June 2026 shift, and a way to read the transition as a theme in your own year rather than as a verdict you should trust to a planet.
 
 ## Sources
 
@@ -126,9 +132,11 @@ If england world cup 2026 astrology sparked your curiosity about how Jupiter tra
 export const englandWorldCup2026AstrologyZh: WikiArticle = {
   slug: "england-world-cup-2026-astrology",
   image: "/images/blog/england-world-cup-2026-astrology.jpg",
-  image_alt: "暮色英格兰原野，天空从巨蟹座银蓝平滑过渡到狮子座琥珀金，繁星散布如阵容星群",
+  image_alt:
+    "暮色英格兰原野，天空从巨蟹座银蓝平滑过渡到狮子座琥珀金，繁星散布如阵容星群",
   title: "英格兰2026世界杯占星：太阳星座、木星换座与一个赛季的主题图景",
-  description: "英格兰2026世界杯占星，是一套以球队核心成员的经核验太阳星座为锚点、结合木星在约2026年6月30日由巨蟹座进入狮子座这一天象背景，对三狮军团本届赛事窗口进行象征性解读的参考框架。",
+  description:
+    "英格兰2026世界杯占星，是一套以球队核心成员的经核验太阳星座为锚点、结合木星在约2026年6月30日由巨蟹座进入狮子座这一天象背景，对三狮军团本届赛事窗口进行象征性解读的参考框架。",
   authorId: "elena-vane",
   date: "2026-06-18",
   schema: "Article",
@@ -138,7 +146,7 @@ export const englandWorldCup2026AstrologyZh: WikiArticle = {
     "英格兰世界杯阵容占星",
     "英格兰球队星座",
     "凯恩狮子座太阳",
-    "三狮军团2026占星"
+    "三狮军团2026占星",
   ],
   content: `# 英格兰2026世界杯占星：太阳星座、木星换座与一个赛季的主题图景
 
@@ -229,7 +237,7 @@ export const englandWorldCup2026AstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-如果这篇占星解读激起了你对木星行运如何映射到自己年份的好奇，下一步是拿到你自己的星盘。[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找到你自己的太阳星座与同一段巨蟹-狮子入座的关系。你会清楚地看到自己的太阳落在这次转换的哪一侧，也能把约6月30日的这道门槛读作你自己年份里的一个主题节点，而不是一则该托付给行星的判词。
+如果这篇占星解读激起了你对木星行运如何映射到自己年份的好奇，下一步是拿到你自己的星盘。[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，找到你自己的太阳星座与同一段巨蟹-狮子入座的关系。你会清楚地看到自己的太阳落在这次转换的哪一侧，也能把约6月30日的这道门槛读作你自己年份里的一个主题节点，而不是一则该托付给行星的判词。
 
 ## 参考来源
 

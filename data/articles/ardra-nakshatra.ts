@@ -110,7 +110,7 @@ It is an intense placement, but intensity here is the gateway, not a curse. The 
 
 ## Take Action
 
-[Generate your free birth chart to explore your Ardra placement.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) Once the chart loads, check whether your moon or ascendant falls between 6°40' and 20°00' sidereal Gemini — that single span tells you whether Rahu's amplification is running through your Gemini mind. Knowing the placement gives you a clearer framework for recognizing the storm-to-renewal cycle in your own decisions, and a reminder that the intensity is the gateway to the insight, not the obstacle in front of it.
+[Generate your free birth chart to explore your Ardra placement.](/en/wiki/how-to-read-birth-chart) Once the chart loads, check whether your moon or ascendant falls between 6°40' and 20°00' sidereal Gemini — that single span tells you whether Rahu's amplification is running through your Gemini mind. Knowing the placement gives you a clearer framework for recognizing the storm-to-renewal cycle in your own decisions, and a reminder that the intensity is the gateway to the insight, not the obstacle in front of it.
 
 ## Sources
 
@@ -221,7 +221,7 @@ export const ardraNakshatraZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘，去看看阿德拉星宿在你盘里的位置](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)。星盘加载后，检查你的月亮或上升是否落在恒星制双子座的 6°40′ 到 20°00′ 之间——单单这一段跨度，就能告诉你罗睺的放大是否正穿过你那颗双子座的脑子。知道了这个位置，你就有了一个更清晰的框架，去在自己的决定里认出"风暴到更新"的循环，也记得那份强度是通往洞见的入口，而不是挡在你面前的障碍。
+[生成你的免费出生星盘，去看看阿德拉星宿在你盘里的位置](/zh/wiki/how-to-read-birth-chart)。星盘加载后，检查你的月亮或上升是否落在恒星制双子座的 6°40′ 到 20°00′ 之间——单单这一段跨度，就能告诉你罗睺的放大是否正穿过你那颗双子座的脑子。知道了这个位置，你就有了一个更清晰的框架，去在自己的决定里认出"风暴到更新"的循环，也记得那份强度是通往洞见的入口，而不是挡在你面前的障碍。
 
 ## 参考来源
 

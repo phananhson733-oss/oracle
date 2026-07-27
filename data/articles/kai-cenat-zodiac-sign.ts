@@ -112,7 +112,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore the kai cenat zodiac sign in full context. You'll get a map of every placement—Sun, Moon, Mercury, and the rest—instead of a single headline sign. Seeing how one Sagittarius Sun sits among nine other signs is usually where a flat celebrity label finally turns into a portrait you can reflect on for your own patterns.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore the kai cenat zodiac sign in full context. You'll get a map of every placement—Sun, Moon, Mercury, and the rest—instead of a single headline sign. Seeing how one Sagittarius Sun sits among nine other signs is usually where a flat celebrity label finally turns into a portrait you can reflect on for your own patterns.
 
 ## Sources
 

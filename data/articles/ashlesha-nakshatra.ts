@@ -110,7 +110,7 @@ Mercury rules Ashlesha, which is why it leans toward language, analysis, and rea
 
 ## Take Action
 
-Ready to see where this actually lands for you? [Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and find exactly where the Moon, Mercury, and the nakshatras sit in your placements. You'll get a clear map of whether Ashlesha is active for you and how its focus is wired into the rest of your chart. More than a label, that's a way to recognize your own depth of perception — and to aim that watchful intensity on purpose instead of being unsettled by it.
+Ready to see where this actually lands for you? [Generate your free birth chart](/en/wiki/how-to-read-birth-chart) and find exactly where the Moon, Mercury, and the nakshatras sit in your placements. You'll get a clear map of whether Ashlesha is active for you and how its focus is wired into the rest of your chart. More than a label, that's a way to recognize your own depth of perception — and to aim that watchful intensity on purpose instead of being unsettled by it.
 
 ## Sources
 

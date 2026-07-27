@@ -115,7 +115,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your free birth chart to explore Bella Hadid birth chart. Once you [learn how to read a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), you get a personalized map of your own placements — and a clearer sense of where your public image and private self actually meet.
+Generate your free birth chart to explore Bella Hadid birth chart. Once you [learn how to read a birth chart](/en/wiki/how-to-read-birth-chart), you get a personalized map of your own placements — and a clearer sense of where your public image and private self actually meet.
 
 ## Sources
 

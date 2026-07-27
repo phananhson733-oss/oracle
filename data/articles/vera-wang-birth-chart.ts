@@ -114,7 +114,7 @@ A birth chart is the fixed map of the sky at your birth, while a horoscope is a 
 
 ## Take Action
 
-Generate your free birth chart with this [free birth chart generator](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to map your own Sun, Moon, and rising the same way this profile maps hers. You'll come away with a personalized chart of the archetypes you carry — and, reading it beside a public figure's placements, a clearer sense of where astrology's symbolism ends and your own choices begin.
+Generate your free birth chart with this [free birth chart generator](/en/wiki/how-to-read-birth-chart) to map your own Sun, Moon, and rising the same way this profile maps hers. You'll come away with a personalized chart of the archetypes you carry — and, reading it beside a public figure's placements, a clearer sense of where astrology's symbolism ends and your own choices begin.
 
 ## Sources
 

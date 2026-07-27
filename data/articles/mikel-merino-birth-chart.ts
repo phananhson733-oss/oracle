@@ -114,7 +114,7 @@ The Gemini stellium — Mercury, Venus, and Mars together — is the loudest sig
 
 ## Take Action
 
-Curious how these same patterns show up in your own placements? [Generate your own free birth chart](https://astrologywiki.com/en/birth-chart-calculator) and see where your elements, any stelliums, and your nodes actually fall. The tool lays out a full wheel of your Sun, Moon, and planetary signs in a couple of minutes. Seeing your own balance on the page is a quiet reminder that character is less a single label and more the way many themes lean together.
+Curious how these same patterns show up in your own placements? [Generate your own free birth chart](/en/birth-chart-calculator) and see where your elements, any stelliums, and your nodes actually fall. The tool lays out a full wheel of your Sun, Moon, and planetary signs in a couple of minutes. Seeing your own balance on the page is a quiet reminder that character is less a single label and more the way many themes lean together.
 
 ## Sources
 

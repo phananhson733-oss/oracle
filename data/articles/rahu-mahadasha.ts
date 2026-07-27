@@ -108,7 +108,7 @@ Not directly. The dasha system belongs to Vedic astrology and its sidereal zodia
 
 ## Take Action
 
-Pull your dasha timeline and find the start year of your Rahu period; doing so reveals exactly which 18-year chapter you are in and which sub-period is active right now. That single act trades vague dread for a clear map — and once you can see the period as a season of amplified wanting rather than a verdict, you can decide what to do with the drive instead of bracing against it. Want the full system first? Read the complete guide to mahadasha and the Vimshottari periods: [https://astrologywiki.com/en/wiki/mahadasha](https://astrologywiki.com/en/wiki/mahadasha)
+Pull your dasha timeline and find the start year of your Rahu period; doing so reveals exactly which 18-year chapter you are in and which sub-period is active right now. That single act trades vague dread for a clear map — and once you can see the period as a season of amplified wanting rather than a verdict, you can decide what to do with the drive instead of bracing against it. Want the full system first? Read the complete guide to mahadasha and the Vimshottari periods: [https://astrologywiki.com/en/wiki/mahadasha](/en/wiki/mahadasha)
 
 ## Sources
 
@@ -219,7 +219,7 @@ export const rahuMahadashaZh: WikiArticle = {
 
 ## 下一步行动
 
-想真正读懂罗睺大运在你身上的位置，不妨先把整套周期的逻辑搞清楚——读一读[完整的 Vimshottari 大运体系指南](https://astrologywiki.com/zh/wiki/mahadasha)。你会得到一张能标出自己各段大运起止的时间地图；而当这十八年不再是一团模糊的"劫数"，你也就更分得清：哪些是周期给的色彩，哪些是自己能握住的选择。
+想真正读懂罗睺大运在你身上的位置，不妨先把整套周期的逻辑搞清楚——读一读[完整的 Vimshottari 大运体系指南](/zh/wiki/mahadasha)。你会得到一张能标出自己各段大运起止的时间地图；而当这十八年不再是一团模糊的"劫数"，你也就更分得清：哪些是周期给的色彩，哪些是自己能握住的选择。
 
 ## 参考来源
 

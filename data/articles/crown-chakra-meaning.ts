@@ -25,7 +25,7 @@ export const crownChakraMeaningEn: WikiArticle = {
 
 ## What is The Crown Chakra?
 
-The Crown Chakra is the seventh and highest energy center in the chakra system, sitting right at the top of your head. In plain terms, crown chakra meaning usually points to **your sense of connection to something larger than yourself** — to meaning, to perspective, and to a quiet trust that does not depend on having every answer. Traditional teachings call it Sahasrara, the thousand-petaled lotus, and associate it with the colour violet or pure white. It sits at the end of a sequence that begins at the base of the spine, so it helps to see where it fits inside the broader [pillar page on the chakra system](/en/wiki/chakra-system-overview) before reading it in isolation rather than treating it as a standalone idea.
+The Crown Chakra is the seventh and highest energy center in the chakra system, sitting right at the top of your head. In plain terms, crown chakra meaning usually points to **your sense of connection to something larger than yourself** — to meaning, to perspective, and to a quiet trust that does not depend on having every answer. Traditional teachings call it Sahasrara, the thousand-petaled lotus, and associate it with the colour violet or pure white. It sits at the end of a sequence that begins at the base of the spine, so it helps to see where it fits inside the broader [pillar page on the chakra system](/en/wiki/chakra-system-overview) before reading it in isolation rather than treating it as a standalone idea. Astrology reaches for a similar theme of awakening and a wider perspective through Uranus and Aquarius — the shift a [Uranus opposition transit](/en/wiki/uranus-opposition) marks around midlife.
 
 - Governs your sense of connection, perspective, and quiet trust in life
 - Sits at the crown of the head, just above the third eye, as the seventh chakra
@@ -118,7 +118,7 @@ Come back into the body: feel your feet, breathe low into your belly, and do som
 
 ## Take Action
 
-Pick one grounding check from this page — feet flat on the floor, three slow breaths into the belly — and run it the next time you catch yourself floating up and away from the moment. Do this for a week and you may notice the real difference between a crown that is genuinely open and one that is simply untethered. [See the full Chakra System overview to place the crown chakra in the whole sequence](https://astrologywiki.com/en/wiki/chakra-system-overview) to understand why a balanced crown sits at the top of a grounded structure, rather than floating free of it.
+Pick one grounding check from this page — feet flat on the floor, three slow breaths into the belly — and run it the next time you catch yourself floating up and away from the moment. Do this for a week and you may notice the real difference between a crown that is genuinely open and one that is simply untethered. [See the full Chakra System overview to place the crown chakra in the whole sequence](/en/wiki/chakra-system-overview) to understand why a balanced crown sits at the top of a grounded structure, rather than floating free of it.
 
 ## Sources
 
@@ -235,7 +235,7 @@ export const crownChakraMeaningZh: WikiArticle = {
 
 ## 下一步行动
 
-顺着[完整脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)把七个脉轮从尾椎到头顶整条看一遍，你会清楚地看到顶轮处在序列的最末端、也是最高处；而一旦明白它只是整条能量主线的收尾、不是一个可以孤立追求的高点，所谓"打开顶轮"就会从一个玄乎的执念，变成对自己当下是清明还是脱节的踏实觉察。
+顺着[完整脉轮系统总览](/en/wiki/chakra-system-overview)把七个脉轮从尾椎到头顶整条看一遍，你会清楚地看到顶轮处在序列的最末端、也是最高处；而一旦明白它只是整条能量主线的收尾、不是一个可以孤立追求的高点，所谓"打开顶轮"就会从一个玄乎的执念，变成对自己当下是清明还是脱节的踏实觉察。
 
 ## 参考来源
 

@@ -116,7 +116,7 @@ Venus governs the hidden inner life, orienting it toward balance, beauty, and re
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore scorpio rising houses. Your chart displays the exact cusp signs and house rulers — including whether Venus governs your 7th and 12th houses. That single observation makes the Venus-in-partnership pattern visible in your own relational history rather than staying abstract.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore scorpio rising houses. Your chart displays the exact cusp signs and house rulers — including whether Venus governs your 7th and 12th houses. That single observation makes the Venus-in-partnership pattern visible in your own relational history rather than staying abstract.
 
 ## Sources
 

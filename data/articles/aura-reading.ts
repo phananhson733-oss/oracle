@@ -119,7 +119,7 @@ Most beginners sense dependable felt impressions within a few weeks of short dai
 
 ## Take Action
 
-Once the felt layer clicks, the natural next step is learning to name what you sense. [Explore the Aura Colors guide to decode the colors you start to sense](https://astrologywiki.com/en/wiki/aura-colors-guide), and that guide gives you a working vocabulary for the moods and states you have been picking up all along. Over time that vocabulary turns into a mirror: the colors you read most often in other people tend to be the ones quietly asking for your own attention, too.
+Once the felt layer clicks, the natural next step is learning to name what you sense. [Explore the Aura Colors guide to decode the colors you start to sense](/en/wiki/aura-colors-guide), and that guide gives you a working vocabulary for the moods and states you have been picking up all along. Over time that vocabulary turns into a mirror: the colors you read most often in other people tend to be the ones quietly asking for your own attention, too.
 
 ## Sources
 
@@ -237,7 +237,7 @@ Aura Reading（气场解读）是一套先靠体感、再靠颜色联想去读�
 
 ## 下一步行动
 
-照着上面的方法用 Aura Reading 记下几次体感和颜色后，下一步就是去查这些颜色各自在说什么——读一读 [气场颜色完整指南](https://astrologywiki.com/en/wiki/aura-colors-guide)，把你开始感觉到的颜色逐一对上含义。你会攒出一份属于自己的「颜色—状态」对照；慢慢地，你会发现读懂气场，其实就是在更细地读懂自己每天的状态。
+照着上面的方法用 Aura Reading 记下几次体感和颜色后，下一步就是去查这些颜色各自在说什么——读一读 [气场颜色完整指南](/en/wiki/aura-colors-guide)，把你开始感觉到的颜色逐一对上含义。你会攒出一份属于自己的「颜色—状态」对照；慢慢地，你会发现读懂气场，其实就是在更细地读懂自己每天的状态。
 
 ## 参考来源
 

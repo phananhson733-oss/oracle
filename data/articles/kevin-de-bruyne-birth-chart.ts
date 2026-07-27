@@ -133,7 +133,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Curious how your own placements compare with a profile like this? [Generate your free birth chart to explore kevin de bruyne birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and you get a full Sun-Moon-Rising map built from your own date, time, and place. Seeing your three layers laid side by side can make it easier to spot where your inner tempo and outer delivery quietly disagree — and to treat that gap as information about yourself rather than a flaw.
+Curious how your own placements compare with a profile like this? [Generate your free birth chart to explore kevin de bruyne birth chart](/en/wiki/how-to-read-birth-chart) and you get a full Sun-Moon-Rising map built from your own date, time, and place. Seeing your three layers laid side by side can make it easier to spot where your inner tempo and outer delivery quietly disagree — and to treat that gap as information about yourself rather than a flaw.
 
 ## Sources
 

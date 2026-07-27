@@ -124,7 +124,7 @@ The most common reason is method variation: one site defaults to midpoint compos
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore composite chart calculator work. Your individual natal chart is the foundation for any composite reading — once you know your own planetary placements, you can see precisely how they combine with another person's to form the relational entity the composite describes. That foundational clarity makes the composite chart interpretable rather than abstract.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore composite chart calculator work. Your individual natal chart is the foundation for any composite reading — once you know your own planetary placements, you can see precisely how they combine with another person's to form the relational entity the composite describes. That foundational clarity makes the composite chart interpretable rather than abstract.
 
 ## Sources
 

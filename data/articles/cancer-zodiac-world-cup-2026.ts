@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const cancerZodiacWorldCup2026En: WikiArticle = {
   slug: "cancer-zodiac-world-cup-2026",
   image: "/images/blog/cancer-zodiac-world-cup-2026.jpg",
-  image_alt: "Amber-gold tide spreading across a calm water-horizon under a deep indigo nebula sky, a symbolic Cancer season",
-  title: "The Cancer World Cup Lens: Why the 2026 Group Stage Reads as a Symbolic Cancer Season",
-  description: "The Cancer World Cup Lens is a symbolic, roundup reading of the 2026 tournament's opening weeks through the Cancer archetype",
+  image_alt:
+    "Amber-gold tide spreading across a calm water-horizon under a deep indigo nebula sky, a symbolic Cancer season",
+  title:
+    "The Cancer World Cup Lens: Why the 2026 Group Stage Reads as a Symbolic Cancer Season",
+  description:
+    "The Cancer World Cup Lens is a symbolic, roundup reading of the 2026 tournament's opening weeks through the Cancer archetype",
   authorId: "elena-vane",
   date: "2026-06-18",
   schema: "Article",
@@ -17,7 +20,7 @@ export const cancerZodiacWorldCup2026En: WikiArticle = {
     "cancer sun footballers",
     "jupiter in cancer 2026",
     "cancer zodiac soccer players",
-    "world cup 2026 cancer season"
+    "world cup 2026 cancer season",
   ],
   content: `# The Cancer World Cup Lens: Why the 2026 Group Stage Reads as a Symbolic Cancer Season
 
@@ -98,10 +101,11 @@ No. This is symbolic and educational astrology that times themes, not fixtures. 
 ## Related Reading
 
 - [Harry Kane birth chart, a Leo contrast](/en/wiki/harry-kane-birth-chart) — the Leo-Sun captain whose Jupiter-in-Leo "season" arrives for the July knockouts, the mirror image of the Cancer group-stage window
+- [Cancer season 2026 astrology](/en/wiki/cancer-season-2026-astrology) — the wider Cancer archetype of home, belonging, and memory behind this World Cup lens
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find your own Sun sign and read it the way this roundup reads the Cancer World Cup Lens, as a reflective archetype rather than a verdict. You get a clear view of where your Sun sits, and, more quietly, a way to recognise the home-and-loyalty themes of Cancer wherever they show up in your own year.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find your own Sun sign and read it the way this roundup reads the Cancer World Cup Lens, as a reflective archetype rather than a verdict. You get a clear view of where your Sun sits, and, more quietly, a way to recognise the home-and-loyalty themes of Cancer wherever they show up in your own year.
 
 ## Sources
 
@@ -114,16 +118,16 @@ No. This is symbolic and educational astrology that times themes, not fixtures. 
 export const cancerZodiacWorldCup2026Zh: WikiArticle = {
   slug: "cancer-zodiac-world-cup-2026",
   image: "/images/blog/cancer-zodiac-world-cup-2026.jpg",
-  image_alt: "琥珀金色的潮水漫过平静的水平线，深靛蓝星云夜空之下，象征巨蟹季的群潮一片",
+  image_alt:
+    "琥珀金色的潮水漫过平静的水平线，深靛蓝星云夜空之下，象征巨蟹季的群潮一片",
   title: "巨蟹座世界杯视角：为什么 2026 小组赛读起来像一场象征性的巨蟹季",
-  description: "巨蟹座世界杯视角，是借巨蟹原型把 2026 世界杯开赛头几周读成一篇汇总式的象征解读，把那一簇巨蟹日的球星，和木星行经巨蟹这一背景串到一起，让小组赛染上一层主题化的\"巨蟹季\"色彩。",
+  description:
+    '巨蟹座世界杯视角，是借巨蟹原型把 2026 世界杯开赛头几周读成一篇汇总式的象征解读，把那一簇巨蟹日的球星，和木星行经巨蟹这一背景串到一起，让小组赛染上一层主题化的"巨蟹季"色彩。',
   authorId: "elena-vane",
   date: "2026-06-18",
   schema: "Article",
   lang: "zh",
-  keywords: [
-    "cancer zodiac world cup 2026"
-  ],
+  keywords: ["cancer zodiac world cup 2026"],
   content: `# 巨蟹座世界杯视角：为什么 2026 小组赛读起来像一场象征性的巨蟹季
 
 ## 巨蟹座世界杯视角是什么？
@@ -206,7 +210,7 @@ export const cancerZodiacWorldCup2026Zh: WikiArticle = {
 
 ## 下一步行动
 
-去[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找到你自己的太阳星座，再像这篇读巨蟹座世界杯视角那样去读它——读成一个供反思的原型，而非一纸判决。你会看到自己的太阳落在哪里，也得到一种方法，去在自己一年的任何角落，认出巨蟹那份"家与忠诚"的主题。
+去[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，找到你自己的太阳星座，再像这篇读巨蟹座世界杯视角那样去读它——读成一个供反思的原型，而非一纸判决。你会看到自己的太阳落在哪里，也得到一种方法，去在自己一年的任何角落，认出巨蟹那份"家与忠诚"的主题。
 
 ## 参考来源
 

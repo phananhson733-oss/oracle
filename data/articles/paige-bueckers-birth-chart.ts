@@ -115,7 +115,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Reading a public figure's placements is a warm-up for the real payoff: your own chart. [Generate your free birth chart](https://astrologywiki.com/en/birth-chart-calculator) to explore paige bueckers birth chart and see how the same Libra, Sagittarius, and Capricorn signals map onto your Sun, Moon, and Mars. You'll get a full planet-by-sign breakdown in minutes — and, more usefully, a clearer sense of how your own contradictions fit together into one working pattern.
+Reading a public figure's placements is a warm-up for the real payoff: your own chart. [Generate your free birth chart](/en/birth-chart-calculator) to explore paige bueckers birth chart and see how the same Libra, Sagittarius, and Capricorn signals map onto your Sun, Moon, and Mars. You'll get a full planet-by-sign breakdown in minutes — and, more usefully, a clearer sense of how your own contradictions fit together into one working pattern.
 
 ## Sources
 

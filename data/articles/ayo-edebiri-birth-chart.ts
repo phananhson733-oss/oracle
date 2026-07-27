@@ -121,7 +121,7 @@ These pages go deeper on the ideas this chart raises:
 
 This is not a clinical interpretation or mental health advice.
 
-Take the Libra pattern you just read and test it against your own placements. You will see how a Sun, Mercury, and Venus cluster actually behaves in a full chart, and you will come away able to tell symbolic framing from fan invention. Generate your free birth chart to explore Ayo Edebiri birth chart alongside your own in the [guide to reading a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Take the Libra pattern you just read and test it against your own placements. You will see how a Sun, Mercury, and Venus cluster actually behaves in a full chart, and you will come away able to tell symbolic framing from fan invention. Generate your free birth chart to explore Ayo Edebiri birth chart alongside your own in the [guide to reading a birth chart](/en/wiki/how-to-read-birth-chart).
 
 ## Sources
 

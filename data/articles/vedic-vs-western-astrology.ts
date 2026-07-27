@@ -135,7 +135,7 @@ They use the same visible planets and place them in the same twelve houses. The 
 
 ## Take Action
 
-Open your birth chart in both a tropical and a sidereal setting, then compare where your Sun, Moon, and ascendant (lagna) fall in each version. That gives you two readings that stop competing — one showing how you are wired, the other showing when your themes tend to move — so the mismatch becomes information instead of a problem to solve. To apply either system to your own placements, [read the How to Read a Birth Chart guide](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and you may find that holding both views at once tells you more about yourself than picking a single side ever could.
+Open your birth chart in both a tropical and a sidereal setting, then compare where your Sun, Moon, and ascendant (lagna) fall in each version. That gives you two readings that stop competing — one showing how you are wired, the other showing when your themes tend to move — so the mismatch becomes information instead of a problem to solve. To apply either system to your own placements, [read the How to Read a Birth Chart guide](/en/wiki/how-to-read-birth-chart), and you may find that holding both views at once tells you more about yourself than picking a single side ever could.
 
 ## Sources
 
@@ -256,7 +256,7 @@ export const vedicVsWesternAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-想把这套差别用到自己身上，最直接的一步是拿自己的出生信息，分别在两套系统里排一次盘。读一读 [如何读懂出生星盘的完整指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，你会得到一份能同时对照吠陀与西方两种读法的操作清单。当你不再急着判断哪套是对的，而是看懂它们各自在回答什么，你对"我是谁、什么时候该做什么"这件事，会多一层从容。
+想把这套差别用到自己身上，最直接的一步是拿自己的出生信息，分别在两套系统里排一次盘。读一读 [如何读懂出生星盘的完整指南](/zh/wiki/how-to-read-birth-chart)，你会得到一份能同时对照吠陀与西方两种读法的操作清单。当你不再急着判断哪套是对的，而是看懂它们各自在回答什么，你对"我是谁、什么时候该做什么"这件事，会多一层从容。
 
 ## 参考来源
 

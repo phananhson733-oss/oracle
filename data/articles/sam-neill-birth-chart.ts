@@ -118,7 +118,7 @@ No. This reading describes tendencies and symbolic patterns, not outcomes. It re
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. Run your own chart the way you just read Sam Neill's: enter your birth details to see your Sun, and any timed placements, in one frame instead of scattered labels. You'll get a full natal map you can actually reflect on—and a clearer sense of where your own craft, restraint, and instincts already show up. Generate your free birth chart to explore Sam Neill birth chart at [https://astrologywiki.com/en/birth-chart-calculator](https://astrologywiki.com/en/birth-chart-calculator)
+This is not a clinical interpretation or mental health advice. Run your own chart the way you just read Sam Neill's: enter your birth details to see your Sun, and any timed placements, in one frame instead of scattered labels. You'll get a full natal map you can actually reflect on—and a clearer sense of where your own craft, restraint, and instincts already show up. Generate your free birth chart to explore Sam Neill birth chart at [https://astrologywiki.com/en/birth-chart-calculator](/en/birth-chart-calculator)
 
 ## Sources
 

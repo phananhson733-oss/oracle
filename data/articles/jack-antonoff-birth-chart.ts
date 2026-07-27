@@ -117,7 +117,7 @@ The planetary signs. Sun, Mercury, Venus, Mars, and the outer planets stay stabl
 
 ## Take Action
 
-Generate your free birth chart to explore jack antonoff birth chart. You'll get your own placements laid out by sign the same way his are here — Sun, Moon, and planets in plain terms — plus a clearer sense of where your own fast-start and slow-deep tendencies actually sit. Read as a whole rather than a single label, that's how a list of signs turns into real self-awareness. [Start reading your birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+Generate your free birth chart to explore jack antonoff birth chart. You'll get your own placements laid out by sign the same way his are here — Sun, Moon, and planets in plain terms — plus a clearer sense of where your own fast-start and slow-deep tendencies actually sit. Read as a whole rather than a single label, that's how a list of signs turns into real self-awareness. [Start reading your birth chart](/en/wiki/how-to-read-birth-chart)
 
 ## Sources
 

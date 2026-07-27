@@ -145,7 +145,7 @@ Yes — the centers describe a present state, so the same person can read very d
 
 ## Take Action
 
-Take your result and read it against the whole map: [See the full Chakra System overview](https://astrologywiki.com/en/wiki/chakra-system-overview) to understand what your test result points to. You come away knowing which center your snapshot flagged, how it connects to the other six, and which life domain is quietly asking for your attention. Over time, that small habit turns a one-off score into a steady practice of noticing what your inner life is actually working through — long after the test itself is closed.
+Take your result and read it against the whole map: [See the full Chakra System overview](/en/wiki/chakra-system-overview) to understand what your test result points to. You come away knowing which center your snapshot flagged, how it connects to the other six, and which life domain is quietly asking for your attention. Over time, that small habit turns a one-off score into a steady practice of noticing what your inner life is actually working through — long after the test itself is closed.
 
 ## Sources
 
@@ -260,7 +260,7 @@ The Chakra System（脉轮系统）是一套把人体能量分成七个能量中
 
 ## 下一步行动
 
-做完测试、记下哪里偏强哪里偏弱之后，去读一遍 [脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)，你会看清每个分数对应的是哪一块生活主题；慢慢你会发现，这份结果真正的价值不在给你定性，而在给你一面可以定期照见自己的镜子。
+做完测试、记下哪里偏强哪里偏弱之后，去读一遍 [脉轮系统总览](/en/wiki/chakra-system-overview)，你会看清每个分数对应的是哪一块生活主题；慢慢你会发现，这份结果真正的价值不在给你定性，而在给你一面可以定期照见自己的镜子。
 
 ## 参考来源
 

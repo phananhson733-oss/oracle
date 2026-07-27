@@ -113,7 +113,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-Generate your chart, then find your North Node, Sun, and Midheaven and note where their themes overlap—that overlap is your working sketch of a life direction. [Generate Your Free Birth Chart](https://astrologywiki.com/en/birth-chart-calculator) to see those placements laid out clearly. Read together, they turn an abstract question into something you can quietly reflect on and grow toward, one small choice at a time.
+Generate your chart, then find your North Node, Sun, and Midheaven and note where their themes overlap—that overlap is your working sketch of a life direction. [Generate Your Free Birth Chart](/en/birth-chart-calculator) to see those placements laid out clearly. Read together, they turn an abstract question into something you can quietly reflect on and grow toward, one small choice at a time.
 
 ## Sources
 

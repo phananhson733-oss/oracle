@@ -7,7 +7,8 @@ export const viniciusJrZodiacSignEn: WikiArticle = {
   image: "/images/blog/vinicius-jr-zodiac-sign.jpg",
   image_alt: "An atmospheric celestial landscape evoking Vinicius Jr.",
   title: "Vinicius Jr's Zodiac Sign: A Cancer Sun With a Sagittarius Moon",
-  description: "Vinicius Jr's zodiac sign is Cancer in Western astrology, set by his July 12, 2000 birth date and ruled by the Moon.",
+  description:
+    "Vinicius Jr's zodiac sign is Cancer in Western astrology, set by his July 12, 2000 birth date and ruled by the Moon.",
   authorId: "aditi-sharma",
   date: "2026-06-12",
   schema: "Article",
@@ -17,7 +18,7 @@ export const viniciusJrZodiacSignEn: WikiArticle = {
     "vinicius jr astrology",
     "vinicius zodiac",
     "vinicius junior birth chart",
-    "vinicius star sign"
+    "vinicius star sign",
   ],
   content: `# Vinicius Jr's Zodiac Sign: A Cancer Sun With a Sagittarius Moon
 
@@ -103,14 +104,15 @@ Jupiter spends 2025-26 in Cancer, lighting his Sun's sign and ruling his Moon, w
 
 ## Related Reading
 
-- *World Cup 2026 astrology themes pillar* — the hub that places this chart in the wider tournament picture
-- *Lionel Messi zodiac sign reading* — another Cancer-Sun chart from the same series
+- [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that places this chart in the wider tournament picture
+- [Vinícius Jr birth chart](/en/wiki/vinicius-jr-birth-chart-astrology) — the full Sun-and-Moon companion to this Sun-sign reading
+- [Lionel Messi zodiac sign reading](/en/wiki/lionel-messi-zodiac-sign) — another Cancer-Sun chart from the same series
 - *tropical versus sidereal zodiac explained* — the difference behind the Cancer-or-Gemini question
 - [transit_events cluster on 2026 Jupiter in Cancer](/en/wiki/9th-house-astrology) — the wider sky behind this emphasis window
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads Vinicius Jr's zodiac sign — as a working tension rather than a label. You get a clear view of your Sun's sign, your Moon's sign, and the transits touching them now, and, more quietly, a way to tell a steadying instinct apart from a fear of the open field.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun and Moon the way this piece reads Vinicius Jr's zodiac sign — as a working tension rather than a label. You get a clear view of your Sun's sign, your Moon's sign, and the transits touching them now, and, more quietly, a way to tell a steadying instinct apart from a fear of the open field.
 
 ## Sources
 
@@ -124,7 +126,8 @@ export const viniciusJrZodiacSignZh: WikiArticle = {
   image: "/images/blog/vinicius-jr-zodiac-sign.jpg",
   image_alt: "一幅氛围式星空风景，意象呼应「Vinicius Jr」。",
   title: "维尼修斯星座为什么踢出和梅西不一样的味道，答案在那颗射手月亮",
-  description: "维尼修斯星座是巨蟹座，守护星是月亮，由 2000 年 7 月 12 日的出生日期确定。巨蟹座太阳把身份框定在感受、归属与\"护住重要之物\"的本能上，而他那颗射手座月亮又添了一股不安分、想往外冲的情绪劲——这一组配对，远比一个词的标签耐读。",
+  description:
+    '维尼修斯星座是巨蟹座，守护星是月亮，由 2000 年 7 月 12 日的出生日期确定。巨蟹座太阳把身份框定在感受、归属与"护住重要之物"的本能上，而他那颗射手座月亮又添了一股不安分、想往外冲的情绪劲——这一组配对，远比一个词的标签耐读。',
   authorId: "aditi-sharma",
   date: "2026-06-13",
   schema: "Article",
@@ -133,7 +136,7 @@ export const viniciusJrZodiacSignZh: WikiArticle = {
     "vinicius jr zodiac sign",
     "vinicius jr birth chart",
     "vinicius junior astrology",
-    "brazil world cup astrology 2026"
+    "brazil world cup astrology 2026",
   ],
   content: `# 维尼修斯星座为什么踢出和梅西不一样的味道，答案在那颗射手月亮
 
@@ -226,7 +229,7 @@ export const viniciusJrZodiacSignZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读维尼修斯星座那样去读你自己的太阳和月亮——把它当成一个要去周旋的张力，而不是一个标签。你会清楚看到太阳的星座、月亮的星座，以及此刻触及它们的过运，更安静地，得到一种把"想求稳的本能"和"怕面对开阔场地的退缩"分开的方式。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读维尼修斯星座那样去读你自己的太阳和月亮——把它当成一个要去周旋的张力，而不是一个标签。你会清楚看到太阳的星座、月亮的星座，以及此刻触及它们的过运，更安静地，得到一种把"想求稳的本能"和"怕面对开阔场地的退缩"分开的方式。
 
 ## 参考来源
 

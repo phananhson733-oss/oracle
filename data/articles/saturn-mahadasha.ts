@@ -134,7 +134,7 @@ The three internal links above place this period inside the wider system; for ou
 
 ## Take Action
 
-Want the full system first? Read the [complete guide to mahadasha and the Vimshottari periods](https://astrologywiki.com/en/wiki/mahadasha) and trace where Saturn's nineteen years fall in your own dasha sequence. You come away able to place the period in context instead of reading it in isolation — and seeing the long Shani years as a chapter you help write through steady work, rather than a sentence you simply serve.
+Want the full system first? Read the [complete guide to mahadasha and the Vimshottari periods](/en/wiki/mahadasha) and trace where Saturn's nineteen years fall in your own dasha sequence. You come away able to place the period in context instead of reading it in isolation — and seeing the long Shani years as a chapter you help write through steady work, rather than a sentence you simply serve.
 
 ## Disclaimer
 
@@ -245,7 +245,7 @@ export const saturnMahadashaZh: WikiArticle = {
 
 ## 下一步行动
 
-与其担心土星这19年，不如先把它放回完整的系统里看。读一读[维实多里大运体系的完整指南](https://astrologywiki.com/zh/wiki/mahadasha)，你会拿到一张把九颗行星、各自年限和先后顺序都标清楚的全景图；当你知道土星这一段在整张时间表里处在哪、前后接着谁，它就不再是一段孤零零的苦役，而是你人生节奏里一个可以提前准备、踏实走完的阶段。
+与其担心土星这19年，不如先把它放回完整的系统里看。读一读[维实多里大运体系的完整指南](/zh/wiki/mahadasha)，你会拿到一张把九颗行星、各自年限和先后顺序都标清楚的全景图；当你知道土星这一段在整张时间表里处在哪、前后接着谁，它就不再是一段孤零零的苦役，而是你人生节奏里一个可以提前准备、踏实走完的阶段。
 
 ## 参考来源
 

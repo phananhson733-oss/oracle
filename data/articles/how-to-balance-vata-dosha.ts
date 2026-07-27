@@ -122,7 +122,7 @@ Not always; stress, poor sleep, and sensory overload can produce the same surfac
 
 ## Take Action
 
-This is not a clinical interpretation, an Ayurvedic diagnosis, or mental health advice. It is a framework for noticing patterns and choosing one steady change at a time. When you want a different lens for self-reflection, [generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and look at the air and earth elements in your own astrology — as a prompt for reflection, not a dosha diagnosis or a substitute for the warm-food, steady-rhythm habits above. Let it nudge you toward one concrete change to hold first, on the same principle that runs through all of this: lasting balance grows from working with your nature, not forcing yourself against it.
+This is not a clinical interpretation, an Ayurvedic diagnosis, or mental health advice. It is a framework for noticing patterns and choosing one steady change at a time. When you want a different lens for self-reflection, [generate your free birth chart](/en/wiki/how-to-read-birth-chart) and look at the air and earth elements in your own astrology — as a prompt for reflection, not a dosha diagnosis or a substitute for the warm-food, steady-rhythm habits above. Let it nudge you toward one concrete change to hold first, on the same principle that runs through all of this: lasting balance grows from working with your nature, not forcing yourself against it.
 
 ## Sources
 

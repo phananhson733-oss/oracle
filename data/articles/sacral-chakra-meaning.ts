@@ -77,7 +77,7 @@ The clearest place to read this center is whatever you make. In open sacral flow
 
 ### Sacral Energy in Relationships
 
-The sacral also governs how feeling moves between you and other people. In balance, you can be affected by someone without losing yourself, let warmth and attraction surface, and stay responsive when a mood shifts in the room. Closeness feels like exchange rather than performance. When the center is tight, intimacy can start to feel like a script: you go through the motions, manage the other person's reactions, and notice a strange flatness where responsiveness used to be. Pleasure in company gets edited down to what feels safe or appropriate. None of this is about how much sex or romance is present; it is about whether emotional current actually flows between you and the people you're close to, or stalls behind a held breath.
+The sacral also governs how feeling moves between you and other people. In balance, you can be affected by someone without losing yourself, let warmth and attraction surface, and stay responsive when a mood shifts in the room. Closeness feels like exchange rather than performance. When the center is tight, intimacy can start to feel like a script: you go through the motions, manage the other person's reactions, and notice a strange flatness where responsiveness used to be. Pleasure in company gets edited down to what feels safe or appropriate. None of this is about how much sex or romance is present; it is about whether emotional current actually flows between you and the people you're close to, or stalls behind a held breath. In astrology, that same terrain of desire, intimacy, and emotional depth is the ground a [Scorpio rising chart maps across its houses](/en/wiki/scorpio-rising-houses).
 
 ### When Sacral Patterns Turn Avoidant
 
@@ -136,7 +136,7 @@ It is mapped to the lower abdomen, roughly a couple of inches below the navel. I
 
 ## Take Action
 
-Read [the full Chakra System overview](https://astrologywiki.com/en/wiki/chakra-system-overview) and place the sacral chakra in its sequence, between the grounding root below it and the willpower of the solar plexus above. Seeing the whole map shows how creativity and pleasure hand off to the centers around them, and that bigger picture makes it easier to notice which part of your own energy is quietly asking for attention right now.
+Read [the full Chakra System overview](/en/wiki/chakra-system-overview) and place the sacral chakra in its sequence, between the grounding root below it and the willpower of the solar plexus above. Seeing the whole map shows how creativity and pleasure hand off to the centers around them, and that bigger picture makes it easier to notice which part of your own energy is quietly asking for attention right now.
 
 ## Sources
 
@@ -252,7 +252,7 @@ The Sacral Chakra（生殖轮，也叫本我轮、骶轮）是脉轮（chakra，
 
 ## 下一步行动
 
-把生殖轮（The Sacral Chakra）放回整条脉轮序列里再看一遍，你会发现它上承底层的安全感、下接太阳轮的意志，单独盯着一个中心，远不如看清它在整体里的位置。顺着这份[完整的脉轮系统总览](https://astrologywiki.com/en/wiki/chakra-system-overview)走一遍，能帮你把生殖轮摆回它该在的那一格——很多时候，读懂一个脉轮的前提，是先读懂它和上下邻居的关系。
+把生殖轮（The Sacral Chakra）放回整条脉轮序列里再看一遍，你会发现它上承底层的安全感、下接太阳轮的意志，单独盯着一个中心，远不如看清它在整体里的位置。顺着这份[完整的脉轮系统总览](/en/wiki/chakra-system-overview)走一遍，能帮你把生殖轮摆回它该在的那一格——很多时候，读懂一个脉轮的前提，是先读懂它和上下邻居的关系。
 
 ## 参考来源
 

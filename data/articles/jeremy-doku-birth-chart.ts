@@ -111,7 +111,7 @@ Astrologically it is a lens, not a prediction, and this reading makes no claim a
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore jeremy doku birth chart. The tool maps your own placements the same way Doku's Gemini Sun and anaretic Mars are read here, turning abstract sign names into a picture of how you tend to move through pressure. Seeing your chart laid out this way often makes one thing clearer: the choices that look inconsistent from the outside are usually your deepest values showing up right on time.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore jeremy doku birth chart. The tool maps your own placements the same way Doku's Gemini Sun and anaretic Mars are read here, turning abstract sign names into a picture of how you tend to move through pressure. Seeing your chart laid out this way often makes one thing clearer: the choices that look inconsistent from the outside are usually your deepest values showing up right on time.
 
 ## Sources
 

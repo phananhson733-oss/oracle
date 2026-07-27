@@ -115,7 +115,7 @@ Only as accurate as its birth data. Without a confirmed time and date, the risin
 
 ## Take Action
 
-Generate your free birth chart to explore erling haaland girlfriend birth chart. Building your own chart gives you a labeled map of your Sun, Moon, rising, and aspects, so the method behind any celebrity reading stops being abstract. Once you can read your own placements, you stop borrowing someone else's headline and start understanding the symbolic patterns that actually describe your life. Start with the free [birth chart reading walkthrough](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and work outward from there.
+Generate your free birth chart to explore erling haaland girlfriend birth chart. Building your own chart gives you a labeled map of your Sun, Moon, rising, and aspects, so the method behind any celebrity reading stops being abstract. Once you can read your own placements, you stop borrowing someone else's headline and start understanding the symbolic patterns that actually describe your life. Start with the free [birth chart reading walkthrough](/en/wiki/how-to-read-birth-chart) and work outward from there.
 
 This is not a clinical interpretation or mental health advice.
 

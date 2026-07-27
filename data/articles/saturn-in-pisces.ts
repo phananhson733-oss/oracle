@@ -118,7 +118,7 @@ To go deeper on any single strand of this transit, start with the pieces that ex
 
 ## Take Action
 
-Open your birth chart and find which house holds Pisces, then trace where Saturn transits across it during its passage through the sign (most recently 2023-2026). Doing that gives you a single, concrete answer to "which part of my life is under review," instead of a vague dread spread across everything. Once you can name the actual domain, the transit stops being a weather warning and becomes a place you can build — which is the quieter point of Saturn anywhere: structure is not the thing that limits you, it is the thing that finally lets the formless hold a shape. [Read the full guide to reading a birth chart to see where this transit lands for you.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+Open your birth chart and find which house holds Pisces, then trace where Saturn transits across it during its passage through the sign (most recently 2023-2026). Doing that gives you a single, concrete answer to "which part of my life is under review," instead of a vague dread spread across everything. Once you can name the actual domain, the transit stops being a weather warning and becomes a place you can build — which is the quieter point of Saturn anywhere: structure is not the thing that limits you, it is the thing that finally lets the formless hold a shape. [Read the full guide to reading a birth chart to see where this transit lands for you.](/en/wiki/how-to-read-birth-chart)
 
 ## Sources
 
@@ -246,7 +246,7 @@ Saturn in Pisces 在搜索里被反复问到的，往往是几个很具体的操
 
 ## 下一步行动
 
-打开一张你自己的星盘，找到双鱼座落在第几宫——这是看懂这段行运的第一步，参见[读懂本命星盘的完整入门指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)。读完你会拿到一套定位法，能直接看出土星行经双鱼座时（最近一轮约在 2023–2026 年）会在你人生的哪一块领域要求你建立结构；而当你能为那块领域说出一句具体的话，这段行运对你就不再是悬在头顶的考验，而是一份可以动手去做的功课清单。
+打开一张你自己的星盘，找到双鱼座落在第几宫——这是看懂这段行运的第一步，参见[读懂本命星盘的完整入门指南](/zh/wiki/how-to-read-birth-chart)。读完你会拿到一套定位法，能直接看出土星行经双鱼座时（最近一轮约在 2023–2026 年）会在你人生的哪一块领域要求你建立结构；而当你能为那块领域说出一句具体的话，这段行运对你就不再是悬在头顶的考验，而是一份可以动手去做的功课清单。
 
 ## 参考来源
 

@@ -112,7 +112,7 @@ No. A sign describes leanings and style, not outcomes, and it can't account for 
 
 ## Take Action
 
-Run your own birth chart to see how a Sun sign sits inside a full set of placements the way Coco Gauff's Pisces does. You'll get a mapped layout of your Sun, Moon, and personal planets in one view, so the headline stops standing in for the whole story. From there, the real payoff is self-awareness: seeing your own patterns as tendencies you can work with rather than fixed traits you're stuck with. [Generate your free birth chart to explore the Coco Gauff zodiac sign](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Run your own birth chart to see how a Sun sign sits inside a full set of placements the way Coco Gauff's Pisces does. You'll get a mapped layout of your Sun, Moon, and personal planets in one view, so the headline stops standing in for the whole story. From there, the real payoff is self-awareness: seeing your own patterns as tendencies you can work with rather than fixed traits you're stuck with. [Generate your free birth chart to explore the Coco Gauff zodiac sign](/en/wiki/how-to-read-birth-chart).
 
 ## Sources
 

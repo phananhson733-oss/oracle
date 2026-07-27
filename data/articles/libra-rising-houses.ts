@@ -124,7 +124,7 @@ The clearest signal is when financial stress and relationship tension arrive in 
 
 ## Take Action
 
-[Generate your free birth chart to explore libra rising houses.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) Your chart will show the natal condition of both Venus and Mars — the two planets that anchor the major house domains for this placement. Seeing their signs, degrees, and aspects gives you concrete starting points for understanding why financial decisions and close partnership dynamics tend to feel structurally linked, and where a more precise self-reading actually begins.
+[Generate your free birth chart to explore libra rising houses.](/en/wiki/how-to-read-birth-chart) Your chart will show the natal condition of both Venus and Mars — the two planets that anchor the major house domains for this placement. Seeing their signs, degrees, and aspects gives you concrete starting points for understanding why financial decisions and close partnership dynamics tend to feel structurally linked, and where a more precise self-reading actually begins.
 
 ## Sources
 

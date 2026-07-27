@@ -105,7 +105,7 @@ There is no fixed number, but a chart heavy with them can lack drive, since noth
 
 ## Take Action
 
-Open your full birth chart and trace the lines that connect planets 120 degrees apart, then write down each trine you find next to the talent it points to. You will end up with a short list of abilities that already run smoothly but may have been coasting for years. Reading the full guide to reading a birth chart helps you find the trines in your own chart, and once you can see where talent flows for free, you can decide where to finally put it to work. Start with the [full guide to reading a birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart).
+Open your full birth chart and trace the lines that connect planets 120 degrees apart, then write down each trine you find next to the talent it points to. You will end up with a short list of abilities that already run smoothly but may have been coasting for years. Reading the full guide to reading a birth chart helps you find the trines in your own chart, and once you can see where talent flows for free, you can decide where to finally put it to work. Start with the [full guide to reading a birth chart](/en/wiki/how-to-read-birth-chart).
 
 ## Sources
 
@@ -217,7 +217,7 @@ export const trineInAstrologyZh: WikiArticle = {
 
 ## 下一步行动
 
-打开你的完整星盘，把那些连接相隔一百二十度行星的线一条条描出来，再在每一个三分相旁边写下它指向的那项天赋。你会得到一份短短的清单，上面全是那些早就运转顺畅、却可能空转了好些年的能力。读一读完整的星盘入门指南，能帮你在自己的盘里找到这些三分相；当你能看见天赋在哪里免费地流动，你就能决定，最后要把力气真正放到哪里去。可以从这份[星盘解读完整指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)开始。
+打开你的完整星盘，把那些连接相隔一百二十度行星的线一条条描出来，再在每一个三分相旁边写下它指向的那项天赋。你会得到一份短短的清单，上面全是那些早就运转顺畅、却可能空转了好些年的能力。读一读完整的星盘入门指南，能帮你在自己的盘里找到这些三分相；当你能看见天赋在哪里免费地流动，你就能决定，最后要把力气真正放到哪里去。可以从这份[星盘解读完整指南](/zh/wiki/how-to-read-birth-chart)开始。
 
 ## 参考来源
 

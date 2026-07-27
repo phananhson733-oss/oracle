@@ -116,7 +116,7 @@ Neither, in the fortune-telling sense. Saturn applied to Aries slows reactive st
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to find which house Aries rules in your chart, so you can read this transit as a specific task in one life area rather than a vague three-year worry. You get a clear view of your Aries house and natal Saturn placement, and, more practically, a way to ask what structure that domain has been missing before the passage ends in 2028.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to find which house Aries rules in your chart, so you can read this transit as a specific task in one life area rather than a vague three-year worry. You get a clear view of your Aries house and natal Saturn placement, and, more practically, a way to ask what structure that domain has been missing before the passage ends in 2028.
 
 ## Sources
 
@@ -227,7 +227,7 @@ export const saturnInAries2026Zh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，找出白羊在你的星盘里主管哪个宫，这样你就能把这段行运读成"某一片人生领域里的一件具体功课"，而不是一团含糊的三年焦虑。你会清楚看到自己的白羊宫和本命土星落点，更实用的是，在这段行程于 2028 年结束之前，你有了一个去追问"那片领域一直缺着什么结构"的入口。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，找出白羊在你的星盘里主管哪个宫，这样你就能把这段行运读成"某一片人生领域里的一件具体功课"，而不是一团含糊的三年焦虑。你会清楚看到自己的白羊宫和本命土星落点，更实用的是，在这段行程于 2028 年结束之前，你有了一个去追问"那片领域一直缺着什么结构"的入口。
 
 ## 参考来源
 

@@ -105,7 +105,7 @@ The three links most relevant to this placement are already woven into the secti
 
 ## Take Action
 
-Open your birth chart and locate both Chiron and the 12th house cusp, then trace which sign and any planets share that hidden corner. The result is a precise map of where this sensitivity lives and how it threads through the rest of your chart. Read the full guide to reading a birth chart to find Chiron and the 12th house in your own chart at [reading a birth chart step by step](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) — and you may find that the part you once worked hardest to hide is also the part that reads other people most clearly.
+Open your birth chart and locate both Chiron and the 12th house cusp, then trace which sign and any planets share that hidden corner. The result is a precise map of where this sensitivity lives and how it threads through the rest of your chart. Read the full guide to reading a birth chart to find Chiron and the 12th house in your own chart at [reading a birth chart step by step](/en/wiki/how-to-read-birth-chart) — and you may find that the part you once worked hardest to hide is also the part that reads other people most clearly.
 
 ## Sources
 
@@ -215,7 +215,7 @@ Chiron in the 12th house（凯龙在12宫）指的是凯龙星落在星盘最幽
 
 ## 下一步行动
 
-花十分钟打开 [一步步读懂本命星盘的完整指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，亲手在自己的盘里找到凯龙和第十二宫的位置。你会得到一张标好这处敏感落点的私人地图，而不是一句笼统的「你有伤」。当你能在盘上指出它在哪，那份说不出口的敏感，就从悬在头顶的标签，变成一处你愿意慢慢靠近、好好相处的地方。
+花十分钟打开 [一步步读懂本命星盘的完整指南](/zh/wiki/how-to-read-birth-chart)，亲手在自己的盘里找到凯龙和第十二宫的位置。你会得到一张标好这处敏感落点的私人地图，而不是一句笼统的「你有伤」。当你能在盘上指出它在哪，那份说不出口的敏感，就从悬在头顶的标签，变成一处你愿意慢慢靠近、好好相处的地方。
 
 ## 参考来源
 

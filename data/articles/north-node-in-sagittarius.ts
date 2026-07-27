@@ -113,7 +113,7 @@ No — taking a real stance is the growth, and you can revise it as you learn. S
 
 ## Take Action
 
-Ready to see where this axis actually sits in your own chart? [Generate your free birth chart to explore north node in sagittarius](https://astrologywiki.com/en/wiki/how-to-read-birth-chart), and the exact sign and house of both nodes will be mapped out for you. With that in hand, the question stops being abstract and turns personal: which belief have you been circling for years that you are finally ready to stand behind? This is not a clinical interpretation or mental health advice.
+Ready to see where this axis actually sits in your own chart? [Generate your free birth chart to explore north node in sagittarius](/en/wiki/how-to-read-birth-chart), and the exact sign and house of both nodes will be mapped out for you. With that in hand, the question stops being abstract and turns personal: which belief have you been circling for years that you are finally ready to stand behind? This is not a clinical interpretation or mental health advice.
 
 ## Sources
 

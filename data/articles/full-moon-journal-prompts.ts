@@ -173,7 +173,7 @@ Either works, and many practitioners do a little of both. Writing on the night o
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to explore full moon journal prompts aligned with your natal chart. Your birth chart identifies which house the full moon illuminates each month — giving your completion and release practice a specific life area to anchor to. When you know which part of the chart is activated, the reflection stops being generic and starts pointing at something real.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to explore full moon journal prompts aligned with your natal chart. Your birth chart identifies which house the full moon illuminates each month — giving your completion and release practice a specific life area to anchor to. When you know which part of the chart is activated, the reflection stops being generic and starts pointing at something real.
 
 ## Sources
 

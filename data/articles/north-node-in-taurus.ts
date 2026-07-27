@@ -113,7 +113,7 @@ No; the Scorpio depth stays available as a real resource. The shift is no longer
 
 ## Take Action
 
-Open your birth chart and locate both ends of your nodal axis, then read the North Node vs South Node guide to map both ends of your growth axis: [Read the North Node vs South Node guide to map both ends of your growth axis](https://astrologywiki.com/en/wiki/north-node-vs-south-node). You come away with a clear picture of what you are growing toward and what you are growing out of, and that single map often reframes the placement from a verdict into a direction you get to choose.
+Open your birth chart and locate both ends of your nodal axis, then read the North Node vs South Node guide to map both ends of your growth axis: [Read the North Node vs South Node guide to map both ends of your growth axis](/en/wiki/north-node-vs-south-node). You come away with a clear picture of what you are growing toward and what you are growing out of, and that single map often reframes the placement from a verdict into a direction you get to choose.
 
 ## Sources
 
@@ -232,7 +232,7 @@ export const northNodeInTaurusZh: WikiArticle = {
 
 ## 下一步行动
 
-读一读 [北交点与南交点的成长轴对照指南](https://astrologywiki.com/zh/wiki/north-node-vs-south-node)，把金牛—天蝎这条轴的两端一次看明白。你会拿到一套能对照自己星盘的读法，知道该练的安稳方向长什么样、容易回退的旧习惯又藏在哪。看懂这条轴你会发现，成长往往不在你早已熟练的强烈里，而在那个一开始有点平淡、却一直在召唤你慢下来的方向。
+读一读 [北交点与南交点的成长轴对照指南](/zh/wiki/north-node-vs-south-node)，把金牛—天蝎这条轴的两端一次看明白。你会拿到一套能对照自己星盘的读法，知道该练的安稳方向长什么样、容易回退的旧习惯又藏在哪。看懂这条轴你会发现，成长往往不在你早已熟练的强烈里，而在那个一开始有点平淡、却一直在召唤你慢下来的方向。
 
 ## 参考来源
 

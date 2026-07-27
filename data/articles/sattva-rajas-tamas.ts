@@ -110,7 +110,7 @@ Both. The Samkhya framework treats mind and body as continuous expressions of th
 
 ## Take Action
 
-[Generate your free birth chart to explore sattva rajas tamas.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) Your chart can point to planetary placements traditionally linked to each guna's qualities — Mars and dynamic aspects often correspond to rajasic drive, Saturn and fixed configurations to tamasic stability or resistance, benefic placements in prominent positions to sattvic clarity. Seeing which conditions are emphasized at your birth gives you a starting point for understanding why certain guna proportions feel native — and which adjustments tend to take more deliberate practice to sustain.
+[Generate your free birth chart to explore sattva rajas tamas.](/en/wiki/how-to-read-birth-chart) Your chart can point to planetary placements traditionally linked to each guna's qualities — Mars and dynamic aspects often correspond to rajasic drive, Saturn and fixed configurations to tamasic stability or resistance, benefic placements in prominent positions to sattvic clarity. Seeing which conditions are emphasized at your birth gives you a starting point for understanding why certain guna proportions feel native — and which adjustments tend to take more deliberate practice to sustain.
 
 ## Sources
 

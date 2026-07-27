@@ -107,7 +107,7 @@ The tournament opens 11 June 2026 at Estadio Azteca in Mexico City and concludes
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to locate your own Sun the way this piece reads Pulisic's, as a theme of purpose and craft rather than a verdict. You get a clear view of which sign and degree your Sun occupies, and, more quietly, a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to locate your own Sun the way this piece reads Pulisic's, as a theme of purpose and craft rather than a verdict. You get a clear view of which sign and degree your Sun occupies, and, more quietly, a way to tell a meaningful pattern apart from a prediction you should never trust to a planet.
 
 ## Sources
 
@@ -222,7 +222,7 @@ export const christianPulisicBirthChartZh: WikiArticle = {
 
 ## 下一步行动
 
-去[生成你的免费星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，像这篇读普利西奇那样找到你自己的太阳——把它读成一段关于目的与工艺的主题，而非一纸判词。你会看到自己的太阳落在何处，也学到一种方法：把一个有意义的模式，和一则不该托付给行星的预言分辨开来。
+去[生成你的免费星盘](/zh/wiki/how-to-read-birth-chart)，像这篇读普利西奇那样找到你自己的太阳——把它读成一段关于目的与工艺的主题，而非一纸判词。你会看到自己的太阳落在何处，也学到一种方法：把一个有意义的模式，和一则不该托付给行星的预言分辨开来。
 
 ## 参考来源
 

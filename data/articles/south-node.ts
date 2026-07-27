@@ -121,7 +121,7 @@ It is an astronomical intersection that correlates with eclipses, so the past-li
 
 ## Take Action
 
-This is not a clinical interpretation or mental health advice. To put the integration approach to work, [generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and locate the descending node by sign and house. The result is a concrete inventory of the talents you already carry — and a clearer read on which familiar strengths to lean on now and which to consciously stretch past as you move toward your North Node.
+This is not a clinical interpretation or mental health advice. To put the integration approach to work, [generate your free birth chart](/en/wiki/how-to-read-birth-chart) and locate the descending node by sign and house. The result is a concrete inventory of the talents you already carry — and a clearer read on which familiar strengths to lean on now and which to consciously stretch past as you move toward your North Node.
 
 ## Sources
 

@@ -121,7 +121,7 @@ They describe a developmental pull rather than fixed events. The axis tends to s
 
 ## Take Action
 
-Open your birth chart and locate your North Node by sign, then read one worked example to see the axis in motion. The [Read the North Node in Scorpio guide to see this growth axis worked through one sign](https://astrologywiki.com/en/wiki/north-node-in-scorpio) walks the same past-to-future tension through a single placement, so you finish with a concrete picture instead of an abstract rule. Naming your own growth edge this way turns the chart from a verdict into a question you get to keep answering.
+Open your birth chart and locate your North Node by sign, then read one worked example to see the axis in motion. The [Read the North Node in Scorpio guide to see this growth axis worked through one sign](/en/wiki/north-node-in-scorpio) walks the same past-to-future tension through a single placement, so you finish with a concrete picture instead of an abstract rule. Naming your own growth edge this way turns the chart from a verdict into a question you get to keep answering.
 
 ## Sources
 
@@ -243,7 +243,7 @@ export const northNodeVsSouthNodeZh: WikiArticle = {
 
 ## 下一步行动
 
-挑一个具体落点，把这条抽象的轴看得见摸得着：读一读 [北交点在天蝎座的成长功课](https://astrologywiki.com/zh/wiki/north-node-in-scorpio)，跟着一个星座走完整条成长轴。你会拿到一套能对照自己星盘的读法，知道该练的方向大概长什么样、容易回退的舒适区又在哪。看懂这一点你会发现，成长往往不在你已经擅长的地方，而在那个一开始有点别扭、却一直在召唤你的方向。
+挑一个具体落点，把这条抽象的轴看得见摸得着：读一读 [北交点在天蝎座的成长功课](/zh/wiki/north-node-in-scorpio)，跟着一个星座走完整条成长轴。你会拿到一套能对照自己星盘的读法，知道该练的方向大概长什么样、容易回退的舒适区又在哪。看懂这一点你会发现，成长往往不在你已经擅长的地方，而在那个一开始有点别扭、却一直在召唤你的方向。
 
 ## 参考来源
 

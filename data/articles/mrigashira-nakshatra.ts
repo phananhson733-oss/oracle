@@ -116,7 +116,7 @@ Generate your free birth chart to explore mrigashira nakshatra.
 
 Your chart shows exactly which planets fall in Mrigashira's degree range and how the placement activates across specific houses. That map turns the deer's symbolic motion into something concrete — a picture of where your own seeking tends to concentrate, what triggers it, and what it may actually be oriented toward beneath the surface goal.
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart)
 
 ## Sources
 

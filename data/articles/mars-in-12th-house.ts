@@ -109,7 +109,7 @@ A first-house Mars acts straight outward and reads as visible confidence. The tw
 
 ## Take Action
 
-Open your own chart and locate Mars and the twelfth house using the full guide to reading a birth chart. Doing this gives you a concrete map of where your drive actually sits and how it tends to move, instead of a one-line verdict. Seen clearly, an underground Mars becomes a question you can answer on purpose: not "why am I so quiet about my fight," but "where do I want this force to move next." [Read the full guide to reading a birth chart to find Mars and the 12th house in your own chart.](https://astrologywiki.com/en/wiki/how-to-read-birth-chart)
+Open your own chart and locate Mars and the twelfth house using the full guide to reading a birth chart. Doing this gives you a concrete map of where your drive actually sits and how it tends to move, instead of a one-line verdict. Seen clearly, an underground Mars becomes a question you can answer on purpose: not "why am I so quiet about my fight," but "where do I want this force to move next." [Read the full guide to reading a birth chart to find Mars and the 12th house in your own chart.](/en/wiki/how-to-read-birth-chart)
 
 ## Sources
 
@@ -221,7 +221,7 @@ Mars in the 12th house（火星在12宫）指的是出生星盘里，掌管行�
 
 ## 下一步行动
 
-想知道火星和第十二宫具体落在你星盘的哪个位置，不妨从读懂自己的出生星盘开始。跟着 [完整的出生星盘阅读指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart) 一步步定位你的火星与第十二宫，你会得到一张属于自己的能量地图；而当那股压在水面下的劲被你亲眼看见，它往往就不再只能以闷气和拖延的方式存在了。
+想知道火星和第十二宫具体落在你星盘的哪个位置，不妨从读懂自己的出生星盘开始。跟着 [完整的出生星盘阅读指南](/zh/wiki/how-to-read-birth-chart) 一步步定位你的火星与第十二宫，你会得到一张属于自己的能量地图；而当那股压在水面下的劲被你亲眼看见，它往往就不再只能以闷气和拖延的方式存在了。
 
 ## 参考来源
 

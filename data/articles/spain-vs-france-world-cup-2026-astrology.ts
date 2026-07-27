@@ -5,9 +5,12 @@ import type { WikiArticle } from "../../types";
 export const spainVsFranceWorldCup2026AstrologyEn: WikiArticle = {
   slug: "spain-vs-france-world-cup-2026-astrology",
   image: "/images/blog/spain-vs-france-world-cup-2026-astrology.jpg",
-  image_alt: "Spain vs France World Cup 2026 astrology — stadium at night, red-gold and blue divide under a Jupiter-lit celestial sky",
-  title: "Spain vs France World Cup 2026 Astrology as Symbolic Storytelling, Not a Scoreline",
-  description: "Spain vs France World Cup 2026 astrology is a symbolic way of reading the fixture through the national birth charts of Spain and France, the standout signatures in key players' charts, and the transits hanging over the 2026 tournament.",
+  image_alt:
+    "Spain vs France World Cup 2026 astrology — stadium at night, red-gold and blue divide under a Jupiter-lit celestial sky",
+  title:
+    "Spain vs France World Cup 2026 Astrology as Symbolic Storytelling, Not a Scoreline",
+  description:
+    "Spain vs France World Cup 2026 astrology is a symbolic way of reading the fixture through the national birth charts of Spain and France, the standout signatures in key players' charts, and the transits hanging over the 2026 tournament.",
   authorId: "marcus-orion",
   date: "2026-07-11",
   schema: "Article",
@@ -18,7 +21,7 @@ export const spainVsFranceWorldCup2026AstrologyEn: WikiArticle = {
     "Spain vs France World Cup 2026 astrology match astrology",
     "Spain vs France World Cup 2026 astrology team astrology",
     "world cup 2026 astrology prediction",
-    "argentina world cup 2026 astrology"
+    "argentina world cup 2026 astrology",
   ],
   content: `# Spain vs France World Cup 2026 Astrology as Symbolic Storytelling, Not a Scoreline
 
@@ -122,6 +125,8 @@ A betting tip commits to an outcome; this framing deliberately doesn't. It offer
 ## Related Reading
 
 - [World Cup 2026 astrology overview](/en/wiki/world-cup-2026-astrology-prediction) — the hub this fixture page branches from, tying every team reading together.
+- [Spain's World Cup 2026 astrology](/en/wiki/spain-world-cup-2026-astrology) — the national-team chart behind one side of this fixture.
+- [Kylian Mbappé's birth chart](/en/wiki/kylian-mbappe-birth-chart) — a natal close-up on France's talisman.
 - [Jupiter guide](/en/wiki/jupiter) — background on the Jupiter-in-Cancer motif that frames the whole tournament.
 - [guide to rising sign and ascendant meaning](/en/wiki/ascendant-meaning) — how a chart's rising sign shapes the "character" this reading leans on.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup) — neutral context on the event itself.
@@ -129,7 +134,7 @@ A betting tip commits to an outcome; this framing deliberately doesn't. It offer
 
 ## Take Action
 
-Ready to see the symbolism for yourself? [Generate your free birth chart to explore Spain vs France World Cup 2026 astrology](https://astrologywiki.com/en/birth-chart-calculator), and you get a full map of the placements and transits behind the reading. Once you can spot your own signatures, the rivalry stops being something that happens to you and becomes a story you can actually read.
+Ready to see the symbolism for yourself? [Generate your free birth chart to explore Spain vs France World Cup 2026 astrology](/en/birth-chart-calculator), and you get a full map of the placements and transits behind the reading. Once you can spot your own signatures, the rivalry stops being something that happens to you and becomes a story you can actually read.
 
 ## Sources
 

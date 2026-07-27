@@ -6,8 +6,10 @@ export const bestSoccerPlayersZodiacSignEn: WikiArticle = {
   slug: "best-soccer-players-zodiac-sign",
   image: "/images/blog/best-soccer-players-zodiac-sign.jpg",
   image_alt: "An atmospheric celestial landscape evoking Best Soccer Players.",
-  title: "Best Soccer Players' Zodiac Sign: What the Birth-Date Data Actually Shows",
-  description: "The best-player zodiac question is the search for a single zodiac sign that produces the best soccer players",
+  title:
+    "Best Soccer Players' Zodiac Sign: What the Birth-Date Data Actually Shows",
+  description:
+    "The best-player zodiac question is the search for a single zodiac sign that produces the best soccer players",
   authorId: "marcus-orion",
   date: "2026-06-12",
   schema: "Article",
@@ -17,7 +19,7 @@ export const bestSoccerPlayersZodiacSignEn: WikiArticle = {
     "soccer players zodiac",
     "footballer star signs",
     "best zodiac for soccer",
-    "athlete birth dates"
+    "athlete birth dates",
   ],
   content: `# Best Soccer Players' Zodiac Sign: What the Birth-Date Data Actually Shows
 
@@ -103,14 +105,18 @@ Yes — as symbolism, not statistics. Read the sign for fun and personality, but
 
 ## Related Reading
 
-- *World Cup 2026 astrology themes pillar* — the hub that frames the tournament's wider astrology
-- *zodiac signs as World Cup 2026 teams* — the playful companion to this data-first piece
+- [World Cup 2026 astrology themes pillar](/en/wiki/world-cup-2026-astrology-prediction) — the hub that frames the tournament's wider astrology
+- [zodiac signs as World Cup 2026 teams](/en/wiki/zodiac-signs-as-world-cup-2026-teams) — the playful companion to this data-first piece
+- [Kylian Mbappé's birth chart](/en/wiki/kylian-mbappe-birth-chart) — a natal close-up on one of the game's marquee names
+- [Lionel Messi zodiac sign](/en/wiki/lionel-messi-zodiac-sign) — the Sun-sign read on the Argentine talisman
+- [Cristiano Ronaldo zodiac sign](/en/wiki/cristiano-ronaldo-zodiac-sign) — the Portuguese star's natal-sign profile
+- [Vinícius Jr zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — a younger star's Sun-sign reading
 - *what the Relative Age Effect is* — the calendar cause behind the birth-month pattern
 - [transit_events cluster on 2026 planetary transits](/en/wiki/transits) — the real-sky backdrop to the tournament
 
 ## Take Action
 
-[Generate your free birth chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) to read your own Sun for fun, while keeping the best soccer players' zodiac sign question in honest perspective. You get a clear view of your own sign and a reminder that a label is not a cause, and, more usefully, a habit of asking what the calendar or the cutoff did before crediting the stars for a pattern that has a much plainer source.
+[Generate your free birth chart](/en/wiki/how-to-read-birth-chart) to read your own Sun for fun, while keeping the best soccer players' zodiac sign question in honest perspective. You get a clear view of your own sign and a reminder that a label is not a cause, and, more usefully, a habit of asking what the calendar or the cutoff did before crediting the stars for a pattern that has a much plainer source.
 
 ## Sources
 
@@ -124,7 +130,8 @@ export const bestSoccerPlayersZodiacSignZh: WikiArticle = {
   image: "/images/blog/best-soccer-players-zodiac-sign.jpg",
   image_alt: "一幅氛围式星空风景，意象呼应「Best Soccer Players」。",
   title: "足球运动员星座背后，真正在说话的其实是日历",
-  description: "顶尖球员星座论说的是球员生日扎堆是真的，但星座导致出色不是真的。很多人查足球运动员星座，期待找出一个专出好球员的星座，可精英队里的生日规律来自日历，而不是星空。把它当成一道数据题、而不是一份运势来读，2026 世界杯占星主题支柱页这一类内容才能既保留星座的趣味、又不把数字读歪。",
+  description:
+    "顶尖球员星座论说的是球员生日扎堆是真的，但星座导致出色不是真的。很多人查足球运动员星座，期待找出一个专出好球员的星座，可精英队里的生日规律来自日历，而不是星空。把它当成一道数据题、而不是一份运势来读，2026 世界杯占星主题支柱页这一类内容才能既保留星座的趣味、又不把数字读歪。",
   authorId: "marcus-orion",
   date: "2026-06-13",
   schema: "Article",
@@ -134,7 +141,7 @@ export const bestSoccerPlayersZodiacSignZh: WikiArticle = {
     "famous football players zodiac signs",
     "soccer player star signs",
     "footballer birth chart",
-    "best players by zodiac"
+    "best players by zodiac",
   ],
   content: `# 足球运动员星座背后，真正在说话的其实是日历
 
@@ -224,7 +231,7 @@ export const bestSoccerPlayersZodiacSignZh: WikiArticle = {
 
 ## 下一步行动
 
-[生成你的免费出生星盘](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，图个乐地读读你自己的太阳，同时把足球运动员星座这个问题放在诚实的视角里。你会清楚看到自己的星座，也会记得标签不等于成因，更有用的是，养成一个习惯：在把规律归功于星空之前，先问一句日历或截止日做了什么——而那往往才是更朴素的源头。
+[生成你的免费出生星盘](/zh/wiki/how-to-read-birth-chart)，图个乐地读读你自己的太阳，同时把足球运动员星座这个问题放在诚实的视角里。你会清楚看到自己的星座，也会记得标签不等于成因，更有用的是，养成一个习惯：在把规律归功于星空之前，先问一句日历或截止日做了什么——而那往往才是更朴素的源头。
 
 ## 参考来源
 

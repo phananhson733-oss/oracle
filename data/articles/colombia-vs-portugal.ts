@@ -5,9 +5,11 @@ import type { WikiArticle } from "../../types";
 export const colombiaVsPortugalEn: WikiArticle = {
   slug: "colombia-vs-portugal",
   image: "/images/blog/colombia-vs-portugal.jpg",
-  image_alt: "Two glowing celestial presences converge beneath Jupiter in Cancer, symbolizing Colombia and Portugal's contrasting temperaments",
+  image_alt:
+    "Two glowing celestial presences converge beneath Jupiter in Cancer, symbolizing Colombia and Portugal's contrasting temperaments",
   title: "Colombia vs Portugal Through the Lens of Two National Charts",
-  description: "The Colombia vs Portugal astrological matchup is a side-by-side symbolic reading of two national charts and their key players set against the day's sky.",
+  description:
+    "The Colombia vs Portugal astrological matchup is a side-by-side symbolic reading of two national charts and their key players set against the day's sky.",
   authorId: "marcus-orion",
   date: "2026-06-26",
   schema: "Article",
@@ -18,7 +20,7 @@ export const colombiaVsPortugalEn: WikiArticle = {
     "Colombia vs Portugal world cup 2026 astrology",
     "Colombia vs Portugal zodiac prediction",
     "Colombia vs Portugal match astrology",
-    "Colombia vs Portugal team astrology"
+    "Colombia vs Portugal team astrology",
   ],
   content: `# Colombia vs Portugal Through the Lens of Two National Charts
 
@@ -109,12 +111,13 @@ No. It is designed to be read alongside one, adding the interpretive layer about
 ## Related Reading
 
 - [Luis Díaz birth chart](/en/wiki/luis-diaz-birth-chart) — the natal chart behind Colombia's headline forward
+- [Cristiano Ronaldo zodiac sign](/en/wiki/cristiano-ronaldo-zodiac-sign) — the natal-sign read behind Portugal's talisman
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — how star players' signs map to their playing archetypes
 - [2026 FIFA World Cup Group K (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup_Group_K) — factual grounding for the fixture itself
 
 ## Take Action
 
-Generate your free birth chart to explore Colombia vs Portugal — start by [reading your own chart with this beginner's birth-chart guide](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). You will come away with a working map of the same archetypes — drive, composure, timing — that this fixture puts on display, and a sharper eye for the temperament behind any team you follow, not just the players on the team sheet.
+Generate your free birth chart to explore Colombia vs Portugal — start by [reading your own chart with this beginner's birth-chart guide](/en/wiki/how-to-read-birth-chart). You will come away with a working map of the same archetypes — drive, composure, timing — that this fixture puts on display, and a sharper eye for the temperament behind any team you follow, not just the players on the team sheet.
 
 This is not a clinical interpretation or mental health advice.
 

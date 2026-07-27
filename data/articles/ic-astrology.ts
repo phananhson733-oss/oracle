@@ -104,7 +104,7 @@ No. The IC is an angle, a calculated point, not a sign, so it has no permanent r
 
 ## Take Action
 
-Pull up your own birth chart and find the point at the very bottom of the wheel, then read its sign and ruler with the [full guide to reading a birth chart to find your IC at the base of the chart](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). You will come away with a clear map of where your private foundation actually sits, and once you can name the base you quietly stand on, the rest of the chart stops reading as scattered traits and starts reading as a structure with a root you recognize.
+Pull up your own birth chart and find the point at the very bottom of the wheel, then read its sign and ruler with the [full guide to reading a birth chart to find your IC at the base of the chart](/en/wiki/how-to-read-birth-chart). You will come away with a clear map of where your private foundation actually sits, and once you can name the base you quietly stand on, the rest of the chart stops reading as scattered traits and starts reading as a structure with a root you recognize.
 
 ## Sources
 
@@ -215,7 +215,7 @@ IC 是星盘四个轴点之一，而轴点会随着地球自转飞快移动，�
 
 ## 下一步行动
 
-打开你自己的本命盘，找到轮盘最底端那个点，照着它的星座和主管，对照[这份带你读懂整张本命盘、并在盘底找到你 IC 的完整指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)读一遍。你会得到一张清楚的地图，看出私密的地基究竟落在哪里；而当你能叫出那块悄悄踩着的地基，整张盘就不再像一堆散乱特质，而是一座有根、你认得出来的结构。
+打开你自己的本命盘，找到轮盘最底端那个点，照着它的星座和主管，对照[这份带你读懂整张本命盘、并在盘底找到你 IC 的完整指南](/zh/wiki/how-to-read-birth-chart)读一遍。你会得到一张清楚的地图，看出私密的地基究竟落在哪里；而当你能叫出那块悄悄踩着的地基，整张盘就不再像一堆散乱特质，而是一座有根、你认得出来的结构。
 
 ## 参考来源
 

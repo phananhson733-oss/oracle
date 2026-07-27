@@ -134,7 +134,7 @@ No. A dasha period tends to set the active theme of a stretch of years, pointing
 
 ## Take Action
 
-Open the chart your tool saved, then read it in order: lagna first, lagna lord, planets by house, then the current dasha. Do that and you turn a screen of symbols into a few plain sentences about how you tend to operate and what this period is asking of you. To interpret each placement properly, [read the How to Read a Birth Chart guide](https://astrologywiki.com/en/wiki/how-to-read-birth-chart) and apply it to the output in front of you — the chart stops being someone else's jargon and starts describing a life you recognise as your own.
+Open the chart your tool saved, then read it in order: lagna first, lagna lord, planets by house, then the current dasha. Do that and you turn a screen of symbols into a few plain sentences about how you tend to operate and what this period is asking of you. To interpret each placement properly, [read the How to Read a Birth Chart guide](/en/wiki/how-to-read-birth-chart) and apply it to the output in front of you — the chart stops being someone else's jargon and starts describing a life you recognise as your own.
 
 ## Sources
 
@@ -261,7 +261,7 @@ export const vedicBirthChartCalculatorZh: WikiArticle = {
 
 ## 下一步行动
 
-排出吠陀星盘（Vedic Birth Chart）只是第一步，真正的价值在于读懂它返回的每一个落座和大运。接下来，去读[一篇手把手教你解读本命盘的指南](https://astrologywiki.com/zh/wiki/how-to-read-birth-chart)，跟着把上升点、行星落座一格格拆开看，你会得到一张能对照阅读的盘面笔记；当你能把符号翻译成自己的生活语言，这张盘就从一堆代码，变成了你观察自己人生节奏的一面镜子。
+排出吠陀星盘（Vedic Birth Chart）只是第一步，真正的价值在于读懂它返回的每一个落座和大运。接下来，去读[一篇手把手教你解读本命盘的指南](/zh/wiki/how-to-read-birth-chart)，跟着把上升点、行星落座一格格拆开看，你会得到一张能对照阅读的盘面笔记；当你能把符号翻译成自己的生活语言，这张盘就从一堆代码，变成了你观察自己人生节奏的一面镜子。
 
 ## 参考来源
 

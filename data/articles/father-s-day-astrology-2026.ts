@@ -115,7 +115,7 @@ This is not a clinical interpretation or mental health advice.
 
 ## Take Action
 
-[Generate your free birth chart to explore father's day astrology 2026](https://astrologywiki.com/en/wiki/how-to-read-birth-chart). You'll see exactly where Cancer season and this father-archetype emphasis fall across your own houses, instead of reading a generic forecast. From there, the day becomes less about picking a card and more about noticing how you carry home, care, and lineage in your own life.
+[Generate your free birth chart to explore father's day astrology 2026](/en/wiki/how-to-read-birth-chart). You'll see exactly where Cancer season and this father-archetype emphasis fall across your own houses, instead of reading a generic forecast. From there, the day becomes less about picking a card and more about noticing how you carry home, care, and lineage in your own life.
 
 ## Sources
 
