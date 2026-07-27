@@ -5,7 +5,7 @@ import type { WikiArticle } from "../../types";
 export const btsMembersZodiacSignsEn: WikiArticle = {
   slug: "bts-members-zodiac-signs",
   image: "/images/blog/bts-members-zodiac-signs.jpg",
-  image_alt: "Abstract constellation artwork with brilliant stars against an indigo and violet night sky.",
+  image_alt: "Seven original K-pop performer archetypes study a glowing birth-chart map in a rehearsal studio, with music practice scenes around them.",
   title: "All Seven BTS Members' Zodiac Signs, Explained Without the Chart Jargon",
   description: "BTS members zodiac signs are a source-aware roster of six date-stable Sun signs plus one boundary-date caveat, built from the members' published birth dates and read through Western tropical astrology conventions.",
   authorId: "marcus-orion",
