@@ -373,6 +373,7 @@ import { whatIsMyLoveLanguageEn } from "./what-is-my-love-language";
 import { whatDoINeedToLetGoOfEn } from "./what-do-i-need-to-let-go-of";
 import { elvisBirthChartEn } from "./elvis-birth-chart";
 import { birthChartInterpretationEn } from "./birth-chart-interpretation";
+import { btsMembersZodiacSignsEn } from "./bts-members-zodiac-signs";
 // All articles organized by language
 
 import {
@@ -737,6 +738,7 @@ const ARTICLES_EN: WikiArticle[] = [
   whatDoINeedToLetGoOfEn,
   elvisBirthChartEn,
   birthChartInterpretationEn,
+  btsMembersZodiacSignsEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [
