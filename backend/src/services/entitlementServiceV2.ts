@@ -1,0 +1,2900 @@
+// Entitlement Service V2 - 重新设计的权益系统
+// 支持：7天试用、每周重置、永久解锁、合盘唯一性校验等
+
+import crypto from "crypto";
+import {
+  supabase,
+  DbFreeUsage,
+  DbPurchaseRecord,
+  DbSynastryRecord,
+  DbSubscriptionUsage,
+  SynastryPersonInfo,
+  PurchaseScope,
+  isSupabaseConfigured,
+} from "../db/supabase.js";
+import {
+  FREE_TIER_LIMITS,
+  SUBSCRIPTION_BENEFITS,
+  PRICING,
+  LOGIN_GATE_MODE,
+  LOGIN_GATE_DAILY_LIMITS,
+} from "../config/auth.js";
+import subscriptionService from "./subscriptionService.js";
+import { getOrCreateDevEntitlementState } from "./entitlementService.js";
+import proTrialService from "./proTrialService.js";
+import { cacheService } from "../cache/redis.js";
+import { logger } from "../utils/logger.js";
+
+// =====================================================
+// 类型定义
+// =====================================================
+
+export interface EntitlementsV2 {
+  isLoggedIn: boolean;
+  isSubscriber: boolean;
+  isTrialing: boolean;
+  trialEndsAt: string | null;
+  isFirstDiscountEligible: boolean; // 是否有首次订阅折扣资格
+  proTrial: {
+    eligible: boolean;
+    days: number;
+    reason?: string;
+  };
+
+  subscription?: {
+    plan: "monthly" | "yearly";
+    status: string;
+    expiresAt: string;
+    provider: "stripe" | "paypal" | "airwallex";
+  };
+
+  // Ask 问答额度
+  ask: {
+    freeLeft: number; // 本周免费剩余
+    subscriptionLeft: number; // 本周订阅权益剩余
+    purchasedLeft: number;
+    totalLeft: number; // 合计可用
+    resetAt: string; // 下次重置时间
+  };
+
+  // 合盘额度
+  synastry: {
+    freeLeft: number; // 永久免费剩余（最多 3 次）
+    subscriptionLeft: number; // 本周订阅权益剩余
+    totalLeft: number; // 合计可用
+    resetAt: string; // 下次重置时间（仅影响订阅权益）
+  };
+
+  // Synthetica 工具额度
+  synthetica: {
+    freeLeft: number; // 当日免费剩余
+    subscriptionLeft: number; // 当日订阅权益剩余
+    purchasedLeft: number; // 购买的额外额度剩余
+    totalLeft: number; // 合计可用
+    resetAt: string; // 下次重置时间
+  };
+
+  // 已购买的永久内容
+  purchasedFeatures: {
+    dimensions: string[]; // 已解锁的心理维度
+    coreThemes: string[]; // 已解锁的核心主题
+    details: string[];
+    synastryHashes: string[]; // 已购买的合盘哈希
+  };
+
+  // 当月已解锁的内容
+  monthlyUnlocked: {
+    cbtStats: boolean; // CBT 统计是否已解锁
+  };
+
+  credits: number;
+  discount: number;
+}
+
+export type FeatureType =
+  | "dimension" // 心理维度（永久）
+  | "core_theme" // 核心主题（永久）
+  | "detail"
+  | "daily_script" // 今日剧本（每日）
+  | "daily_transit" // 星象详情（每日）
+  | "synastry" // 合盘（永久）
+  | "synastry_detail" // 合盘内详情（按合盘绑定）
+  | "ask" // Ask 问答（消耗型）
+  | "cbt_stats" // CBT 统计（每月）
+  | "synthetica"; // Synthetica 工具（消耗型）
+
+export type PurchaseFeatureType = FeatureType | "report";
+
+export interface AccessCheckResult {
+  canAccess: boolean;
+  reason?: "subscribed" | "trial" | "purchased" | "free_quota" | "credits";
+  needPurchase?: boolean;
+  price?: number; // 积分
+  scope?: PurchaseScope;
+}
+
+// =====================================================
+// 工具函数
+// =====================================================
+
+type DevEntitlementState = ReturnType<typeof getOrCreateDevEntitlementState>;
+
+// 获取当前周起始时间（周一 00:00 UTC）
+function getWeekStart(date: Date = new Date()): Date {
+  const d = new Date(date);
+  d.setUTCHours(0, 0, 0, 0);
+  const day = d.getUTCDay();
+  const diff = d.getUTCDate() - day + (day === 0 ? -6 : 1);
+  d.setUTCDate(diff);
+  return d;
+}
+
+// 获取当前日起始时间（00:00 UTC）
+function getDayStart(date: Date = new Date()): Date {
+  const d = new Date(date);
+  d.setUTCHours(0, 0, 0, 0);
+  return d;
+}
+
+// 获取下周重置时间
+function getNextWeekReset(): string {
+  const nextWeek = getWeekStart();
+  nextWeek.setUTCDate(nextWeek.getUTCDate() + 7);
+  return nextWeek.toISOString();
+}
+
+// 获取下一日重置时间
+function getNextDayReset(): string {
+  const nextDay = getDayStart();
+  nextDay.setUTCDate(nextDay.getUTCDate() + 1);
+  return nextDay.toISOString();
+}
+
+// 获取给定时区的当日 0 点（UTC 表示）
+function getDayStartForTimezone(
+  timezone: string,
+  date: Date = new Date(),
+): Date {
+  try {
+    // 获取用户时区的当前日期字符串（YYYY-MM-DD）
+    const formatter = new Intl.DateTimeFormat("en-CA", {
+      timeZone: timezone,
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+    });
+    const dateStr = formatter.format(date); // e.g. "2026-02-15"
+    // 用该日期字符串构造该时区 0 点的 UTC 时间
+    // 创建一个临时 Date 来计算偏移量
+    const parts = dateStr.split("-");
+    const localMidnight = new Date(
+      `${parts[0]}-${parts[1]}-${parts[2]}T00:00:00`,
+    );
+    // 获取该时区在 midnight 时的 UTC 偏移
+    const utcStr = new Date(
+      localMidnight.toLocaleString("en-US", { timeZone: "UTC" }),
+    ).getTime();
+    const tzStr = new Date(
+      localMidnight.toLocaleString("en-US", { timeZone: timezone }),
+    ).getTime();
+    const offset = utcStr - tzStr;
+    return new Date(localMidnight.getTime() + offset);
+  } catch {
+    // 无效时区 fallback 到 UTC
+    return getDayStart(date);
+  }
+}
+
+// 获取给定时区的下次午夜（ISO 8601）
+function getNextMidnightForTimezone(timezone: string): string {
+  const now = new Date();
+  const dayStart = getDayStartForTimezone(timezone, now);
+  const nextMidnight = new Date(dayStart.getTime() + 24 * 60 * 60 * 1000);
+  return nextMidnight.toISOString();
+}
+
+// 检查是否同一月
+function isSameMonth(date1: Date, date2: Date = new Date()): boolean {
+  return (
+    date1.getUTCFullYear() === date2.getUTCFullYear() &&
+    date1.getUTCMonth() === date2.getUTCMonth()
+  );
+}
+
+function getYearMonthKey(date: Date = new Date()): string {
+  return `${date.getUTCFullYear()}-${String(date.getUTCMonth() + 1).padStart(2, "0")}`;
+}
+
+function ensureDevCollections(state: DevEntitlementState): DevEntitlementState {
+  if (!state.purchasedFeatures) {
+    state.purchasedFeatures = {
+      dimensions: [],
+      coreThemes: [],
+      details: [],
+      synastryHashes: [],
+    };
+  }
+  if (!state.monthlyUnlocks) {
+    state.monthlyUnlocks = {
+      cbtStatsMonths: [],
+    };
+  }
+  if (typeof state.askTokens !== "number") {
+    state.askTokens = 0;
+  }
+  if (typeof state.syntheticaTokens !== "number") {
+    state.syntheticaTokens = 0;
+  }
+  if (typeof state.syntheticaUsed !== "number") {
+    state.syntheticaUsed = 0;
+  }
+  if (state.syntheticaResetAt === undefined) {
+    state.syntheticaResetAt = null;
+  }
+  return state;
+}
+
+function addUnique(list: string[], value?: string | null) {
+  if (!value) return;
+  if (!list.includes(value)) {
+    list.push(value);
+  }
+}
+
+function applyDevPurchase(
+  state: DevEntitlementState,
+  featureType: PurchaseFeatureType,
+  featureId: string | null,
+  scope: PurchaseScope,
+) {
+  const ensured = ensureDevCollections(state);
+  switch (scope) {
+    case "permanent": {
+      if (featureType === "dimension") {
+        addUnique(ensured.purchasedFeatures.dimensions, featureId);
+      } else if (featureType === "core_theme") {
+        addUnique(ensured.purchasedFeatures.coreThemes, featureId);
+      } else if (featureType === "detail") {
+        addUnique(ensured.purchasedFeatures.details, featureId);
+      } else if (
+        featureType === "synastry_detail" ||
+        featureType === "synastry"
+      ) {
+        addUnique(ensured.purchasedFeatures.synastryHashes, featureId);
+      }
+      break;
+    }
+    case "per_synastry": {
+      addUnique(ensured.purchasedFeatures.synastryHashes, featureId);
+      break;
+    }
+    case "per_month": {
+      if (featureType === "cbt_stats") {
+        const monthKey = featureId || getYearMonthKey();
+        addUnique(ensured.monthlyUnlocks.cbtStatsMonths, monthKey);
+      }
+      break;
+    }
+    case "consumable": {
+      if (featureType === "ask") {
+        ensured.askTokens = Math.max(0, ensured.askTokens + 1);
+      } else if (featureType === "synthetica") {
+        ensured.syntheticaTokens = Math.max(0, ensured.syntheticaTokens + 1);
+      }
+      break;
+    }
+    default:
+      break;
+  }
+}
+
+// 生成合盘唯一性哈希
+export function generateSynastryHash(
+  personA: SynastryPersonInfo,
+  personB: SynastryPersonInfo,
+  relationshipType: string,
+): string {
+  const normalizePersonInfo = (person: SynastryPersonInfo) => ({
+    name: person.name.trim().toLowerCase(),
+    birthDate: person.birthDate,
+    birthTime: person.birthTime || "unknown",
+    lat: Math.round(person.lat * 100) / 100,
+    lon: Math.round(person.lon * 100) / 100,
+    timezone: person.timezone,
+  });
+
+  const normalized = JSON.stringify({
+    a: normalizePersonInfo(personA),
+    b: normalizePersonInfo(personB),
+    rel: relationshipType,
+  });
+
+  return crypto.createHash("sha256").update(normalized).digest("hex");
+}
+
+// =====================================================
+// EntitlementServiceV2 类
+// =====================================================
+
+class EntitlementServiceV2 {
+  // 获取用户完整权益状态
+  async getEntitlements(
+    userId: string | null,
+    deviceFingerprint?: string,
+    timezone?: string,
+  ): Promise<EntitlementsV2> {
+    const now = new Date();
+    const weekStart = getWeekStart(now);
+    const nextReset = getNextWeekReset();
+    const dayStart = getDayStart(now);
+    const nextDayReset = getNextDayReset();
+
+    const entitlements: EntitlementsV2 = {
+      isLoggedIn: !!userId,
+      isSubscriber: false,
+      isTrialing: false,
+      trialEndsAt: null,
+      isFirstDiscountEligible: true, // 默认有资格，后面会根据用户数据更新
+      proTrial: {
+        eligible: false,
+        days: SUBSCRIPTION_BENEFITS.TRIAL_DAYS,
+      },
+      ask: {
+        freeLeft: FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK,
+        subscriptionLeft: 0,
+        purchasedLeft: 0,
+        totalLeft: FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK,
+        resetAt: nextReset,
+      },
+      synastry: {
+        freeLeft: FREE_TIER_LIMITS.SYNASTRY_TOTAL,
+        subscriptionLeft: 0,
+        totalLeft: FREE_TIER_LIMITS.SYNASTRY_TOTAL,
+        resetAt: nextReset,
+      },
+      synthetica: {
+        freeLeft: FREE_TIER_LIMITS.SYNTHETICA_DAILY,
+        subscriptionLeft: 0,
+        purchasedLeft: 0,
+        totalLeft: FREE_TIER_LIMITS.SYNTHETICA_DAILY,
+        resetAt: nextDayReset,
+      },
+      purchasedFeatures: {
+        dimensions: [],
+        coreThemes: [],
+        details: [],
+        synastryHashes: [],
+      },
+      monthlyUnlocked: {
+        cbtStats: false,
+      },
+      credits: 0,
+      discount: SUBSCRIPTION_BENEFITS.REPORT_DISCOUNT,
+    };
+
+    if (!isSupabaseConfigured()) {
+      if (userId) {
+        const devState = ensureDevCollections(
+          getOrCreateDevEntitlementState(userId),
+        );
+        const weekStartIso = weekStart.toISOString().split("T")[0];
+        const currentMonthKey = getYearMonthKey(now);
+        const updatedEntitlements: EntitlementsV2 = {
+          ...entitlements,
+          isSubscriber: devState.isSubscriber,
+          credits: devState.gmCredits,
+        };
+
+        if (
+          !devState.freeAskResetAt ||
+          new Date(devState.freeAskResetAt) < weekStart
+        ) {
+          devState.freeAskUsed = 0;
+          devState.freeAskResetAt = weekStart.toISOString();
+        }
+
+        if (
+          !devState.syntheticaResetAt ||
+          new Date(devState.syntheticaResetAt) < dayStart
+        ) {
+          devState.syntheticaUsed = 0;
+          devState.syntheticaResetAt = dayStart.toISOString();
+        }
+
+        if (devState.subscriptionWeekStart !== weekStartIso) {
+          devState.subscriptionAskUsed = 0;
+          devState.subscriptionSynastryUsed = 0;
+          devState.subscriptionWeekStart = weekStartIso;
+        }
+
+        updatedEntitlements.ask.freeLeft = Math.max(
+          0,
+          FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK - devState.freeAskUsed,
+        );
+        updatedEntitlements.ask.purchasedLeft = Math.max(0, devState.askTokens);
+        updatedEntitlements.synastry.freeLeft = Math.max(
+          0,
+          FREE_TIER_LIMITS.SYNASTRY_TOTAL - devState.freeSynastryUsed,
+        );
+        const syntheticaUsed = devState.syntheticaUsed || 0;
+        updatedEntitlements.synthetica.freeLeft = Math.max(
+          0,
+          FREE_TIER_LIMITS.SYNTHETICA_DAILY - syntheticaUsed,
+        );
+        updatedEntitlements.synthetica.purchasedLeft = Math.max(
+          0,
+          devState.syntheticaTokens || 0,
+        );
+        updatedEntitlements.purchasedFeatures = {
+          dimensions: [...devState.purchasedFeatures.dimensions],
+          coreThemes: [...devState.purchasedFeatures.coreThemes],
+          details: [...devState.purchasedFeatures.details],
+          synastryHashes: [...devState.purchasedFeatures.synastryHashes],
+        };
+        updatedEntitlements.monthlyUnlocked.cbtStats =
+          devState.monthlyUnlocks.cbtStatsMonths.includes(currentMonthKey);
+
+        if (devState.isSubscriber) {
+          updatedEntitlements.subscription = {
+            plan: "monthly",
+            status: "active",
+            expiresAt: new Date(
+              Date.now() + 365 * 24 * 60 * 60 * 1000,
+            ).toISOString(),
+            provider: "stripe",
+          };
+          updatedEntitlements.ask.subscriptionLeft = Math.max(
+            0,
+            SUBSCRIPTION_BENEFITS.ASK_EXTRA_PER_WEEK -
+              devState.subscriptionAskUsed,
+          );
+          updatedEntitlements.synastry.subscriptionLeft = Math.max(
+            0,
+            SUBSCRIPTION_BENEFITS.SYNASTRY_EXTRA_PER_WEEK -
+              devState.subscriptionSynastryUsed,
+          );
+          updatedEntitlements.synthetica.subscriptionLeft = Math.max(
+            0,
+            SUBSCRIPTION_BENEFITS.SYNTHETICA_EXTRA_PER_DAY -
+              Math.max(0, syntheticaUsed - FREE_TIER_LIMITS.SYNTHETICA_DAILY),
+          );
+          updatedEntitlements.monthlyUnlocked.cbtStats =
+            SUBSCRIPTION_BENEFITS.CBT_STATS_FREE;
+        }
+
+        updatedEntitlements.ask.totalLeft =
+          updatedEntitlements.ask.freeLeft +
+          updatedEntitlements.ask.subscriptionLeft +
+          updatedEntitlements.ask.purchasedLeft;
+        updatedEntitlements.synastry.totalLeft =
+          updatedEntitlements.synastry.freeLeft +
+          updatedEntitlements.synastry.subscriptionLeft;
+        updatedEntitlements.synthetica.totalLeft =
+          updatedEntitlements.synthetica.freeLeft +
+          updatedEntitlements.synthetica.subscriptionLeft +
+          updatedEntitlements.synthetica.purchasedLeft;
+
+        return updatedEntitlements;
+      }
+      return entitlements;
+    }
+
+    // LOGIN_GATE_MODE: 已登录用户使用每日限额，无订阅/积分概念
+    if (LOGIN_GATE_MODE && userId) {
+      const userTz = timezone || "UTC";
+      const tzDayStart = getDayStartForTimezone(userTz);
+      const tzNextReset = getNextMidnightForTimezone(userTz);
+
+      const freeUsage = await this.getOrCreateFreeUsageForUser(
+        userId,
+        deviceFingerprint,
+      );
+
+      // 缓存用户时区
+      if (freeUsage && timezone && freeUsage.user_timezone !== timezone) {
+        await supabase
+          .from("free_usage")
+          .update({ user_timezone: timezone })
+          .eq("id", freeUsage.id);
+      }
+
+      if (freeUsage) {
+        // Ask 每日重置
+        const askDailyResetAt = freeUsage.ask_daily_reset_at
+          ? new Date(freeUsage.ask_daily_reset_at)
+          : null;
+        if (!askDailyResetAt || askDailyResetAt < tzDayStart) {
+          await this.resetDailyAskUsage(freeUsage.id, tzDayStart);
+          entitlements.ask.freeLeft = LOGIN_GATE_DAILY_LIMITS.ASK_DAILY;
+        } else {
+          entitlements.ask.freeLeft = Math.max(
+            0,
+            LOGIN_GATE_DAILY_LIMITS.ASK_DAILY - (freeUsage.ask_daily_used || 0),
+          );
+        }
+
+        // Synastry 每日重置
+        const synastryDailyResetAt = freeUsage.synastry_daily_reset_at
+          ? new Date(freeUsage.synastry_daily_reset_at)
+          : null;
+        if (!synastryDailyResetAt || synastryDailyResetAt < tzDayStart) {
+          await this.resetDailySynastryUsage(freeUsage.id, tzDayStart);
+          entitlements.synastry.freeLeft =
+            LOGIN_GATE_DAILY_LIMITS.SYNASTRY_DAILY;
+        } else {
+          entitlements.synastry.freeLeft = Math.max(
+            0,
+            LOGIN_GATE_DAILY_LIMITS.SYNASTRY_DAILY -
+              (freeUsage.synastry_daily_used || 0),
+          );
+        }
+
+        // Synthetica 每日重置
+        const syntheticaResetAt = freeUsage.synthetica_reset_at
+          ? new Date(freeUsage.synthetica_reset_at)
+          : null;
+        if (!syntheticaResetAt || syntheticaResetAt < tzDayStart) {
+          await this.resetDailySyntheticaUsage(freeUsage.id);
+          entitlements.synthetica.freeLeft =
+            LOGIN_GATE_DAILY_LIMITS.SYNTHETICA_DAILY;
+        } else {
+          entitlements.synthetica.freeLeft = Math.max(
+            0,
+            LOGIN_GATE_DAILY_LIMITS.SYNTHETICA_DAILY -
+              (freeUsage.synthetica_used || 0),
+          );
+        }
+      }
+
+      // LOGIN_GATE_MODE 下无订阅/积分，直接使用 freeLeft
+      entitlements.ask.subscriptionLeft = 0;
+      entitlements.ask.purchasedLeft = 0;
+      entitlements.ask.totalLeft = entitlements.ask.freeLeft;
+      entitlements.ask.resetAt = tzNextReset;
+
+      entitlements.synastry.subscriptionLeft = 0;
+      entitlements.synastry.totalLeft = entitlements.synastry.freeLeft;
+      entitlements.synastry.resetAt = tzNextReset;
+
+      entitlements.synthetica.subscriptionLeft = 0;
+      entitlements.synthetica.purchasedLeft = 0;
+      entitlements.synthetica.totalLeft = entitlements.synthetica.freeLeft;
+      entitlements.synthetica.resetAt = tzNextReset;
+
+      return entitlements;
+    }
+
+    // 未登录用户：基于设备指纹的免费额度
+    if (!userId && deviceFingerprint) {
+      try {
+        const freeUsage =
+          await this.getOrCreateFreeUsageForDevice(deviceFingerprint);
+        if (freeUsage) {
+          // 检查 Ask 是否需要重置（每周）
+          const askResetAt = freeUsage.ask_reset_at
+            ? new Date(freeUsage.ask_reset_at)
+            : null;
+          if (!askResetAt || askResetAt < weekStart) {
+            // 需要重置
+            await this.resetWeeklyFreeUsage(freeUsage.id);
+            entitlements.ask.freeLeft = FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK;
+          } else {
+            entitlements.ask.freeLeft = Math.max(
+              0,
+              FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK - freeUsage.ask_used,
+            );
+          }
+
+          // 检查 Synthetica 是否需要重置（每日）
+          const syntheticaResetAt = freeUsage.synthetica_reset_at
+            ? new Date(freeUsage.synthetica_reset_at)
+            : null;
+          if (!syntheticaResetAt || syntheticaResetAt < dayStart) {
+            await this.resetDailySyntheticaUsage(freeUsage.id);
+            entitlements.synthetica.freeLeft =
+              FREE_TIER_LIMITS.SYNTHETICA_DAILY;
+          } else {
+            entitlements.synthetica.freeLeft = Math.max(
+              0,
+              FREE_TIER_LIMITS.SYNTHETICA_DAILY -
+                (freeUsage.synthetica_used || 0),
+            );
+          }
+
+          // 合盘永久免费次数
+          entitlements.synastry.freeLeft = Math.max(
+            0,
+            FREE_TIER_LIMITS.SYNASTRY_TOTAL -
+              (freeUsage.synastry_total_used || 0),
+          );
+        }
+
+        entitlements.ask.totalLeft = entitlements.ask.freeLeft;
+        entitlements.synastry.totalLeft = entitlements.synastry.freeLeft;
+        entitlements.synthetica.totalLeft = entitlements.synthetica.freeLeft;
+        return entitlements;
+      } catch (error) {
+        logger.error("Failed to load free usage for device", { error });
+        return entitlements;
+      }
+    }
+
+    if (!userId) {
+      return entitlements;
+    }
+
+    // 已登录用户
+    // 1. 检查试用期
+    const user = await this.getUser(userId);
+    if (!user) {
+      // 用户不存在（可能是旧 Token），按访客处理
+      return entitlements;
+    }
+
+    // 检查首次折扣资格
+    entitlements.isFirstDiscountEligible = !user.used_first_discount;
+    entitlements.proTrial = await proTrialService.getEligibility(userId);
+    if (entitlements.proTrial.eligible) {
+      // Trial and first-subscription discount are mutually exclusive choices.
+      entitlements.isFirstDiscountEligible = false;
+    }
+
+    if (user.trial_ends_at) {
+      const trialEnd = new Date(user.trial_ends_at);
+      entitlements.trialEndsAt = user.trial_ends_at;
+      if (trialEnd > now) {
+        entitlements.isTrialing = true;
+        entitlements.isSubscriber = true; // 试用期视为订阅用户
+      }
+    }
+
+    // 2. 检查订阅状态（无论是否在试用期，付费订阅优先于试用）
+    const subscription = await subscriptionService.getSubscription(userId);
+    if (
+      subscription &&
+      (subscription.status === "active" || subscription.status === "trialing")
+    ) {
+      const expiresAt = subscription.current_period_end
+        ? new Date(subscription.current_period_end)
+        : null;
+      if (!expiresAt || expiresAt > now) {
+        entitlements.isSubscriber = true;
+        entitlements.isTrialing = subscription.status === "trialing";
+        if (subscription.status === "trialing") {
+          entitlements.trialEndsAt = subscription.current_period_end || null;
+        }
+        entitlements.subscription = {
+          plan: subscription.plan,
+          status: subscription.status,
+          expiresAt: subscription.current_period_end || "",
+          provider: subscription.payment_provider || "stripe",
+        };
+      }
+    }
+
+    // 3. 获取免费额度使用情况
+    const freeUsage = await this.getOrCreateFreeUsageForUser(
+      userId,
+      deviceFingerprint,
+    );
+    let syntheticaUsed = 0;
+
+    if (freeUsage) {
+      const askResetAt = freeUsage.ask_reset_at
+        ? new Date(freeUsage.ask_reset_at)
+        : null;
+      if (!askResetAt || askResetAt < weekStart) {
+        await this.resetWeeklyFreeUsage(freeUsage.id);
+        entitlements.ask.freeLeft = FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK;
+      } else {
+        entitlements.ask.freeLeft = Math.max(
+          0,
+          FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK - freeUsage.ask_used,
+        );
+      }
+      const syntheticaResetAt = freeUsage.synthetica_reset_at
+        ? new Date(freeUsage.synthetica_reset_at)
+        : null;
+      if (!syntheticaResetAt || syntheticaResetAt < dayStart) {
+        await this.resetDailySyntheticaUsage(freeUsage.id);
+        entitlements.synthetica.freeLeft = FREE_TIER_LIMITS.SYNTHETICA_DAILY;
+        syntheticaUsed = 0;
+      } else {
+        syntheticaUsed = freeUsage.synthetica_used || 0;
+        entitlements.synthetica.freeLeft = Math.max(
+          0,
+          FREE_TIER_LIMITS.SYNTHETICA_DAILY - syntheticaUsed,
+        );
+      }
+      entitlements.synastry.freeLeft = Math.max(
+        0,
+        FREE_TIER_LIMITS.SYNASTRY_TOTAL - (freeUsage.synastry_total_used || 0),
+      );
+    }
+
+    // 4. 订阅用户的额外权益
+    if (entitlements.isSubscriber) {
+      const subUsage = await this.getOrCreateSubscriptionUsage(
+        userId,
+        weekStart,
+      );
+
+      // Ask 订阅权益
+      entitlements.ask.subscriptionLeft = Math.max(
+        0,
+        SUBSCRIPTION_BENEFITS.ASK_EXTRA_PER_WEEK - subUsage.ask_used,
+      );
+
+      // 合盘订阅权益
+      entitlements.synastry.subscriptionLeft = Math.max(
+        0,
+        SUBSCRIPTION_BENEFITS.SYNASTRY_EXTRA_PER_WEEK - subUsage.synastry_used,
+      );
+
+      entitlements.synthetica.subscriptionLeft = Math.max(
+        0,
+        SUBSCRIPTION_BENEFITS.SYNTHETICA_EXTRA_PER_DAY -
+          Math.max(0, syntheticaUsed - FREE_TIER_LIMITS.SYNTHETICA_DAILY),
+      );
+
+      // CBT 统计自动解锁
+      entitlements.monthlyUnlocked.cbtStats = true;
+    }
+
+    const purchaseRecords = await this.getPurchaseRecords(userId);
+    let askPurchasedLeft = 0;
+    let syntheticaPurchasedLeft = 0;
+    let credits = 0;
+
+    for (const record of purchaseRecords) {
+      if (record.scope === "permanent") {
+        if (record.feature_type === "dimension" && record.feature_id) {
+          entitlements.purchasedFeatures.dimensions.push(record.feature_id);
+        } else if (record.feature_type === "core_theme" && record.feature_id) {
+          entitlements.purchasedFeatures.coreThemes.push(record.feature_id);
+        } else if (record.feature_type === "detail" && record.feature_id) {
+          entitlements.purchasedFeatures.details.push(record.feature_id);
+        } else if (
+          (record.feature_type === "synastry_detail" ||
+            record.feature_type === "synastry") &&
+          record.feature_id
+        ) {
+          entitlements.purchasedFeatures.synastryHashes.push(record.feature_id);
+        }
+      } else if (record.scope === "per_month") {
+        if (record.feature_type === "cbt_stats" && record.valid_until) {
+          const validUntil = new Date(record.valid_until);
+          if (isSameMonth(validUntil, now) || validUntil > now) {
+            entitlements.monthlyUnlocked.cbtStats = true;
+          }
+        }
+      } else if (record.scope === "consumable") {
+        const remaining = Math.max(
+          0,
+          (record.quantity || 0) - (record.consumed || 0),
+        );
+        if (record.feature_type === "ask") {
+          askPurchasedLeft += remaining;
+        } else if (record.feature_type === "synthetica") {
+          syntheticaPurchasedLeft += remaining;
+        } else if (
+          record.feature_type === "gm_credit" ||
+          record.feature_type === "credits"
+        ) {
+          credits += remaining;
+        }
+      }
+    }
+
+    entitlements.ask.purchasedLeft = askPurchasedLeft;
+    entitlements.synthetica.purchasedLeft = syntheticaPurchasedLeft;
+    entitlements.ask.totalLeft =
+      entitlements.ask.freeLeft +
+      entitlements.ask.subscriptionLeft +
+      entitlements.ask.purchasedLeft;
+    entitlements.synastry.totalLeft =
+      entitlements.synastry.freeLeft + entitlements.synastry.subscriptionLeft;
+    entitlements.synthetica.totalLeft =
+      entitlements.synthetica.freeLeft +
+      entitlements.synthetica.subscriptionLeft +
+      entitlements.synthetica.purchasedLeft;
+    entitlements.credits = credits;
+
+    return entitlements;
+  }
+
+  // 检查特定功能是否可访问
+  async checkAccess(
+    userId: string | null,
+    featureType: FeatureType,
+    featureId?: string,
+    deviceFingerprint?: string,
+    timezone?: string,
+  ): Promise<AccessCheckResult> {
+    try {
+      const entitlements = await this.getEntitlements(
+        userId,
+        deviceFingerprint,
+        timezone,
+      );
+      const now = new Date();
+      const today = now.toISOString().split("T")[0];
+
+      // LOGIN_GATE_MODE: 已登录用户对非限额功能免费访问
+      if (LOGIN_GATE_MODE && userId) {
+        const NON_QUOTA_FEATURES: FeatureType[] = [
+          "dimension",
+          "core_theme",
+          "detail",
+          "daily_script",
+          "daily_transit",
+          "synastry_detail",
+          "cbt_stats",
+        ];
+        if (NON_QUOTA_FEATURES.includes(featureType)) {
+          return { canAccess: true, reason: "free_quota" };
+        }
+        // 限额功能：检查 totalLeft
+        if (featureType === "ask") {
+          if (entitlements.ask.totalLeft > 0) {
+            return { canAccess: true, reason: "free_quota" };
+          }
+          return { canAccess: false, needPurchase: false };
+        }
+        if (featureType === "synastry") {
+          // 已有合盘记录不消耗
+          if (
+            featureId &&
+            entitlements.purchasedFeatures.synastryHashes.includes(featureId)
+          ) {
+            return { canAccess: true, reason: "purchased" };
+          }
+          if (entitlements.synastry.totalLeft > 0) {
+            return { canAccess: true, reason: "free_quota" };
+          }
+          return { canAccess: false, needPurchase: false };
+        }
+        if (featureType === "synthetica") {
+          if (entitlements.synthetica.totalLeft > 0) {
+            return { canAccess: true, reason: "free_quota" };
+          }
+          return { canAccess: false, needPurchase: false };
+        }
+      }
+
+      switch (featureType) {
+        case "dimension": {
+          // 前 3 个维度免费（Emotions, Attachment, Sabotage）
+          const freeDimensions = ["Emotions", "Attachment", "Sabotage"];
+          if (featureId && freeDimensions.includes(featureId)) {
+            return { canAccess: true, reason: "free_quota" };
+          }
+          // 订阅/试用用户全部解锁
+          if (entitlements.isSubscriber) {
+            return {
+              canAccess: true,
+              reason: entitlements.isTrialing ? "trial" : "subscribed",
+            };
+          }
+          // 已购买
+          if (
+            featureId &&
+            entitlements.purchasedFeatures.dimensions.includes(featureId)
+          ) {
+            return { canAccess: true, reason: "purchased" };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price: PRICING.DIMENSION_UNLOCK,
+            scope: "permanent",
+          };
+        }
+
+        case "core_theme": {
+          if (entitlements.isSubscriber) {
+            return {
+              canAccess: true,
+              reason: entitlements.isTrialing ? "trial" : "subscribed",
+            };
+          }
+          if (
+            featureId &&
+            entitlements.purchasedFeatures.coreThemes.includes(featureId)
+          ) {
+            return { canAccess: true, reason: "purchased" };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price: PRICING.CORE_THEME_UNLOCK,
+            scope: "permanent",
+          };
+        }
+
+        case "detail": {
+          if (entitlements.isSubscriber) {
+            return {
+              canAccess: true,
+              reason: entitlements.isTrialing ? "trial" : "subscribed",
+            };
+          }
+          if (
+            featureId &&
+            entitlements.purchasedFeatures.details.includes(featureId)
+          ) {
+            return { canAccess: true, reason: "purchased" };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price: PRICING.DETAIL_VIEW,
+            scope: "permanent",
+          };
+        }
+
+        case "daily_script":
+        case "daily_transit": {
+          if (entitlements.isSubscriber) {
+            return {
+              canAccess: true,
+              reason: entitlements.isTrialing ? "trial" : "subscribed",
+            };
+          }
+          // 检查今日是否已购买
+          const hasPurchased = await this.checkDailyPurchase(
+            userId,
+            featureType,
+            today,
+          );
+          if (hasPurchased) {
+            return { canAccess: true, reason: "purchased" };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price:
+              featureType === "daily_script"
+                ? PRICING.DAILY_SCRIPT
+                : PRICING.DAILY_TRANSIT_DETAIL,
+            scope: "daily",
+          };
+        }
+
+        case "synastry": {
+          if (
+            featureId &&
+            entitlements.purchasedFeatures.synastryHashes.includes(featureId)
+          ) {
+            return { canAccess: true, reason: "purchased" };
+          }
+          if (
+            entitlements.synastry.totalLeft > 0 ||
+            entitlements.credits >= PRICING.SYNASTRY_FULL
+          ) {
+            let reason: AccessCheckResult["reason"] = "free_quota";
+            if (entitlements.synastry.freeLeft > 0) {
+              reason = "free_quota";
+            } else if (
+              entitlements.synastry.subscriptionLeft > 0 ||
+              entitlements.isSubscriber
+            ) {
+              reason = entitlements.isTrialing ? "trial" : "subscribed";
+            } else {
+              reason = "credits";
+            }
+            return { canAccess: true, reason };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price: PRICING.SYNASTRY_FULL,
+            scope: "permanent",
+          };
+        }
+
+        case "synastry_detail": {
+          if (entitlements.isSubscriber) {
+            return {
+              canAccess: true,
+              reason: entitlements.isTrialing ? "trial" : "subscribed",
+            };
+          }
+          // 检查是否已购买该合盘的详情
+          if (
+            featureId &&
+            entitlements.purchasedFeatures.synastryHashes.includes(featureId)
+          ) {
+            return { canAccess: true, reason: "purchased" };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price: PRICING.SYNASTRY_DETAIL,
+            scope: "per_synastry",
+          };
+        }
+
+        case "ask": {
+          if (
+            entitlements.ask.totalLeft > 0 ||
+            entitlements.credits >= PRICING.ASK_SINGLE
+          ) {
+            let reason: AccessCheckResult["reason"] = "free_quota";
+            if (entitlements.ask.freeLeft > 0) {
+              reason = "free_quota";
+            } else if (
+              entitlements.ask.subscriptionLeft > 0 ||
+              entitlements.isSubscriber
+            ) {
+              reason = entitlements.isTrialing ? "trial" : "subscribed";
+            } else {
+              reason = "credits";
+            }
+            return { canAccess: true, reason };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price: PRICING.ASK_SINGLE,
+            scope: "consumable",
+          };
+        }
+
+        case "synthetica": {
+          if (
+            entitlements.synthetica.totalLeft > 0 ||
+            entitlements.credits >= PRICING.SYNTHETICA_USE
+          ) {
+            let reason: AccessCheckResult["reason"] = "free_quota";
+            if (entitlements.synthetica.freeLeft > 0) {
+              reason = "free_quota";
+            } else if (
+              entitlements.synthetica.subscriptionLeft > 0 ||
+              entitlements.isSubscriber
+            ) {
+              reason = entitlements.isTrialing ? "trial" : "subscribed";
+            } else {
+              reason = "credits";
+            }
+            return { canAccess: true, reason };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price: PRICING.SYNTHETICA_USE,
+            scope: "consumable",
+          };
+        }
+
+        case "cbt_stats": {
+          if (
+            entitlements.isSubscriber ||
+            entitlements.monthlyUnlocked.cbtStats
+          ) {
+            const reason = entitlements.isSubscriber
+              ? entitlements.isTrialing
+                ? "trial"
+                : "subscribed"
+              : "purchased";
+            return { canAccess: true, reason };
+          }
+          return {
+            canAccess: false,
+            needPurchase: true,
+            price: PRICING.CBT_STATS_MONTHLY,
+            scope: "per_month",
+          };
+        }
+
+        default:
+          return { canAccess: false };
+      }
+    } catch (error) {
+      logger.error("Check access error", { error });
+      // Return safe default instead of throwing
+      return { canAccess: false };
+    }
+  }
+
+  // 消耗权益
+  async consumeFeature(
+    userId: string | null,
+    featureType: FeatureType,
+    deviceFingerprint?: string,
+    timezone?: string,
+  ): Promise<boolean> {
+    if (!isSupabaseConfigured()) {
+      if (!userId) {
+        return true;
+      }
+      const devState = getOrCreateDevEntitlementState(userId);
+      const weekStart = getWeekStart();
+      const weekStartIso = weekStart.toISOString().split("T")[0];
+
+      if (
+        !devState.freeAskResetAt ||
+        new Date(devState.freeAskResetAt) < weekStart
+      ) {
+        devState.freeAskUsed = 0;
+        devState.freeAskResetAt = weekStart.toISOString();
+      }
+
+      if (devState.subscriptionWeekStart !== weekStartIso) {
+        devState.subscriptionAskUsed = 0;
+        devState.subscriptionSynastryUsed = 0;
+        devState.subscriptionWeekStart = weekStartIso;
+      }
+
+      if (featureType === "ask") {
+        if (devState.freeAskUsed < FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK) {
+          devState.freeAskUsed += 1;
+          return true;
+        }
+        if (
+          devState.isSubscriber &&
+          devState.subscriptionAskUsed <
+            SUBSCRIPTION_BENEFITS.ASK_EXTRA_PER_WEEK
+        ) {
+          devState.subscriptionAskUsed += 1;
+          return true;
+        }
+        if (devState.askTokens > 0) {
+          devState.askTokens = Math.max(0, devState.askTokens - 1);
+          return true;
+        }
+        if (devState.gmCredits >= PRICING.ASK_SINGLE) {
+          devState.gmCredits = Math.max(
+            0,
+            devState.gmCredits - PRICING.ASK_SINGLE,
+          );
+          return true;
+        }
+        return false;
+      }
+
+      if (featureType === "synastry") {
+        if (
+          devState.isSubscriber &&
+          devState.subscriptionSynastryUsed <
+            SUBSCRIPTION_BENEFITS.SYNASTRY_EXTRA_PER_WEEK
+        ) {
+          devState.subscriptionSynastryUsed += 1;
+          return true;
+        }
+        if (devState.freeSynastryUsed < FREE_TIER_LIMITS.SYNASTRY_TOTAL) {
+          devState.freeSynastryUsed += 1;
+          return true;
+        }
+        return false;
+      }
+
+      if (featureType === "synthetica") {
+        if (
+          !devState.syntheticaResetAt ||
+          new Date(devState.syntheticaResetAt) < getDayStart()
+        ) {
+          devState.syntheticaUsed = 0;
+          devState.syntheticaResetAt = getDayStart().toISOString();
+        }
+        const dailyLimit =
+          FREE_TIER_LIMITS.SYNTHETICA_DAILY +
+          (devState.isSubscriber
+            ? SUBSCRIPTION_BENEFITS.SYNTHETICA_EXTRA_PER_DAY
+            : 0);
+        if (devState.syntheticaUsed < dailyLimit) {
+          devState.syntheticaUsed += 1;
+          return true;
+        }
+        if (devState.syntheticaTokens > 0) {
+          devState.syntheticaTokens = Math.max(
+            0,
+            devState.syntheticaTokens - 1,
+          );
+          return true;
+        }
+        if (devState.gmCredits >= PRICING.SYNTHETICA_USE) {
+          devState.gmCredits = Math.max(
+            0,
+            devState.gmCredits - PRICING.SYNTHETICA_USE,
+          );
+          return true;
+        }
+        return false;
+      }
+
+      return true;
+    }
+
+    // LOGIN_GATE_MODE: 已登录用户消耗每日额度
+    if (LOGIN_GATE_MODE && userId) {
+      const freeUsage = await this.getOrCreateFreeUsageForUser(
+        userId,
+        deviceFingerprint,
+      );
+      if (!freeUsage) return false;
+
+      if (featureType === "ask") {
+        const { error } = await supabase
+          .from("free_usage")
+          .update({ ask_daily_used: (freeUsage.ask_daily_used || 0) + 1 })
+          .eq("id", freeUsage.id);
+        return !error;
+      }
+
+      if (featureType === "synastry") {
+        const { error } = await supabase
+          .from("free_usage")
+          .update({
+            synastry_daily_used: (freeUsage.synastry_daily_used || 0) + 1,
+          })
+          .eq("id", freeUsage.id);
+        return !error;
+      }
+
+      if (featureType === "synthetica") {
+        const { error } = await supabase
+          .from("free_usage")
+          .update({ synthetica_used: (freeUsage.synthetica_used || 0) + 1 })
+          .eq("id", freeUsage.id);
+        return !error;
+      }
+
+      // 非限额功能不消耗
+      return true;
+    }
+
+    const entitlements = await this.getEntitlements(userId, deviceFingerprint);
+
+    if (featureType === "ask") {
+      if (entitlements.ask.freeLeft > 0) {
+        return this.consumeFreeAsk(userId, deviceFingerprint);
+      }
+      if (entitlements.isSubscriber && entitlements.ask.subscriptionLeft > 0) {
+        return this.consumeSubscriptionAsk(userId!);
+      }
+      if (userId && entitlements.ask.purchasedLeft > 0) {
+        return this.consumeConsumableRecord(userId, "ask");
+      }
+      if (userId && entitlements.credits >= PRICING.ASK_SINGLE) {
+        return this.consumeConsumableRecord(
+          userId,
+          "gm_credit",
+          PRICING.ASK_SINGLE,
+        );
+      }
+      return false;
+    }
+
+    if (featureType === "synastry") {
+      if (
+        entitlements.isSubscriber &&
+        entitlements.synastry.subscriptionLeft > 0
+      ) {
+        return this.consumeSubscriptionSynastry(userId!);
+      }
+      if (entitlements.synastry.freeLeft > 0) {
+        return this.consumeFreeSynastry(userId, deviceFingerprint);
+      }
+      if (userId && entitlements.credits >= PRICING.SYNASTRY_FULL) {
+        return this.consumeConsumableRecord(
+          userId,
+          "gm_credit",
+          PRICING.SYNASTRY_FULL,
+        );
+      }
+      return false;
+    }
+
+    if (featureType === "synthetica") {
+      if (
+        entitlements.synthetica.freeLeft > 0 ||
+        entitlements.synthetica.subscriptionLeft > 0
+      ) {
+        return this.consumeFreeSynthetica(userId, deviceFingerprint);
+      }
+      if (userId && entitlements.synthetica.purchasedLeft > 0) {
+        return this.consumeConsumableRecord(userId, "synthetica");
+      }
+      if (userId && entitlements.credits >= PRICING.SYNTHETICA_USE) {
+        return this.consumeConsumableRecord(
+          userId,
+          "gm_credit",
+          PRICING.SYNTHETICA_USE,
+        );
+      }
+      return false;
+    }
+
+    // 订阅用户的无限权益
+    if (entitlements.isSubscriber) {
+      return true;
+    }
+
+    return false;
+  }
+
+  // =====================================================
+  // 原子预占（P0-J）
+  // =====================================================
+  // reserveFeature 用 "guarded UPDATE" 模式实现原子 decrement：
+  // 同一秒内多个并发请求同时进入 checkAccess 并通过，再各自调用 LLM，
+  // 仅有一个实际扣到额度 → 攻击者可以 N 倍放大 LLM token 成本。
+  // 修复方法：在调用 LLM 之前用 UPDATE ... WHERE used < limit 的 guard
+  // 原子占住额度。占住失败 → 402（无额度）；占住成功 → 调用 LLM；
+  // 成功后 commit；LLM 失败则 refund 把额度还回去。
+
+  // 预占元数据，5 分钟 TTL（合理覆盖 LLM 单次最长响应时间）
+  private static RESERVATION_TTL_SECONDS = 300;
+
+  // 不同来源的预占凭据描述，便于 refund 时反向操作。
+  // - free_usage_ask / free_usage_synastry / free_usage_synthetica：
+  //   free_usage 表内对应字段 +1（已扣，refund 时 -1）
+  // - login_gate_ask_daily / login_gate_synastry_daily / login_gate_synthetica_daily：
+  //   LOGIN_GATE_MODE 下的每日字段 +1
+  // - subscription_ask / subscription_synastry：subscription_usage +1
+  // - purchase_record：某条 consumable purchase_records.consumed +N
+  // - dev_*：内存态扣减（refund 时恢复）
+  // - subscriber_unlimited：订阅无限额度，无需还
+  private buildReservationCacheKey(reservationId: string): string {
+    return `reserve:entitlement:${reservationId}`;
+  }
+
+  async reserveFeature(
+    userId: string | null,
+    featureType: FeatureType,
+    deviceFingerprint?: string,
+    timezone?: string,
+  ): Promise<{ reserved: boolean; reservationId: string | null }> {
+    const reservationId = crypto.randomUUID();
+
+    // === Dev / Supabase 未配置 ===
+    if (!isSupabaseConfigured()) {
+      if (!userId) {
+        // 无 userId 无法可靠定位 dev state，等同于无限免费
+        return { reserved: true, reservationId: null };
+      }
+      const devState = ensureDevCollections(
+        getOrCreateDevEntitlementState(userId),
+      );
+      const weekStart = getWeekStart();
+      const weekStartIso = weekStart.toISOString().split("T")[0];
+
+      if (
+        !devState.freeAskResetAt ||
+        new Date(devState.freeAskResetAt) < weekStart
+      ) {
+        devState.freeAskUsed = 0;
+        devState.freeAskResetAt = weekStart.toISOString();
+      }
+      if (devState.subscriptionWeekStart !== weekStartIso) {
+        devState.subscriptionAskUsed = 0;
+        devState.subscriptionSynastryUsed = 0;
+        devState.subscriptionWeekStart = weekStartIso;
+      }
+
+      const persistDev = async (kind: string) => {
+        await cacheService.set(
+          this.buildReservationCacheKey(reservationId),
+          { kind, userId, featureType },
+          EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+        );
+      };
+
+      if (featureType === "ask") {
+        if (devState.freeAskUsed < FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK) {
+          devState.freeAskUsed += 1;
+          await persistDev("dev_free_ask");
+          return { reserved: true, reservationId };
+        }
+        if (
+          devState.isSubscriber &&
+          devState.subscriptionAskUsed <
+            SUBSCRIPTION_BENEFITS.ASK_EXTRA_PER_WEEK
+        ) {
+          devState.subscriptionAskUsed += 1;
+          await persistDev("dev_subscription_ask");
+          return { reserved: true, reservationId };
+        }
+        if (devState.askTokens > 0) {
+          devState.askTokens = Math.max(0, devState.askTokens - 1);
+          await persistDev("dev_ask_tokens");
+          return { reserved: true, reservationId };
+        }
+        if (devState.gmCredits >= PRICING.ASK_SINGLE) {
+          devState.gmCredits = Math.max(
+            0,
+            devState.gmCredits - PRICING.ASK_SINGLE,
+          );
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "dev_gm_credit",
+              userId,
+              featureType,
+              amount: PRICING.ASK_SINGLE,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+        return { reserved: false, reservationId: null };
+      }
+
+      if (featureType === "synastry") {
+        if (
+          devState.isSubscriber &&
+          devState.subscriptionSynastryUsed <
+            SUBSCRIPTION_BENEFITS.SYNASTRY_EXTRA_PER_WEEK
+        ) {
+          devState.subscriptionSynastryUsed += 1;
+          await persistDev("dev_subscription_synastry");
+          return { reserved: true, reservationId };
+        }
+        if (devState.freeSynastryUsed < FREE_TIER_LIMITS.SYNASTRY_TOTAL) {
+          devState.freeSynastryUsed += 1;
+          await persistDev("dev_free_synastry");
+          return { reserved: true, reservationId };
+        }
+        if (devState.gmCredits >= PRICING.SYNASTRY_FULL) {
+          devState.gmCredits = Math.max(
+            0,
+            devState.gmCredits - PRICING.SYNASTRY_FULL,
+          );
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "dev_gm_credit",
+              userId,
+              featureType,
+              amount: PRICING.SYNASTRY_FULL,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+        return { reserved: false, reservationId: null };
+      }
+
+      if (featureType === "synthetica") {
+        if (
+          !devState.syntheticaResetAt ||
+          new Date(devState.syntheticaResetAt) < getDayStart()
+        ) {
+          devState.syntheticaUsed = 0;
+          devState.syntheticaResetAt = getDayStart().toISOString();
+        }
+        const dailyLimit =
+          FREE_TIER_LIMITS.SYNTHETICA_DAILY +
+          (devState.isSubscriber
+            ? SUBSCRIPTION_BENEFITS.SYNTHETICA_EXTRA_PER_DAY
+            : 0);
+        if (devState.syntheticaUsed < dailyLimit) {
+          devState.syntheticaUsed += 1;
+          await persistDev("dev_free_synthetica");
+          return { reserved: true, reservationId };
+        }
+        if (devState.syntheticaTokens > 0) {
+          devState.syntheticaTokens = Math.max(
+            0,
+            devState.syntheticaTokens - 1,
+          );
+          await persistDev("dev_synthetica_tokens");
+          return { reserved: true, reservationId };
+        }
+        if (devState.gmCredits >= PRICING.SYNTHETICA_USE) {
+          devState.gmCredits = Math.max(
+            0,
+            devState.gmCredits - PRICING.SYNTHETICA_USE,
+          );
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "dev_gm_credit",
+              userId,
+              featureType,
+              amount: PRICING.SYNTHETICA_USE,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+        return { reserved: false, reservationId: null };
+      }
+
+      // 其他特性暂不走预占路径
+      return { reserved: true, reservationId: null };
+    }
+
+    // === LOGIN_GATE_MODE（已登录用户每日限额）===
+    if (LOGIN_GATE_MODE && userId) {
+      const freeUsage = await this.getOrCreateFreeUsageForUser(
+        userId,
+        deviceFingerprint,
+      );
+      if (!freeUsage) {
+        return { reserved: false, reservationId: null };
+      }
+
+      if (featureType === "ask") {
+        // 原子 UPDATE：仅当未达上限才 +1
+        const updated = await this.atomicIncrementBoundedField(
+          freeUsage.id,
+          "ask_daily_used",
+          LOGIN_GATE_DAILY_LIMITS.ASK_DAILY,
+        );
+        if (!updated) {
+          return { reserved: false, reservationId: null };
+        }
+        await cacheService.set(
+          this.buildReservationCacheKey(reservationId),
+          {
+            kind: "login_gate_ask_daily",
+            freeUsageId: freeUsage.id,
+            field: "ask_daily_used",
+          },
+          EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+        );
+        return { reserved: true, reservationId };
+      }
+
+      if (featureType === "synastry") {
+        const updated = await this.atomicIncrementBoundedField(
+          freeUsage.id,
+          "synastry_daily_used",
+          LOGIN_GATE_DAILY_LIMITS.SYNASTRY_DAILY,
+        );
+        if (!updated) {
+          return { reserved: false, reservationId: null };
+        }
+        await cacheService.set(
+          this.buildReservationCacheKey(reservationId),
+          {
+            kind: "login_gate_synastry_daily",
+            freeUsageId: freeUsage.id,
+            field: "synastry_daily_used",
+          },
+          EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+        );
+        return { reserved: true, reservationId };
+      }
+
+      if (featureType === "synthetica") {
+        const updated = await this.atomicIncrementBoundedField(
+          freeUsage.id,
+          "synthetica_used",
+          LOGIN_GATE_DAILY_LIMITS.SYNTHETICA_DAILY,
+        );
+        if (!updated) {
+          return { reserved: false, reservationId: null };
+        }
+        await cacheService.set(
+          this.buildReservationCacheKey(reservationId),
+          {
+            kind: "login_gate_synthetica_daily",
+            freeUsageId: freeUsage.id,
+            field: "synthetica_used",
+          },
+          EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+        );
+        return { reserved: true, reservationId };
+      }
+
+      // 其他特性默认放行
+      return { reserved: true, reservationId: null };
+    }
+
+    // === 标准 V2 路径 ===
+    const entitlements = await this.getEntitlements(
+      userId,
+      deviceFingerprint,
+      timezone,
+    );
+
+    if (featureType === "ask") {
+      // 1) 免费额度
+      if (entitlements.ask.freeLeft > 0) {
+        const freeUsage = userId
+          ? await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint)
+          : deviceFingerprint
+            ? await this.getOrCreateFreeUsageForDevice(deviceFingerprint)
+            : null;
+        if (freeUsage) {
+          const updated = await this.atomicIncrementBoundedField(
+            freeUsage.id,
+            "ask_used",
+            FREE_TIER_LIMITS.ASK_QUESTIONS_PER_WEEK,
+          );
+          if (updated) {
+            await cacheService.set(
+              this.buildReservationCacheKey(reservationId),
+              {
+                kind: "free_usage_ask",
+                freeUsageId: freeUsage.id,
+                field: "ask_used",
+              },
+              EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+            );
+            return { reserved: true, reservationId };
+          }
+        }
+      }
+      // 2) 订阅每周权益
+      if (
+        entitlements.isSubscriber &&
+        entitlements.ask.subscriptionLeft > 0 &&
+        userId
+      ) {
+        const weekStart = getWeekStart();
+        const subUsage = await this.getOrCreateSubscriptionUsage(
+          userId,
+          weekStart,
+        );
+        const updated = await this.atomicIncrementBoundedSubscriptionField(
+          subUsage.id,
+          "ask_used",
+          SUBSCRIPTION_BENEFITS.ASK_EXTRA_PER_WEEK,
+        );
+        if (updated) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "subscription_ask",
+              subscriptionUsageId: subUsage.id,
+              field: "ask_used",
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      // 3) 购买的 ask 包
+      if (userId && entitlements.ask.purchasedLeft > 0) {
+        const reserved = await this.atomicReserveConsumable(userId, "ask", 1);
+        if (reserved) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "purchase_record",
+              purchaseRecordId: reserved.recordId,
+              amount: 1,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      // 4) 积分
+      if (userId && entitlements.credits >= PRICING.ASK_SINGLE) {
+        const reserved = await this.atomicReserveConsumable(
+          userId,
+          "gm_credit",
+          PRICING.ASK_SINGLE,
+        );
+        if (reserved) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "purchase_record",
+              purchaseRecordId: reserved.recordId,
+              amount: reserved.consumed,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      return { reserved: false, reservationId: null };
+    }
+
+    if (featureType === "synastry") {
+      // 1) 订阅每周权益（合盘逻辑里订阅优先于免费，与 consumeFeature 一致）
+      if (
+        entitlements.isSubscriber &&
+        entitlements.synastry.subscriptionLeft > 0 &&
+        userId
+      ) {
+        const weekStart = getWeekStart();
+        const subUsage = await this.getOrCreateSubscriptionUsage(
+          userId,
+          weekStart,
+        );
+        const updated = await this.atomicIncrementBoundedSubscriptionField(
+          subUsage.id,
+          "synastry_used",
+          SUBSCRIPTION_BENEFITS.SYNASTRY_EXTRA_PER_WEEK,
+        );
+        if (updated) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "subscription_synastry",
+              subscriptionUsageId: subUsage.id,
+              field: "synastry_used",
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      // 2) 免费额度（永久 3 次）
+      if (entitlements.synastry.freeLeft > 0) {
+        const freeUsage = userId
+          ? await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint)
+          : deviceFingerprint
+            ? await this.getOrCreateFreeUsageForDevice(deviceFingerprint)
+            : null;
+        if (freeUsage) {
+          const updated = await this.atomicIncrementBoundedField(
+            freeUsage.id,
+            "synastry_total_used",
+            FREE_TIER_LIMITS.SYNASTRY_TOTAL,
+          );
+          if (updated) {
+            await cacheService.set(
+              this.buildReservationCacheKey(reservationId),
+              {
+                kind: "free_usage_synastry",
+                freeUsageId: freeUsage.id,
+                field: "synastry_total_used",
+              },
+              EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+            );
+            return { reserved: true, reservationId };
+          }
+        }
+      }
+      // 3) 积分
+      if (userId && entitlements.credits >= PRICING.SYNASTRY_FULL) {
+        const reserved = await this.atomicReserveConsumable(
+          userId,
+          "gm_credit",
+          PRICING.SYNASTRY_FULL,
+        );
+        if (reserved) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "purchase_record",
+              purchaseRecordId: reserved.recordId,
+              amount: reserved.consumed,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      return { reserved: false, reservationId: null };
+    }
+
+    if (featureType === "synthetica") {
+      // 免费和订阅日额度共用 free_usage.synthetica_used，订阅用户的上限更高。
+      if (
+        entitlements.synthetica.freeLeft > 0 ||
+        entitlements.synthetica.subscriptionLeft > 0
+      ) {
+        const freeUsage = userId
+          ? await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint)
+          : deviceFingerprint
+            ? await this.getOrCreateFreeUsageForDevice(deviceFingerprint)
+            : null;
+        if (freeUsage) {
+          const dailyLimit =
+            FREE_TIER_LIMITS.SYNTHETICA_DAILY +
+            (entitlements.isSubscriber
+              ? SUBSCRIPTION_BENEFITS.SYNTHETICA_EXTRA_PER_DAY
+              : 0);
+          const updated = await this.atomicIncrementBoundedField(
+            freeUsage.id,
+            "synthetica_used",
+            dailyLimit,
+          );
+          if (updated) {
+            await cacheService.set(
+              this.buildReservationCacheKey(reservationId),
+              {
+                kind: "free_usage_synthetica",
+                freeUsageId: freeUsage.id,
+                field: "synthetica_used",
+              },
+              EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+            );
+            return { reserved: true, reservationId };
+          }
+        }
+      }
+      if (userId && entitlements.synthetica.purchasedLeft > 0) {
+        const reserved = await this.atomicReserveConsumable(
+          userId,
+          "synthetica",
+          1,
+        );
+        if (reserved) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "purchase_record",
+              purchaseRecordId: reserved.recordId,
+              amount: reserved.consumed,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      if (userId && entitlements.credits >= PRICING.SYNTHETICA_USE) {
+        const reserved = await this.atomicReserveConsumable(
+          userId,
+          "gm_credit",
+          PRICING.SYNTHETICA_USE,
+        );
+        if (reserved) {
+          await cacheService.set(
+            this.buildReservationCacheKey(reservationId),
+            {
+              kind: "purchase_record",
+              purchaseRecordId: reserved.recordId,
+              amount: reserved.consumed,
+            },
+            EntitlementServiceV2.RESERVATION_TTL_SECONDS,
+          );
+          return { reserved: true, reservationId };
+        }
+      }
+      return { reserved: false, reservationId: null };
+    }
+
+    // 其他特性默认放行（兼容性，未接入预占）
+    return { reserved: true, reservationId: null };
+  }
+
+  async commitReservation(reservationId: string | null): Promise<void> {
+    if (!reservationId) return;
+    // 扣减早在 reserveFeature 中完成；commit 只是清掉 cache 元数据
+    await cacheService.del(this.buildReservationCacheKey(reservationId));
+  }
+
+  async refundReservation(reservationId: string | null): Promise<void> {
+    if (!reservationId) return;
+    const key = this.buildReservationCacheKey(reservationId);
+    const payload = await cacheService.get<{
+      kind: string;
+      userId?: string;
+      featureType?: FeatureType;
+      freeUsageId?: string;
+      subscriptionUsageId?: string;
+      purchaseRecordId?: string;
+      field?: string;
+      amount?: number;
+    }>(key);
+    if (!payload) {
+      // 已 commit / 已 refund / TTL 过期 — 幂等
+      return;
+    }
+    try {
+      switch (payload.kind) {
+        case "free_usage_ask":
+        case "free_usage_synastry":
+        case "free_usage_synthetica":
+        case "login_gate_ask_daily":
+        case "login_gate_synastry_daily":
+        case "login_gate_synthetica_daily": {
+          if (payload.freeUsageId && payload.field) {
+            await this.atomicDecrementField(
+              "free_usage",
+              payload.freeUsageId,
+              payload.field,
+            );
+          }
+          break;
+        }
+        case "subscription_ask":
+        case "subscription_synastry": {
+          if (payload.subscriptionUsageId && payload.field) {
+            await this.atomicDecrementField(
+              "subscription_usage",
+              payload.subscriptionUsageId,
+              payload.field,
+            );
+          }
+          break;
+        }
+        case "purchase_record": {
+          if (payload.purchaseRecordId) {
+            await this.atomicDecrementConsumed(
+              payload.purchaseRecordId,
+              payload.amount || 1,
+            );
+          }
+          break;
+        }
+        case "dev_free_ask":
+        case "dev_subscription_ask":
+        case "dev_ask_tokens":
+        case "dev_free_synastry":
+        case "dev_subscription_synastry":
+        case "dev_free_synthetica":
+        case "dev_synthetica_tokens": {
+          if (payload.userId) {
+            const devState = getOrCreateDevEntitlementState(payload.userId);
+            if (payload.kind === "dev_free_ask") {
+              devState.freeAskUsed = Math.max(0, devState.freeAskUsed - 1);
+            } else if (payload.kind === "dev_subscription_ask") {
+              devState.subscriptionAskUsed = Math.max(
+                0,
+                devState.subscriptionAskUsed - 1,
+              );
+            } else if (payload.kind === "dev_ask_tokens") {
+              devState.askTokens += 1;
+            } else if (payload.kind === "dev_free_synastry") {
+              devState.freeSynastryUsed = Math.max(
+                0,
+                devState.freeSynastryUsed - 1,
+              );
+            } else if (payload.kind === "dev_subscription_synastry") {
+              devState.subscriptionSynastryUsed = Math.max(
+                0,
+                devState.subscriptionSynastryUsed - 1,
+              );
+            } else if (payload.kind === "dev_free_synthetica") {
+              devState.syntheticaUsed = Math.max(
+                0,
+                devState.syntheticaUsed - 1,
+              );
+            } else if (payload.kind === "dev_synthetica_tokens") {
+              devState.syntheticaTokens += 1;
+            }
+          }
+          break;
+        }
+        case "dev_gm_credit": {
+          if (payload.userId) {
+            const devState = getOrCreateDevEntitlementState(payload.userId);
+            devState.gmCredits = Math.max(
+              0,
+              devState.gmCredits + (payload.amount || 0),
+            );
+          }
+          break;
+        }
+        default:
+          break;
+      }
+    } finally {
+      await cacheService.del(key);
+    }
+  }
+
+  // 原子守卫：UPDATE free_usage SET <field> = <field> + 1
+  //          WHERE id = :id AND <field> < :limit RETURNING id
+  // 由 PostgREST 等价表达：.eq('id', id).lt(field, limit) + RPC 风格 raw expression。
+  // PostgREST 不直接支持 column +1，因此退化为读 + 比较 + 守卫式 update：
+  // .update({ field: current+1 }).eq('id', id).eq(field, current) — 期望仅当行未被
+  // 并发修改时才成功（CAS）。返回 select() 验证影响行数。
+  private async atomicIncrementBoundedField(
+    freeUsageId: string,
+    field: string,
+    limit: number,
+  ): Promise<boolean> {
+    // 最多重试 3 次以处理乐观锁冲突
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const { data: current } = await supabase
+        .from("free_usage")
+        .select("*")
+        .eq("id", freeUsageId)
+        .single();
+      if (!current) return false;
+      const currentValue =
+        ((current as unknown as Record<string, unknown>)[field] as number) || 0;
+      if (currentValue >= limit) {
+        return false;
+      }
+      const { data: updated, error } = await supabase
+        .from("free_usage")
+        .update({ [field]: currentValue + 1 })
+        .eq("id", freeUsageId)
+        .eq(field, currentValue)
+        .select("id")
+        .maybeSingle();
+      if (!error && updated) {
+        return true;
+      }
+      // CAS 失败 — 重试
+    }
+    return false;
+  }
+
+  private async atomicIncrementBoundedSubscriptionField(
+    subscriptionUsageId: string,
+    field: string,
+    limit: number,
+  ): Promise<boolean> {
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const { data: current } = await supabase
+        .from("subscription_usage")
+        .select("*")
+        .eq("id", subscriptionUsageId)
+        .single();
+      if (!current) return false;
+      const currentValue =
+        ((current as unknown as Record<string, unknown>)[field] as number) || 0;
+      if (currentValue >= limit) {
+        return false;
+      }
+      const { data: updated, error } = await supabase
+        .from("subscription_usage")
+        .update({ [field]: currentValue + 1 })
+        .eq("id", subscriptionUsageId)
+        .eq(field, currentValue)
+        .select("id")
+        .maybeSingle();
+      if (!error && updated) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // CAS 风格 decrement，refund 时使用
+  private async atomicDecrementField(
+    table: "free_usage" | "subscription_usage",
+    rowId: string,
+    field: string,
+  ): Promise<boolean> {
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const { data: current } = await supabase
+        .from(table)
+        .select("*")
+        .eq("id", rowId)
+        .single();
+      if (!current) return false;
+      const currentValue =
+        ((current as unknown as Record<string, unknown>)[field] as number) || 0;
+      if (currentValue <= 0) {
+        return true; // 已经是 0，幂等
+      }
+      const { data: updated, error } = await supabase
+        .from(table)
+        .update({ [field]: currentValue - 1 })
+        .eq("id", rowId)
+        .eq(field, currentValue)
+        .select("id")
+        .maybeSingle();
+      if (!error && updated) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // 原子预占 consumable：对 purchase_records.consumed 做 CAS +N
+  // 优先扣最早的 record；返回扣到的 record 与实际消耗数量
+  private async atomicReserveConsumable(
+    userId: string,
+    featureType: string,
+    quantity: number,
+  ): Promise<{ recordId: string; consumed: number } | null> {
+    const types =
+      featureType === "gm_credit" ? ["gm_credit", "credits"] : [featureType];
+    const { data } = await supabase
+      .from("purchase_records")
+      .select("id, quantity, consumed")
+      .eq("user_id", userId)
+      .in("feature_type", types)
+      .eq("scope", "consumable")
+      .order("created_at", { ascending: true });
+
+    if (!data || data.length === 0) return null;
+
+    let remaining = quantity;
+    // 优先在单条 record 上原子预占整个 quantity；若不够则失败（避免跨 record 复杂回滚）
+    for (const record of data) {
+      const available = Math.max(
+        0,
+        (record.quantity || 0) - (record.consumed || 0),
+      );
+      if (available <= 0) continue;
+      const take = Math.min(available, remaining);
+      // CAS：仅当 consumed 仍为预期值时 +take
+      const expectedConsumed = record.consumed || 0;
+      const { data: updated, error } = await supabase
+        .from("purchase_records")
+        .update({ consumed: expectedConsumed + take })
+        .eq("id", record.id)
+        .eq("consumed", expectedConsumed)
+        .select("id")
+        .maybeSingle();
+      if (!error && updated && take === quantity) {
+        return { recordId: record.id, consumed: take };
+      }
+      // 部分扣到不够整单：暂不支持跨条预占，回滚已扣后失败
+      if (!error && updated && take < quantity) {
+        await this.atomicDecrementConsumed(record.id, take);
+        return null;
+      }
+      // CAS 失败 — 继续看下一条 record
+    }
+
+    return remaining < quantity ? null : null;
+  }
+
+  private async atomicDecrementConsumed(
+    recordId: string,
+    amount: number,
+  ): Promise<boolean> {
+    for (let attempt = 0; attempt < 3; attempt += 1) {
+      const { data: current } = await supabase
+        .from("purchase_records")
+        .select("id, consumed")
+        .eq("id", recordId)
+        .single();
+      if (!current) return false;
+      const currentConsumed = (current.consumed as number) || 0;
+      const next = Math.max(0, currentConsumed - amount);
+      const { data: updated, error } = await supabase
+        .from("purchase_records")
+        .update({ consumed: next })
+        .eq("id", recordId)
+        .eq("consumed", currentConsumed)
+        .select("id")
+        .maybeSingle();
+      if (!error && updated) {
+        return true;
+      }
+    }
+    return false;
+  }
+
+  // =====================================================
+  // 私有方法
+  // =====================================================
+
+  private async getUser(userId: string) {
+    // First try with used_first_discount, fall back to without it if column doesn't exist
+    const { data, error } = await supabase
+      .from("users")
+      .select("trial_ends_at, used_first_discount")
+      .eq("id", userId)
+      .single();
+    if (error && !data) {
+      // Column might not exist yet, try without it
+      const { data: fallbackData } = await supabase
+        .from("users")
+        .select("trial_ends_at")
+        .eq("id", userId)
+        .single();
+      return fallbackData
+        ? { ...fallbackData, used_first_discount: false }
+        : null;
+    }
+    return data;
+  }
+
+  private async getFreeUsage(
+    deviceFingerprint: string,
+  ): Promise<DbFreeUsage | null> {
+    const { data } = await supabase
+      .from("free_usage")
+      .select("*")
+      .eq("device_fingerprint", deviceFingerprint)
+      .single();
+    return data as DbFreeUsage | null;
+  }
+
+  private async getFreeUsageByUserId(
+    userId: string,
+  ): Promise<DbFreeUsage | null> {
+    const { data } = await supabase
+      .from("free_usage")
+      .select("*")
+      .eq("user_id", userId)
+      .single();
+    return data as DbFreeUsage | null;
+  }
+
+  private async getOrCreateFreeUsageForUser(
+    userId: string,
+    deviceFingerprint?: string,
+    ipAddress?: string,
+  ): Promise<DbFreeUsage> {
+    // 1. Try to get existing usage
+    let existing = await this.getFreeUsageByUserId(userId);
+    if (existing) {
+      return existing;
+    }
+
+    // ... (logic to migrate device usage if needed) ...
+    let deviceUsage: DbFreeUsage | null = null;
+    if (deviceFingerprint) {
+      deviceUsage = await this.getFreeUsage(deviceFingerprint);
+      if (
+        deviceUsage &&
+        (!deviceUsage.user_id || deviceUsage.user_id === userId)
+      ) {
+        try {
+          const { data, error } = await supabase
+            .from("free_usage")
+            .update({ user_id: userId })
+            .eq("id", deviceUsage.id)
+            .select()
+            .single();
+          if (!error && data) {
+            return data as DbFreeUsage;
+          }
+        } catch (e) {
+          // Update failed, possibly race condition or row deleted. Proceed to create new.
+        }
+      }
+    }
+
+    const weekStart = getWeekStart();
+    const dayStart = getDayStart();
+    const fingerprintValue =
+      deviceUsage && deviceUsage.user_id && deviceUsage.user_id !== userId
+        ? null
+        : deviceFingerprint || null;
+
+    // 2. Try to insert new usage
+    try {
+      const { data, error } = await supabase
+        .from("free_usage")
+        .insert({
+          user_id: userId,
+          device_fingerprint: fingerprintValue,
+          ip_address: ipAddress || null,
+          ask_reset_at: weekStart.toISOString(),
+          synthetica_reset_at: dayStart.toISOString(),
+          synastry_total_used: 0,
+          synthetica_used: 0,
+        })
+        .select()
+        .single();
+
+      if (error) {
+        // If error is unique constraint violation, it means another request created it concurrently
+        if (error.code === "23505") {
+          // Postgres unique_violation
+          // 3. Retry fetching existing usage
+          existing = await this.getFreeUsageByUserId(userId);
+          if (existing) return existing;
+        }
+        throw new Error(`Failed to create free usage record: ${error.message}`);
+      }
+      return data as DbFreeUsage;
+    } catch (e) {
+      // General error handling - attempt one last fetch just in case
+      existing = await this.getFreeUsageByUserId(userId);
+      if (existing) return existing;
+      throw e;
+    }
+  }
+
+  private async getOrCreateFreeUsageForDevice(
+    deviceFingerprint: string,
+    ipAddress?: string,
+  ): Promise<DbFreeUsage> {
+    let freeUsage = await this.getFreeUsage(deviceFingerprint);
+
+    if (!freeUsage) {
+      const weekStart = getWeekStart();
+      const dayStart = getDayStart();
+
+      try {
+        const { data, error } = await supabase
+          .from("free_usage")
+          .insert({
+            device_fingerprint: deviceFingerprint,
+            ip_address: ipAddress || null,
+            ask_reset_at: weekStart.toISOString(),
+            synthetica_reset_at: dayStart.toISOString(),
+            synastry_total_used: 0,
+            synthetica_used: 0,
+          })
+          .select()
+          .single();
+
+        if (error) {
+          if (error.code === "23505") {
+            // unique_violation
+            // Retry fetch
+            freeUsage = await this.getFreeUsage(deviceFingerprint);
+            if (freeUsage) return freeUsage;
+          }
+          throw new Error(
+            `Failed to create free usage record: ${error.message}`,
+          );
+        }
+        return data as DbFreeUsage;
+      } catch (e) {
+        // Retry fetch
+        freeUsage = await this.getFreeUsage(deviceFingerprint);
+        if (freeUsage) return freeUsage;
+        throw e;
+      }
+    }
+
+    return freeUsage;
+  }
+
+  private async resetWeeklyFreeUsage(freeUsageId: string): Promise<void> {
+    const weekStart = getWeekStart();
+    await supabase
+      .from("free_usage")
+      .update({
+        ask_used: 0,
+        ask_reset_at: weekStart.toISOString(),
+      })
+      .eq("id", freeUsageId);
+  }
+
+  private async resetDailySyntheticaUsage(freeUsageId: string): Promise<void> {
+    const dayStart = getDayStart();
+    await supabase
+      .from("free_usage")
+      .update({
+        synthetica_used: 0,
+        synthetica_reset_at: dayStart.toISOString(),
+      })
+      .eq("id", freeUsageId);
+  }
+
+  private async resetDailyAskUsage(
+    freeUsageId: string,
+    tzDayStart: Date,
+  ): Promise<void> {
+    await supabase
+      .from("free_usage")
+      .update({
+        ask_daily_used: 0,
+        ask_daily_reset_at: tzDayStart.toISOString(),
+      })
+      .eq("id", freeUsageId);
+  }
+
+  private async resetDailySynastryUsage(
+    freeUsageId: string,
+    tzDayStart: Date,
+  ): Promise<void> {
+    await supabase
+      .from("free_usage")
+      .update({
+        synastry_daily_used: 0,
+        synastry_daily_reset_at: tzDayStart.toISOString(),
+      })
+      .eq("id", freeUsageId);
+  }
+
+  private async getOrCreateSubscriptionUsage(
+    userId: string,
+    weekStart: Date,
+  ): Promise<DbSubscriptionUsage> {
+    const weekStartStr = weekStart.toISOString().split("T")[0];
+
+    const { data: existing } = await supabase
+      .from("subscription_usage")
+      .select("*")
+      .eq("user_id", userId)
+      .eq("week_start", weekStartStr)
+      .single();
+
+    if (existing) {
+      return existing as DbSubscriptionUsage;
+    }
+
+    try {
+      const { data, error } = await supabase
+        .from("subscription_usage")
+        .insert({
+          user_id: userId,
+          week_start: weekStartStr,
+        })
+        .select()
+        .single();
+
+      if (error) {
+        if (error.code === "23505") {
+          // unique_violation
+          // Retry fetch
+          const { data: retryData } = await supabase
+            .from("subscription_usage")
+            .select("*")
+            .eq("user_id", userId)
+            .eq("week_start", weekStartStr)
+            .single();
+
+          if (retryData) return retryData as DbSubscriptionUsage;
+        }
+        throw new Error(
+          `Failed to create subscription usage: ${error.message}`,
+        );
+      }
+      return data as DbSubscriptionUsage;
+    } catch (e) {
+      // Retry fetch
+      const { data: retryData } = await supabase
+        .from("subscription_usage")
+        .select("*")
+        .eq("user_id", userId)
+        .eq("week_start", weekStartStr)
+        .single();
+
+      if (retryData) return retryData as DbSubscriptionUsage;
+      throw e;
+    }
+  }
+
+  private async getPurchaseRecords(
+    userId: string,
+  ): Promise<DbPurchaseRecord[]> {
+    const { data } = await supabase
+      .from("purchase_records")
+      .select("*")
+      .eq("user_id", userId);
+
+    return (data || []) as DbPurchaseRecord[];
+  }
+
+  private async checkDailyPurchase(
+    userId: string | null,
+    featureType: string,
+    date: string,
+  ): Promise<boolean> {
+    if (!userId) return false;
+
+    const { data } = await supabase
+      .from("purchase_records")
+      .select("id")
+      .eq("user_id", userId)
+      .eq("feature_type", featureType)
+      .eq("feature_id", date)
+      .eq("scope", "daily")
+      .single();
+
+    return !!data;
+  }
+
+  private async consumeFreeAsk(
+    userId: string | null,
+    deviceFingerprint?: string,
+  ): Promise<boolean> {
+    const freeUsage = userId
+      ? await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint)
+      : deviceFingerprint
+        ? await this.getOrCreateFreeUsageForDevice(deviceFingerprint)
+        : null;
+    if (!freeUsage) return false;
+
+    const { error } = await supabase
+      .from("free_usage")
+      .update({ ask_used: freeUsage.ask_used + 1 })
+      .eq("id", freeUsage.id);
+
+    return !error;
+  }
+
+  private async consumeFreeSynthetica(
+    userId: string | null,
+    deviceFingerprint?: string,
+  ): Promise<boolean> {
+    const freeUsage = userId
+      ? await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint)
+      : deviceFingerprint
+        ? await this.getOrCreateFreeUsageForDevice(deviceFingerprint)
+        : null;
+    if (!freeUsage) return false;
+
+    const { error } = await supabase
+      .from("free_usage")
+      .update({ synthetica_used: (freeUsage.synthetica_used || 0) + 1 })
+      .eq("id", freeUsage.id);
+
+    return !error;
+  }
+
+  private async consumeSubscriptionAsk(userId: string): Promise<boolean> {
+    const weekStart = getWeekStart();
+    const usage = await this.getOrCreateSubscriptionUsage(userId, weekStart);
+
+    const { error } = await supabase
+      .from("subscription_usage")
+      .update({ ask_used: usage.ask_used + 1 })
+      .eq("id", usage.id);
+
+    return !error;
+  }
+
+  private async consumeFreeSynastry(
+    userId: string | null,
+    deviceFingerprint?: string,
+  ): Promise<boolean> {
+    const freeUsage = userId
+      ? await this.getOrCreateFreeUsageForUser(userId, deviceFingerprint)
+      : deviceFingerprint
+        ? await this.getOrCreateFreeUsageForDevice(deviceFingerprint)
+        : null;
+    if (!freeUsage) return false;
+
+    const { error } = await supabase
+      .from("free_usage")
+      .update({ synastry_total_used: (freeUsage.synastry_total_used || 0) + 1 })
+      .eq("id", freeUsage.id);
+
+    return !error;
+  }
+
+  private async consumeSubscriptionSynastry(userId: string): Promise<boolean> {
+    const weekStart = getWeekStart();
+    const usage = await this.getOrCreateSubscriptionUsage(userId, weekStart);
+
+    const { error } = await supabase
+      .from("subscription_usage")
+      .update({ synastry_used: usage.synastry_used + 1 })
+      .eq("id", usage.id);
+
+    return !error;
+  }
+
+  private async consumeConsumableRecord(
+    userId: string,
+    featureType: string,
+    quantity = 1,
+  ): Promise<boolean> {
+    // Also match legacy 'credits' feature_type for gm_credit records
+    const types =
+      featureType === "gm_credit" ? ["gm_credit", "credits"] : [featureType];
+    const { data } = await supabase
+      .from("purchase_records")
+      .select("id, quantity, consumed")
+      .eq("user_id", userId)
+      .in("feature_type", types)
+      .eq("scope", "consumable")
+      .order("created_at", { ascending: true });
+
+    if (!data || data.length === 0) {
+      return false;
+    }
+
+    let remainingToConsume = quantity;
+
+    for (const record of data) {
+      const available = Math.max(
+        0,
+        (record.quantity || 0) - (record.consumed || 0),
+      );
+      if (available <= 0) {
+        continue;
+      }
+      const consumeNow = Math.min(available, remainingToConsume);
+      const { error } = await supabase
+        .from("purchase_records")
+        .update({ consumed: (record.consumed || 0) + consumeNow })
+        .eq("id", record.id);
+      if (error) {
+        return false;
+      }
+      remainingToConsume -= consumeNow;
+      if (remainingToConsume <= 0) {
+        return true;
+      }
+    }
+
+    return false;
+  }
+
+  // =====================================================
+  // 合盘相关方法
+  // =====================================================
+
+  // 检查合盘是否已存在
+  async checkSynastryHash(
+    userId: string,
+    personA: SynastryPersonInfo,
+    personB: SynastryPersonInfo,
+    relationshipType: string,
+  ): Promise<{
+    exists: boolean;
+    hash: string;
+    record?: DbSynastryRecord;
+  }> {
+    const hash = generateSynastryHash(personA, personB, relationshipType);
+
+    const { data } = await supabase
+      .from("synastry_records")
+      .select("*")
+      .eq("user_id", userId)
+      .eq("synastry_hash", hash)
+      .single();
+
+    return {
+      exists: !!data,
+      hash,
+      record: data as DbSynastryRecord | undefined,
+    };
+  }
+
+  // 记录合盘使用
+  async recordSynastryUsage(
+    userId: string,
+    personA: SynastryPersonInfo,
+    personB: SynastryPersonInfo,
+    relationshipType: string,
+    isFree: boolean,
+  ): Promise<DbSynastryRecord> {
+    const hash = generateSynastryHash(personA, personB, relationshipType);
+
+    const { data, error } = await supabase
+      .from("synastry_records")
+      .insert({
+        user_id: userId,
+        synastry_hash: hash,
+        person_a_info: personA,
+        person_b_info: personB,
+        relationship_type: relationshipType,
+        is_free: isFree,
+      })
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to record synastry: ${error.message}`);
+    return data as DbSynastryRecord;
+  }
+
+  // =====================================================
+  // 购买记录方法
+  // =====================================================
+
+  async purchaseWithCredits(
+    userId: string,
+    featureType: PurchaseFeatureType,
+    featureId: string | null,
+    scope: PurchaseScope,
+    priceCents: number,
+  ): Promise<DbPurchaseRecord | null> {
+    if (!isSupabaseConfigured()) {
+      const devState = ensureDevCollections(
+        getOrCreateDevEntitlementState(userId),
+      );
+      if (priceCents > 0 && devState.gmCredits < priceCents) {
+        return null;
+      }
+      if (priceCents > 0) {
+        devState.gmCredits = Math.max(0, devState.gmCredits - priceCents);
+      }
+      applyDevPurchase(devState, featureType, featureId, scope);
+
+      const now = new Date();
+      let validUntil: string | null = null;
+      if (scope === "daily") {
+        const endOfDay = new Date(now);
+        endOfDay.setUTCHours(23, 59, 59, 999);
+        validUntil = endOfDay.toISOString();
+      } else if (scope === "per_month") {
+        const endOfMonth = new Date(
+          now.getUTCFullYear(),
+          now.getUTCMonth() + 1,
+          0,
+          23,
+          59,
+          59,
+          999,
+        );
+        validUntil = endOfMonth.toISOString();
+      }
+
+      return {
+        id: `dev_${Date.now()}`,
+        user_id: userId,
+        feature_type: featureType,
+        feature_id: featureId,
+        scope,
+        price_cents: priceCents,
+        stripe_payment_intent_id: null,
+        stripe_checkout_session_id: null,
+        valid_until: validUntil,
+        quantity: 1,
+        consumed: 0,
+        created_at: now.toISOString(),
+      } as DbPurchaseRecord;
+    }
+
+    if (priceCents <= 0) {
+      return this.recordPurchase(
+        userId,
+        featureType,
+        featureId,
+        scope,
+        priceCents,
+      );
+    }
+
+    const consumed = await this.consumeConsumableRecord(
+      userId,
+      "gm_credit",
+      priceCents,
+    );
+    if (!consumed) {
+      return null;
+    }
+
+    return this.recordPurchase(
+      userId,
+      featureType,
+      featureId,
+      scope,
+      priceCents,
+    );
+  }
+
+  // 记录购买
+  async recordPurchase(
+    userId: string,
+    featureType: PurchaseFeatureType,
+    featureId: string | null,
+    scope: PurchaseScope,
+    priceCents: number,
+    stripePaymentIntentId?: string,
+    stripeCheckoutSessionId?: string,
+  ): Promise<DbPurchaseRecord> {
+    let validUntil: string | null = null;
+    const now = new Date();
+
+    // 设置有效期
+    if (scope === "daily") {
+      const endOfDay = new Date(now);
+      endOfDay.setUTCHours(23, 59, 59, 999);
+      validUntil = endOfDay.toISOString();
+    } else if (scope === "per_month") {
+      const endOfMonth = new Date(
+        now.getUTCFullYear(),
+        now.getUTCMonth() + 1,
+        0,
+        23,
+        59,
+        59,
+        999,
+      );
+      validUntil = endOfMonth.toISOString();
+    }
+
+    const payload: Record<string, unknown> = {
+      user_id: userId,
+      feature_type: featureType,
+      feature_id: featureId,
+      scope,
+      price_cents: priceCents,
+      stripe_payment_intent_id: stripePaymentIntentId,
+      stripe_checkout_session_id: stripeCheckoutSessionId,
+      valid_until: validUntil,
+    };
+
+    if (scope === "consumable") {
+      payload.quantity = 1;
+      payload.consumed = 0;
+    }
+
+    const { data, error } = await supabase
+      .from("purchase_records")
+      .insert(payload)
+      .select()
+      .single();
+
+    if (error) throw new Error(`Failed to record purchase: ${error.message}`);
+    return data as DbPurchaseRecord;
+  }
+
+  // 退款：删除指定 feature 的 purchase_records 行，并把扣掉的积分以新的 gm_credit
+  // consumable 记录形式返还。用于 paid 内容（如 report）生成失败时回滚已扣积分，
+  // 避免出现"用户付了钱但拿不到内容"的局面。priceCents 不传时会从被删行的
+  // price_cents 字段读取，保证退款额与原扣款额一致（含订阅折扣）。
+  async refundFeature(
+    userId: string,
+    featureType: PurchaseFeatureType,
+    featureId: string | null,
+    priceCents?: number,
+  ): Promise<void> {
+    if (!isSupabaseConfigured()) {
+      const devState = ensureDevCollections(
+        getOrCreateDevEntitlementState(userId),
+      );
+      if (featureId) {
+        if (featureType === "detail") {
+          devState.purchasedFeatures.details =
+            devState.purchasedFeatures.details.filter((id) => id !== featureId);
+        } else if (featureType === "dimension") {
+          devState.purchasedFeatures.dimensions =
+            devState.purchasedFeatures.dimensions.filter(
+              (id) => id !== featureId,
+            );
+        } else if (featureType === "core_theme") {
+          devState.purchasedFeatures.coreThemes =
+            devState.purchasedFeatures.coreThemes.filter(
+              (id) => id !== featureId,
+            );
+        } else if (
+          featureType === "synastry" ||
+          featureType === "synastry_detail"
+        ) {
+          devState.purchasedFeatures.synastryHashes =
+            devState.purchasedFeatures.synastryHashes.filter(
+              (id) => id !== featureId,
+            );
+        }
+      }
+      if (priceCents && priceCents > 0) {
+        devState.gmCredits = Math.max(0, devState.gmCredits) + priceCents;
+      }
+      return;
+    }
+
+    // Look up the actual paid price from the purchase row if not supplied.
+    let refundAmount = priceCents ?? 0;
+    if (refundAmount <= 0) {
+      let lookupQuery = supabase
+        .from("purchase_records")
+        .select("price_cents")
+        .eq("user_id", userId)
+        .eq("feature_type", featureType);
+      if (featureId === null) {
+        lookupQuery = lookupQuery.is("feature_id", null);
+      } else {
+        lookupQuery = lookupQuery.eq("feature_id", featureId);
+      }
+      const { data: lookupRows } = await lookupQuery;
+      if (lookupRows && lookupRows.length > 0) {
+        refundAmount = Number(lookupRows[0].price_cents) || 0;
+      }
+    }
+
+    // Remove the failed purchase row so hasReportAccess returns false again.
+    let deleteQuery = supabase
+      .from("purchase_records")
+      .delete()
+      .eq("user_id", userId)
+      .eq("feature_type", featureType);
+    if (featureId === null) {
+      deleteQuery = deleteQuery.is("feature_id", null);
+    } else {
+      deleteQuery = deleteQuery.eq("feature_id", featureId);
+    }
+    const { error: deleteError } = await deleteQuery;
+    if (deleteError) {
+      throw new Error(
+        `Failed to delete purchase record during refund: ${deleteError.message}`,
+      );
+    }
+
+    if (refundAmount > 0) {
+      // Restore credits by inserting a new consumable gm_credit record.
+      const { error: insertError } = await supabase
+        .from("purchase_records")
+        .insert({
+          user_id: userId,
+          feature_type: "gm_credit",
+          feature_id: null,
+          scope: "consumable",
+          price_cents: 0,
+          quantity: refundAmount,
+          consumed: 0,
+        });
+      if (insertError) {
+        throw new Error(
+          `Failed to restore credits during refund: ${insertError.message}`,
+        );
+      }
+    }
+  }
+
+  // 获取用户购买记录
+  async getUserPurchases(userId: string): Promise<DbPurchaseRecord[]> {
+    const { data } = await supabase
+      .from("purchase_records")
+      .select("*")
+      .eq("user_id", userId)
+      .order("created_at", { ascending: false });
+
+    return (data || []) as DbPurchaseRecord[];
+  }
+}
+
+export const entitlementServiceV2 = new EntitlementServiceV2();
+export default entitlementServiceV2;

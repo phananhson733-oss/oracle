@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 313" role="img" aria-label="The Rahu Amplification Cycle">
+  <defs>
+    <linearGradient id="swatinakshatra1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="swatinakshatra1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="swatinakshatra1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="310" rx="22" fill="url(#swatinakshatra1en-panel)"/>
+  <ellipse cx="198" cy="75" rx="380" ry="106" fill="url(#swatinakshatra1en-neb1)"/>
+  <ellipse cx="623" cy="250" rx="334" ry="100" fill="url(#swatinakshatra1en-neb2)"/>
+  <circle cx="251.6" cy="186.3" r="1.53" fill="#cfc8ea" opacity="0.46"/><circle cx="166.3" cy="138.6" r="1.37" fill="#cfc8ea" opacity="0.42"/><circle cx="154.3" cy="116.7" r="1.24" fill="#cfc8ea" opacity="0.40"/><circle cx="719.5" cy="125.7" r="1.56" fill="#cfc8ea" opacity="0.35"/><circle cx="14.5" cy="213.5" r="1.40" fill="#cfc8ea" opacity="0.48"/><circle cx="307.4" cy="13.8" r="1.23" fill="#cfc8ea" opacity="0.31"/><circle cx="283.4" cy="180.1" r="1.22" fill="#cfc8ea" opacity="0.37"/><circle cx="297.7" cy="52.6" r="0.59" fill="#cfc8ea" opacity="0.32"/><circle cx="221.4" cy="273.9" r="1.29" fill="#cfc8ea" opacity="0.34"/><circle cx="73.3" cy="190.1" r="1.41" fill="#cfc8ea" opacity="0.35"/><circle cx="476.8" cy="103.4" r="1.20" fill="#cfc8ea" opacity="0.24"/><circle cx="364.0" cy="258.9" r="0.73" fill="#cfc8ea" opacity="0.38"/><circle cx="50.5" cy="82.8" r="1.35" fill="#cfc8ea" opacity="0.48"/><circle cx="468.2" cy="225.9" r="1.27" fill="#cfc8ea" opacity="0.20"/><circle cx="195.3" cy="87.0" r="0.40" fill="#cfc8ea" opacity="0.22"/><circle cx="492.5" cy="289.6" r="0.89" fill="#cfc8ea" opacity="0.49"/><circle cx="114.5" cy="92.2" r="1.66" fill="#cfc8ea" opacity="0.48"/><circle cx="108.2" cy="253.4" r="1.39" fill="#cfc8ea" opacity="0.16"/><circle cx="678.3" cy="184.7" r="1.18" fill="#cfc8ea" opacity="0.15"/><circle cx="337.0" cy="120.0" r="0.53" fill="#cfc8ea" opacity="0.24"/><circle cx="102.6" cy="32.0" r="1.06" fill="#cfc8ea" opacity="0.25"/><circle cx="550.7" cy="210.4" r="1.31" fill="#cfc8ea" opacity="0.48"/><circle cx="491.1" cy="215.0" r="0.48" fill="#cfc8ea" opacity="0.38"/><circle cx="700.6" cy="116.3" r="0.77" fill="#cfc8ea" opacity="0.17"/><circle cx="101.2" cy="186.5" r="0.60" fill="#cfc8ea" opacity="0.46"/><circle cx="381.8" cy="214.6" r="1.07" fill="#cfc8ea" opacity="0.17"/><path d="M 390.2579669393599 272.3 L 390.7 274.4 L 392.8 274.8365499286447 L 390.7 275.2 L 390.2579669393599 277.4 L 389.9 275.2 L 387.7 274.8365499286447 L 389.9 274.4 Z" fill="#f6e6bf" opacity="0.6929594156565144"/><path d="M 360.9896185360849 218.2 L 361.4 220.5 L 363.7 220.95825462345965 L 361.4 221.4 L 360.9896185360849 223.7 L 360.6 221.4 L 358.2 220.95825462345965 L 360.6 220.5 Z" fill="#f6e6bf" opacity="0.7688080333406105"/><path d="M 167.70712320879102 232.5 L 168.3 235.4 L 171.3 236.01679968857206 L 168.3 236.6 L 167.70712320879102 239.6 L 167.1 236.6 L 164.2 236.01679968857206 L 167.1 235.4 Z" fill="#f6e6bf" opacity="0.6464343997882679"/><path d="M 234.7105126194656 211.5 L 235.2 213.9 L 237.6 214.39078166824766 L 235.2 214.8 L 234.7105126194656 217.3 L 234.3 214.8 L 231.8 214.39078166824766 L 234.3 213.9 Z" fill="#f6e6bf" opacity="0.5774844376603141"/><path d="M 148.0517410375178 15.9 L 148.5 18.3 L 150.9 18.7400661802385 L 148.5 19.2 L 148.0517410375178 21.6 L 147.6 19.2 L 145.2 18.7400661802385 L 147.6 18.3 Z" fill="#f6e6bf" opacity="0.5135869034798816"/><path d="M 221.4 273.9 L 476.8 103.4 L 50.5 82.8 L 492.5 289.6 L 337.0 120.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="310" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="299" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 293.8 L 16.5 296.5 L 19.2 297 L 16.5 297.5 L 16 300.2 L 15.5 297.5 L 12.8 297 L 15.5 296.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 293.8 L 744.5 296.5 L 747.2 297 L 744.5 297.5 L 744 300.2 L 743.5 297.5 L 740.8 297 L 743.5 296.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">The Rahu Amplification Cycle</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#swatinakshatra1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#swatinakshatra1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="241" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#swatinakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#swatinakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Momentum</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Desire-driven expansion; income and attention arrive</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#swatinakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#swatinakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Redistribution</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Resources move outward to people and collaborations</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#swatinakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#swatinakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Reset</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The cycle clears before a reserve forms, then repeats</text>
+  <path d="M 202.22749999999988 284.4 L 202.6 286.6 L 204.8 287 L 202.6 287.4 L 202.22749999999988 289.6 L 201.8 287.4 L 199.6 287 L 201.8 286.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="291" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 284.4 L 558.2 286.6 L 560.4 287 L 558.2 287.4 L 557.7725000000002 289.6 L 557.4 287.4 L 555.2 287 L 557.4 286.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

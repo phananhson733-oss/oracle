@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="解读双子座太阳星盘的4个关键信号">
+  <defs>
+    <linearGradient id="matheuscunhabirthchart1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="matheuscunhabirthchart1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="matheuscunhabirthchart1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="matheuscunhabirthchart1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="matheuscunhabirthchart1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="matheuscunhabirthchart1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#matheuscunhabirthchart1zh-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#matheuscunhabirthchart1zh-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#matheuscunhabirthchart1zh-neb2)"/>
+  <circle cx="656.0" cy="358.6" r="1.21" fill="#cfc8ea" opacity="0.35"/><circle cx="394.6" cy="287.9" r="0.53" fill="#cfc8ea" opacity="0.33"/><circle cx="276.6" cy="364.6" r="1.33" fill="#cfc8ea" opacity="0.46"/><circle cx="240.1" cy="163.8" r="0.43" fill="#cfc8ea" opacity="0.17"/><circle cx="267.2" cy="28.0" r="0.45" fill="#cfc8ea" opacity="0.13"/><circle cx="332.8" cy="112.7" r="1.15" fill="#cfc8ea" opacity="0.53"/><circle cx="708.1" cy="36.6" r="0.50" fill="#cfc8ea" opacity="0.45"/><circle cx="393.6" cy="183.2" r="0.51" fill="#cfc8ea" opacity="0.34"/><circle cx="367.8" cy="124.2" r="0.77" fill="#cfc8ea" opacity="0.25"/><circle cx="333.3" cy="332.9" r="1.59" fill="#cfc8ea" opacity="0.42"/><circle cx="121.4" cy="370.1" r="1.37" fill="#cfc8ea" opacity="0.42"/><circle cx="56.9" cy="207.8" r="0.91" fill="#cfc8ea" opacity="0.35"/><circle cx="336.5" cy="323.5" r="1.58" fill="#cfc8ea" opacity="0.42"/><circle cx="141.1" cy="388.7" r="1.25" fill="#cfc8ea" opacity="0.46"/><circle cx="315.4" cy="405.9" r="1.38" fill="#cfc8ea" opacity="0.45"/><circle cx="32.0" cy="351.5" r="1.61" fill="#cfc8ea" opacity="0.28"/><circle cx="190.4" cy="199.9" r="0.96" fill="#cfc8ea" opacity="0.51"/><circle cx="678.5" cy="113.9" r="0.78" fill="#cfc8ea" opacity="0.22"/><circle cx="53.0" cy="143.8" r="0.96" fill="#cfc8ea" opacity="0.23"/><circle cx="288.4" cy="167.7" r="0.65" fill="#cfc8ea" opacity="0.31"/><circle cx="111.2" cy="420.0" r="0.61" fill="#cfc8ea" opacity="0.36"/><circle cx="120.0" cy="160.8" r="1.53" fill="#cfc8ea" opacity="0.36"/><circle cx="298.9" cy="319.9" r="0.47" fill="#cfc8ea" opacity="0.30"/><circle cx="235.2" cy="293.9" r="0.71" fill="#cfc8ea" opacity="0.14"/><circle cx="114.4" cy="170.2" r="0.45" fill="#cfc8ea" opacity="0.32"/><circle cx="458.1" cy="241.5" r="1.24" fill="#cfc8ea" opacity="0.21"/><circle cx="406.2" cy="354.0" r="1.21" fill="#cfc8ea" opacity="0.13"/><circle cx="84.7" cy="205.6" r="0.44" fill="#cfc8ea" opacity="0.33"/><circle cx="290.3" cy="296.1" r="0.99" fill="#cfc8ea" opacity="0.39"/><circle cx="100.8" cy="217.9" r="0.66" fill="#cfc8ea" opacity="0.20"/><circle cx="124.0" cy="209.3" r="1.50" fill="#cfc8ea" opacity="0.24"/><circle cx="280.5" cy="322.1" r="1.28" fill="#cfc8ea" opacity="0.17"/><circle cx="14.1" cy="267.0" r="1.48" fill="#cfc8ea" opacity="0.43"/><circle cx="479.5" cy="336.9" r="1.30" fill="#cfc8ea" opacity="0.41"/><circle cx="396.8" cy="225.6" r="0.51" fill="#cfc8ea" opacity="0.24"/><circle cx="567.4" cy="392.6" r="0.81" fill="#cfc8ea" opacity="0.17"/><circle cx="603.4" cy="338.7" r="0.74" fill="#cfc8ea" opacity="0.25"/><circle cx="366.7" cy="381.1" r="0.49" fill="#cfc8ea" opacity="0.22"/><path d="M 530.4835055600852 243.5 L 530.9 245.6 L 532.9 245.9561841338873 L 530.9 246.3 L 530.4835055600852 248.4 L 530.1 246.3 L 528.1 245.9561841338873 L 530.1 245.6 Z" fill="#f6e6bf" opacity="0.5454147865530103"/><path d="M 303.3356337901205 266.6 L 303.8 268.9 L 306.0 269.29334827978164 L 303.8 269.7 L 303.3356337901205 272.0 L 302.9 269.7 L 300.6 269.29334827978164 L 302.9 268.9 Z" fill="#f6e6bf" opacity="0.7043015767354518"/><path d="M 386.88195335678756 376.5 L 387.5 379.6 L 390.6 380.1745112184435 L 387.5 380.8 L 386.88195335678756 383.9 L 386.3 380.8 L 383.2 380.1745112184435 L 386.3 379.6 Z" fill="#f6e6bf" opacity="0.6244968566577882"/><path d="M 504.1208372917026 18.7 L 504.5 20.8 L 506.6 21.188928521238267 L 504.5 21.6 L 504.1208372917026 23.7 L 503.7 21.6 L 501.7 21.188928521238267 L 503.7 20.8 Z" fill="#f6e6bf" opacity="0.6434872510377317"/><path d="M 227.97897283546627 208.4 L 228.4 210.4 L 230.4 210.82425129786134 L 228.4 211.2 L 227.97897283546627 213.3 L 227.6 211.2 L 225.5 210.82425129786134 L 227.6 210.4 Z" fill="#f6e6bf" opacity="0.741810150584206"/><path d="M 276.6 364.6 L 240.1 163.8 L 336.5 323.5 L 120.0 160.8 L 458.1 241.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">解读双子座太阳星盘的4个关键信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#matheuscunhabirthchart1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#matheuscunhabirthchart1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="355" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#matheuscunhabirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#matheuscunhabirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">水星作为太阳星座守护星</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">太阳在双子座意味着水星主管并框定核心表达；太阳星座层级的解读单凭星座本身即可</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">，无需出生时间</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#matheuscunhabirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#matheuscunhabirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">木星行运相对太阳星座的关系</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">在太阳星座技法里，巨蟹座是从双子座太阳数起的第二个星座，木星行经巨蟹座触及资</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">源与势能主题——象征性时机，而非宫位</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#matheuscunhabirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#matheuscunhabirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">变动星群密度</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">当多颗行星与太阳聚集在双子、处女、射手或双鱼座，适应力便成为贯穿所有生活领域</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">的定义性特征</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#matheuscunhabirthchart1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#matheuscunhabirthchart1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">与水星形成的相位模式</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">硬相位（刑、对分）在压力下给决策速度添摩擦；三分相与六分相支持快速战术切换——</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">双子座太阳最佳产出的核心特征</text>
+  <path d="M 280.025 416.4 L 280.4 418.6 L 282.6 419 L 280.4 419.4 L 280.025 421.6 L 279.6 419.4 L 277.4 419 L 279.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 416.4 L 480.4 418.6 L 482.6 419 L 480.4 419.4 L 479.975 421.6 L 479.6 419.4 L 477.4 419 L 479.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

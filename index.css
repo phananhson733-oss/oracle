@@ -1,0 +1,50 @@
+/* INPUT: Tailwind 基础层/组件/工具层样式入口。 */
+/* OUTPUT: 注入 Tailwind 样式供全站使用。 */
+/* POS: 全局样式入口；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Native control theming: keep scrollbars, autofill, native dialogs, and form
+   widgets in sync with the active theme. The dark/light class lives on <body>
+   (see index.html), but scrollbars are owned by :root — so use :has() to lift
+   the body class into the :root color-scheme. Defaults to "light dark" so
+   browsers can pick a sensible UA fallback if neither class is present. */
+/* Default to light (brand default since the editorial-paper flip) so browsers
+   without :has() support (old Firefox ESR / WebViews) and pre-hydration stub
+   pages never paint dark UA controls on the paper ground. */
+:root { color-scheme: light; }
+:root:has(body.dark)  { color-scheme: dark; }
+:root:has(body.light) { color-scheme: light; }
+
+/* Accessibility: focus-visible ring for keyboard navigation.
+   Editorial rule: focus = ink (light) / warm white (dark) — follows --star-50. */
+*:focus-visible {
+  outline: 2px solid rgb(var(--star-50, 22 19 15));
+  outline-offset: 2px;
+}
+
+/* content-visibility optimization for off-screen list items */
+.cv-auto {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 80px;
+}
+
+.cv-auto-lg {
+  content-visibility: auto;
+  contain-intrinsic-size: 0 200px;
+}
+
+/* Screen reader only utility (backup for Tailwind sr-only) */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}

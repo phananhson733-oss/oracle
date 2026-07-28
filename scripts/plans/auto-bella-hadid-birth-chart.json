@@ -1,0 +1,76 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "bella-hadid-birth-chart": {
+      "hero": {
+        "prompt": "A sweeping nocturnal seascape where the calm surface of a vast ocean mirrors a luminous golden-ivory crescent moon resting low on an indigo horizon — the water's silk-smooth surface catches warm gold light in long reflective bands — while deep beneath the surface, softly glowing teal-aqua bioluminescent currents drift through the darker depths, surface radiance and hidden depth existing together within one unbroken landscape under a star-scattered velvet sky; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Nocturnal seascape with golden moonlight on the calm surface and teal currents glowing in the depths below",
+        "altZh": "夜晚海景，金色月光映照平静水面，水下涌动着青绿发光的暗流，表面光华与深处力量共存一景"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Reading the Full Chart vs Just Her Sun Sign",
+          "titleEn": "Sun-Sign Read vs Full-Chart Read",
+          "altEn": "Side-by-side comparison of the sun-sign approach and the full-chart approach to reading Bella Hadid's placements",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Read",
+              "linesEn": [
+                "Reduces to one archetype — fast and shareable",
+                "Hands you one adjective and a meme",
+                "Loses nuance by flattening contradiction",
+                "Example: she is Libra, so she is charming and balanced"
+              ]
+            },
+            {
+              "nameEn": "Full-Chart Read",
+              "linesEn": [
+                "Layers Sun, Moon, rising, and Scorpio cluster together",
+                "Captures contradiction instead of flattening it",
+                "Richer but slower and harder to summarize",
+                "Example: Libra image over a Scorpio interior — charm and guardedness are both real"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Bella Hadid's Chart Symbolically",
+          "titleEn": "Five Steps to Read the Chart as Archetype",
+          "altEn": "Five-step sequence for reading Bella Hadid's birth chart symbolically, from Libra Sun through provisional rising sign",
+          "items": [
+            {
+              "nameEn": "Start with the Libra Sun",
+              "subEn": "Look for the diplomacy-and-aesthetics theme: harmony, image, and relationship as a core lens"
+            },
+            {
+              "nameEn": "Weigh the Scorpio emphasis",
+              "subEn": "Read the cluster of Scorpio placements as intensity held privately rather than performed"
+            },
+            {
+              "nameEn": "Hold the contrast on purpose",
+              "subEn": "Notice how public poise and guarded depth describe one person, not a puzzle to solve"
+            },
+            {
+              "nameEn": "Treat the rising sign as provisional",
+              "subEn": "Since birth time is uncertain, keep any ascendant read loose and label it a maybe"
+            },
+            {
+              "nameEn": "Map aspects as tension, not fate",
+              "subEn": "A hard aspect points to friction between drives that a person works with over time"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

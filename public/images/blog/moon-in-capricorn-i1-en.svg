@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 522" role="img" aria-label="Moon in Capricorn: Misread vs Reality">
+  <defs>
+    <linearGradient id="moonincapricorn1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="moonincapricorn1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="moonincapricorn1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonincapricorn1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonincapricorn1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonincapricorn1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="519" rx="22" fill="url(#moonincapricorn1en-panel)"/>
+  <ellipse cx="198" cy="125" rx="380" ry="177" fill="url(#moonincapricorn1en-neb1)"/>
+  <ellipse cx="623" cy="418" rx="334" ry="167" fill="url(#moonincapricorn1en-neb2)"/>
+  <circle cx="569.0" cy="79.2" r="1.50" fill="#cfc8ea" opacity="0.47"/><circle cx="377.5" cy="199.7" r="1.69" fill="#cfc8ea" opacity="0.19"/><circle cx="270.4" cy="284.0" r="1.07" fill="#cfc8ea" opacity="0.17"/><circle cx="661.3" cy="171.1" r="1.66" fill="#cfc8ea" opacity="0.34"/><circle cx="165.6" cy="504.4" r="0.68" fill="#cfc8ea" opacity="0.23"/><circle cx="369.8" cy="267.4" r="1.27" fill="#cfc8ea" opacity="0.40"/><circle cx="121.7" cy="31.4" r="1.31" fill="#cfc8ea" opacity="0.46"/><circle cx="568.6" cy="176.7" r="0.47" fill="#cfc8ea" opacity="0.29"/><circle cx="234.4" cy="381.5" r="0.78" fill="#cfc8ea" opacity="0.23"/><circle cx="19.5" cy="182.0" r="1.19" fill="#cfc8ea" opacity="0.23"/><circle cx="385.3" cy="44.2" r="1.34" fill="#cfc8ea" opacity="0.49"/><circle cx="366.5" cy="129.3" r="0.84" fill="#cfc8ea" opacity="0.20"/><circle cx="330.8" cy="499.7" r="0.99" fill="#cfc8ea" opacity="0.30"/><circle cx="151.7" cy="12.9" r="1.36" fill="#cfc8ea" opacity="0.23"/><circle cx="344.8" cy="20.5" r="1.59" fill="#cfc8ea" opacity="0.12"/><circle cx="569.4" cy="323.3" r="0.90" fill="#cfc8ea" opacity="0.16"/><circle cx="660.7" cy="117.5" r="1.41" fill="#cfc8ea" opacity="0.18"/><circle cx="391.9" cy="482.0" r="1.20" fill="#cfc8ea" opacity="0.30"/><circle cx="481.7" cy="259.9" r="1.60" fill="#cfc8ea" opacity="0.28"/><circle cx="498.2" cy="106.3" r="0.90" fill="#cfc8ea" opacity="0.28"/><circle cx="718.5" cy="467.4" r="1.36" fill="#cfc8ea" opacity="0.34"/><circle cx="656.5" cy="503.2" r="1.05" fill="#cfc8ea" opacity="0.47"/><circle cx="311.9" cy="481.7" r="1.40" fill="#cfc8ea" opacity="0.30"/><circle cx="279.7" cy="259.8" r="0.85" fill="#cfc8ea" opacity="0.21"/><circle cx="188.8" cy="32.1" r="1.24" fill="#cfc8ea" opacity="0.15"/><circle cx="431.6" cy="404.7" r="0.84" fill="#cfc8ea" opacity="0.29"/><circle cx="170.4" cy="252.9" r="1.12" fill="#cfc8ea" opacity="0.37"/><circle cx="546.0" cy="342.2" r="0.87" fill="#cfc8ea" opacity="0.44"/><circle cx="190.1" cy="56.9" r="1.34" fill="#cfc8ea" opacity="0.23"/><circle cx="495.5" cy="508.0" r="0.42" fill="#cfc8ea" opacity="0.33"/><circle cx="698.5" cy="382.3" r="1.38" fill="#cfc8ea" opacity="0.31"/><circle cx="537.0" cy="155.4" r="1.65" fill="#cfc8ea" opacity="0.20"/><circle cx="181.6" cy="45.4" r="0.79" fill="#cfc8ea" opacity="0.23"/><circle cx="151.5" cy="300.8" r="1.19" fill="#cfc8ea" opacity="0.29"/><circle cx="599.5" cy="276.8" r="1.34" fill="#cfc8ea" opacity="0.42"/><circle cx="641.6" cy="174.7" r="1.62" fill="#cfc8ea" opacity="0.53"/><circle cx="19.8" cy="456.4" r="0.85" fill="#cfc8ea" opacity="0.19"/><circle cx="147.7" cy="79.9" r="1.17" fill="#cfc8ea" opacity="0.32"/><circle cx="32.2" cy="324.3" r="1.51" fill="#cfc8ea" opacity="0.18"/><circle cx="145.2" cy="389.9" r="0.66" fill="#cfc8ea" opacity="0.18"/><circle cx="643.7" cy="67.0" r="1.00" fill="#cfc8ea" opacity="0.42"/><circle cx="302.8" cy="89.0" r="0.67" fill="#cfc8ea" opacity="0.45"/><circle cx="270.1" cy="67.5" r="0.87" fill="#cfc8ea" opacity="0.14"/><circle cx="266.7" cy="117.7" r="0.99" fill="#cfc8ea" opacity="0.51"/><path d="M 730.0502198264003 486.4 L 730.7 489.7 L 734.0 490.36665857071057 L 730.7 491.0 L 730.0502198264003 494.3 L 729.4 491.0 L 726.1 490.36665857071057 L 729.4 489.7 Z" fill="#f6e6bf" opacity="0.6936272213002667"/><path d="M 553.1553296297789 118.6 L 553.7 121.3 L 556.4 121.8314409260638 L 553.7 122.4 L 553.1553296297789 125.1 L 552.6 122.4 L 549.9 121.8314409260638 L 552.6 121.3 Z" fill="#f6e6bf" opacity="0.6353665929986164"/><path d="M 377.64956418424845 314.5 L 378.3 317.8 L 381.6 318.4622906134464 L 378.3 319.1 L 377.64956418424845 322.5 L 377.0 319.1 L 373.7 318.4622906134464 L 377.0 317.8 Z" fill="#f6e6bf" opacity="0.7863461315399036"/><path d="M 660.0903556644917 135.7 L 660.5 137.8 L 662.7 138.25994720729068 L 660.5 138.7 L 660.0903556644917 140.8 L 659.7 138.7 L 657.5 138.25994720729068 L 659.7 137.8 Z" fill="#f6e6bf" opacity="0.7711367550073192"/><path d="M 690.489451430738 417.1 L 690.9 419.4 L 693.1 419.7858726331033 L 690.9 420.2 L 690.489451430738 422.4 L 690.1 420.2 L 687.8 419.7858726331033 L 690.1 419.4 Z" fill="#f6e6bf" opacity="0.6205208530416713"/><path d="M 270.4 284.0 L 344.8 20.5 L 698.5 382.3 L 147.7 79.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="519" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="508" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 502.8 L 16.5 505.5 L 19.2 506 L 16.5 506.5 L 16 509.2 L 15.5 506.5 L 12.8 506 L 15.5 505.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 502.8 L 744.5 505.5 L 747.2 506 L 744.5 506.5 L 744 509.2 L 743.5 506.5 L 740.8 506 L 743.5 505.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Moon in Capricorn: Misread vs Reality</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#moonincapricorn1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#moonincapricorn1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Common Misread</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Cold and unfeeling</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Makes you a Capricorn</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Western and Vedic readings agree</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Restraint equals shallow</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="191.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="191.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">The Reality</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Feelings are strong — kept private and expressed through steadiness, not</text>
+  <text x="84" y="383.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">display</text>
+  <path d="M 70 403.8 L 70.5 406.5 L 73.2 407 L 70.5 407.5 L 70 410.2 L 69.5 407.5 L 66.8 407 L 69.5 406.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="412.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">One emotional layer of the chart only, not a whole-personality verdict</text>
+  <path d="M 70 432.8 L 70.5 435.5 L 73.2 436 L 70.5 436.5 L 70 439.2 L 69.5 436.5 L 66.8 436 L 69.5 435.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="441.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Different skies, often different sign; they answer different questions</text>
+  <path d="M 70 461.8 L 70.5 464.5 L 73.2 465 L 70.5 465.5 L 70 468.2 L 69.5 465.5 L 66.8 465 L 69.5 464.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="470.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Composure holds depth; the reserve is a container, not a void</text>
+  <path d="M 202.22749999999988 493.4 L 202.6 495.6 L 204.8 496 L 202.6 496.4 L 202.22749999999988 498.6 L 201.8 496.4 L 199.6 496 L 201.8 495.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="500" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 493.4 L 558.2 495.6 L 560.4 496 L 558.2 496.4 L 557.7725000000002 498.6 L 557.4 496.4 L 555.2 496 L 557.4 495.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

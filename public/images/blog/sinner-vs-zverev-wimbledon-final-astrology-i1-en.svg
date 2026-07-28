@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="Four Dimensions of the Wimbledon Final Chart">
+  <defs>
+    <linearGradient id="sinnervszverevwimbledonfinalastrology1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="sinnervszverevwimbledonfinalastrology1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="sinnervszverevwimbledonfinalastrology1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sinnervszverevwimbledonfinalastrology1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="sinnervszverevwimbledonfinalastrology1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="sinnervszverevwimbledonfinalastrology1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#sinnervszverevwimbledonfinalastrology1en-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#sinnervszverevwimbledonfinalastrology1en-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#sinnervszverevwimbledonfinalastrology1en-neb2)"/>
+  <circle cx="312.8" cy="66.2" r="0.67" fill="#cfc8ea" opacity="0.48"/><circle cx="298.6" cy="210.9" r="0.61" fill="#cfc8ea" opacity="0.47"/><circle cx="492.8" cy="53.3" r="1.70" fill="#cfc8ea" opacity="0.35"/><circle cx="510.5" cy="199.5" r="1.52" fill="#cfc8ea" opacity="0.31"/><circle cx="93.5" cy="52.1" r="0.79" fill="#cfc8ea" opacity="0.30"/><circle cx="127.1" cy="35.4" r="1.34" fill="#cfc8ea" opacity="0.46"/><circle cx="100.7" cy="345.3" r="0.99" fill="#cfc8ea" opacity="0.19"/><circle cx="344.2" cy="121.4" r="1.63" fill="#cfc8ea" opacity="0.52"/><circle cx="294.6" cy="89.6" r="1.22" fill="#cfc8ea" opacity="0.43"/><circle cx="56.2" cy="159.5" r="1.09" fill="#cfc8ea" opacity="0.16"/><circle cx="15.1" cy="44.2" r="1.33" fill="#cfc8ea" opacity="0.48"/><circle cx="624.1" cy="201.4" r="0.62" fill="#cfc8ea" opacity="0.34"/><circle cx="616.4" cy="127.9" r="0.84" fill="#cfc8ea" opacity="0.47"/><circle cx="657.8" cy="221.5" r="0.54" fill="#cfc8ea" opacity="0.23"/><circle cx="354.9" cy="177.3" r="1.15" fill="#cfc8ea" opacity="0.44"/><circle cx="680.5" cy="175.9" r="1.61" fill="#cfc8ea" opacity="0.37"/><circle cx="706.6" cy="218.5" r="0.68" fill="#cfc8ea" opacity="0.45"/><circle cx="251.1" cy="338.9" r="1.65" fill="#cfc8ea" opacity="0.45"/><circle cx="128.5" cy="187.1" r="1.40" fill="#cfc8ea" opacity="0.20"/><circle cx="587.5" cy="206.4" r="1.16" fill="#cfc8ea" opacity="0.17"/><circle cx="701.4" cy="216.4" r="0.70" fill="#cfc8ea" opacity="0.21"/><circle cx="369.4" cy="332.7" r="1.03" fill="#cfc8ea" opacity="0.24"/><circle cx="462.5" cy="157.1" r="0.86" fill="#cfc8ea" opacity="0.49"/><circle cx="530.5" cy="112.8" r="0.97" fill="#cfc8ea" opacity="0.23"/><circle cx="291.6" cy="339.0" r="1.22" fill="#cfc8ea" opacity="0.14"/><circle cx="722.3" cy="332.8" r="1.54" fill="#cfc8ea" opacity="0.40"/><circle cx="221.6" cy="278.9" r="1.51" fill="#cfc8ea" opacity="0.54"/><circle cx="531.4" cy="283.7" r="1.40" fill="#cfc8ea" opacity="0.54"/><circle cx="98.6" cy="81.9" r="0.73" fill="#cfc8ea" opacity="0.16"/><circle cx="638.6" cy="327.6" r="0.66" fill="#cfc8ea" opacity="0.46"/><circle cx="406.3" cy="161.5" r="0.40" fill="#cfc8ea" opacity="0.49"/><path d="M 312.5533528458327 124.9 L 313.1 127.9 L 316.1 128.4486289843917 L 313.1 129.0 L 312.5533528458327 132.0 L 312.0 129.0 L 309.0 128.4486289843917 L 312.0 127.9 Z" fill="#f6e6bf" opacity="0.5975734812673181"/><path d="M 427.87054893933237 237.6 L 428.3 239.8 L 430.5 240.20755579788238 L 428.3 240.6 L 427.87054893933237 242.8 L 427.5 240.6 L 425.3 240.20755579788238 L 427.5 239.8 Z" fill="#f6e6bf" opacity="0.5496153574902565"/><path d="M 680.292382536456 314.5 L 680.9 317.6 L 684.0 318.19663135893643 L 680.9 318.8 L 680.292382536456 321.9 L 679.7 318.8 L 676.6 318.19663135893643 L 679.7 317.6 Z" fill="#f6e6bf" opacity="0.6144349541049451"/><path d="M 47.066005965694785 236.2 L 47.6 238.8 L 50.2 239.3103690361604 L 47.6 239.8 L 47.066005965694785 242.4 L 46.6 239.8 L 43.9 239.3103690361604 L 46.6 238.8 Z" fill="#f6e6bf" opacity="0.513011937821284"/><path d="M 663.0036045145243 82.6 L 663.4 85.0 L 665.8 85.39889819547534 L 663.4 85.8 L 663.0036045145243 88.2 L 662.6 85.8 L 660.2 85.39889819547534 L 662.6 85.0 Z" fill="#f6e6bf" opacity="0.5769060382153839"/><path d="M 312.8 66.2 L 510.5 199.5 L 15.1 44.2 L 624.1 201.4 L 706.6 218.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Four Dimensions of the Wimbledon Final Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#sinnervszverevwimbledonfinalastrology1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#sinnervszverevwimbledonfinalastrology1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#sinnervszverevwimbledonfinalastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#sinnervszverevwimbledonfinalastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Identity &amp; Drive</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sun sign — watch for fixed resolve vs restless variety in each player</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#sinnervszverevwimbledonfinalastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#sinnervszverevwimbledonfinalastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Emotional Response</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Moon sign — note body language after a lost break point</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#sinnervszverevwimbledonfinalastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#sinnervszverevwimbledonfinalastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Attacking Tempo</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Mars placement — track who dictates rallies vs who counterpunches</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#sinnervszverevwimbledonfinalastrology1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#sinnervszverevwimbledonfinalastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Shared Atmosphere</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Match-moment transits — the common mood: tense, loose, or heavy</text>
+  <path d="M 202.22749999999988 344.4 L 202.6 346.6 L 204.8 347 L 202.6 347.4 L 202.22749999999988 349.6 L 201.8 347.4 L 199.6 347 L 201.8 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 344.4 L 558.2 346.6 L 560.4 347 L 558.2 347.4 L 557.7725000000002 349.6 L 557.4 347.4 L 555.2 347 L 557.4 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

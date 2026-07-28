@@ -1,0 +1,108 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "niko-birth-chart": {
+      "hero": {
+        "prompt": "A lone radiant plateau of golden light glows on the edge of a vast cosmic plain, streams of soft teal and gold starlight converging from every horizon toward this singular elevated point after an endless indigo night — the moment a long-held vision finally becomes legible to the surrounding sky. deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "NiKo birth chart — Aquarius breakthrough moment as cosmic starlight converges on a solitary glowing summit after years of isolation",
+        "altZh": "NiKo出生星盘——水瓶座突破时刻，宇宙星光从四面八方汇聚至深空中孤独发光的高地"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Aquarius vs Capricorn: Where the Championship Timelines Diverge",
+          "titleEn": "Championship Timeline Patterns: Aquarius vs Capricorn",
+          "titleZh": "冠军时间线模式：水瓶座 vs 摩羯座",
+          "altEn": "Comparison of Aquarius lateral breakthrough versus Capricorn incremental climb in championship timing",
+          "altZh": "水瓶座横向突破与摩羯座逐步攀升的冠军时间线对比图",
+          "columns": [
+            {
+              "nameEn": "Aquarius",
+              "nameZh": "水瓶座",
+              "linesEn": [
+                "Lateral breakthrough pattern",
+                "Individual operates above the team's capacity for an extended period",
+                "Vision holds fixed while external structures shift around it",
+                "Collective title arrives when team finally meets the individual's established level",
+                "Breakthrough feels sudden to observers, quietly overdue to the chart holder"
+              ],
+              "linesZh": [
+                "横向突破模式",
+                "个人实力在较长时间内超越团队承载上限",
+                "外部结构变动而内在愿景保持稳固不变",
+                "当团队终于达到个人已建立的水准时集体冠军到来",
+                "突破对旁观者显得突然，对当事人而言早已期待许久"
+              ]
+            },
+            {
+              "nameEn": "Capricorn",
+              "nameZh": "摩羯座",
+              "linesEn": [
+                "Incremental climb pattern",
+                "Rung-by-rung accumulation of secured positions before advancing",
+                "Peaks through disciplined preparation rather than a sudden context shift",
+                "Consistent tournament results traded for predictability over surprise",
+                "Reliable path that reduces capacity for the unexpected collective breakthrough"
+              ],
+              "linesZh": [
+                "逐步攀升模式",
+                "稳固每一级后再向上，逐级积累晋升",
+                "通过纪律性备战达到巅峰，而非依赖突然的环境转变",
+                "以可预测性换取稳定的赛事成绩",
+                "可靠路径降低了出现意外集体突破的可能性"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Chart in Your Own Timing",
+          "titleEn": "Five Signals of the Aquarius Breakthrough Pattern in a Natal Chart",
+          "titleZh": "出生星盘中水瓶座突破模式的五个关键信号",
+          "altEn": "Five-step guide to reading Aquarius breakthrough signals in a birth chart, from Sun placement to Saturn return timing",
+          "altZh": "从太阳位置到土星回归时机，出生星盘中水瓶座突破信号五步解读指南",
+          "items": [
+            {
+              "nameEn": "Sun in Late Aquarius — Third Decan (Feb 10–18)",
+              "nameZh": "太阳位于水瓶座晚期——第三区间（2月10–18日）",
+              "subEn": "Fixed quality intensifies; individual is consistently the strongest performer but described as difficult to build around — the group lacks vocabulary for what they are doing",
+              "subZh": "固定特质在此最为强烈；个人常被认定为最强表现者，但被视为难以构建团队核心——周围群体尚未形成理解其所做之事的语言"
+            },
+            {
+              "nameEn": "Jupiter-Neptune Career House Contact",
+              "nameZh": "木星-海王星职业宫接触",
+              "subEn": "Talent amplified (Jupiter) while structural framing dissolves (Neptune); exceptional output but team structural fit lags until a stable configuration forms around the existing level",
+              "subZh": "木星放大才能，海王星溶解结构框架；产出卓越但团队契合度滞后，直至稳定配置围绕现有水准最终形成"
+            },
+            {
+              "nameEn": "Fixed Sun with Mutable House Emphasis",
+              "nameZh": "固定太阳与变动宫强调",
+              "subEn": "Stable core identity meets shifting external situations across many seasons; breakthrough follows context stabilization rather than the individual adapting downward",
+              "subZh": "稳定的核心身份在漫长赛季中遭遇变动的外部情境；突破随情境稳定而来，而非个人向下适应"
+            },
+            {
+              "nameEn": "Minimal Seventh-House Energy",
+              "nameZh": "第七宫能量微弱",
+              "subEn": "Aquarius defers genuine collective partnership until a team configuration capable of holding the individual's level emerges; look for patterns of near-misses rather than failures of effort",
+              "subZh": "水瓶座推迟真正的集体合作，直到出现能承载个人水准的团队配置；寻找差一点的模式，而非努力层面的失败"
+            },
+            {
+              "nameEn": "Saturn Return Timing Window (Ages 27–30)",
+              "nameZh": "土星回归时间窗口（27–30岁）",
+              "subEn": "This transit frequently acts as the structural trigger for Aquarius breakthroughs — the moment a long-held vision crystallizes into collective form or the individual recalibrates toward a new context",
+              "subZh": "这一过境常作为水瓶座突破的结构性触发点——长期持有的愿景在此结晶为集体形式，或个人向能承载其愿景的新情境重新校准"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

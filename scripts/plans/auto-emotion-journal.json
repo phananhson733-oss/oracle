@@ -1,0 +1,116 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "emotion-journal": {
+      "hero": {
+        "prompt": "A vast open twilight landscape, swirling nebula clouds above the horizon slowly crystallizing into distinct glowing constellations, diffuse aurora light condensing into precise luminous star clusters, each cluster forming a recognisable pattern against the deep sky, the quiet transformative moment of naming making the formless specific, soft painterly brushwork, emotional depth and stillness, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Nebula clouds crystallizing into distinct constellations over a twilight horizon, evoking the practice of naming feelings precisely",
+        "altZh": "暮色地平线上星云凝聚成清晰星座的风景，象征在情绪日记中精准命名感受的过程"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Affect-Labeling Practice vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 情绪记录练习与相近概念：运作方式 + 取舍",
+          "titleEn": "Three Emotion-Journaling Approaches Compared",
+          "titleZh": "三种情绪日记方式对比",
+          "altEn": "Comparison of naming-focused emotion journal, mood log, and free-form venting across depth, speed, and pattern recognition",
+          "altZh": "命名式情绪日记、心情记录和自由抒发在深度、速度与模式识别上的对比",
+          "columns": [
+            {
+              "nameEn": "Naming Habit",
+              "nameZh": "命名习惯",
+              "linesEn": [
+                "Precise word + context",
+                "Slows down to label",
+                "Builds pattern recognition",
+                "Turns feeling into understanding"
+              ],
+              "linesZh": [
+                "精准词汇加语境",
+                "放慢步伐寻找标签",
+                "积累模式识别能力",
+                "将感受转化为理解"
+              ]
+            },
+            {
+              "nameEn": "Mood Log",
+              "nameZh": "心情记录",
+              "linesEn": [
+                "Rating or single word",
+                "Fast, one-tap entry",
+                "Good for broad trends",
+                "Feelings stay diffuse"
+              ],
+              "linesZh": [
+                "评分或单一词汇",
+                "快速一键记录",
+                "适合发现宏观趋势",
+                "感受仍然模糊"
+              ]
+            },
+            {
+              "nameEn": "Free Venting",
+              "nameZh": "自由抒发",
+              "linesEn": [
+                "Unstructured expression",
+                "Releases pressure quickly",
+                "No target word sought",
+                "Same loop may repeat"
+              ],
+              "linesZh": [
+                "无结构式表达",
+                "快速释放情绪压力",
+                "不寻找目标词汇",
+                "可能重复同一循环"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Affect-Labeling Practice in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别情绪记录练习",
+          "titleEn": "4 Signals That You Are Naming, Not Just Logging",
+          "titleZh": "判断你在命名而非仅记录的4个信号",
+          "altEn": "Four signals that show affect labeling is working in your emotion journal: word narrows, context attaches, charge softens, repeats emerge",
+          "altZh": "情绪日记中情感标记奏效的四个信号：词汇精确化、语境附着、情绪松动、重复浮现",
+          "items": [
+            {
+              "nameEn": "Word Narrows",
+              "nameZh": "词汇精确化",
+              "subEn": "You start with \"stressed\" and arrive at a specific, contextualized feeling as you write",
+              "subZh": "从\"压力\"出发，书写过程中找到具体有语境的感受描述"
+            },
+            {
+              "nameEn": "Context Attaches",
+              "nameZh": "语境附着",
+              "subEn": "The feeling lands on a who, when, or where — not just a floating state",
+              "subZh": "感受锚定到具体的人、时间或地点，不再是漂浮的状态"
+            },
+            {
+              "nameEn": "Charge Softens",
+              "nameZh": "情绪松动",
+              "subEn": "After naming, the feeling loses some grip — the small release Lieberman described",
+              "subZh": "命名后感受稍微松动，正是李伯曼所描述的微小释放感"
+            },
+            {
+              "nameEn": "Repeats Emerge",
+              "nameZh": "重复浮现",
+              "subEn": "Reading back a week, the same precise label surfaces across different situations",
+              "subZh": "回看一周日记，同一精准标签在不同情境中反复出现"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

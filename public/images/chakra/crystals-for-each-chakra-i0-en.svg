@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 553" role="img" aria-label="Go-To Stones for the Seven Centers">
+  <defs>
+    <linearGradient id="crystalsforeachchakra0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="crystalsforeachchakra0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="crystalsforeachchakra0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="crystalsforeachchakra0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="crystalsforeachchakra0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="crystalsforeachchakra0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="550" rx="22" fill="url(#crystalsforeachchakra0en-panel)"/>
+  <ellipse cx="198" cy="133" rx="380" ry="188" fill="url(#crystalsforeachchakra0en-neb1)"/>
+  <ellipse cx="623" cy="442" rx="334" ry="177" fill="url(#crystalsforeachchakra0en-neb2)"/>
+  <circle cx="367.4" cy="52.5" r="0.42" fill="#cfc8ea" opacity="0.28"/><circle cx="654.1" cy="102.5" r="1.38" fill="#cfc8ea" opacity="0.22"/><circle cx="506.4" cy="518.2" r="1.35" fill="#cfc8ea" opacity="0.36"/><circle cx="602.8" cy="352.1" r="1.09" fill="#cfc8ea" opacity="0.23"/><circle cx="352.3" cy="455.5" r="1.70" fill="#cfc8ea" opacity="0.30"/><circle cx="618.1" cy="320.3" r="1.22" fill="#cfc8ea" opacity="0.48"/><circle cx="196.3" cy="36.1" r="1.15" fill="#cfc8ea" opacity="0.19"/><circle cx="581.6" cy="123.0" r="0.52" fill="#cfc8ea" opacity="0.45"/><circle cx="234.2" cy="533.4" r="0.89" fill="#cfc8ea" opacity="0.54"/><circle cx="257.4" cy="68.7" r="0.68" fill="#cfc8ea" opacity="0.28"/><circle cx="338.6" cy="91.1" r="0.69" fill="#cfc8ea" opacity="0.54"/><circle cx="85.1" cy="518.8" r="0.53" fill="#cfc8ea" opacity="0.23"/><circle cx="166.2" cy="267.3" r="0.91" fill="#cfc8ea" opacity="0.28"/><circle cx="168.7" cy="156.4" r="0.77" fill="#cfc8ea" opacity="0.32"/><circle cx="101.1" cy="104.4" r="0.51" fill="#cfc8ea" opacity="0.45"/><circle cx="149.4" cy="39.0" r="1.05" fill="#cfc8ea" opacity="0.46"/><circle cx="138.6" cy="228.8" r="1.26" fill="#cfc8ea" opacity="0.19"/><circle cx="219.0" cy="440.7" r="0.94" fill="#cfc8ea" opacity="0.47"/><circle cx="726.1" cy="120.4" r="1.57" fill="#cfc8ea" opacity="0.49"/><circle cx="155.7" cy="212.4" r="0.45" fill="#cfc8ea" opacity="0.47"/><circle cx="717.4" cy="263.2" r="1.60" fill="#cfc8ea" opacity="0.13"/><circle cx="227.0" cy="160.0" r="1.58" fill="#cfc8ea" opacity="0.18"/><circle cx="546.4" cy="376.1" r="1.64" fill="#cfc8ea" opacity="0.38"/><circle cx="671.9" cy="54.7" r="1.09" fill="#cfc8ea" opacity="0.36"/><circle cx="172.4" cy="146.3" r="1.39" fill="#cfc8ea" opacity="0.13"/><circle cx="504.0" cy="395.9" r="1.02" fill="#cfc8ea" opacity="0.29"/><circle cx="518.9" cy="485.2" r="0.92" fill="#cfc8ea" opacity="0.44"/><circle cx="385.4" cy="130.8" r="1.30" fill="#cfc8ea" opacity="0.15"/><circle cx="104.5" cy="41.9" r="1.66" fill="#cfc8ea" opacity="0.21"/><circle cx="150.8" cy="109.6" r="1.16" fill="#cfc8ea" opacity="0.21"/><circle cx="460.6" cy="361.2" r="1.36" fill="#cfc8ea" opacity="0.12"/><circle cx="573.3" cy="64.1" r="0.85" fill="#cfc8ea" opacity="0.38"/><circle cx="217.6" cy="304.7" r="0.73" fill="#cfc8ea" opacity="0.54"/><circle cx="21.4" cy="75.8" r="0.82" fill="#cfc8ea" opacity="0.28"/><circle cx="214.2" cy="372.7" r="0.48" fill="#cfc8ea" opacity="0.50"/><circle cx="559.0" cy="442.4" r="0.76" fill="#cfc8ea" opacity="0.49"/><circle cx="600.9" cy="305.4" r="1.06" fill="#cfc8ea" opacity="0.30"/><circle cx="520.1" cy="77.4" r="0.66" fill="#cfc8ea" opacity="0.22"/><circle cx="278.9" cy="478.1" r="1.09" fill="#cfc8ea" opacity="0.15"/><circle cx="177.0" cy="104.4" r="1.66" fill="#cfc8ea" opacity="0.18"/><circle cx="631.2" cy="322.2" r="1.50" fill="#cfc8ea" opacity="0.43"/><circle cx="41.8" cy="244.8" r="0.76" fill="#cfc8ea" opacity="0.29"/><circle cx="308.2" cy="328.9" r="0.85" fill="#cfc8ea" opacity="0.27"/><circle cx="423.6" cy="22.8" r="0.47" fill="#cfc8ea" opacity="0.17"/><circle cx="715.7" cy="90.5" r="0.49" fill="#cfc8ea" opacity="0.33"/><circle cx="44.7" cy="103.5" r="0.99" fill="#cfc8ea" opacity="0.54"/><circle cx="686.1" cy="351.4" r="0.56" fill="#cfc8ea" opacity="0.16"/><path d="M 282.7485118173063 267.0 L 283.2 269.2 L 285.4 269.64196103368886 L 283.2 270.1 L 282.7485118173063 272.3 L 282.3 270.1 L 280.1 269.64196103368886 L 282.3 269.2 Z" fill="#f6e6bf" opacity="0.6381504517281428"/><path d="M 383.599180418998 25.9 L 384.2 29.0 L 387.3 29.60895448201336 L 384.2 30.2 L 383.599180418998 33.3 L 383.0 30.2 L 379.9 29.60895448201336 L 383.0 29.0 Z" fill="#f6e6bf" opacity="0.608093713899143"/><path d="M 161.47469402477145 395.7 L 161.9 397.9 L 164.1 398.3238463450689 L 161.9 398.7 L 161.47469402477145 401.0 L 161.1 398.7 L 158.8 398.3238463450689 L 161.1 397.9 Z" fill="#f6e6bf" opacity="0.5664922522613779"/><path d="M 712.4915820993483 154.5 L 712.9 156.8 L 715.2 157.1861071905587 L 712.9 157.6 L 712.4915820993483 159.9 L 712.1 157.6 L 709.8 157.1861071905587 L 712.1 156.8 Z" fill="#f6e6bf" opacity="0.5197554019512609"/><path d="M 334.5080428086221 175.7 L 334.9 177.9 L 337.1 178.28858603467233 L 334.9 178.7 L 334.5080428086221 180.9 L 334.1 178.7 L 331.9 178.28858603467233 L 334.1 177.9 Z" fill="#f6e6bf" opacity="0.6243668847018853"/><path d="M 149.4 39.0 L 219.0 440.7 L 155.7 212.4 L 518.9 485.2 L 385.4 130.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="550" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="539" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 533.8 L 16.5 536.5 L 19.2 537 L 16.5 537.5 L 16 540.2 L 15.5 537.5 L 12.8 537 L 15.5 536.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 533.8 L 744.5 536.5 L 747.2 537 L 744.5 537.5 L 744 540.2 L 743.5 537.5 L 740.8 537 L 743.5 536.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Go-To Stones for the Seven Centers</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#crystalsforeachchakra0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#crystalsforeachchakra0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="481" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#crystalsforeachchakra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#crystalsforeachchakra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Root</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Red jasper, hematite — steadying, grounded support</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#crystalsforeachchakra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#crystalsforeachchakra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Sacral</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Carnelian, orange calcite — creative, emotional flow</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#crystalsforeachchakra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#crystalsforeachchakra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Solar plexus</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Citrine, tiger's eye — drive and steady confidence</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#crystalsforeachchakra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#crystalsforeachchakra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Heart</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Rose quartz, green aventurine — openness, self-kindness</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#crystalsforeachchakra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#crystalsforeachchakra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Throat</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Aquamarine, blue lace agate — clear, honest expression</text>
+  <circle cx="76" cy="421" r="20.0" fill="url(#crystalsforeachchakra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="421" r="15" fill="url(#crystalsforeachchakra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="416.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="425.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">6</text>
+  <text x="116" y="417.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Third eye</text>
+  <text x="116" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Amethyst, lapis lazuli — settles a foggy, racing mind</text>
+  <circle cx="76" cy="481" r="20.0" fill="url(#crystalsforeachchakra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="481" r="15" fill="url(#crystalsforeachchakra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="476.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="485.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">7</text>
+  <text x="116" y="477.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Crown</text>
+  <text x="116" y="499.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Clear quartz, selenite — calm, open perspective</text>
+  <path d="M 202.22749999999988 524.4 L 202.6 526.6 L 204.8 527 L 202.6 527.4 L 202.22749999999988 529.6 L 201.8 527.4 L 199.6 527 L 201.8 526.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="531" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 524.4 L 558.2 526.6 L 560.4 527 L 558.2 527.4 L 557.7725000000002 529.6 L 557.4 527.4 L 555.2 527 L 557.4 526.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

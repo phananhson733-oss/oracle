@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="Read the State, Then Pick the Stone">
+  <defs>
+    <linearGradient id="crystalsforeachchakra1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="crystalsforeachchakra1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="crystalsforeachchakra1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="crystalsforeachchakra1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="crystalsforeachchakra1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="crystalsforeachchakra1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#crystalsforeachchakra1en-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#crystalsforeachchakra1en-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#crystalsforeachchakra1en-neb2)"/>
+  <circle cx="643.6" cy="160.8" r="1.06" fill="#cfc8ea" opacity="0.31"/><circle cx="470.1" cy="288.9" r="1.69" fill="#cfc8ea" opacity="0.26"/><circle cx="647.0" cy="339.9" r="1.43" fill="#cfc8ea" opacity="0.26"/><circle cx="549.1" cy="241.8" r="1.17" fill="#cfc8ea" opacity="0.19"/><circle cx="295.2" cy="60.4" r="1.09" fill="#cfc8ea" opacity="0.35"/><circle cx="78.8" cy="106.3" r="1.35" fill="#cfc8ea" opacity="0.14"/><circle cx="658.0" cy="142.7" r="1.06" fill="#cfc8ea" opacity="0.48"/><circle cx="432.7" cy="23.0" r="0.87" fill="#cfc8ea" opacity="0.29"/><circle cx="208.0" cy="255.4" r="1.48" fill="#cfc8ea" opacity="0.21"/><circle cx="45.1" cy="146.8" r="0.42" fill="#cfc8ea" opacity="0.44"/><circle cx="207.7" cy="152.4" r="1.36" fill="#cfc8ea" opacity="0.12"/><circle cx="421.0" cy="340.4" r="0.92" fill="#cfc8ea" opacity="0.42"/><circle cx="189.8" cy="307.3" r="1.67" fill="#cfc8ea" opacity="0.33"/><circle cx="320.6" cy="94.1" r="0.74" fill="#cfc8ea" opacity="0.16"/><circle cx="609.7" cy="223.2" r="1.12" fill="#cfc8ea" opacity="0.26"/><circle cx="276.9" cy="90.3" r="0.68" fill="#cfc8ea" opacity="0.29"/><circle cx="274.2" cy="14.8" r="0.78" fill="#cfc8ea" opacity="0.17"/><circle cx="665.2" cy="112.9" r="1.23" fill="#cfc8ea" opacity="0.17"/><circle cx="303.0" cy="42.0" r="1.20" fill="#cfc8ea" opacity="0.14"/><circle cx="312.1" cy="303.9" r="0.88" fill="#cfc8ea" opacity="0.16"/><circle cx="595.5" cy="67.7" r="0.95" fill="#cfc8ea" opacity="0.37"/><circle cx="86.5" cy="81.5" r="1.44" fill="#cfc8ea" opacity="0.37"/><circle cx="502.6" cy="52.8" r="1.17" fill="#cfc8ea" opacity="0.46"/><circle cx="735.1" cy="293.6" r="0.49" fill="#cfc8ea" opacity="0.20"/><circle cx="121.7" cy="31.5" r="1.68" fill="#cfc8ea" opacity="0.18"/><circle cx="596.6" cy="145.9" r="0.94" fill="#cfc8ea" opacity="0.24"/><circle cx="353.9" cy="325.6" r="1.05" fill="#cfc8ea" opacity="0.25"/><circle cx="80.5" cy="173.1" r="1.21" fill="#cfc8ea" opacity="0.32"/><circle cx="423.5" cy="321.1" r="0.79" fill="#cfc8ea" opacity="0.17"/><circle cx="74.4" cy="244.8" r="1.38" fill="#cfc8ea" opacity="0.48"/><circle cx="371.0" cy="58.4" r="0.53" fill="#cfc8ea" opacity="0.19"/><path d="M 47.40480533801019 112.3 L 48.0 115.5 L 51.2 116.10802719462663 L 48.0 116.7 L 47.40480533801019 119.9 L 46.8 116.7 L 43.6 116.10802719462663 L 46.8 115.5 Z" fill="#f6e6bf" opacity="0.6247376148123294"/><path d="M 377.8545463066548 112.2 L 378.4 115.1 L 381.4 115.67480253614485 L 378.4 116.2 L 377.8545463066548 119.2 L 377.3 116.2 L 374.4 115.67480253614485 L 377.3 115.1 Z" fill="#f6e6bf" opacity="0.6574302482884378"/><path d="M 634.442560872063 88.2 L 635.0 91.0 L 637.7 91.4795384099707 L 635.0 92.0 L 634.442560872063 94.8 L 633.9 92.0 L 631.2 91.4795384099707 L 633.9 91.0 Z" fill="#f6e6bf" opacity="0.6460991638246923"/><path d="M 213.73860268108547 282.0 L 214.2 284.4 L 216.6 284.8274728246033 L 214.2 285.3 L 213.73860268108547 287.7 L 213.3 285.3 L 210.9 284.8274728246033 L 213.3 284.4 Z" fill="#f6e6bf" opacity="0.7958972306456417"/><path d="M 279.68361068330705 283.0 L 280.2 285.5 L 282.7 285.98611261788756 L 280.2 286.5 L 279.68361068330705 289.0 L 279.2 286.5 L 276.7 285.98611261788756 L 279.2 285.5 Z" fill="#f6e6bf" opacity="0.68500244920142"/><path d="M 549.1 241.8 L 121.7 31.5 L 423.5 321.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Read the State, Then Pick the Stone</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#crystalsforeachchakra1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#crystalsforeachchakra1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#crystalsforeachchakra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#crystalsforeachchakra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Notice what's loud</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Racing mind, constant talk — settle it, don't stimulate</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#crystalsforeachchakra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#crystalsforeachchakra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Notice what's quiet</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Low drive, trouble speaking up — needs activating</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#crystalsforeachchakra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#crystalsforeachchakra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Match stone to the gap</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Calming for over-active, activating for drained</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#crystalsforeachchakra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#crystalsforeachchakra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Check the body cue</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Tension in chest, throat or lower back shows the start</text>
+  <path d="M 202.22749999999988 344.4 L 202.6 346.6 L 204.8 347 L 202.6 347.4 L 202.22749999999988 349.6 L 201.8 347.4 L 199.6 347 L 201.8 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 344.4 L 558.2 346.6 L 560.4 347 L 558.2 347.4 L 557.7725000000002 349.6 L 557.4 347.4 L 555.2 347 L 557.4 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "argentina-vs-spain-world-cup-final-astrology-2026": {
+      "hero": {
+        "prompt": "Two national football teams surging across a vast stadium pitch at dusk — one side in sweeping light-blue-and-white banners and kits, the other in red-and-gold — unified in a single continuous motion blur under a deep indigo twilight sky above MetLife Stadium, Jupiter glowing prominently as a gold celestial beacon amid a teal-and-gold nebula wash overhead, gold accent streamers catching stadium floodlight, crowd silhouettes dissolving into the indigo dark at the edges, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Argentina vs Spain 2026 World Cup Final astrology: two national teams under a Jupiter-lit stadium sky"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Matchup in the Transit Sky",
+          "titleEn": "5 Steps to a Paired National-Chart Read",
+          "altEn": "Five-step sequence for reading Argentina vs Spain founding charts against the July 19 2026 transit sky",
+          "items": [
+            {
+              "nameEn": "Start with founding charts",
+              "subEn": "Each nation's Sun sign sets the baseline temperament you are comparing"
+            },
+            {
+              "nameEn": "Add the July 19, 2026 sky",
+              "subEn": "Note where Jupiter in Gemini lands on each national chart"
+            },
+            {
+              "nameEn": "Compare the contact points",
+              "subEn": "The sharper the contrast between the two, the stronger the symbolic story"
+            },
+            {
+              "nameEn": "Read mood, not scorelines",
+              "subEn": "Charts describe tone and narrative, not outcomes"
+            },
+            {
+              "nameEn": "Hold it loosely as a scenario",
+              "subEn": "The fixture is still hypothetical — keep the read open-ended"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## National-Chart Reading vs Whole-Tournament Winner Picks: What Actually Differs",
+          "titleEn": "National-Chart Read vs Tournament Winner Pick",
+          "altEn": "Comparison of a paired national-chart reading versus a whole-tournament 48-team winner pick for World Cup 2026",
+          "columns": [
+            {
+              "nameEn": "National-Chart Reading",
+              "linesEn": [
+                "Fixes one date and two founding charts",
+                "Studies asymmetry in close detail",
+                "Trades breadth for depth and nuance",
+                "Names which source chart you lean on and why"
+              ]
+            },
+            {
+              "nameEn": "Whole-Tournament Winner Pick",
+              "linesEn": [
+                "Scores all 48 teams across many dates",
+                "Ranks teams by breadth of coverage",
+                "Sacrifices per-pair interpretive detail",
+                "Rarely addresses source-chart debates"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

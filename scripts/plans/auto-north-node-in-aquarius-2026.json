@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "north-node-in-aquarius-2026": {
+      "hero": {
+        "prompt": "Painterly editorial illustration of a luminous lunar node axis arcing through a vast deep-space panorama; on one pole a glowing constellation of abstracted human silhouettes radiates teal light outward into the cosmos evoking Aquarian collective belonging and shared ideals; on the opposite pole a warm dissolving aureole of molten gold recalls the Leo spotlight being gently released; the ascending node rendered as a single crescent arc of cold silver light at the midpoint surrounded by a teal-and-gold nebula wash; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Lunar node axis across a deep indigo cosmos — Aquarian teal network on one pole, golden Leo warmth dissolving on the other"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Nodal Shift in Your Chart",
+          "titleEn": "5 Steps to Read the Nodal Shift in Your Chart",
+          "altEn": "Five-step sequence for locating and interpreting the North Node in Aquarius 2026 in a birth chart",
+          "items": [
+            {
+              "nameEn": "Find Your Aquarius House",
+              "subEn": "Locate where 0–29° Aquarius falls by house — that house is where the growth question centers"
+            },
+            {
+              "nameEn": "Check the Opposite Leo House",
+              "subEn": "Note the Leo house on the same axis — the place you may over-rely on for comfort or familiar validation"
+            },
+            {
+              "nameEn": "Watch for Group Pulls",
+              "subEn": "Notice repeated pulls toward networks, causes, or unconventional ideas that feel energizing yet slightly unfamiliar"
+            },
+            {
+              "nameEn": "Track Recognition Gaps",
+              "subEn": "Mark moments when personal praise stops satisfying the way it once did — that gap is the axis speaking"
+            },
+            {
+              "nameEn": "Note Nearby Planets",
+              "subEn": "Any natal planets near either nodal point color how the Aquarius–Leo theme shows up day to day"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Misread vs Reality: North Node in Aquarius 2026",
+          "altEn": "Side-by-side comparison of four common misreadings of the North Node in Aquarius 2026 alongside their corrections",
+          "columns": [
+            {
+              "nameEn": "Misread",
+              "linesEn": [
+                "It predicts fixed events on a set timeline",
+                "It is the same as any Aquarius transit",
+                "The South Node in Leo is simply bad",
+                "It demands you abandon Leo traits entirely"
+              ]
+            },
+            {
+              "nameEn": "Reality",
+              "linesEn": [
+                "The node describes a direction and tendency, not a scheduled outcome",
+                "It is a directional axis distinct from planetary transits like Pluto sharing the sign",
+                "The Leo south node is a well-worn strength you are asked to rely on a little less",
+                "The invitation is integration — carry Leo warmth into Aquarian community, not replacement"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

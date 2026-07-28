@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "why-am-i-still-single": {
+      "hero": {
+        "prompt": "A solitary luminous orb suspended at the center of a vast deep-indigo cosmos, with three distinct glowing spheres nearby representing Venus bathed in rose-gold light, the Moon in cool silver-blue, and Saturn ringed in amber, soft gold filament threads arcing between them suggesting connection and potential rather than absence, the surrounding space filled with teal-and-gold nebula wisps; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A lone luminous orb connected by gold filaments to Venus, Moon, and Saturn glowing in a deep indigo nebula cosmos"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Why Am I Still Single in Your Chart",
+          "titleEn": "Five Chart Signals to Read for Relationship Patterns",
+          "altEn": "Five astrological signals for reading singleness patterns: seventh house, Venus, Saturn, Moon, and current transits",
+          "items": [
+            {
+              "nameEn": "Seventh House & Its Ruler",
+              "subEn": "Speaks to one-to-one partnership; a loaded or empty house both carry meaning, and its ruler hints at where your relating energy tends to go"
+            },
+            {
+              "nameEn": "Venus by Sign & Aspect",
+              "subEn": "Describes how you give and receive affection and where your attraction style may run hot or cautious"
+            },
+            {
+              "nameEn": "Saturn's Contacts to Personal Planets",
+              "subEn": "Points to slower timing and a need for security before letting someone in; reads as patience rather than permanent solitude"
+            },
+            {
+              "nameEn": "The Moon's Condition",
+              "subEn": "Shows what emotional safety looks like for you and what tends to make closeness feel safe or risky"
+            },
+            {
+              "nameEn": "Current Transits",
+              "subEn": "Highlight seasons that lean toward reflection versus seasons that lean toward connection"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Why Am I Still Single vs Why Am I Afraid of Commitment: What Actually Differs",
+          "titleEn": "Still Single vs. Afraid of Commitment: Two Different Lenses",
+          "altEn": "Comparison of the still-single outward lens on patterns and timing versus the commitment-fear inward lens on closeness and retreat",
+          "columns": [
+            {
+              "nameEn": "Why Am I Still Single",
+              "linesEn": [
+                "Looks outward at patterns, timing, and circumstance",
+                "Focuses on who you've met, how your seasons have lined up, and what you value in a match",
+                "Gives a wider, gentler view of your whole relational history",
+                "Costs the comfort of blaming only luck or bad timing"
+              ]
+            },
+            {
+              "nameEn": "Why Am I Afraid of Commitment",
+              "linesEn": [
+                "Looks inward at what happens when closeness actually gets real",
+                "Focuses on the specific moment when exits start to feel tempting",
+                "Gives sharp focus on one particular moment of retreat",
+                "Can shrink a full life story down to a single flaw"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Four Common Misreadings of Singleness in the Birth Chart",
+          "altEn": "Four common misreadings of birth chart singleness signals alongside what the chart actually shows",
+          "items": [
+            {
+              "nameEn": "A single 'lonely' placement dooms you",
+              "subEn": "No one marker decides your relationship life; the chart describes leanings that interact, not a life sentence"
+            },
+            {
+              "nameEn": "A hard Venus or Saturn aspect means unlovable",
+              "subEn": "Challenging aspects often describe depth, caution, or slower timing; many people with them build lasting bonds"
+            },
+            {
+              "nameEn": "The chart names the date you'll couple up",
+              "subEn": "Astrology reflects tendencies and timing themes and cannot predict a guaranteed event or deadline"
+            },
+            {
+              "nameEn": "Being single is a problem the chart must solve",
+              "subEn": "The framing works best as a lens for self-awareness, not a fix-it tool that treats singleness as broken"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

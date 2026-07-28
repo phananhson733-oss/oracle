@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="How to Read the Chart in the World Cup Window">
+  <defs>
+    <linearGradient id="judebellinghambirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="judebellinghambirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="judebellinghambirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="judebellinghambirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="judebellinghambirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="judebellinghambirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#judebellinghambirthchart1en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#judebellinghambirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#judebellinghambirthchart1en-neb2)"/>
+  <circle cx="209.3" cy="417.8" r="1.47" fill="#cfc8ea" opacity="0.50"/><circle cx="408.5" cy="360.0" r="1.24" fill="#cfc8ea" opacity="0.50"/><circle cx="715.6" cy="35.8" r="0.98" fill="#cfc8ea" opacity="0.19"/><circle cx="322.8" cy="304.6" r="1.15" fill="#cfc8ea" opacity="0.51"/><circle cx="393.5" cy="157.4" r="0.51" fill="#cfc8ea" opacity="0.50"/><circle cx="177.6" cy="89.8" r="1.67" fill="#cfc8ea" opacity="0.22"/><circle cx="182.7" cy="371.1" r="0.72" fill="#cfc8ea" opacity="0.47"/><circle cx="257.5" cy="99.9" r="1.08" fill="#cfc8ea" opacity="0.54"/><circle cx="666.9" cy="181.8" r="0.78" fill="#cfc8ea" opacity="0.44"/><circle cx="427.5" cy="88.9" r="1.04" fill="#cfc8ea" opacity="0.34"/><circle cx="363.8" cy="312.2" r="1.20" fill="#cfc8ea" opacity="0.48"/><circle cx="489.2" cy="251.2" r="1.02" fill="#cfc8ea" opacity="0.46"/><circle cx="430.4" cy="64.2" r="1.31" fill="#cfc8ea" opacity="0.15"/><circle cx="429.7" cy="360.6" r="0.63" fill="#cfc8ea" opacity="0.35"/><circle cx="23.3" cy="255.0" r="1.43" fill="#cfc8ea" opacity="0.12"/><circle cx="179.7" cy="328.9" r="1.31" fill="#cfc8ea" opacity="0.25"/><circle cx="705.7" cy="303.0" r="0.60" fill="#cfc8ea" opacity="0.42"/><circle cx="615.2" cy="149.5" r="1.22" fill="#cfc8ea" opacity="0.17"/><circle cx="97.7" cy="53.1" r="1.33" fill="#cfc8ea" opacity="0.22"/><circle cx="567.6" cy="248.6" r="0.93" fill="#cfc8ea" opacity="0.14"/><circle cx="495.1" cy="36.6" r="1.50" fill="#cfc8ea" opacity="0.14"/><circle cx="74.1" cy="266.1" r="1.55" fill="#cfc8ea" opacity="0.40"/><circle cx="172.3" cy="337.7" r="0.49" fill="#cfc8ea" opacity="0.38"/><circle cx="83.1" cy="389.9" r="0.81" fill="#cfc8ea" opacity="0.24"/><circle cx="265.3" cy="219.2" r="0.48" fill="#cfc8ea" opacity="0.40"/><circle cx="165.3" cy="267.6" r="0.79" fill="#cfc8ea" opacity="0.37"/><circle cx="155.6" cy="290.0" r="0.49" fill="#cfc8ea" opacity="0.23"/><circle cx="430.1" cy="179.3" r="1.40" fill="#cfc8ea" opacity="0.53"/><circle cx="286.6" cy="94.1" r="0.95" fill="#cfc8ea" opacity="0.23"/><circle cx="632.6" cy="188.9" r="1.07" fill="#cfc8ea" opacity="0.43"/><circle cx="495.2" cy="204.7" r="0.47" fill="#cfc8ea" opacity="0.13"/><circle cx="557.5" cy="179.1" r="1.54" fill="#cfc8ea" opacity="0.34"/><circle cx="139.6" cy="263.8" r="0.85" fill="#cfc8ea" opacity="0.20"/><circle cx="564.7" cy="261.7" r="0.43" fill="#cfc8ea" opacity="0.21"/><circle cx="345.9" cy="110.0" r="0.65" fill="#cfc8ea" opacity="0.42"/><circle cx="518.8" cy="146.5" r="0.48" fill="#cfc8ea" opacity="0.38"/><circle cx="735.7" cy="401.2" r="1.21" fill="#cfc8ea" opacity="0.38"/><path d="M 531.5131615139544 333.5 L 532.1 336.6 L 535.2 337.235895835096 L 532.1 337.8 L 531.5131615139544 340.9 L 530.9 337.8 L 527.8 337.235895835096 L 530.9 336.6 Z" fill="#f6e6bf" opacity="0.5286730976076797"/><path d="M 400.9077106975019 362.2 L 401.4 364.6 L 403.7 365.04056133073755 L 401.4 365.5 L 400.9077106975019 367.9 L 400.5 365.5 L 398.1 365.04056133073755 L 400.5 364.6 Z" fill="#f6e6bf" opacity="0.772940319427289"/><path d="M 637.2633097954094 287.7 L 637.9 290.8 L 640.9 291.37753941328265 L 637.9 292.0 L 637.2633097954094 295.1 L 636.7 292.0 L 633.6 291.37753941328265 L 636.7 290.8 Z" fill="#f6e6bf" opacity="0.7523540682392195"/><path d="M 565.0485695712268 150.1 L 565.5 152.7 L 568.1 153.14811453898437 L 565.5 153.6 L 565.0485695712268 156.2 L 564.6 153.6 L 562.0 153.14811453898437 L 564.6 152.7 Z" fill="#f6e6bf" opacity="0.5259836675832048"/><path d="M 343.85316402092576 144.2 L 344.4 146.8 L 347.0 147.34926284500398 L 344.4 147.9 L 343.85316402092576 150.5 L 343.3 147.9 L 340.7 147.34926284500398 L 343.3 146.8 Z" fill="#f6e6bf" opacity="0.7120853764237836"/><path d="M 393.5 157.4 L 430.4 64.2 L 429.7 360.6 L 74.1 266.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">How to Read the Chart in the World Cup Window</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#judebellinghambirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#judebellinghambirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#judebellinghambirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#judebellinghambirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Anchor the verified fact</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">29 June 2003 in Stourbridge fixes the Sun at about 7 degrees of Cancer</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#judebellinghambirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#judebellinghambirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Flag what is unknown</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">No public birth time, so Moon, Ascendant, and houses stay unverified</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#judebellinghambirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#judebellinghambirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Read the Cancer Sun as theme</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Emotional drive, protective intensity, visible on-pitch passion</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#judebellinghambirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#judebellinghambirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Note the timing backdrop</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Jupiter in Cancer until about 30 June 2026, then enters Leo for July knockouts</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#judebellinghambirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#judebellinghambirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Hold it all as symbolism</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A season of meaning, not a forecast; let results stay open</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

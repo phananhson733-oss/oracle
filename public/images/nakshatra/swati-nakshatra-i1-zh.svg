@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 313" role="img" aria-label="罗睺放大循环">
+  <defs>
+    <linearGradient id="swatinakshatra1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="swatinakshatra1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="swatinakshatra1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="310" rx="22" fill="url(#swatinakshatra1zh-panel)"/>
+  <ellipse cx="198" cy="75" rx="380" ry="106" fill="url(#swatinakshatra1zh-neb1)"/>
+  <ellipse cx="623" cy="250" rx="334" ry="100" fill="url(#swatinakshatra1zh-neb2)"/>
+  <circle cx="646.8" cy="182.3" r="0.56" fill="#cfc8ea" opacity="0.15"/><circle cx="322.3" cy="132.0" r="1.26" fill="#cfc8ea" opacity="0.42"/><circle cx="73.2" cy="227.9" r="1.50" fill="#cfc8ea" opacity="0.30"/><circle cx="247.6" cy="119.7" r="0.83" fill="#cfc8ea" opacity="0.14"/><circle cx="31.3" cy="172.5" r="1.12" fill="#cfc8ea" opacity="0.45"/><circle cx="718.9" cy="209.6" r="1.36" fill="#cfc8ea" opacity="0.42"/><circle cx="224.9" cy="294.7" r="0.99" fill="#cfc8ea" opacity="0.31"/><circle cx="498.8" cy="174.4" r="1.55" fill="#cfc8ea" opacity="0.41"/><circle cx="137.9" cy="235.1" r="0.90" fill="#cfc8ea" opacity="0.32"/><circle cx="480.0" cy="96.9" r="1.59" fill="#cfc8ea" opacity="0.39"/><circle cx="695.3" cy="228.6" r="1.54" fill="#cfc8ea" opacity="0.13"/><circle cx="644.6" cy="88.4" r="0.97" fill="#cfc8ea" opacity="0.41"/><circle cx="617.0" cy="182.8" r="1.51" fill="#cfc8ea" opacity="0.35"/><circle cx="356.5" cy="95.6" r="1.04" fill="#cfc8ea" opacity="0.53"/><circle cx="208.8" cy="292.0" r="1.64" fill="#cfc8ea" opacity="0.41"/><circle cx="84.9" cy="179.7" r="1.00" fill="#cfc8ea" opacity="0.42"/><circle cx="677.3" cy="230.8" r="1.48" fill="#cfc8ea" opacity="0.15"/><circle cx="145.8" cy="259.9" r="0.92" fill="#cfc8ea" opacity="0.42"/><circle cx="264.1" cy="275.6" r="0.48" fill="#cfc8ea" opacity="0.34"/><circle cx="150.2" cy="207.2" r="1.44" fill="#cfc8ea" opacity="0.13"/><circle cx="607.4" cy="12.1" r="1.48" fill="#cfc8ea" opacity="0.53"/><circle cx="71.9" cy="169.8" r="1.68" fill="#cfc8ea" opacity="0.32"/><circle cx="320.8" cy="207.0" r="0.49" fill="#cfc8ea" opacity="0.53"/><circle cx="737.7" cy="289.4" r="1.42" fill="#cfc8ea" opacity="0.43"/><circle cx="371.2" cy="140.8" r="0.69" fill="#cfc8ea" opacity="0.20"/><circle cx="156.0" cy="152.4" r="0.92" fill="#cfc8ea" opacity="0.38"/><path d="M 461.06698676757514 58.0 L 461.7 61.2 L 464.9 61.763644149526954 L 461.7 62.4 L 461.06698676757514 65.6 L 460.5 62.4 L 457.3 61.763644149526954 L 460.5 61.2 Z" fill="#f6e6bf" opacity="0.6794186949264258"/><path d="M 680.8891965653747 140.9 L 681.5 144.1 L 684.7 144.66563518252224 L 681.5 145.3 L 680.8891965653747 148.4 L 680.3 145.3 L 677.1 144.66563518252224 L 680.3 144.1 Z" fill="#f6e6bf" opacity="0.6274572400841862"/><path d="M 96.98155976645648 109.1 L 97.5 111.6 L 100.0 112.1166310235858 L 97.5 112.6 L 96.98155976645648 115.1 L 96.5 112.6 L 93.9 112.1166310235858 L 96.5 111.6 Z" fill="#f6e6bf" opacity="0.6819407743867487"/><path d="M 351.62376043759286 95.9 L 352.0 98.0 L 354.1 98.4429430225864 L 352.0 98.8 L 351.62376043759286 100.9 L 351.2 98.8 L 349.1 98.4429430225864 L 351.2 98.0 Z" fill="#f6e6bf" opacity="0.7126656454522162"/><path d="M 633.1419609170407 149.8 L 633.6 152.3 L 636.0 152.7233277503401 L 633.6 153.2 L 633.1419609170407 155.6 L 632.7 153.2 L 630.2 152.7233277503401 L 632.7 152.3 Z" fill="#f6e6bf" opacity="0.502852502046153"/>
+  <rect x="1.5" y="1.5" width="757" height="310" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="299" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 293.8 L 16.5 296.5 L 19.2 297 L 16.5 297.5 L 16 300.2 L 15.5 297.5 L 12.8 297 L 15.5 296.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 293.8 L 744.5 296.5 L 747.2 297 L 744.5 297.5 L 744 300.2 L 743.5 297.5 L 740.8 297 L 743.5 296.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">罗睺放大循环</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#swatinakshatra1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#swatinakshatra1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="241" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#swatinakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#swatinakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">蓄势</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">欲望驱动扩张，收入与关注涌入</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#swatinakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#swatinakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">再分配</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">资源外流至人际与协作项目</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#swatinakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#swatinakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">重置</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">储备未及成形循环已清空，再次启动</text>
+  <path d="M 280.025 284.4 L 280.4 286.6 L 282.6 287 L 280.4 287.4 L 280.025 289.6 L 279.6 287.4 L 277.4 287 L 279.6 286.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="291" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 284.4 L 480.4 286.6 L 482.6 287 L 480.4 287.4 L 479.975 289.6 L 479.6 287.4 L 477.4 287 L 479.6 286.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

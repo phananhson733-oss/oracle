@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 701" role="img" aria-label="Virgo Ascendant: Reality vs Two Common Misframes">
+  <defs>
+    <linearGradient id="virgorising0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="virgorising0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="virgorising0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="virgorising0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="virgorising0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="virgorising0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="url(#virgorising0en-panel)"/>
+  <ellipse cx="198" cy="168" rx="380" ry="238" fill="url(#virgorising0en-neb1)"/>
+  <ellipse cx="623" cy="561" rx="334" ry="224" fill="url(#virgorising0en-neb2)"/>
+  <circle cx="675.8" cy="12.5" r="1.14" fill="#cfc8ea" opacity="0.27"/><circle cx="296.9" cy="653.1" r="1.28" fill="#cfc8ea" opacity="0.45"/><circle cx="317.6" cy="429.2" r="0.72" fill="#cfc8ea" opacity="0.23"/><circle cx="400.0" cy="135.8" r="1.21" fill="#cfc8ea" opacity="0.32"/><circle cx="178.4" cy="397.0" r="1.05" fill="#cfc8ea" opacity="0.36"/><circle cx="585.8" cy="126.8" r="1.12" fill="#cfc8ea" opacity="0.17"/><circle cx="90.4" cy="648.1" r="0.42" fill="#cfc8ea" opacity="0.20"/><circle cx="97.4" cy="170.8" r="1.05" fill="#cfc8ea" opacity="0.38"/><circle cx="504.7" cy="278.2" r="0.51" fill="#cfc8ea" opacity="0.14"/><circle cx="319.8" cy="682.1" r="0.90" fill="#cfc8ea" opacity="0.13"/><circle cx="61.7" cy="287.5" r="1.56" fill="#cfc8ea" opacity="0.30"/><circle cx="390.3" cy="296.6" r="1.41" fill="#cfc8ea" opacity="0.42"/><circle cx="576.6" cy="250.8" r="1.06" fill="#cfc8ea" opacity="0.47"/><circle cx="421.8" cy="12.3" r="0.69" fill="#cfc8ea" opacity="0.16"/><circle cx="554.4" cy="401.1" r="0.99" fill="#cfc8ea" opacity="0.14"/><circle cx="666.4" cy="409.4" r="0.54" fill="#cfc8ea" opacity="0.48"/><circle cx="200.4" cy="209.1" r="0.47" fill="#cfc8ea" opacity="0.23"/><circle cx="410.5" cy="354.4" r="0.47" fill="#cfc8ea" opacity="0.47"/><circle cx="546.2" cy="13.7" r="0.85" fill="#cfc8ea" opacity="0.25"/><circle cx="247.3" cy="121.1" r="0.97" fill="#cfc8ea" opacity="0.54"/><circle cx="330.4" cy="624.7" r="1.04" fill="#cfc8ea" opacity="0.52"/><circle cx="630.4" cy="183.9" r="1.41" fill="#cfc8ea" opacity="0.34"/><circle cx="539.7" cy="642.1" r="1.31" fill="#cfc8ea" opacity="0.47"/><circle cx="147.3" cy="221.7" r="0.75" fill="#cfc8ea" opacity="0.44"/><circle cx="396.4" cy="178.9" r="1.61" fill="#cfc8ea" opacity="0.38"/><circle cx="667.4" cy="211.0" r="0.81" fill="#cfc8ea" opacity="0.24"/><circle cx="294.1" cy="468.7" r="0.80" fill="#cfc8ea" opacity="0.30"/><circle cx="80.6" cy="466.5" r="1.55" fill="#cfc8ea" opacity="0.42"/><circle cx="478.1" cy="253.3" r="1.58" fill="#cfc8ea" opacity="0.52"/><circle cx="401.4" cy="629.8" r="0.77" fill="#cfc8ea" opacity="0.39"/><circle cx="397.9" cy="265.0" r="0.43" fill="#cfc8ea" opacity="0.28"/><circle cx="204.3" cy="172.3" r="0.46" fill="#cfc8ea" opacity="0.45"/><circle cx="105.8" cy="547.3" r="1.16" fill="#cfc8ea" opacity="0.46"/><circle cx="27.6" cy="590.1" r="1.40" fill="#cfc8ea" opacity="0.43"/><circle cx="656.6" cy="681.8" r="1.39" fill="#cfc8ea" opacity="0.24"/><circle cx="340.7" cy="152.5" r="1.49" fill="#cfc8ea" opacity="0.16"/><circle cx="367.2" cy="53.1" r="0.80" fill="#cfc8ea" opacity="0.20"/><circle cx="713.6" cy="197.1" r="0.72" fill="#cfc8ea" opacity="0.45"/><circle cx="230.1" cy="478.7" r="0.58" fill="#cfc8ea" opacity="0.40"/><circle cx="646.6" cy="627.5" r="1.42" fill="#cfc8ea" opacity="0.14"/><circle cx="731.2" cy="180.1" r="1.63" fill="#cfc8ea" opacity="0.30"/><circle cx="384.8" cy="100.5" r="1.21" fill="#cfc8ea" opacity="0.41"/><circle cx="219.3" cy="19.9" r="1.24" fill="#cfc8ea" opacity="0.49"/><circle cx="520.8" cy="72.3" r="0.97" fill="#cfc8ea" opacity="0.26"/><circle cx="581.9" cy="225.0" r="1.37" fill="#cfc8ea" opacity="0.14"/><circle cx="655.9" cy="671.6" r="1.61" fill="#cfc8ea" opacity="0.45"/><circle cx="20.9" cy="313.6" r="1.53" fill="#cfc8ea" opacity="0.54"/><circle cx="85.6" cy="131.6" r="1.65" fill="#cfc8ea" opacity="0.32"/><circle cx="183.3" cy="597.8" r="1.21" fill="#cfc8ea" opacity="0.25"/><circle cx="634.0" cy="228.9" r="0.67" fill="#cfc8ea" opacity="0.17"/><circle cx="295.3" cy="231.3" r="0.53" fill="#cfc8ea" opacity="0.47"/><circle cx="665.2" cy="237.0" r="1.05" fill="#cfc8ea" opacity="0.51"/><circle cx="397.8" cy="277.0" r="0.61" fill="#cfc8ea" opacity="0.38"/><circle cx="602.9" cy="66.7" r="1.09" fill="#cfc8ea" opacity="0.45"/><circle cx="553.5" cy="123.7" r="0.97" fill="#cfc8ea" opacity="0.23"/><circle cx="133.7" cy="259.4" r="0.81" fill="#cfc8ea" opacity="0.47"/><circle cx="662.4" cy="179.6" r="1.23" fill="#cfc8ea" opacity="0.51"/><circle cx="513.9" cy="512.9" r="0.76" fill="#cfc8ea" opacity="0.23"/><circle cx="159.6" cy="590.8" r="0.70" fill="#cfc8ea" opacity="0.33"/><path d="M 528.9900421053171 582.6 L 529.4 584.6 L 531.4 585.0264827439096 L 529.4 585.4 L 528.9900421053171 587.5 L 528.6 585.4 L 526.5 585.0264827439096 L 528.6 584.6 Z" fill="#f6e6bf" opacity="0.5018757694168017"/><path d="M 588.472248442471 59.4 L 589.1 62.6 L 592.3 63.17724551889114 L 589.1 63.8 L 588.472248442471 67.0 L 587.9 63.8 L 584.7 63.17724551889114 L 587.9 62.6 Z" fill="#f6e6bf" opacity="0.7772581826662645"/><path d="M 130.83703923225403 490.0 L 131.4 492.9 L 134.2 493.40669836080633 L 131.4 493.9 L 130.83703923225403 496.8 L 130.3 493.9 L 127.4 493.40669836080633 L 130.3 492.9 Z" fill="#f6e6bf" opacity="0.5712862564949319"/><path d="M 81.30795382708311 451.8 L 81.9 455.0 L 85.1 455.611423157854 L 81.9 456.2 L 81.30795382708311 459.4 L 80.7 456.2 L 77.5 455.611423157854 L 80.7 455.0 Z" fill="#f6e6bf" opacity="0.7771370948990807"/><path d="M 243.39634285867214 207.7 L 244.0 210.8 L 247.0 211.32795922621153 L 244.0 211.9 L 243.39634285867214 214.9 L 242.8 211.9 L 239.8 211.32795922621153 L 242.8 210.8 Z" fill="#f6e6bf" opacity="0.54390020116698"/><path d="M 317.6 429.2 L 178.4 397.0 L 666.4 409.4 L 80.6 466.5 L 478.1 253.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="687" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 681.8 L 16.5 684.5 L 19.2 685 L 16.5 685.5 L 16 688.2 L 15.5 685.5 L 12.8 685 L 15.5 684.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 681.8 L 744.5 684.5 L 747.2 685 L 744.5 685.5 L 744 688.2 L 743.5 685.5 L 740.8 685 L 743.5 684.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Virgo Ascendant: Reality vs Two Common Misframes</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#virgorising0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#virgorising0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Real Virgo Ascendant</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Mercury rules both Gemini &amp; Virgo</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Communicatively fluid, not just precise</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Observant before talkative</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">More socially agile than the label admits</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 295.1 L 380.5 298.0 L 383.4 298.5 L 380.5 299.0 L 380 301.9 L 379.5 299.0 L 376.6 298.5 L 379.5 298.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Perfectionist Stereotype</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Meticulous and modest only</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reserved equals cold or distant</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Dry, analytical, one-dimensional</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Mercury rulership equals dullness</text>
+  <path d="M 380 477.5 L 380.7 481.3 L 384.5 482 L 380.7 482.7 L 380 486.5 L 379.3 482.7 L 375.5 482 L 379.3 481.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="495" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="495" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 493.1 L 380.5 496.0 L 383.4 496.5 L 380.5 497.0 L 380 499.9 L 379.5 497.0 L 376.6 496.5 L 379.5 496.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="524.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">vs Sun Sign</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Ascendant = outward doorway</text>
+  <path d="M 70 582.8 L 70.5 585.5 L 73.2 586 L 70.5 586.5 L 70 589.2 L 69.5 586.5 L 66.8 586 L 69.5 585.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sun = inner motive &amp; identity</text>
+  <path d="M 70 611.8 L 70.5 614.5 L 73.2 615 L 70.5 615.5 L 70 618.2 L 69.5 615.5 L 66.8 615 L 69.5 614.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="620.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Two distinct, separate layers</text>
+  <path d="M 70 640.8 L 70.5 643.5 L 73.2 644 L 70.5 644.5 L 70 647.2 L 69.5 644.5 L 66.8 644 L 69.5 643.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="649.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">First impression is not the whole person</text>
+  <path d="M 202.22749999999988 672.4 L 202.6 674.6 L 204.8 675 L 202.6 675.4 L 202.22749999999988 677.6 L 201.8 675.4 L 199.6 675 L 201.8 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="679" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 672.4 L 558.2 674.6 L 560.4 675 L 558.2 675.4 L 557.7725000000002 677.6 L 557.4 675.4 L 555.2 675 L 557.4 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

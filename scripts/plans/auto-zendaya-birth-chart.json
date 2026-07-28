@@ -1,0 +1,103 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "zendaya-birth-chart": {
+      "hero": {
+        "prompt": "A vast nocturnal earthscape at the threshold of harvest season — a luminous amber-gold harvest moon crests the horizon of a gently rolling terra while above it an immense star field burns with faint constellation patterns etched in silver-teal light, the whole scene a single unbroken sweep from darkened earth through deep indigo sky to the star-scattered zenith, golden seasonal light pooling on wind-curved grasses below while ancient star clusters float silently above, two celestial grammars written on the same limitless sky without any division, atmospheric editorial mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A single nocturnal landscape where a harvest moon rises over rolling earth while ancient constellations glow overhead — two celestial languages on one sky"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Zendaya's Birth Chart Without Overclaiming",
+          "titleEn": "5 Steps to an Honest Birth Chart Reading",
+          "altEn": "Five-step sequence for reading a birth chart without overclaiming, from Sun placement to tendency-based language",
+          "items": [
+            {
+              "nameEn": "Start with the Sun",
+              "subEn": "A Virgo Sun points to craft, service, and refinement — treat these as leanings, not guarantees"
+            },
+            {
+              "nameEn": "Use the recorded time carefully",
+              "subEn": "Public chart databases list 6:01 PM, which gives an Aquarius ascendant in common tropical calculations"
+            },
+            {
+              "nameEn": "Name the system first",
+              "subEn": "Decide tropical or sidereal before interpreting, and state which one you are using"
+            },
+            {
+              "nameEn": "Read tendencies, not outcomes",
+              "subEn": "Translate each placement into \"this tends to\" language rather than \"this proves\""
+            },
+            {
+              "nameEn": "Compare, do not diagnose",
+              "subEn": "Hold the chart next to public patterns as one lens among several, and hold it loosely"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Tropical vs Sidereal: Reading the Same Chart Two Ways",
+          "titleEn": "Tropical vs Sidereal: The Key Trade-Offs",
+          "altEn": "Side-by-side comparison of tropical and sidereal zodiac systems showing what each one offers and costs",
+          "columns": [
+            {
+              "nameEn": "Tropical",
+              "linesEn": [
+                "Anchored to the spring equinox and seasons",
+                "Places her Sun in Virgo",
+                "Intuitive for psychological, person-centered readings",
+                "Looser contact with the visible constellations",
+                "Accessible archetypal storytelling"
+              ]
+            },
+            {
+              "nameEn": "Sidereal (Jyotish)",
+              "linesEn": [
+                "Anchored to the fixed stars",
+                "Often shifts her Sun into Leo",
+                "Adds dasha timing — planetary life chapters",
+                "Star-anchored precision",
+                "Sacrifices the seasonal symbolic logic"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Common Misreadings vs What the Chart Actually Says",
+          "altEn": "Four common misreadings of Zendaya's birth chart compared with the accurate symbolic interpretation",
+          "columns": [
+            {
+              "nameEn": "Misreading",
+              "linesEn": [
+                "This chart explains her fame",
+                "Her placements are confirmed fact",
+                "The Western and Vedic versions should agree",
+                "A difficult placement predicts trouble"
+              ]
+            },
+            {
+              "nameEn": "Reality",
+              "linesEn": [
+                "Astrology describes tendencies — talent, timing, and opportunity are beyond any chart",
+                "A public 6:01 PM birth time lets chart databases calculate the ascendant and houses, but interpretation stays symbolic",
+                "Different zodiacs name different signs; disagreement is expected, not an error",
+                "Classical Jyotish frames hard placements as areas of growth, not sentences to be served"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

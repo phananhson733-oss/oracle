@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="西方回归黄道 vs 吠陀恒星黄道：维尼修斯关键落点对比">
+  <defs>
+    <linearGradient id="viniciusjrzodiacsign1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="viniciusjrzodiacsign1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="viniciusjrzodiacsign1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="viniciusjrzodiacsign1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="viniciusjrzodiacsign1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="viniciusjrzodiacsign1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#viniciusjrzodiacsign1zh-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#viniciusjrzodiacsign1zh-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#viniciusjrzodiacsign1zh-neb2)"/>
+  <circle cx="389.3" cy="255.5" r="1.02" fill="#cfc8ea" opacity="0.19"/><circle cx="738.6" cy="109.5" r="1.08" fill="#cfc8ea" opacity="0.27"/><circle cx="17.7" cy="120.5" r="1.36" fill="#cfc8ea" opacity="0.17"/><circle cx="110.3" cy="118.0" r="1.51" fill="#cfc8ea" opacity="0.52"/><circle cx="281.4" cy="209.1" r="0.88" fill="#cfc8ea" opacity="0.36"/><circle cx="145.7" cy="324.2" r="0.64" fill="#cfc8ea" opacity="0.50"/><circle cx="599.9" cy="24.6" r="0.50" fill="#cfc8ea" opacity="0.44"/><circle cx="118.3" cy="347.6" r="0.97" fill="#cfc8ea" opacity="0.40"/><circle cx="103.7" cy="12.3" r="0.59" fill="#cfc8ea" opacity="0.30"/><circle cx="456.2" cy="254.2" r="1.34" fill="#cfc8ea" opacity="0.21"/><circle cx="168.5" cy="185.0" r="0.64" fill="#cfc8ea" opacity="0.15"/><circle cx="526.5" cy="230.8" r="1.13" fill="#cfc8ea" opacity="0.47"/><circle cx="89.1" cy="395.1" r="1.37" fill="#cfc8ea" opacity="0.19"/><circle cx="36.2" cy="207.9" r="0.92" fill="#cfc8ea" opacity="0.24"/><circle cx="607.7" cy="185.7" r="1.09" fill="#cfc8ea" opacity="0.37"/><circle cx="27.8" cy="15.4" r="0.63" fill="#cfc8ea" opacity="0.17"/><circle cx="564.6" cy="112.9" r="1.10" fill="#cfc8ea" opacity="0.13"/><circle cx="450.5" cy="333.9" r="0.62" fill="#cfc8ea" opacity="0.38"/><circle cx="555.2" cy="73.4" r="1.21" fill="#cfc8ea" opacity="0.34"/><circle cx="464.5" cy="308.5" r="0.86" fill="#cfc8ea" opacity="0.50"/><circle cx="478.0" cy="134.4" r="0.71" fill="#cfc8ea" opacity="0.46"/><circle cx="185.8" cy="295.2" r="1.42" fill="#cfc8ea" opacity="0.17"/><circle cx="551.8" cy="222.4" r="0.66" fill="#cfc8ea" opacity="0.21"/><circle cx="450.5" cy="57.5" r="1.57" fill="#cfc8ea" opacity="0.19"/><circle cx="583.3" cy="158.0" r="0.95" fill="#cfc8ea" opacity="0.41"/><circle cx="595.9" cy="368.6" r="1.03" fill="#cfc8ea" opacity="0.51"/><circle cx="389.2" cy="227.3" r="1.53" fill="#cfc8ea" opacity="0.51"/><circle cx="141.7" cy="169.8" r="1.20" fill="#cfc8ea" opacity="0.32"/><circle cx="393.1" cy="357.2" r="0.43" fill="#cfc8ea" opacity="0.27"/><circle cx="437.7" cy="421.9" r="1.26" fill="#cfc8ea" opacity="0.44"/><circle cx="305.1" cy="94.2" r="0.71" fill="#cfc8ea" opacity="0.41"/><circle cx="236.7" cy="225.2" r="1.33" fill="#cfc8ea" opacity="0.42"/><circle cx="272.6" cy="308.0" r="0.80" fill="#cfc8ea" opacity="0.12"/><circle cx="443.4" cy="66.8" r="0.73" fill="#cfc8ea" opacity="0.46"/><circle cx="195.4" cy="367.7" r="1.31" fill="#cfc8ea" opacity="0.26"/><circle cx="555.3" cy="261.0" r="0.99" fill="#cfc8ea" opacity="0.39"/><circle cx="360.4" cy="212.4" r="0.72" fill="#cfc8ea" opacity="0.40"/><circle cx="554.3" cy="18.7" r="1.68" fill="#cfc8ea" opacity="0.29"/><path d="M 32.15739452280104 42.6 L 32.6 45.0 L 35.0 45.490115656051785 L 32.6 45.9 L 32.15739452280104 48.3 L 31.7 45.9 L 29.3 45.490115656051785 L 31.7 45.0 Z" fill="#f6e6bf" opacity="0.6451125008054077"/><path d="M 637.76905872114 30.0 L 638.4 33.1 L 641.4 33.661601457279176 L 638.4 34.2 L 637.76905872114 37.3 L 637.2 34.2 L 634.1 33.661601457279176 L 637.2 33.1 Z" fill="#f6e6bf" opacity="0.782519582286477"/><path d="M 449.2225840482861 304.3 L 449.8 307.6 L 453.1 308.17428685026243 L 449.8 308.8 L 449.2225840482861 312.1 L 448.6 308.8 L 445.3 308.17428685026243 L 448.6 307.6 Z" fill="#f6e6bf" opacity="0.7546795080415905"/><path d="M 207.5691236872226 289.5 L 208.2 292.6 L 211.3 293.2198539352976 L 208.2 293.8 L 207.5691236872226 296.9 L 207.0 293.8 L 203.9 293.2198539352976 L 207.0 292.6 Z" fill="#f6e6bf" opacity="0.7358844371512532"/><path d="M 291.59551807679236 258.9 L 292.1 261.8 L 295.0 262.35801536077634 L 292.1 262.9 L 291.59551807679236 265.8 L 291.0 262.9 L 288.2 262.35801536077634 L 291.0 261.8 Z" fill="#f6e6bf" opacity="0.6630543210543692"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">西方回归黄道 vs 吠陀恒星黄道：维尼修斯关键落点对比</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#viniciusjrzodiacsign1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#viniciusjrzodiacsign1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">西方回归黄道</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">巨蟹太阳——身份系于感受与守护本能</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">射手月亮——对自由与外放冒险的胃口，由木星主管</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">木星 2025–26 在巨蟹——照亮太阳星座并主管月亮</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">吠陀恒星黄道</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">双子太阳——恒星黄道后退约 24 度，太阳从巨蟹挪回双子</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">月亮重算后可能移至恒星天蝎</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">另一套自洽的独立视角，并非矛盾</text>
+  <path d="M 280.025 416.4 L 280.4 418.6 L 282.6 419 L 280.4 419.4 L 280.025 421.6 L 279.6 419.4 L 277.4 419 L 279.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 416.4 L 480.4 418.6 L 482.6 419 L 480.4 419.4 L 479.975 421.6 L 479.6 419.4 L 477.4 419 L 479.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "mo-salah-zodiac-sign": {
+      "hero": {
+        "prompt": "Twin luminous celestial streaks racing across a vast cosmic plain, their gold-tipped light trails weaving together then diverging like split-second decisions in flight — one curves low along a glowing teal horizon, the other arcs high through swirling nebula clouds, both converging toward a shared vanishing point deep in space, evoking Gemini's duality and Mercury's quicksilver adaptability across one unbroken sky, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twin luminous streaks weaving across an indigo cosmic sky, evoking Gemini's duality and Mercury's quicksilver adaptability"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Mo Salah's Zodiac Sign in a Birth Chart",
+          "titleEn": "Five Steps to Reading Mo Salah's Birth Chart",
+          "altEn": "Five-step sequence for reading Mo Salah's birth chart from confirmed Sun in Gemini to unverifiable rising sign",
+          "items": [
+            {
+              "nameEn": "Start with the Sun",
+              "subEn": "Gemini is fixed by his June 15 birthday — communication, curiosity, and quick reads are the safest interpretation"
+            },
+            {
+              "nameEn": "Add Venus",
+              "subEn": "Venus also in Gemini amplifies playful, mentally engaged affection — an amplifier of the Gemini tone, not a separate story"
+            },
+            {
+              "nameEn": "Anchor with Jupiter",
+              "subEn": "Jupiter in Virgo in 1992 adds a steadier, detail-oriented counterweight — safe to state because it needs no birth time"
+            },
+            {
+              "nameEn": "Hold the Moon loosely",
+              "subEn": "Moon most likely in Sagittarius, but treat as 'likely' without a confirmed birth time — the Moon changes sign every two-and-a-half days"
+            },
+            {
+              "nameEn": "Refuse to guess the rising sign",
+              "subEn": "Ascendant, Midheaven, and houses need a confirmed birth time which isn't public — leave them blank rather than inventing them"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Gemini Sun vs the Whole Birth Chart: Where the Label Stops",
+          "titleEn": "Sun Sign vs Full Birth Chart",
+          "altEn": "Comparison showing what a Gemini Sun sign reveals versus what a full birth chart adds",
+          "columns": [
+            {
+              "nameEn": "Sun Sign Only",
+              "linesEn": [
+                "Fast and shareable",
+                "Names core identity and vitality",
+                "One placement: Gemini",
+                "Clean headline, easy soundbite",
+                "Flattens the contradictions that make a chart specific"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "linesEn": [
+                "Precise but layered",
+                "Adds Moon, Mercury, Venus, Mars, and more",
+                "Each planet can sit in a different sign",
+                "Fuller picture, no tidy soundbite",
+                "Asks you to sit with placements that pull in different directions"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

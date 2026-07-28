@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="5 Steps to Read the June 2026 Sky">
+  <defs>
+    <linearGradient id="worldcup2026juneastrology0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="worldcup2026juneastrology0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="worldcup2026juneastrology0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#worldcup2026juneastrology0en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#worldcup2026juneastrology0en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#worldcup2026juneastrology0en-neb2)"/>
+  <circle cx="415.4" cy="177.5" r="1.51" fill="#cfc8ea" opacity="0.53"/><circle cx="195.4" cy="26.8" r="1.08" fill="#cfc8ea" opacity="0.17"/><circle cx="347.2" cy="34.3" r="1.00" fill="#cfc8ea" opacity="0.50"/><circle cx="63.6" cy="105.5" r="0.86" fill="#cfc8ea" opacity="0.35"/><circle cx="463.2" cy="336.2" r="1.41" fill="#cfc8ea" opacity="0.17"/><circle cx="737.8" cy="207.1" r="0.94" fill="#cfc8ea" opacity="0.45"/><circle cx="694.8" cy="389.3" r="0.75" fill="#cfc8ea" opacity="0.37"/><circle cx="415.9" cy="70.4" r="0.54" fill="#cfc8ea" opacity="0.49"/><circle cx="243.0" cy="383.8" r="1.32" fill="#cfc8ea" opacity="0.32"/><circle cx="705.9" cy="350.8" r="0.53" fill="#cfc8ea" opacity="0.45"/><circle cx="621.9" cy="140.9" r="0.40" fill="#cfc8ea" opacity="0.40"/><circle cx="110.5" cy="87.0" r="1.60" fill="#cfc8ea" opacity="0.24"/><circle cx="516.7" cy="43.1" r="1.26" fill="#cfc8ea" opacity="0.38"/><circle cx="411.1" cy="21.6" r="1.21" fill="#cfc8ea" opacity="0.19"/><circle cx="407.7" cy="68.0" r="0.54" fill="#cfc8ea" opacity="0.51"/><circle cx="658.8" cy="92.2" r="1.13" fill="#cfc8ea" opacity="0.22"/><circle cx="248.3" cy="306.7" r="0.66" fill="#cfc8ea" opacity="0.45"/><circle cx="590.3" cy="115.2" r="0.44" fill="#cfc8ea" opacity="0.39"/><circle cx="585.1" cy="263.9" r="0.65" fill="#cfc8ea" opacity="0.33"/><circle cx="706.2" cy="295.9" r="0.65" fill="#cfc8ea" opacity="0.51"/><circle cx="240.8" cy="197.1" r="0.83" fill="#cfc8ea" opacity="0.51"/><circle cx="666.2" cy="298.2" r="1.67" fill="#cfc8ea" opacity="0.37"/><circle cx="305.2" cy="14.1" r="1.51" fill="#cfc8ea" opacity="0.47"/><circle cx="24.2" cy="250.2" r="1.26" fill="#cfc8ea" opacity="0.46"/><circle cx="209.7" cy="305.9" r="1.14" fill="#cfc8ea" opacity="0.44"/><circle cx="481.1" cy="68.5" r="0.55" fill="#cfc8ea" opacity="0.51"/><circle cx="68.9" cy="392.7" r="0.94" fill="#cfc8ea" opacity="0.29"/><circle cx="495.3" cy="126.4" r="0.92" fill="#cfc8ea" opacity="0.17"/><circle cx="345.5" cy="110.8" r="1.09" fill="#cfc8ea" opacity="0.50"/><circle cx="685.9" cy="122.4" r="1.11" fill="#cfc8ea" opacity="0.13"/><circle cx="98.3" cy="102.1" r="0.95" fill="#cfc8ea" opacity="0.23"/><circle cx="469.4" cy="115.1" r="0.69" fill="#cfc8ea" opacity="0.45"/><circle cx="199.6" cy="295.0" r="0.67" fill="#cfc8ea" opacity="0.45"/><circle cx="93.7" cy="402.4" r="0.97" fill="#cfc8ea" opacity="0.52"/><circle cx="523.4" cy="128.1" r="1.46" fill="#cfc8ea" opacity="0.23"/><circle cx="396.4" cy="102.5" r="0.90" fill="#cfc8ea" opacity="0.52"/><circle cx="426.7" cy="135.0" r="1.50" fill="#cfc8ea" opacity="0.25"/><path d="M 269.45193228684366 300.6 L 270.0 303.5 L 273.0 304.09084241930395 L 270.0 304.7 L 269.45193228684366 307.6 L 268.9 304.7 L 265.9 304.09084241930395 L 268.9 303.5 Z" fill="#f6e6bf" opacity="0.631340241106227"/><path d="M 466.50516885332763 100.0 L 467.0 102.6 L 469.5 103.03494932688773 L 467.0 103.5 L 466.50516885332763 106.0 L 466.0 103.5 L 463.5 103.03494932688773 L 466.0 102.6 Z" fill="#f6e6bf" opacity="0.5309519987087696"/><path d="M 614.1032189335674 267.1 L 614.6 269.6 L 617.1 270.10290742944926 L 614.6 270.6 L 614.1032189335674 273.1 L 613.6 270.6 L 611.1 270.10290742944926 L 613.6 269.6 Z" fill="#f6e6bf" opacity="0.6701870033983142"/><path d="M 483.50211547128856 270.9 L 483.9 273.1 L 486.2 273.58515657112 L 483.9 274.0 L 483.50211547128856 276.3 L 483.1 274.0 L 480.8 273.58515657112 L 483.1 273.1 Z" fill="#f6e6bf" opacity="0.7337849163915962"/><path d="M 279.96579546295106 410.8 L 280.4 412.8 L 282.4 413.1867217095569 L 280.4 413.6 L 279.96579546295106 415.6 L 279.6 413.6 L 277.5 413.1867217095569 L 279.6 412.8 Z" fill="#f6e6bf" opacity="0.7845398270059376"/><path d="M 415.9 70.4 L 658.8 92.2 L 685.9 122.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">5 Steps to Read the June 2026 Sky</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#worldcup2026juneastrology0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#worldcup2026juneastrology0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#worldcup2026juneastrology0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#worldcup2026juneastrology0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Note Jupiter in Cancer</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Warm, belonging-centered backdrop through June 30</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#worldcup2026juneastrology0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#worldcup2026juneastrology0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Watch Jupiter Enter Leo</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Late-June shift toward visibility and individual flair</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#worldcup2026juneastrology0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#worldcup2026juneastrology0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Track Saturn in Aries</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Steadying test of patience and nerve all month</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#worldcup2026juneastrology0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#worldcup2026juneastrology0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Use the Two Moons</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">New Moon as reset; Full Moon as culmination</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#worldcup2026juneastrology0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#worldcup2026juneastrology0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Read Mood, Not Outcome</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Each window is a mood to meet, not a fixed result to await</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

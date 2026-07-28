@@ -1,0 +1,128 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "mars-return-astrology": {
+      "hero": {
+        "prompt": "A vast indigo night sky over a still dark landscape, a rust-red luminous orb tracing a sweeping arc across star-studded darkness and arriving at a golden radiant point low on the horizon — its natal home completing a two-year orbital journey, the returning arc rendered as a fading amber curve of light above a silent plain, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Mars completing its two-year orbital arc and returning to its natal degree, glowing rust-red against a deep indigo night sky",
+        "altZh": "火星完成两年轨道弧线，回归本命度数，在深靛蓝夜空中发出锈红色光芒"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Mars-Return Cycle vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 火星回归周期与相近概念：运作方式 + 取舍",
+          "titleEn": "Mars Return vs Solar Return vs Saturn Return",
+          "titleZh": "火星回归 vs 太阳回归 vs 土星回归",
+          "altEn": "Side-by-side comparison of Mars Return, Solar Return, and Saturn Return cycles showing frequency, scope, and stakes",
+          "altZh": "火星回归、太阳回归与土星回归的并排对比，涵盖频率、范围与影响程度",
+          "columns": [
+            {
+              "nameEn": "Mars Return",
+              "nameZh": "火星回归",
+              "linesEn": [
+                "~687 days, every ~2 years",
+                "Drive & assertion only",
+                "Frequent, lower-stakes",
+                "Recurring planning beat"
+              ],
+              "linesZh": [
+                "约687天，每约两年一次",
+                "聚焦驱动力与自我主张",
+                "频繁，风险相对较低",
+                "周期性规划节点"
+              ]
+            },
+            {
+              "nameEn": "Solar Return",
+              "nameZh": "太阳回归",
+              "linesEn": [
+                "~365 days, every year",
+                "All life areas",
+                "Broad scope, annual",
+                "Birthday-year forecast"
+              ],
+              "linesZh": [
+                "约365天，每年一次",
+                "涵盖所有生活领域",
+                "范围宽泛，年度预测",
+                "生日年度预览"
+              ]
+            },
+            {
+              "nameEn": "Saturn Return",
+              "nameZh": "土星回归",
+              "linesEn": [
+                "~29 years per cycle",
+                "Structural reckoning",
+                "Rare, high-stakes",
+                "Once-a-generation event"
+              ],
+              "linesZh": [
+                "约29年一个周期",
+                "结构性深度考验",
+                "罕见，影响深远",
+                "一代人一次的重大时刻"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Mars-Return Cycle in Your Chart",
+          "afterHeadingZh": "## 如何在星盘里识别火星回归",
+          "titleEn": "6 Steps to Read Your Mars-Return Chart",
+          "titleZh": "解读火星回归星盘的六个步骤",
+          "altEn": "Six ordered steps for reading a Mars return chart: find natal Mars, identify return date, cast the chart, note the house, read aspects, use as planning prompt",
+          "altZh": "解读火星回归星盘的六步骤：定位本命火星、确认回归日期、绘制星盘、注意宫位、解读相位、用作规划提示",
+          "items": [
+            {
+              "nameEn": "Find Natal Mars",
+              "nameZh": "定位本命火星",
+              "subEn": "Locate the exact degree and sign of Mars in your birth chart",
+              "subZh": "找到本命星盘中火星的精确度数与星座"
+            },
+            {
+              "nameEn": "Identify Return Date",
+              "nameZh": "确定回归日期",
+              "subEn": "Find when transiting Mars next reaches that same degree — your return moment",
+              "subZh": "查找过境火星何时再次到达该度数，即回归时刻"
+            },
+            {
+              "nameEn": "Cast the Return Chart",
+              "nameZh": "绘制回归星盘",
+              "subEn": "Cast a chart for that exact date, time, and place as you would a solar return",
+              "subZh": "以该精确日期、时间和地点绘制星盘，方式同太阳回归"
+            },
+            {
+              "nameEn": "Note Mars's House",
+              "nameZh": "注意火星宫位",
+              "subEn": "The house holding Mars in the return chart names the life domain for the cycle",
+              "subZh": "回归星盘中火星所在宫位指明本周期的人生领域"
+            },
+            {
+              "nameEn": "Read Mars's Aspects",
+              "nameZh": "解读火星相位",
+              "subEn": "Soft angles ease effort; hard angles flag where friction or conflict is more likely",
+              "subZh": "柔和相位助力前行；强硬相位预示潜在阻力或冲突"
+            },
+            {
+              "nameEn": "Use as Planning Prompt",
+              "nameZh": "用作规划提示",
+              "subEn": "Treat the reading as a two-year planning prompt, then revisit at the next return",
+              "subZh": "将解读作为未来两年的规划提示，下次回归时回顾验证"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

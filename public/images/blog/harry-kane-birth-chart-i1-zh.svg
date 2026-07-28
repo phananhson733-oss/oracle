@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="狮子座太阳 vs 巨蟹座太阳：两套象征词汇">
+  <defs>
+    <linearGradient id="harrykanebirthchart1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="harrykanebirthchart1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="harrykanebirthchart1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="harrykanebirthchart1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="harrykanebirthchart1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="harrykanebirthchart1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#harrykanebirthchart1zh-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#harrykanebirthchart1zh-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#harrykanebirthchart1zh-neb2)"/>
+  <circle cx="604.0" cy="211.9" r="0.63" fill="#cfc8ea" opacity="0.53"/><circle cx="503.3" cy="461.7" r="0.67" fill="#cfc8ea" opacity="0.34"/><circle cx="687.7" cy="282.2" r="1.66" fill="#cfc8ea" opacity="0.21"/><circle cx="505.7" cy="431.2" r="1.48" fill="#cfc8ea" opacity="0.38"/><circle cx="281.7" cy="118.2" r="0.56" fill="#cfc8ea" opacity="0.27"/><circle cx="468.9" cy="285.0" r="0.43" fill="#cfc8ea" opacity="0.41"/><circle cx="52.6" cy="185.0" r="0.98" fill="#cfc8ea" opacity="0.34"/><circle cx="662.3" cy="453.6" r="0.49" fill="#cfc8ea" opacity="0.34"/><circle cx="322.7" cy="162.2" r="0.48" fill="#cfc8ea" opacity="0.20"/><circle cx="29.1" cy="455.7" r="1.45" fill="#cfc8ea" opacity="0.38"/><circle cx="65.8" cy="171.5" r="1.67" fill="#cfc8ea" opacity="0.23"/><circle cx="513.6" cy="439.3" r="0.66" fill="#cfc8ea" opacity="0.47"/><circle cx="271.5" cy="332.9" r="0.52" fill="#cfc8ea" opacity="0.18"/><circle cx="355.3" cy="461.0" r="1.09" fill="#cfc8ea" opacity="0.48"/><circle cx="306.7" cy="379.6" r="0.64" fill="#cfc8ea" opacity="0.27"/><circle cx="359.1" cy="261.7" r="1.57" fill="#cfc8ea" opacity="0.45"/><circle cx="473.8" cy="320.7" r="0.46" fill="#cfc8ea" opacity="0.41"/><circle cx="288.8" cy="268.1" r="0.78" fill="#cfc8ea" opacity="0.22"/><circle cx="120.9" cy="442.8" r="1.69" fill="#cfc8ea" opacity="0.38"/><circle cx="359.3" cy="95.6" r="0.55" fill="#cfc8ea" opacity="0.30"/><circle cx="639.9" cy="94.0" r="1.48" fill="#cfc8ea" opacity="0.28"/><circle cx="381.3" cy="127.8" r="1.50" fill="#cfc8ea" opacity="0.21"/><circle cx="239.2" cy="419.5" r="0.82" fill="#cfc8ea" opacity="0.42"/><circle cx="317.5" cy="471.6" r="0.58" fill="#cfc8ea" opacity="0.21"/><circle cx="612.4" cy="217.8" r="0.79" fill="#cfc8ea" opacity="0.52"/><circle cx="111.1" cy="357.5" r="0.44" fill="#cfc8ea" opacity="0.35"/><circle cx="467.3" cy="331.5" r="1.09" fill="#cfc8ea" opacity="0.31"/><circle cx="554.5" cy="323.2" r="1.30" fill="#cfc8ea" opacity="0.25"/><circle cx="500.3" cy="395.9" r="0.94" fill="#cfc8ea" opacity="0.39"/><circle cx="108.0" cy="154.0" r="0.96" fill="#cfc8ea" opacity="0.18"/><circle cx="265.6" cy="443.2" r="0.99" fill="#cfc8ea" opacity="0.34"/><circle cx="714.7" cy="278.9" r="1.54" fill="#cfc8ea" opacity="0.38"/><circle cx="465.4" cy="105.2" r="1.27" fill="#cfc8ea" opacity="0.35"/><circle cx="61.1" cy="352.3" r="1.13" fill="#cfc8ea" opacity="0.32"/><circle cx="390.3" cy="224.0" r="0.68" fill="#cfc8ea" opacity="0.42"/><circle cx="147.7" cy="370.0" r="0.47" fill="#cfc8ea" opacity="0.32"/><circle cx="633.6" cy="42.1" r="0.48" fill="#cfc8ea" opacity="0.49"/><circle cx="94.5" cy="319.9" r="0.98" fill="#cfc8ea" opacity="0.43"/><circle cx="271.8" cy="282.9" r="0.66" fill="#cfc8ea" opacity="0.33"/><circle cx="16.0" cy="123.8" r="1.64" fill="#cfc8ea" opacity="0.53"/><circle cx="313.0" cy="347.9" r="0.60" fill="#cfc8ea" opacity="0.25"/><circle cx="331.8" cy="368.6" r="0.92" fill="#cfc8ea" opacity="0.40"/><path d="M 706.4599631167948 183.8 L 707.1 186.9 L 710.2 187.53450809023343 L 707.1 188.1 L 706.4599631167948 191.2 L 705.9 188.1 L 702.7 187.53450809023343 L 705.9 186.9 Z" fill="#f6e6bf" opacity="0.6934852414997295"/><path d="M 725.6246224306524 69.3 L 726.0 71.4 L 728.1 71.74960342678241 L 726.0 72.1 L 725.6246224306524 74.2 L 725.2 72.1 L 723.2 71.74960342678241 L 725.2 71.4 Z" fill="#f6e6bf" opacity="0.7072576184058562"/><path d="M 642.3163564391434 82.1 L 642.8 84.7 L 645.4 85.15822936757468 L 642.8 85.6 L 642.3163564391434 88.2 L 641.8 85.6 L 639.3 85.15822936757468 L 641.8 84.7 Z" fill="#f6e6bf" opacity="0.6928638010518625"/><path d="M 717.9527505151927 430.1 L 718.4 432.4 L 720.7 432.8278476416599 L 718.4 433.3 L 717.9527505151927 435.6 L 717.5 433.3 L 715.2 432.8278476416599 L 717.5 432.4 Z" fill="#f6e6bf" opacity="0.5687572682509199"/><path d="M 168.28729701414704 158.0 L 168.7 160.3 L 171.0 160.75409304327331 L 168.7 161.2 L 168.28729701414704 163.5 L 167.9 161.2 L 165.6 160.75409304327331 L 167.9 160.3 Z" fill="#f6e6bf" opacity="0.6053030436160043"/><path d="M 503.3 461.7 L 473.8 320.7 L 612.4 217.8 L 554.5 323.2 L 714.7 278.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">狮子座太阳 vs 巨蟹座太阳：两套象征词汇</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#harrykanebirthchart1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#harrykanebirthchart1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">狮子座太阳（凯恩）</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">向外、外放，靠被看见被点燃</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">背负队长的聚光灯与全队目光</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">木星约 2026 年 6 月 30 日进狮子座，点亮 7 月淘汰赛</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">他的季节迟到了</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">巨蟹座太阳（相邻视角）</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">护卫、以心为先，力量源自归属与家</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">凸显更安静的防守智慧</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">木星行经巨蟹座到约 2026 年 6 月 30 日，即小组赛数周</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">仅那几周享有木星在本命星座的背景</text>
+  <path d="M 280.025 474.4 L 280.4 476.6 L 282.6 477 L 280.4 477.4 L 280.025 479.6 L 279.6 477.4 L 277.4 477 L 279.6 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 474.4 L 480.4 476.6 L 482.6 477 L 480.4 477.4 L 479.975 479.6 L 479.6 477.4 L 477.4 477 L 479.6 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

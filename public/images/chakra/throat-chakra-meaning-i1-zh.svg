@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="堵住、过满与平衡">
+  <defs>
+    <linearGradient id="throatchakrameaning1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="throatchakrameaning1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="throatchakrameaning1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="throatchakrameaning1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="throatchakrameaning1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="throatchakrameaning1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#throatchakrameaning1zh-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#throatchakrameaning1zh-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#throatchakrameaning1zh-neb2)"/>
+  <circle cx="578.0" cy="373.6" r="1.22" fill="#cfc8ea" opacity="0.49"/><circle cx="128.9" cy="183.5" r="1.55" fill="#cfc8ea" opacity="0.20"/><circle cx="82.6" cy="368.7" r="0.49" fill="#cfc8ea" opacity="0.30"/><circle cx="698.4" cy="335.9" r="1.38" fill="#cfc8ea" opacity="0.26"/><circle cx="730.0" cy="365.8" r="1.63" fill="#cfc8ea" opacity="0.37"/><circle cx="313.1" cy="350.0" r="0.68" fill="#cfc8ea" opacity="0.22"/><circle cx="159.8" cy="230.0" r="1.22" fill="#cfc8ea" opacity="0.14"/><circle cx="29.0" cy="540.7" r="1.30" fill="#cfc8ea" opacity="0.26"/><circle cx="561.1" cy="518.0" r="1.41" fill="#cfc8ea" opacity="0.37"/><circle cx="425.5" cy="165.6" r="1.29" fill="#cfc8ea" opacity="0.51"/><circle cx="518.1" cy="447.9" r="1.56" fill="#cfc8ea" opacity="0.31"/><circle cx="225.0" cy="271.6" r="1.46" fill="#cfc8ea" opacity="0.41"/><circle cx="218.8" cy="411.9" r="1.14" fill="#cfc8ea" opacity="0.14"/><circle cx="210.7" cy="586.3" r="1.22" fill="#cfc8ea" opacity="0.26"/><circle cx="54.7" cy="121.9" r="1.33" fill="#cfc8ea" opacity="0.25"/><circle cx="267.9" cy="402.5" r="1.10" fill="#cfc8ea" opacity="0.54"/><circle cx="434.4" cy="272.7" r="0.65" fill="#cfc8ea" opacity="0.36"/><circle cx="403.3" cy="24.1" r="1.62" fill="#cfc8ea" opacity="0.52"/><circle cx="578.0" cy="198.3" r="1.55" fill="#cfc8ea" opacity="0.53"/><circle cx="651.7" cy="419.6" r="1.55" fill="#cfc8ea" opacity="0.41"/><circle cx="660.6" cy="577.3" r="0.59" fill="#cfc8ea" opacity="0.46"/><circle cx="66.3" cy="441.1" r="1.46" fill="#cfc8ea" opacity="0.19"/><circle cx="19.8" cy="566.5" r="1.30" fill="#cfc8ea" opacity="0.14"/><circle cx="399.0" cy="425.7" r="1.48" fill="#cfc8ea" opacity="0.37"/><circle cx="643.5" cy="568.0" r="0.56" fill="#cfc8ea" opacity="0.43"/><circle cx="441.5" cy="185.6" r="1.56" fill="#cfc8ea" opacity="0.47"/><circle cx="311.2" cy="397.9" r="1.12" fill="#cfc8ea" opacity="0.17"/><circle cx="573.5" cy="327.7" r="0.59" fill="#cfc8ea" opacity="0.17"/><circle cx="333.5" cy="401.4" r="0.71" fill="#cfc8ea" opacity="0.14"/><circle cx="52.6" cy="391.9" r="1.29" fill="#cfc8ea" opacity="0.18"/><circle cx="262.8" cy="42.2" r="0.78" fill="#cfc8ea" opacity="0.18"/><circle cx="589.9" cy="385.6" r="1.30" fill="#cfc8ea" opacity="0.14"/><circle cx="584.3" cy="599.1" r="0.74" fill="#cfc8ea" opacity="0.43"/><circle cx="575.5" cy="573.9" r="1.10" fill="#cfc8ea" opacity="0.17"/><circle cx="647.1" cy="579.3" r="0.99" fill="#cfc8ea" opacity="0.38"/><circle cx="307.7" cy="364.3" r="1.00" fill="#cfc8ea" opacity="0.25"/><circle cx="650.3" cy="284.2" r="1.18" fill="#cfc8ea" opacity="0.14"/><circle cx="487.9" cy="499.5" r="0.80" fill="#cfc8ea" opacity="0.23"/><circle cx="288.5" cy="226.7" r="1.28" fill="#cfc8ea" opacity="0.53"/><circle cx="465.7" cy="581.4" r="1.53" fill="#cfc8ea" opacity="0.45"/><circle cx="450.8" cy="556.1" r="1.68" fill="#cfc8ea" opacity="0.49"/><circle cx="61.5" cy="201.2" r="1.25" fill="#cfc8ea" opacity="0.18"/><circle cx="423.5" cy="516.1" r="1.59" fill="#cfc8ea" opacity="0.22"/><circle cx="90.2" cy="27.8" r="0.53" fill="#cfc8ea" opacity="0.44"/><circle cx="300.3" cy="31.2" r="0.51" fill="#cfc8ea" opacity="0.36"/><circle cx="227.9" cy="164.6" r="1.14" fill="#cfc8ea" opacity="0.27"/><circle cx="182.0" cy="494.3" r="0.70" fill="#cfc8ea" opacity="0.27"/><circle cx="732.1" cy="458.8" r="0.94" fill="#cfc8ea" opacity="0.23"/><circle cx="551.9" cy="408.5" r="1.04" fill="#cfc8ea" opacity="0.51"/><circle cx="114.8" cy="335.6" r="1.11" fill="#cfc8ea" opacity="0.28"/><circle cx="86.1" cy="416.7" r="0.80" fill="#cfc8ea" opacity="0.37"/><circle cx="340.6" cy="127.9" r="1.50" fill="#cfc8ea" opacity="0.15"/><path d="M 112.71807979233563 527.0 L 113.3 529.9 L 116.2 530.4719224078581 L 113.3 531.0 L 112.71807979233563 534.0 L 112.2 531.0 L 109.2 530.4719224078581 L 112.2 529.9 Z" fill="#f6e6bf" opacity="0.6538152053952218"/><path d="M 78.07625246979296 350.6 L 78.6 353.2 L 81.2 353.68662512023 L 78.6 354.2 L 78.07625246979296 356.8 L 77.6 354.2 L 74.9 353.68662512023 L 77.6 353.2 Z" fill="#f6e6bf" opacity="0.6739456347189844"/><path d="M 85.04111591167748 180.7 L 85.6 183.6 L 88.4 184.10128618683666 L 85.6 184.6 L 85.04111591167748 187.5 L 84.5 184.6 L 81.7 184.10128618683666 L 84.5 183.6 Z" fill="#f6e6bf" opacity="0.7801194919273258"/><path d="M 666.6396228615195 438.2 L 667.0 440.3 L 669.2 440.70222276542336 L 667.0 441.1 L 666.6396228615195 443.2 L 666.2 441.1 L 664.1 440.70222276542336 L 666.2 440.3 Z" fill="#f6e6bf" opacity="0.5946128685958684"/><path d="M 637.0323625374585 385.1 L 637.6 387.9 L 640.3 388.388113158755 L 637.6 388.9 L 637.0323625374585 391.7 L 636.5 388.9 L 633.7 388.388113158755 L 636.5 387.9 Z" fill="#f6e6bf" opacity="0.6648479592055082"/><path d="M 730.0 365.8 L 561.1 518.0 L 434.4 272.7 L 578.0 198.3 L 66.3 441.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">堵住、过满与平衡</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#throatchakrameaning1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#throatchakrameaning1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">堵住</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">排练好又咽回去</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">喉咙发紧、音量变小</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">事后回放好几个钟头</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">过满</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">打断别人、过度解释</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">填满本可留白的沉默</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">用说话管理别人的看法</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">平衡</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">能平实说，也能刻意不说</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">两种都干净、不勉强</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">倾听与表达对得上</text>
+  <path d="M 280.025 585.4 L 280.4 587.6 L 282.6 588 L 280.4 588.4 L 280.025 590.6 L 279.6 588.4 L 277.4 588 L 279.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 585.4 L 480.4 587.6 L 482.6 588 L 480.4 588.4 L 479.975 590.6 L 479.6 588.4 L 477.4 588 L 479.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

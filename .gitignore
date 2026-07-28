@@ -1,34 +1,43 @@
-# Dependencies
-node_modules/
-.pnp
-.pnp.js
-
-# Build
-dist/
-build/
-.vercel
-
-# Environment
-.env
-.env.local
-.env.*.local
-
-# IDE
-.vscode/
-.idea/
-*.swp
-*.swo
-
-# OS
-.DS_Store
-Thumbs.db
+# INPUT: Git 忽略规则（含 worktree 目录）。
+# OUTPUT: 声明忽略文件列表与隔离工作区目录。
+# POS: 版本控制忽略配置。若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 # Logs
+logs
 *.log
 npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
-# TypeScript
-*.tsbuildinfo
+node_modules
+dist
+dist-ssr
+.worktrees
+*.local
 
-# Testing
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+astrologywiki/
+.vercel
+.env*.local
+backend/.env
+.gstack/
+
+# IndexNow: real verification key file is generated at build from INDEXNOW_KEY,
+# never committed. Only the .example template is tracked; robots.txt stays tracked.
+public/*.txt
+!public/robots.txt
+!public/indexnow-key.txt.example
+
+# Test coverage output
 coverage/

@@ -1,0 +1,133 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "bruno-fernandes-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read His Virgo Placements in His Game",
+          "titleEn": "Five Virgo Tells in Bruno Fernandes's Game",
+          "titleZh": "布鲁诺·费尔南德斯比赛中的五个处女座特征",
+          "altEn": "Sequence showing five observable Virgo patterns in Bruno Fernandes's on-pitch behaviour",
+          "altZh": "展示布鲁诺·费尔南德斯场上五个处女座行为模式的顺序图",
+          "items": [
+            {
+              "nameEn": "Frustration at the Play",
+              "nameZh": "针对技术失误的沮丧",
+              "subEn": "Sharpest reactions follow technical errors — loose touch, mistimed run — not personal slights",
+              "subZh": "最强烈的反应来自技术失误（如松懈触球、时机不对的跑位），而非个人冒犯"
+            },
+            {
+              "nameEn": "Instant Self-Correction",
+              "nameZh": "即时自我纠正",
+              "subEn": "After his own misplaced pass the critical lens turns inward fast, often with a raised hand to claim the mistake",
+              "subZh": "在自己传球失误后，批判目光迅速转向自身，常举手承认错误"
+            },
+            {
+              "nameEn": "Diplomacy After the Whistle",
+              "nameZh": "哨声后的外交风度",
+              "subEn": "Post-match the Libra Moon takes over — fairness and measured words, a sharp contrast to in-game heat",
+              "subZh": "赛后天秤座月亮主导，措辞公正平和，与比赛中的激烈形成鲜明对比"
+            },
+            {
+              "nameEn": "Protective Drive",
+              "nameZh": "保护性竞争动力",
+              "subEn": "Mars in Cancer routes competitive push through covering teammates and shielding the group, not chasing solo glory",
+              "subZh": "巨蟹座火星将竞争驱动力导向保护队友、守护团队，而非追求个人荣耀"
+            },
+            {
+              "nameEn": "Standards Stated Out Loud",
+              "nameZh": "大声表达标准",
+              "subEn": "He names what the team should have done — Virgo's service-via-craft instinct showing up as leadership, not ego",
+              "subZh": "他会直接说出团队本应怎么做——处女座通过技艺服务的本能以领导力而非自我膨胀的方式呈现"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Misreads vs. What the Chart Actually Shows",
+          "titleZh": "常见误读与星盘的真实含义对比",
+          "altEn": "Two-column comparison of common misreadings of Bruno Fernandes versus accurate chart interpretations",
+          "altZh": "对比布鲁诺·费尔南德斯常见误读与星盘真实解读的两栏图表",
+          "columns": [
+            {
+              "nameEn": "Common Misread",
+              "nameZh": "常见误读",
+              "linesEn": [
+                "He is a hot-headed fire sign",
+                "Scorpio rising means secretly volatile",
+                "Frustration and calm interviews contradict each other",
+                "A demanding captain is a divisive one"
+              ],
+              "linesZh": [
+                "他是一个急躁的火象星座",
+                "天蝎座上升意味着内在易爆",
+                "场上沮丧与冷静采访相矛盾",
+                "要求严格的队长就是制造分裂的队长"
+              ]
+            },
+            {
+              "nameEn": "What the Chart Actually Shows",
+              "nameZh": "星盘的真实含义",
+              "linesEn": [
+                "Earth-sign Virgo perfectionist — flashpoints come from precision falling short, not a short fuse",
+                "Rising is packaging; the Virgo Sun is the operator, exacting rather than explosive",
+                "Libra Moon handles the public side; Virgo Sun drives in-game quality control — both can be true at once",
+                "Holding teammates to a high consistent standard is Virgo's way of serving the group, not undermining it"
+              ],
+              "linesZh": [
+                "土象处女座完美主义者——爆发点来自精准度未达内在标准，而非性格急躁",
+                "上升星座是外包装；处女座太阳才是驱动核心，一丝不苟而非易爆",
+                "天秤座月亮处理公众面；处女座太阳驱动赛场质量把控——两者可以同时为真",
+                "对队友保持高一致标准是处女座服务团队的方式，而非破坏团队"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Bruno Fernandes's Birth Chart at a Glance",
+          "titleEn": "Bruno Fernandes Birth Chart: Four Key Placements",
+          "titleZh": "布鲁诺·费尔南德斯星盘：四大关键位置",
+          "altEn": "Four-placement overview of Bruno Fernandes's birth chart: Virgo Sun, Libra Moon, Mars in Cancer, Scorpio Ascendant",
+          "altZh": "布鲁诺·费尔南德斯星盘四大位置概览：处女座太阳、天秤座月亮、巨蟹座火星、天蝎座上升",
+          "items": [
+            {
+              "nameEn": "Virgo Sun",
+              "nameZh": "处女座太阳",
+              "subEn": "Identity built through craft and exacting standards — earth element, service and refinement focus",
+              "subZh": "通过技艺与严格标准构建身份认同——土元素，专注服务与精炼"
+            },
+            {
+              "nameEn": "Libra Moon (attributed, unconfirmed)",
+              "nameZh": "天秤座月亮（归属，未确认）",
+              "subEn": "Regulates feeling through fairness and balance — air element, relationship and diplomacy focus",
+              "subZh": "通过公平与平衡调节情感——风元素，专注关系与外交"
+            },
+            {
+              "nameEn": "Mars in Cancer",
+              "nameZh": "巨蟹座火星",
+              "subEn": "Competitive drive routed through protecting the group — water element, team and home instinct",
+              "subZh": "通过保护团队导向竞争驱动力——水元素，团队与家庭本能"
+            },
+            {
+              "nameEn": "Scorpio Ascendant (attributed, unconfirmed)",
+              "nameZh": "天蝎座上升（归属，未确认）",
+              "subEn": "First impression of guarded intensity — water element, depth and control; misread as volatility",
+              "subZh": "给人戒备而强烈的第一印象——水元素，深度与掌控；常被误读为易爆"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

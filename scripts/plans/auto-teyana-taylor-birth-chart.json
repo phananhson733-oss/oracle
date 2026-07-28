@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "teyana-taylor-birth-chart": {
+      "hero": {
+        "prompt": "A single blazing arc of fire bursts across an endless open plain at twilight, the horizon dissolving in molten gold as radiant streamers of light fan outward in every direction like arrows loosed from an unseen bow, the vast sky shifting from burnt amber near the earth to deep cosmic indigo overhead, a lone luminous filament of fire tracing a bold parabola across the entire width of the scene, no structures or symbols, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Blazing arc of fire streaming across an open plain at twilight, golden light fanning across an indigo sky — Teyana Taylor birth chart",
+        "altZh": "火焰弧线划过暮色平原，金光在靛蓝星空中放射——蒂亚娜·泰勒星盘"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Sun Sign Reading vs a Full Birth Chart: What Actually Differs",
+          "titleEn": "Sun-Sign Reading vs Full Birth Chart",
+          "titleZh": "太阳星座解读 vs 完整星盘",
+          "altEn": "Comparison of sun-sign reading and full birth chart for Teyana Taylor's astrology",
+          "altZh": "蒂亚娜·泰勒占星：太阳星座解读与完整星盘对比",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Reading",
+              "nameZh": "太阳星座解读",
+              "linesEn": [
+                "Uses birth date only",
+                "No birth time required",
+                "Wide reach and certainty",
+                "One thread of temperament"
+              ],
+              "linesZh": [
+                "仅使用出生日期",
+                "无需出生时间",
+                "覆盖广、确定性高",
+                "只呈现一个性格层面"
+              ]
+            },
+            {
+              "nameEn": "Full Birth Chart",
+              "nameZh": "完整星盘",
+              "linesEn": [
+                "Needs date, exact time, and place",
+                "Maps Moon, rising, and 12 houses",
+                "Deep detail and full pattern",
+                "Requires verified birth time"
+              ],
+              "linesZh": [
+                "需要日期、精确时间和地点",
+                "绘制月亮、上升及十二宫位",
+                "细节深入、呈现完整格局",
+                "需要经过核实的出生时间"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Teyana Taylor's Birth Chart Without Overreaching",
+          "titleEn": "5 Steps to Read Without Overreaching",
+          "titleZh": "不过度解读星盘的5个步骤",
+          "altEn": "Five-step sequence for reading Teyana Taylor's birth chart without overreaching",
+          "altZh": "不过度解读蒂亚娜·泰勒星盘的五步法",
+          "items": [
+            {
+              "nameEn": "Verify the Sun Sign",
+              "nameZh": "确认太阳星座",
+              "subEn": "December 10 birthday is firmly Sagittarius",
+              "subZh": "12月10日生日确定是射手座"
+            },
+            {
+              "nameEn": "Flag Time-Dependent Claims",
+              "nameZh": "标记需要出生时间的信息",
+              "subEn": "Rising sign and Moon need a verified birth time",
+              "subZh": "上升星座和月亮需要核实的出生时间"
+            },
+            {
+              "nameEn": "Match to Public Patterns",
+              "nameZh": "与公开行为宽松印证",
+              "subEn": "Note resonance with genre-crossing work, loosely",
+              "subZh": "宽松地与她跨领域创作相印证"
+            },
+            {
+              "nameEn": "Separate Artist from Chart",
+              "nameZh": "区分艺人与星盘",
+              "subEn": "A reading describes tendencies, not the private person",
+              "subZh": "解读描述倾向，而非私下的真实个人"
+            },
+            {
+              "nameEn": "Date the News Hook",
+              "nameZh": "留意文章发布时间",
+              "subEn": "Check when a claim was written before trusting it",
+              "subZh": "信任某个观点前先核查其发表时间"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

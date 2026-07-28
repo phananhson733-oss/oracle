@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 493" role="img" aria-label="England's Jupiter Window: Cancer to Leo">
+  <defs>
+    <linearGradient id="englandworldcup2026astrology1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="englandworldcup2026astrology1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="englandworldcup2026astrology1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="englandworldcup2026astrology1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="englandworldcup2026astrology1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="englandworldcup2026astrology1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="490" rx="22" fill="url(#englandworldcup2026astrology1en-panel)"/>
+  <ellipse cx="198" cy="118" rx="380" ry="168" fill="url(#englandworldcup2026astrology1en-neb1)"/>
+  <ellipse cx="623" cy="394" rx="334" ry="158" fill="url(#englandworldcup2026astrology1en-neb2)"/>
+  <circle cx="528.1" cy="141.1" r="0.96" fill="#cfc8ea" opacity="0.22"/><circle cx="27.8" cy="281.2" r="1.01" fill="#cfc8ea" opacity="0.45"/><circle cx="531.0" cy="366.3" r="1.42" fill="#cfc8ea" opacity="0.21"/><circle cx="579.0" cy="29.8" r="1.41" fill="#cfc8ea" opacity="0.47"/><circle cx="533.0" cy="403.1" r="0.78" fill="#cfc8ea" opacity="0.31"/><circle cx="152.6" cy="420.0" r="1.35" fill="#cfc8ea" opacity="0.53"/><circle cx="416.3" cy="233.8" r="1.24" fill="#cfc8ea" opacity="0.15"/><circle cx="613.9" cy="477.4" r="1.39" fill="#cfc8ea" opacity="0.25"/><circle cx="718.1" cy="96.8" r="0.68" fill="#cfc8ea" opacity="0.38"/><circle cx="57.1" cy="312.8" r="1.61" fill="#cfc8ea" opacity="0.32"/><circle cx="552.7" cy="412.0" r="0.95" fill="#cfc8ea" opacity="0.29"/><circle cx="274.2" cy="166.4" r="1.01" fill="#cfc8ea" opacity="0.17"/><circle cx="255.0" cy="183.6" r="1.43" fill="#cfc8ea" opacity="0.35"/><circle cx="14.2" cy="469.7" r="1.06" fill="#cfc8ea" opacity="0.17"/><circle cx="388.2" cy="370.8" r="0.51" fill="#cfc8ea" opacity="0.50"/><circle cx="42.9" cy="155.0" r="0.40" fill="#cfc8ea" opacity="0.38"/><circle cx="631.3" cy="42.5" r="0.51" fill="#cfc8ea" opacity="0.52"/><circle cx="438.3" cy="69.5" r="1.16" fill="#cfc8ea" opacity="0.49"/><circle cx="116.2" cy="401.3" r="1.52" fill="#cfc8ea" opacity="0.47"/><circle cx="107.9" cy="270.2" r="1.60" fill="#cfc8ea" opacity="0.50"/><circle cx="705.7" cy="401.0" r="1.10" fill="#cfc8ea" opacity="0.37"/><circle cx="624.6" cy="218.7" r="0.65" fill="#cfc8ea" opacity="0.17"/><circle cx="168.1" cy="378.8" r="0.93" fill="#cfc8ea" opacity="0.35"/><circle cx="270.5" cy="208.6" r="0.87" fill="#cfc8ea" opacity="0.52"/><circle cx="408.9" cy="269.9" r="0.78" fill="#cfc8ea" opacity="0.18"/><circle cx="47.3" cy="38.6" r="0.55" fill="#cfc8ea" opacity="0.33"/><circle cx="270.3" cy="328.7" r="1.01" fill="#cfc8ea" opacity="0.41"/><circle cx="26.6" cy="431.2" r="1.62" fill="#cfc8ea" opacity="0.27"/><circle cx="681.8" cy="461.5" r="0.91" fill="#cfc8ea" opacity="0.46"/><circle cx="67.8" cy="126.7" r="1.31" fill="#cfc8ea" opacity="0.20"/><circle cx="473.2" cy="194.7" r="1.62" fill="#cfc8ea" opacity="0.43"/><circle cx="75.0" cy="103.1" r="0.65" fill="#cfc8ea" opacity="0.35"/><circle cx="674.6" cy="128.9" r="0.50" fill="#cfc8ea" opacity="0.12"/><circle cx="404.7" cy="385.3" r="1.69" fill="#cfc8ea" opacity="0.28"/><circle cx="112.7" cy="76.3" r="0.87" fill="#cfc8ea" opacity="0.45"/><circle cx="66.0" cy="235.3" r="1.47" fill="#cfc8ea" opacity="0.18"/><circle cx="38.2" cy="80.8" r="0.92" fill="#cfc8ea" opacity="0.28"/><circle cx="359.2" cy="431.1" r="1.66" fill="#cfc8ea" opacity="0.51"/><circle cx="421.3" cy="444.4" r="0.98" fill="#cfc8ea" opacity="0.31"/><circle cx="99.0" cy="133.8" r="1.46" fill="#cfc8ea" opacity="0.13"/><circle cx="339.6" cy="479.1" r="1.20" fill="#cfc8ea" opacity="0.54"/><circle cx="255.5" cy="133.1" r="1.37" fill="#cfc8ea" opacity="0.48"/><path d="M 493.877880487591 85.0 L 494.3 87.0 L 496.3 87.37552559678443 L 494.3 87.8 L 493.877880487591 89.8 L 493.5 87.8 L 491.5 87.37552559678443 L 493.5 87.0 Z" fill="#f6e6bf" opacity="0.6487050780327991"/><path d="M 721.7545931003988 266.3 L 722.3 268.9 L 724.9 269.4548562655691 L 722.3 270.0 L 721.7545931003988 272.6 L 721.2 270.0 L 718.6 269.4548562655691 L 721.2 268.9 Z" fill="#f6e6bf" opacity="0.571437916555442"/><path d="M 425.80294217541814 106.4 L 426.4 109.4 L 429.4 109.92670368147083 L 426.4 110.5 L 425.80294217541814 113.5 L 425.2 110.5 L 422.2 109.92670368147083 L 425.2 109.4 Z" fill="#f6e6bf" opacity="0.7124816878931597"/><path d="M 143.0620951168239 248.9 L 143.7 252.1 L 146.9 252.71606350527145 L 143.7 253.3 L 143.0620951168239 256.6 L 142.4 253.3 L 139.2 252.71606350527145 L 142.4 252.1 Z" fill="#f6e6bf" opacity="0.5793828884372487"/><path d="M 436.2899388112128 33.2 L 436.7 35.5 L 438.9 35.88132754643448 L 436.7 36.3 L 436.2899388112128 38.5 L 435.9 36.3 L 433.6 35.88132754643448 L 435.9 35.5 Z" fill="#f6e6bf" opacity="0.5656815906288102"/><path d="M 528.1 141.1 L 416.3 233.8 L 631.3 42.5 L 438.3 69.5 L 116.2 401.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="490" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="479" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 473.8 L 16.5 476.5 L 19.2 477 L 16.5 477.5 L 16 480.2 L 15.5 477.5 L 12.8 477 L 15.5 476.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 473.8 L 744.5 476.5 L 747.2 477 L 744.5 477.5 L 744 480.2 L 743.5 477.5 L 740.8 477 L 743.5 476.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">England's Jupiter Window: Cancer to Leo</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#englandworldcup2026astrology1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#englandworldcup2026astrology1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="393" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#englandworldcup2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#englandworldcup2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">11–27 June</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Group Stage — Jupiter in Cancer</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Bellingham's Cancer-Sun window — a symbolic backdrop of homecoming and protective</text>
+  <text x="132" y="181.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">drive during the group stage</text>
+  <circle cx="92" cy="212" r="13.0" fill="url(#englandworldcup2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="212" r="8" fill="url(#englandworldcup2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="209.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 208.0 L 92.6 211.4 L 96.0 212 L 92.6 212.6 L 92 216.0 L 91.4 212.6 L 88.0 212 L 91.4 211.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="217.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">28 June</text>
+  <text x="132" y="240.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Knockout Rounds Begin (Round of 32)</text>
+  <text x="132" y="263.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">The tournament arc shifts — group-stage themes give way to the knockout stage</text>
+  <circle cx="92" cy="294" r="13.0" fill="url(#englandworldcup2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="294" r="8" fill="url(#englandworldcup2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="291.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 290.0 L 92.6 293.4 L 96.0 294 L 92.6 294.6 L 92 298.0 L 91.4 294.6 L 88.0 294 L 91.4 293.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="299.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">~30 June</text>
+  <text x="132" y="322.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Jupiter Enters Leo — Kane's Leo-Sun Window</text>
+  <text x="132" y="345.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">The captain's season arrives late — Jupiter expands into Leo just as knockouts are</text>
+  <text x="132" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">underway</text>
+  <circle cx="92" cy="393" r="13.0" fill="url(#englandworldcup2026astrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="393" r="8" fill="url(#englandworldcup2026astrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="390.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 389.0 L 92.6 392.4 L 96.0 393 L 92.6 393.6 L 92 397.0 L 91.4 393.6 L 88.0 393 L 91.4 392.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="398.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">19 July</text>
+  <text x="132" y="421.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Final at MetLife Stadium, New Jersey</text>
+  <text x="132" y="444.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Jupiter still in Leo — all symbolic timing, no result predictions</text>
+  <path d="M 202.22749999999988 464.4 L 202.6 466.6 L 204.8 467 L 202.6 467.4 L 202.22749999999988 469.6 L 201.8 467.4 L 199.6 467 L 201.8 466.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="471" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 464.4 L 558.2 466.6 L 560.4 467 L 558.2 467.4 L 557.7725000000002 469.6 L 557.4 467.4 L 555.2 467 L 557.4 466.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,101 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "malia-obama-birth-chart": {
+      "hero": {
+        "prompt": "A vast moonlit coastal landscape at dusk, a luminous pearl moon ascending over a dark ocean, long lanes of silver and gold light rippling across still water toward a distant shore framed by ancient sea-stacks, protective shell-like rock formations curving around a glowing tidal pool, gentle waves carrying scattered starlight, soft bioluminescent foam tracing the tideline, the entire scene evoking a private, guarded inner world held within the arms of the sea, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Moonlit coastal seascape at dusk, a pearl moon rising over dark ocean with gold light rippling across still water toward ancient sea-stacks"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Symbolic Chart Reading vs Predictive Astrology: What Actually Differs",
+          "titleEn": "Symbolic vs Predictive Reading: Key Differences",
+          "altEn": "Two-column comparison of symbolic and predictive astrology chart reading approaches and their trade-offs",
+          "columns": [
+            {
+              "nameEn": "Symbolic Reading",
+              "linesEn": [
+                "Treats each placement as an archetype",
+                "Stops at 'this pattern tends to show up as'",
+                "Gains honesty and interpretive flexibility",
+                "Loses the illusion of certainty",
+                "Useful as a self-reflection mirror"
+              ]
+            },
+            {
+              "nameEn": "Predictive Reading",
+              "linesEn": [
+                "Tries to forecast events from transits and timing",
+                "Aims to answer 'this will happen'",
+                "Offers a sense of certainty",
+                "Less adaptable to nuance",
+                "Less useful as a self-reflection tool"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Malia Obama Birth Chart Symbolically",
+          "titleEn": "5 Steps to Read a Birth Chart Symbolically",
+          "altEn": "Five-step sequence for reading Malia Obama's birth chart as a symbolic portrait of tendencies rather than a prediction",
+          "items": [
+            {
+              "nameEn": "Start with the Sun sign",
+              "subEn": "A July 4 birthday gives a Cancer Sun — look for privacy, loyalty, and care in how she is publicly described"
+            },
+            {
+              "nameEn": "Flag what needs a birth time",
+              "subEn": "Treat the Moon and Ascendant as pending until a verified time exists — say so rather than guessing"
+            },
+            {
+              "nameEn": "Match symbol to public image",
+              "subEn": "Notice where the Cancer theme lines up with her reserved presence — and where it doesn't, since people are always more than one placement"
+            },
+            {
+              "nameEn": "Read aspects as themes, not verdicts",
+              "subEn": "A tight aspect suggests recurring tension or ease — phrase as 'may surface as,' never 'this means she will'"
+            },
+            {
+              "nameEn": "Keep the interpretive frame visible",
+              "subEn": "End each observation reminding yourself you are reading archetype, not biography"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Common Misreadings vs Accurate Interpretations",
+          "altEn": "Two-column comparison of three common misreadings of Malia Obama's birth chart against their accurate corrected interpretations",
+          "columns": [
+            {
+              "nameEn": "Common Misread",
+              "linesEn": [
+                "Quoting a full 'big three' as fact without a confirmed birth time",
+                "Saying 'her Cancer Sun means she will choose a private life'",
+                "Explaining her entire public image through Cancer alone"
+              ]
+            },
+            {
+              "nameEn": "Accurate Read",
+              "linesEn": [
+                "Without a confirmed birth time only the Sun sign is reliable — everything time-based is provisional",
+                "A placement describes a tendency, not a destiny, and can express in many directions",
+                "A chart is a web of placements — any single sign is only a starting note"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

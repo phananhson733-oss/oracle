@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 254" role="img" aria-label="">
+  <defs>
+    <linearGradient id="whatdoineedtoletgoof1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="whatdoineedtoletgoof1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="whatdoineedtoletgoof1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatdoineedtoletgoof1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatdoineedtoletgoof1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="whatdoineedtoletgoof1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="251" rx="22" fill="url(#whatdoineedtoletgoof1zh-panel)"/>
+  <ellipse cx="198" cy="61" rx="380" ry="86" fill="url(#whatdoineedtoletgoof1zh-neb1)"/>
+  <ellipse cx="623" cy="203" rx="334" ry="81" fill="url(#whatdoineedtoletgoof1zh-neb2)"/>
+  <circle cx="519.7" cy="146.2" r="1.41" fill="#cfc8ea" opacity="0.37"/><circle cx="648.4" cy="149.6" r="0.62" fill="#cfc8ea" opacity="0.36"/><circle cx="371.2" cy="123.2" r="1.63" fill="#cfc8ea" opacity="0.38"/><circle cx="607.7" cy="178.3" r="0.46" fill="#cfc8ea" opacity="0.13"/><circle cx="706.6" cy="152.3" r="0.97" fill="#cfc8ea" opacity="0.35"/><circle cx="493.3" cy="12.8" r="1.03" fill="#cfc8ea" opacity="0.52"/><circle cx="317.8" cy="122.0" r="0.94" fill="#cfc8ea" opacity="0.39"/><circle cx="201.8" cy="53.4" r="1.55" fill="#cfc8ea" opacity="0.54"/><circle cx="292.3" cy="52.3" r="1.68" fill="#cfc8ea" opacity="0.34"/><circle cx="703.7" cy="182.5" r="0.84" fill="#cfc8ea" opacity="0.52"/><circle cx="288.1" cy="227.9" r="1.58" fill="#cfc8ea" opacity="0.42"/><circle cx="600.4" cy="197.1" r="1.21" fill="#cfc8ea" opacity="0.53"/><circle cx="377.1" cy="77.0" r="0.63" fill="#cfc8ea" opacity="0.47"/><circle cx="604.4" cy="142.9" r="1.15" fill="#cfc8ea" opacity="0.21"/><circle cx="196.7" cy="238.7" r="0.42" fill="#cfc8ea" opacity="0.16"/><circle cx="293.2" cy="88.4" r="1.28" fill="#cfc8ea" opacity="0.14"/><circle cx="337.8" cy="165.7" r="1.19" fill="#cfc8ea" opacity="0.30"/><circle cx="261.7" cy="214.0" r="0.60" fill="#cfc8ea" opacity="0.27"/><circle cx="719.4" cy="106.6" r="1.66" fill="#cfc8ea" opacity="0.35"/><circle cx="40.2" cy="123.3" r="1.52" fill="#cfc8ea" opacity="0.45"/><circle cx="263.0" cy="79.9" r="0.69" fill="#cfc8ea" opacity="0.23"/><path d="M 77.8564658164978 22.5 L 78.4 25.2 L 81.1 25.678950540255755 L 78.4 26.2 L 77.8564658164978 28.9 L 77.3 26.2 L 74.6 25.678950540255755 L 77.3 25.2 Z" fill="#f6e6bf" opacity="0.5658847077516839"/><path d="M 49.95091938227415 196.2 L 50.5 199.1 L 53.3 199.6249336390756 L 50.5 200.2 L 49.95091938227415 203.0 L 49.4 200.2 L 46.6 199.6249336390756 L 49.4 199.1 Z" fill="#f6e6bf" opacity="0.7142151089152321"/><path d="M 683.3030451387167 139.4 L 683.8 141.8 L 686.1 142.23233997402713 L 683.8 142.7 L 683.3030451387167 145.1 L 682.8 142.7 L 680.5 142.23233997402713 L 682.8 141.8 Z" fill="#f6e6bf" opacity="0.6275631551397964"/><path d="M 578.0874932780862 11.4 L 578.5 13.7 L 580.9 14.188185555394739 L 578.5 14.6 L 578.0874932780862 17.0 L 577.6 14.6 L 575.3 14.188185555394739 L 577.6 13.7 Z" fill="#f6e6bf" opacity="0.7897210322087631"/><path d="M 190.61731120944023 111.6 L 191.1 114.1 L 193.5 114.5198260541074 L 191.1 115.0 L 190.61731120944023 117.4 L 190.2 115.0 L 187.7 114.5198260541074 L 190.2 114.1 Z" fill="#f6e6bf" opacity="0.5524416650412605"/><path d="M 519.7 146.2 L 648.4 149.6 L 317.8 122.0 L 703.7 182.5 L 288.1 227.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="251" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="240" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 234.8 L 16.5 237.5 L 19.2 238 L 16.5 238.5 L 16 241.2 L 15.5 238.5 L 12.8 238 L 15.5 237.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 234.8 L 744.5 237.5 L 747.2 238 L 744.5 238.5 L 744 241.2 L 743.5 238.5 L 740.8 238 L 743.5 237.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#whatdoineedtoletgoof1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#whatdoineedtoletgoof1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="72" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="72" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 81.6 L 48.3 84.5 L 51.1 85 L 48.3 85.5 L 47.75 88.4 L 47.2 85.5 L 44.4 85 L 47.2 84.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 380 112.5 L 380.7 116.3 L 384.5 117 L 380.7 117.7 L 380 121.5 L 379.3 117.7 L 375.5 117 L 379.3 116.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="130" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="130" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 139.6 L 48.3 142.5 L 51.1 143 L 48.3 143.5 L 47.75 146.4 L 47.2 143.5 L 44.4 143 L 47.2 142.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 380 170.5 L 380.7 174.3 L 384.5 175 L 380.7 175.7 L 380 179.5 L 379.3 175.7 L 375.5 175 L 379.3 174.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="188" width="668" height="32.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="188" width="3.5" height="32.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 197.6 L 48.3 200.5 L 51.1 201 L 48.3 201.5 L 47.75 204.4 L 47.2 201.5 L 44.4 201 L 47.2 200.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <path d="M 280.025 225.4 L 280.4 227.6 L 282.6 228 L 280.4 228.4 L 280.025 230.6 L 279.6 228.4 L 277.4 228 L 279.6 227.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="232" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 225.4 L 480.4 227.6 L 482.6 228 L 480.4 228.4 L 479.975 230.6 L 479.6 228.4 L 477.4 228 L 479.6 227.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

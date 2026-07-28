@@ -1,0 +1,122 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "solar-return-chart": {
+      "hero": {
+        "prompt": "a single golden sun hovering at the precise point on the horizon where it paused exactly one year before, the moment of its annual return; a vast indigo plain below where still dark water mirrors the orb's warm glow, teal auroras arcing across the sky like memory-filaments tracing the sun's year-long path back to this exact spot, distant mountain silhouettes framing the scene in quiet grandeur, the landscape utterly still in the moment of celestial reunion, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A golden sun returning to its exact annual horizon point over an indigo plain, evoking the solar return chart cycle",
+        "altZh": "一轮金色太阳归返其年度精确位置，映照于靛蓝静水之上，象征太阳回归盘的年度周期"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 太阳回归盘 与相近概念：运作方式 + 取舍",
+          "titleEn": "Three Predictive Techniques Compared",
+          "titleZh": "三种预测技术对比",
+          "altEn": "Comparison of solar returns, transits, and secondary progressions as three predictive astrology techniques",
+          "altZh": "太阳回归盘、行运与二次推运三种预测技术对比",
+          "columns": [
+            {
+              "nameEn": "Solar Returns",
+              "nameZh": "太阳回归盘",
+              "linesEn": [
+                "Annual thematic portrait",
+                "Bounded 12-month window",
+                "Year-level view — the eagle",
+                "Activated by natal overlay"
+              ],
+              "linesZh": [
+                "年度主题画像",
+                "清晰的十二个月窗口",
+                "年度全景视角——鹰眼",
+                "需叠加本命盘才能激活"
+              ]
+            },
+            {
+              "nameEn": "Transits",
+              "nameZh": "行运",
+              "linesEn": [
+                "Daily planet motion vs natal",
+                "Pinpoints specific weeks",
+                "Precise timing — the lark",
+                "Best for exact activation dates"
+              ],
+              "linesZh": [
+                "每日行星相对本命运动",
+                "精确指向特定激活周次",
+                "精准定时——望远镜焦点",
+                "适用于精确时间定位"
+              ]
+            },
+            {
+              "nameEn": "Progressions",
+              "nameZh": "二次推运",
+              "linesEn": [
+                "Multi-year inner arc",
+                "Psychological development",
+                "Slow, deep inner evolution",
+                "Shows who you are becoming"
+              ],
+              "linesZh": [
+                "多年内在演进弧线",
+                "心理层面的发展变化",
+                "缓慢而深层的内在演化",
+                "揭示你正在成为谁"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read solar return ascendant, natal chart overlay, sun's house placement, ascendant ruling planet, critical degree positions in Your Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 太阳回归盘",
+          "titleEn": "Five Layers of a Solar Return Reading",
+          "titleZh": "太阳回归盘五层解读顺序",
+          "altEn": "Five sequential reading layers of a solar return chart: ascendant, natal overlay, sun house, ascendant ruler, critical degrees",
+          "altZh": "太阳回归盘五层解读步骤：上升点、本命叠加、太阳宫位、上升主星、关键度数",
+          "items": [
+            {
+              "nameEn": "Return Ascendant",
+              "nameZh": "回归上升点",
+              "subEn": "Sets the year's visible tone — how you show up",
+              "subZh": "设定全年可见基调，你如何呈现自己"
+            },
+            {
+              "nameEn": "Natal Overlay",
+              "nameZh": "本命盘叠加",
+              "subEn": "Conjunctions within ~3° reveal the year's hot zones",
+              "subZh": "约三度内的合相揭示当年热点区域"
+            },
+            {
+              "nameEn": "Sun's House",
+              "nameZh": "太阳宫位",
+              "subEn": "Shows where life energy concentrates this year",
+              "subZh": "显示今年生命能量集中在哪里"
+            },
+            {
+              "nameEn": "Ascendant Ruler",
+              "nameZh": "上升主星",
+              "subEn": "Planet steering the year's character and storyline",
+              "subZh": "主导当年故事走向的行星"
+            },
+            {
+              "nameEn": "Critical Degrees",
+              "nameZh": "关键度数",
+              "subEn": "Planets at 0°, 13°, or 26° mark pressure points",
+              "subZh": "落在0°、13°、26°基本星座的行星标记压力节点"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

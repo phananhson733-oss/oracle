@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 527" role="img" aria-label="星盘要素各自回答什么">
+  <defs>
+    <linearGradient id="northnodevssouthnode1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="northnodevssouthnode1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="northnodevssouthnode1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="northnodevssouthnode1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="northnodevssouthnode1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="northnodevssouthnode1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="url(#northnodevssouthnode1zh-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="179" fill="url(#northnodevssouthnode1zh-neb1)"/>
+  <ellipse cx="623" cy="422" rx="334" ry="169" fill="url(#northnodevssouthnode1zh-neb2)"/>
+  <circle cx="273.9" cy="23.2" r="0.45" fill="#cfc8ea" opacity="0.41"/><circle cx="438.1" cy="355.3" r="1.31" fill="#cfc8ea" opacity="0.49"/><circle cx="589.2" cy="425.5" r="0.75" fill="#cfc8ea" opacity="0.20"/><circle cx="131.1" cy="257.2" r="0.46" fill="#cfc8ea" opacity="0.31"/><circle cx="716.8" cy="218.8" r="0.94" fill="#cfc8ea" opacity="0.24"/><circle cx="97.3" cy="452.3" r="1.05" fill="#cfc8ea" opacity="0.20"/><circle cx="687.4" cy="235.3" r="0.74" fill="#cfc8ea" opacity="0.44"/><circle cx="315.4" cy="51.8" r="0.83" fill="#cfc8ea" opacity="0.18"/><circle cx="343.7" cy="329.8" r="0.84" fill="#cfc8ea" opacity="0.27"/><circle cx="682.7" cy="429.2" r="0.63" fill="#cfc8ea" opacity="0.49"/><circle cx="63.0" cy="271.1" r="0.98" fill="#cfc8ea" opacity="0.44"/><circle cx="624.6" cy="374.4" r="1.55" fill="#cfc8ea" opacity="0.19"/><circle cx="451.9" cy="212.2" r="1.39" fill="#cfc8ea" opacity="0.30"/><circle cx="16.8" cy="22.4" r="0.67" fill="#cfc8ea" opacity="0.21"/><circle cx="300.9" cy="59.3" r="0.67" fill="#cfc8ea" opacity="0.46"/><circle cx="340.1" cy="146.0" r="1.12" fill="#cfc8ea" opacity="0.24"/><circle cx="619.2" cy="142.1" r="0.70" fill="#cfc8ea" opacity="0.39"/><circle cx="263.9" cy="39.8" r="0.89" fill="#cfc8ea" opacity="0.36"/><circle cx="647.6" cy="233.4" r="0.55" fill="#cfc8ea" opacity="0.34"/><circle cx="44.6" cy="318.5" r="0.71" fill="#cfc8ea" opacity="0.40"/><circle cx="23.6" cy="453.5" r="0.51" fill="#cfc8ea" opacity="0.45"/><circle cx="128.7" cy="492.8" r="1.45" fill="#cfc8ea" opacity="0.41"/><circle cx="422.4" cy="174.2" r="0.77" fill="#cfc8ea" opacity="0.35"/><circle cx="379.1" cy="290.3" r="0.75" fill="#cfc8ea" opacity="0.13"/><circle cx="362.1" cy="44.0" r="1.62" fill="#cfc8ea" opacity="0.33"/><circle cx="357.3" cy="477.8" r="1.13" fill="#cfc8ea" opacity="0.32"/><circle cx="687.7" cy="384.5" r="1.18" fill="#cfc8ea" opacity="0.26"/><circle cx="330.7" cy="477.4" r="0.75" fill="#cfc8ea" opacity="0.29"/><circle cx="583.2" cy="356.2" r="0.66" fill="#cfc8ea" opacity="0.32"/><circle cx="13.2" cy="349.7" r="0.42" fill="#cfc8ea" opacity="0.49"/><circle cx="267.3" cy="173.9" r="0.66" fill="#cfc8ea" opacity="0.21"/><circle cx="584.8" cy="325.7" r="1.44" fill="#cfc8ea" opacity="0.45"/><circle cx="323.8" cy="446.0" r="1.26" fill="#cfc8ea" opacity="0.48"/><circle cx="192.4" cy="314.8" r="0.77" fill="#cfc8ea" opacity="0.51"/><circle cx="523.8" cy="469.6" r="1.69" fill="#cfc8ea" opacity="0.45"/><circle cx="727.9" cy="293.9" r="0.47" fill="#cfc8ea" opacity="0.22"/><circle cx="428.1" cy="57.0" r="1.18" fill="#cfc8ea" opacity="0.44"/><circle cx="375.3" cy="263.1" r="0.46" fill="#cfc8ea" opacity="0.14"/><circle cx="366.2" cy="68.6" r="0.57" fill="#cfc8ea" opacity="0.35"/><circle cx="617.5" cy="361.3" r="0.73" fill="#cfc8ea" opacity="0.13"/><circle cx="141.9" cy="85.2" r="1.48" fill="#cfc8ea" opacity="0.40"/><circle cx="32.7" cy="249.1" r="1.31" fill="#cfc8ea" opacity="0.23"/><circle cx="683.0" cy="426.2" r="1.17" fill="#cfc8ea" opacity="0.45"/><circle cx="225.7" cy="322.4" r="1.37" fill="#cfc8ea" opacity="0.30"/><circle cx="334.0" cy="503.1" r="1.30" fill="#cfc8ea" opacity="0.31"/><path d="M 617.5389798209071 148.9 L 618.1 152.0 L 621.2 152.62595596746542 L 618.1 153.2 L 617.5389798209071 156.3 L 616.9 153.2 L 613.8 152.62595596746542 L 616.9 152.0 Z" fill="#f6e6bf" opacity="0.6843246767064557"/><path d="M 266.7115639895201 30.5 L 267.3 33.9 L 270.7 34.49953698483296 L 267.3 35.1 L 266.7115639895201 38.5 L 266.1 35.1 L 262.7 34.49953698483296 L 266.1 33.9 Z" fill="#f6e6bf" opacity="0.6321580272866413"/><path d="M 43.15364400297403 155.2 L 43.7 158.2 L 46.7 158.72476065554656 L 43.7 159.3 L 43.15364400297403 162.3 L 42.6 159.3 L 39.6 158.72476065554656 L 42.6 158.2 Z" fill="#f6e6bf" opacity="0.6152996599441394"/><path d="M 591.8210895359516 500.8 L 592.3 503.5 L 595.1 504.0326095216442 L 592.3 504.5 L 591.8210895359516 507.3 L 591.3 504.5 L 588.6 504.0326095216442 L 591.3 503.5 Z" fill="#f6e6bf" opacity="0.576191586512141"/><path d="M 674.4990854486823 451.7 L 674.9 453.7 L 676.9 454.09603313566186 L 674.9 454.5 L 674.4990854486823 456.5 L 674.1 454.5 L 672.1 454.09603313566186 L 674.1 453.7 Z" fill="#f6e6bf" opacity="0.6619247903814539"/><path d="M 300.9 59.3 L 647.6 233.4 L 357.3 477.8 L 330.7 477.4 L 13.2 349.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="513" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 507.8 L 16.5 510.5 L 19.2 511 L 16.5 511.5 L 16 514.2 L 15.5 511.5 L 12.8 511 L 15.5 510.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 507.8 L 744.5 510.5 L 747.2 511 L 744.5 511.5 L 744 514.2 L 743.5 511.5 L 740.8 511 L 743.5 510.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">星盘要素各自回答什么</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#northnodevssouthnode1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#northnodevssouthnode1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">本命行星</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">随时携带的固有能力</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">描述你在任何一天的样子</text>
+  <path d="M 380 221.5 L 380.7 225.3 L 384.5 226 L 380.7 226.7 L 380 230.5 L 379.3 226.7 L 375.5 226 L 379.3 225.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="239" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="239" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 237.1 L 380.5 240.0 L 383.4 240.5 L 380.5 241.0 L 380 243.9 L 379.5 241.0 L 376.6 240.5 L 379.5 240.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="268.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">行运</text>
+  <path d="M 70 297.8 L 70.5 300.5 L 73.2 301 L 70.5 301.5 L 70 304.2 L 69.5 301.5 L 66.8 301 L 69.5 300.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="306.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">为外部事件计时</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">重在对时，不谈长期发展</text>
+  <path d="M 380 361.5 L 380.7 365.3 L 384.5 366 L 380.7 366.7 L 380 370.5 L 379.3 366.7 L 375.5 366 L 379.3 365.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="379" width="668" height="114.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="379" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 377.1 L 380.5 380.0 L 383.4 380.5 L 380.5 381.0 L 380 383.9 L 379.5 381.0 L 376.6 380.5 L 379.5 380.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="408.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">交点轴</text>
+  <path d="M 70 437.8 L 70.5 440.5 L 73.2 441 L 70.5 441.5 L 70 444.2 L 69.5 441.5 L 66.8 441 L 69.5 440.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="446.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">在过去与未来之间指方向</text>
+  <path d="M 70 466.8 L 70.5 469.5 L 73.2 470 L 70.5 470.5 L 70 473.2 L 69.5 470.5 L 66.8 470 L 69.5 469.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="475.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">要放在数年数十年里看</text>
+  <path d="M 280.025 498.4 L 280.4 500.6 L 282.6 501 L 280.4 501.4 L 280.025 503.6 L 279.6 501.4 L 277.4 501 L 279.6 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="505" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 498.4 L 480.4 500.6 L 482.6 501 L 480.4 501.4 L 479.975 503.6 L 479.6 501.4 L 477.4 501 L 479.6 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

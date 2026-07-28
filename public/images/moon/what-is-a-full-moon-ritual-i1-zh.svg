@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="满月仪式的结构">
+  <defs>
+    <linearGradient id="whatisafullmoonritual1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="whatisafullmoonritual1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="whatisafullmoonritual1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatisafullmoonritual1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatisafullmoonritual1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="whatisafullmoonritual1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#whatisafullmoonritual1zh-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#whatisafullmoonritual1zh-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#whatisafullmoonritual1zh-neb2)"/>
+  <circle cx="601.8" cy="41.7" r="0.86" fill="#cfc8ea" opacity="0.29"/><circle cx="453.3" cy="405.0" r="0.46" fill="#cfc8ea" opacity="0.32"/><circle cx="406.5" cy="417.0" r="1.46" fill="#cfc8ea" opacity="0.33"/><circle cx="247.7" cy="335.8" r="0.82" fill="#cfc8ea" opacity="0.44"/><circle cx="558.4" cy="138.8" r="0.42" fill="#cfc8ea" opacity="0.44"/><circle cx="640.3" cy="204.8" r="1.02" fill="#cfc8ea" opacity="0.53"/><circle cx="270.5" cy="404.6" r="0.97" fill="#cfc8ea" opacity="0.38"/><circle cx="72.3" cy="45.0" r="1.11" fill="#cfc8ea" opacity="0.47"/><circle cx="344.6" cy="443.4" r="0.97" fill="#cfc8ea" opacity="0.37"/><circle cx="609.6" cy="406.0" r="0.49" fill="#cfc8ea" opacity="0.38"/><circle cx="48.1" cy="407.4" r="1.28" fill="#cfc8ea" opacity="0.27"/><circle cx="627.6" cy="285.5" r="1.60" fill="#cfc8ea" opacity="0.43"/><circle cx="276.6" cy="382.2" r="0.81" fill="#cfc8ea" opacity="0.37"/><circle cx="500.1" cy="198.8" r="1.46" fill="#cfc8ea" opacity="0.21"/><circle cx="230.2" cy="21.1" r="1.38" fill="#cfc8ea" opacity="0.33"/><circle cx="267.7" cy="282.6" r="1.58" fill="#cfc8ea" opacity="0.22"/><circle cx="280.2" cy="247.6" r="1.37" fill="#cfc8ea" opacity="0.19"/><circle cx="267.4" cy="256.1" r="0.99" fill="#cfc8ea" opacity="0.26"/><circle cx="48.4" cy="96.0" r="1.69" fill="#cfc8ea" opacity="0.51"/><circle cx="527.1" cy="402.0" r="1.47" fill="#cfc8ea" opacity="0.49"/><circle cx="570.8" cy="49.7" r="0.93" fill="#cfc8ea" opacity="0.34"/><circle cx="487.6" cy="196.6" r="0.64" fill="#cfc8ea" opacity="0.44"/><circle cx="559.3" cy="375.3" r="0.97" fill="#cfc8ea" opacity="0.35"/><circle cx="115.6" cy="255.9" r="1.13" fill="#cfc8ea" opacity="0.26"/><circle cx="37.6" cy="81.4" r="0.97" fill="#cfc8ea" opacity="0.36"/><circle cx="91.5" cy="82.5" r="1.17" fill="#cfc8ea" opacity="0.16"/><circle cx="447.5" cy="126.9" r="1.04" fill="#cfc8ea" opacity="0.42"/><circle cx="614.7" cy="373.2" r="0.89" fill="#cfc8ea" opacity="0.17"/><circle cx="254.6" cy="131.1" r="0.85" fill="#cfc8ea" opacity="0.18"/><circle cx="746.1" cy="143.1" r="1.58" fill="#cfc8ea" opacity="0.35"/><circle cx="657.5" cy="282.6" r="0.42" fill="#cfc8ea" opacity="0.44"/><circle cx="198.2" cy="371.4" r="1.13" fill="#cfc8ea" opacity="0.26"/><circle cx="410.0" cy="42.4" r="1.34" fill="#cfc8ea" opacity="0.36"/><circle cx="553.5" cy="414.3" r="0.88" fill="#cfc8ea" opacity="0.38"/><circle cx="295.6" cy="47.1" r="1.35" fill="#cfc8ea" opacity="0.30"/><circle cx="456.9" cy="161.9" r="0.88" fill="#cfc8ea" opacity="0.53"/><circle cx="278.4" cy="76.1" r="1.07" fill="#cfc8ea" opacity="0.38"/><circle cx="400.8" cy="357.8" r="0.98" fill="#cfc8ea" opacity="0.26"/><circle cx="280.6" cy="192.9" r="1.60" fill="#cfc8ea" opacity="0.36"/><path d="M 77.84326493181288 385.3 L 78.3 387.9 L 80.9 388.412370109465 L 78.3 388.9 L 77.84326493181288 391.5 L 77.4 388.9 L 74.8 388.412370109465 L 77.4 387.9 Z" fill="#f6e6bf" opacity="0.6363972795195878"/><path d="M 143.4309003520757 340.1 L 143.9 342.3 L 146.1 342.7357911062427 L 143.9 343.2 L 143.4309003520757 345.4 L 143.0 343.2 L 140.8 342.7357911062427 L 143.0 342.3 Z" fill="#f6e6bf" opacity="0.5356818500906229"/><path d="M 21.684432545676827 151.1 L 22.1 153.3 L 24.3 153.6845998163335 L 22.1 154.1 L 21.684432545676827 156.3 L 21.3 154.1 L 19.1 153.6845998163335 L 21.3 153.3 Z" fill="#f6e6bf" opacity="0.7453975181095303"/><path d="M 682.4880225080997 40.9 L 683.1 43.9 L 686.1 44.50318362796679 L 683.1 45.1 L 682.4880225080997 48.1 L 681.9 45.1 L 678.9 44.50318362796679 L 681.9 43.9 Z" fill="#f6e6bf" opacity="0.696684587188065"/><path d="M 218.164643490687 287.3 L 218.7 290.0 L 221.4 290.51717916643247 L 218.7 291.0 L 218.164643490687 293.7 L 217.7 291.0 L 215.0 290.51717916643247 L 217.7 290.0 Z" fill="#f6e6bf" opacity="0.5413189657963813"/><path d="M 406.5 417.0 L 527.1 402.0 L 614.7 373.2 L 400.8 357.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">满月仪式的结构</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#whatisafullmoonritual1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#whatisafullmoonritual1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#whatisafullmoonritual1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#whatisafullmoonritual1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">满月当晚</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">释放意图</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">说出或写下唯一一件要放下的事</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#whatisafullmoonritual1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#whatisafullmoonritual1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">同一晚</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">收回意图</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">紧接释放之后，命名将填补空位的事物</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#whatisafullmoonritual1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#whatisafullmoonritual1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">仪式结束时</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">收尾确认</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">标记从仪式时间回到日常时间</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#whatisafullmoonritual1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#whatisafullmoonritual1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">之后48小时</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">整合窗口</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">一个具体的行为改变印证这次释放</text>
+  <path d="M 280.025 430.4 L 280.4 432.6 L 282.6 433 L 280.4 433.4 L 280.025 435.6 L 279.6 433.4 L 277.4 433 L 279.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 430.4 L 480.4 432.6 L 482.6 433 L 480.4 433.4 L 479.975 435.6 L 479.6 433.4 L 477.4 433 L 479.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="Five Signals of the Seeker">
+  <defs>
+    <linearGradient id="mrigashiranakshatra1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mrigashiranakshatra1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mrigashiranakshatra1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mrigashiranakshatra1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mrigashiranakshatra1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mrigashiranakshatra1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#mrigashiranakshatra1en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#mrigashiranakshatra1en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#mrigashiranakshatra1en-neb2)"/>
+  <circle cx="462.5" cy="165.8" r="1.37" fill="#cfc8ea" opacity="0.16"/><circle cx="329.8" cy="332.6" r="0.93" fill="#cfc8ea" opacity="0.52"/><circle cx="640.4" cy="168.8" r="1.38" fill="#cfc8ea" opacity="0.53"/><circle cx="512.6" cy="419.5" r="1.31" fill="#cfc8ea" opacity="0.44"/><circle cx="196.6" cy="346.8" r="1.16" fill="#cfc8ea" opacity="0.38"/><circle cx="48.6" cy="369.2" r="0.84" fill="#cfc8ea" opacity="0.50"/><circle cx="306.6" cy="238.8" r="0.88" fill="#cfc8ea" opacity="0.44"/><circle cx="710.3" cy="245.7" r="1.69" fill="#cfc8ea" opacity="0.27"/><circle cx="211.4" cy="283.7" r="0.73" fill="#cfc8ea" opacity="0.22"/><circle cx="563.0" cy="112.3" r="1.51" fill="#cfc8ea" opacity="0.33"/><circle cx="317.9" cy="406.7" r="0.50" fill="#cfc8ea" opacity="0.40"/><circle cx="557.9" cy="299.1" r="0.68" fill="#cfc8ea" opacity="0.23"/><circle cx="700.8" cy="158.8" r="1.27" fill="#cfc8ea" opacity="0.49"/><circle cx="41.9" cy="205.7" r="1.61" fill="#cfc8ea" opacity="0.17"/><circle cx="690.8" cy="37.7" r="0.43" fill="#cfc8ea" opacity="0.53"/><circle cx="732.0" cy="224.2" r="1.00" fill="#cfc8ea" opacity="0.37"/><circle cx="472.5" cy="113.9" r="0.92" fill="#cfc8ea" opacity="0.29"/><circle cx="60.3" cy="306.4" r="1.20" fill="#cfc8ea" opacity="0.23"/><circle cx="633.2" cy="38.7" r="0.47" fill="#cfc8ea" opacity="0.53"/><circle cx="543.9" cy="397.2" r="1.48" fill="#cfc8ea" opacity="0.29"/><circle cx="742.5" cy="141.6" r="1.15" fill="#cfc8ea" opacity="0.43"/><circle cx="483.5" cy="95.8" r="0.62" fill="#cfc8ea" opacity="0.39"/><circle cx="477.5" cy="245.6" r="1.37" fill="#cfc8ea" opacity="0.32"/><circle cx="51.5" cy="246.4" r="1.40" fill="#cfc8ea" opacity="0.30"/><circle cx="690.1" cy="375.1" r="1.60" fill="#cfc8ea" opacity="0.31"/><circle cx="184.4" cy="106.1" r="1.43" fill="#cfc8ea" opacity="0.52"/><circle cx="71.9" cy="61.1" r="0.76" fill="#cfc8ea" opacity="0.17"/><circle cx="351.5" cy="404.2" r="1.31" fill="#cfc8ea" opacity="0.50"/><circle cx="471.5" cy="248.7" r="0.99" fill="#cfc8ea" opacity="0.53"/><circle cx="294.9" cy="195.8" r="0.59" fill="#cfc8ea" opacity="0.48"/><circle cx="220.6" cy="50.4" r="0.72" fill="#cfc8ea" opacity="0.14"/><circle cx="316.6" cy="235.7" r="0.61" fill="#cfc8ea" opacity="0.23"/><circle cx="341.2" cy="12.8" r="0.95" fill="#cfc8ea" opacity="0.26"/><circle cx="250.5" cy="153.1" r="1.66" fill="#cfc8ea" opacity="0.44"/><circle cx="697.2" cy="257.6" r="1.39" fill="#cfc8ea" opacity="0.35"/><circle cx="736.4" cy="387.8" r="0.50" fill="#cfc8ea" opacity="0.49"/><circle cx="171.3" cy="415.4" r="1.18" fill="#cfc8ea" opacity="0.39"/><path d="M 620.189320359379 55.4 L 620.7 58.2 L 623.5 58.6883451344911 L 620.7 59.2 L 620.189320359379 62.0 L 619.7 59.2 L 616.9 58.6883451344911 L 619.7 58.2 Z" fill="#f6e6bf" opacity="0.5250381344230846"/><path d="M 189.55757006630301 179.3 L 190.0 181.7 L 192.3 182.10398267698474 L 190.0 182.5 L 189.55757006630301 184.9 L 189.1 182.5 L 186.8 182.10398267698474 L 189.1 181.7 Z" fill="#f6e6bf" opacity="0.5915686328196899"/><path d="M 135.79139544442296 224.3 L 136.3 227.3 L 139.3 227.82643269957043 L 136.3 228.4 L 135.79139544442296 231.3 L 135.2 228.4 L 132.3 227.82643269957043 L 135.2 227.3 Z" fill="#f6e6bf" opacity="0.5376248925225809"/><path d="M 610.6462724916637 233.2 L 611.0 235.3 L 613.1 235.73564787139185 L 611.0 236.1 L 610.6462724916637 238.2 L 610.2 236.1 L 608.1 235.73564787139185 L 610.2 235.3 Z" fill="#f6e6bf" opacity="0.5607863689074293"/><path d="M 262.3698341883719 398.0 L 262.9 400.7 L 265.6 401.25893269875087 L 262.9 401.8 L 262.3698341883719 404.5 L 261.8 401.8 L 259.1 401.25893269875087 L 261.8 400.7 Z" fill="#f6e6bf" opacity="0.6984346871497109"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Signals of the Seeker</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mrigashiranakshatra1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mrigashiranakshatra1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#mrigashiranakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#mrigashiranakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">The moving goalpost</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">What felt right starts feeling insufficient once reached</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#mrigashiranakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#mrigashiranakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Scent over map</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Intuitive pull arrives before logic has an explanation</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#mrigashiranakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#mrigashiranakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Beauty as compass</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Aesthetic response works as directional information</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#mrigashiranakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#mrigashiranakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">The Taurus-Gemini split</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Wanting to hold and to circulate at the same time</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#mrigashiranakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#mrigashiranakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">The recognition moment</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Realizing the pursuit was internal the whole time</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

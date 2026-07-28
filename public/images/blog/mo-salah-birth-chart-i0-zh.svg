@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="双子座星盘的四个识别信号">
+  <defs>
+    <linearGradient id="mosalahbirthchart0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="mosalahbirthchart0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="mosalahbirthchart0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="mosalahbirthchart0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#mosalahbirthchart0zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#mosalahbirthchart0zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#mosalahbirthchart0zh-neb2)"/>
+  <circle cx="737.4" cy="48.1" r="1.34" fill="#cfc8ea" opacity="0.34"/><circle cx="16.9" cy="255.9" r="0.64" fill="#cfc8ea" opacity="0.21"/><circle cx="528.8" cy="262.3" r="1.37" fill="#cfc8ea" opacity="0.48"/><circle cx="15.9" cy="21.4" r="0.90" fill="#cfc8ea" opacity="0.49"/><circle cx="193.5" cy="297.4" r="0.86" fill="#cfc8ea" opacity="0.24"/><circle cx="606.0" cy="157.4" r="1.45" fill="#cfc8ea" opacity="0.39"/><circle cx="438.7" cy="189.5" r="0.83" fill="#cfc8ea" opacity="0.25"/><circle cx="572.0" cy="186.9" r="0.70" fill="#cfc8ea" opacity="0.14"/><circle cx="112.8" cy="240.2" r="1.30" fill="#cfc8ea" opacity="0.19"/><circle cx="468.9" cy="203.5" r="1.32" fill="#cfc8ea" opacity="0.40"/><circle cx="118.9" cy="86.7" r="0.54" fill="#cfc8ea" opacity="0.48"/><circle cx="641.2" cy="330.8" r="1.30" fill="#cfc8ea" opacity="0.41"/><circle cx="428.2" cy="38.6" r="1.67" fill="#cfc8ea" opacity="0.45"/><circle cx="328.8" cy="267.9" r="1.61" fill="#cfc8ea" opacity="0.21"/><circle cx="534.6" cy="282.0" r="0.59" fill="#cfc8ea" opacity="0.35"/><circle cx="256.2" cy="60.6" r="0.44" fill="#cfc8ea" opacity="0.39"/><circle cx="482.6" cy="220.4" r="0.75" fill="#cfc8ea" opacity="0.28"/><circle cx="391.8" cy="223.8" r="0.83" fill="#cfc8ea" opacity="0.13"/><circle cx="238.2" cy="151.5" r="1.33" fill="#cfc8ea" opacity="0.34"/><circle cx="568.2" cy="74.1" r="1.67" fill="#cfc8ea" opacity="0.47"/><circle cx="141.0" cy="237.8" r="1.13" fill="#cfc8ea" opacity="0.36"/><circle cx="491.8" cy="263.9" r="1.59" fill="#cfc8ea" opacity="0.33"/><circle cx="168.9" cy="127.0" r="1.25" fill="#cfc8ea" opacity="0.33"/><circle cx="278.0" cy="87.1" r="1.38" fill="#cfc8ea" opacity="0.31"/><circle cx="679.7" cy="358.9" r="1.16" fill="#cfc8ea" opacity="0.28"/><circle cx="56.3" cy="282.0" r="1.45" fill="#cfc8ea" opacity="0.36"/><circle cx="506.7" cy="266.7" r="0.69" fill="#cfc8ea" opacity="0.20"/><circle cx="149.8" cy="341.6" r="1.66" fill="#cfc8ea" opacity="0.49"/><circle cx="724.9" cy="92.7" r="0.42" fill="#cfc8ea" opacity="0.36"/><circle cx="662.4" cy="45.8" r="0.60" fill="#cfc8ea" opacity="0.37"/><circle cx="35.2" cy="150.3" r="1.43" fill="#cfc8ea" opacity="0.51"/><path d="M 74.27039153128862 260.1 L 74.9 263.3 L 78.1 263.89804991404526 L 74.9 264.5 L 74.27039153128862 267.7 L 73.7 264.5 L 70.4 263.89804991404526 L 73.7 263.3 Z" fill="#f6e6bf" opacity="0.5575612786924466"/><path d="M 157.31920617818832 176.1 L 157.7 178.3 L 159.9 178.69069428159855 L 157.7 179.1 L 157.31920617818832 181.2 L 156.9 179.1 L 154.8 178.69069428159855 L 156.9 178.3 Z" fill="#f6e6bf" opacity="0.7944635814754293"/><path d="M 656.0958945080638 71.3 L 656.5 73.6 L 658.8 74.02598089980893 L 656.5 74.5 L 656.0958945080638 76.7 L 655.7 74.5 L 653.4 74.02598089980893 L 655.7 73.6 Z" fill="#f6e6bf" opacity="0.6891998106380924"/><path d="M 466.4445708245039 239.9 L 467.1 243.3 L 470.4 243.89375528297387 L 467.1 244.5 L 466.4445708245039 247.8 L 465.8 244.5 L 462.5 243.89375528297387 L 465.8 243.3 Z" fill="#f6e6bf" opacity="0.7200312223983929"/><path d="M 116.18026617914438 338.3 L 116.6 340.3 L 118.6 340.7165755003225 L 116.6 341.1 L 116.18026617914438 343.1 L 115.8 341.1 L 113.8 340.7165755003225 L 115.8 340.3 Z" fill="#f6e6bf" opacity="0.7846751734381541"/><path d="M 15.9 21.4 L 468.9 203.5 L 238.2 151.5 L 679.7 358.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">双子座星盘的四个识别信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#mosalahbirthchart0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#mosalahbirthchart0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#mosalahbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#mosalahbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">太阳在双子座</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">5月21日至6月20日；善于快速思维与连接他人及想法</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#mosalahbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#mosalahbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">第三宫或水星强调</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">传统上与沟通、运动和团队中的连接角色相关</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#mosalahbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#mosalahbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">木星过境第二宫</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">古典技法将此与遗产和持久价值而非短期收益相关联</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#mosalahbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#mosalahbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">比赛日的生日过境</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">激活本命太阳——星盘核心主题浮现的窗口期</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

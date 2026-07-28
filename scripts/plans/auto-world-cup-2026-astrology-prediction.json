@@ -1,0 +1,122 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "world-cup-2026-astrology-prediction": {
+      "hero": {
+        "prompt": "A vast painterly night seascape: Jupiter as a colossal luminous sphere rises over a sweeping dark ocean, its warm golden-amber glow casting long reflections across rippling indigo waves toward three silent distant shorelines emerging from teal sea mist, each coast bathed in the same collective celestial light, no figures, pure atmospheric landscape, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Jupiter ascending over an indigo ocean with golden light on three distant shorelines, representing 2026 World Cup collective astrology",
+        "altZh": "木星从靛蓝大洋升起，金光映照三片遥远海岸，象征2026世界杯的集体归属占星能量"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Own Chart",
+          "afterHeadingZh": "## 如何在你的星盘里识别 2026世界杯占星",
+          "titleEn": "5 Steps for Reading Jupiter in Cancer in Your Chart",
+          "titleZh": "在星盘中识别木星巨蟹过运的五个步骤",
+          "altEn": "Five steps: track Jupiter in Cancer, read opening chart, notice Cancer themes, flag Capricorn emphasis, treat each window as live question",
+          "altZh": "五步：追踪巨蟹木星至6月30日、解读开幕图、感受巨蟹主题、标记摩羯强调、把每个窗口当活的时机问题",
+          "items": [
+            {
+              "nameEn": "Track Jupiter in Cancer",
+              "nameZh": "追踪木星巨蟹",
+              "subEn": "Follow Jupiter through Cancer until June 30 and note where Cancer falls in your natal chart",
+              "subZh": "追踪木星在巨蟹座的位置直到6月30日，留意巨蟹落在你星盘的哪个宫位"
+            },
+            {
+              "nameEn": "Read the Opening Chart",
+              "nameZh": "解读开幕图",
+              "subEn": "Use the June 11 Estadio Azteca chart as symbolic opening tone, not a rule governing every later stage",
+              "subZh": "把6月11日阿兹特克体育场开幕图当作象征性的开场基调，而非统辖后续阶段的规则"
+            },
+            {
+              "nameEn": "Notice Cancer Themes",
+              "nameZh": "感受巨蟹主题",
+              "subEn": "Watch for home, belonging, family, and emotional security showing up in your life during these weeks",
+              "subZh": "留意这几周你生活中家、归属、家人与情感安全的主题如何浮现"
+            },
+            {
+              "nameEn": "Flag Capricorn Emphasis",
+              "nameZh": "标记摩羯强调",
+              "subEn": "Strong Capricorn placements read the Cancer transit as pressure or exposure across the home-versus-work axis",
+              "subZh": "本命摩羯强调的人，同一股巨蟹过运可能表现为家庭与事业轴的压力或曝光，而非必然弱势"
+            },
+            {
+              "nameEn": "Ask the Live Question",
+              "nameZh": "提出活的时机问题",
+              "subEn": "Treat each window as a live question — where is my chart lit right now? — rather than a settled outcome",
+              "subZh": "把每个窗口当成一个活的问题：这张星盘此刻被点亮了吗？而不是一个已定的结果"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## World Cup 2026 Astrology at a Glance",
+          "afterHeadingZh": "## 2026世界杯占星一览",
+          "titleEn": "Jupiter in Cancer vs Jupiter in Leo vs Opening Chart",
+          "titleZh": "巨蟹座木星、狮子座木星与开幕图对比",
+          "altEn": "Comparing Jupiter in Cancer Jun 11-30, Jupiter in Leo from Jun 30, and Opening Chart June 11 for 2026 World Cup astrology",
+          "altZh": "对比6月11至30日巨蟹座木星、6月30日起狮子座木星与6月11日开幕图在2026世界杯占星中的作用",
+          "columns": [
+            {
+              "nameEn": "Jupiter in Cancer",
+              "nameZh": "木星巨蟹庙旺",
+              "linesEn": [
+                "Jun 11–30",
+                "Amplifies collective, home-territory feeling",
+                "Host nations' natal Cancer placements",
+                "Hosts may read as steadier in the group stage"
+              ],
+              "linesZh": [
+                "6月11–30日",
+                "放大集体、主场土壤的归属感",
+                "东道主的本命巨蟹落点",
+                "东道主在小组赛或显得更稳、更有凝聚力"
+              ]
+            },
+            {
+              "nameEn": "Jupiter in Leo",
+              "nameZh": "木星进狮子",
+              "linesEn": [
+                "From Jun 30",
+                "Shifts emphasis to individual spotlight and spectacle",
+                "Charts with natal Leo or 5th-house emphasis",
+                "Late-tournament stories may center standout individuals"
+              ],
+              "linesZh": [
+                "6月30日起",
+                "重心转向个人聚光与表演",
+                "本命狮子或第五宫强调的星盘",
+                "赛事后段的故事或围绕突出个人展开"
+              ]
+            },
+            {
+              "nameEn": "Opening Chart",
+              "nameZh": "开幕图",
+              "linesEn": [
+                "June 11, Estadio Azteca",
+                "Frames the tournament's symbolic opening tone",
+                "Tournament natal chart",
+                "Early momentum may echo the chart's activated houses"
+              ],
+              "linesZh": [
+                "6月11日，阿兹特克体育场",
+                "框定赛事象征性的开场基调",
+                "赛事出生盘",
+                "前段势头或呼应该盘被激活的宫位"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

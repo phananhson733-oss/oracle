@@ -1,0 +1,52 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 236" role="img" aria-label="">
+  <defs>
+    <linearGradient id="saturnreturnincancer0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturnreturnincancer0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnincancer0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnincancer0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnincancer0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturnreturnincancer0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="233" rx="22" fill="url(#saturnreturnincancer0zh-panel)"/>
+  <ellipse cx="198" cy="57" rx="380" ry="80" fill="url(#saturnreturnincancer0zh-neb1)"/>
+  <ellipse cx="623" cy="189" rx="334" ry="76" fill="url(#saturnreturnincancer0zh-neb2)"/>
+  <circle cx="513.2" cy="52.1" r="1.33" fill="#cfc8ea" opacity="0.25"/><circle cx="108.9" cy="41.6" r="0.51" fill="#cfc8ea" opacity="0.24"/><circle cx="483.4" cy="149.7" r="1.66" fill="#cfc8ea" opacity="0.49"/><circle cx="110.2" cy="190.5" r="0.52" fill="#cfc8ea" opacity="0.38"/><circle cx="703.6" cy="118.9" r="1.27" fill="#cfc8ea" opacity="0.34"/><circle cx="116.2" cy="27.0" r="1.35" fill="#cfc8ea" opacity="0.39"/><circle cx="501.5" cy="163.3" r="1.55" fill="#cfc8ea" opacity="0.18"/><circle cx="48.0" cy="91.2" r="1.53" fill="#cfc8ea" opacity="0.16"/><circle cx="701.8" cy="112.2" r="1.31" fill="#cfc8ea" opacity="0.43"/><circle cx="718.2" cy="211.8" r="1.24" fill="#cfc8ea" opacity="0.43"/><circle cx="648.2" cy="152.3" r="0.49" fill="#cfc8ea" opacity="0.18"/><circle cx="599.6" cy="104.3" r="1.03" fill="#cfc8ea" opacity="0.50"/><circle cx="26.4" cy="60.7" r="1.38" fill="#cfc8ea" opacity="0.41"/><circle cx="745.4" cy="138.5" r="1.47" fill="#cfc8ea" opacity="0.30"/><circle cx="308.2" cy="166.9" r="0.70" fill="#cfc8ea" opacity="0.35"/><circle cx="124.3" cy="79.4" r="0.85" fill="#cfc8ea" opacity="0.33"/><circle cx="697.5" cy="173.9" r="0.98" fill="#cfc8ea" opacity="0.16"/><circle cx="697.2" cy="208.9" r="0.96" fill="#cfc8ea" opacity="0.54"/><circle cx="494.8" cy="118.6" r="0.65" fill="#cfc8ea" opacity="0.20"/><circle cx="266.0" cy="148.9" r="0.71" fill="#cfc8ea" opacity="0.39"/><path d="M 137.14946986921132 151.2 L 137.7 154.3 L 140.9 154.91186662763357 L 137.7 155.5 L 137.14946986921132 158.6 L 136.6 155.5 L 133.4 154.91186662763357 L 136.6 154.3 Z" fill="#f6e6bf" opacity="0.5505795273929834"/><path d="M 401.000852862373 183.0 L 401.6 186.1 L 404.7 186.70520732551813 L 401.6 187.3 L 401.000852862373 190.4 L 400.4 187.3 L 397.3 186.70520732551813 L 400.4 186.1 Z" fill="#f6e6bf" opacity="0.5803478668443859"/><path d="M 510.74769157357514 196.0 L 511.3 198.9 L 514.2 199.47828268259764 L 511.3 200.0 L 510.74769157357514 202.9 L 510.2 200.0 L 507.3 199.47828268259764 L 510.2 198.9 Z" fill="#f6e6bf" opacity="0.6709251256659627"/><path d="M 53.90338894166052 194.9 L 54.5 198.1 L 57.7 198.6673147752881 L 54.5 199.3 L 53.90338894166052 202.4 L 53.3 199.3 L 50.1 198.6673147752881 L 53.3 198.1 Z" fill="#f6e6bf" opacity="0.6241726615466178"/><path d="M 671.8825625050813 87.5 L 672.5 90.6 L 675.6 91.2032156214118 L 672.5 91.8 L 671.8825625050813 94.9 L 671.3 91.8 L 668.2 91.2032156214118 L 671.3 90.6 Z" fill="#f6e6bf" opacity="0.5816731303930283"/><path d="M 513.2 52.1 L 110.2 190.5 L 501.5 163.3 L 701.8 112.2 L 599.6 104.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="233" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="222" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 216.8 L 16.5 219.5 L 19.2 220 L 16.5 220.5 L 16 223.2 L 15.5 220.5 L 12.8 220 L 15.5 219.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 216.8 L 744.5 219.5 L 747.2 220 L 744.5 220.5 L 744 223.2 L 743.5 220.5 L 740.8 220 L 743.5 219.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#saturnreturnincancer0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#saturnreturnincancer0zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="86" x2="92" y2="174" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="86" r="13.0" fill="url(#saturnreturnincancer0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="86" r="8" fill="url(#saturnreturnincancer0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="83.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 82.0 L 92.6 85.4 L 96.0 86 L 92.6 86.6 L 92 90.0 L 91.4 86.6 L 88.0 86 L 91.4 85.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="91.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <circle cx="92" cy="130" r="13.0" fill="url(#saturnreturnincancer0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="130" r="8" fill="url(#saturnreturnincancer0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="127.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 126.0 L 92.6 129.4 L 96.0 130 L 92.6 130.6 L 92 134.0 L 91.4 130.6 L 88.0 130 L 91.4 129.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="135.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <circle cx="92" cy="174" r="13.0" fill="url(#saturnreturnincancer0zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="174" r="8" fill="url(#saturnreturnincancer0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="171.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 170.0 L 92.6 173.4 L 96.0 174 L 92.6 174.6 L 92 178.0 L 91.4 174.6 L 88.0 174 L 91.4 173.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="179.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <path d="M 280.025 207.4 L 280.4 209.6 L 282.6 210 L 280.4 210.4 L 280.025 212.6 L 279.6 210.4 L 277.4 210 L 279.6 209.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="214" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 207.4 L 480.4 209.6 L 482.6 210 L 480.4 210.4 L 479.975 212.6 L 479.6 210.4 L 477.4 210 L 479.6 209.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,277 @@
+// @vitest-environment jsdom
+// INPUT: adsense.ts 的门控与加载逻辑；consent.ts 写入营销同意/Do-Not-Sell；env stub。
+// OUTPUT: 断言 isAdsenseConfigured、evaluateTcfConsent、hasAdConsent 各分支与 loadAdsense 单例注入。
+// POS: adsense 服务单测；随 adsense.ts 变更同步。
+
+import { describe, it, expect, beforeEach, afterEach, vi } from "vitest";
+import {
+  isAdsenseConfigured,
+  evaluateTcfConsent,
+  hasAdConsent,
+  computeAdConsentSignal,
+  loadAdsense,
+  pushAd,
+  getAdsenseClientId,
+  initTcfListener,
+  rearmTcfListener,
+  __resetAdsenseForTest,
+} from "./adsense";
+import { setConsentPreferences, setDoNotSell } from "./consent";
+import { subscribeAdConsent } from "./adConsentBus";
+import type { RegionInfo } from "./region";
+
+const US: RegionInfo = { country: "US", isGdpr: false };
+const EEA: RegionInfo = { country: "DE", isGdpr: true };
+const UNKNOWN: RegionInfo = { country: null, isGdpr: null };
+
+const enableAdsense = () => {
+  vi.stubEnv("VITE_ADSENSE_ENABLED", "true");
+  vi.stubEnv("VITE_ADSENSE_CLIENT_ID", "ca-pub-1234567890123456");
+};
+
+beforeEach(() => {
+  __resetAdsenseForTest();
+  window.localStorage.clear();
+  document.head.innerHTML = "";
+  vi.unstubAllEnvs();
+  delete (window as unknown as { adsbygoogle?: unknown }).adsbygoogle;
+  delete (window as unknown as { __tcfapi?: unknown }).__tcfapi;
+});
+
+describe("isAdsenseConfigured (门控#4)", () => {
+  it("enabled + client id → true", () => {
+    enableAdsense();
+    expect(isAdsenseConfigured()).toBe(true);
+  });
+  it("未 enable → false", () => {
+    vi.stubEnv("VITE_ADSENSE_ENABLED", "false");
+    vi.stubEnv("VITE_ADSENSE_CLIENT_ID", "ca-pub-1234567890123456");
+    expect(isAdsenseConfigured()).toBe(false);
+  });
+  it("enable 但无 client id → false", () => {
+    vi.stubEnv("VITE_ADSENSE_ENABLED", "true");
+    vi.stubEnv("VITE_ADSENSE_CLIENT_ID", "");
+    expect(isAdsenseConfigured()).toBe(false);
+  });
+});
+
+describe("evaluateTcfConsent", () => {
+  it("Purpose1 + Google vendor 同意 → true", () => {
+    expect(
+      evaluateTcfConsent({
+        gdprApplies: true,
+        purpose: { consents: { 1: true } },
+        vendor: { consents: { 755: true } },
+      }),
+    ).toBe(true);
+  });
+  it("缺 Purpose1 或缺 Google vendor → false", () => {
+    expect(
+      evaluateTcfConsent({
+        gdprApplies: true,
+        purpose: { consents: { 1: false } },
+        vendor: { consents: { 755: true } },
+      }),
+    ).toBe(false);
+    expect(
+      evaluateTcfConsent({
+        gdprApplies: true,
+        purpose: { consents: { 1: true } },
+        vendor: { consents: { 755: false } },
+      }),
+    ).toBe(false);
+  });
+  it("gdprApplies=false / 空 → false", () => {
+    expect(evaluateTcfConsent({ gdprApplies: false })).toBe(false);
+    expect(evaluateTcfConsent(null)).toBe(false);
+    expect(evaluateTcfConsent(undefined)).toBe(false);
+  });
+});
+
+describe("hasAdConsent (门控#3, 地域分流)", () => {
+  it("地域未知 → false（fail-safe 拒绝）", () => {
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
+    expect(hasAdConsent(UNKNOWN)).toBe(false);
+  });
+  it("EEA + 无 CMP/TCF → false（PR1 恒为 false）", () => {
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
+    expect(hasAdConsent(EEA)).toBe(false);
+  });
+  it("非 EEA + 营销同意 + 未 Do-Not-Sell → true", () => {
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
+    setDoNotSell(false);
+    expect(hasAdConsent(US)).toBe(true);
+  });
+  it("非 EEA + 营销拒绝 → false", () => {
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: false,
+    });
+    expect(hasAdConsent(US)).toBe(false);
+  });
+  it("非 EEA + 营销同意但 Do-Not-Sell 开 → false", () => {
+    setConsentPreferences({
+      essential: true,
+      analytics: true,
+      marketing: true,
+    });
+    setDoNotSell(true);
+    expect(hasAdConsent(US)).toBe(false);
+  });
+});
+
+describe("computeAdConsentSignal (评审 H1/L1：门与信号同源)", () => {
+  it("EEA(isGdpr=true) 恒 false —— 交 Google CMP/TCF，自研横幅不代授予", () => {
+    expect(computeAdConsentSignal(EEA, true, false)).toBe(false);
+    expect(computeAdConsentSignal(EEA, true, true)).toBe(false);
+  });
+  it("非 EEA + 营销同意 + 未 Do-Not-Sell → true", () => {
+    expect(computeAdConsentSignal(US, true, false)).toBe(true);
+  });
+  it("非 EEA + 营销同意 但 Do-Not-Sell → false（H1：opt-out 真正联动信号）", () => {
+    expect(computeAdConsentSignal(US, true, true)).toBe(false);
+  });
+  it("非 EEA + 营销拒绝 → false", () => {
+    expect(computeAdConsentSignal(US, false, false)).toBe(false);
+  });
+  it("未知地域(isGdpr=null) → false（与 hasAdConsent fail-safe 对齐，评审 PR3 #1）", () => {
+    expect(computeAdConsentSignal(UNKNOWN, true, false)).toBe(false);
+    expect(hasAdConsent(UNKNOWN)).toBe(false); // 两者一致
+  });
+});
+
+describe("loadAdsense", () => {
+  it("已配置 → 注入单个 adsbygoogle.js（带 client），重复调用不再注入", () => {
+    enableAdsense();
+    expect(loadAdsense()).toBe(true);
+    const scripts = document.querySelectorAll("#astro-adsense");
+    expect(scripts.length).toBe(1);
+    const src = scripts[0].getAttribute("src") || "";
+    expect(src).toContain("pagead2.googlesyndication.com");
+    expect(src).toContain(`client=${getAdsenseClientId()}`);
+    expect(loadAdsense()).toBe(true);
+    expect(document.querySelectorAll("#astro-adsense").length).toBe(1);
+  });
+  it("未配置 → 不注入、返回 false", () => {
+    vi.stubEnv("VITE_ADSENSE_ENABLED", "false");
+    expect(loadAdsense()).toBe(false);
+    expect(document.querySelectorAll("#astro-adsense").length).toBe(0);
+  });
+});
+
+describe("pushAd", () => {
+  it("永不抛错，adsbygoogle 变为数组", () => {
+    expect(() => pushAd()).not.toThrow();
+    expect(
+      Array.isArray(
+        (window as unknown as { adsbygoogle: unknown[] }).adsbygoogle,
+      ),
+    ).toBe(true);
+  });
+});
+
+describe("initTcfListener + TCF notify (评审 B1/B2)", () => {
+  it("__tcfapi 就位且 Google 同意 → EEA hasAdConsent 变 true + 派发 adConsent 事件", () => {
+    const notifySpy = vi.fn();
+    const unsubscribe = subscribeAdConsent(notifySpy);
+    // stub __tcfapi：addEventListener 立即回调一份"已授予"的 TCData
+    (
+      window as unknown as {
+        __tcfapi?: (
+          cmd: string,
+          v: number,
+          cb: (d: unknown, s: boolean) => void,
+        ) => void;
+      }
+    ).__tcfapi = (cmd, _v, cb) => {
+      if (cmd === "addEventListener") {
+        cb(
+          {
+            gdprApplies: true,
+            purpose: { consents: { 1: true } },
+            vendor: { consents: { 755: true } },
+          },
+          true,
+        );
+      }
+    };
+    __resetAdsenseForTest();
+
+    expect(hasAdConsent(EEA)).toBe(false); // 注册前恒 false
+    initTcfListener();
+    expect(hasAdConsent(EEA)).toBe(true); // 回调置 granted
+    expect(notifySpy).toHaveBeenCalled(); // 派发事件让 AdSlot 重渲染
+    unsubscribe();
+  });
+
+  it("__tcfapi 不存在 → 不注册、EEA 保持 false（不抛错，轮询等待）", () => {
+    vi.useFakeTimers(); // 无 __tcfapi 会起 setTimeout 轮询，用 fake timers 防真定时器遗留
+    expect(() => initTcfListener()).not.toThrow();
+    expect(hasAdConsent(EEA)).toBe(false);
+    vi.clearAllTimers();
+    vi.useRealTimers();
+  });
+});
+
+describe("TCF 轮询单链 / rearm / 耗尽恢复 (评审 PR3 #2, L3/L4)", () => {
+  beforeEach(() => vi.useFakeTimers());
+  afterEach(() => {
+    vi.clearAllTimers();
+    vi.useRealTimers();
+  });
+
+  it("L3：双入口并发调用 initTcfListener 只产生一条轮询链（单 pending timer）", () => {
+    // 无 __tcfapi → 走轮询分支；两次调用不应各起一条链
+    initTcfListener();
+    initTcfListener();
+    expect(vi.getTimerCount()).toBe(1);
+    vi.advanceTimersByTime(500); // 一个 tick → 清 handle 后重排，仍单链
+    expect(vi.getTimerCount()).toBe(1);
+  });
+
+  it("L4：轮询 20 次耗尽后停止，rearmTcfListener 重置预算恢复轮询", () => {
+    initTcfListener();
+    vi.advanceTimersByTime(500 * 21); // 跑满 TCF_POLL_MAX 后放弃
+    expect(vi.getTimerCount()).toBe(0);
+    rearmTcfListener(); // 重置 tcfPollAttempts 并重试
+    expect(vi.getTimerCount()).toBe(1);
+  });
+
+  it("rearmTcfListener 在已注册后为 no-op（不再起轮询）", () => {
+    (
+      window as unknown as {
+        __tcfapi?: (
+          c: string,
+          v: number,
+          cb: (d: unknown, s: boolean) => void,
+        ) => void;
+      }
+    ).__tcfapi = (cmd, _v, cb) => {
+      if (cmd === "addEventListener") cb({ gdprApplies: false }, true);
+    };
+    initTcfListener(); // __tcfapi 就位 → 注册，无 timer
+    expect(vi.getTimerCount()).toBe(0);
+    rearmTcfListener();
+    expect(vi.getTimerCount()).toBe(0);
+  });
+
+  it("__resetAdsenseForTest 清空 pending 轮询计时器", () => {
+    initTcfListener();
+    expect(vi.getTimerCount()).toBe(1);
+    __resetAdsenseForTest();
+    expect(vi.getTimerCount()).toBe(0);
+  });
+});

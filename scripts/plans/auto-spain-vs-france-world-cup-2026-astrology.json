@@ -1,0 +1,84 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "spain-vs-france-world-cup-2026-astrology": {
+      "hero": {
+        "prompt": "A wide painterly editorial illustration of a football stadium pitch at night, one half bathed in warm red and gold light evoking Spain, the other in cool deep blue evoking France, players blurred to dynamic silhouettes in motion across the center line, celestial constellations arching overhead with a teal-gold nebula wash, Jupiter glowing prominently among the stars, crowd banners rippling in national colors without text, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Spain vs France World Cup 2026 astrology — stadium at night, red-gold and blue divide under a Jupiter-lit celestial sky"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Fixture Through Both National Charts",
+          "titleEn": "Five Steps to Read Spain vs France Through Both National Charts",
+          "altEn": "Five-step sequence for reading Spain vs France World Cup 2026 through both national astrology charts",
+          "items": [
+            {
+              "nameEn": "Contrast the national chart tones",
+              "subEn": "Read Spain's archetypes against France's — expressive versus structured — as two characters, not two scorecards"
+            },
+            {
+              "nameEn": "Spot a dominant element",
+              "subEn": "Look for stacked fire, earth, air, or water in key player charts and treat it as a style cue rather than a rating"
+            },
+            {
+              "nameEn": "Track the Jupiter-in-Gemini motif",
+              "subEn": "Notice themes of quickness, exchange, and youth that the 2026 transit tends to amplify across the whole tournament"
+            },
+            {
+              "nameEn": "Watch the timing, not the winner",
+              "subEn": "Read transits as mood over a match window, and never as a locked-in result"
+            },
+            {
+              "nameEn": "Name what you're projecting",
+              "subEn": "Catch the moment you start rooting for a symbol, then ask whether that's the chart talking or you"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Spain vs France 2026 at a Glance",
+          "titleEn": "Spain vs France 2026: Four Astrological Lenses at a Glance",
+          "altEn": "Three-column comparison of astrological reading lenses for Spain vs France World Cup 2026",
+          "columns": [
+            {
+              "nameEn": "Reading Layer",
+              "linesEn": [
+                "National archetypes",
+                "Player signatures",
+                "Tournament transit",
+                "Timing lens"
+              ]
+            },
+            {
+              "nameEn": "What It Shows",
+              "linesEn": [
+                "Spain and France as expressive vs structured characters",
+                "Dominant element or stellium as a style cue",
+                "Jupiter in Gemini — backdrop of speed, youth, and exchange",
+                "Transits color a match window, not the result"
+              ]
+            },
+            {
+              "nameEn": "How to Observe",
+              "linesEn": [
+                "Compare tone across both national charts",
+                "Look for a stacked element across the side",
+                "Notice themes of quickness and exchange",
+                "Track mood, never a predicted score"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

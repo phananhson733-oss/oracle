@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="Three Layers Plus the Review">
+  <defs>
+    <linearGradient id="newmoonjournalprompts1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="newmoonjournalprompts1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="newmoonjournalprompts1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="newmoonjournalprompts1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="newmoonjournalprompts1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="newmoonjournalprompts1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#newmoonjournalprompts1en-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#newmoonjournalprompts1en-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#newmoonjournalprompts1en-neb2)"/>
+  <circle cx="486.6" cy="241.2" r="1.39" fill="#cfc8ea" opacity="0.26"/><circle cx="369.6" cy="440.9" r="1.69" fill="#cfc8ea" opacity="0.14"/><circle cx="490.8" cy="184.5" r="0.65" fill="#cfc8ea" opacity="0.14"/><circle cx="103.5" cy="306.7" r="0.55" fill="#cfc8ea" opacity="0.47"/><circle cx="242.9" cy="337.2" r="1.05" fill="#cfc8ea" opacity="0.16"/><circle cx="285.3" cy="47.0" r="1.65" fill="#cfc8ea" opacity="0.19"/><circle cx="267.9" cy="259.3" r="1.44" fill="#cfc8ea" opacity="0.44"/><circle cx="444.7" cy="90.0" r="1.57" fill="#cfc8ea" opacity="0.14"/><circle cx="143.2" cy="164.6" r="0.68" fill="#cfc8ea" opacity="0.16"/><circle cx="112.3" cy="231.4" r="0.92" fill="#cfc8ea" opacity="0.44"/><circle cx="623.1" cy="376.9" r="0.41" fill="#cfc8ea" opacity="0.21"/><circle cx="363.8" cy="302.9" r="1.48" fill="#cfc8ea" opacity="0.47"/><circle cx="195.9" cy="332.9" r="0.42" fill="#cfc8ea" opacity="0.40"/><circle cx="78.7" cy="388.3" r="0.45" fill="#cfc8ea" opacity="0.24"/><circle cx="299.8" cy="276.5" r="1.45" fill="#cfc8ea" opacity="0.43"/><circle cx="161.9" cy="254.4" r="0.80" fill="#cfc8ea" opacity="0.17"/><circle cx="522.2" cy="233.8" r="0.70" fill="#cfc8ea" opacity="0.54"/><circle cx="526.3" cy="225.1" r="0.65" fill="#cfc8ea" opacity="0.39"/><circle cx="678.0" cy="351.6" r="1.60" fill="#cfc8ea" opacity="0.53"/><circle cx="365.4" cy="117.1" r="1.16" fill="#cfc8ea" opacity="0.25"/><circle cx="304.9" cy="113.9" r="1.47" fill="#cfc8ea" opacity="0.39"/><circle cx="597.4" cy="95.4" r="0.78" fill="#cfc8ea" opacity="0.44"/><circle cx="352.5" cy="55.1" r="0.85" fill="#cfc8ea" opacity="0.13"/><circle cx="307.7" cy="348.0" r="1.51" fill="#cfc8ea" opacity="0.18"/><circle cx="304.9" cy="334.2" r="0.70" fill="#cfc8ea" opacity="0.50"/><circle cx="543.8" cy="243.6" r="0.94" fill="#cfc8ea" opacity="0.42"/><circle cx="623.2" cy="318.2" r="0.86" fill="#cfc8ea" opacity="0.13"/><circle cx="202.0" cy="309.3" r="1.49" fill="#cfc8ea" opacity="0.52"/><circle cx="309.9" cy="187.8" r="1.03" fill="#cfc8ea" opacity="0.47"/><circle cx="81.4" cy="326.1" r="1.14" fill="#cfc8ea" opacity="0.15"/><circle cx="103.4" cy="13.0" r="1.69" fill="#cfc8ea" opacity="0.26"/><circle cx="322.6" cy="120.0" r="1.03" fill="#cfc8ea" opacity="0.45"/><circle cx="727.1" cy="62.3" r="1.48" fill="#cfc8ea" opacity="0.29"/><circle cx="114.9" cy="250.9" r="1.50" fill="#cfc8ea" opacity="0.33"/><circle cx="263.0" cy="85.2" r="0.82" fill="#cfc8ea" opacity="0.46"/><circle cx="663.9" cy="307.2" r="0.92" fill="#cfc8ea" opacity="0.16"/><circle cx="50.5" cy="401.4" r="0.59" fill="#cfc8ea" opacity="0.25"/><circle cx="621.5" cy="437.1" r="1.48" fill="#cfc8ea" opacity="0.18"/><circle cx="481.4" cy="383.7" r="1.54" fill="#cfc8ea" opacity="0.13"/><path d="M 216.98481143452227 23.7 L 217.6 27.0 L 220.9 27.68219707487151 L 217.6 28.3 L 216.98481143452227 31.6 L 216.4 28.3 L 213.0 27.68219707487151 L 216.4 27.0 Z" fill="#f6e6bf" opacity="0.7479850775562227"/><path d="M 579.0829165298492 429.9 L 579.6 432.4 L 582.0 432.8599681914784 L 579.6 433.3 L 579.0829165298492 435.8 L 578.6 433.3 L 576.1 432.8599681914784 L 578.6 432.4 Z" fill="#f6e6bf" opacity="0.7573498575016856"/><path d="M 361.50488119758666 373.7 L 361.9 376.0 L 364.3 376.4620586200617 L 361.9 376.9 L 361.50488119758666 379.2 L 361.1 376.9 L 358.7 376.4620586200617 L 361.1 376.0 Z" fill="#f6e6bf" opacity="0.5907465134747326"/><path d="M 528.4195954371244 251.3 L 529.0 254.3 L 532.1 254.92927451105788 L 529.0 255.5 L 528.4195954371244 258.6 L 527.8 255.5 L 524.8 254.92927451105788 L 527.8 254.3 Z" fill="#f6e6bf" opacity="0.6490945544093847"/><path d="M 705.1701130662113 100.4 L 705.6 102.6 L 707.7 102.98789488477632 L 705.6 103.4 L 705.1701130662113 105.6 L 704.8 103.4 L 702.6 102.98789488477632 L 704.8 102.6 Z" fill="#f6e6bf" opacity="0.5152405980043113"/><path d="M 369.6 440.9 L 267.9 259.3 L 299.8 276.5 L 352.5 55.1 L 727.1 62.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Three Layers Plus the Review</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#newmoonjournalprompts1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#newmoonjournalprompts1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#newmoonjournalprompts1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#newmoonjournalprompts1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">New moon</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">External expectation</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Name an observable outcome tied to the two-week window</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#newmoonjournalprompts1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#newmoonjournalprompts1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">New moon</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Internal shift</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Identify the belief that must update for it to be real</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#newmoonjournalprompts1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#newmoonjournalprompts1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Within 48 hours</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Behavioral anchor</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">One concrete action begins immediately — did it happen?</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#newmoonjournalprompts1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#newmoonjournalprompts1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Full moon, +2 weeks</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Assessment closes the loop</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Re-read the entry: did this move? What made the difference?</text>
+  <path d="M 202.22749999999988 430.4 L 202.6 432.6 L 204.8 433 L 202.6 433.4 L 202.22749999999988 435.6 L 201.8 433.4 L 199.6 433 L 201.8 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 430.4 L 558.2 432.6 L 560.4 433 L 558.2 433.4 L 557.7725000000002 435.6 L 557.4 433.4 L 555.2 433 L 557.4 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

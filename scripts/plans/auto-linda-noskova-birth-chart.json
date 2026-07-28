@@ -1,0 +1,71 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "linda-noskova-birth-chart": {
+      "hero": {
+        "prompt": "Stylized editorial portrait of a young Czech female tennis player mid-swing on a dark court, fierce Scorpio intensity radiating from her focused stance, lone figure centered in the frame with deep indigo court shadows spreading outward, teal-and-gold nebula light filtering through the background sky, soft gold accent lines tracing the arc of the racket and the tension in her arm, swirling indigo water-element mist rising at court level evoking Scorpio depth, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized editorial portrait of a Scorpio tennis player mid-swing on a dark court under teal-and-gold cosmic light"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart vs a Sun-Sign Celebrity Profile: What Actually Differs",
+          "titleEn": "Sun-Sign Profile vs Full Chart Reading",
+          "altEn": "Side-by-side comparison of a quick Sun-sign celebrity profile versus a layered full birth chart reading",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Profile",
+              "linesEn": [
+                "Uses one placement: Scorpio Sun only",
+                "Fast and easy to share",
+                "Stretches one sign into a full personality",
+                "Flattens nuance into a single label"
+              ]
+            },
+            {
+              "nameEn": "Full Chart Reading",
+              "linesEn": [
+                "Layers Sun, Moon, rising sign, and planetary angles",
+                "Holds contradictions and texture",
+                "Admits what the missing birth time leaves open",
+                "Slower and less quotable, but more honest"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Chart Like an Archetype",
+          "titleEn": "4 Steps to Reading a Birth Chart as Archetype",
+          "altEn": "Four-step sequence for reading Linda Noskova's birth chart as a symbolic archetype rather than biographical proof",
+          "items": [
+            {
+              "nameEn": "Start with the Scorpio Signature",
+              "subEn": "Watch for quiet intensity and privacy in interviews and body language, then note where the pattern holds and where it doesn't"
+            },
+            {
+              "nameEn": "Read Focus Over Flash",
+              "subEn": "Scorpio is a fixed sign, leaning toward slow-building concentration rather than showy energy — a useful lens held loosely"
+            },
+            {
+              "nameEn": "Track the Comeback Story",
+              "subEn": "Notice how often commentators reach for resilience and depth narratives after she drops a set, and ask whether the chart describes or shapes the coverage"
+            },
+            {
+              "nameEn": "Separate the Chart from the Record",
+              "subEn": "Every time a placement seems to explain a win, pause and ask if you'd draw the same symbolic line if the result had gone the other way"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

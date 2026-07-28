@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="What a Moon Journal Is Not">
+  <defs>
+    <linearGradient id="moonjournal0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="moonjournal0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="moonjournal0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonjournal0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonjournal0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonjournal0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#moonjournal0en-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#moonjournal0en-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#moonjournal0en-neb2)"/>
+  <circle cx="574.6" cy="66.6" r="1.30" fill="#cfc8ea" opacity="0.39"/><circle cx="177.1" cy="480.8" r="1.18" fill="#cfc8ea" opacity="0.48"/><circle cx="105.3" cy="445.0" r="1.22" fill="#cfc8ea" opacity="0.17"/><circle cx="585.2" cy="442.6" r="0.88" fill="#cfc8ea" opacity="0.24"/><circle cx="639.6" cy="141.2" r="1.22" fill="#cfc8ea" opacity="0.26"/><circle cx="34.1" cy="189.4" r="1.67" fill="#cfc8ea" opacity="0.50"/><circle cx="184.4" cy="502.6" r="1.52" fill="#cfc8ea" opacity="0.18"/><circle cx="144.1" cy="371.1" r="0.69" fill="#cfc8ea" opacity="0.16"/><circle cx="206.7" cy="282.3" r="1.07" fill="#cfc8ea" opacity="0.51"/><circle cx="95.6" cy="485.6" r="0.46" fill="#cfc8ea" opacity="0.34"/><circle cx="120.6" cy="196.3" r="1.67" fill="#cfc8ea" opacity="0.38"/><circle cx="169.2" cy="586.8" r="0.70" fill="#cfc8ea" opacity="0.42"/><circle cx="229.1" cy="522.9" r="0.44" fill="#cfc8ea" opacity="0.29"/><circle cx="507.0" cy="171.0" r="0.95" fill="#cfc8ea" opacity="0.32"/><circle cx="641.6" cy="13.1" r="1.60" fill="#cfc8ea" opacity="0.33"/><circle cx="534.5" cy="27.4" r="1.44" fill="#cfc8ea" opacity="0.53"/><circle cx="481.8" cy="327.0" r="0.74" fill="#cfc8ea" opacity="0.21"/><circle cx="83.0" cy="279.7" r="1.23" fill="#cfc8ea" opacity="0.50"/><circle cx="627.9" cy="487.4" r="1.50" fill="#cfc8ea" opacity="0.29"/><circle cx="737.1" cy="314.4" r="0.64" fill="#cfc8ea" opacity="0.13"/><circle cx="410.0" cy="108.3" r="1.53" fill="#cfc8ea" opacity="0.16"/><circle cx="207.6" cy="597.4" r="0.79" fill="#cfc8ea" opacity="0.33"/><circle cx="351.1" cy="154.2" r="0.91" fill="#cfc8ea" opacity="0.23"/><circle cx="66.9" cy="425.0" r="1.29" fill="#cfc8ea" opacity="0.41"/><circle cx="665.4" cy="183.2" r="0.75" fill="#cfc8ea" opacity="0.46"/><circle cx="575.0" cy="544.8" r="1.55" fill="#cfc8ea" opacity="0.21"/><circle cx="367.9" cy="453.4" r="1.42" fill="#cfc8ea" opacity="0.38"/><circle cx="111.6" cy="64.5" r="0.45" fill="#cfc8ea" opacity="0.47"/><circle cx="280.9" cy="594.7" r="0.96" fill="#cfc8ea" opacity="0.27"/><circle cx="78.2" cy="303.0" r="0.91" fill="#cfc8ea" opacity="0.42"/><circle cx="682.1" cy="153.5" r="0.90" fill="#cfc8ea" opacity="0.23"/><circle cx="546.7" cy="22.1" r="1.54" fill="#cfc8ea" opacity="0.44"/><circle cx="77.4" cy="84.1" r="1.04" fill="#cfc8ea" opacity="0.24"/><circle cx="141.5" cy="568.5" r="0.77" fill="#cfc8ea" opacity="0.15"/><circle cx="555.0" cy="358.4" r="0.45" fill="#cfc8ea" opacity="0.45"/><circle cx="687.2" cy="331.5" r="0.76" fill="#cfc8ea" opacity="0.43"/><circle cx="260.0" cy="305.2" r="0.75" fill="#cfc8ea" opacity="0.20"/><circle cx="619.2" cy="61.5" r="0.96" fill="#cfc8ea" opacity="0.54"/><circle cx="262.6" cy="600.9" r="0.91" fill="#cfc8ea" opacity="0.37"/><circle cx="327.6" cy="153.2" r="1.38" fill="#cfc8ea" opacity="0.45"/><circle cx="220.7" cy="279.5" r="0.85" fill="#cfc8ea" opacity="0.31"/><circle cx="645.7" cy="89.6" r="1.70" fill="#cfc8ea" opacity="0.54"/><circle cx="394.3" cy="301.4" r="0.50" fill="#cfc8ea" opacity="0.15"/><circle cx="202.6" cy="494.8" r="0.79" fill="#cfc8ea" opacity="0.22"/><circle cx="649.6" cy="463.7" r="0.95" fill="#cfc8ea" opacity="0.47"/><circle cx="78.8" cy="245.7" r="1.08" fill="#cfc8ea" opacity="0.13"/><circle cx="363.6" cy="550.6" r="0.92" fill="#cfc8ea" opacity="0.24"/><circle cx="378.9" cy="411.8" r="0.76" fill="#cfc8ea" opacity="0.50"/><circle cx="148.2" cy="543.9" r="1.55" fill="#cfc8ea" opacity="0.30"/><circle cx="305.2" cy="147.2" r="1.12" fill="#cfc8ea" opacity="0.38"/><circle cx="186.9" cy="139.3" r="1.53" fill="#cfc8ea" opacity="0.19"/><circle cx="223.4" cy="489.1" r="0.66" fill="#cfc8ea" opacity="0.52"/><path d="M 65.01417411863804 586.3 L 65.4 588.4 L 67.4 588.7567771761678 L 65.4 589.1 L 65.01417411863804 591.2 L 64.6 589.1 L 62.6 588.7567771761678 L 64.6 588.4 Z" fill="#f6e6bf" opacity="0.5381453775567934"/><path d="M 514.4327551200986 333.7 L 515.0 336.7 L 518.0 337.24481740919873 L 515.0 337.8 L 514.4327551200986 340.8 L 513.9 337.8 L 510.9 337.24481740919873 L 513.9 336.7 Z" fill="#f6e6bf" opacity="0.6956248920178041"/><path d="M 487.2740206718445 514.4 L 487.7 516.7 L 490.1 517.1842633164488 L 487.7 517.6 L 487.2740206718445 520.0 L 486.8 517.6 L 484.4 517.1842633164488 L 486.8 516.7 Z" fill="#f6e6bf" opacity="0.7785348876146599"/><path d="M 633.8952991887927 565.8 L 634.3 568.0 L 636.5 568.3976232330315 L 634.3 568.8 L 633.8952991887927 571.0 L 633.5 568.8 L 631.3 568.3976232330315 L 633.5 568.0 Z" fill="#f6e6bf" opacity="0.5342150659998879"/><path d="M 509.9573553651571 502.6 L 510.4 505.2 L 513.0 505.6577610238455 L 510.4 506.1 L 509.9573553651571 508.7 L 509.5 506.1 L 506.9 505.6577610238455 L 509.5 505.2 Z" fill="#f6e6bf" opacity="0.5247065906180068"/><path d="M 534.5 27.4 L 627.9 487.4 L 351.1 154.2 L 555.0 358.4 L 202.6 494.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">What a Moon Journal Is Not</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#moonjournal0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#moonjournal0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">General journal</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">No built-in review cycle</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Follows wherever attention leads</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Freeform continuity over tracking</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Gratitude journal</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Focuses on what's already working</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Deliberately excludes what isn't</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Consistently affirming register</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Lunar calendar</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Tracks when phases occur</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">External timing, not your response</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">No written task attached</text>
+  <path d="M 202.22749999999988 585.4 L 202.6 587.6 L 204.8 588 L 202.6 588.4 L 202.22749999999988 590.6 L 201.8 588.4 L 199.6 588 L 201.8 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 585.4 L 558.2 587.6 L 560.4 588 L 558.2 588.4 L 557.7725000000002 590.6 L 557.4 588.4 L 555.2 588 L 557.4 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

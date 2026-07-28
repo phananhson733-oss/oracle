@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-in-cancer-meaning": {
+      "hero": {
+        "prompt": "A ghostly luminous crab rests on the cosmic ocean floor, Saturn's golden rings arc overhead through deep indigo water like celestial architecture pressing down upon a sheltered sanctuary, soft aquamarine bioluminescence and moon-silver light ripple across the scene, evoking the tender tension between structure and feeling, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn's golden rings arc over a luminous crab on the cosmic ocean floor, evoking the Saturn return in Cancer emotional reckoning"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Saturn Return in Cancer vs Saturn Transiting Cancer",
+          "titleEn": "Saturn Return vs Saturn Transit in Cancer: Key Differences",
+          "altEn": "Comparison chart showing how Saturn return in Cancer differs from Saturn transiting Cancer",
+          "columns": [
+            {
+              "nameEn": "The Return",
+              "linesEn": [
+                "Works through exact repetition of natal degree",
+                "Whole-chart reckoning activates at once",
+                "Feels total and unavoidable",
+                "Asks for a direct grown-up response to foundations",
+                "Deep and lasting restructuring"
+              ]
+            },
+            {
+              "nameEn": "The Transit",
+              "linesEn": [
+                "Works through house activation",
+                "One specific life area pressured for two years",
+                "Narrower focus, lighter intensity",
+                "Often feels like a chapter, not a rebuild",
+                "Less whole-life lasting change"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Saturn Return in Cancer in Your Timing",
+          "titleEn": "5 Signs You Are Living Your Saturn Return in Cancer",
+          "altEn": "Five concrete signs that a Saturn return in Cancer is active, from home pressure to commitment decisions",
+          "items": [
+            {
+              "nameEn": "Home Takes Center Stage",
+              "subEn": "A strong pull to buy, sell, renovate, or finally leave a living situation that stopped fitting who you are now"
+            },
+            {
+              "nameEn": "Family Roles Quietly Renegotiate",
+              "subEn": "A parent needs care, a sibling dynamic shifts, or you become the steady one in the family for the first time"
+            },
+            {
+              "nameEn": "Old Comforts Stop Working",
+              "subEn": "Habits that once soothed you fall flat and you notice where your sense of safety was borrowed rather than built"
+            },
+            {
+              "nameEn": "Commitment Questions Get Real",
+              "subEn": "Marriage, children, or long-term partnership feels unusually heavy and impossible to keep postponing"
+            },
+            {
+              "nameEn": "The Timeline Lines Up",
+              "subEn": "Themes sharpen near ages 29 and 58, the clearest clue separating a genuine return from an ordinary hard stretch"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

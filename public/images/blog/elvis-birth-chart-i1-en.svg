@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 549" role="img" aria-label="Tropical Capricorn vs Sidereal Sagittarius: Two Readings of Elvis">
+  <defs>
+    <linearGradient id="elvisbirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="elvisbirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="elvisbirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="elvisbirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="elvisbirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="elvisbirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="546" rx="22" fill="url(#elvisbirthchart1en-panel)"/>
+  <ellipse cx="198" cy="132" rx="380" ry="187" fill="url(#elvisbirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="439" rx="334" ry="176" fill="url(#elvisbirthchart1en-neb2)"/>
+  <circle cx="47.6" cy="197.5" r="0.93" fill="#cfc8ea" opacity="0.39"/><circle cx="491.8" cy="272.6" r="0.71" fill="#cfc8ea" opacity="0.19"/><circle cx="553.0" cy="271.6" r="0.56" fill="#cfc8ea" opacity="0.33"/><circle cx="611.0" cy="54.5" r="0.47" fill="#cfc8ea" opacity="0.24"/><circle cx="688.0" cy="325.6" r="0.55" fill="#cfc8ea" opacity="0.15"/><circle cx="310.1" cy="117.1" r="0.67" fill="#cfc8ea" opacity="0.48"/><circle cx="335.0" cy="508.3" r="1.44" fill="#cfc8ea" opacity="0.22"/><circle cx="370.3" cy="65.8" r="0.82" fill="#cfc8ea" opacity="0.37"/><circle cx="378.2" cy="477.6" r="0.87" fill="#cfc8ea" opacity="0.47"/><circle cx="122.0" cy="527.2" r="1.09" fill="#cfc8ea" opacity="0.37"/><circle cx="742.0" cy="231.7" r="1.36" fill="#cfc8ea" opacity="0.38"/><circle cx="354.9" cy="531.0" r="0.58" fill="#cfc8ea" opacity="0.37"/><circle cx="249.7" cy="530.1" r="1.07" fill="#cfc8ea" opacity="0.28"/><circle cx="89.7" cy="445.1" r="1.29" fill="#cfc8ea" opacity="0.40"/><circle cx="203.8" cy="178.7" r="1.41" fill="#cfc8ea" opacity="0.42"/><circle cx="278.6" cy="84.7" r="0.61" fill="#cfc8ea" opacity="0.14"/><circle cx="156.1" cy="136.1" r="0.81" fill="#cfc8ea" opacity="0.43"/><circle cx="353.1" cy="510.4" r="0.73" fill="#cfc8ea" opacity="0.27"/><circle cx="553.0" cy="58.9" r="1.15" fill="#cfc8ea" opacity="0.45"/><circle cx="191.9" cy="342.1" r="0.86" fill="#cfc8ea" opacity="0.36"/><circle cx="500.5" cy="428.5" r="1.25" fill="#cfc8ea" opacity="0.26"/><circle cx="675.8" cy="348.7" r="0.45" fill="#cfc8ea" opacity="0.45"/><circle cx="662.7" cy="314.1" r="1.11" fill="#cfc8ea" opacity="0.33"/><circle cx="303.0" cy="484.9" r="1.62" fill="#cfc8ea" opacity="0.28"/><circle cx="440.7" cy="226.0" r="1.30" fill="#cfc8ea" opacity="0.49"/><circle cx="353.0" cy="130.4" r="0.88" fill="#cfc8ea" opacity="0.35"/><circle cx="499.5" cy="433.8" r="1.62" fill="#cfc8ea" opacity="0.44"/><circle cx="722.7" cy="323.7" r="1.23" fill="#cfc8ea" opacity="0.49"/><circle cx="718.7" cy="201.7" r="1.33" fill="#cfc8ea" opacity="0.12"/><circle cx="509.7" cy="404.0" r="0.66" fill="#cfc8ea" opacity="0.32"/><circle cx="742.0" cy="530.7" r="0.74" fill="#cfc8ea" opacity="0.46"/><circle cx="407.5" cy="390.0" r="1.68" fill="#cfc8ea" opacity="0.44"/><circle cx="407.0" cy="259.1" r="0.69" fill="#cfc8ea" opacity="0.46"/><circle cx="59.3" cy="112.1" r="1.27" fill="#cfc8ea" opacity="0.47"/><circle cx="234.7" cy="408.5" r="1.69" fill="#cfc8ea" opacity="0.51"/><circle cx="648.5" cy="347.3" r="0.91" fill="#cfc8ea" opacity="0.38"/><circle cx="601.9" cy="162.7" r="0.58" fill="#cfc8ea" opacity="0.24"/><circle cx="332.3" cy="182.1" r="0.78" fill="#cfc8ea" opacity="0.46"/><circle cx="346.0" cy="461.2" r="0.69" fill="#cfc8ea" opacity="0.13"/><circle cx="238.5" cy="291.0" r="0.84" fill="#cfc8ea" opacity="0.34"/><circle cx="308.8" cy="478.9" r="0.68" fill="#cfc8ea" opacity="0.44"/><circle cx="444.5" cy="264.1" r="1.49" fill="#cfc8ea" opacity="0.20"/><circle cx="467.9" cy="475.6" r="1.46" fill="#cfc8ea" opacity="0.53"/><circle cx="543.9" cy="185.8" r="1.58" fill="#cfc8ea" opacity="0.19"/><circle cx="125.1" cy="487.8" r="1.60" fill="#cfc8ea" opacity="0.16"/><circle cx="253.0" cy="468.6" r="1.22" fill="#cfc8ea" opacity="0.24"/><path d="M 716.4801007304341 409.0 L 716.9 411.1 L 719.1 411.5672348928638 L 716.9 412.0 L 716.4801007304341 414.2 L 716.1 412.0 L 713.9 411.5672348928638 L 716.1 411.1 Z" fill="#f6e6bf" opacity="0.5454963582567871"/><path d="M 735.6225893516093 442.2 L 736.1 444.6 L 738.5 445.1117353006266 L 736.1 445.6 L 735.6225893516093 448.0 L 735.2 445.6 L 732.7 445.1117353006266 L 735.2 444.6 Z" fill="#f6e6bf" opacity="0.6066621223464608"/><path d="M 113.11309983767569 47.5 L 113.5 49.6 L 115.6 50.04403337696567 L 113.5 50.4 L 113.11309983767569 52.6 L 112.7 50.4 L 110.6 50.04403337696567 L 112.7 49.6 Z" fill="#f6e6bf" opacity="0.6991217062808573"/><path d="M 328.96122043021023 459.5 L 329.5 462.4 L 332.4 462.92886763392016 L 329.5 463.5 L 328.96122043021023 466.4 L 328.4 463.5 L 325.5 462.92886763392016 L 328.4 462.4 Z" fill="#f6e6bf" opacity="0.7805740989744663"/><path d="M 192.9425000641495 447.3 L 193.5 450.5 L 196.7 451.1080952663906 L 193.5 451.7 L 192.9425000641495 454.9 L 192.3 451.7 L 189.1 451.1080952663906 L 192.3 450.5 Z" fill="#f6e6bf" opacity="0.778218640293926"/><path d="M 122.0 527.2 L 249.7 530.1 L 353.0 130.4 L 346.0 461.2 L 308.8 478.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="546" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="535" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 529.8 L 16.5 532.5 L 19.2 533 L 16.5 533.5 L 16 536.2 L 15.5 533.5 L 12.8 533 L 15.5 532.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 529.8 L 744.5 532.5 L 747.2 533 L 744.5 533.5 L 744 536.2 L 743.5 533.5 L 740.8 533 L 743.5 532.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Tropical Capricorn vs Sidereal Sagittarius: Two Readings</text>
+  <text x="380" y="73" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">of Elvis</text>
+  <line x1="230" y1="94" x2="368" y2="94" stroke="url(#elvisbirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="94" x2="530" y2="94" stroke="url(#elvisbirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 89.0 L 380.8 93.2 L 385.0 94 L 380.8 94.8 L 380 99.0 L 379.2 94.8 L 375.0 94 L 379.2 93.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="126" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="126" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 135.6 L 48.3 138.5 L 51.1 139 L 48.3 139.5 L 47.75 142.4 L 47.2 139.5 L 44.4 139 L 47.2 138.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="155.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Tropical Capricorn</text>
+  <path d="M 70 184.8 L 70.5 187.5 L 73.2 188 L 70.5 188.5 L 70 191.2 L 69.5 188.5 L 66.8 188 L 69.5 187.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="193.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Anchored to the seasons — 0° Aries marks the spring equinox</text>
+  <path d="M 70 213.8 L 70.5 216.5 L 73.2 217 L 70.5 217.5 L 70 220.2 L 69.5 217.5 L 66.8 217 L 69.5 216.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="222.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sun at ~18° Capricorn: earthy, disciplined, structured performer</text>
+  <path d="M 70 242.8 L 70.5 245.5 L 73.2 246 L 70.5 246.5 L 70 249.2 L 69.5 246.5 L 66.8 246 L 69.5 245.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="251.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Keeps intuitive seasonal symbolism: the winter mountain-goat climb</text>
+  <path d="M 70 271.8 L 70.5 274.5 L 73.2 275 L 70.5 275.5 L 70 278.2 L 69.5 275.5 L 66.8 275 L 69.5 274.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads as a driven, controlled public face</text>
+  <path d="M 380 306.5 L 380.7 310.3 L 384.5 311 L 380.7 311.7 L 380 315.5 L 379.3 311.7 L 375.5 311 L 379.3 310.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="324" width="668" height="191.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="324" width="3.5" height="191.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 333.6 L 48.3 336.5 L 51.1 337 L 48.3 337.5 L 47.75 340.4 L 47.2 337.5 L 44.4 337 L 47.2 336.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="353.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Sidereal Sagittarius</text>
+  <path d="M 70 382.8 L 70.5 385.5 L 73.2 386 L 70.5 386.5 L 70 389.2 L 69.5 386.5 L 66.8 386 L 69.5 385.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Anchored to the fixed stars with the ~23–24° ayanamsa correction</text>
+  <path d="M 70 411.8 L 70.5 414.5 L 73.2 415 L 70.5 415.5 L 70 418.2 L 69.5 415.5 L 66.8 415 L 69.5 414.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="420.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sun in late sidereal Sagittarius: fire, expansion, restless seeking</text>
+  <path d="M 70 440.8 L 70.5 443.5 L 73.2 444 L 70.5 444.5 L 70 447.2 L 69.5 444.5 L 66.8 444 L 69.5 443.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="449.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sun in Purva Ashadha — Venus-ruled, linked to popularity and unstoppable</text>
+  <text x="84" y="468.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">reach</text>
+  <path d="M 70 488.8 L 70.5 491.5 L 73.2 492 L 70.5 492.5 L 70 495.2 L 69.5 492.5 L 66.8 492 L 69.5 491.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="497.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads as a seeker who couldn't stop expanding the frame</text>
+  <path d="M 202.22749999999988 520.4 L 202.6 522.6 L 204.8 523 L 202.6 523.4 L 202.22749999999988 525.6 L 201.8 523.4 L 199.6 523 L 201.8 522.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="527" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 520.4 L 558.2 522.6 L 560.4 523 L 558.2 523.4 L 557.7725000000002 525.6 L 557.4 523.4 L 555.2 523 L 557.4 522.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

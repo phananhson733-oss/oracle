@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 316" role="img" aria-label="">
+  <defs>
+    <linearGradient id="jeffbezosbirthchart0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="jeffbezosbirthchart0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="jeffbezosbirthchart0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="jeffbezosbirthchart0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="jeffbezosbirthchart0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="jeffbezosbirthchart0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="313" rx="22" fill="url(#jeffbezosbirthchart0zh-panel)"/>
+  <ellipse cx="198" cy="76" rx="380" ry="107" fill="url(#jeffbezosbirthchart0zh-neb1)"/>
+  <ellipse cx="623" cy="253" rx="334" ry="101" fill="url(#jeffbezosbirthchart0zh-neb2)"/>
+  <circle cx="127.1" cy="128.7" r="1.63" fill="#cfc8ea" opacity="0.39"/><circle cx="186.2" cy="247.1" r="0.51" fill="#cfc8ea" opacity="0.53"/><circle cx="638.6" cy="79.8" r="0.52" fill="#cfc8ea" opacity="0.13"/><circle cx="408.9" cy="244.7" r="1.04" fill="#cfc8ea" opacity="0.53"/><circle cx="552.8" cy="223.0" r="0.40" fill="#cfc8ea" opacity="0.28"/><circle cx="362.6" cy="289.3" r="1.11" fill="#cfc8ea" opacity="0.22"/><circle cx="370.8" cy="161.3" r="0.48" fill="#cfc8ea" opacity="0.35"/><circle cx="542.0" cy="45.9" r="0.65" fill="#cfc8ea" opacity="0.39"/><circle cx="512.0" cy="75.5" r="1.29" fill="#cfc8ea" opacity="0.33"/><circle cx="190.3" cy="68.9" r="1.05" fill="#cfc8ea" opacity="0.47"/><circle cx="390.5" cy="257.9" r="0.79" fill="#cfc8ea" opacity="0.22"/><circle cx="679.7" cy="265.3" r="0.61" fill="#cfc8ea" opacity="0.30"/><circle cx="132.3" cy="169.8" r="1.41" fill="#cfc8ea" opacity="0.31"/><circle cx="207.5" cy="296.3" r="1.01" fill="#cfc8ea" opacity="0.41"/><circle cx="612.5" cy="280.5" r="1.69" fill="#cfc8ea" opacity="0.50"/><circle cx="98.7" cy="182.8" r="1.30" fill="#cfc8ea" opacity="0.48"/><circle cx="362.7" cy="59.1" r="1.29" fill="#cfc8ea" opacity="0.17"/><circle cx="522.8" cy="16.8" r="0.77" fill="#cfc8ea" opacity="0.51"/><circle cx="590.9" cy="300.7" r="0.98" fill="#cfc8ea" opacity="0.29"/><circle cx="218.8" cy="73.8" r="1.16" fill="#cfc8ea" opacity="0.37"/><circle cx="49.9" cy="253.1" r="1.25" fill="#cfc8ea" opacity="0.44"/><circle cx="642.2" cy="14.4" r="0.41" fill="#cfc8ea" opacity="0.37"/><circle cx="49.5" cy="27.7" r="1.38" fill="#cfc8ea" opacity="0.45"/><circle cx="268.6" cy="14.1" r="0.48" fill="#cfc8ea" opacity="0.18"/><circle cx="292.9" cy="29.1" r="0.45" fill="#cfc8ea" opacity="0.37"/><circle cx="440.7" cy="295.0" r="1.28" fill="#cfc8ea" opacity="0.52"/><circle cx="645.8" cy="123.2" r="1.47" fill="#cfc8ea" opacity="0.49"/><path d="M 266.8568188082427 56.4 L 267.3 58.7 L 269.6 59.1718008518219 L 267.3 59.6 L 266.8568188082427 61.9 L 266.4 59.6 L 264.1 59.1718008518219 L 266.4 58.7 Z" fill="#f6e6bf" opacity="0.7962398705538363"/><path d="M 359.01907906495035 72.2 L 359.6 75.3 L 362.7 75.8875884115696 L 359.6 76.5 L 359.01907906495035 79.5 L 358.4 76.5 L 355.4 75.8875884115696 L 358.4 75.3 Z" fill="#f6e6bf" opacity="0.6759206828195602"/><path d="M 368.8145717959851 292.2 L 369.3 294.8 L 371.9 295.2653084397316 L 369.3 295.8 L 368.8145717959851 298.3 L 368.3 295.8 L 365.8 295.2653084397316 L 368.3 294.8 Z" fill="#f6e6bf" opacity="0.6873203318100423"/><path d="M 370.60031261108816 286.2 L 371.2 289.2 L 374.3 289.81793853640556 L 371.2 290.4 L 370.60031261108816 293.5 L 370.0 290.4 L 366.9 289.81793853640556 L 370.0 289.2 Z" fill="#f6e6bf" opacity="0.7057947049383074"/><path d="M 20.993662578985095 277.3 L 21.4 279.5 L 23.5 279.87059009075165 L 21.4 280.3 L 20.993662578985095 282.4 L 20.6 280.3 L 18.5 279.87059009075165 L 20.6 279.5 Z" fill="#f6e6bf" opacity="0.5396430337335915"/>
+  <rect x="1.5" y="1.5" width="757" height="313" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="302" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 296.8 L 16.5 299.5 L 19.2 300 L 16.5 300.5 L 16 303.2 L 15.5 300.5 L 12.8 300 L 15.5 299.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 296.8 L 744.5 299.5 L 747.2 300 L 744.5 300.5 L 744 303.2 L 743.5 300.5 L 740.8 300 L 743.5 299.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#jeffbezosbirthchart0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#jeffbezosbirthchart0zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="94" x2="76" y2="262" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="94" r="20.0" fill="url(#jeffbezosbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="94" r="15" fill="url(#jeffbezosbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="89.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="98.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="90.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="136" r="20.0" fill="url(#jeffbezosbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="136" r="15" fill="url(#jeffbezosbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="131.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="140.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="132.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="178" r="20.0" fill="url(#jeffbezosbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="178" r="15" fill="url(#jeffbezosbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="173.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="182.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="174.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="220" r="20.0" fill="url(#jeffbezosbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="220" r="15" fill="url(#jeffbezosbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="215.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="224.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="216.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <circle cx="76" cy="262" r="20.0" fill="url(#jeffbezosbirthchart0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="262" r="15" fill="url(#jeffbezosbirthchart0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="257.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="266.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="258.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb"></text>
+  <path d="M 280.025 287.4 L 280.4 289.6 L 282.6 290 L 280.4 290.4 L 280.025 292.6 L 279.6 290.4 L 277.4 290 L 279.6 289.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="294" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 287.4 L 480.4 289.6 L 482.6 290 L 480.4 290.4 L 479.975 292.6 L 479.6 290.4 L 477.4 290 L 479.6 289.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,78 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "mexico-vs-england-astrology-prediction": {
+      "hero": {
+        "prompt": "Two distinct luminous celestial cloud formations drifting toward each other across a vast open night sky, one warm amber and rhythmically billowing in form, the other cool silver-blue and composed in structured arcs, both converging above a dark flat earth horizon with a shared golden Jupiter glow suspended between them, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Two glowing celestial formations drift toward each other across an indigo night sky above a dark horizon with a shared golden Jupiter glow"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Mexico vs England Match Chart in Your Timing",
+          "titleEn": "Five Layers to Watch in a Match Chart Reading",
+          "altEn": "Five-step sequence for reading a Mexico vs England astrology match chart layer by layer",
+          "items": [
+            {
+              "nameEn": "Compare the Two National Suns",
+              "subEn": "Note the core sign each foundation chart leans on, then read it as a style of play"
+            },
+            {
+              "nameEn": "Scan Key Player Charts for Mars and Sun",
+              "subEn": "Strong personal drive placements often match the players fans expect to set the emotional tone"
+            },
+            {
+              "nameEn": "Locate the Shared Transit",
+              "subEn": "Track where Jupiter in Cancer sits relative to each chart to sense a common background mood"
+            },
+            {
+              "nameEn": "Watch for Repeated Archetypes",
+              "subEn": "When a squad's dominant zodiac flavor echoes its national chart, that repetition is the signal worth naming"
+            },
+            {
+              "nameEn": "Read the Contrasts, Not the Winner",
+              "subEn": "Where the two charts clash in element or tempo, you have the story of the match without predicting the score"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Match Chart Reading at a Glance",
+          "titleEn": "Three Core Layers of an Astrology Match Reading",
+          "altEn": "Comparison of three core layers used in a Mexico vs England astrology match reading",
+          "columns": [
+            {
+              "nameEn": "Player Birth Charts",
+              "linesEn": [
+                "Reads personal Sun and Mars as drive and temperament",
+                "Spot players expected to set the emotional tone"
+              ]
+            },
+            {
+              "nameEn": "National Foundation Charts",
+              "linesEn": [
+                "Frames each country's core style as a chart signature",
+                "Compare the two national Suns for tempo and flavor"
+              ]
+            },
+            {
+              "nameEn": "Jupiter in Cancer Transit",
+              "linesEn": [
+                "Adds a shared 2026 background tone to both sides",
+                "Track the same transit across each chart at once"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

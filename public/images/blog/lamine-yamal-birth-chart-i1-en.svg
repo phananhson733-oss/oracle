@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 451" role="img" aria-label="Five Steps to Apply the Cancer Sun Method">
+  <defs>
+    <linearGradient id="lamineyamalbirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="lamineyamalbirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="lamineyamalbirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lamineyamalbirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lamineyamalbirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lamineyamalbirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="448" rx="22" fill="url(#lamineyamalbirthchart1en-panel)"/>
+  <ellipse cx="198" cy="108" rx="380" ry="153" fill="url(#lamineyamalbirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="361" rx="334" ry="144" fill="url(#lamineyamalbirthchart1en-neb2)"/>
+  <circle cx="672.0" cy="380.7" r="0.89" fill="#cfc8ea" opacity="0.35"/><circle cx="362.8" cy="308.4" r="0.49" fill="#cfc8ea" opacity="0.13"/><circle cx="178.8" cy="277.5" r="1.05" fill="#cfc8ea" opacity="0.42"/><circle cx="257.5" cy="376.3" r="0.82" fill="#cfc8ea" opacity="0.54"/><circle cx="88.3" cy="310.8" r="1.50" fill="#cfc8ea" opacity="0.13"/><circle cx="677.5" cy="423.9" r="0.80" fill="#cfc8ea" opacity="0.29"/><circle cx="283.9" cy="412.0" r="1.30" fill="#cfc8ea" opacity="0.29"/><circle cx="500.2" cy="52.9" r="0.82" fill="#cfc8ea" opacity="0.29"/><circle cx="568.4" cy="272.1" r="1.60" fill="#cfc8ea" opacity="0.26"/><circle cx="435.4" cy="429.8" r="1.34" fill="#cfc8ea" opacity="0.41"/><circle cx="468.8" cy="228.7" r="1.09" fill="#cfc8ea" opacity="0.32"/><circle cx="19.1" cy="417.5" r="0.66" fill="#cfc8ea" opacity="0.30"/><circle cx="690.2" cy="239.7" r="1.26" fill="#cfc8ea" opacity="0.43"/><circle cx="281.2" cy="125.3" r="1.51" fill="#cfc8ea" opacity="0.17"/><circle cx="532.6" cy="344.0" r="0.83" fill="#cfc8ea" opacity="0.24"/><circle cx="653.5" cy="227.8" r="0.75" fill="#cfc8ea" opacity="0.22"/><circle cx="396.3" cy="110.8" r="0.50" fill="#cfc8ea" opacity="0.45"/><circle cx="84.1" cy="147.1" r="0.87" fill="#cfc8ea" opacity="0.29"/><circle cx="367.0" cy="188.7" r="1.43" fill="#cfc8ea" opacity="0.40"/><circle cx="661.7" cy="91.0" r="1.40" fill="#cfc8ea" opacity="0.27"/><circle cx="510.6" cy="158.0" r="1.21" fill="#cfc8ea" opacity="0.41"/><circle cx="482.5" cy="53.4" r="1.08" fill="#cfc8ea" opacity="0.54"/><circle cx="598.9" cy="431.0" r="0.72" fill="#cfc8ea" opacity="0.21"/><circle cx="747.2" cy="77.2" r="1.35" fill="#cfc8ea" opacity="0.34"/><circle cx="597.3" cy="293.5" r="0.49" fill="#cfc8ea" opacity="0.36"/><circle cx="365.3" cy="125.0" r="0.91" fill="#cfc8ea" opacity="0.17"/><circle cx="589.9" cy="209.9" r="0.92" fill="#cfc8ea" opacity="0.24"/><circle cx="690.0" cy="133.4" r="1.39" fill="#cfc8ea" opacity="0.13"/><circle cx="417.5" cy="203.1" r="0.72" fill="#cfc8ea" opacity="0.30"/><circle cx="649.1" cy="60.5" r="1.66" fill="#cfc8ea" opacity="0.16"/><circle cx="614.9" cy="45.9" r="0.93" fill="#cfc8ea" opacity="0.31"/><circle cx="349.0" cy="369.4" r="0.75" fill="#cfc8ea" opacity="0.25"/><circle cx="117.6" cy="385.7" r="1.63" fill="#cfc8ea" opacity="0.53"/><circle cx="610.5" cy="228.0" r="1.15" fill="#cfc8ea" opacity="0.42"/><circle cx="501.5" cy="55.8" r="1.08" fill="#cfc8ea" opacity="0.53"/><circle cx="584.0" cy="101.9" r="1.04" fill="#cfc8ea" opacity="0.13"/><circle cx="359.4" cy="393.8" r="0.45" fill="#cfc8ea" opacity="0.17"/><circle cx="445.9" cy="143.5" r="1.01" fill="#cfc8ea" opacity="0.20"/><path d="M 446.5848226659 279.0 L 447.1 281.8 L 449.9 282.3292606023606 L 447.1 282.9 L 446.5848226659 285.6 L 446.1 282.9 L 443.3 282.3292606023606 L 446.1 281.8 Z" fill="#f6e6bf" opacity="0.690470595867373"/><path d="M 354.29318184033036 330.7 L 354.8 333.3 L 357.4 333.78350279363804 L 354.8 334.3 L 354.29318184033036 336.9 L 353.8 334.3 L 351.2 333.78350279363804 L 353.8 333.3 Z" fill="#f6e6bf" opacity="0.6418567714514211"/><path d="M 533.6579129658639 279.5 L 534.1 281.7 L 536.3 282.11517350166105 L 534.1 282.5 L 533.6579129658639 284.7 L 533.2 282.5 L 531.1 282.11517350166105 L 533.2 281.7 Z" fill="#f6e6bf" opacity="0.5431912861997261"/><path d="M 371.46296494081616 162.3 L 371.9 164.4 L 374.0 164.82483134116046 L 371.9 165.2 L 371.46296494081616 167.4 L 371.1 165.2 L 368.9 164.82483134116046 L 371.1 164.4 Z" fill="#f6e6bf" opacity="0.6440315160201863"/><path d="M 88.85797880217433 137.9 L 89.4 140.7 L 92.2 141.2620911707636 L 89.4 141.8 L 88.85797880217433 144.6 L 88.3 141.8 L 85.5 141.2620911707636 L 88.3 140.7 Z" fill="#f6e6bf" opacity="0.609866157011129"/>
+  <rect x="1.5" y="1.5" width="757" height="448" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="437" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 431.8 L 16.5 434.5 L 19.2 435 L 16.5 435.5 L 16 438.2 L 15.5 435.5 L 12.8 435 L 15.5 434.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 431.8 L 744.5 434.5 L 747.2 435 L 744.5 435.5 L 744 438.2 L 743.5 435.5 L 740.8 435 L 743.5 434.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Steps to Apply the Cancer Sun Method</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#lamineyamalbirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#lamineyamalbirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="379" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#lamineyamalbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#lamineyamalbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Locate the Cancer Sun</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Read it as an instinct-and-belonging theme, not a fixed mood</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#lamineyamalbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#lamineyamalbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Check the Moon</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cancer's ruler — its sign and house colour how that instinct is sought and shown</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#lamineyamalbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#lamineyamalbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Note Jupiter in Cancer 2025-26</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A twelve-year expansion of the Sun's themes; the exact contact fell earlier in</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">2026</text>
+  <circle cx="76" cy="319" r="20.0" fill="url(#lamineyamalbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="319" r="15" fill="url(#lamineyamalbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="314.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="323.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="315.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Treat Unconfirmed Placements as Provisional</text>
+  <text x="116" y="337.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cancer Moon, Virgo rising, and house claims all require a confirmed birth time</text>
+  <circle cx="76" cy="379" r="20.0" fill="url(#lamineyamalbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="379" r="15" fill="url(#lamineyamalbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="374.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="383.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="375.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Read Each Transit as a Chapter</text>
+  <text x="116" y="397.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A chapter still to be lived, not a fixed outcome</text>
+  <path d="M 202.22749999999988 422.4 L 202.6 424.6 L 204.8 425 L 202.6 425.4 L 202.22749999999988 427.6 L 201.8 425.4 L 199.6 425 L 201.8 424.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="429" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 422.4 L 558.2 424.6 L 560.4 425 L 558.2 425.4 L 557.7725000000002 427.6 L 557.4 425.4 L 555.2 425 L 557.4 424.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

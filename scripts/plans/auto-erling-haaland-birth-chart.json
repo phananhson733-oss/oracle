@@ -1,0 +1,98 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "heroWidth": 1200, "heroHeight": 675, "quality": 82 },
+  "articles": {
+    "erling-haaland-birth-chart": {
+      "hero": {
+        "prompt": "A Nordic twilight fjord horizon at the exact moment the cool silver-blue water-light of late Cancer meets the first warm gold of Leo precisely along the horizon line, a sun resting on the Cancer-Leo cusp. A cold-to-warm gradient sweeps across the sky, deep indigo to near-black at the top (#16112c fading to #0b0a1b) cooling the upper air, soft gold accents (#d4af6a) blooming at the waterline, an aurora-like teal-and-gold nebula wash drifting low over still fjord water. Painterly editorial illustration, atmospheric and symbolic, full-bleed wide 16:9 that fills the frame. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A Nordic fjord horizon where cool late-Cancer silver-blue water-light meets the first warm gold of Leo at the waterline, a sun on the cusp",
+        "altZh": "北欧峡湾的地平线上，巨蟹末度的银蓝水光在水际线与狮子座最初的暖金相遇，一颗落在交界上的太阳"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Haaland Birth Chart Step by Step",
+          "afterHeadingZh": "## 如何在你的星盘里识别哈兰德星盘式的交界",
+          "titleEn": "Reading the Haaland Chart Step by Step",
+          "titleZh": "一步步读懂哈兰德星盘",
+          "altEn": "Five-step method for reading the Haaland birth chart: anchor the record, read the cusp, flag what is missing, note the transit, hold it as a frame",
+          "altZh": "读懂哈兰德星盘的五步法：锚定记录、读出交界、标出缺失、留意行运、握成框架",
+          "items": [
+            {
+              "nameEn": "Anchor the verifiable record",
+              "nameZh": "锚定可核实的记录",
+              "subEn": "21 July 2000 in Leeds places the Sun in late Cancer, around 28-29 degrees, near the cusp",
+              "subZh": "2000 年 7 月 21 日生于利兹，太阳落在巨蟹座末度约 28 到 29 度，贴近交界"
+            },
+            {
+              "nameEn": "Read the cusp as a blend",
+              "nameZh": "把交界读成融合",
+              "subEn": "Cancer tenacity and protective drive beside Leo's appetite for the decisive, visible finish",
+              "subZh": "巨蟹的坚韧与护持，挨着狮子对决定性、可见收尾的胃口"
+            },
+            {
+              "nameEn": "Flag what is missing out loud",
+              "nameZh": "把缺失大声标出来",
+              "subEn": "No verified birth time, so the Moon, Ascendant, and houses are unknown; resist any reading leaning on them",
+              "subZh": "没有核验过的出生时间，月亮、上升与宫位都属未知，抵制任何倚仗它们的解读"
+            },
+            {
+              "nameEn": "Note the transit backdrop as a theme",
+              "nameZh": "把行运背景当主题",
+              "subEn": "Jupiter moves through Cancer until about 30 June 2026, brushing his Sun, then crosses into Leo",
+              "subZh": "木星在 2026 年 6 月 30 日前行经巨蟹座，掠过他的太阳，随后跨入狮子座"
+            },
+            {
+              "nameEn": "Hold it as a symbolic frame",
+              "nameZh": "握成象征框架",
+              "subEn": "A frame for temperament; Norway has qualified, but let every result on the pitch stay undecided",
+              "subZh": "一段观察气质的象征框架；挪威已出线，但让球场上的每个结果保持未定"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Haaland Birth Chart vs a Single Sun-Sign Snapshot",
+          "afterHeadingZh": "## 哈兰德星盘 与相近概念：运作方式 + 取舍",
+          "titleEn": "The Chart Reading vs a Sun-Sign Snapshot",
+          "titleZh": "读盘解读 与 太阳星座速写",
+          "altEn": "Comparison of a Sun-sign snapshot against the chart-reading approach to the Haaland birth chart",
+          "altZh": "太阳星座速写与哈兰德星盘读盘解读的对照",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Snapshot",
+              "nameZh": "太阳星座速写",
+              "linesEn": [
+                "Collapses a person into one label and a daily mood",
+                "Offers the comfort of a single tidy verdict",
+                "Rounds the cusp to a tidy Cancer or Leo"
+              ],
+              "linesZh": [
+                "把一个人压缩成一个标签和一天的心情",
+                "提供一锤定音的安逸",
+                "把交界四舍五入成齐整的巨蟹或狮子"
+              ]
+            },
+            {
+              "nameEn": "Chart-Reading Approach",
+              "nameZh": "读盘解读",
+              "linesEn": [
+                "Trades convenience for nuance, holding the cusp as the story",
+                "Stays on solid ground: documented Sun degree and date",
+                "Declines to manufacture the Moon, Ascendant, and houses it cannot confirm"
+              ],
+              "linesZh": [
+                "用便利换细腻，把交界本身当作故事",
+                "站在硬地上：有据可查的太阳度数与出生日期",
+                "拒绝制造无法确认的月亮、上升与宫位"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

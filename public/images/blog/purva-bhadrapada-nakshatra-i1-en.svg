@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 505" role="img" aria-label="5 Steps to Interpret Purva Bhadrapada">
+  <defs>
+    <linearGradient id="purvabhadrapadanakshatra1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="purvabhadrapadanakshatra1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="purvabhadrapadanakshatra1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="purvabhadrapadanakshatra1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="purvabhadrapadanakshatra1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="purvabhadrapadanakshatra1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="url(#purvabhadrapadanakshatra1en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="172" fill="url(#purvabhadrapadanakshatra1en-neb1)"/>
+  <ellipse cx="623" cy="404" rx="334" ry="162" fill="url(#purvabhadrapadanakshatra1en-neb2)"/>
+  <circle cx="70.0" cy="371.0" r="1.09" fill="#cfc8ea" opacity="0.34"/><circle cx="535.2" cy="396.0" r="1.57" fill="#cfc8ea" opacity="0.19"/><circle cx="97.1" cy="394.6" r="1.66" fill="#cfc8ea" opacity="0.24"/><circle cx="433.0" cy="263.2" r="0.66" fill="#cfc8ea" opacity="0.40"/><circle cx="355.4" cy="301.0" r="1.53" fill="#cfc8ea" opacity="0.33"/><circle cx="171.3" cy="58.4" r="1.41" fill="#cfc8ea" opacity="0.42"/><circle cx="511.9" cy="85.5" r="0.67" fill="#cfc8ea" opacity="0.19"/><circle cx="351.3" cy="349.1" r="1.23" fill="#cfc8ea" opacity="0.31"/><circle cx="341.1" cy="143.1" r="1.40" fill="#cfc8ea" opacity="0.44"/><circle cx="734.3" cy="387.6" r="0.62" fill="#cfc8ea" opacity="0.29"/><circle cx="32.0" cy="437.6" r="0.49" fill="#cfc8ea" opacity="0.24"/><circle cx="716.0" cy="57.1" r="1.40" fill="#cfc8ea" opacity="0.41"/><circle cx="714.3" cy="433.1" r="1.04" fill="#cfc8ea" opacity="0.35"/><circle cx="639.3" cy="277.5" r="0.44" fill="#cfc8ea" opacity="0.26"/><circle cx="364.7" cy="277.1" r="1.20" fill="#cfc8ea" opacity="0.23"/><circle cx="391.8" cy="421.8" r="1.03" fill="#cfc8ea" opacity="0.26"/><circle cx="330.6" cy="365.6" r="0.82" fill="#cfc8ea" opacity="0.23"/><circle cx="689.2" cy="213.0" r="0.42" fill="#cfc8ea" opacity="0.42"/><circle cx="626.8" cy="72.0" r="1.06" fill="#cfc8ea" opacity="0.16"/><circle cx="556.0" cy="385.0" r="1.14" fill="#cfc8ea" opacity="0.29"/><circle cx="645.3" cy="372.4" r="1.06" fill="#cfc8ea" opacity="0.23"/><circle cx="422.7" cy="447.1" r="1.13" fill="#cfc8ea" opacity="0.36"/><circle cx="399.0" cy="390.0" r="0.76" fill="#cfc8ea" opacity="0.22"/><circle cx="335.3" cy="355.4" r="1.65" fill="#cfc8ea" opacity="0.13"/><circle cx="34.0" cy="332.0" r="1.13" fill="#cfc8ea" opacity="0.22"/><circle cx="667.0" cy="188.6" r="1.40" fill="#cfc8ea" opacity="0.14"/><circle cx="610.4" cy="438.7" r="0.83" fill="#cfc8ea" opacity="0.24"/><circle cx="400.9" cy="31.2" r="1.10" fill="#cfc8ea" opacity="0.53"/><circle cx="369.5" cy="179.4" r="1.63" fill="#cfc8ea" opacity="0.27"/><circle cx="25.1" cy="331.5" r="1.06" fill="#cfc8ea" opacity="0.29"/><circle cx="424.3" cy="395.1" r="1.57" fill="#cfc8ea" opacity="0.24"/><circle cx="504.4" cy="296.3" r="0.96" fill="#cfc8ea" opacity="0.17"/><circle cx="568.1" cy="190.8" r="1.11" fill="#cfc8ea" opacity="0.46"/><circle cx="443.5" cy="354.0" r="1.03" fill="#cfc8ea" opacity="0.36"/><circle cx="257.6" cy="285.2" r="0.68" fill="#cfc8ea" opacity="0.32"/><circle cx="670.9" cy="356.1" r="0.68" fill="#cfc8ea" opacity="0.46"/><circle cx="574.7" cy="257.1" r="0.63" fill="#cfc8ea" opacity="0.25"/><circle cx="388.6" cy="339.2" r="0.60" fill="#cfc8ea" opacity="0.47"/><circle cx="640.6" cy="322.2" r="1.22" fill="#cfc8ea" opacity="0.24"/><circle cx="495.9" cy="164.2" r="1.18" fill="#cfc8ea" opacity="0.41"/><circle cx="435.4" cy="469.4" r="0.63" fill="#cfc8ea" opacity="0.34"/><circle cx="714.2" cy="427.0" r="1.39" fill="#cfc8ea" opacity="0.24"/><circle cx="56.6" cy="35.8" r="1.10" fill="#cfc8ea" opacity="0.31"/><path d="M 738.4239834975451 27.4 L 738.9 29.9 L 741.4 30.373113799840212 L 738.9 30.9 L 738.4239834975451 33.4 L 737.9 30.9 L 735.4 30.373113799840212 L 737.9 29.9 Z" fill="#f6e6bf" opacity="0.7778689281549305"/><path d="M 618.9234787281603 414.2 L 619.4 416.7 L 621.8 417.14852426666766 L 619.4 417.6 L 618.9234787281603 420.1 L 618.5 417.6 L 616.0 417.14852426666766 L 618.5 416.7 Z" fill="#f6e6bf" opacity="0.781526716100052"/><path d="M 569.1267096679658 366.8 L 569.7 370.0 L 572.9 370.61486773751676 L 569.7 371.2 L 569.1267096679658 374.4 L 568.5 371.2 L 565.3 370.61486773751676 L 568.5 370.0 Z" fill="#f6e6bf" opacity="0.6364747404586524"/><path d="M 715.3224546220154 430.0 L 715.9 433.2 L 719.0 433.75816167797893 L 715.9 434.4 L 715.3224546220154 437.5 L 714.7 434.4 L 711.6 433.75816167797893 L 714.7 433.2 Z" fill="#f6e6bf" opacity="0.5918924360070378"/><path d="M 568.9524154793471 122.2 L 569.6 125.6 L 572.9 126.19540881365538 L 569.6 126.8 L 568.9524154793471 130.2 L 568.3 126.8 L 565.0 126.19540881365538 L 568.3 125.6 Z" fill="#f6e6bf" opacity="0.6897902769502252"/><path d="M 535.2 396.0 L 511.9 85.5 L 716.0 57.1 L 364.7 277.1 L 399.0 390.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="491" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 485.8 L 16.5 488.5 L 19.2 489 L 16.5 489.5 L 16 492.2 L 15.5 489.5 L 12.8 489 L 15.5 488.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 485.8 L 744.5 488.5 L 747.2 489 L 744.5 489.5 L 744 492.2 L 743.5 489.5 L 740.8 489 L 743.5 488.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">5 Steps to Interpret Purva Bhadrapada</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#purvabhadrapadanakshatra1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#purvabhadrapadanakshatra1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="415" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#purvabhadrapadanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#purvabhadrapadanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Locate the exact degree</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Aquarius 20°–30°: idealistic, reform-minded; Pisces 0°–3°20': mystical,</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">dissolving</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#purvabhadrapadanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#purvabhadrapadanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Check Jupiter's condition</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Jupiter rules the nakshatra — its house and strength reveal how the fire is</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">directed</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#purvabhadrapadanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#purvabhadrapadanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Frame intensity as transformation</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Aja Ekapada governs storm and renewal — the intensity is the source, not a</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">defect</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#purvabhadrapadanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#purvabhadrapadanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Identify the planet here</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Moon → emotional zeal; Ascendant → fervent outward identity</text>
+  <circle cx="76" cy="415" r="20.0" fill="url(#purvabhadrapadanakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="415" r="15" fill="url(#purvabhadrapadanakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="410.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="419.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="411.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Ask where conviction flows</text>
+  <text x="116" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Conviction is the keyword — find whether the native's idealism has found a</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">worthy outlet</text>
+  <path d="M 202.22749999999988 476.4 L 202.6 478.6 L 204.8 479 L 202.6 479.4 L 202.22749999999988 481.6 L 201.8 479.4 L 199.6 479 L 201.8 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="483" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 476.4 L 558.2 478.6 L 560.4 479 L 558.2 479.4 L 557.7725000000002 481.6 L 557.4 479.4 L 555.2 479 L 557.4 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

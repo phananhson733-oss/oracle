@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "what-is-my-theme-for-this-year": {
+      "hero": {
+        "prompt": "deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces — a radiant golden sun completing its full annual arc through a deep indigo stellar sky, its glowing orbital path curving back to a softly luminous natal point marked by a warm star cluster near the center, surrounding nebula wisps in teal and gold suggesting cyclical return and personal renewal, conveying the astrological theme of discovering one focused yearly question from the solar return",
+        "altEn": "Golden sun tracing its annual return arc through a deep indigo nebula sky, representing a personal yearly astrology theme"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "titleEn": "Five Life Domains Your Solar Return May Emphasize",
+          "altEn": "Five house emphases showing which life domain your Solar Return highlights for your annual astrology theme",
+          "items": [
+            {
+              "nameEn": "Career & Standing",
+              "subEn": "Tenth-house emphasis: public goals, reputation, and authority come into view"
+            },
+            {
+              "nameEn": "Home & Belonging",
+              "subEn": "Fourth-house emphasis: family patterns, privacy, or the need for a steadier base"
+            },
+            {
+              "nameEn": "Relationships",
+              "subEn": "Seventh-house emphasis: collaboration, agreements, and clearer boundaries"
+            },
+            {
+              "nameEn": "Health & Rhythm",
+              "subEn": "Sixth-house emphasis: daily routines, workload, and the body's maintenance"
+            },
+            {
+              "nameEn": "Learning & Travel",
+              "subEn": "Ninth-house emphasis: study, long trips, and shifts in worldview"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Your Yearly Theme in Your Timing",
+          "titleEn": "Five Steps to Identify Your Annual Solar Return Theme",
+          "altEn": "Step-by-step method for reading your yearly astrology theme from your Solar Return chart placements",
+          "items": [
+            {
+              "nameEn": "Locate the Solar Return Sun",
+              "subEn": "Its house points to the life area likely to receive sustained attention this year"
+            },
+            {
+              "nameEn": "Check the angles and chart ruler",
+              "subEn": "Find the planet ruling the return Ascendant and note where it sits in the chart"
+            },
+            {
+              "nameEn": "Overlay return on natal houses",
+              "subEn": "Where return emphasis lands on an already-busy natal house, yearly theme meets familiar patterns"
+            },
+            {
+              "nameEn": "Keep dated notes of decisions",
+              "subEn": "Patterns across months beat one intense day — track recurring choices and invitations"
+            },
+            {
+              "nameEn": "Revisit near mid-year",
+              "subEn": "Once real context has accumulated, refine the theme to match what has actually repeated"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

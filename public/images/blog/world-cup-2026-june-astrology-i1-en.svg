@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 541" role="img" aria-label="June 2026 Planetary Arc">
+  <defs>
+    <linearGradient id="worldcup2026juneastrology1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="worldcup2026juneastrology1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="worldcup2026juneastrology1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="worldcup2026juneastrology1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="538" rx="22" fill="url(#worldcup2026juneastrology1en-panel)"/>
+  <ellipse cx="198" cy="130" rx="380" ry="184" fill="url(#worldcup2026juneastrology1en-neb1)"/>
+  <ellipse cx="623" cy="433" rx="334" ry="173" fill="url(#worldcup2026juneastrology1en-neb2)"/>
+  <circle cx="691.6" cy="402.1" r="0.86" fill="#cfc8ea" opacity="0.14"/><circle cx="747.4" cy="352.5" r="1.39" fill="#cfc8ea" opacity="0.21"/><circle cx="487.8" cy="31.2" r="1.09" fill="#cfc8ea" opacity="0.41"/><circle cx="745.8" cy="138.2" r="0.95" fill="#cfc8ea" opacity="0.31"/><circle cx="406.0" cy="60.0" r="0.80" fill="#cfc8ea" opacity="0.23"/><circle cx="198.5" cy="96.9" r="1.07" fill="#cfc8ea" opacity="0.53"/><circle cx="420.5" cy="142.0" r="0.66" fill="#cfc8ea" opacity="0.23"/><circle cx="267.0" cy="510.8" r="0.89" fill="#cfc8ea" opacity="0.33"/><circle cx="216.9" cy="333.0" r="0.60" fill="#cfc8ea" opacity="0.42"/><circle cx="493.7" cy="67.5" r="1.56" fill="#cfc8ea" opacity="0.19"/><circle cx="491.0" cy="305.7" r="1.08" fill="#cfc8ea" opacity="0.41"/><circle cx="446.3" cy="98.0" r="0.69" fill="#cfc8ea" opacity="0.43"/><circle cx="540.4" cy="239.2" r="0.72" fill="#cfc8ea" opacity="0.44"/><circle cx="563.0" cy="521.5" r="1.18" fill="#cfc8ea" opacity="0.46"/><circle cx="180.3" cy="305.3" r="1.15" fill="#cfc8ea" opacity="0.32"/><circle cx="50.3" cy="203.1" r="0.76" fill="#cfc8ea" opacity="0.47"/><circle cx="384.0" cy="176.8" r="1.48" fill="#cfc8ea" opacity="0.43"/><circle cx="300.5" cy="389.9" r="0.72" fill="#cfc8ea" opacity="0.52"/><circle cx="162.0" cy="268.9" r="1.58" fill="#cfc8ea" opacity="0.40"/><circle cx="126.6" cy="90.5" r="1.08" fill="#cfc8ea" opacity="0.20"/><circle cx="118.9" cy="83.0" r="1.49" fill="#cfc8ea" opacity="0.34"/><circle cx="525.7" cy="332.1" r="1.54" fill="#cfc8ea" opacity="0.15"/><circle cx="261.4" cy="236.2" r="1.04" fill="#cfc8ea" opacity="0.12"/><circle cx="87.4" cy="171.6" r="0.66" fill="#cfc8ea" opacity="0.30"/><circle cx="159.0" cy="281.2" r="1.43" fill="#cfc8ea" opacity="0.50"/><circle cx="573.8" cy="423.6" r="0.47" fill="#cfc8ea" opacity="0.46"/><circle cx="639.9" cy="495.2" r="1.08" fill="#cfc8ea" opacity="0.52"/><circle cx="190.3" cy="279.1" r="0.82" fill="#cfc8ea" opacity="0.33"/><circle cx="664.5" cy="48.5" r="1.52" fill="#cfc8ea" opacity="0.45"/><circle cx="609.4" cy="401.1" r="1.33" fill="#cfc8ea" opacity="0.40"/><circle cx="744.8" cy="370.3" r="1.42" fill="#cfc8ea" opacity="0.30"/><circle cx="675.8" cy="244.4" r="1.37" fill="#cfc8ea" opacity="0.36"/><circle cx="210.9" cy="439.0" r="1.01" fill="#cfc8ea" opacity="0.39"/><circle cx="489.9" cy="177.9" r="0.91" fill="#cfc8ea" opacity="0.27"/><circle cx="311.1" cy="510.5" r="1.10" fill="#cfc8ea" opacity="0.44"/><circle cx="518.2" cy="297.3" r="0.55" fill="#cfc8ea" opacity="0.53"/><circle cx="381.5" cy="449.6" r="1.66" fill="#cfc8ea" opacity="0.26"/><circle cx="429.9" cy="25.2" r="0.98" fill="#cfc8ea" opacity="0.41"/><circle cx="267.5" cy="414.4" r="0.60" fill="#cfc8ea" opacity="0.38"/><circle cx="399.8" cy="489.2" r="1.55" fill="#cfc8ea" opacity="0.45"/><circle cx="607.8" cy="42.0" r="0.65" fill="#cfc8ea" opacity="0.37"/><circle cx="78.6" cy="459.1" r="1.03" fill="#cfc8ea" opacity="0.24"/><circle cx="106.1" cy="117.6" r="1.48" fill="#cfc8ea" opacity="0.34"/><circle cx="721.7" cy="20.2" r="0.82" fill="#cfc8ea" opacity="0.51"/><circle cx="153.9" cy="400.7" r="0.53" fill="#cfc8ea" opacity="0.47"/><circle cx="158.1" cy="451.6" r="0.47" fill="#cfc8ea" opacity="0.31"/><path d="M 240.23810310848057 104.4 L 240.7 106.9 L 243.1 107.3224005359225 L 240.7 107.8 L 240.23810310848057 110.2 L 239.8 107.8 L 237.3 107.3224005359225 L 239.8 106.9 Z" fill="#f6e6bf" opacity="0.6102783586829901"/><path d="M 394.092128733173 257.0 L 394.5 259.1 L 396.7 259.5332643096335 L 394.5 259.9 L 394.092128733173 262.1 L 393.7 259.9 L 391.5 259.5332643096335 L 393.7 259.1 Z" fill="#f6e6bf" opacity="0.5097636166028678"/><path d="M 634.1843072194606 393.4 L 634.6 395.4 L 636.6 395.8129036924802 L 634.6 396.2 L 634.1843072194606 398.3 L 633.8 396.2 L 631.7 395.8129036924802 L 633.8 395.4 Z" fill="#f6e6bf" opacity="0.6132033551111817"/><path d="M 466.1147114280611 248.8 L 466.6 251.6 L 469.4 252.10618605697528 L 466.6 252.6 L 466.1147114280611 255.4 L 465.6 252.6 L 462.8 252.10618605697528 L 465.6 251.6 Z" fill="#f6e6bf" opacity="0.778827950451523"/><path d="M 659.1775975693017 159.8 L 659.6 161.9 L 661.7 162.2989463354461 L 659.6 162.7 L 659.1775975693017 164.8 L 658.8 162.7 L 656.7 162.2989463354461 L 658.8 161.9 Z" fill="#f6e6bf" opacity="0.7600089989602565"/><path d="M 747.4 352.5 L 487.8 31.2 L 745.8 138.2 L 118.9 83.0 L 190.3 279.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="538" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="527" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 521.8 L 16.5 524.5 L 19.2 525 L 16.5 525.5 L 16 528.2 L 15.5 525.5 L 12.8 525 L 15.5 524.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 521.8 L 744.5 524.5 L 747.2 525 L 744.5 525.5 L 744 528.2 L 743.5 525.5 L 740.8 525 L 743.5 524.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">June 2026 Planetary Arc</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#worldcup2026juneastrology1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#worldcup2026juneastrology1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="441" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#worldcup2026juneastrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#worldcup2026juneastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">All of June</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Saturn in Aries</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Steadying undertone — tests patience and nerve across the entire opening month</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#worldcup2026juneastrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#worldcup2026juneastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Group Stage → Jun 30</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Jupiter Exalted in Cancer</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Collective warmth and home-soil themes lift the opening rounds</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#worldcup2026juneastrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#worldcup2026juneastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Mid-June</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">New Moon</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Reset window — a good moment to begin or recommit mid-tournament</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#worldcup2026juneastrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#worldcup2026juneastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Late June</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Full Moon</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Culmination — energy peaks around the first knockout window</text>
+  <circle cx="92" cy="441" r="13.0" fill="url(#worldcup2026juneastrology1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="441" r="8" fill="url(#worldcup2026juneastrology1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="438.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 437.0 L 92.6 440.4 L 96.0 441 L 92.6 441.6 L 92 445.0 L 91.4 441.6 L 88.0 441 L 91.4 440.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="446.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">From Jun 30</text>
+  <text x="132" y="469.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Jupiter Enters Leo</text>
+  <text x="132" y="492.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Spotlight shifts — individual flair and standout stories take center stage</text>
+  <path d="M 202.22749999999988 512.4 L 202.6 514.6 L 204.8 515 L 202.6 515.4 L 202.22749999999988 517.6 L 201.8 515.4 L 199.6 515 L 201.8 514.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="519" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 512.4 L 558.2 514.6 L 560.4 515 L 558.2 515.4 L 557.7725000000002 517.6 L 557.4 515.4 L 555.2 515 L 557.4 514.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

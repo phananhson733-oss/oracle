@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 523" role="img" aria-label="Five Steps to Read a Celebrity Zodiac Sign">
+  <defs>
+    <linearGradient id="bensheltonzodiacsign0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="bensheltonzodiacsign0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="bensheltonzodiacsign0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bensheltonzodiacsign0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="bensheltonzodiacsign0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="bensheltonzodiacsign0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="url(#bensheltonzodiacsign0en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="178" fill="url(#bensheltonzodiacsign0en-neb1)"/>
+  <ellipse cx="623" cy="418" rx="334" ry="167" fill="url(#bensheltonzodiacsign0en-neb2)"/>
+  <circle cx="74.9" cy="439.4" r="1.20" fill="#cfc8ea" opacity="0.35"/><circle cx="76.1" cy="418.1" r="1.05" fill="#cfc8ea" opacity="0.43"/><circle cx="188.0" cy="416.7" r="1.33" fill="#cfc8ea" opacity="0.38"/><circle cx="442.1" cy="483.9" r="1.16" fill="#cfc8ea" opacity="0.36"/><circle cx="229.2" cy="78.8" r="0.99" fill="#cfc8ea" opacity="0.37"/><circle cx="455.7" cy="179.1" r="0.68" fill="#cfc8ea" opacity="0.17"/><circle cx="712.7" cy="426.5" r="1.31" fill="#cfc8ea" opacity="0.51"/><circle cx="605.2" cy="219.0" r="1.51" fill="#cfc8ea" opacity="0.34"/><circle cx="125.5" cy="108.6" r="0.89" fill="#cfc8ea" opacity="0.45"/><circle cx="708.0" cy="283.6" r="1.52" fill="#cfc8ea" opacity="0.18"/><circle cx="148.1" cy="399.4" r="0.96" fill="#cfc8ea" opacity="0.41"/><circle cx="549.0" cy="166.8" r="0.73" fill="#cfc8ea" opacity="0.38"/><circle cx="270.8" cy="201.5" r="0.75" fill="#cfc8ea" opacity="0.45"/><circle cx="295.2" cy="64.7" r="0.61" fill="#cfc8ea" opacity="0.40"/><circle cx="712.2" cy="126.1" r="1.12" fill="#cfc8ea" opacity="0.15"/><circle cx="362.7" cy="376.0" r="0.89" fill="#cfc8ea" opacity="0.13"/><circle cx="48.0" cy="458.4" r="0.89" fill="#cfc8ea" opacity="0.54"/><circle cx="291.6" cy="53.0" r="0.68" fill="#cfc8ea" opacity="0.24"/><circle cx="57.0" cy="75.6" r="1.00" fill="#cfc8ea" opacity="0.43"/><circle cx="368.6" cy="226.1" r="0.99" fill="#cfc8ea" opacity="0.28"/><circle cx="611.7" cy="465.7" r="0.87" fill="#cfc8ea" opacity="0.32"/><circle cx="54.2" cy="132.0" r="1.24" fill="#cfc8ea" opacity="0.29"/><circle cx="499.3" cy="277.4" r="1.07" fill="#cfc8ea" opacity="0.38"/><circle cx="395.5" cy="431.1" r="1.12" fill="#cfc8ea" opacity="0.45"/><circle cx="734.6" cy="345.8" r="1.35" fill="#cfc8ea" opacity="0.32"/><circle cx="21.9" cy="51.8" r="1.31" fill="#cfc8ea" opacity="0.45"/><circle cx="30.6" cy="34.8" r="0.92" fill="#cfc8ea" opacity="0.30"/><circle cx="240.9" cy="296.2" r="1.11" fill="#cfc8ea" opacity="0.39"/><circle cx="106.6" cy="380.5" r="1.27" fill="#cfc8ea" opacity="0.13"/><circle cx="625.3" cy="345.5" r="0.82" fill="#cfc8ea" opacity="0.39"/><circle cx="675.2" cy="94.9" r="0.46" fill="#cfc8ea" opacity="0.43"/><circle cx="228.1" cy="57.3" r="0.48" fill="#cfc8ea" opacity="0.30"/><circle cx="484.6" cy="397.8" r="0.55" fill="#cfc8ea" opacity="0.13"/><circle cx="722.8" cy="317.4" r="1.07" fill="#cfc8ea" opacity="0.13"/><circle cx="30.4" cy="50.6" r="1.39" fill="#cfc8ea" opacity="0.48"/><circle cx="214.9" cy="298.4" r="1.34" fill="#cfc8ea" opacity="0.27"/><circle cx="425.6" cy="242.4" r="1.22" fill="#cfc8ea" opacity="0.43"/><circle cx="634.1" cy="379.7" r="0.89" fill="#cfc8ea" opacity="0.47"/><circle cx="454.2" cy="336.4" r="1.14" fill="#cfc8ea" opacity="0.49"/><circle cx="744.7" cy="43.1" r="1.00" fill="#cfc8ea" opacity="0.27"/><circle cx="129.1" cy="274.9" r="1.05" fill="#cfc8ea" opacity="0.30"/><circle cx="307.8" cy="166.6" r="1.33" fill="#cfc8ea" opacity="0.49"/><circle cx="629.8" cy="344.8" r="1.68" fill="#cfc8ea" opacity="0.36"/><circle cx="647.6" cy="235.1" r="1.20" fill="#cfc8ea" opacity="0.47"/><path d="M 710.7743471991271 468.5 L 711.4 471.7 L 714.7 472.3707555755973 L 711.4 473.0 L 710.7743471991271 476.3 L 710.2 473.0 L 706.9 472.3707555755973 L 710.2 471.7 Z" fill="#f6e6bf" opacity="0.7261231271084398"/><path d="M 426.035244083032 183.2 L 426.6 186.4 L 429.8 187.05607497226447 L 426.6 187.7 L 426.035244083032 190.9 L 425.4 187.7 L 422.2 187.05607497226447 L 425.4 186.4 Z" fill="#f6e6bf" opacity="0.5565415587741882"/><path d="M 280.3586336951703 101.7 L 281.0 104.9 L 284.2 105.52668143622577 L 281.0 106.1 L 280.3586336951703 109.3 L 279.7 106.1 L 276.5 105.52668143622577 L 279.7 104.9 Z" fill="#f6e6bf" opacity="0.6603818606119602"/><path d="M 470.6493832077831 356.2 L 471.2 359.1 L 474.2 359.71222885046154 L 471.2 360.3 L 470.6493832077831 363.3 L 470.1 360.3 L 467.1 359.71222885046154 L 470.1 359.1 Z" fill="#f6e6bf" opacity="0.6188226739410311"/><path d="M 700.7133302520961 41.2 L 701.1 43.4 L 703.3 43.8464291729033 L 701.1 44.3 L 700.7133302520961 46.5 L 700.3 44.3 L 698.1 43.8464291729033 L 700.3 43.4 Z" fill="#f6e6bf" opacity="0.7188375466968864"/><path d="M 455.7 179.1 L 57.0 75.6 L 395.5 431.1 L 625.3 345.5 L 30.4 50.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="509" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 503.8 L 16.5 506.5 L 19.2 507 L 16.5 507.5 L 16 510.2 L 15.5 507.5 L 12.8 507 L 15.5 506.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 503.8 L 744.5 506.5 L 747.2 507 L 744.5 507.5 L 744 510.2 L 743.5 507.5 L 740.8 507 L 743.5 506.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Steps to Read a Celebrity Zodiac Sign</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#bensheltonzodiacsign0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#bensheltonzodiacsign0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="433" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#bensheltonzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#bensheltonzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Confirm the Date</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Begin with a publicly reported birth date; note source disagreements plainly</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">rather than filling gaps with guesses</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#bensheltonzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#bensheltonzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Separate the Sun</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Treat the Sun sign as one chapter, not the whole book; ask what the Moon and</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Rising add or complicate</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#bensheltonzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#bensheltonzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Find Stelliums and Tight Aspects</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A cluster of planets in one sign or a close aspect often says more about visible</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">character than the Sun alone</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#bensheltonzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#bensheltonzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Match to Observable Behavior</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Compare placement themes against documented on-court conduct and interviews;</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">hold interpretations loosely if nothing aligns</text>
+  <circle cx="76" cy="433" r="20.0" fill="url(#bensheltonzodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="433" r="15" fill="url(#bensheltonzodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="428.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="437.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="429.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Read Tendencies, Not Outcomes</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Frame every placement as something that may surface under the right conditions,</text>
+  <text x="116" y="469.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">never as a fated or guaranteed result</text>
+  <path d="M 202.22749999999988 494.4 L 202.6 496.6 L 204.8 497 L 202.6 497.4 L 202.22749999999988 499.6 L 201.8 497.4 L 199.6 497 L 201.8 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="501" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 494.4 L 558.2 496.6 L 560.4 497 L 558.2 497.4 L 557.7725000000002 499.6 L 557.4 497.4 L 555.2 497 L 557.4 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

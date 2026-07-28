@@ -1,0 +1,110 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "bukayo-saka-zodiac-sign": {
+      "hero": {
+        "prompt": "A single luminous crystalline formation rises from a vast dark plain, its precise geometric facets glowing in warm gold light; from its apex a blazing curved arc of fire sweeps across a wide star-filled sky toward a distant misty horizon, both earth and flame inhabiting the same unbroken landscape; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Glowing crystal on dark plain with fiery arc across a starfield sky — Virgo precision meets Aries fire",
+        "altZh": "黑暗平原上的发光水晶与掠过星空的炽热弧线——处女精准与白羊之火交汇"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Virgo Sun vs Aries Moon: Which One You're Actually Watching",
+          "afterHeadingZh": "## 萨卡的星座 与相近概念：运作方式 + 取舍",
+          "titleEn": "How Saka's Three Placements Work in Order",
+          "titleZh": "萨卡三项配置如何按序运作",
+          "altEn": "Sequence showing Virgo Sun craftsman, Aries Moon trigger, Mars in Sagittarius long shot, and combined trade-off",
+          "altZh": "展示处女座太阳手艺人、白羊座月亮扳机、射手座火星远射及综合取舍的顺序图",
+          "items": [
+            {
+              "nameEn": "Virgo Sun",
+              "nameZh": "处女座太阳",
+              "subEn": "The craftsman — precision, positional discipline, repeatable craft over improvisation",
+              "subZh": "手艺人——精度、位置纪律、手艺压过即兴"
+            },
+            {
+              "nameEn": "Aries Moon",
+              "nameZh": "白羊座月亮",
+              "subEn": "The trigger — fast, combative emotional reflex; demands the ball seconds after any mistake",
+              "subZh": "扳机——快速、好斗的情绪反射；失误几秒后立刻要球"
+            },
+            {
+              "nameEn": "Mars in Sagittarius",
+              "nameZh": "射手座火星",
+              "subEn": "The long shot — wide-angle risk appetite; long-range and tight-angle attempts where others recycle",
+              "subZh": "远射——大角度冒险胃口；别人倒脚时他出远射或小角度尝试"
+            },
+            {
+              "nameEn": "The Combined Trade-off",
+              "nameZh": "综合取舍",
+              "subEn": "Precision and aggression run in sequence: Virgo Sun plans, Aries Moon pulls the trigger",
+              "subZh": "精度与侵略性按序运转：处女太阳谋划，白羊月亮扣下扳机"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Bukayo Saka's Zodiac Sign at a Glance",
+          "afterHeadingZh": "## 一览速查表",
+          "titleEn": "Saka's Three Key Placements Compared",
+          "titleZh": "萨卡三项关键配置对比",
+          "altEn": "Comparison of Virgo Sun, Aries Moon and Mars in Sagittarius placements in Saka's chart",
+          "altZh": "萨卡星盘中处女座太阳、白羊座月亮与射手座火星配置对比",
+          "columns": [
+            {
+              "nameEn": "Virgo Sun",
+              "nameZh": "处女座太阳",
+              "linesEn": [
+                "Identity: precision and positional discipline",
+                "Earth · Mercury",
+                "Clean first touch, measured cut-backs, repeatable movement"
+              ],
+              "linesZh": [
+                "身份：精度与位置纪律",
+                "土 · 水星",
+                "干净的触球、有分寸的回敲、可重复的跑动"
+              ]
+            },
+            {
+              "nameEn": "Aries Moon",
+              "nameZh": "白羊座月亮",
+              "linesEn": [
+                "Emotional reflex: combative and fast",
+                "Fire · Mars",
+                "Demands ball after mistakes, fast recovery, sharp first step"
+              ],
+              "linesZh": [
+                "情绪反射：好斗而快速",
+                "火 · 火星",
+                "失误后立刻要球、迅速复原、启动凌厉"
+              ]
+            },
+            {
+              "nameEn": "Mars in Sagittarius",
+              "nameZh": "射手座火星",
+              "linesEn": [
+                "Attack style: wide-angle risk appetite",
+                "Fire · Jupiter",
+                "Long-range shots, tight-angle attempts, expansive attacking runs"
+              ],
+              "linesZh": [
+                "进攻方式：大角度冒险胃口",
+                "火 · 木星",
+                "远射、小角度尝试、大开大合的进攻跑动"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

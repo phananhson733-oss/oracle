@@ -1,0 +1,48 @@
+{
+  "_comment": "Aura cluster — first run of the reusable illustrate-article pipeline. Concepts are context-derived from each article's core thesis (see scripts/illustrate-article.mjs).",
+  "imagesDir": "public/images/aura",
+  "urlBase": "/images/aura",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "maxWidth": 1280, "quality": 82 },
+  "articles": {
+    "red-aura-meaning": {
+      "hero": {
+        "prompt": "Ethereal abstract aura energy field split between vibrant clear crimson red on one side and darker muddy maroon red on the other, soft glowing light radiating outward, dark cosmic starfield background, wispy energy tendrils, no text, no words, no letters, no human face, elegant spiritual digital art, cinematic, 16:9 landscape",
+        "alt": "red aura energy field contrasting vibrant clear red with muddy dark red, root chakra"
+      }
+    },
+    "blue-aura-meaning": {
+      "hero": {
+        "prompt": "Ethereal abstract blue aura energy field forming a smooth gradient spectrum from pale light blue through deep ocean blue into indigo, soft glowing light radiating outward, dark cosmic starfield background, wispy energy tendrils, no text, no words, no letters, no human face, elegant spiritual digital art, cinematic, 16:9 landscape",
+        "alt": "blue aura energy field spectrum from light blue to deep blue and indigo, throat chakra"
+      }
+    },
+    "orange-aura-meaning": {
+      "hero": { "reuse": "/tmp/aura-gen/orange-aura-meaning.png", "alt": "orange aura energy field, sacral chakra warmth and creative drive" }
+    },
+    "yellow-aura-meaning": {
+      "hero": { "reuse": "/tmp/aura-gen/yellow-aura-meaning.png", "alt": "yellow aura energy field, solar plexus radiance, confidence and creative drive" }
+    },
+    "green-aura-meaning": {
+      "hero": { "reuse": "/tmp/aura-gen/green-aura-meaning.png", "alt": "green aura energy field, heart chakra healing and emotional balance" }
+    },
+    "purple-aura-meaning": {
+      "hero": { "reuse": "/tmp/aura-gen/purple-aura-meaning.png", "alt": "purple aura energy field around a faint human silhouette, intuition and perception" }
+    },
+    "white-aura-meaning": {
+      "hero": { "reuse": "/tmp/aura-gen/white-aura-meaning.png", "alt": "white aura energy field surrounding a faint human silhouette, integration and transition" }
+    },
+    "aura-colors-guide": {
+      "hero": { "reuse": "/tmp/aura-gen/aura-colors-pillar.png", "alt": "the seven aura colors as a flowing spectrum of light — red, orange, yellow, green, blue, purple and white" },
+      "inline": [
+        {
+          "afterHeading": "## The 7 aura colors: quick guide",
+          "src": "public/images/aura/aura-colors-chakra-chart.svg",
+          "url": "/images/aura/aura-colors-chakra-chart.svg",
+          "alt": "the seven aura colors mapped to the seven chakra centers, from red at the root to white at the crown"
+        }
+      ]
+    }
+  }
+}

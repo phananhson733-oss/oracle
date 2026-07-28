@@ -1,0 +1,116 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "north-node-in-leo": {
+      "hero": {
+        "prompt": "A solitary radiant golden orb ascending over a vast indigo cosmic horizon, warm amber-gold light blooming upward into a deep violet sky while cool silver constellations drift and dissolve into the surrounding darkness below and behind, a continuous twilight landscape of celestial transition from collective silver starfields to a single luminous golden presence rising alone; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A golden orb rises over an indigo cosmic horizon as cool silver star-forms dissolve into the dark behind it",
+        "altZh": "一颗金色光体在靛蓝宇宙地平线升起，身后的银色星形消散于深黑之中"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Leo North Node vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 狮子座北交点与相近概念：运作方式 + 取舍",
+          "titleEn": "Leo North Node vs Leo Sun vs Fifth House",
+          "titleZh": "狮子座北交点 vs 狮子座太阳 vs 第五宫",
+          "altEn": "Comparison of the Leo North Node axis against the Leo Sun placement and the Fifth House",
+          "altZh": "狮子座北交点轴线与狮子座太阳、第五宫的对比图",
+          "columns": [
+            {
+              "nameEn": "Leo North Node Axis",
+              "nameZh": "狮子座北交点轴",
+              "linesEn": [
+                "Directional pull between past habit and future stretch",
+                "Both poles read together, never in isolation",
+                "Growth theme resolving over decades"
+              ],
+              "linesZh": [
+                "过去习惯与未来伸展之间的方向性拉力",
+                "两极永远一起读，从不孤立",
+                "需数十年化解的成长主题"
+              ]
+            },
+            {
+              "nameEn": "Leo Sun",
+              "nameZh": "狮子座太阳",
+              "linesEn": [
+                "Warmth and recognition need already native",
+                "Standing trait true on any single day",
+                "No developmental tension — already present"
+              ],
+              "linesZh": [
+                "原本自带的温度与被看见需求",
+                "任何一天都读得通的固定特质",
+                "无成长张力，当下已有"
+              ]
+            },
+            {
+              "nameEn": "Fifth House",
+              "nameZh": "第五宫",
+              "linesEn": [
+                "Leo's domain: creativity, romance, personal joy",
+                "Static placement, not a directional arc",
+                "Misses the past-to-future developmental pull"
+              ],
+              "linesZh": [
+                "狮子领地：创造力、恋爱、个人喜悦",
+                "静态落点，非方向性弧线",
+                "缺少从过去到未来的发育性拉力"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Leo North Node in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别狮子座北交点",
+          "titleEn": "Five Signals the Leo North Node Is Active",
+          "titleZh": "狮子座北交点轴的五个可观察信号",
+          "altEn": "Five observable signals showing the Leo North Node axis at work in everyday life",
+          "altZh": "显示狮子座北交点轴在日常生活中运作的五个可观察信号",
+          "items": [
+            {
+              "nameEn": "The Instinct to Defer",
+              "nameZh": "先去附和的本能",
+              "subEn": "Reaching for group consensus before naming your own preference",
+              "subZh": "在说出自己偏好之前自动先去够「大家怎么想」"
+            },
+            {
+              "nameEn": "Warmth You Admire but Withhold",
+              "nameZh": "欣赏却收着不用的温度",
+              "subEn": "Respecting open-hearted people while feeling clumsy doing it yourself",
+              "subZh": "尊重敞开心的人，自己做起来却笨手笨脚"
+            },
+            {
+              "nameEn": "Discomfort of Being Looked At",
+              "nameZh": "被注视时的不适",
+              "subEn": "Wanting to deflect attention when a contribution is clearly yours",
+              "subZh": "当贡献明显是你的时想把注意力推给群体"
+            },
+            {
+              "nameEn": "The Creative Project You Postpone",
+              "nameZh": "一直往后拖的创作",
+              "subEn": "A personal piece of expression you circle for years without finishing",
+              "subZh": "一件绕了好几年都没完成的个人表达作品"
+            },
+            {
+              "nameEn": "Recurring Self-Erasure Theme",
+              "nameZh": "反复出现的自我抹除主题",
+              "subEn": "Disappearing into causes or collectives decade after decade",
+              "subZh": "把自己消融进事业或集体、年复一年的人生模式"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

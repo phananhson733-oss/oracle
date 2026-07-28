@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="天蝎北交点的五个信号">
+  <defs>
+    <linearGradient id="northnodeinscorpio1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="northnodeinscorpio1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="northnodeinscorpio1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="northnodeinscorpio1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="northnodeinscorpio1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="northnodeinscorpio1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#northnodeinscorpio1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#northnodeinscorpio1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#northnodeinscorpio1zh-neb2)"/>
+  <circle cx="129.9" cy="310.6" r="0.90" fill="#cfc8ea" opacity="0.29"/><circle cx="548.6" cy="65.9" r="0.82" fill="#cfc8ea" opacity="0.20"/><circle cx="272.0" cy="407.0" r="1.37" fill="#cfc8ea" opacity="0.37"/><circle cx="706.6" cy="351.6" r="0.91" fill="#cfc8ea" opacity="0.25"/><circle cx="59.5" cy="328.7" r="1.63" fill="#cfc8ea" opacity="0.27"/><circle cx="305.2" cy="339.8" r="1.06" fill="#cfc8ea" opacity="0.25"/><circle cx="417.1" cy="343.0" r="0.84" fill="#cfc8ea" opacity="0.22"/><circle cx="101.3" cy="303.6" r="1.50" fill="#cfc8ea" opacity="0.13"/><circle cx="105.0" cy="396.1" r="1.67" fill="#cfc8ea" opacity="0.44"/><circle cx="332.0" cy="296.9" r="1.62" fill="#cfc8ea" opacity="0.53"/><circle cx="71.3" cy="48.0" r="1.04" fill="#cfc8ea" opacity="0.27"/><circle cx="45.1" cy="196.7" r="0.85" fill="#cfc8ea" opacity="0.42"/><circle cx="271.6" cy="409.5" r="0.50" fill="#cfc8ea" opacity="0.53"/><circle cx="360.1" cy="56.4" r="0.45" fill="#cfc8ea" opacity="0.22"/><circle cx="616.9" cy="384.0" r="0.89" fill="#cfc8ea" opacity="0.49"/><circle cx="551.9" cy="73.5" r="1.66" fill="#cfc8ea" opacity="0.45"/><circle cx="193.9" cy="399.0" r="0.82" fill="#cfc8ea" opacity="0.44"/><circle cx="329.6" cy="211.7" r="0.84" fill="#cfc8ea" opacity="0.45"/><circle cx="457.6" cy="84.5" r="1.52" fill="#cfc8ea" opacity="0.29"/><circle cx="691.2" cy="241.4" r="0.97" fill="#cfc8ea" opacity="0.27"/><circle cx="268.8" cy="309.8" r="0.99" fill="#cfc8ea" opacity="0.44"/><circle cx="165.4" cy="44.4" r="1.02" fill="#cfc8ea" opacity="0.44"/><circle cx="18.8" cy="68.9" r="1.07" fill="#cfc8ea" opacity="0.14"/><circle cx="454.9" cy="171.5" r="1.19" fill="#cfc8ea" opacity="0.33"/><circle cx="143.0" cy="109.7" r="1.49" fill="#cfc8ea" opacity="0.25"/><circle cx="194.8" cy="170.5" r="1.06" fill="#cfc8ea" opacity="0.49"/><circle cx="200.4" cy="327.8" r="1.57" fill="#cfc8ea" opacity="0.23"/><circle cx="73.5" cy="43.8" r="1.09" fill="#cfc8ea" opacity="0.43"/><circle cx="42.3" cy="175.8" r="1.59" fill="#cfc8ea" opacity="0.36"/><circle cx="102.8" cy="142.2" r="0.91" fill="#cfc8ea" opacity="0.16"/><circle cx="226.1" cy="17.5" r="1.02" fill="#cfc8ea" opacity="0.52"/><circle cx="659.5" cy="215.8" r="0.48" fill="#cfc8ea" opacity="0.42"/><circle cx="307.7" cy="383.4" r="1.39" fill="#cfc8ea" opacity="0.37"/><circle cx="391.3" cy="34.2" r="1.25" fill="#cfc8ea" opacity="0.45"/><circle cx="283.0" cy="55.8" r="0.93" fill="#cfc8ea" opacity="0.49"/><circle cx="667.6" cy="128.6" r="0.46" fill="#cfc8ea" opacity="0.35"/><circle cx="575.4" cy="100.5" r="0.51" fill="#cfc8ea" opacity="0.33"/><path d="M 194.01717133820057 13.1 L 194.5 15.7 L 197.1 16.213704705936834 L 194.5 16.7 L 194.01717133820057 19.3 L 193.5 16.7 L 190.9 16.213704705936834 L 193.5 15.7 Z" fill="#f6e6bf" opacity="0.7867174238665029"/><path d="M 721.6304592564702 304.4 L 722.2 307.2 L 725.0 307.76483642845415 L 722.2 308.3 L 721.6304592564702 311.1 L 721.1 308.3 L 718.3 307.76483642845415 L 721.1 307.2 Z" fill="#f6e6bf" opacity="0.5404635060345754"/><path d="M 472.704960167408 270.7 L 473.3 273.6 L 476.2 274.17919821548276 L 473.3 274.7 L 472.704960167408 277.7 L 472.1 274.7 L 469.2 274.17919821548276 L 472.1 273.6 Z" fill="#f6e6bf" opacity="0.7213049939600751"/><path d="M 418.5640669390559 409.9 L 419.1 412.6 L 421.8 413.0914596093353 L 419.1 413.6 L 418.5640669390559 416.3 L 418.1 413.6 L 415.4 413.0914596093353 L 418.1 412.6 Z" fill="#f6e6bf" opacity="0.5858131566783413"/><path d="M 296.13538996875286 302.2 L 296.7 304.9 L 299.4 305.4248834445607 L 296.7 305.9 L 296.13538996875286 308.7 L 295.6 305.9 L 292.9 305.4248834445607 L 295.6 304.9 Z" fill="#f6e6bf" opacity="0.5525751781417056"/><path d="M 59.5 328.7 L 305.2 339.8 L 101.3 303.6 L 360.1 56.4 L 616.9 384.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">天蝎北交点的五个信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#northnodeinscorpio1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#northnodeinscorpio1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#northnodeinscorpio1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#northnodeinscorpio1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">紧紧守住资源</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">钱、时间、物品攥得太紧，新事物无从冒险</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#northnodeinscorpio1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#northnodeinscorpio1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">只允许平静</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">把不确定当成要处理的问题，而不是去感受</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#northnodeinscorpio1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#northnodeinscorpio1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">把情绪处理掉</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">难受的感觉一冒头就转向分心</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#northnodeinscorpio1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#northnodeinscorpio1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">试探或催逼亲密</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">把关系逼到破裂，或停在浅处以便掌控</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#northnodeinscorpio1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#northnodeinscorpio1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">拖延告别</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">习惯与物件早已无用，却迟迟不放手</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

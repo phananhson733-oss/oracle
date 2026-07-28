@@ -1,0 +1,111 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "what-is-my-love-language": {
+      "hero": {
+        "prompt": "Three luminous celestial bodies — Venus glowing soft gold, Mars burning ember-red, and the Moon shimmering silver-white — drift in a slow inward spiral through an infinite indigo cosmos, their long light trails interweaving into a shared warm halo of amber and teal at the center of the frame, painterly editorial illustration, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Venus, Mars, and the Moon glowing in deep indigo space, their gold and teal light trails converging into a warm shared halo"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Your Love Language in Your Chart",
+          "titleEn": "Five Layers of Your Astrological Love Language",
+          "altEn": "Five-step sequence showing how Venus, Mars, Moon, aspects, and houses each reveal a layer of your astrological love language",
+          "items": [
+            {
+              "nameEn": "Venus",
+              "subEn": "How do I express and receive warmth?"
+            },
+            {
+              "nameEn": "Mars",
+              "subEn": "How do I pursue and show desire?"
+            },
+            {
+              "nameEn": "Moon",
+              "subEn": "What makes me feel emotionally safe?"
+            },
+            {
+              "nameEn": "Aspects",
+              "subEn": "How do the three planets combine and tension each other?"
+            },
+            {
+              "nameEn": "Houses",
+              "subEn": "Where in life does love most come alive?"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Astrological Love Language vs Chapman's Five Love Languages",
+          "titleEn": "Two Frameworks for Love Language",
+          "altEn": "Comparison of Chapman's five love languages questionnaire versus the astrological Venus-Mars-Moon reading of affection style",
+          "columns": [
+            {
+              "nameEn": "Chapman's Five Love Languages",
+              "linesEn": [
+                "Words of Affirmation",
+                "Acts of Service",
+                "Receiving Gifts",
+                "Quality Time",
+                "Physical Touch",
+                "Ranked via questionnaire",
+                "Simple named categories"
+              ]
+            },
+            {
+              "nameEn": "Astrological Reading",
+              "linesEn": [
+                "Venus — warmth and affection style",
+                "Mars — pursuit and desire",
+                "Moon — emotional safety needs",
+                "Read from birth chart placements",
+                "Layered, symbolic portrait of tendencies"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## My Love Language at a Glance",
+          "titleEn": "Venus, Mars, and Moon at a Glance",
+          "altEn": "Three-column table comparing Venus, Mars, and Moon placements showing how each planet shapes your love language",
+          "columns": [
+            {
+              "nameEn": "Venus",
+              "linesEn": [
+                "Shows how you give and receive warmth, taste, and appreciation",
+                "Rules Taurus and Libra",
+                "Notice what makes you feel valued in small daily moments"
+              ]
+            },
+            {
+              "nameEn": "Mars",
+              "linesEn": [
+                "Shows how you pursue, initiate, and express desire",
+                "Rules Aries and, traditionally, Scorpio",
+                "Watch how you go after what — and who — you want"
+              ]
+            },
+            {
+              "nameEn": "Moon",
+              "linesEn": [
+                "Shows what makes you feel emotionally safe and held",
+                "Rules Cancer",
+                "Notice the gestures that let you finally relax around someone"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

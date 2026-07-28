@@ -1,0 +1,104 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jordan-vs-argentina": {
+      "hero": {
+        "prompt": "A sweeping desert-to-sky landscape at dusk, where a delicate crescent moon lifts above rust-coloured sandstone dunes at the left horizon while a vast crown of ancient stars blazes overhead at the zenith, both luminous presences reflected together in a still salt-flat mirror stretching across the foreground, one seamless indigo heaven arching from desert edge to zenith, teal nebula light diffusing between the rising crescent and the ancient stellar crown in a single continuous celestial dome — deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Crescent moon rising over desert dunes beside an ancient crown of stars in one indigo sky — Jordan vs Argentina founding-chart contrast",
+        "altZh": "一轮新月从沙丘地平线升起，与星空古老冠冕共处同一片靛蓝夜空——约旦对阿根廷建国星盘对比"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## National-Chart Contrast vs Match Prediction: What Each One Actually Does",
+          "titleEn": "Match Prediction vs National-Chart Contrast",
+          "titleZh": "赛事预测与建国星盘对比：各自的用途",
+          "altEn": "Side-by-side comparison of match prediction and national-chart contrast approaches for Jordan vs Argentina",
+          "altZh": "约旦对阿根廷赛事预测与建国星盘对比的功能对照",
+          "columns": [
+            {
+              "nameEn": "Match Prediction",
+              "nameZh": "赛事预测",
+              "linesEn": [
+                "Uses measurable inputs: form, ranking, fitness, odds",
+                "Compresses everything into a single probable result",
+                "Sacrifices cultural meaning for forecast clarity",
+                "Cannot account for debut symbolism or ritual weight"
+              ],
+              "linesZh": [
+                "使用可量化数据：状态、排名、体能、赔率",
+                "将所有因素压缩为单一概率结果",
+                "以牺牲文化意义换取预测清晰度",
+                "无法体现首次参赛的象征意义或仪式感"
+              ]
+            },
+            {
+              "nameEn": "National-Chart Contrast",
+              "nameZh": "建国星盘对比",
+              "linesEn": [
+                "Reads each country's founding chart as a symbolic portrait of temperament",
+                "Sets debutant archetype against title-defender archetype",
+                "Uses 2026 Jupiter-in-Cancer transit as shared backdrop",
+                "Surfaces cultural meaning; declines to forecast the score"
+              ],
+              "linesZh": [
+                "以建国星盘为各国气质的象征肖像",
+                "将初次参赛原型与卫冕冠军原型并列呈现",
+                "以2026年巨蟹座木星过境为共同背景",
+                "揭示文化意义，不作赛果预测"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Fixture in Your Timing",
+          "titleEn": "5 Steps to Read Jordan vs Argentina Symbolically",
+          "titleZh": "用象征视角解读约旦对阿根廷的5个步骤",
+          "altEn": "Five-step guide to reading the Jordan vs Argentina fixture through national founding-chart symbolism",
+          "altZh": "通过建国星盘象征解读约旦对阿根廷比赛的五步指南",
+          "items": [
+            {
+              "nameEn": "Spot the Debut Marker",
+              "nameZh": "识别首次参赛标志",
+              "subEn": "Jordan arrives at its first World Cup — chart reads through initiation, proving-ground energy, and the freedom of having nothing to defend",
+              "subZh": "约旦首次参加世界杯——星盘呈现启蒙、试炼场能量与无需卫冕的自由感"
+            },
+            {
+              "nameEn": "Spot the Defence Posture",
+              "nameZh": "识别卫冕姿态",
+              "subEn": "Argentina enters as reigning champion — chart reads through continuation and the heavier job of protecting a status already won",
+              "subZh": "阿根廷以卫冕冠军身份出战——星盘呈现延续性与守护已有地位的沉重责任"
+            },
+            {
+              "nameEn": "Watch the Shared Transit",
+              "nameZh": "关注共同过境星象",
+              "subEn": "Jupiter moves through Cancer through June 2026, shifting into Leo on June 30 — themes of protection, belonging, and emotional security color both narratives",
+              "subZh": "木星过境巨蟹座至2026年6月，6月30日入狮子座——保护、归属与情感安全感主题贯穿双方叙事"
+            },
+            {
+              "nameEn": "Listen to Framing Language",
+              "nameZh": "留意话语框架",
+              "subEn": "When pundits call the game a 'formality' or a 'fairy tale,' the underdog-versus-champion archetype is surfacing in plain speech",
+              "subZh": "当评论员称这场比赛为「走过场」或「童话故事」时，弱队对冠军的原型正在日常语言中浮现"
+            },
+            {
+              "nameEn": "Separate Ritual from Result",
+              "nameZh": "区分仪式与结果",
+              "subEn": "Treat the symbolism as the meaning of the night and let the scoreboard stand on its own — neither has to do the other's work",
+              "subZh": "将象征意义视为这个夜晚的内涵，让积分榜自行诉说——两者无需彼此替代"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

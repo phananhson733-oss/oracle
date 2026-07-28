@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 548" role="img" aria-label="The seven aura colors mapped to the seven chakra centers, from red at the root to white at the crown">
+  <defs>
+    <linearGradient id="aura-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/>
+      <stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="aura-red" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#ff5a5a"/><stop offset="1" stop-color="#b01e2e"/></radialGradient>
+    <radialGradient id="aura-orange" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#ffb15a"/><stop offset="1" stop-color="#d97724"/></radialGradient>
+    <radialGradient id="aura-yellow" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#ffe27a"/><stop offset="1" stop-color="#e0b033"/></radialGradient>
+    <radialGradient id="aura-green" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#7fe0a0"/><stop offset="1" stop-color="#3f9a64"/></radialGradient>
+    <radialGradient id="aura-blue" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#7ab8ff"/><stop offset="1" stop-color="#3a72c4"/></radialGradient>
+    <radialGradient id="aura-purple" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#b89cff"/><stop offset="1" stop-color="#7250c0"/></radialGradient>
+    <radialGradient id="aura-white" cx="0.5" cy="0.5" r="0.6"><stop offset="0" stop-color="#ffffff"/><stop offset="1" stop-color="#c9c4e0"/></radialGradient>
+    <filter id="aura-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="7"/></filter>
+  </defs>
+
+  <rect x="1.5" y="1.5" width="837" height="545" rx="22" fill="url(#aura-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="58" font-family="Georgia, 'Times New Roman', serif" font-size="25" fill="#efeaf8">The seven aura colors and their chakra centers</text>
+  <line x1="44" y1="76" x2="796" y2="76" stroke="#d4af6a" stroke-opacity="0.18"/>
+
+  <!-- rows: cy = 122 + i*58 -->
+  <g font-family="Georgia, 'Times New Roman', serif">
+    <!-- Red -->
+    <circle cx="74" cy="122" r="19" fill="url(#aura-red)" filter="url(#aura-soft)"/>
+    <circle cx="74" cy="122" r="14" fill="url(#aura-red)"/>
+    <text x="116" y="117" font-size="20" fill="#f3effb">Red</text>
+    <text x="116" y="138" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#9a93b5">Root chakra (Muladhara) · survival &amp; physical drive</text>
+
+    <!-- Orange -->
+    <circle cx="74" cy="180" r="19" fill="url(#aura-orange)" filter="url(#aura-soft)"/>
+    <circle cx="74" cy="180" r="14" fill="url(#aura-orange)"/>
+    <text x="116" y="175" font-size="20" fill="#f3effb">Orange</text>
+    <text x="116" y="196" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#9a93b5">Sacral chakra (Svadhisthana) · pleasure &amp; creativity</text>
+
+    <!-- Yellow -->
+    <circle cx="74" cy="238" r="19" fill="url(#aura-yellow)" filter="url(#aura-soft)"/>
+    <circle cx="74" cy="238" r="14" fill="url(#aura-yellow)"/>
+    <text x="116" y="233" font-size="20" fill="#f3effb">Yellow</text>
+    <text x="116" y="254" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#9a93b5">Solar plexus (Manipura) · confidence &amp; will</text>
+
+    <!-- Green -->
+    <circle cx="74" cy="296" r="19" fill="url(#aura-green)" filter="url(#aura-soft)"/>
+    <circle cx="74" cy="296" r="14" fill="url(#aura-green)"/>
+    <text x="116" y="291" font-size="20" fill="#f3effb">Green</text>
+    <text x="116" y="312" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#9a93b5">Heart chakra (Anahata) · healing &amp; balance</text>
+
+    <!-- Blue -->
+    <circle cx="74" cy="354" r="19" fill="url(#aura-blue)" filter="url(#aura-soft)"/>
+    <circle cx="74" cy="354" r="14" fill="url(#aura-blue)"/>
+    <text x="116" y="349" font-size="20" fill="#f3effb">Blue</text>
+    <text x="116" y="370" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#9a93b5">Throat chakra (Vishuddha) · expression &amp; truth</text>
+
+    <!-- Purple -->
+    <circle cx="74" cy="412" r="19" fill="url(#aura-purple)" filter="url(#aura-soft)"/>
+    <circle cx="74" cy="412" r="14" fill="url(#aura-purple)"/>
+    <text x="116" y="407" font-size="20" fill="#f3effb">Purple</text>
+    <text x="116" y="428" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#9a93b5">Third eye / crown (Ajna) · intuition &amp; perception</text>
+
+    <!-- White -->
+    <circle cx="74" cy="470" r="19" fill="url(#aura-white)" filter="url(#aura-soft)"/>
+    <circle cx="74" cy="470" r="14" fill="url(#aura-white)"/>
+    <text x="116" y="465" font-size="20" fill="#f3effb">White</text>
+    <text x="116" y="486" font-family="Helvetica, Arial, sans-serif" font-size="13" fill="#9a93b5">Crown (Sahasrara) · clarity, integration &amp; transition</text>
+  </g>
+
+  <text x="796" y="524" text-anchor="end" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">A structural, cross-tradition map — colors describe current state, not rank.</text>
+</svg>

@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" role="img" aria-label="">
+  <defs>
+    <linearGradient id="pridemonthastrology1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="pridemonthastrology1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="pridemonthastrology1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pridemonthastrology1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="pridemonthastrology1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="pridemonthastrology1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="277" rx="22" fill="url(#pridemonthastrology1zh-panel)"/>
+  <ellipse cx="198" cy="67" rx="380" ry="95" fill="url(#pridemonthastrology1zh-neb1)"/>
+  <ellipse cx="623" cy="224" rx="334" ry="90" fill="url(#pridemonthastrology1zh-neb2)"/>
+  <circle cx="339.9" cy="259.0" r="1.42" fill="#cfc8ea" opacity="0.31"/><circle cx="578.2" cy="189.3" r="1.55" fill="#cfc8ea" opacity="0.17"/><circle cx="213.7" cy="51.1" r="1.23" fill="#cfc8ea" opacity="0.28"/><circle cx="471.3" cy="140.7" r="0.75" fill="#cfc8ea" opacity="0.25"/><circle cx="168.9" cy="267.5" r="0.63" fill="#cfc8ea" opacity="0.40"/><circle cx="62.4" cy="234.1" r="0.66" fill="#cfc8ea" opacity="0.44"/><circle cx="354.9" cy="80.6" r="0.72" fill="#cfc8ea" opacity="0.40"/><circle cx="275.9" cy="149.2" r="0.59" fill="#cfc8ea" opacity="0.30"/><circle cx="376.7" cy="143.2" r="1.45" fill="#cfc8ea" opacity="0.18"/><circle cx="265.4" cy="116.2" r="1.29" fill="#cfc8ea" opacity="0.13"/><circle cx="690.5" cy="27.3" r="1.62" fill="#cfc8ea" opacity="0.22"/><circle cx="158.7" cy="172.7" r="0.57" fill="#cfc8ea" opacity="0.23"/><circle cx="30.8" cy="214.7" r="0.71" fill="#cfc8ea" opacity="0.48"/><circle cx="688.6" cy="91.5" r="1.22" fill="#cfc8ea" opacity="0.18"/><circle cx="103.7" cy="155.7" r="1.10" fill="#cfc8ea" opacity="0.18"/><circle cx="249.4" cy="49.4" r="0.83" fill="#cfc8ea" opacity="0.50"/><circle cx="493.1" cy="264.4" r="1.30" fill="#cfc8ea" opacity="0.41"/><circle cx="57.0" cy="178.2" r="1.04" fill="#cfc8ea" opacity="0.29"/><circle cx="63.7" cy="185.6" r="1.46" fill="#cfc8ea" opacity="0.52"/><circle cx="365.7" cy="181.7" r="1.39" fill="#cfc8ea" opacity="0.36"/><circle cx="46.4" cy="215.6" r="1.38" fill="#cfc8ea" opacity="0.46"/><circle cx="115.1" cy="226.7" r="0.76" fill="#cfc8ea" opacity="0.27"/><circle cx="445.4" cy="191.7" r="1.28" fill="#cfc8ea" opacity="0.47"/><circle cx="724.5" cy="132.7" r="1.15" fill="#cfc8ea" opacity="0.25"/><path d="M 68.58286169916391 150.4 L 69.1 153.2 L 72.0 153.75175251532346 L 69.1 154.3 L 68.58286169916391 157.1 L 68.0 154.3 L 65.2 153.75175251532346 L 68.0 153.2 Z" fill="#f6e6bf" opacity="0.6557457491522655"/><path d="M 413.7987748682499 125.6 L 414.2 127.7 L 416.3 128.0905969599262 L 414.2 128.5 L 413.7987748682499 130.6 L 413.4 128.5 L 411.3 128.0905969599262 L 413.4 127.7 Z" fill="#f6e6bf" opacity="0.5989895271835849"/><path d="M 291.56170692294836 83.5 L 292.1 86.2 L 294.8 86.71771706361324 L 292.1 87.2 L 291.56170692294836 89.9 L 291.0 87.2 L 288.3 86.71771706361324 L 291.0 86.2 Z" fill="#f6e6bf" opacity="0.6082668279996142"/><path d="M 532.1433844715357 202.5 L 532.7 205.5 L 535.8 206.07902709487826 L 532.7 206.7 L 532.1433844715357 209.7 L 531.6 206.7 L 528.5 206.07902709487826 L 531.6 205.5 Z" fill="#f6e6bf" opacity="0.6526637979550287"/><path d="M 450.6438727453351 109.1 L 451.2 111.8 L 453.9 112.35577762592584 L 451.2 112.9 L 450.6438727453351 115.6 L 450.1 112.9 L 447.4 112.35577762592584 L 450.1 111.8 Z" fill="#f6e6bf" opacity="0.7202099885558709"/><path d="M 471.3 140.7 L 168.9 267.5 L 724.5 132.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="277" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="266" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 260.8 L 16.5 263.5 L 19.2 264 L 16.5 264.5 L 16 267.2 L 15.5 264.5 L 12.8 264 L 15.5 263.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 260.8 L 744.5 263.5 L 747.2 264 L 744.5 264.5 L 744 267.2 L 743.5 264.5 L 740.8 264 L 743.5 263.5 Z" fill="#d4af6a" opacity="0.4"/>
+
+  <line x1="230" y1="40" x2="368" y2="40" stroke="url(#pridemonthastrology1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="40" x2="530" y2="40" stroke="url(#pridemonthastrology1zh-rule)" stroke-width="1"/>
+  <path d="M 380 35.0 L 380.8 39.2 L 385.0 40 L 380.8 40.8 L 380 45.0 L 379.2 40.8 L 375.0 40 L 379.2 39.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="86" x2="92" y2="218" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="86" r="13.0" fill="url(#pridemonthastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="86" r="8" fill="url(#pridemonthastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="83.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 82.0 L 92.6 85.4 L 96.0 86 L 92.6 86.6 L 92 90.0 L 91.4 86.6 L 88.0 86 L 91.4 85.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="91.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <circle cx="92" cy="130" r="13.0" fill="url(#pridemonthastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="130" r="8" fill="url(#pridemonthastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="127.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 126.0 L 92.6 129.4 L 96.0 130 L 92.6 130.6 L 92 134.0 L 91.4 130.6 L 88.0 130 L 91.4 129.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="135.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <circle cx="92" cy="174" r="13.0" fill="url(#pridemonthastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="174" r="8" fill="url(#pridemonthastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="171.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 170.0 L 92.6 173.4 L 96.0 174 L 92.6 174.6 L 92 178.0 L 91.4 174.6 L 88.0 174 L 91.4 173.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="179.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <circle cx="92" cy="218" r="13.0" fill="url(#pridemonthastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="218" r="8" fill="url(#pridemonthastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="215.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 214.0 L 92.6 217.4 L 96.0 218 L 92.6 218.6 L 92 222.0 L 91.4 218.6 L 88.0 218 L 91.4 217.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf"></text>
+  <path d="M 280.025 251.4 L 280.4 253.6 L 282.6 254 L 280.4 254.4 L 280.025 256.6 L 279.6 254.4 L 277.4 254 L 279.6 253.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="258" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 251.4 L 480.4 253.6 L 482.6 254 L 480.4 254.4 L 479.975 256.6 L 479.6 254.4 L 477.4 254 L 479.6 253.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

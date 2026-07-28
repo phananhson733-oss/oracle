@@ -1,8 +1,145 @@
 {
-  "buildCommand": "npm run build",
-  "outputDirectory": "dist",
-  "framework": "vite",
+  "version": 2,
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Cross-Origin-Opener-Policy",
+          "value": "same-origin-allow-popups"
+        },
+        {
+          "key": "Content-Security-Policy-Report-Only",
+          "value": "default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://accounts.google.com https://checkout.airwallex.com https://checkout-demo.airwallex.com https://appleid.cdn-apple.com https://www.gstatic.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https://images.unsplash.com https://www.transparenttextures.com https://www.googletagmanager.com https://*.airwallex.com; connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://accounts.google.com https://checkout.airwallex.com https://checkout-demo.airwallex.com https://*.airwallex.com; frame-src https://www.googletagmanager.com https://accounts.google.com https://checkout.airwallex.com https://checkout-demo.airwallex.com https://appleid.apple.com; frame-ancestors 'none'; form-action 'self'; base-uri 'self'; object-src 'none'"
+        }
+      ]
+    },
+    {
+      "source": "/assets/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/brand/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=604800, stale-while-revalidate=2592000"
+        }
+      ]
+    }
+  ],
+  "redirects": [
+    {
+      "source": "/en/wiki/aura-colors-pillar",
+      "destination": "/en/wiki/aura-colors-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/wiki/aura-colors-pillar/",
+      "destination": "/en/wiki/aura-colors-guide",
+      "statusCode": 301
+    },
+    {
+      "source": "/en/wiki/famous-highly-sensitive-people",
+      "destination": "/en/wiki/famous-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/zh/wiki/famous-highly-sensitive-people",
+      "destination": "/zh/wiki/famous-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/en/wiki/signs-you-re-a-highly-sensitive-person",
+      "destination": "/en/wiki/signs-of-a-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/zh/wiki/signs-you-re-a-highly-sensitive-person",
+      "destination": "/zh/wiki/signs-of-a-highly-sensitive-person",
+      "permanent": true
+    },
+    {
+      "source": "/en/wiki/solar-return-chart",
+      "destination": "/en/wiki/solar-return",
+      "statusCode": 301
+    },
+    {
+      "source": "/wiki/(.*)",
+      "destination": "/en/wiki/$1",
+      "statusCode": 301
+    },
+    {
+      "source": "/(.*)",
+      "has": [
+        {
+          "type": "host",
+          "value": "astrologywiki.com"
+        }
+      ],
+      "destination": "https://www.astrologywiki.com/$1",
+      "permanent": true
+    }
+  ],
+  "builds": [
+    {
+      "src": "package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "distDir": "dist"
+      }
+    },
+    {
+      "src": "backend/src/index.ts",
+      "use": "@vercel/node"
+    }
+  ],
   "rewrites": [
-    { "source": "/((?!api/).*)", "destination": "/index.html" }
+    {
+      "source": "/api/(.*)",
+      "destination": "backend/src/index.ts"
+    },
+    {
+      "source": "/health",
+      "destination": "backend/src/index.ts"
+    },
+    {
+      "source": "/go/(.*)",
+      "destination": "backend/src/index.ts"
+    },
+    {
+      "source": "/:code([a-z0-9]*[0-9][a-z0-9-]*)",
+      "destination": "backend/src/index.ts"
+    },
+    {
+      "source": "/assets/(.*)",
+      "destination": "backend/src/index.ts"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
+    }
+  ],
+  "env": {
+    "NODE_ENV": "production"
+  },
+  "crons": [
+    {
+      "path": "/api/cron/reconcile-subscriptions",
+      "schedule": "0 3 * * *"
+    },
+    {
+      "path": "/api/cron/send-weekly-newsletter",
+      "schedule": "0 14 * * 1"
+    },
+    {
+      "path": "/api/cron/send-monthly-newsletter",
+      "schedule": "0 14 1 * *"
+    }
   ]
 }

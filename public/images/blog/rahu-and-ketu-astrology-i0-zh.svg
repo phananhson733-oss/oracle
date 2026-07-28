@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="解读月交轴线的5个步骤">
+  <defs>
+    <linearGradient id="rahuandketuastrology0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="rahuandketuastrology0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="rahuandketuastrology0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rahuandketuastrology0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rahuandketuastrology0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rahuandketuastrology0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#rahuandketuastrology0zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#rahuandketuastrology0zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#rahuandketuastrology0zh-neb2)"/>
+  <circle cx="709.0" cy="381.7" r="1.47" fill="#cfc8ea" opacity="0.36"/><circle cx="672.5" cy="337.4" r="0.89" fill="#cfc8ea" opacity="0.23"/><circle cx="481.2" cy="182.9" r="1.27" fill="#cfc8ea" opacity="0.38"/><circle cx="267.8" cy="223.4" r="0.55" fill="#cfc8ea" opacity="0.27"/><circle cx="455.9" cy="253.8" r="0.54" fill="#cfc8ea" opacity="0.32"/><circle cx="622.5" cy="315.7" r="1.54" fill="#cfc8ea" opacity="0.50"/><circle cx="559.4" cy="329.1" r="0.56" fill="#cfc8ea" opacity="0.34"/><circle cx="612.3" cy="316.3" r="1.43" fill="#cfc8ea" opacity="0.25"/><circle cx="255.0" cy="328.1" r="1.52" fill="#cfc8ea" opacity="0.54"/><circle cx="112.4" cy="82.8" r="0.65" fill="#cfc8ea" opacity="0.28"/><circle cx="666.2" cy="22.6" r="0.88" fill="#cfc8ea" opacity="0.40"/><circle cx="45.8" cy="286.7" r="1.52" fill="#cfc8ea" opacity="0.50"/><circle cx="457.5" cy="106.7" r="0.51" fill="#cfc8ea" opacity="0.39"/><circle cx="455.5" cy="296.9" r="1.26" fill="#cfc8ea" opacity="0.45"/><circle cx="160.0" cy="27.5" r="0.55" fill="#cfc8ea" opacity="0.31"/><circle cx="609.8" cy="342.6" r="0.81" fill="#cfc8ea" opacity="0.26"/><circle cx="84.9" cy="36.5" r="0.69" fill="#cfc8ea" opacity="0.36"/><circle cx="208.4" cy="375.5" r="1.35" fill="#cfc8ea" opacity="0.45"/><circle cx="231.2" cy="375.9" r="1.51" fill="#cfc8ea" opacity="0.51"/><circle cx="580.8" cy="81.6" r="1.60" fill="#cfc8ea" opacity="0.21"/><circle cx="238.8" cy="164.1" r="1.11" fill="#cfc8ea" opacity="0.29"/><circle cx="26.1" cy="270.4" r="0.43" fill="#cfc8ea" opacity="0.38"/><circle cx="613.3" cy="417.9" r="0.78" fill="#cfc8ea" opacity="0.31"/><circle cx="368.2" cy="343.1" r="1.14" fill="#cfc8ea" opacity="0.54"/><circle cx="15.4" cy="49.1" r="1.64" fill="#cfc8ea" opacity="0.39"/><circle cx="636.6" cy="194.1" r="1.58" fill="#cfc8ea" opacity="0.48"/><circle cx="532.1" cy="247.7" r="0.42" fill="#cfc8ea" opacity="0.52"/><circle cx="734.8" cy="101.7" r="1.03" fill="#cfc8ea" opacity="0.42"/><circle cx="342.2" cy="94.4" r="0.87" fill="#cfc8ea" opacity="0.49"/><circle cx="297.4" cy="69.3" r="1.32" fill="#cfc8ea" opacity="0.28"/><circle cx="639.0" cy="35.9" r="0.54" fill="#cfc8ea" opacity="0.46"/><circle cx="525.8" cy="243.9" r="1.38" fill="#cfc8ea" opacity="0.32"/><circle cx="433.9" cy="56.9" r="1.67" fill="#cfc8ea" opacity="0.53"/><circle cx="482.1" cy="163.4" r="0.49" fill="#cfc8ea" opacity="0.36"/><circle cx="649.5" cy="34.1" r="1.25" fill="#cfc8ea" opacity="0.49"/><circle cx="542.6" cy="405.0" r="1.36" fill="#cfc8ea" opacity="0.45"/><circle cx="446.6" cy="12.0" r="0.45" fill="#cfc8ea" opacity="0.44"/><path d="M 35.74369204044342 380.9 L 36.2 383.4 L 38.7 383.8690890695434 L 36.2 384.3 L 35.74369204044342 386.8 L 35.3 384.3 L 32.8 383.8690890695434 L 35.3 383.4 Z" fill="#f6e6bf" opacity="0.5816743313102052"/><path d="M 348.8040136024356 63.0 L 349.2 65.1 L 351.3 65.51459714747034 L 349.2 65.9 L 348.8040136024356 68.0 L 348.4 65.9 L 346.3 65.51459714747034 L 348.4 65.1 Z" fill="#f6e6bf" opacity="0.6050025628646836"/><path d="M 165.90182302892208 41.6 L 166.5 44.5 L 169.4 45.06188709731214 L 166.5 45.6 L 165.90182302892208 48.5 L 165.3 45.6 L 162.4 45.06188709731214 L 165.3 44.5 Z" fill="#f6e6bf" opacity="0.5600465138209983"/><path d="M 244.68491504341364 225.3 L 245.2 228.2 L 248.1 228.7780213446822 L 245.2 229.3 L 244.68491504341364 232.2 L 244.1 229.3 L 241.3 228.7780213446822 L 244.1 228.2 Z" fill="#f6e6bf" opacity="0.7174452937906608"/><path d="M 254.94729408621788 333.0 L 255.6 336.3 L 258.9 336.96877767774276 L 255.6 337.6 L 254.94729408621788 340.9 L 254.3 337.6 L 251.0 336.96877767774276 L 254.3 336.3 Z" fill="#f6e6bf" opacity="0.5014432827709243"/><path d="M 532.1 247.7 L 525.8 243.9 L 446.6 12.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">解读月交轴线的5个步骤</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#rahuandketuastrology0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#rahuandketuastrology0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#rahuandketuastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#rahuandketuastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">1. 找出罗睺所在星座与宫位</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">星盘最渴望成长进入的欲望与抱负领域</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#rahuandketuastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#rahuandketuastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">2. 解读正对面的计都</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">南交点代表天生的从容，可依靠也可躲避其后</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#rahuandketuastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#rahuandketuastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">3. 将两者视为一条轴线</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">进步意味着靠近罗睺的前沿，同时不放弃计都积累的根基</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#rahuandketuastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#rahuandketuastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">4. 留意大运时序</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">激活任一月交点的大运期，是吠陀占星中最重要的预测阶段之一</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#rahuandketuastrology0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#rahuandketuastrology0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">5. 对应黄道星座特质</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">星座背景赋予抽象对立极点以具体星座特质的质感</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

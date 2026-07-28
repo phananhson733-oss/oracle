@@ -1,0 +1,147 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "chiron-in-taurus-2026-astrology": {
+      "hero": {
+        "prompt": "An immense twilight meadow stretching to the horizon under a vast starfield, the dark fertile soil radiating a faint inner warmth as if holding ancient light, a single luminous comet arc curving slowly and low across the indigo sky leaving a soft gold trail that pools gently on the earth beneath, evoking a seven-year passage of slow integration through grounded material terrain, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Chiron in Taurus 2026: luminous comet arc over a twilight meadow, evoking a slow journey toward self-worth and embodiment",
+        "altZh": "凯龙星入金牛座2026：黄昏草地上的发光彗星弧线，象征自我价值感的缓慢整合之旅"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Chiron in Taurus 2026 at a Glance",
+          "afterHeadingZh": "## 凯龙星入金牛座2026速览",
+          "titleEn": "The Three Phases of Chiron in Taurus 2026",
+          "titleZh": "凯龙星入金牛座2026的三个阶段",
+          "altEn": "Timeline of Chiron in Taurus 2026 phases: first ingress June 2026, Aries retrograde, and long Taurus stay through May 2034",
+          "altZh": "凯龙星入金牛座2026阶段时间轴：2026年6月首次入座、逆行牡羊座及至2034年5月的长期停留",
+          "items": [
+            {
+              "labelEn": "Jun 19 – Sep 17, 2026",
+              "labelZh": "2026年6月19日—9月17日",
+              "titleEn": "First Ingress",
+              "titleZh": "首次入座",
+              "noteEn": "Chiron enters Taurus for a brief preview window before retrograding back into Aries",
+              "noteZh": "凯龙星短暂进入金牛座，开启预演窗口，随后逆行退回牡羊座"
+            },
+            {
+              "labelEn": "Sep 17, 2026 – Apr 14, 2027",
+              "labelZh": "2026年9月17日—2027年4月14日",
+              "titleEn": "Retrograde into Aries",
+              "titleZh": "逆行退回牡羊座",
+              "noteEn": "Chiron revisits the identity wound in Aries before returning to Taurus",
+              "noteZh": "凯龙星在牡羊座重访身份认同课题，之后再度回归金牛座"
+            },
+            {
+              "labelEn": "Apr 2027 – May 2034",
+              "labelZh": "2027年4月—2034年5月",
+              "titleEn": "Long Taurus Stay",
+              "titleZh": "金牛座长期停留",
+              "noteEn": "Chiron settles in Taurus for seven to eight years of worth and body integration",
+              "noteZh": "凯龙星在金牛座停留七至八年，深耕价值感与身体整合的长期课题"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Chiron in Taurus 2026 in Your Timing",
+          "afterHeadingZh": "## 如何在自己星盘里识别凯龙星入金牛座2026（实操观察）",
+          "titleEn": "Six Steps to Reading Chiron in Taurus in Your Chart",
+          "titleZh": "在星盘中识别凯龙星入金牛座的六个步骤",
+          "altEn": "Six-step sequence for reading Chiron in Taurus 2026 in a birth chart, from marking ingress dates to holding the long arc",
+          "altZh": "在本命盘中识别凯龙星入金牛座2026的六步流程，从标记入座日期到持守长期弧线",
+          "items": [
+            {
+              "nameEn": "Mark the Dates",
+              "nameZh": "标记日期",
+              "subEn": "Jun 19, 2026 ingress; Sep 17 retreat to Aries; Apr 2027 return; May 2034 end",
+              "subZh": "2026年6月19日入座；9月17日退回牡羊座；2027年4月回归；2034年5月结束"
+            },
+            {
+              "nameEn": "Find Your Taurus House",
+              "nameZh": "找到金牛座宫位",
+              "subEn": "Locate the birth-chart house holding Taurus — it names the life area in focus",
+              "subZh": "在本命盘中找到容纳金牛座的宫位，它指明主题将聚焦的生活领域"
+            },
+            {
+              "nameEn": "Note Early-Degree Planets",
+              "nameZh": "留意早度数行星",
+              "subEn": "Identify natal planets in early Taurus degrees for the first-contact pass in 2026",
+              "subZh": "识别落在金牛座早度数的本命行星，它们在2026年首次经过时率先被激活"
+            },
+            {
+              "nameEn": "Treat 2026 as Preview",
+              "nameZh": "把2026年视为预演",
+              "subEn": "The June–September window is first contact with the theme, not the full chapter",
+              "subZh": "六至九月窗口是与主题的初次接触，而非完整篇章"
+            },
+            {
+              "nameEn": "Read the Retrograde",
+              "nameZh": "理解逆行含义",
+              "subEn": "The return to Aries is a deliberate revisiting of identity, not a setback",
+              "subZh": "退回牡羊座是对身份认同课题的有意重访，而非倒退或进展受阻"
+            },
+            {
+              "nameEn": "Hold the Long Arc",
+              "nameZh": "持守长期弧线",
+              "subEn": "Revisit the theme across years as Chiron moves through Taurus to observe what shifts",
+              "subZh": "随凯龙星行经金牛座，跨越数年回望主题，观察真正发生了什么位移"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Chiron in Taurus 2026 vs Chiron in Aries: Where the Themes Differ",
+          "afterHeadingZh": "## 凯龙星入金牛座2026 与相近概念凯龙星在牡羊座：运作方式与取舍",
+          "titleEn": "Chiron in Aries vs Chiron in Taurus",
+          "titleZh": "凯龙星在牡羊座 vs 凯龙星在金牛座",
+          "altEn": "Side-by-side comparison of Chiron in Aries and Chiron in Taurus: wound focus, energy style, and trade-offs",
+          "altZh": "凯龙星在牡羊座与金牛座的并排对比：伤口焦点、能量风格与各自取舍",
+          "columns": [
+            {
+              "nameEn": "Chiron in Aries",
+              "nameZh": "凯龙星在牡羊座",
+              "linesEn": [
+                "Wound of identity — the right to assert a self",
+                "Confrontational energy; surfaces in initiative and anger",
+                "Keeps reopening who you are before you can rest in any answer",
+                "Sacrifices steadiness to gain clarity about your own edges"
+              ],
+              "linesZh": [
+                "身份认同之伤——有没有权利主张一个自我",
+                "对峙式能量，浮现于主动出击与愤怒之中",
+                "不断重新打开「你是谁」，让你还来不及在答案里歇脚",
+                "牺牲稳定，以换取对自身边界的清晰认识"
+              ]
+            },
+            {
+              "nameEn": "Chiron in Taurus",
+              "nameZh": "凯龙星在金牛座",
+              "linesEn": [
+                "Wound of worth and body — what makes you feel secure",
+                "Slower, more embodied; turns work toward material ground",
+                "Asks you to stay with enough-ness long enough for it to settle",
+                "Sacrifices urgency to gain rootedness and embodied integration"
+              ],
+              "linesZh": [
+                "价值与身体之伤——什么让你感到安全",
+                "更慢、更扎根，把工作转向物质地基",
+                "要求与「够不够」长久相处，直到它沉淀下来",
+                "牺牲紧迫感，以换取扎根感与身体层面的整合"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

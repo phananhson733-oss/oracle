@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="玛迦星宿的四种常见误读">
+  <defs>
+    <linearGradient id="maghanakshatra1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="maghanakshatra1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="maghanakshatra1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="maghanakshatra1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="maghanakshatra1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="maghanakshatra1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#maghanakshatra1zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#maghanakshatra1zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#maghanakshatra1zh-neb2)"/>
+  <circle cx="427.6" cy="276.5" r="1.19" fill="#cfc8ea" opacity="0.20"/><circle cx="293.5" cy="230.6" r="0.74" fill="#cfc8ea" opacity="0.34"/><circle cx="265.7" cy="219.6" r="1.34" fill="#cfc8ea" opacity="0.26"/><circle cx="291.4" cy="177.3" r="1.48" fill="#cfc8ea" opacity="0.46"/><circle cx="263.8" cy="215.4" r="0.59" fill="#cfc8ea" opacity="0.35"/><circle cx="655.7" cy="67.5" r="0.71" fill="#cfc8ea" opacity="0.15"/><circle cx="202.9" cy="68.7" r="0.66" fill="#cfc8ea" opacity="0.51"/><circle cx="680.7" cy="25.7" r="1.47" fill="#cfc8ea" opacity="0.25"/><circle cx="484.0" cy="147.4" r="1.53" fill="#cfc8ea" opacity="0.54"/><circle cx="52.4" cy="304.9" r="0.91" fill="#cfc8ea" opacity="0.49"/><circle cx="277.6" cy="108.8" r="0.77" fill="#cfc8ea" opacity="0.47"/><circle cx="84.0" cy="240.1" r="0.46" fill="#cfc8ea" opacity="0.36"/><circle cx="452.9" cy="72.0" r="1.68" fill="#cfc8ea" opacity="0.15"/><circle cx="350.4" cy="74.2" r="0.95" fill="#cfc8ea" opacity="0.16"/><circle cx="120.7" cy="34.2" r="1.40" fill="#cfc8ea" opacity="0.36"/><circle cx="494.9" cy="85.3" r="1.06" fill="#cfc8ea" opacity="0.22"/><circle cx="43.7" cy="253.1" r="1.14" fill="#cfc8ea" opacity="0.16"/><circle cx="639.4" cy="144.6" r="1.35" fill="#cfc8ea" opacity="0.47"/><circle cx="88.8" cy="23.7" r="1.57" fill="#cfc8ea" opacity="0.25"/><circle cx="20.6" cy="296.1" r="0.55" fill="#cfc8ea" opacity="0.42"/><circle cx="347.3" cy="342.9" r="1.10" fill="#cfc8ea" opacity="0.25"/><circle cx="324.6" cy="34.6" r="0.51" fill="#cfc8ea" opacity="0.15"/><circle cx="477.1" cy="327.2" r="0.77" fill="#cfc8ea" opacity="0.40"/><circle cx="359.7" cy="257.7" r="1.25" fill="#cfc8ea" opacity="0.54"/><circle cx="713.2" cy="151.9" r="0.94" fill="#cfc8ea" opacity="0.23"/><circle cx="411.8" cy="208.6" r="0.61" fill="#cfc8ea" opacity="0.54"/><circle cx="428.5" cy="199.0" r="0.45" fill="#cfc8ea" opacity="0.21"/><circle cx="724.4" cy="99.7" r="0.65" fill="#cfc8ea" opacity="0.36"/><circle cx="368.8" cy="194.1" r="0.72" fill="#cfc8ea" opacity="0.24"/><circle cx="696.9" cy="137.1" r="1.02" fill="#cfc8ea" opacity="0.34"/><circle cx="91.4" cy="285.8" r="0.48" fill="#cfc8ea" opacity="0.38"/><path d="M 301.1001142002642 93.6 L 301.7 96.6 L 304.7 97.1443739880342 L 301.7 97.7 L 301.1001142002642 100.7 L 300.5 97.7 L 297.5 97.1443739880342 L 300.5 96.6 Z" fill="#f6e6bf" opacity="0.5895945579977706"/><path d="M 143.3311578296125 254.8 L 143.9 257.7 L 146.7 258.22200259403326 L 143.9 258.8 L 143.3311578296125 261.6 L 142.8 258.8 L 140.0 258.22200259403326 L 142.8 257.7 Z" fill="#f6e6bf" opacity="0.5662368294084444"/><path d="M 572.4139984436333 328.7 L 572.9 331.3 L 575.5 331.8060730465222 L 572.9 332.3 L 572.4139984436333 334.9 L 571.9 332.3 L 569.3 331.8060730465222 L 571.9 331.3 Z" fill="#f6e6bf" opacity="0.6522153861122206"/><path d="M 468.3035749308765 66.2 L 468.7 68.5 L 471.1 68.9342843296472 L 468.7 69.4 L 468.3035749308765 71.7 L 467.9 69.4 L 465.5 68.9342843296472 L 467.9 68.5 Z" fill="#f6e6bf" opacity="0.5754716219613328"/><path d="M 191.6071394123137 226.0 L 192.1 228.5 L 194.6 228.9557406094391 L 192.1 229.4 L 191.6071394123137 232.0 L 191.1 229.4 L 188.6 228.9557406094391 L 191.1 228.5 Z" fill="#f6e6bf" opacity="0.6594619912328199"/><path d="M 202.9 68.7 L 277.6 108.8 L 639.4 144.6 L 88.8 23.7 L 20.6 296.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">玛迦星宿的四种常见误读</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#maghanakshatra1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#maghanakshatra1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#maghanakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#maghanakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">注定统治</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">王座是继承的，并不等于到手的权力；它指向你背着的那脉血缘</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#maghanakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#maghanakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">太阳或土星主管</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">主管它的是计都；这里的权威回望祖先，而不是向上攀附地位</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#maghanakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#maghanakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">纯粹的自信</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">计都的疏离一直潜在底下；这份地位常常带着对传承的矛盾心情</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#maghanakshatra1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#maghanakshatra1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">名人用不同读法</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">框架对谁都一样——先看那份继承来的体面，再读这个人怎么背着它</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

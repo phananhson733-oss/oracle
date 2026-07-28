@@ -1,0 +1,84 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "kate-upton-birth-chart": {
+      "hero": {
+        "prompt": "A vast twilight panorama: twin luminous star clusters arc symmetrically overhead casting mirrored silver trails across a perfectly still dark lake, a delicate crescent moon floats between them reflected in the still water below, and a precise ridge of gilded distant peaks defines the horizon — three distinct celestial presences united in one unbroken continuous landscape. deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twin star clusters over still water and a hidden horizon — Kate Upton's Gemini Sun with birth-time unknowns"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Signature in a Birth Chart",
+          "titleEn": "5 Steps to Separate Confirmed and Unknown Factors",
+          "altEn": "Five-step sequence for separating confirmed and unverified factors in Kate Upton's birth chart",
+          "items": [
+            {
+              "nameEn": "Find the Confirmed Anchor",
+              "subEn": "Start with the Gemini Sun and birth date before timing-sensitive claims"
+            },
+            {
+              "nameEn": "Mark Unknown Factors",
+              "subEn": "Keep Ascendant, houses, and exact Moon details outside the fact layer without reliable birth time"
+            },
+            {
+              "nameEn": "Use Public Style Carefully",
+              "subEn": "Public presentation can be observed, but it is not proof of a birth-chart angle"
+            },
+            {
+              "nameEn": "Notice Mercurial-Yet-Polished Behavior",
+              "subEn": "Quick topic-shifts and polish are visible style cues, not verified Rising-sign evidence"
+            },
+            {
+              "nameEn": "Read for Boundaries",
+              "subEn": "The most useful lesson is knowing where interpretation should stop"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Kate Upton's Date-Verified Natal Signature at a Glance",
+          "titleEn": "Confirmed Data vs Birth-Time Unknowns",
+          "altEn": "Side-by-side comparison of confirmed and unverified layers in Kate Upton's natal chart",
+          "columns": [
+            {
+              "nameEn": "Gemini Sun",
+              "linesEn": [
+                "Mutable air, Mercury-ruled",
+                "Identity through curiosity & verbal wit",
+                "Fast topic shifts",
+                "Communicative public voice"
+              ]
+            },
+            {
+              "nameEn": "Moon Details",
+              "linesEn": [
+                "Birth-time dependent",
+                "Do not overread without reliable timing",
+                "Specific claims need source support",
+                "Keep in the unknowns column"
+              ]
+            },
+            {
+              "nameEn": "Ascendant/Houses",
+              "linesEn": [
+                "Requires reliable birth time",
+                "Cannot be established from date alone",
+                "Separate from observed public style",
+                "Leave out of the fact layer"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

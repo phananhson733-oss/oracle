@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="马库斯·拉什福德的星盘配置概览">
+  <defs>
+    <linearGradient id="marcusrashfordzodiacsign0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="marcusrashfordzodiacsign0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marcusrashfordzodiacsign0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="marcusrashfordzodiacsign0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#marcusrashfordzodiacsign0zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#marcusrashfordzodiacsign0zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#marcusrashfordzodiacsign0zh-neb2)"/>
+  <circle cx="419.6" cy="176.7" r="0.95" fill="#cfc8ea" opacity="0.42"/><circle cx="291.7" cy="265.9" r="0.58" fill="#cfc8ea" opacity="0.52"/><circle cx="402.0" cy="316.1" r="0.61" fill="#cfc8ea" opacity="0.45"/><circle cx="649.5" cy="175.8" r="1.23" fill="#cfc8ea" opacity="0.16"/><circle cx="346.2" cy="161.7" r="0.61" fill="#cfc8ea" opacity="0.22"/><circle cx="735.8" cy="203.9" r="1.21" fill="#cfc8ea" opacity="0.28"/><circle cx="21.0" cy="95.4" r="0.62" fill="#cfc8ea" opacity="0.48"/><circle cx="716.5" cy="142.7" r="1.17" fill="#cfc8ea" opacity="0.18"/><circle cx="123.0" cy="281.7" r="0.48" fill="#cfc8ea" opacity="0.25"/><circle cx="631.0" cy="24.1" r="0.40" fill="#cfc8ea" opacity="0.43"/><circle cx="282.9" cy="47.9" r="1.53" fill="#cfc8ea" opacity="0.15"/><circle cx="618.0" cy="322.5" r="0.53" fill="#cfc8ea" opacity="0.37"/><circle cx="354.7" cy="70.6" r="0.60" fill="#cfc8ea" opacity="0.43"/><circle cx="569.0" cy="61.5" r="1.36" fill="#cfc8ea" opacity="0.45"/><circle cx="669.0" cy="264.4" r="0.59" fill="#cfc8ea" opacity="0.35"/><circle cx="298.9" cy="287.4" r="1.36" fill="#cfc8ea" opacity="0.52"/><circle cx="205.5" cy="353.2" r="0.87" fill="#cfc8ea" opacity="0.22"/><circle cx="484.6" cy="58.0" r="1.50" fill="#cfc8ea" opacity="0.52"/><circle cx="281.3" cy="21.3" r="0.94" fill="#cfc8ea" opacity="0.19"/><circle cx="28.1" cy="102.4" r="0.98" fill="#cfc8ea" opacity="0.52"/><circle cx="626.9" cy="227.5" r="1.11" fill="#cfc8ea" opacity="0.25"/><circle cx="362.3" cy="13.4" r="0.65" fill="#cfc8ea" opacity="0.13"/><circle cx="667.1" cy="223.9" r="1.49" fill="#cfc8ea" opacity="0.27"/><circle cx="505.1" cy="189.1" r="1.47" fill="#cfc8ea" opacity="0.23"/><circle cx="44.9" cy="88.7" r="0.58" fill="#cfc8ea" opacity="0.15"/><circle cx="356.3" cy="43.5" r="0.80" fill="#cfc8ea" opacity="0.47"/><circle cx="535.7" cy="355.5" r="0.88" fill="#cfc8ea" opacity="0.25"/><circle cx="225.2" cy="165.4" r="1.32" fill="#cfc8ea" opacity="0.33"/><circle cx="734.5" cy="210.4" r="1.34" fill="#cfc8ea" opacity="0.52"/><circle cx="474.4" cy="165.7" r="0.41" fill="#cfc8ea" opacity="0.54"/><circle cx="683.5" cy="255.4" r="0.75" fill="#cfc8ea" opacity="0.54"/><path d="M 280.9731188509613 68.5 L 281.4 70.7 L 283.6 71.11118656443432 L 281.4 71.5 L 280.9731188509613 73.8 L 280.5 71.5 L 278.3 71.11118656443432 L 280.5 70.7 Z" fill="#f6e6bf" opacity="0.5462714998982847"/><path d="M 596.4309642035514 67.0 L 596.9 69.7 L 599.6 70.18021733826026 L 596.9 70.7 L 596.4309642035514 73.4 L 595.9 70.7 L 593.2 70.18021733826026 L 595.9 69.7 Z" fill="#f6e6bf" opacity="0.5881804516538978"/><path d="M 106.05261969007552 265.6 L 106.5 267.9 L 108.8 268.31765381479636 L 106.5 268.8 L 106.05261969007552 271.0 L 105.6 268.8 L 103.3 268.31765381479636 L 105.6 267.9 Z" fill="#f6e6bf" opacity="0.7687199351377785"/><path d="M 309.2762624192983 175.0 L 309.8 177.7 L 312.5 178.23562296433374 L 309.8 178.8 L 309.2762624192983 181.5 L 308.8 178.8 L 306.1 178.23562296433374 L 308.8 177.7 Z" fill="#f6e6bf" opacity="0.5346193958073855"/><path d="M 66.05407706834376 236.1 L 66.5 238.4 L 68.8 238.86117561580613 L 66.5 239.3 L 66.05407706834376 241.6 L 65.6 239.3 L 63.3 238.86117561580613 L 65.6 238.4 Z" fill="#f6e6bf" opacity="0.6275724972598254"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">马库斯·拉什福德的星盘配置概览</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#marcusrashfordzodiacsign0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#marcusrashfordzodiacsign0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#marcusrashfordzodiacsign0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#marcusrashfordzodiacsign0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">天蝎太阳</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">核心身份指向深度、控制与更新；平静的公众表面下隐藏着强烈的私人内核</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#marcusrashfordzodiacsign0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#marcusrashfordzodiacsign0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">天蝎月亮（常被引用）</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">私人情感现实：情绪在内心处理，只向最亲近的人展示</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#marcusrashfordzodiacsign0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#marcusrashfordzodiacsign0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">摩羯座上升（存疑）</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">自律、注重声誉的公众行为；出生时间未经证实，该配置仍存疑</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#marcusrashfordzodiacsign0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#marcusrashfordzodiacsign0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">射手座火星</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">对所选事业的直言信念；与天蝎谨慎风格形成对比的坦率直接</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

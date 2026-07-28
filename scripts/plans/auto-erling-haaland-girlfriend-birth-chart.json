@@ -1,0 +1,73 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "erling-haaland-girlfriend-birth-chart": {
+      "hero": {
+        "prompt": "An expansive indigo ocean at night stretching to a horizon where two glowing celestial formations drift in quiet dialogue — on the left a rich tapestry of interlaced star trails and layered orbital arcs hinting at many dimensions of depth, on the right a single radiant star burning with solitary clarity, teal nebula haze rolling between them and soft gold light tracing the water's edge in one unbroken landscape, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Indigo night ocean reflecting two glowing star formations in dialogue, symbolising deep chart reading versus pop-culture zodiac takes"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Celebrity Chart Reading vs Pop-Culture Zodiac Takes: What Actually Differs",
+          "titleEn": "Full Chart Reading vs Pop-Culture Zodiac Take",
+          "altEn": "Side-by-side comparison of full birth chart reading depth versus quick pop-culture zodiac stereotypes",
+          "columns": [
+            {
+              "nameEn": "Full Chart Reading",
+              "linesEn": [
+                "Layers Sun, Moon, rising, and aspect patterns",
+                "Describes tendencies in depth and nuance",
+                "Resists tidy one-line verdicts"
+              ]
+            },
+            {
+              "nameEn": "Pop-Culture Zodiac Take",
+              "linesEn": [
+                "Grabs a single Sun sign and runs with a stereotype",
+                "Delivers instant, shareable clarity",
+                "Sacrifices accuracy for speed"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Reputed Partner's Chart Responsibly",
+          "titleEn": "5 Habits for Responsible Chart Reading",
+          "altEn": "Five-step sequence for reading a reputed partner's birth chart with interpretive integrity",
+          "items": [
+            {
+              "nameEn": "Flag the Unknowns First",
+              "subEn": "State plainly that birth time and date may be unverified"
+            },
+            {
+              "nameEn": "Start with the Big Three",
+              "subEn": "Note Sun, Moon, and ascendant as themes, not fixed facts"
+            },
+            {
+              "nameEn": "Watch for a Stellium",
+              "subEn": "Describe the emphasis a planet cluster suggests, not a destiny"
+            },
+            {
+              "nameEn": "Read Aspects as Tension, Not Fate",
+              "subEn": "Say 'tends to' instead of 'will' for squares and trines"
+            },
+            {
+              "nameEn": "Separate Person from Persona",
+              "subEn": "Interpret the symbol, not the private human behind the headline"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

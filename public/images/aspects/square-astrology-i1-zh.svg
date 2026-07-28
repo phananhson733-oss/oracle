@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="识别四分相的五个信号">
+  <defs>
+    <linearGradient id="squareastrology1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="squareastrology1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="squareastrology1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="squareastrology1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="squareastrology1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="squareastrology1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#squareastrology1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#squareastrology1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#squareastrology1zh-neb2)"/>
+  <circle cx="574.5" cy="59.6" r="0.93" fill="#cfc8ea" opacity="0.36"/><circle cx="370.3" cy="362.3" r="1.01" fill="#cfc8ea" opacity="0.29"/><circle cx="266.5" cy="179.5" r="1.38" fill="#cfc8ea" opacity="0.26"/><circle cx="655.0" cy="125.5" r="1.30" fill="#cfc8ea" opacity="0.32"/><circle cx="546.9" cy="205.4" r="0.86" fill="#cfc8ea" opacity="0.27"/><circle cx="260.1" cy="243.6" r="1.48" fill="#cfc8ea" opacity="0.43"/><circle cx="456.4" cy="237.1" r="1.01" fill="#cfc8ea" opacity="0.27"/><circle cx="83.4" cy="17.0" r="0.59" fill="#cfc8ea" opacity="0.44"/><circle cx="81.6" cy="387.9" r="1.16" fill="#cfc8ea" opacity="0.54"/><circle cx="57.0" cy="176.5" r="1.46" fill="#cfc8ea" opacity="0.40"/><circle cx="438.0" cy="140.1" r="1.56" fill="#cfc8ea" opacity="0.20"/><circle cx="592.5" cy="251.5" r="0.97" fill="#cfc8ea" opacity="0.54"/><circle cx="227.6" cy="390.0" r="0.71" fill="#cfc8ea" opacity="0.38"/><circle cx="469.7" cy="79.8" r="0.62" fill="#cfc8ea" opacity="0.29"/><circle cx="391.7" cy="236.9" r="0.51" fill="#cfc8ea" opacity="0.34"/><circle cx="71.2" cy="206.0" r="1.49" fill="#cfc8ea" opacity="0.14"/><circle cx="286.0" cy="177.7" r="0.96" fill="#cfc8ea" opacity="0.35"/><circle cx="117.2" cy="161.8" r="1.36" fill="#cfc8ea" opacity="0.16"/><circle cx="314.2" cy="159.6" r="1.33" fill="#cfc8ea" opacity="0.35"/><circle cx="363.7" cy="264.2" r="0.78" fill="#cfc8ea" opacity="0.50"/><circle cx="202.9" cy="300.1" r="0.77" fill="#cfc8ea" opacity="0.45"/><circle cx="644.2" cy="175.0" r="1.35" fill="#cfc8ea" opacity="0.53"/><circle cx="285.7" cy="125.3" r="1.05" fill="#cfc8ea" opacity="0.29"/><circle cx="166.0" cy="227.4" r="1.23" fill="#cfc8ea" opacity="0.32"/><circle cx="173.6" cy="349.7" r="1.49" fill="#cfc8ea" opacity="0.28"/><circle cx="579.7" cy="185.8" r="1.29" fill="#cfc8ea" opacity="0.46"/><circle cx="622.1" cy="389.7" r="0.98" fill="#cfc8ea" opacity="0.45"/><circle cx="109.6" cy="86.5" r="0.91" fill="#cfc8ea" opacity="0.32"/><circle cx="276.9" cy="293.1" r="1.31" fill="#cfc8ea" opacity="0.27"/><circle cx="33.4" cy="79.4" r="1.29" fill="#cfc8ea" opacity="0.24"/><circle cx="39.2" cy="35.2" r="0.96" fill="#cfc8ea" opacity="0.34"/><circle cx="264.3" cy="223.0" r="1.46" fill="#cfc8ea" opacity="0.20"/><circle cx="195.9" cy="180.8" r="1.25" fill="#cfc8ea" opacity="0.51"/><circle cx="231.8" cy="30.4" r="1.39" fill="#cfc8ea" opacity="0.41"/><circle cx="441.0" cy="58.0" r="1.57" fill="#cfc8ea" opacity="0.41"/><circle cx="652.6" cy="252.5" r="0.93" fill="#cfc8ea" opacity="0.13"/><circle cx="739.6" cy="389.8" r="1.33" fill="#cfc8ea" opacity="0.25"/><path d="M 480.5953073091805 177.3 L 481.1 180.2 L 484.0 180.76002836436965 L 481.1 181.3 L 480.5953073091805 184.2 L 480.0 181.3 L 477.1 180.76002836436965 L 480.0 180.2 Z" fill="#f6e6bf" opacity="0.7914953432278707"/><path d="M 639.6697459332645 353.1 L 640.2 356.0 L 643.1 356.529334864812 L 640.2 357.1 L 639.6697459332645 360.0 L 639.1 357.1 L 636.2 356.529334864812 L 639.1 356.0 Z" fill="#f6e6bf" opacity="0.7592226760694757"/><path d="M 490.91064447537065 320.9 L 491.3 323.1 L 493.5 323.5094841683749 L 491.3 323.9 L 490.91064447537065 326.1 L 490.5 323.9 L 488.3 323.5094841683749 L 490.5 323.1 Z" fill="#f6e6bf" opacity="0.7296263572992757"/><path d="M 703.2416307888925 357.6 L 703.7 360.3 L 706.4 360.7792280775029 L 703.7 361.3 L 703.2416307888925 363.9 L 702.7 361.3 L 700.1 360.7792280775029 L 702.7 360.3 Z" fill="#f6e6bf" opacity="0.588963057869114"/><path d="M 270.1204818971455 137.7 L 270.5 139.9 L 272.7 140.27729230211116 L 270.5 140.7 L 270.1204818971455 142.9 L 269.7 140.7 L 267.5 140.27729230211116 L 269.7 139.9 Z" fill="#f6e6bf" opacity="0.6986309739993886"/><path d="M 438.0 140.1 L 391.7 236.9 L 314.2 159.6 L 579.7 185.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">识别四分相的五个信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#squareastrology1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#squareastrology1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#squareastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#squareastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">找出约 90 度的间隔</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">相差约四分之一圈，越精确越响</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#squareastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#squareastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">说出两股驱力</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">弄清各自想要什么、在哪不肯共用计划</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#squareastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#squareastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">盯住反复出现的卡点</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">同一种摩擦在不同场合一再冒头</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#squareastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#squareastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">看模式属性</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">固定星座间的最顽固，最考验耐心</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#squareastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#squareastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">认出你的应付动作</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">你早已悄悄练出的那套绕行招数</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

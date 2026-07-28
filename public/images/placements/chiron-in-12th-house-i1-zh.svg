@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="这一配置的五个安静信号">
+  <defs>
+    <linearGradient id="chironin12thhouse1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="chironin12thhouse1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="chironin12thhouse1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chironin12thhouse1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chironin12thhouse1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chironin12thhouse1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#chironin12thhouse1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#chironin12thhouse1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#chironin12thhouse1zh-neb2)"/>
+  <circle cx="671.8" cy="363.6" r="0.84" fill="#cfc8ea" opacity="0.26"/><circle cx="635.2" cy="198.1" r="0.97" fill="#cfc8ea" opacity="0.30"/><circle cx="240.6" cy="118.9" r="1.23" fill="#cfc8ea" opacity="0.17"/><circle cx="312.3" cy="276.3" r="0.89" fill="#cfc8ea" opacity="0.23"/><circle cx="651.6" cy="374.1" r="0.51" fill="#cfc8ea" opacity="0.13"/><circle cx="278.5" cy="58.5" r="1.65" fill="#cfc8ea" opacity="0.30"/><circle cx="476.4" cy="396.2" r="1.06" fill="#cfc8ea" opacity="0.51"/><circle cx="489.6" cy="216.4" r="0.96" fill="#cfc8ea" opacity="0.21"/><circle cx="160.8" cy="313.9" r="0.71" fill="#cfc8ea" opacity="0.37"/><circle cx="85.9" cy="385.6" r="0.77" fill="#cfc8ea" opacity="0.18"/><circle cx="461.3" cy="93.2" r="1.01" fill="#cfc8ea" opacity="0.13"/><circle cx="610.6" cy="105.7" r="0.97" fill="#cfc8ea" opacity="0.16"/><circle cx="437.4" cy="297.6" r="0.57" fill="#cfc8ea" opacity="0.19"/><circle cx="502.9" cy="370.6" r="1.42" fill="#cfc8ea" opacity="0.28"/><circle cx="288.1" cy="380.8" r="1.03" fill="#cfc8ea" opacity="0.49"/><circle cx="382.4" cy="130.9" r="0.47" fill="#cfc8ea" opacity="0.14"/><circle cx="458.9" cy="336.5" r="1.18" fill="#cfc8ea" opacity="0.23"/><circle cx="624.5" cy="95.2" r="1.08" fill="#cfc8ea" opacity="0.50"/><circle cx="532.7" cy="82.1" r="0.78" fill="#cfc8ea" opacity="0.42"/><circle cx="202.1" cy="303.3" r="0.92" fill="#cfc8ea" opacity="0.14"/><circle cx="125.3" cy="215.9" r="0.70" fill="#cfc8ea" opacity="0.35"/><circle cx="327.2" cy="224.5" r="0.67" fill="#cfc8ea" opacity="0.14"/><circle cx="417.1" cy="76.2" r="0.72" fill="#cfc8ea" opacity="0.53"/><circle cx="31.1" cy="242.2" r="1.29" fill="#cfc8ea" opacity="0.42"/><circle cx="224.3" cy="42.7" r="0.80" fill="#cfc8ea" opacity="0.31"/><circle cx="351.5" cy="188.8" r="1.19" fill="#cfc8ea" opacity="0.20"/><circle cx="440.2" cy="104.7" r="0.61" fill="#cfc8ea" opacity="0.18"/><circle cx="206.0" cy="57.6" r="0.61" fill="#cfc8ea" opacity="0.16"/><circle cx="612.8" cy="394.8" r="1.30" fill="#cfc8ea" opacity="0.32"/><circle cx="71.4" cy="305.4" r="1.37" fill="#cfc8ea" opacity="0.24"/><circle cx="335.4" cy="55.4" r="1.62" fill="#cfc8ea" opacity="0.41"/><circle cx="332.0" cy="268.2" r="0.51" fill="#cfc8ea" opacity="0.21"/><circle cx="448.0" cy="290.6" r="1.49" fill="#cfc8ea" opacity="0.34"/><circle cx="228.9" cy="306.5" r="0.76" fill="#cfc8ea" opacity="0.15"/><circle cx="323.0" cy="307.0" r="1.56" fill="#cfc8ea" opacity="0.38"/><circle cx="686.6" cy="20.8" r="1.69" fill="#cfc8ea" opacity="0.17"/><circle cx="62.3" cy="295.3" r="1.28" fill="#cfc8ea" opacity="0.51"/><path d="M 433.67746540904045 332.1 L 434.3 335.5 L 437.6 336.09041792782955 L 434.3 336.7 L 433.67746540904045 340.0 L 433.0 336.7 L 429.7 336.09041792782955 L 433.0 335.5 Z" fill="#f6e6bf" opacity="0.5950302715180442"/><path d="M 582.6726867780089 314.0 L 583.3 317.1 L 586.3 317.64799872389995 L 583.3 318.2 L 582.6726867780089 321.3 L 582.1 318.2 L 579.0 317.64799872389995 L 582.1 317.1 Z" fill="#f6e6bf" opacity="0.7848367972066626"/><path d="M 357.4097035676241 205.8 L 357.9 208.6 L 360.7 209.09449918637984 L 357.9 209.6 L 357.4097035676241 212.4 L 356.9 209.6 L 354.1 209.09449918637984 L 356.9 208.6 Z" fill="#f6e6bf" opacity="0.7392446891171858"/><path d="M 348.38823921233416 207.6 L 348.9 210.3 L 351.6 210.78793938248418 L 348.9 211.3 L 348.38823921233416 214.0 L 347.9 211.3 L 345.2 210.78793938248418 L 347.9 210.3 Z" fill="#f6e6bf" opacity="0.7337865505134686"/><path d="M 328.58821123838425 10.5 L 329.2 13.5 L 332.2 14.094048882601783 L 329.2 14.7 L 328.58821123838425 17.7 L 328.0 14.7 L 325.0 14.094048882601783 L 328.0 13.5 Z" fill="#f6e6bf" opacity="0.7839039659826085"/><path d="M 240.6 118.9 L 476.4 396.2 L 288.1 380.8 L 624.5 95.2 L 532.7 82.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">这一配置的五个安静信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#chironin12thhouse1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#chironin12thhouse1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#chironin12thhouse1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#chironin12thhouse1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">被淡化的敏感</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">私密话题刺痛你，你却劝自己别提</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#chironin12thhouse1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#chironin12thhouse1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">不请自来的共情</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">对方还没开口，你已接住那份痛</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#chironin12thhouse1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#chironin12thhouse1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">向独处的牵引</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">情绪拥挤的日子后，独处才能复原</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#chironin12thhouse1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#chironin12thhouse1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">只给予，少求助</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">乐于照顾别人，却难开口求助</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#chironin12thhouse1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#chironin12thhouse1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">梦境里的旧伤</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">旧主题在残梦与突来的情绪里重现</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

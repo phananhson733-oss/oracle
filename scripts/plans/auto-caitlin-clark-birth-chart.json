@@ -1,0 +1,105 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "caitlin-clark-birth-chart": {
+      "hero": {
+        "prompt": "Stylized editorial portrait of a focused young female basketball player mid-stride at center court, gripping an orange basketball with both hands, an Aquarius constellation glowing in soft gold above her silhouette, teal nebula trails curling behind her, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Stylized portrait of Caitlin Clark as a basketball player with Aquarius constellation glowing overhead in a celestial indigo scene"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Caitlin Clark's Birth Chart Symbolically",
+          "titleEn": "How to Read Caitlin Clark's Birth Chart: 5 Steps",
+          "altEn": "Five steps for reading Caitlin Clark's birth chart as symbolic archetypes rather than predictions",
+          "items": [
+            {
+              "nameEn": "Spot the Stellium",
+              "subEn": "Several Aquarius planets signal conviction over the crowd's expectations"
+            },
+            {
+              "nameEn": "Weigh Air Against Fire",
+              "subEn": "Aquarius detachment plus Mars in Aries: cool strategy, sudden competitive heat"
+            },
+            {
+              "nameEn": "Notice the Ground Line",
+              "subEn": "Moon in Taurus suggests a steady emotional core beneath the flash"
+            },
+            {
+              "nameEn": "Leave the Chart Open",
+              "subEn": "No confirmed birth time means Ascendant and houses stay unverifiable"
+            },
+            {
+              "nameEn": "Layer, Don't Predict",
+              "subEn": "Map each placement as symbolism, never as the cause of a stat line"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings of the Caitlin Clark Birth Chart",
+          "altEn": "Four common misreadings to avoid when interpreting Caitlin Clark's birth chart",
+          "items": [
+            {
+              "nameEn": "Chart Explains Her Scoring",
+              "subEn": "Astrology offers archetypes for style, not causal accounts of athletic outcomes"
+            },
+            {
+              "nameEn": "Stellium Proves Genius",
+              "subEn": "The stellium describes independent thinking as a lens, not a verdict"
+            },
+            {
+              "nameEn": "Rising Sign Is Known",
+              "subEn": "Without a documented birth time, any confident rising-sign claim is invented"
+            },
+            {
+              "nameEn": "Moon Is Definitely Taurus",
+              "subEn": "Near a sign boundary without a birth time, the Moon deserves an 'approximately'"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Caitlin Clark's Birth Chart at a Glance",
+          "titleEn": "Key Placements in Caitlin Clark's Birth Chart",
+          "altEn": "Comparison of key planetary placements in Caitlin Clark's birth chart: Aquarius stellium, Mars in Aries, Moon in Taurus",
+          "columns": [
+            {
+              "nameEn": "Aquarius Stellium",
+              "linesEn": [
+                "Sun, Mercury, Venus, Uranus, Neptune",
+                "Independent, systems-first thinking",
+                "Conviction that ignores convention"
+              ]
+            },
+            {
+              "nameEn": "Mars in Aries",
+              "linesEn": [
+                "Direct, first-strike competitive drive",
+                "Fast, assertive, go-first energy",
+                "Sudden heat under pressure"
+              ]
+            },
+            {
+              "nameEn": "Moon in Taurus (approx.)",
+              "linesEn": [
+                "Steady, comfort-seeking emotional base",
+                "Preference for routine and stability",
+                "Grounded beneath the spotlight"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

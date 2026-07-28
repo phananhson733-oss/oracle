@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 476" role="img" aria-label="The Three-Pass Saturn Return Timeline">
+  <defs>
+    <linearGradient id="saturnreturnguide2en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturnreturnguide2en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide2en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide2en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturnguide2en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturnreturnguide2en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="473" rx="22" fill="url(#saturnreturnguide2en-panel)"/>
+  <ellipse cx="198" cy="114" rx="380" ry="162" fill="url(#saturnreturnguide2en-neb1)"/>
+  <ellipse cx="623" cy="381" rx="334" ry="152" fill="url(#saturnreturnguide2en-neb2)"/>
+  <circle cx="697.3" cy="349.2" r="0.41" fill="#cfc8ea" opacity="0.21"/><circle cx="175.3" cy="296.7" r="0.67" fill="#cfc8ea" opacity="0.12"/><circle cx="727.0" cy="302.3" r="1.00" fill="#cfc8ea" opacity="0.29"/><circle cx="610.2" cy="395.5" r="1.50" fill="#cfc8ea" opacity="0.16"/><circle cx="662.6" cy="85.5" r="0.99" fill="#cfc8ea" opacity="0.36"/><circle cx="436.9" cy="98.5" r="1.36" fill="#cfc8ea" opacity="0.30"/><circle cx="745.1" cy="390.3" r="1.42" fill="#cfc8ea" opacity="0.32"/><circle cx="125.4" cy="262.1" r="0.47" fill="#cfc8ea" opacity="0.26"/><circle cx="391.6" cy="236.9" r="0.82" fill="#cfc8ea" opacity="0.27"/><circle cx="516.2" cy="296.4" r="0.98" fill="#cfc8ea" opacity="0.20"/><circle cx="438.1" cy="107.5" r="1.40" fill="#cfc8ea" opacity="0.32"/><circle cx="91.8" cy="34.7" r="1.29" fill="#cfc8ea" opacity="0.19"/><circle cx="144.0" cy="246.4" r="0.72" fill="#cfc8ea" opacity="0.31"/><circle cx="233.7" cy="154.0" r="0.72" fill="#cfc8ea" opacity="0.53"/><circle cx="616.4" cy="52.9" r="1.13" fill="#cfc8ea" opacity="0.37"/><circle cx="334.6" cy="336.0" r="0.74" fill="#cfc8ea" opacity="0.38"/><circle cx="201.9" cy="112.4" r="1.28" fill="#cfc8ea" opacity="0.29"/><circle cx="532.4" cy="14.7" r="0.90" fill="#cfc8ea" opacity="0.45"/><circle cx="262.3" cy="299.4" r="1.51" fill="#cfc8ea" opacity="0.41"/><circle cx="479.0" cy="269.3" r="1.44" fill="#cfc8ea" opacity="0.14"/><circle cx="266.1" cy="76.7" r="1.08" fill="#cfc8ea" opacity="0.14"/><circle cx="66.5" cy="321.0" r="1.00" fill="#cfc8ea" opacity="0.45"/><circle cx="214.6" cy="306.1" r="1.39" fill="#cfc8ea" opacity="0.17"/><circle cx="129.7" cy="135.6" r="1.66" fill="#cfc8ea" opacity="0.22"/><circle cx="38.3" cy="56.4" r="1.51" fill="#cfc8ea" opacity="0.35"/><circle cx="445.8" cy="369.3" r="0.87" fill="#cfc8ea" opacity="0.30"/><circle cx="178.5" cy="456.6" r="1.52" fill="#cfc8ea" opacity="0.17"/><circle cx="192.3" cy="387.5" r="0.95" fill="#cfc8ea" opacity="0.30"/><circle cx="32.9" cy="239.6" r="1.27" fill="#cfc8ea" opacity="0.40"/><circle cx="555.3" cy="451.1" r="0.41" fill="#cfc8ea" opacity="0.47"/><circle cx="341.7" cy="372.1" r="0.46" fill="#cfc8ea" opacity="0.51"/><circle cx="564.2" cy="300.3" r="1.15" fill="#cfc8ea" opacity="0.43"/><circle cx="378.1" cy="310.3" r="1.29" fill="#cfc8ea" opacity="0.20"/><circle cx="288.7" cy="298.6" r="0.93" fill="#cfc8ea" opacity="0.15"/><circle cx="663.2" cy="108.8" r="1.40" fill="#cfc8ea" opacity="0.26"/><circle cx="647.1" cy="408.8" r="0.59" fill="#cfc8ea" opacity="0.25"/><circle cx="697.7" cy="302.3" r="1.05" fill="#cfc8ea" opacity="0.50"/><circle cx="371.7" cy="421.2" r="0.80" fill="#cfc8ea" opacity="0.50"/><circle cx="650.9" cy="63.9" r="1.37" fill="#cfc8ea" opacity="0.38"/><circle cx="483.4" cy="211.6" r="0.56" fill="#cfc8ea" opacity="0.22"/><path d="M 670.2867672350258 318.8 L 670.9 321.8 L 673.8 322.3626864552498 L 670.9 322.9 L 670.2867672350258 325.9 L 669.7 322.9 L 666.7 322.3626864552498 L 669.7 321.8 Z" fill="#f6e6bf" opacity="0.6876186138484627"/><path d="M 365.5285835992545 358.3 L 366.1 361.4 L 369.2 361.9834051132202 L 366.1 362.6 L 365.5285835992545 365.7 L 364.9 362.6 L 361.8 361.9834051132202 L 364.9 361.4 Z" fill="#f6e6bf" opacity="0.601551785087213"/><path d="M 636.9662487860769 223.1 L 637.5 225.9 L 640.3 226.38038700819016 L 637.5 226.9 L 636.9662487860769 229.7 L 636.4 226.9 L 633.7 226.38038700819016 L 636.4 225.9 Z" fill="#f6e6bf" opacity="0.5263601202983409"/><path d="M 137.47890364937484 416.9 L 138.0 419.6 L 140.7 420.1258214712143 L 138.0 420.6 L 137.47890364937484 423.3 L 137.0 420.6 L 134.3 420.1258214712143 L 137.0 419.6 Z" fill="#f6e6bf" opacity="0.7010412457864732"/><path d="M 623.7905071582645 455.4 L 624.2 457.7 L 626.6 458.1754427552223 L 624.2 458.6 L 623.7905071582645 461.0 L 623.3 458.6 L 621.0 458.1754427552223 L 623.3 457.7 Z" fill="#f6e6bf" opacity="0.504817626113072"/><path d="M 727.0 302.3 L 479.0 269.3 L 214.6 306.1 L 697.7 302.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="473" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="462" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 456.8 L 16.5 459.5 L 19.2 460 L 16.5 460.5 L 16 463.2 L 15.5 460.5 L 12.8 460 L 15.5 459.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 456.8 L 744.5 459.5 L 747.2 460 L 744.5 460.5 L 744 463.2 L 743.5 460.5 L 740.8 460 L 743.5 459.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">The Three-Pass Saturn Return Timeline</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#saturnreturnguide2en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#saturnreturnguide2en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#saturnreturnguide2en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#saturnreturnguide2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Ages 28–29</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">First Direct Hit</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn reaches natal longitude; new pressure or responsibility lands</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#saturnreturnguide2en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#saturnreturnguide2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Months later</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Retrograde Recap</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn backs over the same degree; a settled issue returns for a second look</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#saturnreturnguide2en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#saturnreturnguide2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Near age 30</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Third Direct Hit</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn crosses the natal point a final time; a decision firms up and chapter closes</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#saturnreturnguide2en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#saturnreturnguide2en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Ages 57–60</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Second Return</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Full cycle repeats; themes of legacy, retirement, and elder responsibility</text>
+  <text x="132" y="427.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">surface</text>
+  <path d="M 202.22749999999988 447.4 L 202.6 449.6 L 204.8 450 L 202.6 450.4 L 202.22749999999988 452.6 L 201.8 450.4 L 199.6 450 L 201.8 449.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="454" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 447.4 L 558.2 449.6 L 560.4 450 L 558.2 450.4 L 557.7725000000002 452.6 L 557.4 450.4 L 555.2 450 L 557.4 449.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

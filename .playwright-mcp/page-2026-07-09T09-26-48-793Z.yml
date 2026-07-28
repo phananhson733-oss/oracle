@@ -1,0 +1,66 @@
+- generic [ref=e2]:
+  - navigation "Main navigation" [ref=e3]:
+    - generic [ref=e4]:
+      - link "AstrologyWiki" [ref=e5] [cursor=pointer]:
+        - img "AstrologyWiki" [ref=e6]
+        - text: AstrologyWiki
+      - generic [ref=e7]:
+        - link "Birth" [ref=e8] [cursor=pointer]:
+          - /url: /dashboard
+        - link "Transit" [ref=e9] [cursor=pointer]:
+          - /url: /forecast
+        - link "Timeline" [ref=e10] [cursor=pointer]:
+          - /url: /timeline
+        - link "Synastry" [ref=e11] [cursor=pointer]:
+          - /url: /us
+        - link "Ask" [ref=e12] [cursor=pointer]:
+          - /url: /oracle
+        - link "Journal" [ref=e13] [cursor=pointer]:
+          - /url: /journal
+        - link "Wiki" [ref=e14] [cursor=pointer]:
+          - /url: /en/wiki
+        - link "Tools" [ref=e15] [cursor=pointer]:
+          - /url: /en/tools
+        - button "☾" [ref=e17] [cursor=pointer]
+        - button "中" [ref=e18] [cursor=pointer]
+        - button "Sign In" [ref=e20] [cursor=pointer]:
+          - img [ref=e21]
+          - generic [ref=e24]: Sign In
+  - main [ref=e25]:
+    - generic [ref=e26]:
+      - generic:
+        - img
+      - generic [ref=e27]:
+        - img [ref=e31]
+        - img [ref=e35]
+      - generic [ref=e64]:
+        - generic [ref=e65]: CONSULTING THE STARS
+        - generic [ref=e66]: CONSULTING THE STARS
+  - contentinfo [ref=e71]:
+    - generic [ref=e72]:
+      - navigation "Footer navigation" [ref=e73]:
+        - list [ref=e74]:
+          - listitem [ref=e75]:
+            - link "Tools" [ref=e76] [cursor=pointer]:
+              - /url: /en/tools
+          - listitem [ref=e77]:
+            - link "Privacy Policy" [ref=e78] [cursor=pointer]:
+              - /url: /en/privacy
+          - listitem [ref=e79]:
+            - link "Terms of Service" [ref=e80] [cursor=pointer]:
+              - /url: /en/terms
+          - listitem [ref=e81]:
+            - link "Cookies" [ref=e82] [cursor=pointer]:
+              - /url: /en/cookies
+          - listitem [ref=e83]:
+            - link "About" [ref=e84] [cursor=pointer]:
+              - /url: /en/about
+          - listitem [ref=e85]:
+            - link "Help" [ref=e86] [cursor=pointer]:
+              - /url: /en/help
+          - listitem [ref=e87]:
+            - link "Contact" [ref=e88] [cursor=pointer]:
+              - /url: mailto:support@astrologywiki.com
+          - listitem [ref=e89]:
+            - button "Your Privacy Choices" [ref=e90] [cursor=pointer]
+      - paragraph [ref=e92]: © 2026 AstrologyWiki. All rights reserved.

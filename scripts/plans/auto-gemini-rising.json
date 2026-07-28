@@ -1,0 +1,116 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "gemini-rising": {
+      "hero": {
+        "prompt": "A boundless night landscape under a vast indigo sky, countless luminous golden threads arcing between distant glowing nodes of light like a living celestial web, each thread softly pulsing with energy as if transmitting intelligence across the darkness, gossamer veils of teal and gold drifting between the threads like winds made visible, the horizon a dark silhouette beneath a sky alive with interconnected light, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Luminous golden threads weave a celestial web across a vast indigo sky, symbolising Mercury's connective intelligence in Gemini rising",
+        "altZh": "无数金色光线在靛蓝夜空中交织成天际之网，象征双子上升中水星的串联智慧"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Gemini Ascendant in Your Chart",
+          "afterHeadingZh": "## 如何在星盘里识别双子座上升盘",
+          "titleEn": "Five Steps to Read Gemini Rising",
+          "titleZh": "识别双子上升的五个步骤",
+          "altEn": "Five steps for reading the Gemini Ascendant by tracing Mercury as chart ruler through sign, house, third house, and outward manner",
+          "altZh": "通过追踪水星作为命主星，经由星座、宫位、第三宫与对外气质来解读双子上升的五个步骤",
+          "items": [
+            {
+              "nameEn": "Confirm Chart Ruler",
+              "nameZh": "确认命主星",
+              "subEn": "Gemini on the first house cusp makes Mercury the chart ruler and manager of the whole expression",
+              "subZh": "双子座落在第一宫宫头，水星成为命主星，主导整张盘的表达方式"
+            },
+            {
+              "nameEn": "Mercury by Sign",
+              "nameZh": "按星座找水星",
+              "subEn": "The element of natal Mercury's sign reveals the flavour of the connective intelligence",
+              "subZh": "本命水星所在星座的元素，揭示这份串联式智力的味道"
+            },
+            {
+              "nameEn": "Mercury by House",
+              "nameZh": "水星所在宫位",
+              "subEn": "Mercury's house shows the life area where the quick, linking mind most readily goes to work",
+              "subZh": "水星所在宫位，是这颗敏捷、爱串联的头脑最容易发力的生活领域"
+            },
+            {
+              "nameEn": "Third House as Home Turf",
+              "nameZh": "第三宫作为主场",
+              "subEn": "Read the third house for communication, learning, local world, and daily information exchange",
+              "subZh": "把第三宫当作主场来读：沟通、学习、近身世界与日常信息交换"
+            },
+            {
+              "nameEn": "Outward Manner as Surface",
+              "nameZh": "对外气质是表层",
+              "subEn": "Hold curious, talkative, flexible as the surface of the Mercury process, not the whole of it",
+              "subZh": "把好奇、健谈、灵活握成水星这个过程的表层，而不是它的全部"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## the Gemini Ascendant vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 双子座上升盘与相近概念:运作方式 + 取舍",
+          "titleEn": "Gemini Rising vs Gemini Sun vs Earth Mercury",
+          "titleZh": "双子上升 vs 双子太阳 vs 土象水星",
+          "altEn": "Comparison of Gemini Rising, Gemini Sun, and Earth Mercury showing role, expression, and key focus for each",
+          "altZh": "对比双子上升、双子太阳与土象水星在角色、表达方式和核心侧重上的差异",
+          "columns": [
+            {
+              "nameEn": "Gemini Rising",
+              "nameZh": "双子上升",
+              "linesEn": [
+                "Role: Packaging and first impression",
+                "Expression: Connective agility, quick-linking",
+                "Focus: How you meet the world"
+              ],
+              "linesZh": [
+                "角色：包装与第一印象",
+                "表达：串联式灵活，迅速连点",
+                "侧重：你怎样与世界相遇"
+              ]
+            },
+            {
+              "nameEn": "Gemini Sun",
+              "nameZh": "双子太阳",
+              "linesEn": [
+                "Role: Core identity and inner self",
+                "Expression: Central drives and motivations",
+                "Focus: Who you are at depth"
+              ],
+              "linesZh": [
+                "角色：核心身份与内在自我",
+                "表达：内在驱动与动机",
+                "侧重：你在深层是什么"
+              ]
+            },
+            {
+              "nameEn": "Earth Mercury",
+              "nameZh": "土象水星",
+              "linesEn": [
+                "Role: Same ruler, different medium",
+                "Expression: Analytical precision and method",
+                "Focus: Depth of refinement over breadth"
+              ],
+              "linesZh": [
+                "角色：同一命主星，不同介质",
+                "表达：分析精确，注重方法",
+                "侧重：打磨深度，而非连接广度"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

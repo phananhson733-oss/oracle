@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "kylie-jenner-zodiac-sign": {
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Kylie Jenner's Zodiac Sign in a Birth Chart",
+          "titleEn": "5 Observable Signals of the Leo–Capricorn Blend",
+          "titleZh": "狮子—摩羯组合的5个可观察信号",
+          "altEn": "Five observable signals showing Leo Sun and Capricorn rising working together in a personal brand",
+          "altZh": "狮子太阳与摩羯上升协同运作于个人品牌中的五个可观察信号",
+          "items": [
+            {
+              "nameEn": "Spotlight + Timing",
+              "nameZh": "聚光灯加节奏",
+              "subEn": "Theatrical brand moments that still land on a deliberate schedule",
+              "subZh": "戏剧性品牌时刻仍按精心安排的节点落地"
+            },
+            {
+              "nameEn": "Self-Myth + Paper Trail",
+              "nameZh": "自我神话加商业证据",
+              "subEn": "Personal storytelling that doubles as durable business positioning",
+              "subZh": "个人叙事同时也是持久的商业定位"
+            },
+            {
+              "nameEn": "Warmth + Control",
+              "nameZh": "温暖加克制",
+              "subEn": "Public warmth that rarely tips into unguarded impulse",
+              "subZh": "公开的温暖几乎从不滑向无防备的冲动"
+            },
+            {
+              "nameEn": "Empire Over Performance",
+              "nameZh": "帝国优先于表演",
+              "subEn": "Personal brand treated as infrastructure to compound, not a one-off show",
+              "subZh": "个人品牌被视为可复利的基础设施，而非一次性演出"
+            },
+            {
+              "nameEn": "Slow, Deliberate Reveals",
+              "nameZh": "缓慢而蓄意的揭示",
+              "subEn": "Rollouts that withhold and time their release instead of chasing instant attention",
+              "subZh": "发布策略克制而精准，而非追求即时关注"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Common Misreadings vs. What the Chart Actually Shows",
+          "titleZh": "常见误读对比星盘真正揭示的内容",
+          "altEn": "Four common misreadings of Kylie Jenner's Leo Sun and Capricorn rising corrected side by side",
+          "altZh": "对卡莉·詹纳狮子太阳与摩羯上升的四种常见误读与正确解读对比",
+          "columns": [
+            {
+              "nameEn": "The Misread",
+              "nameZh": "常见误读",
+              "linesEn": [
+                "She's just a typical Leo — visibility explains everything",
+                "Rising signs are only about looks — ascendant is just appearance",
+                "Fire signs are impulsive — Leo automatically means spontaneous display",
+                "Sun sign is the whole chart — one sign tells the entire story"
+              ],
+              "linesZh": [
+                "「她只是典型狮子座」——曝光度解释了一切",
+                "「上升星座只关乎外貌」——上升仅代表外表与第一印象",
+                "「火象星座天生冲动」——狮子座必然意味着即兴而为",
+                "「太阳星座就是全部」——一个星座道尽一切"
+              ]
+            },
+            {
+              "nameEn": "What the Chart Shows",
+              "nameZh": "星盘真正揭示的",
+              "linesEn": [
+                "Capricorn rising supplies the discipline that turns visibility into a durable business",
+                "The ascendant sets strategic posture and pacing behind how she operates",
+                "Earth on the ascendant slows that fire into calculated, well-timed moves",
+                "The interplay of Sun and rising is where the real pattern lives"
+              ],
+              "linesZh": [
+                "摩羯座上升提供将曝光转化为持久商业的纪律",
+                "上升星座设定其运作背后的战略姿态与节奏",
+                "上升位的土象特质将火象能量减缓为精心计算的行动",
+                "太阳与上升的互动才是真正规律所在"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

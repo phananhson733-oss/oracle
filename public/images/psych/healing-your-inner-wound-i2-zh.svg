@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="四个常见陷阱">
+  <defs>
+    <linearGradient id="healingyourinnerwound2zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="healingyourinnerwound2zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="healingyourinnerwound2zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="healingyourinnerwound2zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="healingyourinnerwound2zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="healingyourinnerwound2zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#healingyourinnerwound2zh-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#healingyourinnerwound2zh-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#healingyourinnerwound2zh-neb2)"/>
+  <circle cx="506.4" cy="99.5" r="1.37" fill="#cfc8ea" opacity="0.51"/><circle cx="148.8" cy="214.3" r="1.68" fill="#cfc8ea" opacity="0.15"/><circle cx="319.1" cy="88.3" r="0.97" fill="#cfc8ea" opacity="0.45"/><circle cx="570.7" cy="269.2" r="0.70" fill="#cfc8ea" opacity="0.25"/><circle cx="102.9" cy="156.9" r="0.94" fill="#cfc8ea" opacity="0.52"/><circle cx="27.9" cy="20.4" r="0.89" fill="#cfc8ea" opacity="0.47"/><circle cx="403.9" cy="225.5" r="0.74" fill="#cfc8ea" opacity="0.30"/><circle cx="420.4" cy="41.2" r="1.47" fill="#cfc8ea" opacity="0.24"/><circle cx="118.1" cy="220.6" r="0.40" fill="#cfc8ea" opacity="0.36"/><circle cx="527.3" cy="212.9" r="1.34" fill="#cfc8ea" opacity="0.37"/><circle cx="13.6" cy="122.9" r="0.94" fill="#cfc8ea" opacity="0.34"/><circle cx="244.6" cy="17.8" r="1.04" fill="#cfc8ea" opacity="0.15"/><circle cx="270.4" cy="32.2" r="0.70" fill="#cfc8ea" opacity="0.45"/><circle cx="680.1" cy="221.6" r="1.20" fill="#cfc8ea" opacity="0.16"/><circle cx="173.4" cy="204.1" r="1.57" fill="#cfc8ea" opacity="0.20"/><circle cx="231.3" cy="216.6" r="1.62" fill="#cfc8ea" opacity="0.38"/><circle cx="439.7" cy="84.8" r="1.36" fill="#cfc8ea" opacity="0.38"/><circle cx="39.7" cy="295.1" r="0.61" fill="#cfc8ea" opacity="0.33"/><circle cx="97.3" cy="319.7" r="1.55" fill="#cfc8ea" opacity="0.20"/><circle cx="212.6" cy="34.8" r="0.95" fill="#cfc8ea" opacity="0.48"/><circle cx="202.3" cy="316.8" r="1.13" fill="#cfc8ea" opacity="0.32"/><circle cx="72.9" cy="173.3" r="0.74" fill="#cfc8ea" opacity="0.40"/><circle cx="235.1" cy="111.6" r="0.63" fill="#cfc8ea" opacity="0.25"/><circle cx="168.8" cy="85.4" r="1.23" fill="#cfc8ea" opacity="0.30"/><circle cx="252.8" cy="141.7" r="1.40" fill="#cfc8ea" opacity="0.36"/><circle cx="697.7" cy="114.3" r="0.44" fill="#cfc8ea" opacity="0.45"/><circle cx="542.9" cy="115.2" r="1.17" fill="#cfc8ea" opacity="0.17"/><circle cx="231.9" cy="65.1" r="0.74" fill="#cfc8ea" opacity="0.14"/><circle cx="526.6" cy="297.5" r="1.05" fill="#cfc8ea" opacity="0.23"/><circle cx="533.3" cy="200.5" r="1.34" fill="#cfc8ea" opacity="0.24"/><circle cx="288.4" cy="290.0" r="0.50" fill="#cfc8ea" opacity="0.22"/><path d="M 16.65544195100665 308.1 L 17.2 310.8 L 19.8 311.3117985355202 L 17.2 311.8 L 16.65544195100665 314.5 L 16.1 311.8 L 13.5 311.3117985355202 L 16.1 310.8 Z" fill="#f6e6bf" opacity="0.7605283687124029"/><path d="M 146.43674099817872 157.2 L 146.9 159.6 L 149.3 160.04090631124564 L 146.9 160.5 L 146.43674099817872 162.9 L 146.0 160.5 L 143.6 160.04090631124564 L 146.0 159.6 Z" fill="#f6e6bf" opacity="0.6745305945398286"/><path d="M 522.4375681243837 25.2 L 522.8 27.3 L 524.9 27.714567000279203 L 522.8 28.1 L 522.4375681243837 30.2 L 522.0 28.1 L 520.0 27.714567000279203 L 522.0 27.3 Z" fill="#f6e6bf" opacity="0.6796583369607105"/><path d="M 414.337135899812 142.0 L 414.9 144.7 L 417.6 145.26639557187445 L 414.9 145.8 L 414.337135899812 148.5 L 413.8 145.8 L 411.1 145.26639557187445 L 413.8 144.7 Z" fill="#f6e6bf" opacity="0.7960469748126342"/><path d="M 165.4108177833259 157.6 L 165.9 160.1 L 168.4 160.59100934513845 L 165.9 161.1 L 165.4108177833259 163.6 L 164.9 161.1 L 162.4 160.59100934513845 L 164.9 160.1 Z" fill="#f6e6bf" opacity="0.5237768789986148"/><path d="M 527.3 212.9 L 202.3 316.8 L 542.9 115.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">四个常见陷阱</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#healingyourinnerwound2zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#healingyourinnerwound2zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#healingyourinnerwound2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#healingyourinnerwound2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">读成离散诊断</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">信号是反思语言，不是固定分类</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#healingyourinnerwound2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#healingyourinnerwound2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">硬选一派当正解</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">分歧本身显示星盘能说的边界</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#healingyourinnerwound2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#healingyourinnerwound2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">把框架升格成身份</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">信号描述一种倾向，不是你的全部</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#healingyourinnerwound2zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#healingyourinnerwound2zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">把星盘当现实替身</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">星盘无法替代真实的关系、记忆与选择</text>
+  <path d="M 280.025 344.4 L 280.4 346.6 L 282.6 347 L 280.4 347.4 L 280.025 349.6 L 279.6 347.4 L 277.4 347 L 279.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 344.4 L 480.4 346.6 L 482.6 347 L 480.4 347.4 L 479.975 349.6 L 479.6 347.4 L 477.4 347 L 479.6 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

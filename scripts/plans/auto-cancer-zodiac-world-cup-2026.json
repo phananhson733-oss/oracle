@@ -1,0 +1,102 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "heroWidth": 1200, "heroHeight": 675, "quality": 82 },
+  "articles": {
+    "cancer-zodiac-world-cup-2026": {
+      "hero": {
+        "prompt": "A wide June twilight: Jupiter's amber-gold tide floods low across a calm Cancer water-horizon, many soft tidal ripples catching the light under one deep indigo-to-near-black canopy that fades from #16112c into #0b0a1b. Soft gold accents in #d4af6a glint along the waterline; a faint teal-and-gold nebula wash drifts high in the sky, evoking a quiet group-stage Cancer season of many tides under a single sky. Painterly editorial illustration, atmospheric and symbolic, full-bleed wide 16:9 that fills the frame. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Amber-gold tide spreading across a calm water-horizon under a deep indigo nebula sky, a symbolic Cancer season",
+        "altZh": "琥珀金色的潮水漫过平静的水平线，深靛蓝星云夜空之下，象征巨蟹季的群潮一片"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Cancer World Cup Lens vs the Single-Player Birth Chart",
+          "afterHeadingZh": "## 巨蟹座世界杯视角与相近概念：运作方式 + 取舍",
+          "titleEn": "Cancer World Cup Lens vs the Single-Player Birth Chart",
+          "titleZh": "巨蟹座世界杯视角 与 单人本命盘",
+          "altEn": "Comparison of the Cancer World Cup roundup lens against a single-player birth chart reading",
+          "altZh": "巨蟹座世界杯汇总视角与单人本命盘解读的对比",
+          "columns": [
+            {
+              "nameEn": "Cancer World Cup Lens",
+              "nameZh": "巨蟹座世界杯视角",
+              "linesEn": [
+                "Reads a whole cohort of Cancer-Sun footballers at once",
+                "Trades the close-up for the constellation",
+                "Bound by a shared transit, Jupiter in Cancer 2026",
+                "Gains pattern: a recurring note of guarded devotion"
+              ],
+              "linesZh": [
+                "一次读一整批巨蟹日球员",
+                "用特写换星群",
+                "靠一道共享行运串起：木星行经巨蟹",
+                "换回模式：反复出现、带着设防之爱的音符"
+              ]
+            },
+            {
+              "nameEn": "Single-Player Birth Chart",
+              "nameZh": "单人本命盘",
+              "linesEn": [
+                "Goes deep on one person's Sun sign",
+                "Trades breadth for intimacy",
+                "Dwells on verifiable natal placements in detail",
+                "Bound to a personal chart, not a shared transit"
+              ],
+              "linesZh": [
+                "深挖一个人的太阳星座",
+                "用广度换取亲密",
+                "细致停留在可核实的本命定位上",
+                "系于个人星盘，而非共享行运"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Cancer World Cup Lens Across the Tournament",
+          "afterHeadingZh": "## 如何识别 巨蟹座世界杯视角（实操观察）",
+          "titleEn": "How to Read the Cancer World Cup Lens",
+          "titleZh": "如何识别巨蟹座世界杯视角",
+          "altEn": "Five steps for reading the Cancer World Cup Lens across the tournament",
+          "altZh": "贯穿赛事识别巨蟹座世界杯视角的五个步骤",
+          "items": [
+            {
+              "nameEn": "Anchor the window",
+              "nameZh": "锚定窗口",
+              "subEn": "Group stage 11-30 June, while Jupiter is in Cancer before entering Leo",
+              "subZh": "小组赛 6 月 11 至 30 日，木星进狮子前停留巨蟹"
+            },
+            {
+              "nameEn": "Gather the cohort by Sun sign",
+              "nameZh": "按太阳星座归集",
+              "subEn": "Verified dates: Bellingham 29 Jun 2003, Messi 24 Jun 1987, Haaland 21 Jul 2000",
+              "subZh": "核实日期：贝林厄姆 2003-6-29、梅西 1987-6-24、哈兰德 2000-7-21"
+            },
+            {
+              "nameEn": "Name the shared archetype",
+              "nameZh": "点出共享原型",
+              "subEn": "Cancer as home, memory, and protective loyalty, a reflective theme",
+              "subZh": "巨蟹即家、记忆与守护之忠诚，一个供反思的主题"
+            },
+            {
+              "nameEn": "Add the transit lightly",
+              "nameZh": "轻轻添上行运",
+              "subEn": "Jupiter visits the cohort's Sun sign: a symbolic homecoming, not a result",
+              "subZh": "木星造访这批人的太阳星座：象征性的归家，而非结果"
+            },
+            {
+              "nameEn": "Drop the emphasis at Leo",
+              "nameZh": "进狮子即放下",
+              "subEn": "July knockouts and the 19 July final no longer sit in Cancer's window",
+              "subZh": "7 月淘汰赛与 7 月 19 日决赛已不在巨蟹窗口内"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

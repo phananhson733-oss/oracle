@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 505" role="img" aria-label="5 Steps to Read Dhanishta in Your Birth Chart">
+  <defs>
+    <linearGradient id="dhanishtanakshatra0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="dhanishtanakshatra0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="dhanishtanakshatra0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dhanishtanakshatra0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dhanishtanakshatra0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dhanishtanakshatra0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="url(#dhanishtanakshatra0en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="172" fill="url(#dhanishtanakshatra0en-neb1)"/>
+  <ellipse cx="623" cy="404" rx="334" ry="162" fill="url(#dhanishtanakshatra0en-neb2)"/>
+  <circle cx="331.0" cy="195.7" r="0.69" fill="#cfc8ea" opacity="0.26"/><circle cx="341.4" cy="369.5" r="0.69" fill="#cfc8ea" opacity="0.20"/><circle cx="294.3" cy="202.2" r="0.54" fill="#cfc8ea" opacity="0.23"/><circle cx="666.3" cy="404.2" r="1.51" fill="#cfc8ea" opacity="0.48"/><circle cx="734.8" cy="195.0" r="1.26" fill="#cfc8ea" opacity="0.38"/><circle cx="19.7" cy="265.3" r="1.43" fill="#cfc8ea" opacity="0.19"/><circle cx="635.3" cy="485.8" r="1.20" fill="#cfc8ea" opacity="0.12"/><circle cx="329.9" cy="76.9" r="1.43" fill="#cfc8ea" opacity="0.36"/><circle cx="82.8" cy="99.1" r="1.26" fill="#cfc8ea" opacity="0.34"/><circle cx="387.5" cy="409.9" r="1.70" fill="#cfc8ea" opacity="0.53"/><circle cx="463.0" cy="382.8" r="0.97" fill="#cfc8ea" opacity="0.12"/><circle cx="629.8" cy="158.2" r="0.57" fill="#cfc8ea" opacity="0.41"/><circle cx="213.0" cy="141.2" r="0.59" fill="#cfc8ea" opacity="0.23"/><circle cx="181.0" cy="171.4" r="1.62" fill="#cfc8ea" opacity="0.16"/><circle cx="297.4" cy="273.7" r="1.04" fill="#cfc8ea" opacity="0.49"/><circle cx="242.6" cy="314.9" r="0.81" fill="#cfc8ea" opacity="0.23"/><circle cx="286.3" cy="101.3" r="0.58" fill="#cfc8ea" opacity="0.51"/><circle cx="708.8" cy="118.1" r="1.63" fill="#cfc8ea" opacity="0.22"/><circle cx="438.4" cy="411.6" r="0.99" fill="#cfc8ea" opacity="0.46"/><circle cx="710.2" cy="350.2" r="0.65" fill="#cfc8ea" opacity="0.39"/><circle cx="611.6" cy="34.1" r="0.43" fill="#cfc8ea" opacity="0.23"/><circle cx="565.2" cy="441.5" r="0.61" fill="#cfc8ea" opacity="0.47"/><circle cx="337.5" cy="265.4" r="0.86" fill="#cfc8ea" opacity="0.34"/><circle cx="53.2" cy="216.9" r="0.83" fill="#cfc8ea" opacity="0.32"/><circle cx="478.3" cy="363.0" r="0.63" fill="#cfc8ea" opacity="0.30"/><circle cx="657.8" cy="179.6" r="0.79" fill="#cfc8ea" opacity="0.47"/><circle cx="311.6" cy="194.3" r="1.24" fill="#cfc8ea" opacity="0.43"/><circle cx="221.1" cy="474.9" r="1.50" fill="#cfc8ea" opacity="0.28"/><circle cx="84.1" cy="447.4" r="1.51" fill="#cfc8ea" opacity="0.53"/><circle cx="698.7" cy="164.7" r="1.03" fill="#cfc8ea" opacity="0.21"/><circle cx="686.7" cy="291.9" r="0.89" fill="#cfc8ea" opacity="0.46"/><circle cx="57.9" cy="163.1" r="1.52" fill="#cfc8ea" opacity="0.42"/><circle cx="635.8" cy="140.5" r="0.85" fill="#cfc8ea" opacity="0.30"/><circle cx="145.0" cy="233.7" r="1.21" fill="#cfc8ea" opacity="0.27"/><circle cx="269.5" cy="13.5" r="1.56" fill="#cfc8ea" opacity="0.50"/><circle cx="102.6" cy="241.6" r="0.42" fill="#cfc8ea" opacity="0.51"/><circle cx="562.5" cy="314.6" r="1.48" fill="#cfc8ea" opacity="0.39"/><circle cx="562.9" cy="117.6" r="1.20" fill="#cfc8ea" opacity="0.31"/><circle cx="645.1" cy="399.6" r="0.80" fill="#cfc8ea" opacity="0.14"/><circle cx="104.3" cy="194.3" r="1.19" fill="#cfc8ea" opacity="0.23"/><circle cx="688.9" cy="380.1" r="0.85" fill="#cfc8ea" opacity="0.22"/><circle cx="686.7" cy="80.0" r="0.91" fill="#cfc8ea" opacity="0.25"/><circle cx="164.7" cy="243.5" r="1.40" fill="#cfc8ea" opacity="0.31"/><path d="M 483.17339884862304 35.7 L 483.6 38.2 L 486.1 38.620530921267346 L 483.6 39.1 L 483.17339884862304 41.5 L 482.7 39.1 L 480.3 38.620530921267346 L 482.7 38.2 Z" fill="#f6e6bf" opacity="0.5835332788759843"/><path d="M 505.8018932826817 318.2 L 506.2 320.4 L 508.4 320.8222825231496 L 506.2 321.2 L 505.8018932826817 323.4 L 505.4 321.2 L 503.2 320.8222825231496 L 505.4 320.4 Z" fill="#f6e6bf" opacity="0.775375138525851"/><path d="M 193.81432543322444 111.0 L 194.4 114.2 L 197.6 114.83781450730748 L 194.4 115.4 L 193.81432543322444 118.6 L 193.2 115.4 L 190.0 114.83781450730748 L 193.2 114.2 Z" fill="#f6e6bf" opacity="0.7291401965776458"/><path d="M 395.8432159759104 118.8 L 396.4 121.5 L 399.1 122.06525848270394 L 396.4 122.6 L 395.8432159759104 125.3 L 395.3 122.6 L 392.6 122.06525848270394 L 395.3 121.5 Z" fill="#f6e6bf" opacity="0.7734164380701258"/><path d="M 422.2217386625707 18.2 L 422.8 20.9 L 425.5 21.47265038569458 L 422.8 22.0 L 422.2217386625707 24.8 L 421.7 22.0 L 418.9 21.47265038569458 L 421.7 20.9 Z" fill="#f6e6bf" opacity="0.6372324455762282"/>
+  <rect x="1.5" y="1.5" width="757" height="502" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="491" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 485.8 L 16.5 488.5 L 19.2 489 L 16.5 489.5 L 16 492.2 L 15.5 489.5 L 12.8 489 L 15.5 488.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 485.8 L 744.5 488.5 L 747.2 489 L 744.5 489.5 L 744 492.2 L 743.5 489.5 L 740.8 489 L 743.5 488.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">5 Steps to Read Dhanishta in Your Birth Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#dhanishtanakshatra0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#dhanishtanakshatra0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="415" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#dhanishtanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#dhanishtanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Find the Exact Degree</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Locate the placement and check whether it falls in the Capricorn or Aquarius</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">portion of Dhanishta</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#dhanishtanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#dhanishtanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Read the Sign Portion</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Capricorn degrees: Mars-driven discipline, ambition, structure; Aquarius</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">degrees: community, networks, coordination</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#dhanishtanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#dhanishtanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Reframe Wealth as Rhythm</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Treat wealth as synchronization with cycles and right timing, not as a literal</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">money prediction</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#dhanishtanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#dhanishtanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Spot the Damaru Drum Theme</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Ask: where does this person keep time, set tempo, or coordinate a group?</text>
+  <circle cx="76" cy="415" r="20.0" fill="url(#dhanishtanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="415" r="15" fill="url(#dhanishtanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="410.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="419.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="411.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Apply Collective Lens</text>
+  <text x="116" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Credit the Ashta Vasus: read prosperity as harmony within a whole, not</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">individual accumulation</text>
+  <path d="M 202.22749999999988 476.4 L 202.6 478.6 L 204.8 479 L 202.6 479.4 L 202.22749999999988 481.6 L 201.8 479.4 L 199.6 479 L 201.8 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="483" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 476.4 L 558.2 478.6 L 560.4 479 L 558.2 479.4 L 557.7725000000002 481.6 L 557.4 479.4 L 555.2 479 L 557.4 478.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

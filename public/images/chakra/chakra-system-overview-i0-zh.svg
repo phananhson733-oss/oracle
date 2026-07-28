@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 553" role="img" aria-label="七大脉轮：从海底轮到顶轮">
+  <defs>
+    <linearGradient id="chakrasystemoverview0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="chakrasystemoverview0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="chakrasystemoverview0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chakrasystemoverview0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chakrasystemoverview0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chakrasystemoverview0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="550" rx="22" fill="url(#chakrasystemoverview0zh-panel)"/>
+  <ellipse cx="198" cy="133" rx="380" ry="188" fill="url(#chakrasystemoverview0zh-neb1)"/>
+  <ellipse cx="623" cy="442" rx="334" ry="177" fill="url(#chakrasystemoverview0zh-neb2)"/>
+  <circle cx="115.3" cy="321.6" r="1.60" fill="#cfc8ea" opacity="0.30"/><circle cx="33.4" cy="309.4" r="0.65" fill="#cfc8ea" opacity="0.30"/><circle cx="597.3" cy="227.5" r="1.64" fill="#cfc8ea" opacity="0.26"/><circle cx="490.2" cy="139.5" r="1.57" fill="#cfc8ea" opacity="0.32"/><circle cx="386.8" cy="284.5" r="0.93" fill="#cfc8ea" opacity="0.23"/><circle cx="644.6" cy="287.8" r="1.55" fill="#cfc8ea" opacity="0.48"/><circle cx="183.9" cy="355.4" r="1.64" fill="#cfc8ea" opacity="0.33"/><circle cx="456.6" cy="438.6" r="1.66" fill="#cfc8ea" opacity="0.22"/><circle cx="282.4" cy="233.9" r="0.74" fill="#cfc8ea" opacity="0.21"/><circle cx="553.7" cy="482.5" r="1.23" fill="#cfc8ea" opacity="0.43"/><circle cx="719.5" cy="132.5" r="0.46" fill="#cfc8ea" opacity="0.42"/><circle cx="614.7" cy="211.3" r="1.33" fill="#cfc8ea" opacity="0.51"/><circle cx="297.4" cy="388.4" r="1.46" fill="#cfc8ea" opacity="0.38"/><circle cx="430.8" cy="156.8" r="0.95" fill="#cfc8ea" opacity="0.14"/><circle cx="382.6" cy="133.4" r="1.13" fill="#cfc8ea" opacity="0.13"/><circle cx="422.1" cy="151.4" r="0.96" fill="#cfc8ea" opacity="0.28"/><circle cx="352.3" cy="88.9" r="0.73" fill="#cfc8ea" opacity="0.25"/><circle cx="186.9" cy="256.7" r="0.70" fill="#cfc8ea" opacity="0.26"/><circle cx="365.5" cy="17.8" r="1.44" fill="#cfc8ea" opacity="0.42"/><circle cx="406.2" cy="82.5" r="1.50" fill="#cfc8ea" opacity="0.43"/><circle cx="428.0" cy="276.7" r="1.06" fill="#cfc8ea" opacity="0.26"/><circle cx="333.7" cy="32.0" r="1.44" fill="#cfc8ea" opacity="0.15"/><circle cx="430.9" cy="505.7" r="0.97" fill="#cfc8ea" opacity="0.22"/><circle cx="72.3" cy="217.6" r="1.22" fill="#cfc8ea" opacity="0.25"/><circle cx="350.4" cy="405.1" r="0.46" fill="#cfc8ea" opacity="0.18"/><circle cx="75.0" cy="416.5" r="1.51" fill="#cfc8ea" opacity="0.13"/><circle cx="385.8" cy="73.2" r="1.32" fill="#cfc8ea" opacity="0.40"/><circle cx="23.0" cy="254.4" r="0.49" fill="#cfc8ea" opacity="0.39"/><circle cx="529.9" cy="311.4" r="1.55" fill="#cfc8ea" opacity="0.39"/><circle cx="330.3" cy="319.9" r="1.39" fill="#cfc8ea" opacity="0.29"/><circle cx="170.8" cy="132.1" r="1.02" fill="#cfc8ea" opacity="0.22"/><circle cx="391.0" cy="247.9" r="0.43" fill="#cfc8ea" opacity="0.34"/><circle cx="494.4" cy="241.4" r="1.53" fill="#cfc8ea" opacity="0.51"/><circle cx="200.5" cy="157.1" r="0.94" fill="#cfc8ea" opacity="0.18"/><circle cx="277.0" cy="317.4" r="1.47" fill="#cfc8ea" opacity="0.50"/><circle cx="378.0" cy="459.1" r="0.56" fill="#cfc8ea" opacity="0.41"/><circle cx="331.7" cy="296.2" r="0.53" fill="#cfc8ea" opacity="0.37"/><circle cx="596.3" cy="92.2" r="1.53" fill="#cfc8ea" opacity="0.33"/><circle cx="710.0" cy="26.7" r="1.27" fill="#cfc8ea" opacity="0.12"/><circle cx="202.1" cy="153.2" r="1.40" fill="#cfc8ea" opacity="0.27"/><circle cx="40.2" cy="165.1" r="1.70" fill="#cfc8ea" opacity="0.15"/><circle cx="228.1" cy="180.3" r="1.65" fill="#cfc8ea" opacity="0.53"/><circle cx="580.6" cy="268.1" r="1.14" fill="#cfc8ea" opacity="0.33"/><circle cx="310.8" cy="218.8" r="0.94" fill="#cfc8ea" opacity="0.46"/><circle cx="64.3" cy="147.1" r="1.07" fill="#cfc8ea" opacity="0.25"/><circle cx="253.7" cy="198.9" r="1.66" fill="#cfc8ea" opacity="0.26"/><circle cx="588.4" cy="534.1" r="1.36" fill="#cfc8ea" opacity="0.26"/><path d="M 266.18084540590644 319.7 L 266.6 321.9 L 268.8 322.3341951773036 L 266.6 322.8 L 266.18084540590644 325.0 L 265.8 322.8 L 263.6 322.3341951773036 L 265.8 321.9 Z" fill="#f6e6bf" opacity="0.7730755564058199"/><path d="M 164.8682087250054 422.3 L 165.4 425.2 L 168.3 425.7683705466334 L 165.4 426.3 L 164.8682087250054 429.2 L 164.3 426.3 L 161.4 425.7683705466334 L 164.3 425.2 Z" fill="#f6e6bf" opacity="0.5791030175285414"/><path d="M 552.4682649485767 163.0 L 552.9 165.4 L 555.3 165.85409652185626 L 552.9 166.3 L 552.4682649485767 168.7 L 552.0 166.3 L 549.6 165.85409652185626 L 552.0 165.4 Z" fill="#f6e6bf" opacity="0.646462112874724"/><path d="M 62.72107869759202 518.2 L 63.2 520.8 L 65.8 521.2427357605193 L 63.2 521.7 L 62.72107869759202 524.3 L 62.2 521.7 L 59.7 521.2427357605193 L 62.2 520.8 Z" fill="#f6e6bf" opacity="0.7170663279714062"/><path d="M 502.27244579419494 424.7 L 502.9 427.8 L 506.0 428.44211530615576 L 502.9 429.0 L 502.27244579419494 432.2 L 501.7 429.0 L 498.5 428.44211530615576 L 501.7 427.8 Z" fill="#f6e6bf" opacity="0.5689386911923066"/><path d="M 115.3 321.6 L 406.2 82.5 L 710.0 26.7 L 202.1 153.2 L 40.2 165.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="550" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="539" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 533.8 L 16.5 536.5 L 19.2 537 L 16.5 537.5 L 16 540.2 L 15.5 537.5 L 12.8 537 L 15.5 536.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 533.8 L 744.5 536.5 L 747.2 537 L 744.5 537.5 L 744 540.2 L 743.5 537.5 L 740.8 537 L 743.5 536.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">七大脉轮：从海底轮到顶轮</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#chakrasystemoverview0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#chakrasystemoverview0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="481" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#chakrasystemoverview0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#chakrasystemoverview0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">海底轮</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">安全、稳定与基本信任；对应红色气场</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#chakrasystemoverview0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#chakrasystemoverview0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">生殖轮</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">欲望、创造与愉悦；对应橙色气场</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#chakrasystemoverview0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#chakrasystemoverview0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">太阳轮</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">行动力：选择、行动、带领；对应黄色气场</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#chakrasystemoverview0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#chakrasystemoverview0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">心轮</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">爱、哀伤、共情与归属；对应绿色气场</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#chakrasystemoverview0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#chakrasystemoverview0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">喉轮</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">言说、倾听、时机与诚实；对应蓝色气场</text>
+  <circle cx="76" cy="421" r="20.0" fill="url(#chakrasystemoverview0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="421" r="15" fill="url(#chakrasystemoverview0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="416.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="425.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">6</text>
+  <text x="116" y="417.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">眉心轮</text>
+  <text x="116" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">觉知、直觉与模式识别；对应紫色气场</text>
+  <circle cx="76" cy="481" r="20.0" fill="url(#chakrasystemoverview0zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="481" r="15" fill="url(#chakrasystemoverview0zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="476.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="485.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">7</text>
+  <text x="116" y="477.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">顶轮</text>
+  <text x="116" y="499.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">整合、意义与视角；对应白色气场</text>
+  <path d="M 280.025 524.4 L 280.4 526.6 L 282.6 527 L 280.4 527.4 L 280.025 529.6 L 279.6 527.4 L 277.4 527 L 279.6 526.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="531" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 524.4 L 480.4 526.6 L 482.6 527 L 480.4 527.4 L 479.975 529.6 L 479.6 527.4 L 477.4 527 L 479.6 526.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

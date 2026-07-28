@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="同一个中心，不同的色调">
+  <defs>
+    <linearGradient id="chakrasystemoverview1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="chakrasystemoverview1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="chakrasystemoverview1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chakrasystemoverview1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="chakrasystemoverview1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="chakrasystemoverview1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#chakrasystemoverview1zh-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#chakrasystemoverview1zh-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#chakrasystemoverview1zh-neb2)"/>
+  <circle cx="391.5" cy="405.6" r="0.94" fill="#cfc8ea" opacity="0.33"/><circle cx="585.4" cy="89.7" r="0.97" fill="#cfc8ea" opacity="0.33"/><circle cx="737.9" cy="176.2" r="0.42" fill="#cfc8ea" opacity="0.16"/><circle cx="436.5" cy="120.0" r="1.66" fill="#cfc8ea" opacity="0.28"/><circle cx="329.6" cy="355.2" r="1.63" fill="#cfc8ea" opacity="0.29"/><circle cx="105.3" cy="99.9" r="1.67" fill="#cfc8ea" opacity="0.14"/><circle cx="645.6" cy="423.8" r="1.54" fill="#cfc8ea" opacity="0.20"/><circle cx="307.7" cy="276.5" r="0.71" fill="#cfc8ea" opacity="0.47"/><circle cx="256.3" cy="67.3" r="1.32" fill="#cfc8ea" opacity="0.30"/><circle cx="341.4" cy="82.9" r="0.97" fill="#cfc8ea" opacity="0.17"/><circle cx="588.6" cy="214.4" r="1.14" fill="#cfc8ea" opacity="0.43"/><circle cx="214.6" cy="163.5" r="0.42" fill="#cfc8ea" opacity="0.29"/><circle cx="321.0" cy="43.5" r="0.92" fill="#cfc8ea" opacity="0.43"/><circle cx="582.7" cy="111.3" r="0.92" fill="#cfc8ea" opacity="0.40"/><circle cx="155.2" cy="289.8" r="0.44" fill="#cfc8ea" opacity="0.36"/><circle cx="549.6" cy="196.0" r="0.59" fill="#cfc8ea" opacity="0.53"/><circle cx="488.0" cy="325.0" r="1.55" fill="#cfc8ea" opacity="0.23"/><circle cx="633.1" cy="408.2" r="0.99" fill="#cfc8ea" opacity="0.38"/><circle cx="678.4" cy="387.5" r="1.07" fill="#cfc8ea" opacity="0.49"/><circle cx="562.6" cy="260.8" r="0.63" fill="#cfc8ea" opacity="0.54"/><circle cx="306.1" cy="90.0" r="0.42" fill="#cfc8ea" opacity="0.51"/><circle cx="193.2" cy="415.0" r="1.30" fill="#cfc8ea" opacity="0.34"/><circle cx="387.1" cy="164.4" r="0.50" fill="#cfc8ea" opacity="0.29"/><circle cx="135.5" cy="60.4" r="0.62" fill="#cfc8ea" opacity="0.51"/><circle cx="299.6" cy="241.6" r="0.75" fill="#cfc8ea" opacity="0.23"/><circle cx="167.6" cy="189.9" r="1.43" fill="#cfc8ea" opacity="0.50"/><circle cx="220.9" cy="62.4" r="1.46" fill="#cfc8ea" opacity="0.21"/><circle cx="454.1" cy="304.6" r="1.70" fill="#cfc8ea" opacity="0.14"/><circle cx="112.9" cy="178.3" r="0.68" fill="#cfc8ea" opacity="0.35"/><circle cx="253.9" cy="39.3" r="1.61" fill="#cfc8ea" opacity="0.14"/><circle cx="81.2" cy="306.7" r="1.49" fill="#cfc8ea" opacity="0.28"/><circle cx="597.4" cy="282.9" r="1.11" fill="#cfc8ea" opacity="0.25"/><circle cx="505.8" cy="251.0" r="0.58" fill="#cfc8ea" opacity="0.45"/><circle cx="596.8" cy="281.7" r="0.88" fill="#cfc8ea" opacity="0.35"/><circle cx="64.7" cy="120.5" r="1.12" fill="#cfc8ea" opacity="0.29"/><circle cx="499.7" cy="86.0" r="1.51" fill="#cfc8ea" opacity="0.42"/><circle cx="286.5" cy="46.9" r="0.68" fill="#cfc8ea" opacity="0.37"/><circle cx="22.0" cy="206.0" r="1.21" fill="#cfc8ea" opacity="0.44"/><path d="M 71.08582747355103 187.4 L 71.7 190.3 L 74.6 190.90016202186234 L 71.7 191.5 L 71.08582747355103 194.4 L 70.5 191.5 L 67.5 190.90016202186234 L 70.5 190.3 Z" fill="#f6e6bf" opacity="0.7384687175275758"/><path d="M 47.214164670556784 180.9 L 47.8 183.8 L 50.6 184.2973828727845 L 47.8 184.8 L 47.214164670556784 187.7 L 46.7 184.8 L 43.8 184.2973828727845 L 46.7 183.8 Z" fill="#f6e6bf" opacity="0.5037302986020222"/><path d="M 370.53823958709836 24.7 L 370.9 26.8 L 373.0 27.23528164369054 L 370.9 27.6 L 370.53823958709836 29.7 L 370.1 27.6 L 368.0 27.23528164369054 L 370.1 26.8 Z" fill="#f6e6bf" opacity="0.7954581584082916"/><path d="M 166.31975380703807 281.8 L 166.7 284.0 L 168.9 284.3988065405283 L 166.7 284.8 L 166.31975380703807 287.0 L 165.9 284.8 L 163.7 284.3988065405283 L 165.9 284.0 Z" fill="#f6e6bf" opacity="0.6888547381618991"/><path d="M 25.36530027166009 173.0 L 26.0 176.2 L 29.2 176.8431793593336 L 26.0 177.5 L 25.36530027166009 180.7 L 24.7 177.5 L 21.5 176.8431793593336 L 24.7 176.2 Z" fill="#f6e6bf" opacity="0.6895252348156646"/><path d="M 214.6 163.5 L 488.0 325.0 L 678.4 387.5 L 193.2 415.0 L 112.9 178.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">同一个中心，不同的色调</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#chakrasystemoverview1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#chakrasystemoverview1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">清亮</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">清亮的红：落地行动，付账单、立边界</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">清亮的黄：自我信任与方向感</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">心轮加喉轮：带着温度说出难话</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">浑浊紧绷</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">浑浊的红：急迫、防御、压力感</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">刺眼的黄：表演压力、不停自证</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">紧绷组合：把真话磨到消失</text>
+  <path d="M 280.025 416.4 L 280.4 418.6 L 282.6 419 L 280.4 419.4 L 280.025 421.6 L 279.6 419.4 L 277.4 419 L 279.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 416.4 L 480.4 418.6 L 482.6 419 L 480.4 419.4 L 479.975 421.6 L 479.6 419.4 L 477.4 419 L 479.6 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

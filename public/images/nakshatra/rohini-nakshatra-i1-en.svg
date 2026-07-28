@@ -1,0 +1,61 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 373" role="img" aria-label="Rohini's Four Padas">
+  <defs>
+    <linearGradient id="rohininakshatra1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="rohininakshatra1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="rohininakshatra1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rohininakshatra1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="rohininakshatra1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="rohininakshatra1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="url(#rohininakshatra1en-panel)"/>
+  <ellipse cx="198" cy="90" rx="380" ry="127" fill="url(#rohininakshatra1en-neb1)"/>
+  <ellipse cx="623" cy="298" rx="334" ry="119" fill="url(#rohininakshatra1en-neb2)"/>
+  <circle cx="339.5" cy="16.3" r="1.24" fill="#cfc8ea" opacity="0.54"/><circle cx="547.3" cy="177.3" r="1.05" fill="#cfc8ea" opacity="0.26"/><circle cx="476.4" cy="340.6" r="0.55" fill="#cfc8ea" opacity="0.24"/><circle cx="125.7" cy="27.2" r="0.94" fill="#cfc8ea" opacity="0.46"/><circle cx="170.6" cy="202.4" r="1.20" fill="#cfc8ea" opacity="0.16"/><circle cx="673.2" cy="274.3" r="1.53" fill="#cfc8ea" opacity="0.41"/><circle cx="384.4" cy="55.3" r="0.60" fill="#cfc8ea" opacity="0.22"/><circle cx="570.3" cy="323.8" r="0.90" fill="#cfc8ea" opacity="0.29"/><circle cx="98.5" cy="149.8" r="0.81" fill="#cfc8ea" opacity="0.33"/><circle cx="740.5" cy="160.9" r="0.55" fill="#cfc8ea" opacity="0.29"/><circle cx="585.9" cy="223.7" r="0.54" fill="#cfc8ea" opacity="0.35"/><circle cx="65.2" cy="82.5" r="0.54" fill="#cfc8ea" opacity="0.50"/><circle cx="408.1" cy="150.7" r="1.59" fill="#cfc8ea" opacity="0.52"/><circle cx="364.3" cy="171.0" r="0.50" fill="#cfc8ea" opacity="0.43"/><circle cx="73.5" cy="246.8" r="0.44" fill="#cfc8ea" opacity="0.17"/><circle cx="209.6" cy="119.7" r="0.77" fill="#cfc8ea" opacity="0.21"/><circle cx="538.8" cy="96.9" r="1.61" fill="#cfc8ea" opacity="0.32"/><circle cx="480.3" cy="124.9" r="0.50" fill="#cfc8ea" opacity="0.21"/><circle cx="587.1" cy="306.0" r="0.68" fill="#cfc8ea" opacity="0.23"/><circle cx="650.5" cy="15.3" r="1.35" fill="#cfc8ea" opacity="0.39"/><circle cx="304.5" cy="98.8" r="0.49" fill="#cfc8ea" opacity="0.42"/><circle cx="269.1" cy="32.8" r="1.15" fill="#cfc8ea" opacity="0.32"/><circle cx="332.2" cy="321.5" r="0.48" fill="#cfc8ea" opacity="0.51"/><circle cx="469.4" cy="61.4" r="0.61" fill="#cfc8ea" opacity="0.26"/><circle cx="132.0" cy="107.4" r="1.10" fill="#cfc8ea" opacity="0.24"/><circle cx="592.9" cy="285.5" r="0.77" fill="#cfc8ea" opacity="0.48"/><circle cx="153.8" cy="130.9" r="1.44" fill="#cfc8ea" opacity="0.39"/><circle cx="176.2" cy="149.3" r="1.02" fill="#cfc8ea" opacity="0.54"/><circle cx="373.2" cy="291.7" r="1.58" fill="#cfc8ea" opacity="0.14"/><circle cx="156.3" cy="95.3" r="1.08" fill="#cfc8ea" opacity="0.37"/><circle cx="602.2" cy="240.3" r="0.45" fill="#cfc8ea" opacity="0.31"/><path d="M 183.9514673575759 156.8 L 184.5 159.5 L 187.1 159.99037688109092 L 184.5 160.5 L 183.9514673575759 163.2 L 183.4 160.5 L 180.8 159.99037688109092 L 183.4 159.5 Z" fill="#f6e6bf" opacity="0.6134878216078505"/><path d="M 712.652803376317 319.6 L 713.2 322.2 L 715.8 322.6979665828403 L 713.2 323.2 L 712.652803376317 325.8 L 712.2 323.2 L 709.5 322.6979665828403 L 712.2 322.2 Z" fill="#f6e6bf" opacity="0.5233761221868918"/><path d="M 527.0645608380437 135.3 L 527.5 137.7 L 529.9 138.15565655450337 L 527.5 138.6 L 527.0645608380437 141.0 L 526.6 138.6 L 524.2 138.15565655450337 L 526.6 137.7 Z" fill="#f6e6bf" opacity="0.5035867620026693"/><path d="M 78.712067425251 124.0 L 79.3 127.1 L 82.4 127.6834238411393 L 79.3 128.3 L 78.712067425251 131.4 L 78.1 128.3 L 75.0 127.6834238411393 L 78.1 127.1 Z" fill="#f6e6bf" opacity="0.5611201635329053"/><path d="M 285.42066913098097 80.4 L 286.0 83.2 L 288.8 83.73110159742646 L 286.0 84.3 L 285.42066913098097 87.1 L 284.9 84.3 L 282.1 83.73110159742646 L 284.9 83.2 Z" fill="#f6e6bf" opacity="0.5302087286254391"/><path d="M 476.4 340.6 L 170.6 202.4 L 73.5 246.8 L 538.8 96.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="370" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="359" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 353.8 L 16.5 356.5 L 19.2 357 L 16.5 357.5 L 16 360.2 L 15.5 357.5 L 12.8 357 L 15.5 356.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 353.8 L 744.5 356.5 L 747.2 357 L 744.5 357.5 L 744 360.2 L 743.5 357.5 L 740.8 357 L 743.5 356.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Rohini's Four Padas</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#rohininakshatra1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#rohininakshatra1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="301" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#rohininakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#rohininakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Pada 1 — 10°–13°20′</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Aries navamsa: driven, assertive growth with initiative</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#rohininakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#rohininakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Pada 2 — 13°20′–16°40′</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Taurus navamsa: material, sensual, steady accumulation</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#rohininakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#rohininakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Pada 3 — 16°40′–20°</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Gemini navamsa: beauty through words, trade, and ideas</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#rohininakshatra1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#rohininakshatra1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Pada 4 — 20°–23°20′</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cancer navamsa: abundance turned toward home and care</text>
+  <path d="M 202.22749999999988 344.4 L 202.6 346.6 L 204.8 347 L 202.6 347.4 L 202.22749999999988 349.6 L 201.8 347.4 L 199.6 347 L 201.8 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="351" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 344.4 L 558.2 346.6 L 560.4 347 L 558.2 347.4 L 557.7725000000002 349.6 L 557.4 347.4 L 555.2 347 L 557.4 346.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

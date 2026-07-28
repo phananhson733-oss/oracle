@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "why-am-i-afraid-of-commitment": {
+      "hero": {
+        "prompt": "Saturn's ringed planetary form glowing gold against a vast teal-and-indigo nebula, a crescent Venus symbol traced in soft amber light nearby, and a faint arc of stars marking the 7th house cusp spanning the scene — evoking the tension between longing for closeness and the pull toward self-protection, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn and Venus symbols glowing in a deep indigo nebula, representing commitment fear explored through an astrology birth chart"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Commitment Pattern in Your Birth Chart",
+          "titleEn": "5 Steps to Read Commitment Fear in Your Birth Chart",
+          "altEn": "Five-step sequence for reading commitment fear through Venus, the 7th house, and Saturn in a birth chart",
+          "items": [
+            {
+              "nameEn": "Check Venus by sign and aspect",
+              "subEn": "Note Venus contacts with Saturn, Pluto, or Uranus — each colors closeness with caution, intensity, or a need for freedom"
+            },
+            {
+              "nameEn": "Scan the 7th house",
+              "subEn": "See which sign sits on the cusp and whether planets fall inside; Saturn there reads as approaching partnership seriously and slowly"
+            },
+            {
+              "nameEn": "Find Saturn's house and aspects",
+              "subEn": "Saturn marks where you build carefully and test before you fully trust"
+            },
+            {
+              "nameEn": "Notice repetition",
+              "subEn": "A theme surfacing in two or three placements usually matters more than a single isolated aspect"
+            },
+            {
+              "nameEn": "Check symbols against real reactions",
+              "subEn": "Compare each placement to moments you actually hesitated, not an idealized version of how you think you should feel"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Hard Saturn–Venus Aspect vs a Loaded 7th House: What Actually Differs",
+          "titleEn": "Saturn–Venus Aspect vs Loaded 7th House: Two Different Signatures",
+          "altEn": "Comparison of a hard Saturn–Venus aspect and a loaded 7th house as distinct commitment-caution signatures in astrology",
+          "columns": [
+            {
+              "nameEn": "Hard Saturn–Venus Aspect",
+              "linesEn": [
+                "Internal caution — warmth is real but carefully rationed",
+                "Closeness filtered through need for control, proof, or self-protection",
+                "Gain: steadiness and loyalty once trust is earned",
+                "Trade-off: easy spontaneity is sacrificed"
+              ]
+            },
+            {
+              "nameEn": "Loaded 7th House",
+              "linesEn": [
+                "Works from the outside in — relationships feel central and magnetic",
+                "Committing feels high-stakes due to sheer weight placed on partnership",
+                "Gain: intensity and relational focus",
+                "Trade-off: calm detachment that eases big decisions is harder to find"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

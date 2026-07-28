@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="心轮：夹在太阳轮与喉轮之间">
+  <defs>
+    <linearGradient id="heartchakrameaning0zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="heartchakrameaning0zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="heartchakrameaning0zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="heartchakrameaning0zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="heartchakrameaning0zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="heartchakrameaning0zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#heartchakrameaning0zh-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#heartchakrameaning0zh-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#heartchakrameaning0zh-neb2)"/>
+  <circle cx="629.0" cy="327.9" r="1.21" fill="#cfc8ea" opacity="0.34"/><circle cx="519.0" cy="339.4" r="0.65" fill="#cfc8ea" opacity="0.43"/><circle cx="510.0" cy="223.7" r="0.83" fill="#cfc8ea" opacity="0.25"/><circle cx="619.5" cy="208.8" r="1.03" fill="#cfc8ea" opacity="0.36"/><circle cx="29.9" cy="470.7" r="1.08" fill="#cfc8ea" opacity="0.51"/><circle cx="297.7" cy="145.9" r="0.64" fill="#cfc8ea" opacity="0.14"/><circle cx="153.6" cy="584.9" r="1.35" fill="#cfc8ea" opacity="0.15"/><circle cx="699.4" cy="246.6" r="1.57" fill="#cfc8ea" opacity="0.43"/><circle cx="475.6" cy="459.1" r="1.14" fill="#cfc8ea" opacity="0.20"/><circle cx="735.1" cy="440.4" r="1.43" fill="#cfc8ea" opacity="0.29"/><circle cx="310.2" cy="39.0" r="1.18" fill="#cfc8ea" opacity="0.47"/><circle cx="249.6" cy="532.3" r="0.44" fill="#cfc8ea" opacity="0.40"/><circle cx="40.5" cy="288.2" r="1.31" fill="#cfc8ea" opacity="0.15"/><circle cx="128.3" cy="403.2" r="1.41" fill="#cfc8ea" opacity="0.52"/><circle cx="461.4" cy="394.0" r="0.67" fill="#cfc8ea" opacity="0.19"/><circle cx="170.7" cy="13.6" r="0.45" fill="#cfc8ea" opacity="0.44"/><circle cx="501.1" cy="491.3" r="1.20" fill="#cfc8ea" opacity="0.34"/><circle cx="477.8" cy="186.2" r="0.68" fill="#cfc8ea" opacity="0.17"/><circle cx="17.4" cy="288.1" r="1.10" fill="#cfc8ea" opacity="0.52"/><circle cx="682.6" cy="366.9" r="1.16" fill="#cfc8ea" opacity="0.33"/><circle cx="278.8" cy="342.3" r="1.50" fill="#cfc8ea" opacity="0.24"/><circle cx="464.7" cy="415.8" r="0.97" fill="#cfc8ea" opacity="0.18"/><circle cx="607.2" cy="380.1" r="0.55" fill="#cfc8ea" opacity="0.35"/><circle cx="242.4" cy="600.5" r="1.14" fill="#cfc8ea" opacity="0.14"/><circle cx="238.3" cy="514.7" r="1.16" fill="#cfc8ea" opacity="0.21"/><circle cx="438.7" cy="325.7" r="0.61" fill="#cfc8ea" opacity="0.14"/><circle cx="184.9" cy="244.1" r="1.12" fill="#cfc8ea" opacity="0.25"/><circle cx="224.4" cy="82.4" r="1.56" fill="#cfc8ea" opacity="0.14"/><circle cx="732.0" cy="362.4" r="1.03" fill="#cfc8ea" opacity="0.23"/><circle cx="709.0" cy="132.4" r="1.35" fill="#cfc8ea" opacity="0.19"/><circle cx="122.2" cy="510.7" r="0.68" fill="#cfc8ea" opacity="0.15"/><circle cx="55.8" cy="340.9" r="1.36" fill="#cfc8ea" opacity="0.39"/><circle cx="114.6" cy="193.7" r="1.68" fill="#cfc8ea" opacity="0.27"/><circle cx="370.7" cy="436.5" r="0.71" fill="#cfc8ea" opacity="0.33"/><circle cx="276.3" cy="342.7" r="1.09" fill="#cfc8ea" opacity="0.30"/><circle cx="69.6" cy="261.4" r="1.50" fill="#cfc8ea" opacity="0.26"/><circle cx="718.9" cy="175.4" r="1.55" fill="#cfc8ea" opacity="0.21"/><circle cx="403.4" cy="428.0" r="1.49" fill="#cfc8ea" opacity="0.39"/><circle cx="627.9" cy="545.4" r="0.45" fill="#cfc8ea" opacity="0.46"/><circle cx="80.3" cy="105.3" r="1.24" fill="#cfc8ea" opacity="0.29"/><circle cx="499.9" cy="45.0" r="0.67" fill="#cfc8ea" opacity="0.38"/><circle cx="245.3" cy="363.6" r="1.26" fill="#cfc8ea" opacity="0.19"/><circle cx="299.9" cy="334.5" r="0.53" fill="#cfc8ea" opacity="0.40"/><circle cx="271.8" cy="418.9" r="0.80" fill="#cfc8ea" opacity="0.50"/><circle cx="260.2" cy="412.9" r="1.23" fill="#cfc8ea" opacity="0.17"/><circle cx="42.4" cy="358.0" r="0.48" fill="#cfc8ea" opacity="0.36"/><circle cx="410.2" cy="124.1" r="1.48" fill="#cfc8ea" opacity="0.35"/><circle cx="130.7" cy="342.3" r="0.49" fill="#cfc8ea" opacity="0.37"/><circle cx="614.5" cy="97.2" r="1.69" fill="#cfc8ea" opacity="0.25"/><circle cx="351.7" cy="73.8" r="0.48" fill="#cfc8ea" opacity="0.20"/><circle cx="464.8" cy="425.3" r="1.40" fill="#cfc8ea" opacity="0.38"/><circle cx="175.9" cy="561.7" r="0.94" fill="#cfc8ea" opacity="0.21"/><path d="M 571.9714202284813 593.6 L 572.5 596.3 L 575.2 596.8714176840149 L 572.5 597.4 L 571.9714202284813 600.1 L 571.4 597.4 L 568.7 596.8714176840149 L 571.4 596.3 Z" fill="#f6e6bf" opacity="0.5836179203120991"/><path d="M 233.49700992554426 73.3 L 234.1 76.4 L 237.2 77.03025723202154 L 234.1 77.6 L 233.49700992554426 80.7 L 232.9 77.6 L 229.8 77.03025723202154 L 232.9 76.4 Z" fill="#f6e6bf" opacity="0.6163103872677311"/><path d="M 545.4676344841719 479.7 L 545.9 482.1 L 548.4 482.5965504660271 L 545.9 483.1 L 545.4676344841719 485.5 L 545.0 483.1 L 542.5 482.5965504660271 L 545.0 482.1 Z" fill="#f6e6bf" opacity="0.5308744040085003"/><path d="M 229.91707495599985 489.8 L 230.4 492.5 L 233.1 492.9814440268092 L 230.4 493.5 L 229.91707495599985 496.2 L 229.4 493.5 L 226.7 492.9814440268092 L 229.4 492.5 Z" fill="#f6e6bf" opacity="0.6480742022162304"/><path d="M 458.29485335946083 516.2 L 458.9 519.4 L 462.1 520.0251998505555 L 458.9 520.6 L 458.29485335946083 523.9 L 457.7 520.6 L 454.4 520.0251998505555 L 457.7 519.4 Z" fill="#f6e6bf" opacity="0.6595156120834872"/><path d="M 29.9 470.7 L 297.7 145.9 L 461.4 394.0 L 682.6 366.9 L 122.2 510.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">心轮：夹在太阳轮与喉轮之间</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#heartchakrameaning0zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#heartchakrameaning0zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">太阳轮（下方）</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">个人力量与清楚边界</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">「这件事由我说了算」</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">以柔软换取自我界定</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">心轮</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">善意向外流也流回自己</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">连接与柔软</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">两股流都在走才算平衡</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">喉轮（上方）</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">清晰表达、说真话</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">话说得准、说得明</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">以无言共情换取精准</text>
+  <path d="M 280.025 585.4 L 280.4 587.6 L 282.6 588 L 280.4 588.4 L 280.025 590.6 L 279.6 588.4 L 277.4 588 L 279.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 585.4 L 480.4 587.6 L 482.6 588 L 480.4 588.4 L 479.975 590.6 L 479.6 588.4 L 477.4 588 L 479.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

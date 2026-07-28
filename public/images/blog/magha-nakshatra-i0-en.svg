@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="How to Read Magha Nakshatra">
+  <defs>
+    <linearGradient id="maghanakshatra0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="maghanakshatra0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="maghanakshatra0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="maghanakshatra0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="maghanakshatra0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="maghanakshatra0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#maghanakshatra0en-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#maghanakshatra0en-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#maghanakshatra0en-neb2)"/>
+  <circle cx="492.1" cy="184.5" r="1.53" fill="#cfc8ea" opacity="0.47"/><circle cx="321.4" cy="22.9" r="0.54" fill="#cfc8ea" opacity="0.31"/><circle cx="206.1" cy="105.0" r="0.99" fill="#cfc8ea" opacity="0.45"/><circle cx="81.0" cy="207.9" r="0.82" fill="#cfc8ea" opacity="0.29"/><circle cx="304.1" cy="185.7" r="1.48" fill="#cfc8ea" opacity="0.33"/><circle cx="47.5" cy="336.7" r="0.45" fill="#cfc8ea" opacity="0.37"/><circle cx="535.7" cy="190.7" r="0.99" fill="#cfc8ea" opacity="0.28"/><circle cx="628.4" cy="337.5" r="1.46" fill="#cfc8ea" opacity="0.33"/><circle cx="593.6" cy="343.4" r="1.33" fill="#cfc8ea" opacity="0.46"/><circle cx="593.9" cy="373.1" r="1.00" fill="#cfc8ea" opacity="0.30"/><circle cx="190.0" cy="253.9" r="1.06" fill="#cfc8ea" opacity="0.16"/><circle cx="203.6" cy="118.5" r="1.13" fill="#cfc8ea" opacity="0.13"/><circle cx="598.8" cy="201.2" r="0.76" fill="#cfc8ea" opacity="0.24"/><circle cx="310.3" cy="284.8" r="1.21" fill="#cfc8ea" opacity="0.41"/><circle cx="334.5" cy="389.8" r="0.86" fill="#cfc8ea" opacity="0.36"/><circle cx="39.0" cy="182.4" r="1.32" fill="#cfc8ea" opacity="0.46"/><circle cx="81.2" cy="262.8" r="0.50" fill="#cfc8ea" opacity="0.51"/><circle cx="155.7" cy="371.4" r="1.53" fill="#cfc8ea" opacity="0.51"/><circle cx="190.0" cy="354.8" r="1.33" fill="#cfc8ea" opacity="0.42"/><circle cx="51.1" cy="34.3" r="0.51" fill="#cfc8ea" opacity="0.42"/><circle cx="700.4" cy="147.9" r="1.32" fill="#cfc8ea" opacity="0.14"/><circle cx="207.8" cy="129.0" r="1.58" fill="#cfc8ea" opacity="0.54"/><circle cx="691.2" cy="217.4" r="1.22" fill="#cfc8ea" opacity="0.17"/><circle cx="259.4" cy="167.0" r="1.20" fill="#cfc8ea" opacity="0.44"/><circle cx="494.0" cy="321.5" r="0.55" fill="#cfc8ea" opacity="0.44"/><circle cx="545.0" cy="61.2" r="0.84" fill="#cfc8ea" opacity="0.38"/><circle cx="521.9" cy="126.3" r="0.61" fill="#cfc8ea" opacity="0.42"/><circle cx="490.4" cy="164.8" r="1.36" fill="#cfc8ea" opacity="0.23"/><circle cx="290.6" cy="247.0" r="1.38" fill="#cfc8ea" opacity="0.46"/><circle cx="441.7" cy="97.6" r="1.49" fill="#cfc8ea" opacity="0.49"/><circle cx="130.8" cy="275.6" r="1.49" fill="#cfc8ea" opacity="0.38"/><circle cx="493.6" cy="396.1" r="1.01" fill="#cfc8ea" opacity="0.50"/><circle cx="583.7" cy="228.4" r="0.98" fill="#cfc8ea" opacity="0.42"/><circle cx="304.4" cy="18.5" r="1.23" fill="#cfc8ea" opacity="0.17"/><circle cx="80.2" cy="203.1" r="1.08" fill="#cfc8ea" opacity="0.51"/><circle cx="572.5" cy="271.6" r="1.33" fill="#cfc8ea" opacity="0.42"/><circle cx="700.7" cy="404.7" r="0.78" fill="#cfc8ea" opacity="0.18"/><path d="M 653.0439227186143 26.4 L 653.5 28.8 L 655.8 29.19900787738152 L 653.5 29.6 L 653.0439227186143 32.0 L 652.6 29.6 L 650.3 29.19900787738152 L 652.6 28.8 Z" fill="#f6e6bf" opacity="0.694743549847044"/><path d="M 448.2610239870846 75.3 L 448.9 78.4 L 452.0 78.9833549989853 L 448.9 79.6 L 448.2610239870846 82.7 L 447.7 79.6 L 444.6 78.9833549989853 L 447.7 78.4 Z" fill="#f6e6bf" opacity="0.6034700582968071"/><path d="M 184.91270689293742 106.8 L 185.3 108.9 L 187.4 109.29652831261046 L 185.3 109.7 L 184.91270689293742 111.8 L 184.5 109.7 L 182.4 109.29652831261046 L 184.5 108.9 Z" fill="#f6e6bf" opacity="0.5296943729976192"/><path d="M 736.8031229712069 27.9 L 737.3 30.3 L 739.6 30.75694865756668 L 737.3 31.2 L 736.8031229712069 33.6 L 736.4 31.2 L 734.0 30.75694865756668 L 736.4 30.3 Z" fill="#f6e6bf" opacity="0.7022577748866752"/><path d="M 485.7144205830991 389.7 L 486.1 391.8 L 488.2 392.1735161517281 L 486.1 392.6 L 485.7144205830991 394.6 L 485.3 392.6 L 483.2 392.1735161517281 L 485.3 391.8 Z" fill="#f6e6bf" opacity="0.7658230018103496"/><path d="M 190.0 253.9 L 334.5 389.8 L 691.2 217.4 L 545.0 61.2 L 490.4 164.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">How to Read Magha Nakshatra</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#maghanakshatra0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#maghanakshatra0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#maghanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#maghanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Confirm Position</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Magha spans 0° to 13°20' of Leo, the first slice of the sign</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#maghanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#maghanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Note Ketu's Rulership</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Read the placement through lineage and the past, not raw ambition</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#maghanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#maghanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Bring in the Pitrs</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Ask what family legacy, name, or inheritance the chart asks to honor</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#maghanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#maghanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Hold Ketu's Tension</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Duty alongside letting go — the core of the reading, not a flaw</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#maghanakshatra0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#maghanakshatra0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Avoid Shortcuts</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Authority received and reckoned with, not merely a 'natural leader'</text>
+  <path d="M 202.22749999999988 404.4 L 202.6 406.6 L 204.8 407 L 202.6 407.4 L 202.22749999999988 409.6 L 201.8 407.4 L 199.6 407 L 201.8 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 404.4 L 558.2 406.6 L 560.4 407 L 558.2 407.4 L 557.7725000000002 409.6 L 557.4 407.4 L 555.2 407 L 557.4 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

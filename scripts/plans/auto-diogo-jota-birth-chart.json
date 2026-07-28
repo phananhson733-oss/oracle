@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "diogo-jota-birth-chart": {
+      "hero": {
+        "prompt": "A lone blazing arrow of golden fire arcing through a vast open night sky above an endless darkened plain, the arrow's luminous trail catching teal-lit nebula clouds as it surges toward the horizon, open constellations scattered across the dome above, suggesting Sagittarian directness and forward momentum read as a symbolic portrait across one unbroken landscape, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Blazing golden arrow arcing across a vast indigo night sky, symbolizing Sagittarian directness and forward motion in Diogo Jota's birth chart"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart vs a Sun-Sign Profile: What Actually Differs",
+          "titleEn": "Sun-Sign Profile vs Full Chart Reading",
+          "altEn": "Comparison of a Sun-sign profile and a full birth chart reading showing key differences in depth and detail",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Profile",
+              "linesEn": [
+                "Reduces person to one of twelve archetypes",
+                "Reads fast, travels well on social media",
+                "Tells you the headline theme",
+                "Sacrifices nuance and accuracy for speed"
+              ]
+            },
+            {
+              "nameEn": "Full Chart Reading",
+              "linesEn": [
+                "Layers Moon, Mercury, Venus, Mars, and aspects",
+                "Adds Ascendant and houses when birth time is known",
+                "Shows the counter-currents behind the headline Sun",
+                "Loses the tidy one-word answer, gains texture and tension"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Diogo Jota's Birth Chart as a Cultural Profile",
+          "titleEn": "5 Steps to Read a Birth Chart as a Cultural Profile",
+          "altEn": "Five-step sequence for reading a celebrity birth chart honestly and symbolically as a cultural profile",
+          "items": [
+            {
+              "nameEn": "Start with what's certain",
+              "subEn": "The birth date fixes a Sagittarius Sun — anchor the read there and treat everything else as increasingly tentative"
+            },
+            {
+              "nameEn": "Flag the unknown time",
+              "subEn": "Without a verified hour, mark the Ascendant, Moon degree, and houses as open — say so plainly instead of guessing"
+            },
+            {
+              "nameEn": "Look for clusters, not single points",
+              "subEn": "If several planets gather in one sign, that emphasis suggests where the persona's energy concentrated"
+            },
+            {
+              "nameEn": "Read aspects as tension, not destiny",
+              "subEn": "A hard angle between planets describes friction someone works with, not an outcome set in stone"
+            },
+            {
+              "nameEn": "Keep it symbolic and respectful",
+              "subEn": "Frame every line as 'this placement often reads as,' never as a claim about private experience"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

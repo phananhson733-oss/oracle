@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 459" role="img" aria-label="苏格兰的C组窗口">
+  <defs>
+    <linearGradient id="scotlandbrazilworldcupastrology1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="scotlandbrazilworldcupastrology1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="scotlandbrazilworldcupastrology1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="scotlandbrazilworldcupastrology1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="scotlandbrazilworldcupastrology1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scotlandbrazilworldcupastrology1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="url(#scotlandbrazilworldcupastrology1zh-panel)"/>
+  <ellipse cx="198" cy="110" rx="380" ry="156" fill="url(#scotlandbrazilworldcupastrology1zh-neb1)"/>
+  <ellipse cx="623" cy="367" rx="334" ry="147" fill="url(#scotlandbrazilworldcupastrology1zh-neb2)"/>
+  <circle cx="427.1" cy="102.3" r="1.00" fill="#cfc8ea" opacity="0.46"/><circle cx="127.7" cy="204.0" r="0.57" fill="#cfc8ea" opacity="0.22"/><circle cx="161.3" cy="199.9" r="1.21" fill="#cfc8ea" opacity="0.52"/><circle cx="500.5" cy="328.9" r="0.75" fill="#cfc8ea" opacity="0.17"/><circle cx="114.5" cy="93.1" r="0.70" fill="#cfc8ea" opacity="0.43"/><circle cx="535.5" cy="372.0" r="0.41" fill="#cfc8ea" opacity="0.47"/><circle cx="63.5" cy="278.9" r="0.88" fill="#cfc8ea" opacity="0.30"/><circle cx="277.9" cy="194.0" r="1.56" fill="#cfc8ea" opacity="0.50"/><circle cx="433.3" cy="198.7" r="0.49" fill="#cfc8ea" opacity="0.37"/><circle cx="174.9" cy="15.1" r="0.67" fill="#cfc8ea" opacity="0.14"/><circle cx="744.7" cy="331.5" r="0.77" fill="#cfc8ea" opacity="0.39"/><circle cx="191.5" cy="137.8" r="1.65" fill="#cfc8ea" opacity="0.23"/><circle cx="633.3" cy="58.5" r="1.43" fill="#cfc8ea" opacity="0.29"/><circle cx="435.5" cy="367.1" r="0.66" fill="#cfc8ea" opacity="0.20"/><circle cx="287.2" cy="327.9" r="1.04" fill="#cfc8ea" opacity="0.25"/><circle cx="257.7" cy="41.2" r="1.62" fill="#cfc8ea" opacity="0.25"/><circle cx="236.0" cy="137.2" r="0.50" fill="#cfc8ea" opacity="0.12"/><circle cx="73.7" cy="62.1" r="1.34" fill="#cfc8ea" opacity="0.16"/><circle cx="364.1" cy="402.1" r="0.85" fill="#cfc8ea" opacity="0.27"/><circle cx="190.1" cy="269.7" r="1.33" fill="#cfc8ea" opacity="0.32"/><circle cx="199.7" cy="55.7" r="0.76" fill="#cfc8ea" opacity="0.48"/><circle cx="555.2" cy="177.0" r="0.90" fill="#cfc8ea" opacity="0.24"/><circle cx="179.6" cy="114.1" r="1.58" fill="#cfc8ea" opacity="0.34"/><circle cx="414.9" cy="323.6" r="1.57" fill="#cfc8ea" opacity="0.42"/><circle cx="631.4" cy="193.1" r="1.12" fill="#cfc8ea" opacity="0.40"/><circle cx="204.2" cy="40.3" r="1.29" fill="#cfc8ea" opacity="0.23"/><circle cx="324.7" cy="173.4" r="0.91" fill="#cfc8ea" opacity="0.46"/><circle cx="176.9" cy="152.2" r="0.62" fill="#cfc8ea" opacity="0.29"/><circle cx="302.6" cy="399.3" r="0.52" fill="#cfc8ea" opacity="0.27"/><circle cx="30.4" cy="342.2" r="1.48" fill="#cfc8ea" opacity="0.12"/><circle cx="554.6" cy="294.9" r="1.11" fill="#cfc8ea" opacity="0.52"/><circle cx="614.7" cy="277.1" r="1.12" fill="#cfc8ea" opacity="0.43"/><circle cx="463.5" cy="197.9" r="0.94" fill="#cfc8ea" opacity="0.17"/><circle cx="133.1" cy="177.3" r="1.32" fill="#cfc8ea" opacity="0.46"/><circle cx="696.5" cy="18.9" r="0.60" fill="#cfc8ea" opacity="0.18"/><circle cx="258.2" cy="24.5" r="1.31" fill="#cfc8ea" opacity="0.26"/><circle cx="180.0" cy="190.8" r="0.43" fill="#cfc8ea" opacity="0.26"/><circle cx="355.1" cy="423.9" r="1.33" fill="#cfc8ea" opacity="0.26"/><circle cx="100.8" cy="299.8" r="1.65" fill="#cfc8ea" opacity="0.23"/><path d="M 28.83407243900001 232.4 L 29.3 235.1 L 32.0 235.5884733814746 L 29.3 236.1 L 28.83407243900001 238.7 L 28.3 236.1 L 25.7 235.5884733814746 L 28.3 235.1 Z" fill="#f6e6bf" opacity="0.7169492497574538"/><path d="M 66.40894680283964 27.8 L 66.9 30.1 L 69.2 30.597336892969906 L 66.9 31.0 L 66.40894680283964 33.4 L 66.0 31.0 L 63.6 30.597336892969906 L 66.0 30.1 Z" fill="#f6e6bf" opacity="0.7966883345041424"/><path d="M 551.834449423477 58.1 L 552.4 61.2 L 555.6 61.82684885710478 L 552.4 62.4 L 551.834449423477 65.6 L 551.2 62.4 L 548.1 61.82684885710478 L 551.2 61.2 Z" fill="#f6e6bf" opacity="0.7049217400606722"/><path d="M 331.9395807739347 308.4 L 332.4 311.0 L 335.0 311.52333643566817 L 332.4 312.0 L 331.9395807739347 314.6 L 331.4 312.0 L 328.8 311.52333643566817 L 331.4 311.0 Z" fill="#f6e6bf" opacity="0.5208269175607712"/><path d="M 491.0763820987195 318.5 L 491.5 320.7 L 493.7 321.1291526388377 L 491.5 321.6 L 491.0763820987195 323.8 L 490.7 321.6 L 488.4 321.1291526388377 L 490.7 320.7 Z" fill="#f6e6bf" opacity="0.7488220255356282"/><path d="M 161.3 199.9 L 500.5 328.9 L 114.5 93.1 L 63.5 278.9 L 433.3 198.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="456" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="445" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 439.8 L 16.5 442.5 L 19.2 443 L 16.5 443.5 L 16 446.2 L 15.5 443.5 L 12.8 443 L 15.5 442.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 439.8 L 744.5 442.5 L 747.2 443 L 744.5 443.5 L 744 446.2 L 743.5 443.5 L 740.8 443 L 743.5 442.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">苏格兰的C组窗口</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#scotlandbrazilworldcupastrology1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#scotlandbrazilworldcupastrology1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="359" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#scotlandbrazilworldcupastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#scotlandbrazilworldcupastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">6月14日</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">苏格兰在福克斯堡1比0胜海地</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">首胜让32强席位仍在可及范围内</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#scotlandbrazilworldcupastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#scotlandbrazilworldcupastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">6月19日</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">苏格兰0比1负摩洛哥；凯龙入金牛座</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">失利与自我价值的缓慢主题在同一周到来</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#scotlandbrazilworldcupastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#scotlandbrazilworldcupastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">6月24日</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">巴西生死战：迈阿密硬石球场</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">苏格兰须取胜才能稳获32强席位</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#scotlandbrazilworldcupastrology1zh-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#scotlandbrazilworldcupastrology1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">约6月30日</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">木星进入狮子座</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">巨蟹座末度的归属主题转向狮子座的聚光灯</text>
+  <path d="M 280.025 430.4 L 280.4 432.6 L 282.6 433 L 280.4 433.4 L 280.025 435.6 L 279.6 433.4 L 277.4 433 L 279.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="437" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 430.4 L 480.4 432.6 L 482.6 433 L 480.4 433.4 L 479.975 435.6 L 479.6 433.4 L 477.4 433 L 479.6 432.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

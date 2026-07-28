@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 840 286" role="img" aria-label="How yellow aura differs from its neighbors: Orange, Green, Blue">
+  <defs>
+    <linearGradient id="yellow-aura-panel" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0" stop-color="#16112c"/>
+      <stop offset="1" stop-color="#0b0a1b"/>
+    </linearGradient>
+    <radialGradient id="yellow-aura-0" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#ffb15a"/><stop offset="1" stop-color="#d97724"/></radialGradient>
+    <radialGradient id="yellow-aura-1" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#7fe0a0"/><stop offset="1" stop-color="#3f9a64"/></radialGradient>
+    <radialGradient id="yellow-aura-2" cx="0.5" cy="0.45" r="0.62"><stop offset="0" stop-color="#7ab8ff"/><stop offset="1" stop-color="#3a72c4"/></radialGradient>
+    <filter id="yellow-aura-soft" x="-80%" y="-80%" width="260%" height="260%"><feGaussianBlur stdDeviation="6"/></filter>
+  </defs>
+  <rect x="1.5" y="1.5" width="837" height="283" rx="22" fill="url(#yellow-aura-panel)" stroke="#d4af6a" stroke-opacity="0.28"/>
+  <text x="44" y="50" font-family="Georgia, 'Times New Roman', serif" font-size="23" fill="#efeaf8">How yellow aura differs from its neighbors</text>
+  <line x1="44" y1="68" x2="796" y2="68" stroke="#d4af6a" stroke-opacity="0.18"/>
+  <g font-family="Georgia, 'Times New Roman', serif" text-anchor="middle">
+    <circle cx="186.7" cy="128" r="30" fill="url(#yellow-aura-0)" filter="url(#yellow-aura-soft)"/>
+    <circle cx="186.7" cy="128" r="23" fill="url(#yellow-aura-0)"/>
+    <text x="186.7" y="186" font-size="17" fill="#f3effb">Orange</text>
+    <text x="186.7" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Body-led start,</text>
+    <text x="186.7" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">not head-led plan</text>
+    <circle cx="420.0" cy="128" r="30" fill="url(#yellow-aura-1)" filter="url(#yellow-aura-soft)"/>
+    <circle cx="420.0" cy="128" r="23" fill="url(#yellow-aura-1)"/>
+    <text x="420.0" y="186" font-size="17" fill="#f3effb">Green</text>
+    <text x="420.0" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Heart-balancing,</text>
+    <text x="420.0" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">not solar drive</text>
+    <circle cx="653.3" cy="128" r="30" fill="url(#yellow-aura-2)" filter="url(#yellow-aura-soft)"/>
+    <circle cx="653.3" cy="128" r="23" fill="url(#yellow-aura-2)"/>
+    <text x="653.3" y="186" font-size="17" fill="#f3effb">Blue</text>
+    <text x="653.3" y="210" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">Slow-careful,</text>
+    <text x="653.3" y="226" font-family="Helvetica, Arial, sans-serif" font-size="12.5" fill="#9a93b5">not quick-warm</text>
+  </g>
+  <text x="420" y="262" text-anchor="middle" font-family="Helvetica, Arial, sans-serif" font-size="11.5" fill="#6f6890">Neighboring colors share a region of the spectrum but carry distinct mechanisms — not a ranking.</text>
+</svg>

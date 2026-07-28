@@ -1,0 +1,1012 @@
+{
+  "_comment": "CHAKRA cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/chakra",
+  "urlBase": "/images/chakra",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "chakra-system-overview": {
+      "hero": {
+        "prompt": "Editorial illustration of seven luminous wheel-like orbs ascending in a gentle arc from layered dark earth strata at the lower left to an open starfield at the upper right, all threaded onto one continuous soft gold line so they read as a single connected family rather than seven separate objects, each orb a slightly different size and brightness, faint gold filaments also linking non-adjacent orbs, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Seven glowing energy centers strung on a single golden thread rising from earth to sky, showing the chakra system as one connected family",
+        "altZh": "七个发光的能量中心由一条金线串联，从大地升向星空，象征脉轮系统是一个相互关联的整体"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The 7 Chakra System: Quick Guide",
+          "titleEn": "The Seven Centers, Base to Crown",
+          "titleZh": "七大脉轮：从海底轮到顶轮",
+          "items": [
+            {
+              "nameEn": "Root chakra",
+              "nameZh": "海底轮",
+              "subEn": "Safety, stability, basic trust; sibling: red aura",
+              "subZh": "安全、稳定与基本信任；对应红色气场"
+            },
+            {
+              "nameEn": "Sacral chakra",
+              "nameZh": "生殖轮",
+              "subEn": "Desire, creativity, pleasure; sibling: orange aura",
+              "subZh": "欲望、创造与愉悦；对应橙色气场"
+            },
+            {
+              "nameEn": "Solar plexus chakra",
+              "nameZh": "太阳轮",
+              "subEn": "Agency: choosing, acting, leading; sibling: yellow aura",
+              "subZh": "行动力：选择、行动、带领；对应黄色气场"
+            },
+            {
+              "nameEn": "Heart chakra",
+              "nameZh": "心轮",
+              "subEn": "Love, grief, empathy, belonging; sibling: green aura",
+              "subZh": "爱、哀伤、共情与归属；对应绿色气场"
+            },
+            {
+              "nameEn": "Throat chakra",
+              "nameZh": "喉轮",
+              "subEn": "Speech, listening, timing, honesty; sibling: blue aura",
+              "subZh": "言说、倾听、时机与诚实；对应蓝色气场"
+            },
+            {
+              "nameEn": "Third eye chakra",
+              "nameZh": "眉心轮",
+              "subEn": "Perception, intuition, patterns; sibling: purple aura",
+              "subZh": "觉知、直觉与模式识别；对应紫色气场"
+            },
+            {
+              "nameEn": "Crown chakra",
+              "nameZh": "顶轮",
+              "subEn": "Integration, meaning, perspective; sibling: white aura",
+              "subZh": "整合、意义与视角；对应白色气场"
+            }
+          ],
+          "altEn": "Sequence of the seven chakras from root to crown with each center's life domain and sibling aura color",
+          "altZh": "从海底轮到顶轮的七大脉轮顺序图，标注每个中心的生活主题与对应气场颜色"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## How Shade and Combination Shift Readings",
+          "titleEn": "Same Center, Different Shade",
+          "titleZh": "同一个中心，不同的色调",
+          "columns": [
+            {
+              "nameEn": "Clear / bright",
+              "nameZh": "清亮",
+              "linesEn": [
+                "Clear red: embodied action, bills paid, boundaries set",
+                "Clear yellow: self-trust and direction",
+                "Heart + throat: hard truths spoken with care"
+              ],
+              "linesZh": [
+                "清亮的红：落地行动，付账单、立边界",
+                "清亮的黄：自我信任与方向感",
+                "心轮加喉轮：带着温度说出难话"
+              ]
+            },
+            {
+              "nameEn": "Muddy / strained",
+              "nameZh": "浑浊紧绷",
+              "linesEn": [
+                "Muddy red: urgency, defensiveness, pressure",
+                "Harsh yellow: performance pressure, constant proving",
+                "Strained mix: editing truth until it disappears"
+              ],
+              "linesZh": [
+                "浑浊的红：急迫、防御、压力感",
+                "刺眼的黄：表演压力、不停自证",
+                "紧绷组合：把真话磨到消失"
+              ]
+            }
+          ],
+          "altEn": "Comparison of clear versus muddy shades of the same chakra colors and how the reading changes",
+          "altZh": "同一脉轮颜色清亮与浑浊两种色调的对比，以及解读如何随之变化"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreads + Framework Limits",
+          "titleEn": "Four Ways the Framework Gets Misused",
+          "titleZh": "这套框架最常被用错的四种方式",
+          "items": [
+            {
+              "nameEn": "Diagnostic grid",
+              "nameZh": "当诊断表用",
+              "subEn": "'Blocked' is a prompt to reflect, not a verdict",
+              "subZh": "「堵塞」是反思的提示，不是判决"
+            },
+            {
+              "nameEn": "One true chart",
+              "nameZh": "争唯一真图",
+              "subEn": "Maps differ by lineage; name the frame you use",
+              "subZh": "不同传承地图不同，先说明你用的框架"
+            },
+            {
+              "nameEn": "Identity branding",
+              "nameZh": "当身份标签",
+              "subEn": "'I am heart-centered' helps a day, limits a life",
+              "subZh": "「我是心轮人」一天好用，一生受限"
+            },
+            {
+              "nameEn": "Replacing real care",
+              "nameZh": "替代真实照护",
+              "subEn": "No substitute for clinical care or direct communication",
+              "subZh": "不能替代临床照护与直接沟通"
+            }
+          ],
+          "altEn": "Four common misuses of the chakra framework, from diagnosis to identity branding to replacing clinical care",
+          "altZh": "脉轮框架最常见的四种误用：当诊断、争唯一版本、贴身份标签、替代专业照护"
+        }
+      ]
+    },
+    "chakra-test": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a misty mountain path winding upward into a vast night sky with a soft teal-gold nebula; seven soft round glowing lights are spaced up the dark slope along the path like lamps on a spine, some burning bright and full, others dim and faint, a quiet reading of which centers are open, contemplative in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "Seven round glowing lights spaced up a misty mountain path, some bright and some dim, under a nebula sky.",
+        "altZh": "雾中山径蜿蜒而上，七盏圆形柔光沿坡如脊柱排布，有的明亮饱满，有的黯淡微弱。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "titleEn": "Four Ways a Snapshot Gets Frozen",
+          "titleZh": "快照被定格的四种方式",
+          "items": [
+            {
+              "nameEn": "The verdict trap",
+              "nameZh": "判决陷阱",
+              "subEn": "'Blocked heart' heard as 'broken at love'",
+              "subZh": "「心轮堵塞」被听成「我不会爱了」"
+            },
+            {
+              "nameEn": "The freeze",
+              "nameZh": "定格",
+              "subEn": "Never retaken, as if the first result is final",
+              "subZh": "不再重测，把第一次结果当成终稿"
+            },
+            {
+              "nameEn": "The fix-it spiral",
+              "nameZh": "修复漩涡",
+              "subEn": "A flagged center becomes a repair project",
+              "subZh": "被标记的中心变成待修工程"
+            },
+            {
+              "nameEn": "The comparison habit",
+              "nameZh": "比较习惯",
+              "subEn": "A personal snapshot turned into a scoreboard",
+              "subZh": "个人快照被当成排行榜"
+            }
+          ],
+          "altEn": "Four predictable ways people freeze a chakra test snapshot into a permanent diagnosis",
+          "altZh": "人们把脉轮测试快照误当永久诊断的四种常见方式"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Chakra System vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Chakra Test vs the Tools It Gets Confused With",
+          "titleZh": "脉轮测试与常被混淆的工具",
+          "columns": [
+            {
+              "nameEn": "Chakra test",
+              "nameZh": "脉轮测试",
+              "linesEn": [
+                "Reads your present state",
+                "Shifts as your life shifts",
+                "A prompt to observe, not a verdict"
+              ],
+              "linesZh": [
+                "读的是当下状态",
+                "随生活变化而变化",
+                "是观察提示，不是判决"
+              ]
+            },
+            {
+              "nameEn": "Personality quiz",
+              "nameZh": "性格测验",
+              "linesEn": [
+                "Sorts you into a stable type",
+                "Meant to hold for years",
+                "Comforting but fixed"
+              ],
+              "linesZh": [
+                "把你归入稳定类型",
+                "默认多年不变",
+                "安心但固定"
+              ]
+            },
+            {
+              "nameEn": "Clinical assessment",
+              "nameZh": "临床评估",
+              "linesEn": [
+                "Built to name a condition",
+                "Professional rigor",
+                "The only route to medical accuracy"
+              ],
+              "linesZh": [
+                "用于命名病症",
+                "具专业严谨性",
+                "医学准确性只能靠它"
+              ]
+            }
+          ],
+          "altEn": "Comparison of a chakra test with a personality quiz and a clinical assessment, showing what each gives and costs",
+          "altZh": "脉轮测试、性格测验与临床评估的三栏对比，呈现各自的所得与代价"
+        }
+      ]
+    },
+    "root-chakra-meaning": {
+      "hero": {
+        "prompt": "Editorial illustration of a single small steady glowing sphere resting at the base of a slender column of light, sending a deep branching golden root system down through dark layered earth strata that fill the lower half of the frame, above the calm horizon faint wind-streak lines pass and dissolve, contrasting passing storms with ground that does not move, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A steady glowing orb anchored by deep golden roots in dark earth while wind streaks pass above, showing root chakra safety as ground that outlasts passing stress",
+        "altZh": "金色深根把一颗安定发光的球体锚入暗色地层，风痕掠过上空，象征海底轮的安全感是经得住风浪的地基"
+      },
+      "inline": [
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## Where the Root Chakra Idea Comes From",
+          "titleEn": "How the Root Chakra Idea Reached the West",
+          "titleZh": "海底轮概念如何传到西方",
+          "items": [
+            {
+              "labelEn": "Vedic era",
+              "labelZh": "吠陀时期",
+              "titleEn": "'Cakra' means wheel",
+              "titleZh": "「Cakra」意为轮",
+              "noteEn": "The sun's wheel, the wheel of time — not yet a body energy center",
+              "noteZh": "太阳之轮、时间之轮——尚非身体能量中心"
+            },
+            {
+              "labelEn": "~8th century CE",
+              "labelZh": "约公元8世纪",
+              "titleEn": "Subtle-body maps emerge",
+              "titleZh": "精微身地图出现",
+              "noteEn": "Buddhist texts like the Hevajra Tantra name inner energy centers",
+              "noteZh": "《喜金刚本续》等佛教文本记载内在能量中心层级"
+            },
+            {
+              "labelEn": "1577",
+              "labelZh": "1577年",
+              "titleEn": "Sat-Cakra-Nirupana",
+              "titleZh": "《六轮探微》",
+              "noteEn": "Sanskrit text attributed to Purnananda lists Muladhara first",
+              "noteZh": "归于普纳南达的梵文文本，将海底轮列于首位"
+            },
+            {
+              "labelEn": "1919",
+              "labelZh": "1919年",
+              "titleEn": "The Serpent Power",
+              "titleZh": "《灵蛇之力》",
+              "noteEn": "John Woodroffe, as Arthur Avalon, renders it into English",
+              "noteZh": "约翰·伍德罗夫以笔名阿瑟·阿瓦隆译成英文"
+            }
+          ],
+          "altEn": "Timeline of the root chakra idea from the Vedic wheel through 8th-century subtle-body texts, the 1577 Sat-Cakra-Nirupana, and Woodroffe's 1919 English translation",
+          "altZh": "海底轮概念的时间线：从吠陀的「轮」、约8世纪的精微身文本、1577年《六轮探微》到1919年英译《灵蛇之力》"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "afterHeadingZh": "## 为什么了解它能帮助自我觉察",
+          "titleEn": "Ordinary Stress vs a Root Imbalance",
+          "titleZh": "普通压力与海底轮失衡的区别",
+          "columns": [
+            {
+              "nameEn": "Ordinary stress",
+              "nameZh": "普通压力",
+              "linesEn": [
+                "Tied to a specific trigger",
+                "Lifts once the stressor is gone",
+                "Eases after sleep and a paid bill"
+              ],
+              "linesZh": [
+                "跟着具体事件来去",
+                "诱因过去就轻下来",
+                "睡好、账单付清后缓解"
+              ]
+            },
+            {
+              "nameEn": "Root imbalance",
+              "nameZh": "海底轮失衡",
+              "linesEn": [
+                "A recurring baseline, not one event",
+                "Steady undercurrent of not-safe",
+                "Survives rest and solved problems"
+              ],
+              "linesZh": [
+                "反复出现的底色，而非单一事件",
+                "说不清来源的长期不踏实",
+                "休息和解决问题后仍挥之不去"
+              ]
+            }
+          ],
+          "altEn": "Comparison of ordinary passing stress with a genuine root chakra imbalance that persists as a baseline",
+          "altZh": "普通压力与真正海底轮失衡的对比：一个随事件消退，一个成为挥之不去的底色"
+        }
+      ]
+    },
+    "sacral-chakra-meaning": {
+      "hero": {
+        "prompt": "Editorial illustration of three slow watery currents of soft gold light — one carrying small bright sparks, one carrying gentle ripples, one carrying rounded pearl-like droplets — converging into a single glowing orb resting just beneath the surface of a calm dark pool, soft concentric ripples spreading where they meet, conveying creativity, feeling and pleasure as one wider flow rather than a single narrow channel, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Three golden currents of sparks, ripples and pearls merging into one glowing orb beneath calm water, showing the sacral chakra as the wider flow of creativity, emotion and pleasure",
+        "altZh": "三股带着火花、涟漪与圆珠的金色水流在静水下汇入同一发光球体，象征生殖轮是创造、情绪与愉悦的整体流动"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "titleEn": "One Block, Three Disguises",
+          "titleZh": "同一种堵塞的三副面孔",
+          "items": [
+            {
+              "nameEn": "Creative drought",
+              "nameZh": "创作枯竭",
+              "subEn": "Every idea dies before it reaches the page",
+              "subZh": "每个想法还没落笔就熄灭"
+            },
+            {
+              "nameEn": "Guilt-wrapped rest",
+              "nameZh": "带愧疚的休息",
+              "subEn": "Enjoyment arrives with an automatic apology",
+              "subZh": "一享受就自动冒出歉意"
+            },
+            {
+              "nameEn": "Dammed-up feeling",
+              "nameZh": "淤住的情绪",
+              "subEn": "A feeling sits stuck for weeks instead of moving through",
+              "subZh": "情绪一压数周，流不过去"
+            }
+          ],
+          "altEn": "Three disguises of the same sacral contraction: creative drought, guilt around rest, and stuck emotion",
+          "altZh": "生殖轮收缩的三种伪装：创作枯竭、对休息的愧疚、积压不动的情绪"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Sacral Chakra vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## The Sacral Chakra 与相近概念：运作方式 + 取舍",
+          "titleEn": "Sacral Between Root and Solar Plexus",
+          "titleZh": "生殖轮：夹在海底轮与太阳轮之间",
+          "columns": [
+            {
+              "nameEn": "Root (below)",
+              "nameZh": "海底轮（下方）",
+              "linesEn": [
+                "Grounds and stabilizes",
+                "Watches safety and survival",
+                "Secure but can read a little flat"
+              ],
+              "linesZh": [
+                "向下扎根、求稳",
+                "守住安全与生存",
+                "安稳，但可能略显平淡"
+              ]
+            },
+            {
+              "nameEn": "Sacral",
+              "nameZh": "生殖轮",
+              "linesEn": [
+                "Keeps feeling and creation moving",
+                "Responds, adapts, flows",
+                "Alive but less anchored"
+              ],
+              "linesZh": [
+                "让感受与创造保持流动",
+                "回应、适应、流淌",
+                "鲜活，但少些锚定"
+              ]
+            },
+            {
+              "nameEn": "Solar plexus (above)",
+              "nameZh": "太阳轮（上方）",
+              "linesEn": [
+                "Directed will and confidence",
+                "Asserts and pushes outcomes",
+                "Drive that can become joyless grind"
+              ],
+              "linesZh": [
+                "定向的意志与自信",
+                "主张并推动结果",
+                "干劲过头会变成无趣硬撑"
+              ]
+            }
+          ],
+          "altEn": "Three-column comparison of root stability, sacral flow, and solar plexus will, with the trade-off each carries",
+          "altZh": "海底轮的稳、生殖轮的流动与太阳轮的意志三栏对比，以及各自的取舍"
+        }
+      ]
+    },
+    "solar-plexus-chakra-affirmations": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a warm golden sun-glow rising over a calm still lake at the horizon under a soft teal-and-gold nebula sky, its strong steady light flooding warmly across the water toward the viewer, grounded personal radiance and quiet confidence, warm and empowering in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A warm golden sun-glow rising over a calm lake, its steady light flooding warmly across the water.",
+        "altZh": "暖金色的日光在静湖地平线升起，稳定的光芒温暖地铺满水面涌向观者。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## How to Read The Solar Plexus Chakra in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 The Solar Plexus Chakra",
+          "titleEn": "Under-active, Over-active, Balanced",
+          "titleZh": "偏弱、过满与平衡",
+          "columns": [
+            {
+              "nameEn": "Under-active",
+              "nameZh": "偏弱",
+              "linesEn": [
+                "You defer and soften opinions",
+                "Shoulders curl, stomach tightens",
+                "Needs permission-giving lines"
+              ],
+              "linesZh": [
+                "把想法咽回去、处处迁就",
+                "肩膀内收、开口前胃发紧",
+                "需要「给自己许可」的措辞"
+              ]
+            },
+            {
+              "nameEn": "Over-active",
+              "nameZh": "过满",
+              "linesEn": [
+                "You interrupt and push to win",
+                "Micromanage, restless at others' pace",
+                "Needs softening, grounding lines"
+              ],
+              "linesZh": [
+                "抢话、把协作当成要赢",
+                "事事掌控，别人节奏就烦躁",
+                "需要「松手落地」的措辞"
+              ]
+            },
+            {
+              "nameEn": "Balanced",
+              "nameZh": "平衡",
+              "linesEn": [
+                "Yes or no without a spiral",
+                "Hold a position calmly",
+                "Let others hold theirs"
+              ],
+              "linesZh": [
+                "说是说否都不内耗",
+                "平静地守住立场",
+                "也让别人守住他们的"
+              ]
+            }
+          ],
+          "altEn": "Comparison of under-active, over-active, and balanced solar plexus states and the affirmation style each needs",
+          "altZh": "太阳轮偏弱、过满与平衡三种状态的对比，以及各自适合的肯定语方向"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Why Borrowed Affirmation Lists Misfire",
+          "titleZh": "照搬肯定语清单为何失灵",
+          "items": [
+            {
+              "nameEn": "Louder is stronger",
+              "nameZh": "越响越强",
+              "subEn": "An over-active center needs grounding, not bigger claims",
+              "subZh": "过满的中心需要落地，不是更大口号"
+            },
+            {
+              "nameEn": "Affirmations failed me",
+              "nameZh": "肯定语没用",
+              "subEn": "The line was aimed at the wrong state, not wrong itself",
+              "subZh": "话没错，只是对错了状态"
+            },
+            {
+              "nameEn": "Confidence means no doubt",
+              "nameZh": "自信等于无疑",
+              "subEn": "A balanced center holds steady through doubt",
+              "subZh": "平衡是带着疑虑仍站得稳"
+            },
+            {
+              "nameEn": "One list fits everyone",
+              "nameZh": "一份清单通吃",
+              "subEn": "What lifts the timid can inflame the domineering",
+              "subZh": "扶起怯懦的话会火上浇油给强势者"
+            }
+          ],
+          "altEn": "Four misreadings that make solar plexus affirmations misfire, all from ignoring the state being addressed",
+          "altZh": "让太阳轮肯定语失灵的四种误读，根源都是没先看清自身状态"
+        }
+      ]
+    },
+    "heart-chakra-meaning": {
+      "hero": {
+        "prompt": "Editorial illustration of a glowing orb at the center of the frame with one continuous figure-eight loop of soft gold light flowing through it, the outward half of the loop reaching toward a cluster of small distant orbs and the returning half curving gently back into the central orb, both halves equally bright so the circuit reads as balanced giving and receiving rather than one-way outpouring, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A golden figure-eight current flowing out to distant orbs and back into a central glowing heart, showing the heart chakra as balanced giving and receiving",
+        "altZh": "一条金色八字形光流向外抵达远处光点又折返回中央光球，象征心轮是付出与接收的双向平衡"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Heart Chakra vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Heart Chakra 与相近概念：运作方式 + 取舍",
+          "titleEn": "Heart Between Solar Plexus and Throat",
+          "titleZh": "心轮：夹在太阳轮与喉轮之间",
+          "columns": [
+            {
+              "nameEn": "Solar plexus (below)",
+              "nameZh": "太阳轮（下方）",
+              "linesEn": [
+                "Personal power, clear boundaries",
+                "'This is mine to decide'",
+                "Trades softness for self-definition"
+              ],
+              "linesZh": [
+                "个人力量与清楚边界",
+                "「这件事由我说了算」",
+                "以柔软换取自我界定"
+              ]
+            },
+            {
+              "nameEn": "Heart",
+              "nameZh": "心轮",
+              "linesEn": [
+                "Care flowing out and back in",
+                "Connection and softening",
+                "Balanced only when both currents run"
+              ],
+              "linesZh": [
+                "善意向外流也流回自己",
+                "连接与柔软",
+                "两股流都在走才算平衡"
+              ]
+            },
+            {
+              "nameEn": "Throat (above)",
+              "nameZh": "喉轮（上方）",
+              "linesEn": [
+                "Clear expression, truth-telling",
+                "Precision in saying what you mean",
+                "Trades wordless empathy for clarity"
+              ],
+              "linesZh": [
+                "清晰表达、说真话",
+                "话说得准、说得明",
+                "以无言共情换取精准"
+              ]
+            }
+          ],
+          "altEn": "Three-column comparison of the solar plexus, heart, and throat centers and the trade-off each emphasis carries",
+          "altZh": "太阳轮、心轮与喉轮三栏对比，呈现侧重每个中心各自的取舍"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Heart Chakra in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 Heart Chakra",
+          "titleEn": "Five Everyday Heart Signals",
+          "titleZh": "心轮的五个日常信号",
+          "items": [
+            {
+              "nameEn": "Giving and receiving",
+              "nameZh": "施与受",
+              "subEn": "Does care flow both ways, or only outward?",
+              "subZh": "善意是双向流动，还是只往外送？"
+            },
+            {
+              "nameEn": "Self-compassion",
+              "nameZh": "自我关怀",
+              "subEn": "Is your inner voice kind when you fail?",
+              "subZh": "失手时心里那把声音温和吗？"
+            },
+            {
+              "nameEn": "Old resentment",
+              "nameZh": "旧怨",
+              "subEn": "A grudge that outlasted the event behind it",
+              "subZh": "一桩早该放下却仍压着的旧怨"
+            },
+            {
+              "nameEn": "Guardedness",
+              "nameZh": "设防",
+              "subEn": "People kept at arm's length after the risk passed",
+              "subZh": "危险早过去，人还挡在一臂之外"
+            },
+            {
+              "nameEn": "Genuine warmth",
+              "nameZh": "由衷的暖意",
+              "subEn": "Glad for others' good news without comparison",
+              "subZh": "替人高兴时不掺一丝比较"
+            }
+          ],
+          "altEn": "Five ordinary signals for reading the heart chakra: giving and receiving, self-compassion, resentment, guardedness, and genuine warmth",
+          "altZh": "解读心轮的五个日常信号：施与受、自我关怀、旧怨、设防与由衷的暖意"
+        }
+      ]
+    },
+    "throat-chakra-meaning": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene that completely fills the wide frame edge to edge: a broad still lake at night under an expansive teal-and-gold nebula sky; from a single soft source low over the water a stream of blue-gold light rises and spreads outward across the whole sky as wide concentric ripples of light, voice and truth radiating into the open air, serene and resonant in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A stream of blue-gold light rising from a still lake and spreading across the sky as wide concentric ripples.",
+        "altZh": "静湖上方一束蓝金色光升起，化作宽阔的同心涟漪铺满整片夜空，如声音与真实向外回荡。"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "afterHeadingZh": "## 为什么了解它能帮助自我觉察",
+          "titleEn": "Three Ordinary Scenes of the Throat Center",
+          "titleZh": "喉轮的三个日常场景",
+          "items": [
+            {
+              "nameEn": "The meeting you replay",
+              "nameZh": "会后回放的那句话",
+              "subEn": "You sat on the right point; someone else got the applause",
+              "subZh": "你憋着要点，别人说出来赢得掌声"
+            },
+            {
+              "nameEn": "The over-explainer",
+              "nameZh": "停不下来的解释",
+              "subEn": "Three minutes of context, still feeling scattered and unheard",
+              "subZh": "三分钟背景说完，反而觉得散、没被听懂"
+            },
+            {
+              "nameEn": "The honest-but-late text",
+              "nameZh": "迟到的真心话",
+              "subEn": "The true thing said a day after it would have helped",
+              "subZh": "真话说了，却晚了能帮上忙的那一天"
+            }
+          ],
+          "altEn": "Three everyday scenes where the throat chakra shows up: the swallowed point, the over-explanation, and the late truth",
+          "altZh": "喉轮显形的三个日常场景：咽下的要点、过度的解释、迟到的真心话"
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## How to Read Throat Chakra in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 Throat Chakra",
+          "titleEn": "Blocked, Overactive, Balanced",
+          "titleZh": "堵住、过满与平衡",
+          "columns": [
+            {
+              "nameEn": "Blocked",
+              "nameZh": "堵住",
+              "linesEn": [
+                "Rehearse, then swallow the point",
+                "Throat tightens, voice drops",
+                "Replay the moment for hours"
+              ],
+              "linesZh": [
+                "排练好又咽回去",
+                "喉咙发紧、音量变小",
+                "事后回放好几个钟头"
+              ]
+            },
+            {
+              "nameEn": "Overactive",
+              "nameZh": "过满",
+              "linesEn": [
+                "Interrupt and over-explain",
+                "Fill silences you could leave open",
+                "Talk to manage how you're seen"
+              ],
+              "linesZh": [
+                "打断别人、过度解释",
+                "填满本可留白的沉默",
+                "用说话管理别人的看法"
+              ]
+            },
+            {
+              "nameEn": "Balanced",
+              "nameZh": "平衡",
+              "linesEn": [
+                "Speak plainly or stay quiet on purpose",
+                "Either feels clean, not forced",
+                "Listening matches speaking"
+              ],
+              "linesZh": [
+                "能平实说，也能刻意不说",
+                "两种都干净、不勉强",
+                "倾听与表达对得上"
+              ]
+            }
+          ],
+          "altEn": "Comparison of blocked, overactive, and balanced throat chakra states with their everyday signals",
+          "altZh": "喉轮堵住、过满与平衡三种状态及其日常信号的对比"
+        }
+      ]
+    },
+    "ajna-chakra": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a vast still indigo lake at the dead of night under a soft teal-and-gold nebula; low on the horizon a single luminous point of gold light glows and casts a long clean reflection down the dark mirror-water like a quiet open eye of perception, minimal, hushed and inward in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A single luminous gold point low on the horizon casting a long reflection on a still indigo lake like a quiet open eye.",
+        "altZh": "深夜静湖，地平线低处一点金光，在镜面般的暗水上投下长长倒影，宛如一只静静睁开的觉知之眼。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## How to Spot the Brow Center in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 Ajna Chakra",
+          "titleEn": "A True Read vs an Anxious Loop",
+          "titleZh": "真直觉与焦虑空转的差别",
+          "columns": [
+            {
+              "nameEn": "A true read",
+              "nameZh": "真实的直觉",
+              "linesEn": [
+                "Calm and a little detached",
+                "Sits still and steady",
+                "Reasons line up with it later",
+                "Decisions feel clear, even boring"
+              ],
+              "linesZh": [
+                "安静、略带抽离",
+                "稳稳停在那里",
+                "事后理由和它对上",
+                "决定清楚，甚至有点无聊"
+              ]
+            },
+            {
+              "nameEn": "An anxious loop",
+              "nameZh": "焦虑空转",
+              "linesEn": [
+                "Urgent and sticky",
+                "Keeps tugging, demands action now",
+                "Re-litigates the same choice for days",
+                "Reads symbolism into everything"
+              ],
+              "linesZh": [
+                "急切、黏人",
+                "不断拉扯，逼你立刻行动",
+                "同一个选择纠结好几天",
+                "在所有事里硬找象征"
+              ]
+            }
+          ],
+          "altEn": "Comparison of a steady true intuition with an urgent anxious thought loop, the core ajna chakra distinction",
+          "altZh": "稳定的真直觉与急切的焦虑空转对比，这是眉心轮辨别力的核心区分"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "afterHeadingZh": "## 常见误读",
+          "titleEn": "Three Third-Eye Myths, Corrected",
+          "titleZh": "三个第三眼迷思，逐一纠正",
+          "items": [
+            {
+              "nameEn": "It means psychic powers",
+              "nameZh": "它等于超能力",
+              "subEn": "Reality: clear discernment, not supernatural sight",
+              "subZh": "实际：清晰辨别，不是超自然视力"
+            },
+            {
+              "nameEn": "More activity is better",
+              "nameZh": "越活跃越好",
+              "subEn": "Reality: flooding scatters focus — noise, not awakening",
+              "subZh": "实际：泛滥让人散焦，是噪音不是觉醒"
+            },
+            {
+              "nameEn": "You must force it open",
+              "nameZh": "必须用力逼开",
+              "subEn": "Reality: forcing backfires; calm observation is the way",
+              "subZh": "实际：硬逼适得其反，安静观察才是路"
+            }
+          ],
+          "altEn": "Three common myths about the third eye corrected: not psychic powers, not maximum activity, not forced opening",
+          "altZh": "对第三眼的三个常见迷思纠正：不是超能力、不是越活跃越好、不必硬逼着打开"
+        }
+      ]
+    },
+    "crown-chakra-meaning": {
+      "hero": {
+        "prompt": "Editorial illustration of a tall slender column of light rising from deep golden roots anchored in dark layered earth strata at the bottom of the frame, the column opening at its top into a soft thousand-petaled lotus-like radiance of fine gold filaments, while far in the background one faint untethered wisp of light drifts loose with no roots beneath it, contrasting grounded openness with floating disconnection, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A rooted column of light blooming into a thousand-petaled radiance while a rootless wisp drifts in the background, showing a grounded crown chakra versus untethered floating",
+        "altZh": "扎根的光柱顶端绽放千瓣光辉，背景一缕无根光丝飘散，对比接地的顶轮与飘忽的脱节"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Why It Matters for Self-Awareness",
+          "afterHeadingZh": "## 为什么了解它能帮助自我觉察",
+          "titleEn": "Two Meditators, Same 'Open' Crown",
+          "titleZh": "同样「打开」的顶轮，两种活法",
+          "columns": [
+            {
+              "nameEn": "Grounded open crown",
+              "nameZh": "接地的开阔",
+              "linesEn": [
+                "Clear, calm, present in the room",
+                "Decisions, calls and emails get handled",
+                "Calm carries into ordinary life"
+              ],
+              "linesZh": [
+                "清明、安定、人在当下",
+                "决定、电话、邮件都接得住",
+                "平静延续进日常生活"
+              ]
+            },
+            {
+              "nameEn": "Ungrounded crown",
+              "nameZh": "飘忽的脱节",
+              "linesEn": [
+                "Blissed-out but vague",
+                "The day slides; tasks feel beneath you",
+                "Narrating life from a few feet above it"
+              ],
+              "linesZh": [
+                "飘飘然却恍惚",
+                "一天滑过去，小事显得不值得做",
+                "像悬在生活上方旁白自己"
+              ]
+            }
+          ],
+          "altEn": "Comparison of a grounded open crown that returns you to life with an ungrounded crown that drifts above it",
+          "altZh": "接地的开阔顶轮与飘忽脱节顶轮的对比：一个把你送回生活，一个让你悬在生活上方"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read The Crown Chakra in Yourself",
+          "titleEn": "Five Honest Crown Checks",
+          "titleZh": "顶轮的五个诚实自检",
+          "items": [
+            {
+              "nameEn": "After meditation",
+              "nameZh": "打坐之后",
+              "subEn": "Clearer and more present, or pleasantly fuzzy?",
+              "subZh": "更清醒在场，还是舒服地发懵？"
+            },
+            {
+              "nameEn": "A direct question",
+              "nameZh": "被直接提问时",
+              "subEn": "Answer from the ground, or drift into lofty language?",
+              "subZh": "踏实作答，还是飘进玄乎的话？"
+            },
+            {
+              "nameEn": "Moments of awe",
+              "nameZh": "敬畏时刻",
+              "subEn": "Steadier for the day, or slightly checked-out?",
+              "subZh": "之后更稳，还是微微抽离？"
+            },
+            {
+              "nameEn": "The bigger picture",
+              "nameZh": "大局感",
+              "subEn": "Held while still eating, replying, showing up on time",
+              "subZh": "开阔之余仍记得吃饭、回复、守时"
+            },
+            {
+              "nameEn": "Under stress",
+              "nameZh": "压力之下",
+              "subEn": "Only rising above it, or able to return to the body?",
+              "subZh": "只会往上飘，还是能回到身体？"
+            }
+          ],
+          "altEn": "Five everyday checks for whether the crown chakra is grounded: after meditation, direct questions, awe, daily basics, and stress",
+          "altZh": "判断顶轮是否接地的五个日常自检：打坐后、被提问时、敬畏后、日常基本功与压力之下"
+        }
+      ]
+    },
+    "crystals-for-each-chakra": {
+      "hero": {
+        "prompt": "Editorial illustration of seven faceted crystal silhouettes resting in a gentle ascending line across dark ground, each crystal wrapped in a halo of the same soft gold light but at a visibly different intensity — some barely glowing embers, some calm and full, one flaring slightly too bright — suggesting that the right stone is chosen by reading each center's energy state rather than by matching color, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Seven faceted crystals in a rising line, each haloed with gold light of different intensity, showing crystals chosen by a center's energy state rather than color",
+        "altZh": "七颗晶体沿斜线排开，金色光晕亮度各不相同，象征挑水晶要读能量状态而非只看颜色"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Chakra Crystals at a Glance",
+          "afterHeadingZh": "## Chakra Crystals 速查表",
+          "titleEn": "Go-To Stones for the Seven Centers",
+          "titleZh": "七大脉轮的常用水晶",
+          "items": [
+            {
+              "nameEn": "Root",
+              "nameZh": "海底轮",
+              "subEn": "Red jasper, hematite — steadying, grounded support",
+              "subZh": "红碧玉、赤铁矿——踏实有根的稳定感"
+            },
+            {
+              "nameEn": "Sacral",
+              "nameZh": "生殖轮",
+              "subEn": "Carnelian, orange calcite — creative, emotional flow",
+              "subZh": "红玉髓、橙方解石——创造与情绪流动"
+            },
+            {
+              "nameEn": "Solar plexus",
+              "nameZh": "太阳轮",
+              "subEn": "Citrine, tiger's eye — drive and steady confidence",
+              "subZh": "黄水晶、虎眼石——行动力与稳住的底气"
+            },
+            {
+              "nameEn": "Heart",
+              "nameZh": "心轮",
+              "subEn": "Rose quartz, green aventurine — openness, self-kindness",
+              "subZh": "粉晶、绿东陵——敞开与对己宽和"
+            },
+            {
+              "nameEn": "Throat",
+              "nameZh": "喉轮",
+              "subEn": "Aquamarine, blue lace agate — clear, honest expression",
+              "subZh": "海蓝宝、蓝纹玛瑙——清晰诚实的表达"
+            },
+            {
+              "nameEn": "Third eye",
+              "nameZh": "眉心轮",
+              "subEn": "Amethyst, lapis lazuli — settles a foggy, racing mind",
+              "subZh": "紫水晶、青金石——安定发懵乱跑的头脑"
+            },
+            {
+              "nameEn": "Crown",
+              "nameZh": "顶轮",
+              "subEn": "Clear quartz, selenite — calm, open perspective",
+              "subZh": "白水晶、透石膏——平静开阔的视角"
+            }
+          ],
+          "altEn": "Sequence pairing each of the seven chakras with its go-to crystals, from red jasper at the root to selenite at the crown",
+          "altZh": "七大脉轮与常用水晶的配对顺序图，从海底轮的红碧玉到顶轮的透石膏"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Chakra Crystals in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别 Chakra Crystals",
+          "titleEn": "Read the State, Then Pick the Stone",
+          "titleZh": "先读状态，再挑石头",
+          "items": [
+            {
+              "nameEn": "Notice what's loud",
+              "nameZh": "看哪个中心在吵",
+              "subEn": "Racing mind, constant talk — settle it, don't stimulate",
+              "subZh": "脑子停不下、话多——要安定，别再点燃"
+            },
+            {
+              "nameEn": "Notice what's quiet",
+              "nameZh": "看哪个中心在哑",
+              "subEn": "Low drive, trouble speaking up — needs activating",
+              "subZh": "提不起劲、开不了口——需要提振"
+            },
+            {
+              "nameEn": "Match stone to the gap",
+              "nameZh": "把石头补在缺口",
+              "subEn": "Calming for over-active, activating for drained",
+              "subZh": "偏旺配安定，偏弱配提振，不照颜色"
+            },
+            {
+              "nameEn": "Check the body cue",
+              "nameZh": "听身体的提示",
+              "subEn": "Tension in chest, throat or lower back shows the start",
+              "subZh": "胸口、喉咙或后腰的紧绷就是起点"
+            }
+          ],
+          "altEn": "Four-step process for matching crystals to chakras: notice loud centers, notice quiet ones, match the stone to the gap, check the body cue",
+          "altZh": "脉轮水晶配对四步法：看哪里吵、看哪里哑、补在缺口、听身体提示"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Chakra Crystals vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## Chakra Crystals 与相近概念：运作方式 + 取舍",
+          "titleEn": "Four Look-Alikes and Their Trade-offs",
+          "titleZh": "四个相似做法及其取舍",
+          "items": [
+            {
+              "nameEn": "Vs a flat color chart",
+              "nameZh": "对比纯色卡",
+              "subEn": "You gain speed, lose the read of a center's real state",
+              "subZh": "换来快，丢了读真实状态的准"
+            },
+            {
+              "nameEn": "Vs general collecting",
+              "nameZh": "对比普通收藏",
+              "subEn": "Open-ended pleasure, but pretty stones sit unused",
+              "subZh": "收藏有乐趣，漂亮石头却常闲置"
+            },
+            {
+              "nameEn": "Vs one all-purpose stone",
+              "nameZh": "对比单一万能石",
+              "subEn": "Simple, but loses per-center precision",
+              "subZh": "省事，却失去逐中心的精度"
+            },
+            {
+              "nameEn": "Vs guided sessions",
+              "nameZh": "对比他人代选",
+              "subEn": "Convenient, but you outsource the self-read",
+              "subZh": "省心，却把自读能力外包出去"
+            }
+          ],
+          "altEn": "Four concepts often confused with chakra crystal work — color charts, collecting, one master stone, guided sessions — and what each trade-off costs",
+          "altZh": "常与脉轮水晶混淆的四种做法——色卡、收藏、万能石、他人代选——及各自的代价"
+        }
+      ]
+    }
+  }
+}

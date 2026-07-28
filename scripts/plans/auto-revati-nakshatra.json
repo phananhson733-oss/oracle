@@ -1,0 +1,116 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "revati-nakshatra": {
+      "hero": {
+        "prompt": "A vast cosmic estuary at the final boundary of the zodiacal wheel, luminous star-flecked waters flowing outward where shimmering golden light-paths cross from an ancient ocean into a fresh dawn horizon, a single silver fish constellation arcing across the liminal divide, streams of teal and gold dissolving the boundary between ending and beginning, celestial tide washing through the last degrees of the cycle into the first, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Cosmic estuary at twilight where golden light-paths cross from ocean depths into a fresh dawn, the zodiac's final threshold glowing with guided passage",
+        "altZh": "黄昏时分宏大的星际河口，金色光路从深海穿越边界流向新的黎明，黄道轮盘最后一道门槛散发着引导过渡的光辉"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Revati in a Chart",
+          "afterHeadingZh": "## 如何在星盘里识别这个星宿（实操观察）",
+          "titleEn": "5 Steps to Interpret Revati in a Natal Chart",
+          "titleZh": "解读出生盘中 Revati 星宿的 5 个步骤",
+          "altEn": "Five-step guide to interpreting a Revati nakshatra placement in a natal chart",
+          "altZh": "解读出生盘中 Revati 星宿位置的五步指南",
+          "items": [
+            {
+              "nameEn": "Locate the Placement",
+              "nameZh": "确认位置",
+              "subEn": "Confirm it falls between 16°40' and 30° Pisces, the final mansion of the wheel",
+              "subZh": "确认落在双鱼座 16°40' 至 30°，即黄道轮盘最后一个星宿"
+            },
+            {
+              "nameEn": "Read Mercury as Dispositor",
+              "nameZh": "以水星为主星",
+              "subEn": "Look for themes of communication, guidance, and bridging rather than heavy finality",
+              "subZh": "关注沟通、引导与连接的主题，而非沉重的终结感"
+            },
+            {
+              "nameEn": "Bring in Pushan's Role",
+              "nameZh": "引入 Pushan 的象征",
+              "subEn": "Frame the placement around safe passage and nourishing protection of others in transition",
+              "subZh": "将此位置理解为安全过渡与滋养性保护，关注引导他人穿越转变"
+            },
+            {
+              "nameEn": "Hold the Pisces Backdrop",
+              "nameZh": "保留双鱼座底色",
+              "subEn": "Let compassion and intuition color the Mercurial clarity rather than compete with it",
+              "subZh": "让慈悲与直觉为水星的清晰着色，而非与之对立"
+            },
+            {
+              "nameEn": "Read as Threshold, Not Forecast",
+              "nameZh": "读作门槛而非预言",
+              "subEn": "Treat the placement as a symbol of crossing into what comes next, not a literal forecast of events",
+              "subZh": "将此位置视为跨越门槛、迈向下一阶段的象征，而非字面上的命运预言"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Revati at a Glance",
+          "afterHeadingZh": "## 这个星宿速查表",
+          "titleEn": "Revati Nakshatra: Four Core Properties",
+          "titleZh": "Revati 星宿：四大核心属性",
+          "altEn": "Four core properties of Revati nakshatra: cycle position, ruling planet, presiding deity, and symbolic key",
+          "altZh": "Revati 星宿四大核心属性：黄道位置、主星、主神与象征核心",
+          "columns": [
+            {
+              "nameEn": "Cycle Position",
+              "nameZh": "黄道位置",
+              "linesEn": [
+                "27th and final lunar mansion",
+                "16°40'–30° Pisces",
+                "Completion touching a fresh beginning"
+              ],
+              "linesZh": [
+                "第 27、也是最后一个月亮星宿",
+                "双鱼座 16°40' 至 30°",
+                "终结中蕴含全新开始"
+              ]
+            },
+            {
+              "nameEn": "Ruling Planet & Deity",
+              "nameZh": "主星与主神",
+              "linesEn": [
+                "Mercury: communication and bridging",
+                "Pushan: divine shepherd and escort",
+                "Clarity paired with oceanic compassion"
+              ],
+              "linesZh": [
+                "水星：沟通与连接",
+                "Pushan：神圣牧羊人与引路者",
+                "清晰与深海慈悲并存"
+              ]
+            },
+            {
+              "nameEn": "Symbolic Key",
+              "nameZh": "象征核心",
+              "linesEn": [
+                "Threshold between end and start",
+                "Rebirth encoded inside completion",
+                "Guided crossing, not heavy finality"
+              ],
+              "linesZh": [
+                "终点与起点之间的门槛",
+                "终结中编码着重生",
+                "安全引导的过渡，而非沉重终结"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

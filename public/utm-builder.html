@@ -1,0 +1,226 @@
+<!--
+  UTM Builder Tool
+  用途：生成带 UTM 参数的营销链接
+  使用方法：用浏览器打开此文件，填写表单后生成带参数的 URL
+-->
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UTM 链接生成器</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 20px;
+      background: #0f172a;
+      color: #e2e8f0;
+    }
+    h1 { color: #fbbf24; margin-bottom: 30px; }
+    .form-group { margin-bottom: 20px; }
+    label {
+      display: block;
+      margin-bottom: 8px;
+      font-weight: 500;
+      color: #94a3b8;
+    }
+    input, select {
+      width: 100%;
+      padding: 12px 16px;
+      border: 1px solid #334155;
+      border-radius: 8px;
+      background: #1e293b;
+      color: #e2e8f0;
+      font-size: 16px;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #fbbf24;
+    }
+    .btn {
+      background: #fbbf24;
+      color: #0f172a;
+      border: none;
+      padding: 14px 28px;
+      border-radius: 8px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      margin-right: 12px;
+      margin-top: 10px;
+    }
+    .btn:hover { background: #f59e0b; }
+    .btn-secondary {
+      background: transparent;
+      border: 1px solid #475569;
+      color: #94a3b8;
+    }
+    .btn-secondary:hover { background: #1e293b; }
+    .result {
+      margin-top: 30px;
+      padding: 20px;
+      background: #1e293b;
+      border-radius: 8px;
+      border: 1px solid #334155;
+    }
+    .result-url {
+      word-break: break-all;
+      font-family: monospace;
+      font-size: 14px;
+      line-height: 1.6;
+      color: #22d3ee;
+    }
+    .copy-success {
+      color: #4ade80;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+    .tips {
+      margin-top: 40px;
+      padding: 20px;
+      background: #1e293b;
+      border-radius: 8px;
+      font-size: 14px;
+      color: #94a3b8;
+    }
+    .tips h3 { color: #e2e8f0; margin-top: 0; }
+    .tips code {
+      background: #334155;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 13px;
+    }
+  </style>
+</head>
+<body>
+  <h1>UTM 链接生成器</h1>
+
+  <div class="form-group">
+    <label for="baseUrl">目标网址 (URL)</label>
+    <input type="url" id="baseUrl" placeholder="https://astrologywiki.com">
+  </div>
+
+  <div class="form-group">
+    <label for="utmSource">utm_source（流量来源）</label>
+    <select id="utmSource">
+      <option value="">请选择...</option>
+      <option value="google">google - Google 搜索</option>
+      <option value="bing">bing - Bing 搜索</option>
+      <option value="facebook">facebook - Facebook</option>
+      <option value="instagram">instagram - Instagram</option>
+      <option value="twitter">twitter - Twitter/X</option>
+      <option value="linkedin">linkedin - LinkedIn</option>
+      <option value="youtube">youtube - YouTube</option>
+      <option value="email">email - 邮件营销</option>
+      <option value="newsletter">newsletter - 订阅邮件</option>
+      <option value="wechat">wechat - 微信公众号</option>
+      <option value="xiaohongshu">xiaohongshu - 小红书</option>
+      <option value="partner">partner - 合作伙伴</option>
+      <option value="offline">offline - 线下活动</option>
+      <option value="referral">referral - 用户推荐</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="utmMedium">utm_medium（流量渠道）</label>
+    <select id="utmMedium">
+      <option value="">请选择...</option>
+      <option value="cpc">cpc - 按点击付费</option>
+      <option value="cpm">cpm - 按展示付费</option>
+      <option value="content">content - 内容营销</option>
+      <option value="banner">banner - 横幅广告</option>
+      <option value="native">native - 原生广告</option>
+      <option value="social">social - 社交媒体</option>
+      <option value="email">email - 邮件营销</option>
+      <option value="referral">referral - 引荐链接</option>
+      <option value="organic">organic - 自然搜索</option>
+      <option value="affiliate">affiliate - 联盟营销</option>
+    </select>
+  </div>
+
+  <div class="form-group">
+    <label for="utmCampaign">utm_campaign（营销活动）</label>
+    <input type="text" id="utmCampaign" placeholder="spring-sale-2026">
+  </div>
+
+  <div class="form-group">
+    <label for="utmTerm">utm_term（关键词，可选）</label>
+    <input type="text" id="utmTerm" placeholder="astrology+reading">
+  </div>
+
+  <div class="form-group">
+    <label for="utmContent">utm_content（广告内容，可选）</label>
+    <input type="text" id="utmContent" placeholder="cta_button_blue">
+  </div>
+
+  <button class="btn" onclick="generateUrl()">生成链接</button>
+  <button class="btn btn-secondary" onclick="copyUrl()">复制链接</button>
+
+  <div class="result" id="result" style="display: none;">
+    <label>生成的链接：</label>
+    <div class="result-url" id="resultUrl"></div>
+    <div class="copy-success" id="copySuccess" style="display: none;">已复制到剪贴板！</div>
+  </div>
+
+  <div class="tips">
+    <h3>使用提示</h3>
+    <ul>
+      <li>所有参数值使用小写字母</li>
+      <li>使用 <code>-</code> 分隔单词（kebab-case）</li>
+      <li>活动名称建议包含日期，如 <code>campaign-name-2026q1</code></li>
+      <li>参考文档：<a href="./UTM_SPEC.md" style="color: #22d3ee;">UTM_SPEC.md</a></li>
+    </ul>
+  </div>
+
+  <script>
+    function generateUrl() {
+      const baseUrl = document.getElementById('baseUrl').value.trim();
+      const source = document.getElementById('utmSource').value;
+      const medium = document.getElementById('utmMedium').value;
+      const campaign = document.getElementById('utmCampaign').value.trim();
+      const term = document.getElementById('utmTerm').value.trim();
+      const content = document.getElementById('utmContent').value.trim();
+
+      if (!baseUrl) {
+        alert('请输入目标网址');
+        return;
+      }
+
+      let url;
+      try {
+        url = new URL(baseUrl);
+      } catch {
+        alert('请输入有效的 URL');
+        return;
+      }
+
+      if (source) url.searchParams.set('utm_source', source);
+      if (medium) url.searchParams.set('utm_medium', medium);
+      if (campaign) url.searchParams.set('utm_campaign', campaign);
+      if (term) url.searchParams.set('utm_term', term);
+      if (content) url.searchParams.set('utm_content', content);
+
+      document.getElementById('result').style.display = 'block';
+      document.getElementById('resultUrl').textContent = url.toString();
+      document.getElementById('copySuccess').style.display = 'none';
+    }
+
+    function copyUrl() {
+      const resultUrl = document.getElementById('resultUrl').textContent;
+      if (!resultUrl) {
+        alert('请先生成链接');
+        return;
+      }
+      navigator.clipboard.writeText(resultUrl).then(() => {
+        document.getElementById('copySuccess').style.display = 'block';
+        setTimeout(() => {
+          document.getElementById('copySuccess').style.display = 'none';
+        }, 2000);
+      });
+    }
+  </script>
+</body>
+</html>

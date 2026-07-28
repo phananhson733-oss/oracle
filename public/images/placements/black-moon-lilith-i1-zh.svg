@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 433" role="img" aria-label="解读莉莉丝的五个信号">
+  <defs>
+    <linearGradient id="blackmoonlilith1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="blackmoonlilith1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="blackmoonlilith1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blackmoonlilith1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="blackmoonlilith1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="blackmoonlilith1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="url(#blackmoonlilith1zh-panel)"/>
+  <ellipse cx="198" cy="104" rx="380" ry="147" fill="url(#blackmoonlilith1zh-neb1)"/>
+  <ellipse cx="623" cy="346" rx="334" ry="139" fill="url(#blackmoonlilith1zh-neb2)"/>
+  <circle cx="173.6" cy="201.8" r="1.24" fill="#cfc8ea" opacity="0.41"/><circle cx="22.4" cy="256.3" r="1.47" fill="#cfc8ea" opacity="0.37"/><circle cx="142.5" cy="349.1" r="0.63" fill="#cfc8ea" opacity="0.35"/><circle cx="95.7" cy="264.4" r="0.52" fill="#cfc8ea" opacity="0.30"/><circle cx="616.1" cy="45.2" r="0.46" fill="#cfc8ea" opacity="0.44"/><circle cx="385.8" cy="357.2" r="1.30" fill="#cfc8ea" opacity="0.47"/><circle cx="721.8" cy="110.8" r="0.77" fill="#cfc8ea" opacity="0.28"/><circle cx="71.0" cy="378.9" r="1.33" fill="#cfc8ea" opacity="0.14"/><circle cx="580.5" cy="405.5" r="1.62" fill="#cfc8ea" opacity="0.17"/><circle cx="404.5" cy="328.8" r="1.39" fill="#cfc8ea" opacity="0.36"/><circle cx="537.8" cy="211.3" r="1.28" fill="#cfc8ea" opacity="0.41"/><circle cx="375.1" cy="226.6" r="0.67" fill="#cfc8ea" opacity="0.35"/><circle cx="103.5" cy="120.6" r="1.22" fill="#cfc8ea" opacity="0.30"/><circle cx="250.7" cy="415.1" r="0.83" fill="#cfc8ea" opacity="0.37"/><circle cx="473.0" cy="241.3" r="1.48" fill="#cfc8ea" opacity="0.23"/><circle cx="99.4" cy="353.8" r="1.33" fill="#cfc8ea" opacity="0.43"/><circle cx="688.5" cy="376.8" r="1.44" fill="#cfc8ea" opacity="0.37"/><circle cx="639.4" cy="214.3" r="1.70" fill="#cfc8ea" opacity="0.42"/><circle cx="143.2" cy="278.6" r="1.63" fill="#cfc8ea" opacity="0.31"/><circle cx="270.6" cy="206.4" r="0.56" fill="#cfc8ea" opacity="0.52"/><circle cx="353.4" cy="149.1" r="0.51" fill="#cfc8ea" opacity="0.38"/><circle cx="62.7" cy="364.2" r="1.51" fill="#cfc8ea" opacity="0.40"/><circle cx="235.6" cy="229.9" r="0.84" fill="#cfc8ea" opacity="0.24"/><circle cx="588.9" cy="222.9" r="1.56" fill="#cfc8ea" opacity="0.43"/><circle cx="662.8" cy="323.0" r="1.68" fill="#cfc8ea" opacity="0.24"/><circle cx="569.8" cy="315.8" r="1.42" fill="#cfc8ea" opacity="0.34"/><circle cx="257.0" cy="161.7" r="1.15" fill="#cfc8ea" opacity="0.30"/><circle cx="532.7" cy="82.2" r="0.72" fill="#cfc8ea" opacity="0.54"/><circle cx="184.6" cy="318.3" r="0.50" fill="#cfc8ea" opacity="0.39"/><circle cx="529.1" cy="22.5" r="1.41" fill="#cfc8ea" opacity="0.21"/><circle cx="73.2" cy="13.6" r="1.29" fill="#cfc8ea" opacity="0.46"/><circle cx="652.2" cy="168.3" r="0.45" fill="#cfc8ea" opacity="0.53"/><circle cx="506.0" cy="184.7" r="1.17" fill="#cfc8ea" opacity="0.15"/><circle cx="99.0" cy="389.1" r="0.76" fill="#cfc8ea" opacity="0.23"/><circle cx="562.3" cy="57.6" r="0.89" fill="#cfc8ea" opacity="0.49"/><circle cx="64.2" cy="327.1" r="0.55" fill="#cfc8ea" opacity="0.36"/><circle cx="352.7" cy="378.2" r="1.34" fill="#cfc8ea" opacity="0.50"/><path d="M 420.0610200744122 282.4 L 420.7 285.6 L 423.9 286.20497571863234 L 420.7 286.8 L 420.0610200744122 290.0 L 419.5 286.8 L 416.2 286.20497571863234 L 419.5 285.6 Z" fill="#f6e6bf" opacity="0.5615254532080144"/><path d="M 78.66008104942739 199.2 L 79.2 202.2 L 82.2 202.7401708168909 L 79.2 203.3 L 78.66008104942739 206.2 L 78.1 203.3 L 75.2 202.7401708168909 L 78.1 202.2 Z" fill="#f6e6bf" opacity="0.5367447356227786"/><path d="M 263.2358307670802 11.5 L 263.7 14.1 L 266.3 14.592511873692274 L 263.7 15.1 L 263.2358307670802 17.7 L 262.7 15.1 L 260.2 14.592511873692274 L 262.7 14.1 Z" fill="#f6e6bf" opacity="0.724935477366671"/><path d="M 734.9828702863306 71.6 L 735.6 74.6 L 738.6 75.20664787013084 L 735.6 75.8 L 734.9828702863306 78.9 L 734.4 75.8 L 731.3 75.20664787013084 L 734.4 74.6 Z" fill="#f6e6bf" opacity="0.7537965529132634"/><path d="M 205.4215758126229 189.7 L 205.8 191.8 L 208.0 192.20945206098258 L 205.8 192.6 L 205.4215758126229 194.7 L 205.0 192.6 L 202.9 192.20945206098258 L 205.0 191.8 Z" fill="#f6e6bf" opacity="0.6262431300710887"/><path d="M 22.4 256.3 L 103.5 120.6 L 99.4 353.8 L 62.7 364.2 L 652.2 168.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="430" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="419" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 413.8 L 16.5 416.5 L 19.2 417 L 16.5 417.5 L 16 420.2 L 15.5 417.5 L 12.8 417 L 15.5 416.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 413.8 L 744.5 416.5 L 747.2 417 L 744.5 417.5 L 744 420.2 L 743.5 417.5 L 740.8 417 L 743.5 416.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">解读莉莉丝的五个信号</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#blackmoonlilith1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#blackmoonlilith1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="361" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#blackmoonlilith1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#blackmoonlilith1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">反复的自我审查</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">因习得的社交风险，反复删改同一特质</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#blackmoonlilith1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#blackmoonlilith1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">「太过了」的指控</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">曾被贴上过度、强势或禁忌标签的特质</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#blackmoonlilith1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#blackmoonlilith1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">星座对不上的困惑</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">解读总不贴合？先查是平均位还是真实位</text>
+  <circle cx="76" cy="301" r="20.0" fill="url(#blackmoonlilith1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="301" r="15" fill="url(#blackmoonlilith1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="296.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="305.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="297.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">被禁止之物的吸引</text>
+  <text x="116" y="319.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">反复被「不太被允许」的渴望吸引</text>
+  <circle cx="76" cy="361" r="20.0" fill="url(#blackmoonlilith1zh-glow)" opacity="0.5"/>
+    <circle cx="76" cy="361" r="15" fill="url(#blackmoonlilith1zh-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="356.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="365.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="357.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">宫位重于星座</text>
+  <text x="116" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">宫位指出压抑模式落在哪块生活领域</text>
+  <path d="M 280.025 404.4 L 280.4 406.6 L 282.6 407 L 280.4 407.4 L 280.025 409.6 L 279.6 407.4 L 277.4 407 L 279.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="411" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 404.4 L 480.4 406.6 L 482.6 407 L 480.4 407.4 L 479.975 409.6 L 479.6 407.4 L 477.4 407 L 479.6 406.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

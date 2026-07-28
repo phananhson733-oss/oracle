@@ -1,0 +1,99 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "why-do-i-attract-toxic-people": {
+      "hero": {
+        "prompt": "Lone figure seen from behind standing at the edge of a vast dark cosmic sea, their silhouette perfectly mirrored in the still water below — the reflection subtly distorted and more shadowed, evoking a hidden shadow-self. A luminous gold point glows at the far horizon like a setting star, the Descendant meeting the sky. Deep teal and violet nebula clouds drift overhead, stars scattered across an indigo-to-black sky, soft gold light tracing the figure's outline and rippling across the dark water. Deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "A silhouette stands at the edge of a dark cosmic sea mirrored by a shadowed reflection, a gold glow at the horizon"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Your Descendant Shadow-Attraction Signature in Your Chart",
+          "titleEn": "5 Steps to Read Your Descendant Shadow-Attraction Signature",
+          "altEn": "Five-step sequence for reading the Descendant Shadow-Attraction Signature in a birth chart",
+          "items": [
+            {
+              "nameEn": "Find the Descendant Sign",
+              "subEn": "Opposite your rising sign on the chart's western edge — it sets the relational archetype you tend to notice"
+            },
+            {
+              "nameEn": "Locate the Ruling Planet",
+              "subEn": "Note its sign, house, and any tense aspects — it carries the Descendant's story into another corner of the chart"
+            },
+            {
+              "nameEn": "Check Seventh-House Tenants",
+              "subEn": "Planets here, especially Pluto or Saturn, intensify boundary themes inside close bonds"
+            },
+            {
+              "nameEn": "Scan Outer-Planet Contacts",
+              "subEn": "Neptune aspects can blur discernment; Pluto aspects symbolize intensity and control themes"
+            },
+            {
+              "nameEn": "Compare Against Real Life",
+              "subEn": "Hold the symbolism next to patterns you actually recognize — a mismatched marker is information too, not a verdict"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Descendant Sign vs Seventh-House Planets: Where People Mix Them Up",
+          "titleEn": "Descendant Sign vs Seventh-House Planets",
+          "altEn": "Comparison of the Descendant sign and seventh-house planets and how each shapes relationship patterns",
+          "columns": [
+            {
+              "nameEn": "Descendant Sign",
+              "linesEn": [
+                "Sets the partner archetype or flavor you tend to notice",
+                "Defined by the sign on your chart's western horizon",
+                "Gives a clean, memorable headline read of attraction style",
+                "Read alone for a quicker overview of relational pull"
+              ]
+            },
+            {
+              "nameEn": "Seventh-House Planets",
+              "linesEn": [
+                "Colors how close bonds actually behave once formed",
+                "Acts as a live charge inside established relationships",
+                "Adds finer detail that the Descendant sign alone misses",
+                "Pluto or Saturn here intensify boundary and power themes"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "4 Common Misreadings of the Shadow-Attraction Signature",
+          "altEn": "Four common errors people make when interpreting the Descendant Shadow-Attraction Signature",
+          "items": [
+            {
+              "nameEn": "Reading It as a Diagnosis",
+              "subEn": "The signature names a symbolic pattern to reflect on, not a disorder or a verdict on your character"
+            },
+            {
+              "nameEn": "Treating It as Fate",
+              "subEn": "A seventh-house Pluto marks a theme to work with consciously over time, not a sentence to hard relationships"
+            },
+            {
+              "nameEn": "Flattening to a Flaw Checklist",
+              "subEn": "The astrology points at a relational archetype and its context, not a tally of things that are wrong with you"
+            },
+            {
+              "nameEn": "Assuming the Chart Causes the Pattern",
+              "subEn": "The chart mirrors; boundaries, self-worth, attachment history, and lived context are the actual drivers"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

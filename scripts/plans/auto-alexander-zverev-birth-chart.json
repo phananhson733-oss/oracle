@@ -1,0 +1,103 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "alexander-zverev-birth-chart": {
+      "hero": {
+        "prompt": "Three luminous orbs clustered tightly together above amber rolling hills and a quiet coastal plain at dusk, the warm earth glowing beneath a vast cosmic canopy, smaller scattered lights drifting across the wide sky beyond the central cluster, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Three luminous celestial orbs cluster above rolling amber hills beneath a deep indigo night sky"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## A Full Birth Chart vs Sun-Sign Celebrity Trivia: What Actually Differs",
+          "titleEn": "Sun-Sign Only vs Full Chart Read: What You Gain or Lose",
+          "altEn": "Side-by-side comparison of a one-sign sun-sign reading versus a full birth chart interpretation",
+          "columns": [
+            {
+              "nameEn": "Sun-Sign Only",
+              "linesEn": [
+                "Matches birth date to one of twelve signs",
+                "Needs no birth time — fast and frictionless",
+                "Labels Zverev simply as 'Taurus'",
+                "Loses the Libra Moon, Virgo Mars, and Aquarius Jupiter"
+              ]
+            },
+            {
+              "nameEn": "Full Chart Read",
+              "linesEn": [
+                "Reads each planet in its sign and the patterns between them",
+                "Spots the tight Taurus stellium as the dominant theme",
+                "Far more specific — but requires effort",
+                "Rising sign unavailable without a confirmed birth time"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Key Placements in Zverev's Chart",
+          "titleEn": "Five Steps to Reading Zverev's Key Placements",
+          "altEn": "Five-step sequence for reading the key planet placements in Alexander Zverev's birth chart",
+          "items": [
+            {
+              "nameEn": "Find the stellium first",
+              "subEn": "Three Taurus planets in one sign flag the dominant theme — grounded, slow-to-shift values"
+            },
+            {
+              "nameEn": "Check the Moon's sign",
+              "subEn": "A Libra Moon points to an emotional need for fairness, though it could edge toward a neighbouring sign"
+            },
+            {
+              "nameEn": "Note the retrograde planets",
+              "subEn": "Mercury and Mars both retrograde suggest an inward, self-reviewing style rather than a reactive one"
+            },
+            {
+              "nameEn": "Read Mars for drive",
+              "subEn": "Mars in Virgo describes precise, detail-focused effort and visible self-correction, not raw aggression"
+            },
+            {
+              "nameEn": "Leave the houses blank",
+              "subEn": "With no confirmed birth time, skip any claim about ascendant or houses — that part cannot be verified"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Alexander Zverev's Birth Chart at a Glance",
+          "titleEn": "Zverev's Five Key Planet Placements",
+          "altEn": "At-a-glance list of five planet placements in Alexander Zverev's birth chart with their core meanings",
+          "items": [
+            {
+              "nameEn": "Sun in Taurus",
+              "subEn": "Anchors identity in stability and comfort; steady, unhurried presence"
+            },
+            {
+              "nameEn": "Moon in Libra",
+              "subEn": "Seeks emotional balance and fairness; discomfort with open conflict"
+            },
+            {
+              "nameEn": "Mercury in Taurus (retrograde)",
+              "subEn": "Slows and internalises thinking; measured, deliberate replies rather than quick reactions"
+            },
+            {
+              "nameEn": "Mars in Virgo (retrograde)",
+              "subEn": "Turns drive into precision and self-correction; detail-focused effort"
+            },
+            {
+              "nameEn": "Jupiter in Aquarius",
+              "subEn": "Expands through independence and big-picture thinking; streak of individualism in goals"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-age-27": {
+      "hero": {
+        "prompt": "Saturn with its tilted golden rings dominates the right portion of the frame, warm amber glow radiating from the planet against a deep indigo-to-near-black sky (#16112c fading to #0b0a1b), a graceful elliptical orbital arc in soft gold (#d4af6a) looping slowly back to its origin point — evoking the ~29.5-year cycle of return — teal-and-gold nebula clouds drifting across the lower left, a scattered starfield fading into the deep void, soft gold highlights on the ring plane catching the nebula light, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn and its golden rings with a looping orbital arc returning to its origin against a deep indigo nebula sky"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## How First Saturn Return Differs From a Saturn Square",
+          "titleEn": "Saturn Return vs. Saturn Square",
+          "altEn": "Comparison of Saturn return and Saturn square showing alignment type, frequency, scope, and duration differences",
+          "columns": [
+            {
+              "nameEn": "Saturn Return",
+              "linesEn": [
+                "Transiting Saturn lands on natal Saturn — exact same degree",
+                "Occurs once every ~29.5 years",
+                "Reviews the entire foundation you have built so far",
+                "Unfolds slowly over two to three years",
+                "Whole season of life feels under review"
+              ]
+            },
+            {
+              "nameEn": "Saturn Square",
+              "linesEn": [
+                "Transiting Saturn sits 90° from its natal position",
+                "Arrives in early-to-mid twenties, shorter duration",
+                "Presses on one specific area rather than the whole structure",
+                "Faster and more targeted friction",
+                "One stubborn theme flares while the rest stays steady"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Timing",
+          "titleEn": "5 Signals Your Saturn Return Has Opened",
+          "altEn": "Five concrete signals indicating the start of your first Saturn return window, from natal degree to recurring structural questions",
+          "items": [
+            {
+              "nameEn": "Check Your Natal Saturn Degree",
+              "subEn": "Earlier degrees open the window closer to 27; later degrees push the start toward 29 or 30"
+            },
+            {
+              "nameEn": "Watch for Recurring Structural Questions",
+              "subEn": "Career, commitment, or where you live keeps surfacing over months, not just a single day"
+            },
+            {
+              "nameEn": "Notice the Shift from Options to Decisions",
+              "subEn": "Keeping every door open suddenly feels heavier than committing to one clear path"
+            },
+            {
+              "nameEn": "Track the Two-to-Three-Year Arc",
+              "subEn": "The return opens, peaks, and resolves across your late twenties — not a single bad week"
+            },
+            {
+              "nameEn": "Read the Natal House",
+              "subEn": "Saturn's natal house reveals which life area the review will press first and hardest"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

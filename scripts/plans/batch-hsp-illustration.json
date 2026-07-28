@@ -1,0 +1,104 @@
+{
+  "_comment": "HSP / EMPATH cluster illustration plan (2026-06-09 batch). Hero = 1 diffusion image per article (gemini-web, no text). Inline = LLM-planned SVG infographics, bilingual EN+ZH.",
+  "imagesDir": "public/images/hsp",
+  "urlBase": "/images/hsp",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "maxWidth": 1280, "quality": 82 },
+  "articles": {
+    "highly-sensitive-person": {
+      "hero": {
+        "prompt": "A single unified photograph — one continuous scene, NOT a diptych, split frame, collage, or side-by-side panels. One solitary figure seen from behind sitting near a tall window at dusk, soft golden light falling across their shoulder while the room dissolves into deep indigo shadow; fine dust motes drift in the warm beam, the mood quiet, interior, and richly observant. Single full-frame atmospheric editorial photograph, deep indigo to near-black palette with warm gold light, soft focus, calm and contemplative, no text, no borders, no divider.",
+        "altEn": "A person sitting quietly by a window at dusk, bathed in soft gold light against deep indigo shadow, evoking a rich inner life",
+        "altZh": "黄昏时分一个人静静坐在窗边，暖金色光线洒落，背景是深靛蓝的阴影，传达丰富的内在世界"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## The Highly Sensitive Person at a Glance",
+          "afterHeadingZh": "## Highly Sensitive Person 一览表",
+          "titleEn": "The Four Facets of High Sensitivity (DOES)",
+          "titleZh": "高敏感的四个面向（DOES）",
+          "items": [
+            { "nameEn": "Depth of Processing", "nameZh": "深度加工", "subEn": "Takes input in and turns it over before responding", "subZh": "接收信息后反复咀嚼，再做回应" },
+            { "nameEn": "Overstimulation", "nameZh": "容易过载", "subEn": "Hits a sensory ceiling in loud, busy settings sooner", "subZh": "在嘈杂喧闹的环境里更快达到感官上限" },
+            { "nameEn": "Emotional Reactivity & Empathy", "nameZh": "情绪反应与共情", "subEn": "Strong feeling responses and quick attunement to others", "subZh": "情绪反应强，并能迅速读懂他人" },
+            { "nameEn": "Sensitivity to Subtleties", "nameZh": "感知细腻", "subEn": "Notices small cues and details others filter out", "subZh": "留意到别人忽略的细微线索与细节" }
+          ],
+          "altEn": "A row of the four facets of high sensitivity: depth of processing, overstimulation, emotional reactivity and empathy, and sensitivity to subtleties",
+          "altZh": "高敏感四个面向并排展示：深度加工、容易过载、情绪反应与共情、感知细腻"
+        }
+      ]
+    },
+    "signs-of-a-highly-sensitive-person": {
+      "hero": {
+        "prompt": "A close, tender still life of an open hand resting palm-up on soft linen near a window, a single thread of warm gold light catching the fingertips while the surrounding space sinks into deep indigo; the mood is attentive, gentle, and quietly perceptive, as if noticing something faint. Atmospheric editorial photography, deep indigo to near-black with warm gold accent light, soft shallow focus, calm and non-clinical, no text.",
+        "altEn": "An open hand resting palm-up in soft gold light against deep indigo, evoking quiet attentiveness and noticing the subtle",
+        "altZh": "一只摊开的手掌在柔和金光中静静朝上，背景是深靛蓝，传达一种安静的觉察与对细微之物的留意"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Signs of a Highly Sensitive Person at a Glance",
+          "afterHeadingZh": "## Signs of a Highly Sensitive Person 速查表",
+          "titleEn": "Four Signs to Watch for Over Time",
+          "titleZh": "值得长期留意的四个信号",
+          "items": [
+            { "nameEn": "Sensory Sensitivity", "nameZh": "感官敏锐", "subEn": "Stimulation stacks up faster than usual", "subZh": "刺激比一般人更快累积超载" },
+            { "nameEn": "Emotional Attunement", "nameZh": "情绪共情", "subEn": "Reads the feelings around you before they're spoken", "subZh": "在别人开口前就读到周围的情绪" },
+            { "nameEn": "Deep Processing", "nameZh": "深度加工", "subEn": "Turns each experience over slowly and thoroughly", "subZh": "对每段经历反复、彻底地琢磨" },
+            { "nameEn": "Need for Recovery", "nameZh": "需要恢复", "subEn": "Restores balance through quiet and solitude", "subZh": "靠安静与独处来恢复平衡" }
+          ],
+          "altEn": "A row of four signs of a highly sensitive person to watch over time: sensory sensitivity, emotional attunement, deep processing, and need for recovery",
+          "altZh": "高敏感人群值得长期留意的四个信号并排展示：感官敏锐、情绪共情、深度加工、需要恢复"
+        }
+      ]
+    },
+    "highly-sensitive-person-vs-autism": {
+      "hero": {
+        "prompt": "Two soft pools of warm gold light resting side by side on a calm deep-indigo surface, gently overlapping in a small shared glow at their meeting point, the rest fading into near-black; the mood is calm, respectful, and balanced, suggesting two distinct things that touch without merging. Atmospheric editorial photography, deep indigo to near-black with warm gold light, soft focus, non-clinical and quiet, no text.",
+        "altEn": "Two soft pools of gold light side by side on deep indigo, gently overlapping where they meet, suggesting two distinct things that touch without merging",
+        "altZh": "深靛蓝底色上两束柔和的金色光并排，在交界处轻轻交叠，象征两个相互接触却不混为一体的不同事物"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Highly Sensitive Person vs Autism at a Glance",
+          "afterHeadingZh": "## Highly Sensitive Person vs Autism 速查表",
+          "titleEn": "Highly Sensitive Person vs Autism: A Respectful Contrast",
+          "titleZh": "高敏感与自闭症：审慎对照",
+          "columns": [
+            { "nameEn": "Highly Sensitive Person (trait)", "nameZh": "高敏感（气质特质）", "linesEn": ["Temperament trait you self-describe; sensory overwhelm often eases with rest", "Social situations are tiring but generally readable"], "linesZh": ["可自我描述的气质特质；感官超载通常靠休息能缓解", "社交虽累，但大体读得懂言外之意"] },
+            { "nameEn": "Autism (clinical condition)", "nameZh": "自闭症（临床诊断）", "linesEn": ["Neurodevelopmental diagnosis only a qualified professional can assess", "Differences in social communication; a deeper need for predictable routine"], "linesZh": ["需由合格专业人员评估的神经发展性诊断", "社交沟通存在差异；对可预测的规律有更深的需求"] }
+          ],
+          "altEn": "A two-column contrast of highly sensitive person as a self-described temperament trait versus autism as a professionally assessed clinical condition, not a self-diagnosis",
+          "altZh": "两栏对照：高敏感是可自我描述的气质特质，自闭症是需专业评估的临床诊断，不可自我诊断"
+        }
+      ]
+    },
+    "famous-highly-sensitive-people": {
+      "hero": {
+        "prompt": "An empty stage seen from the wings just before a performance, a single warm gold spotlight pooling on the bare floorboards while the vast surrounding theatre dissolves into deep indigo darkness; the mood is quiet, poised, and inward, the calm before stepping into intensity. Atmospheric editorial photography, deep indigo to near-black palette with one warm gold light, soft focus, contemplative, no text.",
+        "altEn": "A single warm gold spotlight on an empty stage seen from the wings, the theatre fading into deep indigo, evoking a quiet, inward moment before public intensity",
+        "altZh": "从侧台望去，一束暖金色聚光灯落在空舞台上，剧场隐入深靛蓝，传达登台面对强烈场面前那一刻的安静与内省"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Famous Highly Sensitive People at a Glance",
+          "afterHeadingZh": "## Famous Highly Sensitive People 关键特征对照表",
+          "titleEn": "The Shared Traits Behind the Public Work",
+          "titleZh": "公开成就背后共有的特质",
+          "items": [
+            { "nameEn": "Depth of Processing", "nameZh": "加工深", "subEn": "Takes input in slowly and reflects before reacting", "subZh": "慢慢接收，反复琢磨后才回应" },
+            { "nameEn": "Emotional Responsiveness", "nameZh": "共情深", "subEn": "Feels and mirrors moods with unusual intensity", "subZh": "异常强烈地感受并映照他人情绪" },
+            { "nameEn": "Sensory Sensitivity", "nameZh": "觉察力强", "subEn": "Registers light, sound, and texture at low thresholds", "subZh": "对光线、声音、质地的阈值更低" },
+            { "nameEn": "Sensing the Subtle", "nameZh": "察觉细微", "subEn": "Picks up faint cues most people miss", "subZh": "捕捉到多数人错过的微弱线索" }
+          ],
+          "altEn": "A row of the four shared traits behind famous sensitive people's work: depth of processing, emotional responsiveness, sensory sensitivity, and sensing the subtle",
+          "altZh": "高敏感名人成就背后共有的四个特质并排展示：加工深、共情深、觉察力强、察觉细微"
+        }
+      ]
+    }
+  }
+}

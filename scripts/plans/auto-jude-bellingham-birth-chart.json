@@ -1,0 +1,112 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "heroWidth": 1200, "heroHeight": 675, "quality": 82 },
+  "articles": {
+    "jude-bellingham-birth-chart": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of a quiet twilight English midland landscape under a vast water-toned sky. Low rolling fields and a still distant horizon sit beneath a sky where cool Cancer silver-blue light, protective and emotionally intense like still deep water, washes over most of the scene, while a warm Jupiter amber-gold glow rests low on one side of the horizon, as if a benevolent planet is briefly visiting. Palette of deep indigo fading to near-black (#16112c to #0b0a1b), soft gold accents (#d4af6a), and a teal-and-gold nebula wash drifting across the upper sky. Intense, contemplative, full-bleed wide 16:9 atmosphere that fills the frame. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Twilight English midland landscape under a silver-blue Cancer sky meeting low amber-gold Jupiter light on the horizon",
+        "altZh": "暮色中的英格兰中部原野，银蓝色巨蟹座天光与地平线低处的琥珀金木星之光相会"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Bellingham Birth Chart vs a Full Natal Reading",
+          "afterHeadingZh": "## 贝林厄姆星盘与相近概念：运作方式 + 取舍",
+          "titleEn": "Three Ways to Read the Same Chart",
+          "titleZh": "读同一张星盘的三种方式",
+          "altEn": "Comparison of the Sun-anchored Bellingham reading against a full natal reading and a tabloid zodiac blurb",
+          "altZh": "以太阳为锚的贝林厄姆解读，与完整本命解读、小报星座短讯的对照",
+          "columns": [
+            {
+              "nameEn": "Sun-anchored reading",
+              "nameZh": "以太阳为锚的解读",
+              "linesEn": [
+                "Leans on the Sun, fixed by a verified date",
+                "Refuses to invent the unrecorded layers",
+                "Names a theme, not a scoreline"
+              ],
+              "linesZh": [
+                "倚重出生日期能固定的太阳",
+                "拒绝把未记录的部分凭空编造",
+                "标定主题，而非比分"
+              ]
+            },
+            {
+              "nameEn": "Full natal reading",
+              "nameZh": "完整本命解读",
+              "linesEn": [
+                "Weighs Sun, Moon, Ascendant, every house cusp",
+                "Needs a recorded birth time, which is not public",
+                "Trades reliability for breadth"
+              ],
+              "linesZh": [
+                "权衡太阳、月亮、上升与每道宫头",
+                "需要记录在案的出生时间，而他的未公开",
+                "用可靠换广度"
+              ]
+            },
+            {
+              "nameEn": "Tabloid zodiac blurb",
+              "nameZh": "小报星座短讯",
+              "linesEn": [
+                "Flattens Cancer into a single mood",
+                "Treats the Sun as fixed temperament",
+                "Trades accuracy for catchiness"
+              ],
+              "linesZh": [
+                "把巨蟹座压扁成一种情绪",
+                "把太阳当作固定脾性",
+                "用准确换顺口"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Bellingham Birth Chart in the 2026 World Cup Window",
+          "afterHeadingZh": "## 如何识别裘德·贝林厄姆星盘（实操观察）",
+          "titleEn": "How to Read the Chart in the World Cup Window",
+          "titleZh": "在世界杯窗口期如何读这张星盘",
+          "altEn": "Five-step method: anchor the verified date, flag the unknown, read the Cancer Sun as theme, note Jupiter timing, hold it as symbolism",
+          "altZh": "五步法：锚定经核验的日期、标出未知、把巨蟹座太阳读成主题、留意木星时机、握成象征",
+          "items": [
+            {
+              "nameEn": "Anchor the verified fact",
+              "nameZh": "锚定经核验的事实",
+              "subEn": "29 June 2003 in Stourbridge fixes the Sun at about 7 degrees of Cancer",
+              "subZh": "2003 年 6 月 29 日斯陶尔布里奇把太阳固定在约巨蟹座 7 度"
+            },
+            {
+              "nameEn": "Flag what is unknown",
+              "nameZh": "把未知大声标出来",
+              "subEn": "No public birth time, so Moon, Ascendant, and houses stay unverified",
+              "subZh": "出生时间未公开，月亮、上升与宫位都无从核验"
+            },
+            {
+              "nameEn": "Read the Cancer Sun as theme",
+              "nameZh": "把巨蟹座太阳读成主题",
+              "subEn": "Emotional drive, protective intensity, visible on-pitch passion",
+              "subZh": "情感驱力、守护式强度、场上可见的激情"
+            },
+            {
+              "nameEn": "Note the timing backdrop",
+              "nameZh": "留意时机背景",
+              "subEn": "Jupiter in Cancer until about 30 June 2026, then enters Leo for July knockouts",
+              "subZh": "木星行经巨蟹座到约 2026 年 6 月 30 日，随后进狮子座迎 7 月淘汰赛"
+            },
+            {
+              "nameEn": "Hold it all as symbolism",
+              "nameZh": "把这一切握成象征",
+              "subEn": "A season of meaning, not a forecast; let results stay open",
+              "subZh": "一段关于意义的时节而非预报，让赛果保持开放"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="同一座冥府的三种透镜">
+  <defs>
+    <linearGradient id="persephonegoddess1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="persephonegoddess1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="persephonegoddess1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="persephonegoddess1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="persephonegoddess1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="persephonegoddess1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#persephonegoddess1zh-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#persephonegoddess1zh-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#persephonegoddess1zh-neb2)"/>
+  <circle cx="288.0" cy="481.0" r="1.61" fill="#cfc8ea" opacity="0.22"/><circle cx="535.4" cy="424.9" r="1.67" fill="#cfc8ea" opacity="0.28"/><circle cx="390.0" cy="165.8" r="0.91" fill="#cfc8ea" opacity="0.49"/><circle cx="527.4" cy="75.0" r="1.69" fill="#cfc8ea" opacity="0.30"/><circle cx="334.2" cy="394.0" r="0.89" fill="#cfc8ea" opacity="0.33"/><circle cx="177.5" cy="388.0" r="0.60" fill="#cfc8ea" opacity="0.31"/><circle cx="636.5" cy="90.3" r="0.44" fill="#cfc8ea" opacity="0.41"/><circle cx="24.4" cy="586.4" r="0.80" fill="#cfc8ea" opacity="0.46"/><circle cx="191.8" cy="433.8" r="0.81" fill="#cfc8ea" opacity="0.31"/><circle cx="553.8" cy="178.8" r="0.65" fill="#cfc8ea" opacity="0.52"/><circle cx="91.5" cy="291.3" r="1.50" fill="#cfc8ea" opacity="0.34"/><circle cx="260.1" cy="229.5" r="1.48" fill="#cfc8ea" opacity="0.23"/><circle cx="513.0" cy="476.2" r="0.56" fill="#cfc8ea" opacity="0.29"/><circle cx="455.8" cy="203.4" r="1.42" fill="#cfc8ea" opacity="0.22"/><circle cx="23.3" cy="258.6" r="0.70" fill="#cfc8ea" opacity="0.23"/><circle cx="212.3" cy="255.5" r="0.64" fill="#cfc8ea" opacity="0.50"/><circle cx="136.3" cy="55.4" r="1.04" fill="#cfc8ea" opacity="0.20"/><circle cx="670.3" cy="396.0" r="1.27" fill="#cfc8ea" opacity="0.39"/><circle cx="451.9" cy="155.3" r="1.45" fill="#cfc8ea" opacity="0.34"/><circle cx="675.4" cy="344.0" r="1.27" fill="#cfc8ea" opacity="0.17"/><circle cx="664.4" cy="248.7" r="0.98" fill="#cfc8ea" opacity="0.29"/><circle cx="682.1" cy="57.5" r="1.32" fill="#cfc8ea" opacity="0.40"/><circle cx="127.3" cy="52.1" r="1.46" fill="#cfc8ea" opacity="0.45"/><circle cx="75.9" cy="264.6" r="0.74" fill="#cfc8ea" opacity="0.39"/><circle cx="534.0" cy="196.4" r="1.26" fill="#cfc8ea" opacity="0.41"/><circle cx="747.1" cy="273.7" r="0.69" fill="#cfc8ea" opacity="0.16"/><circle cx="702.1" cy="106.2" r="1.35" fill="#cfc8ea" opacity="0.27"/><circle cx="679.6" cy="381.1" r="1.08" fill="#cfc8ea" opacity="0.38"/><circle cx="117.8" cy="325.0" r="1.55" fill="#cfc8ea" opacity="0.16"/><circle cx="287.8" cy="146.2" r="1.16" fill="#cfc8ea" opacity="0.45"/><circle cx="668.1" cy="551.8" r="0.80" fill="#cfc8ea" opacity="0.29"/><circle cx="407.0" cy="561.9" r="1.65" fill="#cfc8ea" opacity="0.38"/><circle cx="574.4" cy="296.6" r="1.43" fill="#cfc8ea" opacity="0.16"/><circle cx="669.4" cy="45.8" r="1.67" fill="#cfc8ea" opacity="0.15"/><circle cx="133.7" cy="515.9" r="0.63" fill="#cfc8ea" opacity="0.33"/><circle cx="122.6" cy="164.1" r="1.11" fill="#cfc8ea" opacity="0.16"/><circle cx="688.7" cy="509.8" r="1.03" fill="#cfc8ea" opacity="0.28"/><circle cx="732.5" cy="467.4" r="1.34" fill="#cfc8ea" opacity="0.17"/><circle cx="173.1" cy="130.8" r="1.23" fill="#cfc8ea" opacity="0.20"/><circle cx="512.3" cy="131.3" r="0.66" fill="#cfc8ea" opacity="0.51"/><circle cx="547.6" cy="188.4" r="0.86" fill="#cfc8ea" opacity="0.51"/><circle cx="134.8" cy="550.9" r="1.49" fill="#cfc8ea" opacity="0.42"/><circle cx="526.7" cy="531.0" r="0.78" fill="#cfc8ea" opacity="0.53"/><circle cx="380.4" cy="133.8" r="1.34" fill="#cfc8ea" opacity="0.34"/><circle cx="469.7" cy="588.7" r="0.70" fill="#cfc8ea" opacity="0.37"/><circle cx="715.3" cy="481.3" r="1.06" fill="#cfc8ea" opacity="0.24"/><circle cx="360.5" cy="600.7" r="1.19" fill="#cfc8ea" opacity="0.29"/><circle cx="290.9" cy="349.8" r="0.82" fill="#cfc8ea" opacity="0.43"/><circle cx="719.5" cy="167.3" r="1.51" fill="#cfc8ea" opacity="0.26"/><circle cx="695.4" cy="329.2" r="1.15" fill="#cfc8ea" opacity="0.15"/><circle cx="343.7" cy="107.3" r="1.26" fill="#cfc8ea" opacity="0.14"/><circle cx="199.0" cy="520.0" r="1.22" fill="#cfc8ea" opacity="0.16"/><path d="M 364.72915537282825 559.6 L 365.2 561.9 L 367.5 562.3321463228203 L 365.2 562.8 L 364.72915537282825 565.1 L 364.3 562.8 L 362.0 562.3321463228203 L 364.3 561.9 Z" fill="#f6e6bf" opacity="0.5298147583613172"/><path d="M 699.0624125041068 211.7 L 699.6 214.7 L 702.6 215.2611224805005 L 699.6 215.8 L 699.0624125041068 218.8 L 698.5 215.8 L 695.5 215.2611224805005 L 698.5 214.7 Z" fill="#f6e6bf" opacity="0.6586711530806497"/><path d="M 675.8154235444963 365.4 L 676.2 367.6 L 678.4 367.9608128317632 L 676.2 368.4 L 675.8154235444963 370.5 L 675.4 368.4 L 673.3 367.9608128317632 L 675.4 367.6 Z" fill="#f6e6bf" opacity="0.5540974766248837"/><path d="M 436.0546080954373 584.7 L 436.5 587.0 L 438.8 587.4408785742708 L 436.5 587.9 L 436.0546080954373 590.2 L 435.6 587.9 L 433.3 587.4408785742708 L 435.6 587.0 Z" fill="#f6e6bf" opacity="0.7059861879097298"/><path d="M 332.07535914704204 92.0 L 332.6 94.8 L 335.4 95.33302833000198 L 332.6 95.9 L 332.07535914704204 98.7 L 331.5 95.9 L 328.7 95.33302833000198 L 331.5 94.8 Z" fill="#f6e6bf" opacity="0.783881769166328"/><path d="M 24.4 586.4 L 91.5 291.3 L 212.3 255.5 L 122.6 164.1 L 715.3 481.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">同一座冥府的三种透镜</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#persephonegoddess1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#persephonegoddess1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">得墨忒尔视角</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">聚焦被留下的那个人</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">地面荒芜的哀伤</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">看不见地底正发生的质变</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">冥王星视角</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">剧变的原始力量</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">不容商量的火山</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">看不见人如何适应它</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">珀耳塞福涅视角</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">被卷入者的亲身经历</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">渐成冥府的主权者</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">同时承载少女与王后</text>
+  <path d="M 280.025 585.4 L 280.4 587.6 L 282.6 588 L 280.4 588.4 L 280.025 590.6 L 279.6 588.4 L 277.4 588 L 279.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 585.4 L 480.4 587.6 L 482.6 588 L 480.4 588.4 L 479.975 590.6 L 479.6 588.4 L 477.4 588 L 479.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

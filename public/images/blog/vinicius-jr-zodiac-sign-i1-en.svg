@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 491" role="img" aria-label="Western Tropical vs Vedic Sidereal: Vinicius Jr's Key Placements">
+  <defs>
+    <linearGradient id="viniciusjrzodiacsign1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="viniciusjrzodiacsign1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="viniciusjrzodiacsign1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="viniciusjrzodiacsign1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="viniciusjrzodiacsign1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="viniciusjrzodiacsign1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="488" rx="22" fill="url(#viniciusjrzodiacsign1en-panel)"/>
+  <ellipse cx="198" cy="118" rx="380" ry="167" fill="url(#viniciusjrzodiacsign1en-neb1)"/>
+  <ellipse cx="623" cy="393" rx="334" ry="157" fill="url(#viniciusjrzodiacsign1en-neb2)"/>
+  <circle cx="730.0" cy="288.6" r="0.70" fill="#cfc8ea" opacity="0.49"/><circle cx="582.6" cy="130.6" r="1.19" fill="#cfc8ea" opacity="0.28"/><circle cx="98.7" cy="419.7" r="1.09" fill="#cfc8ea" opacity="0.27"/><circle cx="582.1" cy="139.3" r="0.93" fill="#cfc8ea" opacity="0.31"/><circle cx="264.6" cy="296.9" r="1.16" fill="#cfc8ea" opacity="0.39"/><circle cx="470.2" cy="41.8" r="0.51" fill="#cfc8ea" opacity="0.39"/><circle cx="658.4" cy="307.7" r="0.72" fill="#cfc8ea" opacity="0.49"/><circle cx="653.2" cy="187.4" r="1.30" fill="#cfc8ea" opacity="0.32"/><circle cx="187.1" cy="75.0" r="0.98" fill="#cfc8ea" opacity="0.32"/><circle cx="49.5" cy="431.3" r="1.15" fill="#cfc8ea" opacity="0.17"/><circle cx="686.0" cy="468.7" r="1.61" fill="#cfc8ea" opacity="0.27"/><circle cx="245.9" cy="63.2" r="0.88" fill="#cfc8ea" opacity="0.43"/><circle cx="258.6" cy="275.5" r="1.21" fill="#cfc8ea" opacity="0.32"/><circle cx="147.9" cy="440.0" r="1.15" fill="#cfc8ea" opacity="0.33"/><circle cx="594.1" cy="340.4" r="1.16" fill="#cfc8ea" opacity="0.18"/><circle cx="435.5" cy="193.2" r="0.52" fill="#cfc8ea" opacity="0.24"/><circle cx="737.7" cy="367.0" r="1.28" fill="#cfc8ea" opacity="0.46"/><circle cx="413.0" cy="358.5" r="1.09" fill="#cfc8ea" opacity="0.13"/><circle cx="233.3" cy="400.2" r="0.61" fill="#cfc8ea" opacity="0.15"/><circle cx="651.4" cy="199.9" r="1.25" fill="#cfc8ea" opacity="0.19"/><circle cx="709.2" cy="179.9" r="1.59" fill="#cfc8ea" opacity="0.17"/><circle cx="664.5" cy="391.8" r="1.05" fill="#cfc8ea" opacity="0.34"/><circle cx="722.1" cy="258.3" r="0.65" fill="#cfc8ea" opacity="0.48"/><circle cx="413.4" cy="249.9" r="0.91" fill="#cfc8ea" opacity="0.35"/><circle cx="313.3" cy="247.7" r="0.86" fill="#cfc8ea" opacity="0.25"/><circle cx="85.7" cy="41.0" r="1.18" fill="#cfc8ea" opacity="0.30"/><circle cx="317.6" cy="132.9" r="0.51" fill="#cfc8ea" opacity="0.53"/><circle cx="338.7" cy="354.8" r="0.51" fill="#cfc8ea" opacity="0.36"/><circle cx="633.9" cy="339.6" r="1.52" fill="#cfc8ea" opacity="0.44"/><circle cx="106.0" cy="155.5" r="0.65" fill="#cfc8ea" opacity="0.43"/><circle cx="255.0" cy="258.6" r="0.88" fill="#cfc8ea" opacity="0.47"/><circle cx="636.6" cy="199.7" r="1.66" fill="#cfc8ea" opacity="0.16"/><circle cx="334.7" cy="365.4" r="1.45" fill="#cfc8ea" opacity="0.46"/><circle cx="86.3" cy="14.3" r="0.69" fill="#cfc8ea" opacity="0.20"/><circle cx="602.1" cy="362.9" r="0.82" fill="#cfc8ea" opacity="0.28"/><circle cx="644.3" cy="323.5" r="1.66" fill="#cfc8ea" opacity="0.52"/><circle cx="96.7" cy="477.2" r="1.50" fill="#cfc8ea" opacity="0.52"/><circle cx="122.6" cy="126.6" r="0.79" fill="#cfc8ea" opacity="0.20"/><circle cx="218.2" cy="67.3" r="1.55" fill="#cfc8ea" opacity="0.42"/><circle cx="199.2" cy="456.0" r="0.75" fill="#cfc8ea" opacity="0.13"/><circle cx="331.5" cy="114.6" r="1.48" fill="#cfc8ea" opacity="0.26"/><path d="M 446.2233446072787 75.1 L 446.7 77.5 L 449.0 77.94228098914027 L 446.7 78.4 L 446.2233446072787 80.8 L 445.8 78.4 L 443.4 77.94228098914027 L 445.8 77.5 Z" fill="#f6e6bf" opacity="0.6049306453671306"/><path d="M 145.3416123446077 234.1 L 145.9 236.8 L 148.6 237.32461081352085 L 145.9 237.8 L 145.3416123446077 240.5 L 144.8 237.8 L 142.1 237.32461081352085 L 144.8 236.8 Z" fill="#f6e6bf" opacity="0.7227902412880212"/><path d="M 251.87281378917396 102.4 L 252.3 104.7 L 254.6 105.09264818020165 L 252.3 105.5 L 251.87281378917396 107.8 L 251.4 105.5 L 249.2 105.09264818020165 L 251.4 104.7 Z" fill="#f6e6bf" opacity="0.6673043772112578"/><path d="M 475.36305146478117 102.5 L 475.8 104.6 L 477.9 105.00805533397943 L 475.8 105.4 L 475.36305146478117 107.5 L 475.0 105.4 L 472.9 105.00805533397943 L 475.0 104.6 Z" fill="#f6e6bf" opacity="0.7585692359600216"/><path d="M 84.69103897921741 410.2 L 85.2 412.6 L 87.6 413.0922410711646 L 85.2 413.6 L 84.69103897921741 416.0 L 84.2 413.6 L 81.8 413.0922410711646 L 84.2 412.6 Z" fill="#f6e6bf" opacity="0.5543362585362047"/>
+  <rect x="1.5" y="1.5" width="757" height="488" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="477" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 471.8 L 16.5 474.5 L 19.2 475 L 16.5 475.5 L 16 478.2 L 15.5 475.5 L 12.8 475 L 15.5 474.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 471.8 L 744.5 474.5 L 747.2 475 L 744.5 475.5 L 744 478.2 L 743.5 475.5 L 740.8 475 L 743.5 474.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Western Tropical vs Vedic Sidereal: Vinicius Jr's Key</text>
+  <text x="380" y="73" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Placements</text>
+  <line x1="230" y1="94" x2="368" y2="94" stroke="url(#viniciusjrzodiacsign1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="94" x2="530" y2="94" stroke="url(#viniciusjrzodiacsign1en-rule)" stroke-width="1"/>
+  <path d="M 380 89.0 L 380.8 93.2 L 385.0 94 L 380.8 94.8 L 380 99.0 L 379.2 94.8 L 375.0 94 L 379.2 93.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="126" width="668" height="162.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="126" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 124.1 L 380.5 127.0 L 383.4 127.5 L 380.5 128.0 L 380 130.9 L 379.5 128.0 L 376.6 127.5 L 379.5 127.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="155.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Western Tropical</text>
+  <path d="M 70 184.8 L 70.5 187.5 L 73.2 188 L 70.5 188.5 L 70 191.2 L 69.5 188.5 L 66.8 188 L 69.5 187.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="193.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Cancer Sun — identity tied to feeling and protective instinct</text>
+  <path d="M 70 213.8 L 70.5 216.5 L 73.2 217 L 70.5 217.5 L 70 220.2 L 69.5 217.5 L 66.8 217 L 69.5 216.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="222.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sagittarius Moon — appetite for freedom and expressive risk, ruled by</text>
+  <text x="84" y="241.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Jupiter</text>
+  <path d="M 70 261.8 L 70.5 264.5 L 73.2 265 L 70.5 265.5 L 70 268.2 L 69.5 265.5 L 66.8 265 L 69.5 264.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="270.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Jupiter in Cancer 2025–26 — lights the Sun's sign and rules the Moon</text>
+  <path d="M 380 296.5 L 380.7 300.3 L 384.5 301 L 380.7 301.7 L 380 305.5 L 379.3 301.7 L 375.5 301 L 379.3 300.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="314" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="314" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 312.1 L 380.5 315.0 L 383.4 315.5 L 380.5 316.0 L 380 318.9 L 379.5 316.0 L 376.6 315.5 L 379.5 315.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="343.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Vedic Sidereal</text>
+  <path d="M 70 372.8 L 70.5 375.5 L 73.2 376 L 70.5 376.5 L 70 379.2 L 69.5 376.5 L 66.8 376 L 69.5 375.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="381.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Gemini Sun — sidereal shift of ~24° moves Sun back from Cancer</text>
+  <path d="M 70 401.8 L 70.5 404.5 L 73.2 405 L 70.5 405.5 L 70 408.2 L 69.5 405.5 L 66.8 405 L 69.5 404.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Moon likely recalculates into sidereal Scorpio</text>
+  <path d="M 70 430.8 L 70.5 433.5 L 73.2 434 L 70.5 434.5 L 70 437.2 L 69.5 434.5 L 66.8 434 L 69.5 433.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="439.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">A separate, internally consistent lens — not a contradiction</text>
+  <path d="M 202.22749999999988 462.4 L 202.6 464.6 L 204.8 465 L 202.6 465.4 L 202.22749999999988 467.6 L 201.8 465.4 L 199.6 465 L 201.8 464.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="469" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 462.4 L 558.2 464.6 L 560.4 465 L 558.2 465.4 L 557.7725000000002 467.6 L 557.4 465.4 L 555.2 465 L 557.4 464.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

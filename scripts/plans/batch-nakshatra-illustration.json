@@ -1,0 +1,1114 @@
+{
+  "_comment": "NAKSHATRA cluster illustration plan (2026-06-10 backfill batch). Hero = 1 diffusion image per article (gemini-web/nano-banana-2, no text). Inline = LLM-planned SVG infographics (gen-infographic.mjs), wired by illustrate-article.mjs.",
+  "imagesDir": "public/images/nakshatra",
+  "urlBase": "/images/nakshatra",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "maxWidth": 1280,
+    "quality": 82
+  },
+  "articles": {
+    "nakshatra": {
+      "hero": {
+        "prompt": "A vast celestial clockface: a great ring of 27 small evenly spaced gold star-stations circling the ecliptic, each a tiny diamond-shaped node, with a luminous crescent moon as the single slender clock hand pointing to one glowing station; faint dotted orbit tracks and fine tick marks suggest precise measurement of time rather than personality; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Ring of 27 gold lunar stations as a celestial clock, a crescent moon hand pointing to one station",
+        "altZh": "27 个金色月宿排成天文钟环，新月如指针指向其中一站"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Zodiac Sign vs Nakshatra",
+          "titleZh": "黄道星座 vs 纳沙特拉（月宿）",
+          "columns": [
+            {
+              "nameEn": "Zodiac Sign",
+              "nameZh": "黄道星座",
+              "linesEn": [
+                "Spans 30° of the ecliptic",
+                "Describes character and style",
+                "Answers how you move through life",
+                "Sun-centered in Western use"
+              ],
+              "linesZh": [
+                "跨越黄道 30°",
+                "描述性格与风格",
+                "回答你如何度过人生",
+                "西方占星以太阳为中心"
+              ]
+            },
+            {
+              "nameEn": "Nakshatra",
+              "nameZh": "纳沙特拉（月宿）",
+              "linesEn": [
+                "Spans 13°20' — finer resolution",
+                "Encodes the dasha timing sequence",
+                "Answers when chapters open",
+                "Moon-centered in Vedic use"
+              ],
+              "linesZh": [
+                "跨越 13°20'，分辨率更细",
+                "编码大运（Dasha）时序",
+                "回答人生篇章何时开启",
+                "吠陀占星以月亮为中心"
+              ]
+            }
+          ],
+          "altEn": "Comparison of zodiac signs (30°, character, how) and nakshatras (13°20', dasha timing, when)",
+          "altZh": "黄道星座与月宿的对比：30°与性格 vs 13°20'与大运时序"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read nakshatra in Your Chart",
+          "titleEn": "Reading Your Birth Nakshatra: 5 Steps",
+          "titleZh": "解读出生月宿的五个步骤",
+          "items": [
+            {
+              "nameEn": "Find the Moon's exact degree",
+              "nameZh": "找到月亮的精确度数",
+              "subEn": "A Vedic calculator shows station name and pada",
+              "subZh": "吠陀星盘工具会显示月宿名称与帕达"
+            },
+            {
+              "nameEn": "Identify the ruling planet",
+              "nameZh": "确认守护行星",
+              "subEn": "The lord sets the station's quality and first dasha",
+              "subZh": "宿主行星决定月宿品质与出生时的大运"
+            },
+            {
+              "nameEn": "Check the active dasha",
+              "nameZh": "查看当前大运",
+              "subEn": "The 120-year Vimshottari cycle starts at your station",
+              "subZh": "120 年 Vimshottari 周期由出生月宿定起点"
+            },
+            {
+              "nameEn": "Notice associated qualities",
+              "nameZh": "观察对应特质",
+              "subEn": "Watch where station themes appear in current friction",
+              "subZh": "留意月宿主题在摩擦与选择中如何浮现"
+            },
+            {
+              "nameEn": "Track the Moon's monthly return",
+              "nameZh": "追踪月亮每月回归",
+              "subEn": "The Moon crosses your natal station every 27–28 days",
+              "subZh": "月亮约每 27–28 天回到你的本命月宿"
+            }
+          ],
+          "altEn": "Five steps for reading your birth nakshatra, from Moon degree to monthly lunar return",
+          "altZh": "解读出生月宿的五个步骤：从月亮度数到每月月亮回归"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Nakshatra at a Glance",
+          "titleEn": "Four Stations and Their Ruling Planets",
+          "titleZh": "四个月宿及其守护行星",
+          "items": [
+            {
+              "nameEn": "Rohini",
+              "nameZh": "罗希尼（Rohini）",
+              "subEn": "Moon-ruled — growth, sensory richness, attachment",
+              "subZh": "月亮主管——成长、感官丰盛与依恋"
+            },
+            {
+              "nameEn": "Bharani",
+              "nameZh": "婆罗尼（Bharani）",
+              "subEn": "Venus-ruled — containment, transformation, thresholds",
+              "subZh": "金星主管——容纳、转化与临界"
+            },
+            {
+              "nameEn": "Pushya",
+              "nameZh": "普沙（Pushya）",
+              "subEn": "Saturn-ruled — nourishment, patient structure, duty",
+              "subZh": "土星主管——滋养、耐心结构与责任"
+            },
+            {
+              "nameEn": "Anuradha",
+              "nameZh": "阿奴罗陀（Anuradha）",
+              "subEn": "Saturn-ruled — devotion, loyalty held under pressure",
+              "subZh": "土星主管——奉献与压力下的忠诚"
+            }
+          ],
+          "altEn": "Four nakshatras with their ruling planets: Rohini (Moon), Bharani (Venus), Pushya and Anuradha (Saturn)",
+          "altZh": "四个月宿与守护行星：罗希尼属月亮，婆罗尼属金星，普沙与阿奴罗陀属土星"
+        }
+      ]
+    },
+    "anuradha-nakshatra": {
+      "hero": {
+        "prompt": "Two ropes of golden starlight braided together rising from deep dark water to form a triumphal archway framing one small shared star at its apex; a faint ringed planet glows behind the arch, its ring echoing the arch's steady structure; a lotus of thin gold line-art floats on the still water below — devotion given a backbone; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "Braided golden threads form an archway over dark water framing a shared star, backed by a ringed planet",
+        "altZh": "金色光线编成拱门立于暗水之上，框住共同的星辰，背后是带环的行星"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## anuradha nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Anuradha vs Jyeshtha: Two Scorpio Modes",
+          "titleZh": "阿奴罗陀 vs 杰什塔：天蝎座的两种模式",
+          "columns": [
+            {
+              "nameEn": "Anuradha",
+              "nameZh": "阿奴罗陀",
+              "linesEn": [
+                "Ruled by Saturn",
+                "Builds loyalty into structure",
+                "Bonds last through maintenance",
+                "Patient, behind-the-scenes commitment"
+              ],
+              "linesZh": [
+                "土星主管",
+                "把忠诚筑入结构",
+                "情谊靠长期维护而持久",
+                "耐心的幕后承诺"
+              ]
+            },
+            {
+              "nameEn": "Jyeshtha",
+              "nameZh": "杰什塔",
+              "linesEn": [
+                "Ruled by Mercury",
+                "Leads with seniority and rank",
+                "Drives to hold a position",
+                "Quick, visible command of a room"
+              ],
+              "linesZh": [
+                "水星主管",
+                "以资历与地位为先",
+                "执着于守住位置",
+                "迅速而醒目的场面掌控"
+              ]
+            }
+          ],
+          "altEn": "Anuradha's Saturn-built durable loyalty compared with Jyeshtha's Mercury-led visible authority",
+          "altZh": "阿奴罗陀的土星式持久忠诚与杰什塔的水星式可见权威之对比"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Anuradha in Your Chart",
+          "titleEn": "Five Signals of an Anuradha Moon",
+          "titleZh": "阿奴罗陀月亮的五个信号",
+          "items": [
+            {
+              "nameEn": "Moon in 3°20'–16°40' Scorpio",
+              "nameZh": "月亮居天蝎 3°20'–16°40'",
+              "subEn": "The exact span that defines the 17th nakshatra",
+              "subZh": "界定第十七月宿的精确区间"
+            },
+            {
+              "nameEn": "Loyalty as follow-through",
+              "nameZh": "忠诚体现为坚持到底",
+              "subEn": "Returning to the same people and causes for years",
+              "subZh": "多年如一日地回到同样的人与事业"
+            },
+            {
+              "nameEn": "Friendships carry a mission",
+              "nameZh": "友谊带有使命感",
+              "subEn": "Bonds exist to serve something larger than two people",
+              "subZh": "情谊为超越两人的更大目标服务"
+            },
+            {
+              "nameEn": "Shadow: holding too tightly",
+              "nameZh": "阴影：抓得太紧",
+              "subEn": "Under pressure the discernment boundary thins out",
+              "subZh": "压力之下分辨力的边界变薄"
+            },
+            {
+              "nameEn": "Saturn shapes the devotion",
+              "nameZh": "土星塑造奉献方式",
+              "subEn": "Patience, structure, delayed reward color daily care",
+              "subZh": "耐心、结构与延迟回报渗入日常"
+            }
+          ],
+          "altEn": "Five chart signals of Anuradha: Scorpio span, follow-through, mission-driven bonds, gripping shadow, Saturn themes",
+          "altZh": "阿奴罗陀的五个星盘信号：天蝎区间、坚持、使命型情谊、紧抓阴影与土星主题"
+        }
+      ]
+    },
+    "ashlesha-nakshatra": {
+      "hero": {
+        "prompt": "A serpent of fine gold line-art coiled in a tight spiral beneath calm dark water, its coils compressing inward toward a single intensely bright point of light at the center of the spiral; soft concentric ripples radiate outward on the water's surface and faint constellation stars watch from above — stored, patient energy concentrated into one point of seeing; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A gold serpent coiled in a spiral beneath dark water, compressing toward one bright point of light",
+        "altZh": "金色巨蛇在暗水下盘成螺旋，能量向中心一点亮光收拢"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## ashlesha nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Pushya vs Ashlesha: Two Cancer Currents",
+          "titleZh": "普沙 vs 阿什莱沙：巨蟹座的两股水流",
+          "columns": [
+            {
+              "nameEn": "Pushya",
+              "nameZh": "普沙",
+              "linesEn": [
+                "Nourishes out in the open",
+                "Gives, reassures, and feeds",
+                "Warmth spreads outward",
+                "Easy, visible openness"
+              ],
+              "linesZh": [
+                "在明处滋养",
+                "给予、安抚、喂养",
+                "暖意向外铺开",
+                "轻松而可见的敞开"
+              ]
+            },
+            {
+              "nameEn": "Ashlesha",
+              "nameZh": "阿什莱沙",
+              "linesEn": [
+                "Coils sensitivity inward",
+                "Compresses water into one point",
+                "Focused, penetrating attention",
+                "Reads as guarded while caring"
+              ],
+              "linesZh": [
+                "把敏感盘卷向内",
+                "将巨蟹之水压缩为一点",
+                "专注而穿透的注意力",
+                "看似设防，实则深情"
+              ]
+            }
+          ],
+          "altEn": "Pushya's open outward nourishment compared with Ashlesha's inward compressed perception in Cancer",
+          "altZh": "巨蟹座内普沙的外放滋养与阿什莱沙的内敛穿透感知之对比"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Ashlesha in Your Chart",
+          "titleEn": "Five Signals of Ashlesha at Work",
+          "titleZh": "阿什莱沙运作的五个信号",
+          "items": [
+            {
+              "nameEn": "Watchful, magnetic presence",
+              "nameZh": "警觉而有磁性的气场",
+              "subEn": "People often feel read within minutes",
+              "subZh": "旁人常在几分钟内感到被看透"
+            },
+            {
+              "nameEn": "Catching what others miss",
+              "nameZh": "捕捉他人忽略之处",
+              "subEn": "Motives and unspoken tension register first",
+              "subZh": "动机与未说出口的张力率先被察觉"
+            },
+            {
+              "nameEn": "Selective, total focus",
+              "nameZh": "选择性的全然专注",
+              "subEn": "Small talk slides off; one subject absorbs you",
+              "subZh": "寒暄滑过，一个主题便全然吸入"
+            },
+            {
+              "nameEn": "Protective secrecy",
+              "nameZh": "保护性的缄默",
+              "subEn": "Deciding slowly who has earned the full story",
+              "subZh": "缓慢决定谁配听完整的故事"
+            },
+            {
+              "nameEn": "Intensity that can tip",
+              "nameZh": "可能倾覆的强度",
+              "subEn": "Under stress focus curdles into brooding or suspicion",
+              "subZh": "压力下专注凝结为郁结或猜疑"
+            }
+          ],
+          "altEn": "Five practical signals of Ashlesha energy, from magnetic watchfulness to intensity that can tip under stress",
+          "altZh": "阿什莱沙能量的五个实际信号：从磁性的警觉到压力下可能倾覆的强度"
+        }
+      ]
+    },
+    "ashwini-nakshatra": {
+      "hero": {
+        "prompt": "A horse's head formed of gold constellation lines bursting through the very first gate of a vast zodiac ring at its zero point, propelled by a long comet-like tail of fine gold stardust streaming from behind it — momentum arriving preloaded from a previous cycle while the rest of the ring fades quietly into darkness ahead; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A constellation horse head charging through the zodiac's first gate, trailing a comet tail of gold stardust",
+        "altZh": "星座马首冲出黄道第一道门，身后拖着金色星尘的彗尾"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## ashwini nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Ashwini, Bharani, Magha: Three Modes",
+          "titleZh": "阿什维尼、婆罗尼、玛伽：三种模式",
+          "columns": [
+            {
+              "nameEn": "Ashwini",
+              "nameZh": "阿什维尼",
+              "linesEn": [
+                "Ketu-ruled in Aries",
+                "Action arrives preloaded",
+                "Instinct precedes feeling",
+                "Fresh starts, rapid initiation"
+              ],
+              "linesZh": [
+                "计都主管，位于白羊",
+                "行动预先装载而来",
+                "直觉先于感受",
+                "干净重启，迅捷开局"
+              ]
+            },
+            {
+              "nameEn": "Bharani",
+              "nameZh": "婆罗尼",
+              "linesEn": [
+                "Venus-ruled in Aries",
+                "Feels its way toward action",
+                "Consciously earned effort",
+                "Emotional processing depth"
+              ],
+              "linesZh": [
+                "金星主管，位于白羊",
+                "凭感受摸索行动",
+                "有意识地挣得努力",
+                "情绪处理的深度"
+              ]
+            },
+            {
+              "nameEn": "Magha",
+              "nameZh": "玛伽",
+              "linesEn": [
+                "Ketu-ruled in Leo",
+                "Instinctive authority",
+                "Lineage, legacy, recognition",
+                "Carries the thread forward"
+              ],
+              "linesZh": [
+                "计都主管，位于狮子",
+                "本能式的权威",
+                "血脉、传承与持续认可",
+                "不割断地延续线索"
+              ]
+            }
+          ],
+          "altEn": "Ashwini's preloaded instinct compared with Bharani's earned emotional effort and Magha's lineage-bearing authority",
+          "altZh": "阿什维尼的预载直觉、婆罗尼的情感努力与玛伽的传承权威之三方对比"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read ashwini nakshatra in Your Chart",
+          "titleEn": "Five Signals of Ashwini Functioning",
+          "titleZh": "阿什维尼运作的五个信号",
+          "items": [
+            {
+              "nameEn": "First-response accuracy",
+              "nameZh": "第一反应的准确",
+              "subEn": "Initial reads land before deliberate analysis",
+              "subZh": "初判先于刻意分析而命中"
+            },
+            {
+              "nameEn": "Impatience with steps",
+              "nameZh": "对中间步骤不耐",
+              "subEn": "Multi-step processes frustrate; you sense the end",
+              "subZh": "多步骤流程令人烦躁，因已预见终点"
+            },
+            {
+              "nameEn": "Restlessness after completion",
+              "nameZh": "完成后的躁动",
+              "subEn": "Energy disperses once the goal is reached",
+              "subZh": "目标一旦达成，能量随即消散"
+            },
+            {
+              "nameEn": "Pull toward immediate help",
+              "nameZh": "倾向即刻援手",
+              "subEn": "Fix the problem now rather than map a recovery arc",
+              "subZh": "当下解决问题，而非规划恢复路线"
+            },
+            {
+              "nameEn": "Undervaluing your own speed",
+              "nameZh": "低估自己的速度",
+              "subEn": "Ease masks the skill from the one who carries it",
+              "subZh": "轻松感让持有者看不见自身技能"
+            }
+          ],
+          "altEn": "Five signals of Ashwini in a chart, from first-response accuracy to undervaluing one's own speed",
+          "altZh": "阿什维尼在星盘中的五个信号：从第一反应准确到低估自身速度"
+        }
+      ]
+    },
+    "bharani-nakshatra": {
+      "hero": {
+        "prompt": "A rounded golden vessel like a softly glowing amphora suspended at the center of darkness, sheltering a single small bright seed of light inside; to its left a star sinks and dissolves into mist, to its right a new star kindles and rises — the vessel calmly holding the threshold between ending and beginning; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A glowing golden vessel holds a bright seed between a fading star and a rising one",
+        "altZh": "发光的金色容器护持一粒亮种，居于陨落与升起的两颗星之间"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## bharani nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Ashwini, Bharani, Krittika in Aries",
+          "titleZh": "白羊座中的阿什维尼、婆罗尼、克里蒂卡",
+          "columns": [
+            {
+              "nameEn": "Ashwini",
+              "nameZh": "阿什维尼",
+              "linesEn": [
+                "Opens and initiates",
+                "Races toward the new",
+                "Gift: quick, clean starts"
+              ],
+              "linesZh": [
+                "开启与发起",
+                "冲向新事物",
+                "天赋：干净利落的开局"
+              ]
+            },
+            {
+              "nameEn": "Bharani",
+              "nameZh": "婆罗尼",
+              "linesEn": [
+                "Contains and completes",
+                "Holds motion until release",
+                "Gift: endurance; cost: speed"
+              ],
+              "linesZh": [
+                "容纳并完成",
+                "护持进程直至释放",
+                "天赋是耐力，代价是速度"
+              ]
+            },
+            {
+              "nameEn": "Krittika",
+              "nameZh": "克里蒂卡",
+              "linesEn": [
+                "Cuts and purifies with fire",
+                "Burns away what is finished",
+                "Gift: the clean break"
+              ],
+              "linesZh": [
+                "以火切割并净化",
+                "烧尽已了结之物",
+                "天赋：干脆的了断"
+              ]
+            }
+          ],
+          "altEn": "Three Aries nakshatras compared: Ashwini initiates, Bharani contains and completes, Krittika cuts and purifies",
+          "altZh": "白羊三月宿对比：阿什维尼发起，婆罗尼容纳完成，克里蒂卡切割净化"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Bharani in Your Chart",
+          "titleEn": "Five Signals of the Bearer",
+          "titleZh": "承载者的五个信号",
+          "items": [
+            {
+              "nameEn": "Calm in heavy situations",
+              "nameZh": "沉重处的镇定",
+              "subEn": "Steady and useful in grief, crisis, transitions",
+              "subZh": "在哀伤、危机与转折中稳定而有用"
+            },
+            {
+              "nameEn": "Drawn to full-cycle work",
+              "nameZh": "受完整周期工作吸引",
+              "subEn": "Creative or caretaking roles held start to finish",
+              "subZh": "创作或照护，从头守到尾"
+            },
+            {
+              "nameEn": "Endings rattle you less",
+              "nameZh": "结束较少令你动摇",
+              "subEn": "Though their weight may be carried privately",
+              "subZh": "其重量或在私下默默承担"
+            },
+            {
+              "nameEn": "Hidden intensity",
+              "nameZh": "被藏起的强度",
+              "subEn": "Worry that your depth reads as too much",
+              "subZh": "担心自己的深度显得过头"
+            },
+            {
+              "nameEn": "Birth-death-renewal themes",
+              "nameZh": "生—死—更新的主题",
+              "subEn": "Recur in art, work, and close relationships",
+              "subZh": "在创作、工作与亲密关系中反复出现"
+            }
+          ],
+          "altEn": "Five signals of a Bharani placement, from calm in crisis to recurring birth-death-renewal themes",
+          "altZh": "婆罗尼落点的五个信号：从危机中的镇定到反复出现的生死更新主题"
+        }
+      ]
+    },
+    "hasta-nakshatra": {
+      "hero": {
+        "prompt": "An open hand drawn in delicate gold constellation line-art, palm upward, cradling a small crescent moon floating just above it; fine orbiting rings of measuring thread and tiny calibration marks circle the hand, as if the offering is being checked and refined one more time before release; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "An open constellation hand cradles a crescent moon, ringed by fine measuring threads",
+        "altZh": "星座线条勾出的手掌托起新月，四周环绕精细的度量丝线"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## hasta nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Hasta, Chitra, Ashwini: Craft and Care",
+          "titleZh": "哈斯塔、奇特拉、阿什维尼：技艺与照护",
+          "columns": [
+            {
+              "nameEn": "Hasta",
+              "nameZh": "哈斯塔",
+              "linesEn": [
+                "Refines inward before revealing",
+                "Works to be right",
+                "Sustained, corrective touch"
+              ],
+              "linesZh": [
+                "先向内打磨再示人",
+                "为做对而工作",
+                "持续而细致的修正之手"
+              ]
+            },
+            {
+              "nameEn": "Chitra",
+              "nameZh": "奇特拉",
+              "linesEn": [
+                "Channels craft outward as display",
+                "Works to be seen",
+                "Flair for visible creation"
+              ],
+              "linesZh": [
+                "把技艺外化为展示",
+                "为被看见而工作",
+                "醒目创作的天赋"
+              ]
+            },
+            {
+              "nameEn": "Ashwini",
+              "nameZh": "阿什维尼",
+              "linesEn": [
+                "Heals with swift response",
+                "Acts quickly and moves on",
+                "Speed over fine-grain detail"
+              ],
+              "linesZh": [
+                "以迅捷回应疗愈",
+                "快速行动随即转身",
+                "速度优先于细节"
+              ]
+            }
+          ],
+          "altEn": "Hasta's inward refinement compared with Chitra's outward display and Ashwini's swift healing response",
+          "altZh": "哈斯塔的向内打磨、奇特拉的对外展示与阿什维尼的迅捷疗愈之对比"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read hasta nakshatra in Yourself",
+          "titleEn": "Five Patterns of a Hasta Moon",
+          "titleZh": "哈斯塔月亮的五种模式",
+          "items": [
+            {
+              "nameEn": "Satisfaction in precision",
+              "nameZh": "精确带来的满足",
+              "subEn": "Quiet pleasure when misaligned things come right",
+              "subZh": "失准之物被校正时的安静愉悦"
+            },
+            {
+              "nameEn": "Perfectionism delays offering",
+              "nameZh": "完美主义推迟给予",
+              "subEn": "Help waits on a standard that keeps shifting upward",
+              "subZh": "帮助等待一条不断上移的标准线"
+            },
+            {
+              "nameEn": "Feeling processed by analysis",
+              "nameZh": "以分析处理感受",
+              "subEn": "Examination comes before emotional release",
+              "subZh": "先检视，后释放情绪"
+            },
+            {
+              "nameEn": "Ease in hands and detail",
+              "nameZh": "手与细节中的自在",
+              "subEn": "Bodywork, design, precise writing and cooking",
+              "subZh": "手作、设计、精细的写作与烹饪"
+            },
+            {
+              "nameEn": "Low threshold for what's off",
+              "nameZh": "对失准的低容忍",
+              "subEn": "Flaws register involuntarily, in others and self",
+              "subZh": "瑕疵不由自主地映入眼帘"
+            }
+          ],
+          "altEn": "Five habitual patterns of Hasta, from satisfaction in precision to involuntarily noticing flaws",
+          "altZh": "哈斯塔的五种惯常模式：从精确的满足到不由自主地察觉瑕疵"
+        }
+      ]
+    },
+    "krittika-nakshatra": {
+      "hero": {
+        "prompt": "An atmospheric painterly editorial scene: a dark open plain at night under a vast nebula sky with a tight bright cluster of stars high above (the Pleiades); rising from the dark ground a single tall sharp blade of golden flame-light burns clean and precise, throwing fine sparks upward toward the star cluster, fire as a cutting purifying edge, intense yet contained in mood, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame edge to edge, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no measurement marks, no central framed emblem or card, no chart wheel, no text or letters or numerals, no human faces",
+        "altEn": "A single sharp blade of golden flame rising from a dark plain toward a tight bright star cluster, throwing fine sparks.",
+        "altZh": "暗色平原上升起一道锋利洁净的金色火焰，向高空一簇明亮星团抛出细小火花。"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## krittika nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "One Flame, Two Containers: Krittika's Padas",
+          "titleZh": "一团火，两种容器：克里蒂卡的帕达",
+          "columns": [
+            {
+              "nameEn": "Aries Pada 1",
+              "nameZh": "白羊第一帕达",
+              "linesEn": [
+                "26°40'–30°00' sidereal Aries",
+                "Fire into fire: speed, directness",
+                "Correction fires before calculation",
+                "Clarity at the cost of harshness"
+              ],
+              "linesZh": [
+                "恒星黄道白羊 26°40'–30°00'",
+                "火入火：迅速而直接",
+                "修正先于社交盘算出手",
+                "代价：清晰但显得生硬"
+              ]
+            },
+            {
+              "nameEn": "Taurus Padas 2–4",
+              "nameZh": "金牛二至四帕达",
+              "linesEn": [
+                "0°–10°00' sidereal Taurus",
+                "Fire into earth: patient refinement",
+                "High standards applied over time",
+                "Accuracy at the cost of slower feedback"
+              ],
+              "linesZh": [
+                "恒星黄道金牛 0°–10°00'",
+                "火入土：耐心打磨",
+                "高标准随时间持续施加",
+                "代价：精准但反馈更慢"
+              ]
+            }
+          ],
+          "altEn": "Krittika's sign split compared: fast direct Aries Pada 1 versus patient exacting Taurus Padas 2–4",
+          "altZh": "克里蒂卡的星座分界对比：白羊第一帕达迅捷直接，金牛二至四帕达耐心严谨"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Krittika Nakshatra in Your Chart",
+          "titleEn": "Reading a Krittika Placement",
+          "titleZh": "解读克里蒂卡落点",
+          "items": [
+            {
+              "nameEn": "Aries Pada 1 (26°40'–30°)",
+              "nameZh": "白羊第一帕达（26°40'–30°）",
+              "subEn": "Correction impulse arrives before social calculation",
+              "subZh": "修正冲动先于社交盘算到来"
+            },
+            {
+              "nameEn": "Taurus Padas 2–4 (0°–10°)",
+              "nameZh": "金牛二至四帕达（0°–10°）",
+              "subEn": "Observations refined internally before expression",
+              "subZh": "观察先在内部打磨，再对外表达"
+            },
+            {
+              "nameEn": "The Agni thread",
+              "nameZh": "阿耆尼的火线",
+              "subEn": "Low threshold for imprecision across all placements",
+              "subZh": "所有落点共有：难容不精确"
+            },
+            {
+              "nameEn": "Craft and mastery themes",
+              "nameZh": "技艺与精进主题",
+              "subEn": "A precise internal standard aimed at a chosen domain",
+              "subZh": "把精确的内在标准投向选定领域"
+            },
+            {
+              "nameEn": "Near the sign cusp",
+              "nameZh": "靠近星座交界",
+              "subEn": "Both signatures surface; dasha periods shift dominance",
+              "subZh": "两种特征并存，大运更替主导"
+            }
+          ],
+          "altEn": "Five steps for reading Krittika in a chart, from the Aries and Taurus pada signals to cusp placements",
+          "altZh": "解读克里蒂卡落点的五个要点：从白羊与金牛帕达信号到星座交界"
+        }
+      ]
+    },
+    "mrigashira-nakshatra": {
+      "hero": {
+        "prompt": "A deer's head with gentle antlers traced in fine gold constellation lines, nose lifted, following a winding luminous trail of tiny scent particles that loops far out through dark space and curves back to end at the deer's own chest — the fragrance it seeks originating from itself; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A constellation deer follows a winding gold scent trail that loops back to its own chest",
+        "altZh": "星座之鹿追随蜿蜒的金色气息，轨迹绕回自己的胸口"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## mrigashira nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Rohini, Mrigashira, Ardra: Three Speeds",
+          "titleZh": "罗希尼、姆里加希拉、阿德拉：三种节奏",
+          "columns": [
+            {
+              "nameEn": "Rohini",
+              "nameZh": "罗希尼",
+              "linesEn": [
+                "Moon-ruled, fixed Taurus earth",
+                "Gathers beauty and holds it",
+                "Arrival feels like a natural end"
+              ],
+              "linesZh": [
+                "月亮主管，金牛固定土象",
+                "采集美并将其留存",
+                "抵达即自然的终点"
+              ]
+            },
+            {
+              "nameEn": "Mrigashira",
+              "nameZh": "姆里加希拉",
+              "linesEn": [
+                "Mars-ruled, Soma presiding",
+                "Moves when Rohini would rest",
+                "Follows discovery by scent"
+              ],
+              "linesZh": [
+                "火星主管，苏摩主祭",
+                "在罗希尼想停驻时启程",
+                "循气息缓缓趋近发现"
+              ]
+            },
+            {
+              "nameEn": "Ardra",
+              "nameZh": "阿德拉",
+              "linesEn": [
+                "Rahu-ruled, storm imagery",
+                "Forces breakthroughs by rupture",
+                "Pushes toward revelation"
+              ],
+              "linesZh": [
+                "罗睺主管，风暴意象",
+                "以裂变强行突破",
+                "推挤着冲向启示"
+              ]
+            }
+          ],
+          "altEn": "Rohini's settled arrival, Mrigashira's scent-tracking pursuit, and Ardra's storm-forced breakthrough compared",
+          "altZh": "罗希尼的安定抵达、姆里加希拉的循迹追寻与阿德拉的风暴突破之对比"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read mrigashira nakshatra in Yourself",
+          "titleEn": "Five Signals of the Seeker",
+          "titleZh": "追寻者的五个信号",
+          "items": [
+            {
+              "nameEn": "The moving goalpost",
+              "nameZh": "不断移动的门柱",
+              "subEn": "What felt right starts feeling insufficient once reached",
+              "subZh": "一经抵达，曾经的刚好便显不足"
+            },
+            {
+              "nameEn": "Scent over map",
+              "nameZh": "循气息而非地图",
+              "subEn": "Intuitive pull arrives before logic has an explanation",
+              "subZh": "直觉牵引先于逻辑给出解释"
+            },
+            {
+              "nameEn": "Beauty as compass",
+              "nameZh": "以美为罗盘",
+              "subEn": "Aesthetic response works as directional information",
+              "subZh": "审美反应是方向信息而非装饰"
+            },
+            {
+              "nameEn": "The Taurus-Gemini split",
+              "nameZh": "金牛—双子的拉扯",
+              "subEn": "Wanting to hold and to circulate at the same time",
+              "subZh": "想留存也想流转，两者并行"
+            },
+            {
+              "nameEn": "The recognition moment",
+              "nameZh": "认出的那一刻",
+              "subEn": "Realizing the pursuit was internal the whole time",
+              "subZh": "发觉所寻之物始终在自身之内"
+            }
+          ],
+          "altEn": "Five observable signals of Mrigashira, from the moving goalpost to the moment seeking turns inward",
+          "altZh": "姆里加希拉的五个可观察信号：从移动的门柱到追寻转向内在的一刻"
+        }
+      ]
+    },
+    "pushya-nakshatra": {
+      "hero": {
+        "prompt": "A great ringed planet reimagined as a vessel: its luminous gold ring forms the rim of a wide bowl from which thin, measured streams of glowing milk-light pour steadily down into a row of small cups below, none overflowing, the flow calm and inexhaustible — discipline serving nourishment as a container, not a cage; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A ringed planet as a bowl pouring steady streams of golden light into small cups below",
+        "altZh": "带环行星化作大碗，将金色光流稳稳注入下方的小杯"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## pushya nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Three Cancer Nakshatras, Three Ways to Give",
+          "titleZh": "巨蟹座三月宿：三种给予方式",
+          "columns": [
+            {
+              "nameEn": "Punarvasu",
+              "nameZh": "普纳婆苏",
+              "linesEn": [
+                "Ruled by Jupiter",
+                "Care through cyclical renewal",
+                "Expansive, easily replenished",
+                "Can scatter when demand spikes"
+              ],
+              "linesZh": [
+                "木星主管",
+                "以循环更新滋养",
+                "扩张而易于回补",
+                "需求激增时易散逸"
+              ]
+            },
+            {
+              "nameEn": "Pushya",
+              "nameZh": "普沙",
+              "linesEn": [
+                "Ruled by Saturn",
+                "Care delivered within structure",
+                "Bounded but doesn't run out",
+                "Consistency builds trust"
+              ],
+              "linesZh": [
+                "土星主管",
+                "在结构中输送照护",
+                "有边界但不枯竭",
+                "以稳定换取信任"
+              ]
+            },
+            {
+              "nameEn": "Ashlesha",
+              "nameZh": "阿什莱沙",
+              "linesEn": [
+                "Ruled by Mercury",
+                "Reads the situation before giving",
+                "Adapts to what the moment needs",
+                "Trades consistency for precision"
+              ],
+              "linesZh": [
+                "水星主管",
+                "先洞察情境再给予",
+                "随当下所需而调整",
+                "以稳定换情境精准"
+              ]
+            }
+          ],
+          "altEn": "The three Cancer nakshatras compared: Punarvasu's renewing care, Pushya's structured care, Ashlesha's strategic care",
+          "altZh": "巨蟹三月宿对比：普纳婆苏的更新式照护、普沙的结构式照护与阿什莱沙的筹谋式照护"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read pushya nakshatra in Yourself",
+          "titleEn": "Five Ways Pushya Activates in a Chart",
+          "titleZh": "普沙在星盘中启动的五种方式",
+          "items": [
+            {
+              "nameEn": "Moon in Pushya",
+              "nameZh": "月亮入普沙",
+              "subEn": "3°20'–16°40' Cancer; safety built through reliability",
+              "subZh": "巨蟹 3°20'–16°40'，以可靠感筑安全"
+            },
+            {
+              "nameEn": "Ascendant in Pushya",
+              "nameZh": "上升入普沙",
+              "subEn": "Naturally steps into grounding, stabilizing roles",
+              "subZh": "自然走入稳定者与压舱石的角色"
+            },
+            {
+              "nameEn": "Saturn transiting Pushya",
+              "nameZh": "土星过境普沙",
+              "subEn": "Reinforces reliable care; strips what goes through motions",
+              "subZh": "巩固真实照护，剥除敷衍的形式"
+            },
+            {
+              "nameEn": "Pushya muhurta",
+              "nameZh": "普沙择时",
+              "subEn": "Favored window for beginning lasting enterprises",
+              "subZh": "传统视为开启持久事业的吉窗"
+            },
+            {
+              "nameEn": "Dasha with planets here",
+              "nameZh": "此处行星的大运",
+              "subEn": "Themes build steadily over years, patient and Saturnine",
+              "subZh": "主题随岁月累积，耐心而绵长"
+            }
+          ],
+          "altEn": "Five ways Pushya activates: natal Moon, Ascendant, Saturn transit, muhurta timing, and dasha periods",
+          "altZh": "普沙启动的五种方式：本命月亮、上升、土星过境、择时与大运"
+        }
+      ]
+    },
+    "rohini-nakshatra": {
+      "hero": {
+        "prompt": "A golden ox-cart with rounded wheels rolling slowly across a dark furrowed field, its bed heaped with softly glowing ripe orbs and sheaves; a large luminous full moon hangs low above it and one bright warm star burns ahead on the horizon, while tiny gold shoots sprout from the furrows in the cart's wake — the quiet power to make things grow; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A golden ox-cart heaped with glowing harvest under a full moon, gold shoots sprouting in its wake",
+        "altZh": "满载发光收成的金色牛车行于月下，车辙间冒出金色新芽"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## rohini nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Krittika, Rohini, Mrigashira: Cut, Ripen, Seek",
+          "titleZh": "克里蒂卡、罗希尼、姆里加希拉：切割、成熟、追寻",
+          "columns": [
+            {
+              "nameEn": "Krittika",
+              "nameZh": "克里蒂卡",
+              "linesEn": [
+                "Sun-ruled, just before",
+                "Cuts and refines",
+                "Prizes clarity over comfort"
+              ],
+              "linesZh": [
+                "太阳主管，居前一位",
+                "切割并提纯",
+                "重清晰甚于安适"
+              ]
+            },
+            {
+              "nameEn": "Rohini",
+              "nameZh": "罗希尼",
+              "linesEn": [
+                "Moon-ruled, in Taurus",
+                "Attracts, holds, and ripens",
+                "Depth, loyalty, staying power"
+              ],
+              "linesZh": [
+                "月亮主管，居金牛",
+                "吸引、持有并使之成熟",
+                "深度、忠诚与持久力"
+              ]
+            },
+            {
+              "nameEn": "Mrigashira",
+              "nameZh": "姆里加希拉",
+              "linesEn": [
+                "Mars-ruled, just after",
+                "Searches restlessly",
+                "Reaches for the next thing"
+              ],
+              "linesZh": [
+                "火星主管，居后一位",
+                "不息地寻索",
+                "伸手探向下一个目标"
+              ]
+            }
+          ],
+          "altEn": "Rohini's ripening pull compared with Krittika's cutting refinement before it and Mrigashira's restless search after it",
+          "altZh": "罗希尼的成熟之力与前后相邻的克里蒂卡之切割、姆里加希拉之追寻对比"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Rohini in Your Chart",
+          "titleEn": "Rohini's Four Padas",
+          "titleZh": "罗希尼的四个帕达",
+          "items": [
+            {
+              "nameEn": "Pada 1 — 10°–13°20′",
+              "nameZh": "第一帕达 10°–13°20′",
+              "subEn": "Aries navamsa: driven, assertive growth with initiative",
+              "subZh": "白羊九分盘：进取果敢，主动求成长"
+            },
+            {
+              "nameEn": "Pada 2 — 13°20′–16°40′",
+              "nameZh": "第二帕达 13°20′–16°40′",
+              "subEn": "Taurus navamsa: material, sensual, steady accumulation",
+              "subZh": "金牛九分盘：物质感官，稳步积累"
+            },
+            {
+              "nameEn": "Pada 3 — 16°40′–20°",
+              "nameZh": "第三帕达 16°40′–20°",
+              "subEn": "Gemini navamsa: beauty through words, trade, and ideas",
+              "subZh": "双子九分盘：以言语、贸易与想法呈现美"
+            },
+            {
+              "nameEn": "Pada 4 — 20°–23°20′",
+              "nameZh": "第四帕达 20°–23°20′",
+              "subEn": "Cancer navamsa: abundance turned toward home and care",
+              "subZh": "巨蟹九分盘：丰盛转向家庭与照护"
+            }
+          ],
+          "altEn": "Rohini's four padas from 10° to 23°20′ Taurus, each colored by an Aries, Taurus, Gemini, or Cancer navamsa",
+          "altZh": "罗希尼四个帕达（金牛 10°–23°20′），分别对应白羊、金牛、双子、巨蟹九分盘"
+        }
+      ]
+    },
+    "swati-nakshatra": {
+      "hero": {
+        "prompt": "A single tall blade of grass in gold line-art bowing gracefully in an unseen wind, while a stream of small luminous coin-like orbs rides the wind current past it — flowing in, swirling once around the blade, and flowing onward through a loose constellation of faint nodes, never settling into a pile; circulation instead of accumulation; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), calm introspective editorial illustration, wide 16:9 composition, no text or letters",
+        "altEn": "A blade of grass bends in the wind as luminous coin-like orbs flow past without pooling",
+        "altZh": "草叶在风中弯垂，发光的圆珠如钱币般流经而不停驻"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## swati nakshatra vs Adjacent Concepts: How It Works + Trade-offs",
+          "titleEn": "Swati, Chitra, Vishakha: Where Desire Points",
+          "titleZh": "斯瓦蒂、奇特拉、维莎卡：欲望的指向",
+          "columns": [
+            {
+              "nameEn": "Swati",
+              "nameZh": "斯瓦蒂",
+              "linesEn": [
+                "Rahu-ruled, fully in Libra",
+                "Distributes node to node",
+                "Range and relational reach",
+                "Accumulation feels upstream"
+              ],
+              "linesZh": [
+                "罗睺主管，全居天秤",
+                "在节点间分发流转",
+                "广度与关系网络的触达",
+                "积累如同逆流而上"
+              ]
+            },
+            {
+              "nameEn": "Chitra",
+              "nameZh": "奇特拉",
+              "linesEn": [
+                "Mars-ruled, partly in Libra",
+                "Builds toward a polished result",
+                "Single-minded constructive drive"
+              ],
+              "linesZh": [
+                "火星主管，部分居天秤",
+                "朝打磨成品持续构建",
+                "专一的建造驱动"
+              ]
+            },
+            {
+              "nameEn": "Vishakha",
+              "nameZh": "维莎卡",
+              "linesEn": [
+                "Jupiter-Saturn co-ruled",
+                "Desire aimed at long-term goals",
+                "Patient, two-phase ambition"
+              ],
+              "linesZh": [
+                "木星与土星共管",
+                "欲望指向长期目标",
+                "耐心的两段式雄心"
+              ]
+            }
+          ],
+          "altEn": "Swati's circulating distribution compared with Chitra's constructive drive and Vishakha's long-horizon ambition",
+          "altZh": "斯瓦蒂的流转分发、奇特拉的建造驱动与维莎卡的长线雄心之对比"
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read swati nakshatra in Yourself",
+          "titleEn": "The Rahu Amplification Cycle",
+          "titleZh": "罗睺放大循环",
+          "items": [
+            {
+              "nameEn": "Momentum",
+              "nameZh": "蓄势",
+              "subEn": "Desire-driven expansion; income and attention arrive",
+              "subZh": "欲望驱动扩张，收入与关注涌入"
+            },
+            {
+              "nameEn": "Redistribution",
+              "nameZh": "再分配",
+              "subEn": "Resources move outward to people and collaborations",
+              "subZh": "资源外流至人际与协作项目"
+            },
+            {
+              "nameEn": "Reset",
+              "nameZh": "重置",
+              "subEn": "The cycle clears before a reserve forms, then repeats",
+              "subZh": "储备未及成形循环已清空，再次启动"
+            }
+          ],
+          "altEn": "Swati's Rahu cycle in three phases: momentum, redistribution, and reset before a reserve forms",
+          "altZh": "斯瓦蒂的罗睺循环三阶段：蓄势、再分配与储备成形前的重置"
+        }
+      ]
+    }
+  }
+}

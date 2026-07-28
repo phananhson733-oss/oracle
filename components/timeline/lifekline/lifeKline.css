@@ -1,0 +1,212 @@
+/* INPUT: 设计 artifact astrologywiki_embedded_life_kline_v7_rich_hover_cn.html 的 <style> 块（1:1 机械转换：类名加 .lk- 前缀、裸元素限定到 .lk-scope、:root 变量改 --lk-*、tooltip z-index 50→60、artifact body padding 移植到 .lk-scope、html/*{box-sizing} 不移植）。 */
+/* OUTPUT: 人生 K 线区块全部 scoped 样式（.lk-scope 命名空间），对 Tailwind 与全站样式零污染；由 LifeKlineSection.tsx import 生效。 */
+/* POS: components/timeline/lifekline 的样式层。tooltip/toast/modal 走 createPortal(body) 时，portal 根元素必须自带 .lk-scope wrapper 类，否则命中不到本文件规则。若更新此文件，务必更新本目录 FOLDER.md。 */
+/* 注：muted/图表灰字/图例 chip 前景已按 AA（≥4.5:1）评审加深，正文字号（node-copy/module-card p/pattern-item p）+1px——有意偏离 artifact 原值。 */
+
+/* ===== 作用域与变量（artifact :root → .lk-scope） ===== */
+.lk-scope{
+  --lk-bg:#eef8f7;
+  --lk-card:#ffffff;
+  --lk-ink:#223034;
+  --lk-muted:#5f6e76;
+  --lk-line:#e6eeee;
+  --lk-green:#1fbf61;
+  --lk-red:#ef4444;
+  --lk-orange:#ff7a1a;
+  --lk-blue:#4f7df3;
+  --lk-ink-dark:#222b35;
+  --lk-soft:#f7fbfb;
+  --lk-cream:#fffaf3;
+  --lk-shadow:0 20px 55px rgba(30,52,58,.10);
+  --lk-radius:26px;
+  background:var(--lk-bg);
+  padding:34px 18px 60px;
+  border-radius:26px;
+  color:#223034;
+  font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  color-scheme:light;
+}
+
+/* ===== 卡片外壳与图表头部 ===== */
+.lk-shell{max-width:1500px;margin:0 auto}
+.lk-kline-card{background:var(--lk-card);border:1px solid #d5e6e7;border-radius:var(--lk-radius);box-shadow:var(--lk-shadow);padding:30px 34px 26px}
+.lk-chart-head{display:flex;align-items:center;justify-content:space-between;gap:24px;margin-bottom:12px}
+.lk-brandline{display:flex;align-items:center;gap:16px;min-width:360px}
+.lk-scope .lk-title{margin:0;font-size:28px;line-height:1.12;letter-spacing:-.04em;color:#26383d;font-weight:800}
+.lk-subhead{margin:4px 0 0;color:#5f6e76;font-size:13px;letter-spacing:.06em;text-transform:uppercase}
+
+/* ===== 图例 ===== */
+.lk-legend{display:flex;align-items:center;gap:12px;flex-wrap:wrap;justify-content:flex-end}
+.lk-legend span{display:inline-flex;align-items:center;gap:7px;padding:8px 11px;border-radius:8px;font-weight:700;font-size:13px;white-space:nowrap}
+.lk-legend .lk-good{background:#eaf8ef;color:#0e7a39}
+.lk-legend .lk-bad{background:#fff0f0;color:#b32f2f}
+.lk-legend .lk-ma{background:#fff4e7;color:#b34e08}
+.lk-dot{width:10px;height:10px;border-radius:99px;display:inline-block}
+.lk-dash{width:26px;height:0;border-top:3px solid currentColor;display:inline-block}
+
+/* ===== SVG 图表 ===== */
+.lk-chart-wrap{position:relative;overflow:hidden;border-radius:18px;background:linear-gradient(180deg,#fcffff 0,#fbfdfd 100%);border:1px solid #edf3f3;padding:0}
+/* 只作用于图表 svg（避免误伤图标类内联 svg）；pan-x pan-y 保证 ≤700px 横滚容器内横向手势不被吞。 */
+.lk-chart-wrap svg{display:block;width:100%;height:auto;touch-action:pan-x pan-y}
+.lk-grid{stroke:#e8f0f1;stroke-width:1;stroke-dasharray:4 6}
+.lk-axis{fill:#6a7880;font-size:13px}
+.lk-axis-label{fill:#6a7880;font-size:13px;letter-spacing:.02em}
+.lk-stage-line{stroke:#a7b8ff;stroke-width:1.4;stroke-dasharray:5 5;opacity:.72}
+.lk-stage-label{fill:#6d7bff;font-size:13px;font-weight:700}
+.lk-ma-line{fill:none;stroke:var(--lk-orange);stroke-width:3.2;stroke-linecap:round;stroke-linejoin:round}
+.lk-wick{stroke-width:2.1;stroke-linecap:round}
+.lk-candle-body{rx:3;cursor:pointer}
+.lk-hit{fill:transparent;cursor:pointer}
+.lk-hit:focus-visible{outline:2px solid #26383d;outline-offset:-2px}
+.lk-selected-outline{fill:none;stroke:#1f2937;stroke-width:2.3;stroke-dasharray:4 3;pointer-events:none}
+.lk-marker-line{stroke:#26383d;stroke-width:1.2;stroke-dasharray:5 5;opacity:.24;pointer-events:none}
+.lk-score-dot{fill:#26383d;stroke:white;stroke-width:2;pointer-events:none}
+.lk-bubble{filter:drop-shadow(0 6px 12px rgba(0,0,0,.15))}
+.lk-bubble-text{fill:white;font-weight:800;font-size:13px}
+.lk-chart-note{position:absolute;right:18px;bottom:12px;color:#6a7880;font-size:13px}
+
+/* ===== 富 hover tooltip（z-index 50→60：站内 nav 为 z-50） ===== */
+.lk-tooltip{position:fixed;z-index:60;pointer-events:none;background:#fff;color:var(--lk-ink);border:1px solid #dfe9ea;border-radius:24px;padding:0;box-shadow:0 28px 80px rgba(32,52,60,.22);width:min(430px,calc(100vw - 28px));display:none;font-size:14px;line-height:1.48;overflow:hidden}
+.lk-tip-head{display:flex;align-items:flex-start;justify-content:space-between;gap:18px;padding:22px 24px 14px}
+.lk-tip-year{font-family:Georgia,"Times New Roman","Songti SC",serif;font-size:31px;line-height:1.05;font-weight:800;letter-spacing:-.04em;color:#182834}
+.lk-tip-age{font-family:Inter,"PingFang SC",sans-serif;font-size:20px;color:#667585;font-weight:800;margin-left:6px}
+.lk-tip-cycle{margin-top:12px;color:#0b8878;font-weight:800;font-size:16px}
+.lk-tip-cycle:before{content:"";display:inline-block;width:10px;height:10px;background:#0b9b86;border-radius:50%;margin-right:9px;vertical-align:1px}
+.lk-tip-badge{min-width:58px;height:58px;border-radius:16px;display:grid;place-items:center;font-size:28px;font-weight:900}
+.lk-tip-badge.lk-good{background:#edfdf2;color:#119b49;border:1px solid #b8f0ca}
+.lk-tip-badge.lk-bad{background:#fff2f2;color:#df3d3d;border:1px solid #ffd0d0}
+.lk-tip-badge.lk-neutral{background:#f3f6f7;color:#56656d;border:1px solid #e1e9eb}
+.lk-tip-divider{height:1px;background:#e7eeee;margin:0 24px}
+.lk-tip-ohlc{margin:16px 24px 14px;background:#f7fafb;border-radius:18px;padding:15px 10px;display:grid;grid-template-columns:repeat(4,1fr);gap:2px;text-align:center}
+.lk-tip-ohlc span{display:block;color:#667585;font-size:14px;font-weight:700;margin-bottom:7px}
+.lk-tip-ohlc strong{font-size:22px;line-height:1;color:#172633}
+.lk-tip-ohlc .lk-hi strong,.lk-tip-ohlc .lk-hi span{color:#10a650}
+.lk-tip-ohlc .lk-lo strong,.lk-tip-ohlc .lk-lo span{color:#e12f2f}
+.lk-tip-score{padding:2px 24px 12px}
+.lk-tip-score-row{display:flex;align-items:baseline;justify-content:space-between;color:#667585;font-size:15px}
+.lk-tip-score-row b{font-size:22px;color:#12a34f}
+.lk-tip-bar{height:12px;border-radius:999px;background:#e4ebf0;margin-top:10px;overflow:hidden}
+.lk-tip-fill{height:100%;border-radius:999px;background:linear-gradient(90deg,#52d886,#0ea34c)}
+.lk-tip-body{padding:13px 24px 22px;color:#33424b}
+.lk-tip-body p{margin:0 0 13px;font-size:15.5px;line-height:1.62}
+.lk-tip-kicker{display:block;color:#7b8b92;font-size:13px;font-weight:800;margin-bottom:4px}
+.lk-tip-mini{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}
+.lk-tip-mini div{border:1px solid #e6eeee;background:#fbfefe;border-radius:14px;padding:10px}
+.lk-tip-mini b{display:block;font-size:12px;color:#7b8b92;margin-bottom:4px}
+.lk-tip-mini span{font-weight:800;color:#24343b}
+.lk-tip-modules{display:flex;gap:6px;flex-wrap:wrap;margin-top:12px}
+.lk-tip-chip{border:1px solid #e0ebeb;background:#f7fbfb;border-radius:999px;padding:6px 9px;font-size:12px;font-weight:800;color:#526168}
+.lk-tip-foot{padding:10px 24px 16px;background:#fbfdfd;border-top:1px solid #eef4f4;color:#6a7880;font-size:12px;font-weight:700}
+
+/* ===== 双栏面板（节点解读 / cream 规律面板） ===== */
+.lk-below{display:grid;grid-template-columns:1.05fr .95fr;gap:18px;margin-top:18px}
+.lk-panel{background:var(--lk-card);border:1px solid #e3eded;border-radius:22px;padding:20px;box-shadow:0 10px 28px rgba(30,52,58,.055)}
+.lk-panel.lk-soft{background:#fbffff}
+.lk-panel.lk-cream{background:var(--lk-cream);border-color:#f1dfc5}
+.lk-panel h2{margin:0;font-size:21px;letter-spacing:-.035em}
+.lk-panel h3{margin:0;font-size:17px;letter-spacing:-.025em}
+.lk-muted{color:var(--lk-muted)}
+.lk-node-top{display:flex;align-items:flex-start;justify-content:space-between;gap:20px;margin-bottom:12px}
+.lk-score-pill{min-width:84px;border-radius:16px;background:#effaf3;color:#0f8f45;padding:9px 12px;text-align:center;font-weight:900}
+.lk-score-pill b{font-size:24px;display:block;line-height:1}
+.lk-score-pill span{font-size:11px;text-transform:uppercase;letter-spacing:.08em;color:#5c8b6e}
+.lk-node-title{font-size:23px;font-weight:850;letter-spacing:-.04em;margin:0 0 6px}
+.lk-node-copy{margin:0;color:#526168;line-height:1.6;font-size:16px}
+.lk-mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:16px}
+.lk-mini{background:#f6fbfb;border:1px solid #e5efef;border-radius:15px;padding:12px}
+.lk-mini span{display:block;color:#5f6e76;font-size:12px;margin-bottom:4px}
+.lk-mini strong{font-size:14px;line-height:1.3;display:block}
+.lk-pattern-list{display:grid;gap:10px;margin-top:14px}
+.lk-pattern-item{display:flex;gap:12px;background:#fff;border:1px solid #e7eeee;border-radius:15px;padding:12px}
+.lk-pattern-num{width:27px;height:27px;border-radius:9px;background:#eef5ff;color:#4968d7;font-weight:900;display:grid;place-items:center;flex:0 0 auto}
+.lk-pattern-item p{margin:2px 0 0;color:#627078;font-size:14px;line-height:1.5}
+.lk-section-title{display:flex;align-items:end;justify-content:space-between;gap:18px;margin:28px 0 12px}
+.lk-section-title h2{margin:0;font-size:23px;letter-spacing:-.04em}
+.lk-section-title p{margin:6px 0 0;color:#7b8990;max-width:760px;line-height:1.5}
+
+/* ===== 6 生命领域模块卡 ===== */
+.lk-module-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.lk-module-card{background:white;border:1px solid #dfeaea;border-radius:22px;padding:18px;cursor:pointer;position:relative;transition:.18s transform,.18s border-color,.18s box-shadow;min-height:188px}
+.lk-module-card:hover{transform:translateY(-2px);box-shadow:0 12px 30px rgba(30,52,58,.08)}
+.lk-module-card.lk-active{border-color:#8b7cff;box-shadow:0 0 0 3px rgba(139,124,255,.13),0 12px 32px rgba(30,52,58,.10);background:linear-gradient(180deg,#ffffff,#fbfaff)}
+.lk-module-head{display:flex;align-items:flex-start;justify-content:space-between;gap:10px}
+.lk-module-icon{width:36px;height:36px;border-radius:12px;background:#f5f2ff;color:#6c55ea;display:grid;place-items:center;font-weight:900}
+.lk-module-title{font-weight:850;font-size:18px;letter-spacing:-.03em;margin:0}
+.lk-module-sub{margin:4px 0 0;color:#5f6e76;font-size:13px}
+.lk-module-score{border-radius:12px;background:#f6fbf7;color:#15934a;padding:8px 9px;font-weight:900;font-size:16px}
+.lk-module-card p{color:#536269;line-height:1.5;font-size:15px;margin:15px 0 14px}
+.lk-lock-row{display:flex;align-items:center;justify-content:space-between;gap:10px;border-top:1px solid #edf2f2;padding-top:12px;color:#8a959b;font-size:13px}
+.lk-lock{display:inline-flex;align-items:center;gap:6px;color:#6d5cea;font-weight:800}
+.lk-tiny-btn{border:1px solid #ded6ff;background:#f7f4ff;color:#654ee7;border-radius:999px;padding:8px 10px;font-weight:800;font-size:12px;cursor:pointer}
+.lk-wide-row{display:grid;grid-template-columns:.95fr 1.05fr;gap:18px;margin-top:18px}
+.lk-module-detail h2{margin-bottom:6px}
+.lk-module-detail-body{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:14px}
+.lk-locked-line{position:relative;border:1px solid #e9eeee;background:#fff;border-radius:15px;padding:14px;min-height:76px;overflow:hidden}
+.lk-locked-line:after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(255,255,255,.18),rgba(255,255,255,.82));backdrop-filter:blur(2.5px)}
+.lk-locked-line b{display:block;margin-bottom:6px}
+
+/* ===== paywall 面板 ===== */
+.lk-paywall{background:linear-gradient(135deg,#171a24,#332f5b);color:white;border:0;position:relative;overflow:hidden}
+.lk-paywall:before{content:"";position:absolute;right:-80px;top:-90px;width:250px;height:250px;border-radius:999px;background:rgba(255,255,255,.12)}
+.lk-paywall h2,.lk-paywall h3{color:white}
+.lk-paywall .lk-muted{color:#c9c8dc}
+.lk-pay-list{display:grid;gap:10px;margin:18px 0}
+.lk-pay-item{display:flex;gap:10px;align-items:flex-start;background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.12);border-radius:14px;padding:12px}
+.lk-pay-item b{display:block}
+.lk-primary{border:0;background:#ffffff;color:#1d2231;border-radius:999px;padding:13px 18px;font-weight:900;cursor:pointer;box-shadow:0 10px 20px rgba(0,0,0,.12)}
+.lk-secondary{border:1px solid rgba(255,255,255,.35);background:rgba(255,255,255,.08);color:white;border-radius:999px;padding:13px 16px;font-weight:800;cursor:pointer}
+
+/* ===== toast / modal / included 列表 ===== */
+.lk-toast{position:fixed;left:50%;bottom:24px;transform:translateX(-50%) translateY(30px);background:#1f2933;color:white;padding:12px 16px;border-radius:999px;font-weight:800;box-shadow:0 16px 35px rgba(0,0,0,.20);opacity:0;transition:.22s;z-index:80}
+.lk-toast.lk-show{opacity:1;transform:translateX(-50%) translateY(0)}
+.lk-modal-backdrop{position:fixed;inset:0;background:rgba(12,18,22,.45);display:none;align-items:center;justify-content:center;z-index:90;padding:20px}
+.lk-modal-backdrop.lk-open{display:flex}
+.lk-modal{background:white;border-radius:24px;box-shadow:0 35px 90px rgba(0,0,0,.30);width:min(560px,96vw);padding:25px}
+.lk-modal h2{margin:0 0 8px}
+.lk-modal p{color:#65737b;line-height:1.55}
+.lk-modal-actions{display:flex;gap:10px;justify-content:flex-end;margin-top:18px}
+.lk-modal .lk-primary{background:#1f2937;color:white}
+.lk-modal .lk-secondary{background:#f4f6f7;color:#25313a;border-color:#dbe4e6}
+.lk-included{display:none;margin-top:14px;border-top:1px solid #e7eeee;padding-top:12px}
+.lk-included.lk-open{display:grid;gap:8px}
+.lk-included div{background:#f8fbfb;border:1px solid #e6eeee;border-radius:12px;padding:10px;color:#4e5c63;font-size:14px}
+
+/* ===== 页脚 ===== */
+.lk-footer{margin:18px 4px 0;color:#6a7880;font-size:12px;line-height:1.45}
+
+/* ===== 响应式（artifact body padding 已进 .lk-scope 基础规则，700px 覆盖为紧凑值；移动端 chart 横滚保留） ===== */
+@media (max-width:1100px){
+  .lk-below,.lk-wide-row{grid-template-columns:1fr}
+  .lk-module-grid{grid-template-columns:repeat(2,1fr)}
+  .lk-chart-head{align-items:flex-start;flex-direction:column}
+  .lk-legend{justify-content:flex-start}
+  .lk-brandline{min-width:0}
+  .lk-kline-card{padding:22px}
+}
+@media (max-width:700px){
+  .lk-scope{padding:14px 10px 40px}
+  .lk-kline-card{padding:16px;border-radius:20px}
+  .lk-chart-wrap{overflow-x:auto}
+  .lk-chart-wrap svg{min-width:1120px}
+  .lk-module-grid{grid-template-columns:1fr}
+  .lk-mini-grid,.lk-module-detail-body{grid-template-columns:1fr}
+  .lk-scope .lk-title{font-size:22px}
+  .lk-section-title{display:block}
+  .lk-legend span{font-size:12px;padding:7px 9px}
+  .lk-panel{padding:16px}
+  .lk-wide-row{gap:14px}
+}
+
+/* 站内编辑部主题的全局衬线标题（h2/h3）会渗入本区块；artifact 标题为无衬线，这里显式拉回。
+   .lk-tip-year 的衬线（Georgia）是 artifact 有意设计，其为 div 不受本规则影响。 */
+.lk-scope h2,
+.lk-scope h3 {
+  font-family:
+    Inter,
+    ui-sans-serif,
+    system-ui,
+    -apple-system,
+    "Segoe UI",
+    Arial,
+    sans-serif;
+}

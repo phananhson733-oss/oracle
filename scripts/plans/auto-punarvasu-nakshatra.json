@@ -1,0 +1,122 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "punarvasu-nakshatra": {
+      "hero": {
+        "prompt": "An ancient road arcing back toward a luminous golden horizon across a vast indigo landscape, Jupiter gleaming as the single brightest celestial body overhead, soft gold light returning from beyond the horizon like the first light after a long night, the path curving through open terrain that suggests both journey and homecoming, a sense of expansive return rather than arrival at a new place, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Ancient road arcing back toward a golden horizon under deep indigo sky, Jupiter rising as the return of light after darkness",
+        "altZh": "远古道路在深靛蓝天空下弧向金色地平线，木星升起如黑暗后光的归来"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Punarvasu vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 它与相近概念的对照：运作方式 + 取舍",
+          "titleEn": "Punarvasu Renewal vs. Neighboring Concepts",
+          "titleZh": "普纳瓦苏的更新与相近概念对照",
+          "altEn": "Three-column comparison of Punarvasu renewal, simple fresh start, and Cancer-Moon nurture",
+          "altZh": "普纳瓦苏更新、单纯重新开始与巨蟹月亮呵护的三列对比图",
+          "columns": [
+            {
+              "nameEn": "Punarvasu Renewal",
+              "nameZh": "普纳瓦苏的更新",
+              "linesEn": [
+                "Carries lesson forward",
+                "Returns wiser, not blank",
+                "Durable growth each cycle",
+                "Jupiter-ruled expansion"
+              ],
+              "linesZh": [
+                "把教训带着往前走",
+                "更有智慧地回到立足点",
+                "每个周期持久成长",
+                "木星主管的扩展"
+              ]
+            },
+            {
+              "nameEn": "Simple Fresh Start",
+              "nameZh": "单纯的重新开始",
+              "linesEn": [
+                "Implies erasure",
+                "Wipe the slate clean",
+                "Fantasy of a clean reset",
+                "Nothing carried forward"
+              ],
+              "linesZh": [
+                "意味着抹除",
+                "清空石板从头来过",
+                "干净重置的幻想",
+                "没有任何东西被带前"
+              ]
+            },
+            {
+              "nameEn": "Cancer-Moon Nurture",
+              "nameZh": "巨蟹月亮式的呵护",
+              "linesEn": [
+                "Soothes and protects",
+                "Moon-ruled comfort",
+                "Emotional reassurance",
+                "Secondary layer in Punarvasu"
+              ],
+              "linesZh": [
+                "安抚与守护",
+                "月亮主管的安慰",
+                "情绪上的宽慰",
+                "此处为次级的一层"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Punarvasu in Your Chart",
+          "afterHeadingZh": "## 如何在星盘里识别这个月宿",
+          "titleEn": "5 Steps to Read Punarvasu in Your Vedic Chart",
+          "titleZh": "在吠陀星盘中识别普纳瓦苏的 5 个步骤",
+          "altEn": "Five-step sequence for reading Punarvasu placement in a Vedic natal chart",
+          "altZh": "在吠陀本命盘中读取普纳瓦苏落点的五步流程图",
+          "items": [
+            {
+              "nameEn": "Confirm Moon Degree",
+              "nameZh": "确认月亮度数",
+              "subEn": "Moon between 20° Gemini and 3°20' Cancer in Vedic chart",
+              "subZh": "月亮落在吠陀盘双子座 20° 至巨蟹座 3°20′ 之间"
+            },
+            {
+              "nameEn": "Read Jupiter's Condition",
+              "nameZh": "读木星的状态",
+              "subEn": "Jupiter's placement, sign, and aspects color the renewal theme",
+              "subZh": "木星的落点、星座与相位，为更新母题如何表达上色"
+            },
+            {
+              "nameEn": "Note Which Half",
+              "nameZh": "留意月亮落在哪一半",
+              "subEn": "Gemini side = intellectual recovery; Cancer side = emotional recovery",
+              "subZh": "偏双子 = 心智复原；偏巨蟹 = 情绪复原"
+            },
+            {
+              "nameEn": "Watch the Return Pattern",
+              "nameZh": "观察归来的模式",
+              "subEn": "Observe where setbacks have historically returned as growth",
+              "subZh": "观察过去哪些挫折作为成长回来、而非止于停滞"
+            },
+            {
+              "nameEn": "Hold Aditi Theme Lightly",
+              "nameZh": "轻持 Aditi 母题",
+              "subEn": "Renewal potential is a lens for resilience, not a guarantee",
+              "subZh": "更新潜力是看韧性的镜头，不是每次损失都会逆转的允诺"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

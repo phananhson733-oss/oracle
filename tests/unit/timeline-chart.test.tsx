@@ -1,0 +1,284 @@
+// @vitest-environment jsdom
+// INPUT: <TimelineChart> + mock TimelineCandle[]。
+// OUTPUT: jsdom 渲染冒烟测试 — SVG 渲染、每日一个蜡烛组、点击回传日期、单蜡烛无 MA 线不崩、marker 圆点。
+// POS: 月度 K 线主图渲染契约；TimelineChart 组件变更需同步本测试。
+
+import { describe, it, expect, vi } from "vitest";
+import { render, fireEvent, within } from "@testing-library/react";
+import { TimelineChart } from "../../components/timeline/TimelineChart";
+import type { TimelineCandle } from "../../types";
+
+const candle = (
+  date: string,
+  over: Partial<TimelineCandle> = {},
+): TimelineCandle => ({
+  date,
+  start: 40,
+  peak: 60,
+  dip: 30,
+  end: 50,
+  intensity: 50,
+  harmony: 20,
+  tension: 15,
+  dominantPhase: "applying",
+  dataQuality: "ok",
+  sampleCount: 5,
+  topAspects: [],
+  ...over,
+});
+
+describe("TimelineChart", () => {
+  it("renders an SVG with one candle group per data point", () => {
+    const candles = [
+      candle("2026-06-01"),
+      candle("2026-06-02"),
+      candle("2026-06-03"),
+    ];
+    const { container } = render(<TimelineChart candles={candles} />);
+    expect(container.querySelector('svg[role="img"]')).toBeTruthy();
+    expect(container.querySelectorAll("g").length).toBe(3);
+  });
+
+  it("fires onSelectDate with the candle's date when a candle is clicked", () => {
+    const onSelect = vi.fn();
+    const candles = [candle("2026-06-07"), candle("2026-06-08")];
+    const { container } = render(
+      <TimelineChart candles={candles} onSelectDate={onSelect} />,
+    );
+    const groups = container.querySelectorAll("g");
+    fireEvent.click(groups[0]);
+    expect(onSelect).toHaveBeenCalledWith("2026-06-07");
+  });
+
+  it("omits the moving-average polyline for a single candle and does not crash", () => {
+    const { container } = render(
+      <TimelineChart candles={[candle("2026-06-01")]} />,
+    );
+    expect(container.querySelector("polyline")).toBeNull();
+    expect(container.querySelectorAll("g").length).toBe(1);
+  });
+
+  it("B6: hides the trend (MA) polyline when showTrend is false", () => {
+    const candles = [candle("2026-06-01"), candle("2026-06-02")];
+    const on = render(<TimelineChart candles={candles} showTrend />);
+    expect(on.container.querySelector("polyline")).toBeTruthy(); // default shows trend
+    const off = render(<TimelineChart candles={candles} showTrend={false} />);
+    expect(off.container.querySelector("polyline")).toBeNull();
+  });
+
+  it("B6: zoomFactor widens candles beyond the default cap (and clamps at 3x)", () => {
+    // 24 根（月视图量级，避开 sparse 加宽）测 zoom：默认 cap 12、zoom 放大、3x clamp。
+    const candles = Array.from({ length: 24 }, (_, i) =>
+      candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
+    );
+    const bodyW = (zoom?: number) => {
+      const { container } = render(
+        <TimelineChart candles={candles} zoomFactor={zoom} />,
+      );
+      return Math.max(
+        ...Array.from(
+          container.querySelectorAll("g > rect:nth-of-type(2)"),
+        ).map((r) => Number(r.getAttribute("width"))),
+      );
+    };
+    expect(bodyW(1)).toBeLessThanOrEqual(12); // default cap
+    expect(bodyW(2)).toBeGreaterThan(12); // 2x widens past it
+    expect(bodyW(99)).toEqual(bodyW(3)); // clamped at 3x
+  });
+
+  it("widens candles on sparse views (year/long-range) so they don't look thin on wide screens", () => {
+    // 12 月（year 视图）在宽屏上若按月视图 cap 12 会瘦长空旷；sparse 加宽让蜡烛更醒目。
+    const few = Array.from({ length: 12 }, (_, i) =>
+      candle(`2026-${String(i + 1).padStart(2, "0")}-01`),
+    );
+    const { container } = render(<TimelineChart candles={few} />);
+    const bodyW = Math.max(
+      ...Array.from(container.querySelectorAll("g > rect:nth-of-type(2)")).map(
+        (r) => Number(r.getAttribute("width")),
+      ),
+    );
+    expect(bodyW).toBeGreaterThan(12); // sparse 视图加宽超过密集月视图的 cap 12
+  });
+
+  it("clamps the wick so an extreme peak/dip never spans the whole chart", () => {
+    // 月/年聚合的单根蜡烛可能 peak~100 dip~0；wick 不应贯穿全图（用户反馈"中间那根过长"）。
+    const extreme = [
+      candle("2026-06-01"), // 普通蜡烛作参照
+      { ...candle("2026-06-02"), start: 48, end: 52, peak: 100, dip: 0 },
+    ];
+    const { container } = render(<TimelineChart candles={extreme} />);
+    const wicks = Array.from(container.querySelectorAll("g > line")).map((l) =>
+      Math.abs(Number(l.getAttribute("y2")) - Number(l.getAttribute("y1"))),
+    );
+    const maxWick = Math.max(...wicks);
+    // 全图绘图高度（H_DESKTOP=440）；clamp 后 wick 远小于满量程（body 4px + 2×16%H ≈ 145）。
+    expect(maxWick).toBeLessThan(200);
+  });
+
+  it("body tracks period-over-period change, staying short even when intra-period range is wide (continuous OHLC walk)", () => {
+    // 连续 OHLC 游走根治"蜡烛过长"：body=open..close=跨周期 intensity 变化。
+    // 平滑 intensity 序列(步长~4)+极宽 peak/dip(0..100)：body 应保持很短（≈Δ×H/100），
+    // 不再随聚合的 start..end / peak..dip 跨度暴涨（旧模型会铺满半屏）。
+    const smooth = [50, 54, 52, 56, 53, 57, 55].map((v, i) => ({
+      ...candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
+      intensity: v,
+      start: v, // 首根 open=start=intensity → 不产生人为长 body
+      end: v,
+      peak: 100,
+      dip: 0,
+    }));
+    const { container } = render(<TimelineChart candles={smooth} />);
+    const bodyH = Math.max(
+      ...Array.from(container.querySelectorAll("g > rect:nth-of-type(2)")).map(
+        (r) => Number(r.getAttribute("height")),
+      ),
+    );
+    // 步长~4 点 → body 像素高度 ≈4/100×440≈18；远小于满量程 peak-dip(≈395)。
+    expect(bodyH).toBeLessThan(60);
+  });
+
+  it("keeps a full month compact: candle bodies are capped (not ballooned to fill wide screens)", () => {
+    // 回归用户反馈"大小太大了"：宽容器下槽位/蜡烛体须封顶，而非铺满拉宽。
+    const candles = Array.from({ length: 31 }, (_, i) =>
+      candle(`2026-07-${String(i + 1).padStart(2, "0")}`),
+    );
+    const { container } = render(<TimelineChart candles={candles} />);
+    // body rect = 每组第 2 个 rect（首个是命中区）。宽度须 ≤ 12（MAX bodyW），不再是旧的 ~20。
+    const bodyRects = container.querySelectorAll("g > rect:nth-of-type(2)");
+    expect(bodyRects.length).toBe(31);
+    bodyRects.forEach((r) => {
+      expect(Number(r.getAttribute("width"))).toBeLessThanOrEqual(12);
+    });
+    // 整月仍全部渲染、不裁切（31 个蜡烛组都在）。
+    expect(container.querySelectorAll("g").length).toBe(31);
+  });
+
+  it("supports year-granularity (age) candles: matches an age marker + fires onSelect with the age key", () => {
+    const onSelect = vi.fn();
+    // 人生 K 线候选：无 date，用 age 标识；marker 也按 age 匹配。
+    const ageCandle = candle("", { age: 29 }) as TimelineCandle;
+    delete (ageCandle as { date?: string }).date;
+    const { container } = render(
+      <TimelineChart
+        candles={[ageCandle]}
+        markers={[{ age: 29, type: "saturn-return", label: "Saturn Return" }]}
+        onSelectDate={onSelect}
+      />,
+    );
+    expect(container.querySelector("circle")).toBeTruthy(); // marker matched by age key
+    fireEvent.click(container.querySelector("g")!);
+    expect(onSelect).toHaveBeenCalledWith("age-29");
+  });
+
+  it("renders a marker dot when a candle has an associated marker", () => {
+    const candles = [candle("2026-06-15")];
+    const { container } = render(
+      <TimelineChart
+        candles={candles}
+        markers={[
+          { date: "2026-06-15", type: "saturn-return", label: "Saturn Return" },
+        ]}
+      />,
+    );
+    expect(container.querySelector("circle")).toBeTruthy();
+  });
+
+  it("renders the CBT mood overlay (teal dots) for moodPoints aligned by date", () => {
+    const candles = [candle("2026-06-01"), candle("2026-06-02")];
+    const { container } = render(
+      <TimelineChart
+        candles={candles}
+        moodPoints={[{ date: "2026-06-02", intensity: 70 }]}
+      />,
+    );
+    // 情绪点用 teal (#0D9488) 圆点；按 date 对齐到对应候选。
+    const teal = Array.from(container.querySelectorAll("circle")).filter(
+      (c) => (c.getAttribute("fill") || "").toUpperCase() === "#0D9488",
+    );
+    expect(teal.length).toBe(1);
+  });
+});
+
+describe("TimelineChart — Phase A geometry/a11y (A3/A8/A10/A12)", () => {
+  it("candles are solid-filled by OHLC direction (实心红绿，连续游走) — no hollow white body", () => {
+    // 连续 OHLC 游走：着色按**跨周期** intensity 变化（close=本根、open=上一根 close），非桶内 start/end。
+    const candles = [
+      candle("2026-06-01", { intensity: 40 }),
+      candle("2026-06-02", { intensity: 60 }), // open40→close60 = up 绿
+      candle("2026-06-03", { intensity: 40 }), // open60→close40 = down 红
+    ];
+    const { container } = render(<TimelineChart candles={candles} />);
+    const fills = Array.from(container.querySelectorAll("rect")).map((r) =>
+      (r.getAttribute("fill") || "").toUpperCase(),
+    );
+    expect(fills).not.toContain("#FFFFFF"); // 空心白底已移除（实心化）
+    expect(fills).toContain("#10B981"); // 升 = 实心 emerald
+    expect(fills).toContain("#EF4444"); // 降 = 实心红
+  });
+
+  it("shows a hover read-out card (activity + range) when hovering a candle", () => {
+    const candles = [candle("2026-06-01"), candle("2026-06-02")];
+    const { container } = render(<TimelineChart candles={candles} />);
+    const firstGroup = container.querySelector("g");
+    fireEvent.mouseEnter(firstGroup!);
+    // 浮动解读卡：含活跃度 + 区间（中性数值文案，非吉凶命运断言）
+    expect(container.textContent).toMatch(/Activity/);
+    expect(container.textContent).toMatch(/Range/);
+    fireEvent.mouseLeave(firstGroup!);
+  });
+
+  it("fits all candles within the container width (no horizontal scroll at zoom 1)", () => {
+    // 长程 90 根：fit 一页——chartWidth 不超过容器宽（svg width <= DEFAULT_WIDTH 720）。
+    const many = Array.from({ length: 90 }, (_, i) => ({
+      ...candle("2026-06-01"),
+      date: undefined,
+      age: i + 1,
+    }));
+    const { container } = render(<TimelineChart candles={many} />);
+    const svg = container.querySelector("svg")!;
+    expect(Number(svg.getAttribute("width"))).toBeLessThanOrEqual(720);
+  });
+
+  it("A10: 'You are here' indicator carries an aria-label only when nowKey is in view", () => {
+    const candles = [candle("2026-06-01"), candle("2026-06-02")];
+    // scope queries to each render's container (both mount into document.body)
+    const inView = render(
+      <TimelineChart candles={candles} nowKey="2026-06-02" />,
+    );
+    expect(
+      within(inView.container).queryByLabelText(/you are here/i),
+    ).toBeTruthy();
+    inView.unmount();
+
+    const outOfView = render(
+      <TimelineChart candles={candles} nowKey="2099-01-01" />,
+    );
+    expect(
+      within(outOfView.container).queryByLabelText(/you are here/i),
+    ).toBeNull();
+  });
+
+  it("A8: future markers are capped at 5 once nowKey is in view", () => {
+    const candles = Array.from({ length: 12 }, (_, i) =>
+      candle(`2026-06-${String(i + 1).padStart(2, "0")}`),
+    );
+    const markers = candles.map((c) => ({
+      date: c.date,
+      type: "saturn-return" as const,
+      label: `m-${c.date}`,
+    }));
+    const { container } = render(
+      <TimelineChart candles={candles} markers={markers} nowKey="2026-06-01" />,
+    );
+    // marker dots are the only <title> nodes; 11 future markers → capped at 5
+    expect(container.querySelectorAll("title").length).toBe(5);
+  });
+
+  it("A3: desktop default plot height (jsdom lacks ResizeObserver → 720px → tall band)", () => {
+    const { container } = render(
+      <TimelineChart candles={[candle("2026-06-01")]} />,
+    );
+    const h = Number(container.querySelector("svg")?.getAttribute("height"));
+    expect(h).toBeGreaterThan(400); // H_DESKTOP(440) + pads → ~484
+  });
+});

@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="Three Ways to Read Energy">
+  <defs>
+    <linearGradient id="aurareading1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="aurareading1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="aurareading1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aurareading1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="aurareading1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="aurareading1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#aurareading1en-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#aurareading1en-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#aurareading1en-neb2)"/>
+  <circle cx="370.6" cy="160.0" r="1.63" fill="#cfc8ea" opacity="0.33"/><circle cx="435.7" cy="381.2" r="0.68" fill="#cfc8ea" opacity="0.49"/><circle cx="87.2" cy="232.5" r="0.78" fill="#cfc8ea" opacity="0.29"/><circle cx="305.5" cy="64.8" r="1.11" fill="#cfc8ea" opacity="0.50"/><circle cx="504.1" cy="494.9" r="1.22" fill="#cfc8ea" opacity="0.30"/><circle cx="730.8" cy="75.2" r="1.67" fill="#cfc8ea" opacity="0.30"/><circle cx="477.7" cy="539.2" r="0.45" fill="#cfc8ea" opacity="0.42"/><circle cx="562.1" cy="308.1" r="0.60" fill="#cfc8ea" opacity="0.32"/><circle cx="312.5" cy="466.0" r="1.44" fill="#cfc8ea" opacity="0.21"/><circle cx="474.5" cy="301.6" r="0.54" fill="#cfc8ea" opacity="0.47"/><circle cx="250.8" cy="501.1" r="1.52" fill="#cfc8ea" opacity="0.42"/><circle cx="368.4" cy="360.7" r="0.51" fill="#cfc8ea" opacity="0.52"/><circle cx="57.1" cy="111.9" r="1.34" fill="#cfc8ea" opacity="0.31"/><circle cx="311.9" cy="552.5" r="0.91" fill="#cfc8ea" opacity="0.52"/><circle cx="304.3" cy="538.0" r="0.62" fill="#cfc8ea" opacity="0.29"/><circle cx="445.3" cy="108.0" r="1.08" fill="#cfc8ea" opacity="0.49"/><circle cx="616.6" cy="494.9" r="1.68" fill="#cfc8ea" opacity="0.21"/><circle cx="437.7" cy="246.8" r="1.50" fill="#cfc8ea" opacity="0.36"/><circle cx="627.7" cy="192.3" r="0.82" fill="#cfc8ea" opacity="0.48"/><circle cx="673.2" cy="190.1" r="0.40" fill="#cfc8ea" opacity="0.23"/><circle cx="305.2" cy="240.6" r="1.30" fill="#cfc8ea" opacity="0.15"/><circle cx="613.5" cy="74.1" r="1.57" fill="#cfc8ea" opacity="0.44"/><circle cx="178.7" cy="443.3" r="1.48" fill="#cfc8ea" opacity="0.52"/><circle cx="533.3" cy="541.4" r="1.12" fill="#cfc8ea" opacity="0.20"/><circle cx="364.9" cy="173.3" r="1.12" fill="#cfc8ea" opacity="0.53"/><circle cx="266.5" cy="349.6" r="0.77" fill="#cfc8ea" opacity="0.15"/><circle cx="634.1" cy="72.6" r="0.42" fill="#cfc8ea" opacity="0.47"/><circle cx="602.9" cy="168.1" r="1.23" fill="#cfc8ea" opacity="0.46"/><circle cx="191.7" cy="382.5" r="1.37" fill="#cfc8ea" opacity="0.23"/><circle cx="658.9" cy="593.3" r="0.82" fill="#cfc8ea" opacity="0.36"/><circle cx="317.3" cy="284.5" r="0.45" fill="#cfc8ea" opacity="0.19"/><circle cx="192.5" cy="89.9" r="0.81" fill="#cfc8ea" opacity="0.22"/><circle cx="339.9" cy="167.0" r="1.25" fill="#cfc8ea" opacity="0.41"/><circle cx="261.7" cy="564.7" r="1.49" fill="#cfc8ea" opacity="0.34"/><circle cx="117.6" cy="76.5" r="1.13" fill="#cfc8ea" opacity="0.43"/><circle cx="383.4" cy="312.0" r="0.87" fill="#cfc8ea" opacity="0.48"/><circle cx="619.4" cy="237.5" r="1.49" fill="#cfc8ea" opacity="0.43"/><circle cx="409.9" cy="179.8" r="1.58" fill="#cfc8ea" opacity="0.13"/><circle cx="713.8" cy="400.3" r="1.35" fill="#cfc8ea" opacity="0.53"/><circle cx="562.0" cy="126.8" r="0.77" fill="#cfc8ea" opacity="0.48"/><circle cx="657.0" cy="218.7" r="1.67" fill="#cfc8ea" opacity="0.15"/><circle cx="228.8" cy="15.9" r="0.51" fill="#cfc8ea" opacity="0.22"/><circle cx="37.2" cy="492.1" r="1.65" fill="#cfc8ea" opacity="0.32"/><circle cx="285.9" cy="576.6" r="0.91" fill="#cfc8ea" opacity="0.34"/><circle cx="174.6" cy="567.3" r="1.22" fill="#cfc8ea" opacity="0.26"/><circle cx="486.1" cy="129.1" r="1.61" fill="#cfc8ea" opacity="0.48"/><circle cx="93.1" cy="578.2" r="1.44" fill="#cfc8ea" opacity="0.44"/><circle cx="98.2" cy="382.5" r="1.02" fill="#cfc8ea" opacity="0.13"/><circle cx="98.7" cy="471.7" r="1.53" fill="#cfc8ea" opacity="0.35"/><circle cx="140.3" cy="361.6" r="1.58" fill="#cfc8ea" opacity="0.44"/><circle cx="61.1" cy="529.3" r="0.43" fill="#cfc8ea" opacity="0.31"/><circle cx="243.3" cy="394.6" r="1.27" fill="#cfc8ea" opacity="0.16"/><path d="M 645.6314601115882 550.3 L 646.1 552.8 L 648.6 553.3129659728147 L 646.1 553.8 L 645.6314601115882 556.3 L 645.2 553.8 L 642.7 553.3129659728147 L 645.2 552.8 Z" fill="#f6e6bf" opacity="0.6914392521837727"/><path d="M 724.7361153103411 367.1 L 725.2 369.5 L 727.5 369.94221957819536 L 725.2 370.4 L 724.7361153103411 372.7 L 724.3 370.4 L 721.9 369.94221957819536 L 724.3 369.5 Z" fill="#f6e6bf" opacity="0.776124402997084"/><path d="M 362.3317142985761 210.4 L 362.9 213.5 L 366.0 214.1095995628275 L 362.9 214.7 L 362.3317142985761 217.8 L 361.7 214.7 L 358.6 214.1095995628275 L 361.7 213.5 Z" fill="#f6e6bf" opacity="0.5525251087034121"/><path d="M 325.12078507617116 569.9 L 325.6 572.6 L 328.3 573.1441335794516 L 325.6 573.7 L 325.12078507617116 576.4 L 324.6 573.7 L 321.9 573.1441335794516 L 324.6 572.6 Z" fill="#f6e6bf" opacity="0.5369971460895613"/><path d="M 611.540688406676 345.4 L 612.1 348.5 L 615.2 349.0403537363745 L 612.1 349.6 L 611.540688406676 352.7 L 611.0 349.6 L 607.9 349.0403537363745 L 611.0 348.5 Z" fill="#f6e6bf" opacity="0.7710317136952654"/><path d="M 435.7 381.2 L 445.3 108.0 L 178.7 443.3 L 339.9 167.0 L 562.0 126.8" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Three Ways to Read Energy</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#aurareading1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#aurareading1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Felt aura reading</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">No equipment, works anywhere</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads the shifting moment</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Skill builds with practice</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Aura photography</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Camera and biofeedback plates</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Instant shareable image</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Freezes a fluid state</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Chakra-based reading</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Works from named centers</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Structured inside-out map</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Structure can box you in</text>
+  <path d="M 202.22749999999988 585.4 L 202.6 587.6 L 204.8 588 L 202.6 588.4 L 202.22749999999988 590.6 L 201.8 588.4 L 199.6 588 L 201.8 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 585.4 L 558.2 587.6 L 560.4 588 L 558.2 588.4 L 557.7725000000002 590.6 L 557.4 588.4 L 555.2 588 L 557.4 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

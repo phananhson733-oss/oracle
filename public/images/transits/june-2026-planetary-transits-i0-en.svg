@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 623" role="img" aria-label="June 2026 Key Dates">
+  <defs>
+    <linearGradient id="june2026planetarytransits0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="june2026planetarytransits0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="june2026planetarytransits0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="june2026planetarytransits0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="june2026planetarytransits0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="june2026planetarytransits0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="620" rx="22" fill="url(#june2026planetarytransits0en-panel)"/>
+  <ellipse cx="198" cy="150" rx="380" ry="212" fill="url(#june2026planetarytransits0en-neb1)"/>
+  <ellipse cx="623" cy="498" rx="334" ry="199" fill="url(#june2026planetarytransits0en-neb2)"/>
+  <circle cx="222.1" cy="60.8" r="0.56" fill="#cfc8ea" opacity="0.47"/><circle cx="516.6" cy="309.9" r="1.39" fill="#cfc8ea" opacity="0.30"/><circle cx="640.2" cy="167.5" r="0.89" fill="#cfc8ea" opacity="0.53"/><circle cx="429.8" cy="244.6" r="1.13" fill="#cfc8ea" opacity="0.34"/><circle cx="406.1" cy="347.2" r="1.27" fill="#cfc8ea" opacity="0.37"/><circle cx="639.0" cy="139.8" r="0.80" fill="#cfc8ea" opacity="0.13"/><circle cx="342.5" cy="57.5" r="1.26" fill="#cfc8ea" opacity="0.13"/><circle cx="680.4" cy="401.9" r="1.17" fill="#cfc8ea" opacity="0.24"/><circle cx="324.0" cy="107.8" r="1.27" fill="#cfc8ea" opacity="0.35"/><circle cx="276.6" cy="313.3" r="0.97" fill="#cfc8ea" opacity="0.21"/><circle cx="267.9" cy="492.1" r="1.30" fill="#cfc8ea" opacity="0.12"/><circle cx="280.1" cy="67.3" r="1.16" fill="#cfc8ea" opacity="0.26"/><circle cx="598.4" cy="259.7" r="1.10" fill="#cfc8ea" opacity="0.27"/><circle cx="330.1" cy="508.0" r="1.24" fill="#cfc8ea" opacity="0.23"/><circle cx="534.9" cy="469.3" r="1.47" fill="#cfc8ea" opacity="0.39"/><circle cx="156.6" cy="362.5" r="0.49" fill="#cfc8ea" opacity="0.34"/><circle cx="319.1" cy="356.0" r="0.97" fill="#cfc8ea" opacity="0.38"/><circle cx="453.9" cy="351.6" r="0.97" fill="#cfc8ea" opacity="0.14"/><circle cx="53.6" cy="145.7" r="0.63" fill="#cfc8ea" opacity="0.13"/><circle cx="202.0" cy="426.6" r="0.69" fill="#cfc8ea" opacity="0.44"/><circle cx="106.2" cy="350.3" r="1.08" fill="#cfc8ea" opacity="0.40"/><circle cx="647.2" cy="360.8" r="1.37" fill="#cfc8ea" opacity="0.23"/><circle cx="675.7" cy="176.6" r="0.48" fill="#cfc8ea" opacity="0.52"/><circle cx="397.6" cy="454.4" r="1.22" fill="#cfc8ea" opacity="0.14"/><circle cx="381.3" cy="480.1" r="1.55" fill="#cfc8ea" opacity="0.17"/><circle cx="269.4" cy="492.1" r="0.53" fill="#cfc8ea" opacity="0.50"/><circle cx="739.7" cy="564.1" r="0.62" fill="#cfc8ea" opacity="0.43"/><circle cx="425.8" cy="422.3" r="0.42" fill="#cfc8ea" opacity="0.20"/><circle cx="377.8" cy="290.6" r="0.81" fill="#cfc8ea" opacity="0.31"/><circle cx="333.8" cy="131.6" r="1.03" fill="#cfc8ea" opacity="0.13"/><circle cx="561.9" cy="410.2" r="1.65" fill="#cfc8ea" opacity="0.20"/><circle cx="404.7" cy="202.9" r="1.09" fill="#cfc8ea" opacity="0.48"/><circle cx="663.3" cy="363.0" r="0.82" fill="#cfc8ea" opacity="0.50"/><circle cx="397.0" cy="507.6" r="0.81" fill="#cfc8ea" opacity="0.42"/><circle cx="657.6" cy="116.6" r="1.16" fill="#cfc8ea" opacity="0.53"/><circle cx="410.0" cy="328.1" r="1.30" fill="#cfc8ea" opacity="0.52"/><circle cx="351.4" cy="281.9" r="1.62" fill="#cfc8ea" opacity="0.14"/><circle cx="682.0" cy="474.6" r="0.40" fill="#cfc8ea" opacity="0.17"/><circle cx="155.7" cy="539.7" r="0.78" fill="#cfc8ea" opacity="0.52"/><circle cx="313.9" cy="415.2" r="0.48" fill="#cfc8ea" opacity="0.29"/><circle cx="240.6" cy="299.0" r="0.84" fill="#cfc8ea" opacity="0.39"/><circle cx="383.3" cy="130.0" r="0.48" fill="#cfc8ea" opacity="0.20"/><circle cx="110.1" cy="344.3" r="0.70" fill="#cfc8ea" opacity="0.14"/><circle cx="182.3" cy="207.4" r="0.59" fill="#cfc8ea" opacity="0.43"/><circle cx="481.9" cy="527.7" r="0.80" fill="#cfc8ea" opacity="0.27"/><circle cx="216.2" cy="515.7" r="1.35" fill="#cfc8ea" opacity="0.14"/><circle cx="403.0" cy="138.2" r="1.52" fill="#cfc8ea" opacity="0.41"/><circle cx="184.4" cy="542.4" r="0.79" fill="#cfc8ea" opacity="0.20"/><circle cx="700.3" cy="34.8" r="1.68" fill="#cfc8ea" opacity="0.40"/><circle cx="529.1" cy="390.0" r="1.03" fill="#cfc8ea" opacity="0.36"/><circle cx="464.9" cy="557.1" r="1.21" fill="#cfc8ea" opacity="0.14"/><circle cx="623.0" cy="514.0" r="0.98" fill="#cfc8ea" opacity="0.12"/><circle cx="372.7" cy="144.3" r="1.15" fill="#cfc8ea" opacity="0.30"/><path d="M 460.10265587829053 182.5 L 460.5 184.5 L 462.5 184.92625136021525 L 460.5 185.3 L 460.10265587829053 187.4 L 459.7 185.3 L 457.7 184.92625136021525 L 459.7 184.5 Z" fill="#f6e6bf" opacity="0.5503708636853843"/><path d="M 580.676369978115 189.8 L 581.1 192.2 L 583.5 192.65962512791157 L 581.1 193.1 L 580.676369978115 195.5 L 580.2 193.1 L 577.8 192.65962512791157 L 580.2 192.2 Z" fill="#f6e6bf" opacity="0.6725571801420301"/><path d="M 285.59369901381433 500.3 L 286.2 503.5 L 289.4 504.14633221086115 L 286.2 504.8 L 285.59369901381433 508.0 L 285.0 504.8 L 281.8 504.14633221086115 L 285.0 503.5 Z" fill="#f6e6bf" opacity="0.7051921774167568"/><path d="M 695.3089791517705 225.5 L 695.8 228.0 L 698.3 228.4452617596835 L 695.8 228.9 L 695.3089791517705 231.4 L 694.8 228.9 L 692.3 228.4452617596835 L 694.8 228.0 Z" fill="#f6e6bf" opacity="0.6553520950954408"/><path d="M 299.6994896735996 489.6 L 300.1 491.7 L 302.2 492.04852664936334 L 300.1 492.4 L 299.6994896735996 494.5 L 299.3 492.4 L 297.2 492.04852664936334 L 299.3 491.7 Z" fill="#f6e6bf" opacity="0.6705333235207945"/><path d="M 640.2 167.5 L 324.0 107.8 L 534.9 469.3 L 561.9 410.2 L 682.0 474.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="620" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="609" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 603.8 L 16.5 606.5 L 19.2 607 L 16.5 607.5 L 16 610.2 L 15.5 607.5 L 12.8 607 L 15.5 606.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 603.8 L 744.5 606.5 L 747.2 607 L 744.5 607.5 L 744 610.2 L 743.5 607.5 L 740.8 607 L 743.5 606.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">June 2026 Key Dates</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#june2026planetarytransits0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#june2026planetarytransits0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="523" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#june2026planetarytransits0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#june2026planetarytransits0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jun 2</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Mercury enters Cancer</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Talk turns personal, indirect</text>
+  <circle cx="92" cy="195" r="13.0" fill="url(#june2026planetarytransits0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="195" r="8" fill="url(#june2026planetarytransits0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="192.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 191.0 L 92.6 194.4 L 96.0 195 L 92.6 195.6 L 92 199.0 L 91.4 195.6 L 88.0 195 L 91.4 194.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="200.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jun 14</text>
+  <text x="132" y="223.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Venus enters Leo</text>
+  <text x="132" y="246.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Warmer, more visible</text>
+  <circle cx="92" cy="277" r="13.0" fill="url(#june2026planetarytransits0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="277" r="8" fill="url(#june2026planetarytransits0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="274.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 273.0 L 92.6 276.4 L 96.0 277 L 92.6 277.6 L 92 281.0 L 91.4 277.6 L 88.0 277 L 91.4 276.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="282.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jun 16</text>
+  <text x="132" y="305.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">New Moon in Gemini</text>
+  <text x="132" y="328.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Fresh cycle of connection</text>
+  <circle cx="92" cy="359" r="13.0" fill="url(#june2026planetarytransits0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="359" r="8" fill="url(#june2026planetarytransits0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="356.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 355.0 L 92.6 358.4 L 96.0 359 L 92.6 359.6 L 92 363.0 L 91.4 359.6 L 88.0 359 L 91.4 358.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="364.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jun 22</text>
+  <text x="132" y="387.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Sun enters Cancer (Solstice)</text>
+  <text x="132" y="410.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Outward to inward</text>
+  <circle cx="92" cy="441" r="13.0" fill="url(#june2026planetarytransits0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="441" r="8" fill="url(#june2026planetarytransits0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="438.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 437.0 L 92.6 440.4 L 96.0 441 L 92.6 441.6 L 92 445.0 L 91.4 441.6 L 88.0 441 L 91.4 440.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="446.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jun 29</text>
+  <text x="132" y="469.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Mars enters Gemini</text>
+  <text x="132" y="492.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Drive scatters</text>
+  <circle cx="92" cy="523" r="13.0" fill="url(#june2026planetarytransits0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="523" r="8" fill="url(#june2026planetarytransits0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="520.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 519.0 L 92.6 522.4 L 96.0 523 L 92.6 523.6 L 92 527.0 L 91.4 523.6 L 88.0 523 L 91.4 522.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="528.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Jun 30</text>
+  <text x="132" y="551.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Capricorn Full Moon + Mercury retrograde</text>
+  <text x="132" y="574.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Finish, don't launch</text>
+  <path d="M 202.22749999999988 594.4 L 202.6 596.6 L 204.8 597 L 202.6 597.4 L 202.22749999999988 599.6 L 201.8 597.4 L 199.6 597 L 201.8 596.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="601" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 594.4 L 558.2 596.6 L 560.4 597 L 558.2 597.4 L 557.7725000000002 599.6 L 557.4 597.4 L 555.2 597 L 557.4 596.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

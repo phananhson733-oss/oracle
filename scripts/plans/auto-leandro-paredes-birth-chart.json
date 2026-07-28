@@ -1,0 +1,113 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "leandro-paredes-birth-chart": {
+      "hero": {
+        "prompt": "stylized editorial portrait of an Argentine footballer in pale blue and white kit, commanding the night midfield with quiet authority, water-element energy flowing around his figure in deep teal waves and mist, stars and soft gold celestial light above the pitch, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Leandro Paredes birth chart — stylized Argentine footballer portrait with water-element symbolism and gold celestial light"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Key Patterns in Paredes' Chart",
+          "titleEn": "Five Steps to Read the Paredes Birth Chart",
+          "altEn": "Five-step guide to reading Leandro Paredes birth chart patterns",
+          "items": [
+            {
+              "nameEn": "Count the water",
+              "subEn": "Sun in Cancer, Moon in Pisces, Jupiter and Pluto in Scorpio — three water signs signal emotion-led processing over cold logic"
+            },
+            {
+              "nameEn": "Find the stelliums",
+              "subEn": "Cancer (Sun, Mercury) and Pisces (Moon, Saturn) each hold clusters that concentrate themes of home, feeling, and quiet endurance"
+            },
+            {
+              "nameEn": "Note the earth ballast",
+              "subEn": "Mars in Taurus and a Capricorn group add patience and a planted, immovable quality that balances the water weight"
+            },
+            {
+              "nameEn": "Read the nodes",
+              "subEn": "North Node in Scorpio and South Node in Taurus suggest a pull from comfort toward depth and shared trust"
+            },
+            {
+              "nameEn": "Flag what's unknown",
+              "subEn": "With no confirmed birth time, leave the ascendant, houses, and timed aspects open rather than guessed"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Paredes' Birth Chart at a Glance",
+          "titleEn": "Paredes' Key Planetary Placements",
+          "altEn": "Table of Leandro Paredes birth chart placements — Sun, Moon, Venus, Mars, and Scorpio stellium with themes and elements",
+          "columns": [
+            {
+              "nameEn": "Placement",
+              "linesEn": [
+                "Sun in Cancer",
+                "Moon in Pisces",
+                "Venus in Leo",
+                "Mars in Taurus",
+                "Scorpio stellium"
+              ]
+            },
+            {
+              "nameEn": "Theme",
+              "linesEn": [
+                "Identity through feeling and belonging",
+                "Deep, porous, imaginative emotional needs",
+                "Warmth and affection wanting visibility",
+                "Steady, patient, hard-to-rush drive",
+                "Growth through depth, trust, and transformation"
+              ]
+            },
+            {
+              "nameEn": "Element",
+              "linesEn": [
+                "Water",
+                "Water",
+                "Fire",
+                "Earth",
+                "Water"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Common Misreadings",
+          "titleEn": "Birth Chart Misreadings vs Accurate Reads",
+          "altEn": "Common misreadings of the Leandro Paredes birth chart compared with accurate astrological interpretations",
+          "columns": [
+            {
+              "nameEn": "The Misreading",
+              "linesEn": [
+                "Cancer means soft and weak",
+                "The chart predicts his football career",
+                "Scorpio placements make him ruthless",
+                "We can read his rising sign"
+              ]
+            },
+            {
+              "nameEn": "Accurate Reading",
+              "linesEn": [
+                "Water charts pair deep feeling with fierce protectiveness — Cancer guards what it loves",
+                "A birth chart is a symbolic profile of themes, not a career forecast or scoreboard",
+                "Scorpio emphasis signals intensity and loyalty, not villainy or a character flaw",
+                "Without a verified birth time, any ascendant claim is guesswork and should be labeled as such"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

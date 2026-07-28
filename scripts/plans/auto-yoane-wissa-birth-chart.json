@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": { "heroWidth": 1200, "heroHeight": 675, "quality": 82 },
+  "articles": {
+    "yoane-wissa-birth-chart": {
+      "hero": {
+        "prompt": "A painterly editorial illustration of ordered earth at dusk — neat cultivated fields and terraced farmland stretching across the lower half of the frame under a vast sky, evoking Virgo's harvest precision and patient craft. Golden-green ordered rows fill the lower half; the upper sky carries a quicksilver Mercury sheen, cool silver-grey and clean and exact, blending upward into deep indigo and near-black. Palette of deep indigo to near-black (#16112c to #0b0a1b) with golden-green and silver accents. Calm, meticulous, refined atmosphere. Full-bleed wide 16:9 composition that fills the entire frame. ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Dusk over ordered terraced farmland under a cool silver Mercury sky blending into deep indigo, evoking Virgo's harvest precision",
+        "altZh": "暮色中整齐的梯田农地，凉银水星天光与深靛色上空相融，唤起处女座的丰收精准与匠心"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## The Yoane Wissa Birth Chart vs a Full Natal Reading",
+          "afterHeadingZh": "## 约阿内·维萨星盘与相近概念：完整本命盘的运作方式与取舍",
+          "titleEn": "Three Ways to Read the Same Chart",
+          "titleZh": "读同一张星盘的三种方式",
+          "altEn": "Comparison of the Sun-anchored Wissa reading against a full natal reading and a tabloid zodiac blurb",
+          "altZh": "以太阳为锚的维萨解读，与完整本命解读、小报星座短讯的对照",
+          "columns": [
+            {
+              "nameEn": "Sun-anchored reading",
+              "nameZh": "以太阳为锚的解读",
+              "linesEn": [
+                "Leans on the Virgo Sun, fixed by a verified date",
+                "Refuses to invent the unrecorded layers",
+                "Names a theme of craft and service, not a scoreline"
+              ],
+              "linesZh": [
+                "倚重出生日期能固定的处女座太阳",
+                "拒绝把未记录的部分凭空编造",
+                "标定技艺与服务的主题，而非比分"
+              ]
+            },
+            {
+              "nameEn": "Full natal reading",
+              "nameZh": "完整本命解读",
+              "linesEn": [
+                "Weighs Sun, Moon, Ascendant, every house cusp",
+                "Needs a recorded birth time, which is not public",
+                "Trades reliability for breadth"
+              ],
+              "linesZh": [
+                "权衡太阳、月亮、上升与每道宫头",
+                "需要记录在案的出生时间，而他的未公开",
+                "用可靠换广度"
+              ]
+            },
+            {
+              "nameEn": "Tabloid zodiac blurb",
+              "nameZh": "小报星座短讯",
+              "linesEn": [
+                "Flattens Virgo into a single precision label",
+                "Treats the Sun as fixed temperament",
+                "Trades accuracy for catchiness"
+              ],
+              "linesZh": [
+                "把处女座压扁成一种精准标签",
+                "把太阳当作固定脾性",
+                "用准确换顺口"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "timeline",
+          "afterHeadingEn": "## How to Read the Yoane Wissa Birth Chart in the 2026 World Cup Window",
+          "afterHeadingZh": "## 如何在星盘里识别约阿内·维萨的处女座太阳（实操观察）",
+          "titleEn": "Reading a Virgo Sun: The Method",
+          "titleZh": "读一颗处女座太阳：方法步骤",
+          "altEn": "Four-step method for reading the Wissa birth chart: anchor the verified date, flag the unknown birth time, read the Virgo arc as incremental mastery, note DR Congo's historic qualification as factual backdrop",
+          "altZh": "读维萨星盘的四步法：锚定经核验的日期、标出未知出生时间、把处女座弧线读作逐步精通、将刚果民主共和国历史性出线作为事实背景",
+          "items": [
+            {
+              "labelEn": "Step 1",
+              "labelZh": "第一步",
+              "titleEn": "Anchor the Verified Fact",
+              "titleZh": "锚定经核验的事实",
+              "noteEn": "3 September 1996 in Épinay-sous-Sénart, France fixes the Sun at roughly 11 degrees of Virgo — the only placement a verified date alone can pin down",
+              "noteZh": "1996 年 9 月 3 日生于法国埃皮奈-苏-塞纳尔，把太阳固定在约处女座 11 度——这是唯一一个仅凭出生日期就能钉死的定位"
+            },
+            {
+              "labelEn": "Step 2",
+              "labelZh": "第二步",
+              "titleEn": "Flag What Is Unknown",
+              "titleZh": "把未知大声标出来",
+              "noteEn": "No public birth time means Moon sign, Ascendant, and houses stay unverified — treat them as open, never fill the gap with guesses",
+              "noteZh": "出生时间未公开，月亮星座、上升与宫位都无从核验——把它们留作开放，绝不用猜测填补空白"
+            },
+            {
+              "labelEn": "Step 3",
+              "labelZh": "第三步",
+              "titleEn": "Read the Virgo Arc as Incremental Mastery",
+              "titleZh": "把处女座弧线读作逐步精通",
+              "noteEn": "Mercury-ruled adaptability, mutable-earth precision, a journeyman path built through craft and service — born in France, representing DR Congo, moving from Brentford to Newcastle",
+              "noteZh": "水星守护的适应力、变动土象的精准，以技艺与服务铺就的游历式成长路——生于法国、代表刚果民主共和国、从布伦特福德辗转纽卡斯尔"
+            },
+            {
+              "labelEn": "Step 4",
+              "labelZh": "第四步",
+              "titleEn": "Hold the Historic Backdrop as Symbolic Context",
+              "titleZh": "把历史性事实背景握成象征语境",
+              "noteEn": "DR Congo's WC 2026 qualification — their second-ever World Cup appearance — is verified fact, not prediction; the Virgo-Sun theme of patient preparation pairs naturally with this collective milestone",
+              "noteZh": "刚果民主共和国取得 2026 世界杯资格——史上第二次参赛——是经核实的事实，非预言；处女座太阳那种耐心积累的主题与这一集体里程碑自然呼应"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

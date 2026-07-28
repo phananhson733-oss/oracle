@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="Morocco WC 2026 Astrology vs General Football Astrology">
+  <defs>
+    <linearGradient id="moroccoworldcup2026astrology1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="moroccoworldcup2026astrology1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="moroccoworldcup2026astrology1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moroccoworldcup2026astrology1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moroccoworldcup2026astrology1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moroccoworldcup2026astrology1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#moroccoworldcup2026astrology1en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#moroccoworldcup2026astrology1en-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#moroccoworldcup2026astrology1en-neb2)"/>
+  <circle cx="153.1" cy="185.5" r="1.64" fill="#cfc8ea" opacity="0.52"/><circle cx="271.2" cy="377.3" r="1.48" fill="#cfc8ea" opacity="0.17"/><circle cx="657.9" cy="214.8" r="1.55" fill="#cfc8ea" opacity="0.42"/><circle cx="542.4" cy="488.7" r="0.41" fill="#cfc8ea" opacity="0.52"/><circle cx="489.7" cy="18.5" r="0.67" fill="#cfc8ea" opacity="0.25"/><circle cx="656.7" cy="18.2" r="1.59" fill="#cfc8ea" opacity="0.51"/><circle cx="84.0" cy="434.7" r="1.36" fill="#cfc8ea" opacity="0.27"/><circle cx="379.5" cy="63.9" r="1.42" fill="#cfc8ea" opacity="0.47"/><circle cx="237.3" cy="84.6" r="0.58" fill="#cfc8ea" opacity="0.22"/><circle cx="519.3" cy="167.8" r="1.32" fill="#cfc8ea" opacity="0.39"/><circle cx="496.7" cy="160.1" r="0.46" fill="#cfc8ea" opacity="0.34"/><circle cx="632.7" cy="435.9" r="0.62" fill="#cfc8ea" opacity="0.32"/><circle cx="89.0" cy="443.6" r="0.63" fill="#cfc8ea" opacity="0.45"/><circle cx="194.3" cy="276.4" r="0.97" fill="#cfc8ea" opacity="0.28"/><circle cx="662.9" cy="136.7" r="0.66" fill="#cfc8ea" opacity="0.34"/><circle cx="545.8" cy="465.2" r="1.12" fill="#cfc8ea" opacity="0.26"/><circle cx="473.8" cy="399.1" r="0.79" fill="#cfc8ea" opacity="0.29"/><circle cx="262.2" cy="342.6" r="1.41" fill="#cfc8ea" opacity="0.42"/><circle cx="578.5" cy="193.6" r="1.32" fill="#cfc8ea" opacity="0.50"/><circle cx="122.2" cy="373.9" r="1.36" fill="#cfc8ea" opacity="0.18"/><circle cx="717.4" cy="482.9" r="1.10" fill="#cfc8ea" opacity="0.51"/><circle cx="500.5" cy="229.1" r="0.99" fill="#cfc8ea" opacity="0.54"/><circle cx="455.3" cy="118.5" r="0.69" fill="#cfc8ea" opacity="0.31"/><circle cx="598.2" cy="400.7" r="0.92" fill="#cfc8ea" opacity="0.38"/><circle cx="400.3" cy="278.6" r="1.61" fill="#cfc8ea" opacity="0.39"/><circle cx="40.0" cy="315.5" r="1.32" fill="#cfc8ea" opacity="0.22"/><circle cx="669.1" cy="282.4" r="0.89" fill="#cfc8ea" opacity="0.20"/><circle cx="77.1" cy="436.5" r="1.26" fill="#cfc8ea" opacity="0.15"/><circle cx="486.0" cy="290.6" r="1.57" fill="#cfc8ea" opacity="0.40"/><circle cx="486.7" cy="171.6" r="1.03" fill="#cfc8ea" opacity="0.42"/><circle cx="702.6" cy="222.0" r="1.24" fill="#cfc8ea" opacity="0.28"/><circle cx="161.9" cy="19.6" r="1.67" fill="#cfc8ea" opacity="0.13"/><circle cx="506.5" cy="386.1" r="0.46" fill="#cfc8ea" opacity="0.23"/><circle cx="703.5" cy="198.4" r="1.33" fill="#cfc8ea" opacity="0.45"/><circle cx="451.6" cy="218.8" r="0.45" fill="#cfc8ea" opacity="0.38"/><circle cx="596.6" cy="106.1" r="1.15" fill="#cfc8ea" opacity="0.42"/><circle cx="48.4" cy="382.0" r="1.25" fill="#cfc8ea" opacity="0.37"/><circle cx="100.1" cy="287.7" r="0.57" fill="#cfc8ea" opacity="0.32"/><circle cx="89.1" cy="13.8" r="1.13" fill="#cfc8ea" opacity="0.18"/><circle cx="328.1" cy="483.7" r="0.79" fill="#cfc8ea" opacity="0.17"/><circle cx="459.0" cy="331.9" r="1.15" fill="#cfc8ea" opacity="0.26"/><circle cx="230.1" cy="206.8" r="0.96" fill="#cfc8ea" opacity="0.14"/><path d="M 20.554514380171895 409.1 L 21.1 412.0 L 24.0 412.5994731192477 L 21.1 413.2 L 20.554514380171895 416.1 L 20.0 413.2 L 17.1 412.5994731192477 L 20.0 412.0 Z" fill="#f6e6bf" opacity="0.6980252882465721"/><path d="M 49.34001492895186 24.0 L 49.8 26.7 L 52.5 27.18457619054243 L 49.8 27.7 L 49.34001492895186 30.3 L 48.8 27.7 L 46.2 27.18457619054243 L 48.8 26.7 Z" fill="#f6e6bf" opacity="0.6670014229603112"/><path d="M 536.2127932477742 106.4 L 536.8 109.7 L 540.0 110.26464551547542 L 536.8 110.9 L 536.2127932477742 114.1 L 535.6 110.9 L 532.4 110.26464551547542 L 535.6 109.7 Z" fill="#f6e6bf" opacity="0.5553974408656359"/><path d="M 249.14749495126307 452.7 L 249.7 455.7 L 252.8 456.3054077080451 L 249.7 456.9 L 249.14749495126307 460.0 L 248.6 456.9 L 245.5 456.3054077080451 L 248.6 455.7 Z" fill="#f6e6bf" opacity="0.7261350329034031"/><path d="M 468.48580056615174 394.0 L 469.0 396.5 L 471.5 397.0306422081776 L 469.0 397.5 L 468.48580056615174 400.1 L 468.0 397.5 L 465.4 397.0306422081776 L 468.0 396.5 Z" fill="#f6e6bf" opacity="0.688412364013493"/><path d="M 271.2 377.3 L 84.0 434.7 L 400.3 278.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Morocco WC 2026 Astrology vs General Football Astrology</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#moroccoworldcup2026astrology1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#moroccoworldcup2026astrology1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Morocco WC 2026 Approach</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Ties player charts to the national founding chart</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Uses dated 2026 transit timing</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Specific to the June–July 2026 tournament window</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Sharp and relevant, but non-transferable to other fixtures</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">General Football Astrology</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Reads any match through broad sign traits</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Not tied to a specific event or date</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Works for any fixture at any time</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Flexible but lacks event-specific precision</text>
+  <path d="M 202.22749999999988 474.4 L 202.6 476.6 L 204.8 477 L 202.6 477.4 L 202.22749999999988 479.6 L 201.8 477.4 L 199.6 477 L 201.8 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 474.4 L 558.2 476.6 L 560.4 477 L 558.2 477.4 L 557.7725000000002 479.6 L 557.4 477.4 L 555.2 477 L 557.4 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,224 @@
+<!-- INPUT: 项目根目录文件与子目录（含首页首字节 SEO/FAQ、响应式全局导航与工具 CTA、GA4、土星回归 brief 同源内容/四类 JSON-LD、构建/E2E、支付与 UI 规则）。 -->
+<!-- OUTPUT: 根目录架构摘要与文件索引（含无重叠宽屏导航、增长漏斗、首页内容发现、土星回归内容同源验收、样式/构建、Playwright、短链/支付与规范门槛）。 -->
+<!-- POS: 根目录索引文档；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+
+一旦我被更新，务必更新我的开头注释，以及所属的文件夹的md。
+一旦我所属的文件夹有所变化，请更新我。
+
+# 文件夹：根目录
+
+架构概要
+
+- 主应用入口、公共配置与核心资源集中在根目录。
+- 共享常量、类型与服务在根目录文件中提供。
+- 子目录承载 OpenSpec、组件库、服务层与 CBT 子应用。
+
+文件清单
+
+- .gitignore｜地位：版本控制配置｜功能：声明 Git 忽略规则。
+- AGENTS.md｜地位：助手入口文档｜功能：指向 OpenSpec 助手说明、语言规则与 UI 规范入口。
+- App.tsx｜地位：主应用入口组件｜功能：组合路由与页面（含宽屏品牌/导航防重叠布局、全局免费出生盘 Nav CTA、`/go/:code` 短链、tools SEO alias、积分/迁移/支付流程、landing footer 边界及 sign calculator 路由级按需加载）。
+- CLAUDE.md｜地位：助手入口文档｜功能：指向 OpenSpec 助手说明与 UI 规范入口（Claude 入口）。
+- FOLDER.md｜地位：目录索引文档｜功能：记录根目录架构与文件清单。
+- README.md｜地位：主说明文档｜功能：项目说明与运行方式（含 UI 规范门槛）。
+- COLOR_SYSTEM_GUIDE.md｜地位：UI 规范文档｜功能：色彩系统与对比度规范（含 paper 温暖色系与 unicode 图标对比度要求）。
+- PULL_REQUEST_TEMPLATE.md｜地位：PR 模板｜功能：PR 清单与 UI 规范符合说明。
+- constants.ts｜地位：全局常量库｜功能：存放文案、提示词、Pro 试用/订阅提醒、Cycles 文案与问答问题库数据。
+- index.css｜地位：全局样式入口｜功能：注入 Tailwind 基础/组件/工具样式。
+- index.html｜地位：HTML 宿主文件｜功能：页面壳、optional Google Fonts、≤60 字符 Title、首字节 ≥1000 词首页正文/可见 FAQ，以及 Organization/WebSite/FAQPage JSON-LD。
+- index.tsx｜地位：渲染入口｜功能：挂载 React 应用、引入全局样式并延迟非关键分析/性能监控初始化。
+- metadata.json｜地位：应用元数据｜功能：AI Studio 元信息配置。
+- package.json｜地位：依赖清单｜功能：npm 脚本与依赖配置（含 Tailwind/PostCSS）。
+- package-lock.json｜地位：依赖锁定｜功能：锁定前端依赖版本。
+- postcss.config.cjs｜地位：样式配置｜功能：PostCSS 管线与 Tailwind 插件配置。
+- playwright.config.ts｜地位：E2E 配置｜功能：Playwright 测试编排，`PLAYWRIGHT_BASE_URL` 端口与 Vite dev server 启动端口联动。
+- tsconfig.json｜地位：编译配置｜功能：TypeScript 编译器选项。
+- tailwind.config.cjs｜地位：样式配置｜功能：Tailwind 主题与前端源码扫描路径配置（不扫描后端 wiki 数据动态颜色 token）。
+- types.ts｜地位：类型定义｜功能：共享数据结构与问答报告类型（含文章 H1 与 SEO title/meta 分离字段）。
+- vercel.json｜地位：部署配置｜功能：Vercel 构建与路由规则（含缺失 hashed asset 转后端 404）。
+- vite.config.ts｜地位：构建配置｜功能：Vite 开发与构建设置。
+
+目录
+
+- .claude｜地位：工具配置目录｜功能：Claude 命令与配置。
+- backend｜地位：后端目录｜功能：占星计算与 AI 内容服务。
+- cbt｜地位：子应用目录｜功能：CBT 日记子应用。
+- components｜地位：组件目录｜功能：主应用 UI 组件。
+- contexts｜地位：上下文目录｜功能：认证与权益上下文。
+- data｜地位：前端数据目录｜功能：文章、作者、工具目录与短链跳转 registry 等静态数据。
+- docs｜地位：文档目录｜功能：项目配置与指南。
+- openspec｜地位：规范目录｜功能：OpenSpec 规范与变更。
+- public｜地位：静态资源目录｜功能：公共图标与资源文件。
+- services｜地位：服务目录｜功能：主应用服务层。
+- tests｜地位：测试目录｜功能：Playwright E2E 与 Vitest 单元测试。
+
+近期更新
+- 2026-07-13 修复顶部导航宽屏拥挤：容器扩展至 1600px、品牌与导航增加显式间距，较窄桌面隐藏长 wordmark，并以 Playwright 几何断言守护不重叠与不溢出。
+- 2026-07-15 修复 Saturn Return Calculator brief 对齐：后端以数值根求解区分 estimated 与 exact UTC passes；EN 页面、静态 stub、FAQPage、WebApplication、BreadcrumbList 与 HowTo Schema 从单一内容模型生成；相关入口恢复为 Birth Chart、Compatibility 与 Moon Sign，未发布文章保持隐藏。
+- 2026-07-13 落地 AstrologyWiki 增长漏斗：补全语言化 GA4 SPA PV、Nav/Sticky/Lead/Bottom Wiki CTA、指定文章工具内链、Birth Chart 工具 E2E，并补齐根首页短 Title、关键词 H1、contactPoint、同源 FAQ 与首字节长正文；保留编辑人设真实性披露和 Organization author。
+
+- 静态 SEO 生成器只对真实生成的双语 Wiki 页面输出 hreflang，并停止为 EN-only 经典详情页声明不存在的中文 alternate；新增生成产物目标完整性测试。
+- PageSpeed/Core Web Vitals 优化：index.html 移除 body 字体可见性 gate，并将 Google Fonts 收敛为首屏所需权重 + `display=optional`；品牌 JSON-LD 改用 `/brand/logo-schema-512.png`；App.tsx 将 sign calculator 与 auth/payment 弹窗/支付成功页移出首页入口 chunk，并在 landing 路由禁用全局 Footer 避免懒加载内容到达前产生 footer 位移；landing 全部首屏外分段延迟到可视阈值后再加载表单/城市搜索/文章库等 chunk；index.tsx 将 GA4/GTM 等非关键初始化推迟到首屏后/首次交互后；vercel.json 对缺失 `/assets/*` 在 SPA fallback 前转后端 404。
+- 文章 SEO CTR 优化支持：WikiArticle 增加 `seoTitle` / `seoDescription`，静态生成器与运行时 SEO head 使用专用字段，页面 H1 与可见描述保持原文不变。
+- PageSpeed CSS 减载：Wiki `color_token` 渐变从动态 Tailwind class 改为受控 inline style，Tailwind content 移除 `backend/src/data/wiki.ts`，减少首页全局 CSS 中非首屏动态颜色 utility。
+- constants 与 pricing 展示文案改为手动激活 Pro 试用：注册不再自动赠送 Pro，符合资格用户需先在 Airwallex 填写付款信息，试用到期后自动续费；同时补齐 Cycles 文案与问答页类型边界以通过前端类型检查。
+- 新增 `tests/e2e/manual-pro-trial.spec.ts`，用 Playwright mock auth/entitlement/Airwallex API 覆盖注册后符合资格用户点击 Pro 试用 CTA、看到付款信息/自动续费披露并跳转 trial checkout 的浏览器路径。
+- Playwright webServer 启动命令会跟随 `PLAYWRIGHT_BASE_URL` 端口，避免本地 3000 被其他服务占用时误复用错误应用。
+- 2026-07-10 审计修复：landing E2E 通过共享 `revealLandingSection` 主动滚动并等待 viewport-deferred section，覆盖延迟加载触发而非假定首屏已挂载；恢复作者页/文章 byline 已批准的“editorial persona + AI 辅助创作”就近披露。
+- 首页 `index.html` 的 `<head>` 现携带静态 brand 结构化数据（Organization + WebSite JSON-LD，带 `data-astro-global-schema` 标记），值与 `App.tsx` `<GlobalSchema />` 英文输出一致，把品牌实体提前到首字节、不依赖 WRS 执行 JS；同步修正 `og:url` 尾斜杠与 canonical 对齐。`scripts/generate-seo-pages.mjs` 的 landing-v2 `Organization.logo` 统一为 `/brand/logo-schema-512.png`（避免爬虫/富结果工具请求原始大图）。契约守护见 `tests/unit/homepage-brand-schema.test.ts`。
+- 新增 tools SEO alias 路由 `/moon-phase-today` 与 `/astrocartography-map-generator`，裸路径自动重定向到语言前缀版本，且加入公开可索引白名单以避免运行时 noindex。
+- 新增 `/go/:code` 与根路径短链跳转入口及 link-attribution 短链登记接口，支持同站安全跳转、动态 code registry、相同 destination 复用已有短链与旧 `to` 回退链接。
+- 支付成功页路由加入放行清单，避免无档案状态被重定向，订阅后可顺利进入个人信息页。
+- 支付成功回调增加 PayPal 查询参数转 hash 路由处理，避免跳回首页。
+- 移除 Tailwind CDN，改为 Tailwind/PostCSS 本地构建并新增样式配置与入口文件。
+- 移除失效字体预加载与手写 @font-face，改为标准 Google Fonts 样式加载。
+- 根目录新增 postinstall 脚本，自动安装 backend 依赖以保障 Vercel Serverless 运行时可用。
+- 新增 .worktrees 作为隔离工作区目录并加入 .gitignore。
+- 新增 ANALYTICS_SETUP.md 并完善 GA4/GTM 追踪配置指南。
+- 合盘积分购买完成后自动触发合盘生成，付费墙回调链路贯通计算流程。
+- 合盘组合盘核心/日常/灵魂模块对齐 Big3 卡片排版并补齐行星/星座 Unicode，综述/对比盘折叠内容改为扁平化并补齐合盘详情 hash。
+- Unicode 行星/星座图标的底板补充细边框，确保与卡片背景对比清晰。
+- 合盘卡片行星 glyph 在 light 模式下加深色阶，提升纸感背景下的可读性。
+- Ask 问答分类栏修正暗色分隔线并统一卡片左侧细线强调，避免亮白干扰。
+- App 主页面与迁移弹层对齐 paper 色系与遮罩层级，提升浅色主题对比度。
+- 星盘/CBT/报告图表移除硬编码色值，统一主题色变量与纸感配色。
+- 地名输入支持中文/拼音、模糊搜索与省市国家结构展示，并覆盖 onboarding/档案编辑入口。
+- 更新 COLOR_SYSTEM_GUIDE.md，保留 paper 温暖色系并补充 unicode 图标/示例文本色对比度规范。
+- 新增 PULL_REQUEST_TEMPLATE.md，补充 UI 规范清单与合规说明门槛。
+- README.md/AGENTS.md/CLAUDE.md/openspec/project.md 补充 UI 规范唯一入口与评审门槛说明。
+- AGENTS.md 新增最高规则：总是使用 English 思考，总是中文回复。
+- AGENTS.md 最高规则补充“使用英文思考，使用中文输出”。
+- 积分使用情况记录补充报告类型标识展示。
+- 新增积分使用情况页与顶部积分入口胶囊。
+- 登录后检测本地资料并提示迁移到云端账户。
+- 新增 /auth 登录注册页并补充 OAuth 入口与提示信息。
+- 设置页新增试用剩余天数提示文案。
+- 经典详情页改为双页展开阅读，并调亮墨水屏配色与正文字号。
+- 经典阅读页补齐 i18n 文案，确保详情页按钮与提示可翻译。
+- 经典拆解 Markdown 从根目录迁移至 `backend/data/classics_reports`，移除 `english_analysis` 目录。
+- 行运详情解锁对齐日次权益，合盘详情改为基于合盘哈希购买与缓存。
+- 支付成功页与用户菜单的订阅管理入口改为直达订阅门户。
+- Synthetica 工具接入日额度与单次付费入口，生成按钮旁展示剩余次数。
+- Wiki 经典书籍详情切换为 Markdown 内容与分类分组展示。
+- 今日运势星象详情改为默认展示，查看相位/行星/宫主星详情改为单次付费入口。
+- CBT 统计入口补充解读权限校验，积分购买同步日次解锁本地缓存。
+- 详情解读入口新增权益校验与 Ask 请求去重消费。
+- Wiki 深度解读生成覆盖已填充全量内容并清除占位符。
+- 探索自我时区 UTC 偏移小数修正。
+- 探索自我头部出生城市后追加时区 UTC 偏移显示。
+- 设置页新增 GM 开发会话入口以替代登录。
+- 设置页新增 GM 测试指令入口，用于订阅与代币调试。
+- AuthContext 接入权益刷新缓存，GM/支付/报告流程复用。
+- Vercel 路由先处理静态资源，避免模块脚本被 HTML 回退。
+- 固定 Node 版本为 20.x，保障 swisseph 编译。
+- API 默认在生产使用同源 `/api`，避免指向本地地址。
+- 新增 Wiki 经典书籍页签文案与路由入口。
+- Wiki 深度解读新增 life_areas 等扩展字段类型，并同步前端类型定义。
+- apiClient 修复 Wiki 详情重复定义并补齐缓存版本常量。
+- Wiki 详情/关联条目图标强制 Unicode 文本变体，避免 emoji。
+- Wiki 全站中文文案去英文并统一 Unicode 符号显示。
+- 心理占星百科首页与百科页布局比例调整，卡片展示优化。
+- Wiki 页面阅读宽度对齐 1280 容器，保持探索自我一致性。
+- 全局卡片恢复左侧窄色条，保留明确的层级强调。
+- 探索自我/今日运势/Ask 报告星盘与解读内容间距进一步收紧，对齐合盘本命盘节奏。
+- 新增心理占星百科 Wiki 入口与后端数据接入。
+- 全局 UI 统一为磨砂黑 + 暗金视觉体系并规范字体与颜色。
+- 进一步压暗全站背景层级，弱化底色可见度。
+- 星盘/专业附录统一星座与行星配色并提升色彩多样性。
+- Light 模式新增对应的暖灰底与深墨字色映射，避免白底白字。
+- 星盘行星/星座/相位连线配色提升饱和度以增强可读性。
+- 星盘宫头度分沿外圈切线排列，避免外环溢出。
+- 星盘宫头度分与星座 icon 间距加大以提升环绕清晰度。
+- 双人盘仅保留跨盘相位线，并统一对齐行运盘 orb 设置。
+- 今日运势宜/忌改为绿/红配色，心理陷阱卡片改为红色，并收窄微练习卡片边框。
+- 行运与对比盘外环启用北交点显示，并同步跨盘相位信息。
+- 双人盘北交点跨盘相位线补齐，避免交点连线缺失。
+- 成长焦点甜蜜/摩擦点改为展开后懒加载。
+- 元素矩阵放大字级与行星图标，并移除圆环底圈。
+- 相位矩阵移除 DSC/IC/MC，行运矩阵补齐 ASC 参与相位。
+- 宫主星飞入宫位展示补充星座信息。
+- 星盘相位图例文案精简并隐藏合相线。
+- Ask 口语化大类与 60 个短问题库更新。
+- DeepSeek 环境变量改为仅后端读取。
+- Ask 报告视图改为可滚动显示完整内容。
+- Ask 报告输出改为纯文本标签，移除 Markdown 强调标记。
+- Ask 回答态隐藏顶部神谕头图与在线状态区块。
+- Ask 题目列表间距与模块位置重新调整。
+- Ask 题目行距再次缩小。
+- Ask 题目卡片高度进一步降低并移除行间空隙。
+- Ask 题目卡片高度固定为 20px，并上调字号。
+- Ask 题目卡片高度调整为 30px，并缩小题目间距。
+- Ask 题目卡片高度调整为 38px，并更新题目间距。
+- Ask 题目行距通过负间距压缩。
+- Ask 报告内容宽度与页面最大宽度对齐。
+- 修复 Ask Oracle 报告弹层 JSX 结构导致页面报错的问题。
+- Ask 报告分段标题与关键标签按语言本地化显示。
+- Ask 报告卡片分层标题强化、关键标签高亮并移除多余提示与题头摘要。
+- Ask 报告头部信息移至顶栏并恢复分类+问题居中显示，核心洞察标题独立高亮。
+- Ask 报告顶栏新增神谕回应徽标并移除正文重复展示。
+- 顶部导航设置/主题切换图标放大 2 倍以提升可见性。
+- Ask 报告分段拆分兜底强化，兼容无标题输出并自动翻译英文标签行。
+- 修复元素配置输出为对象时的渲染报错。
+- 全局内容容器宽度扩展至 1280px，并同步顶栏对齐。
+
+近期更新
+
+- SEO 元信息回切本地 head 输出，修复构建/开发依赖链路。
+- 新增 SEO/GEO 构建期静态页生成、站点图标/OG 资源与 www 重定向配置。
+- 移除 src 镜像目录，保留根目录单一主线。
+- 更新 onboarding 出生地输入为可自由填写并修正城市字段映射。
+- 归档 optimize-ai-loading 变更提案并更新相关规范。
+- 探索自我技术附录移除 AI 生成，详情解读改为本地缓存且无超时等待。
+- 今日运势合并日运与行运请求，详情解读使用指数退避并按版本缓存。
+- 星象问答与双人合盘新增 AI/Mock 来源提示，并调整预设问题仅填充不自动发送。
+- 星象问答新增类别透传、同题缓存规则与等待策略，避免预取。
+- 探索自我追加本命盘标题/图例与附录表格本地化，更新 SVG 图标比例。
+- 探索自我本命盘缩放继续下调并收紧相邻模块间距。
+- 探索自我行星/敏感点清单扩展并更新相位矩阵数量。
+- 探索自我人生课题改为三卡叙事结构并同步 prompt/schema。
+- 核心画像/人生课题模块宽度收窄，相位矩阵行星图标放大并移除对角标签。
+- 探索自我人生课题改为纵向排版并整体上移核心画像以下模块。
+- 一级页面内容宽度统一为 1280px，并补齐宫主星图标尺寸一致性。
+- 相位矩阵 Sun 行标文字移除，核心画像区域位置微调。
+- 新增双人合盘体验提案并补充关系类型 Top5 建议。
+- 双人合盘新增选人档案、关系类型建议与技术附录区块，前后端接入严格 AI 模式。
+- OpenSpec 合盘体验提案更新任务完成度与验证记录。
+- 双人合盘选人界面改为固定顶/底栏与列表勾选式交互，突出已选标识并允许取消选择。
+- 今日运势相位矩阵与正文排版对齐探索自我风格，调整矩阵展示方式。
+- 今日运势相位矩阵使用行星图标行列头，并缩短星盘与个性化解读间距。
+- 今日运势相位矩阵改为图标 + orb 样式，星盘段落收紧以匹配参考图间距。
+- 合盘报告请求改为不设超时以持续等待 AI 结果。
+- 合盘报告请求提升 max_tokens 以降低截断导致的失败。
+- 今日运势详情查看改为自动重试以持续等待结果返回。
+- AI 严格模式失败记录后端错误日志便于排查。
+- AI 输出 JSON 异常时自动修复并提升可用性。
+- AI 输出统一为单语言 payload，并按语言区分缓存 key。
+- 合盘报告改为按 tab 分段生成，前端空闲预取其余标签并显示失败提示。
+- 新增合盘阅读体验与性能优化提案。
+- 归档合盘相关变更（optimize-synastry-report、optimize-synastry-ux、update-synastry-experience）。
+- 归档 add-section-detail-modal、align-ai-data-pipeline、ask-report-optimization、improve-synastry-reading、optimize-chart-settings、stabilize-ai-output-flow。
+- 新增 configure-chart-display 能力规范。
+- 归档 optimize-daily-transit、optimize-cbt-ask-ui、enhance-cbt-journal、update-self-exploration-layout。
+- CBT 分析失败改为前端提示而非回落 mock。
+- 神谕问答改为 ORACLE/神谕标题并加入在线呼吸灯与全屏加载轮播短语。
+- 神谕问答压缩卡片与输入区布局，选中高亮并合并发送按钮。
+- 神谕问答问题卡片间距进一步收紧为当前的三分之一。
+- 神谕问答整体上移约 30px 以缩短顶部留白。
+- CBT 日历压缩为单屏 31 天游览，报告模块改为纵向单列。
+- CBT 主界面整体上移并放大日历标题字号，底部按钮区上下居中。
+- CBT 写日记步骤标题按设计 6.1 调整为直白问句（中英文同步）。
+- 问答模块改为 Markdown 结构化报告渲染，并更新双语问题库与分类。
+- 合盘综述补齐雷达/成长任务/动态与四象限细节的结构化呈现。
+- 合盘技术附录拆分为懒加载端点并在前端本地缓存。
+- 合盘综述替换为核心互动动力学/关系时间线/占星亮点折叠层，并优化练习工具箱与总结样式。
+- 合盘核心互动动力学改为单列卡片结构，星象亮点纵向堆叠显示，并移除关系 K 线。
+- 合盘综述核心互动/练习工具箱/关系时间线改为折叠懒加载，并补充 7 天游程与总结字体调整。
+- 合盘本命/对比/组合盘 tab 版式对齐综述卡片层级并提升可读性。
+- 合盘 Highlights 改为按需加载，overview 上下文瘦身并新增后端本命盘缓存。
+- 合盘本命/对比/组合盘改为纵向排版与对比盘聊天式互动，修复本命盘模式字段渲染报错。
+- 合盘星盘缩放补偿底部留白，收紧星盘与正文间距。
+- 合盘综述关系氛围改为直出展示，成长焦点合并甜蜜/摩擦并懒加载，折叠模块切换 tab 记忆展开状态，移除关系行动线模块。
+- 合盘路线图 tab 下线并移除对应内容，核心互动模块标题更直白。
+- 探索自我人生课题与行动改为点击后懒加载生成。
+- Ask 报告顶部显示提问标题并将核心洞察标题移出正文，左上展示大类型与问题描述。
+- Ask 报告头部显示为「分类：问题」格式，并去除子标题。

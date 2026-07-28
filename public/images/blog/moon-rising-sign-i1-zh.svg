@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 614" role="img" aria-label="月亮、上升与太阳对比">
+  <defs>
+    <linearGradient id="moonrisingsign1zh-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="moonrisingsign1zh-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="moonrisingsign1zh-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonrisingsign1zh-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonrisingsign1zh-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonrisingsign1zh-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="url(#moonrisingsign1zh-panel)"/>
+  <ellipse cx="198" cy="147" rx="380" ry="209" fill="url(#moonrisingsign1zh-neb1)"/>
+  <ellipse cx="623" cy="491" rx="334" ry="196" fill="url(#moonrisingsign1zh-neb2)"/>
+  <circle cx="523.3" cy="165.9" r="1.31" fill="#cfc8ea" opacity="0.36"/><circle cx="390.1" cy="207.0" r="1.16" fill="#cfc8ea" opacity="0.20"/><circle cx="124.5" cy="150.0" r="1.18" fill="#cfc8ea" opacity="0.25"/><circle cx="658.6" cy="477.2" r="0.95" fill="#cfc8ea" opacity="0.44"/><circle cx="36.4" cy="402.8" r="1.55" fill="#cfc8ea" opacity="0.34"/><circle cx="264.5" cy="288.3" r="1.56" fill="#cfc8ea" opacity="0.23"/><circle cx="277.2" cy="106.7" r="1.54" fill="#cfc8ea" opacity="0.43"/><circle cx="630.3" cy="13.0" r="0.57" fill="#cfc8ea" opacity="0.44"/><circle cx="278.8" cy="64.1" r="0.58" fill="#cfc8ea" opacity="0.22"/><circle cx="378.7" cy="189.2" r="1.02" fill="#cfc8ea" opacity="0.52"/><circle cx="475.1" cy="88.9" r="0.96" fill="#cfc8ea" opacity="0.46"/><circle cx="481.0" cy="486.4" r="0.76" fill="#cfc8ea" opacity="0.49"/><circle cx="379.7" cy="411.1" r="1.05" fill="#cfc8ea" opacity="0.41"/><circle cx="452.1" cy="262.8" r="1.25" fill="#cfc8ea" opacity="0.29"/><circle cx="704.8" cy="203.4" r="0.51" fill="#cfc8ea" opacity="0.15"/><circle cx="654.8" cy="262.5" r="1.23" fill="#cfc8ea" opacity="0.45"/><circle cx="315.0" cy="210.4" r="1.39" fill="#cfc8ea" opacity="0.34"/><circle cx="401.7" cy="465.3" r="1.49" fill="#cfc8ea" opacity="0.49"/><circle cx="721.7" cy="245.6" r="0.50" fill="#cfc8ea" opacity="0.15"/><circle cx="425.9" cy="340.6" r="1.32" fill="#cfc8ea" opacity="0.14"/><circle cx="737.0" cy="73.1" r="1.17" fill="#cfc8ea" opacity="0.17"/><circle cx="152.9" cy="132.4" r="0.66" fill="#cfc8ea" opacity="0.24"/><circle cx="547.6" cy="224.9" r="1.52" fill="#cfc8ea" opacity="0.16"/><circle cx="157.4" cy="589.0" r="0.57" fill="#cfc8ea" opacity="0.28"/><circle cx="72.7" cy="433.9" r="1.62" fill="#cfc8ea" opacity="0.53"/><circle cx="635.0" cy="372.3" r="1.05" fill="#cfc8ea" opacity="0.53"/><circle cx="58.4" cy="547.1" r="1.53" fill="#cfc8ea" opacity="0.38"/><circle cx="565.2" cy="463.0" r="0.81" fill="#cfc8ea" opacity="0.22"/><circle cx="122.5" cy="516.8" r="1.35" fill="#cfc8ea" opacity="0.38"/><circle cx="591.8" cy="307.8" r="1.53" fill="#cfc8ea" opacity="0.47"/><circle cx="156.6" cy="126.1" r="0.51" fill="#cfc8ea" opacity="0.29"/><circle cx="700.4" cy="231.9" r="1.51" fill="#cfc8ea" opacity="0.27"/><circle cx="669.9" cy="473.3" r="1.61" fill="#cfc8ea" opacity="0.23"/><circle cx="211.8" cy="378.5" r="1.30" fill="#cfc8ea" opacity="0.34"/><circle cx="111.6" cy="291.1" r="1.56" fill="#cfc8ea" opacity="0.21"/><circle cx="227.3" cy="70.8" r="0.85" fill="#cfc8ea" opacity="0.34"/><circle cx="591.3" cy="174.0" r="0.93" fill="#cfc8ea" opacity="0.43"/><circle cx="689.0" cy="100.5" r="1.41" fill="#cfc8ea" opacity="0.25"/><circle cx="556.6" cy="79.3" r="1.10" fill="#cfc8ea" opacity="0.19"/><circle cx="719.6" cy="418.5" r="1.17" fill="#cfc8ea" opacity="0.48"/><circle cx="326.8" cy="84.6" r="0.65" fill="#cfc8ea" opacity="0.49"/><circle cx="46.4" cy="249.8" r="1.22" fill="#cfc8ea" opacity="0.47"/><circle cx="468.2" cy="512.1" r="0.52" fill="#cfc8ea" opacity="0.31"/><circle cx="142.7" cy="69.8" r="1.01" fill="#cfc8ea" opacity="0.32"/><circle cx="19.0" cy="363.5" r="0.48" fill="#cfc8ea" opacity="0.48"/><circle cx="459.9" cy="111.6" r="0.92" fill="#cfc8ea" opacity="0.37"/><circle cx="193.2" cy="203.2" r="1.57" fill="#cfc8ea" opacity="0.41"/><circle cx="637.3" cy="420.2" r="1.36" fill="#cfc8ea" opacity="0.22"/><circle cx="323.6" cy="364.8" r="1.15" fill="#cfc8ea" opacity="0.28"/><circle cx="553.3" cy="56.3" r="1.33" fill="#cfc8ea" opacity="0.30"/><circle cx="689.6" cy="188.7" r="1.32" fill="#cfc8ea" opacity="0.35"/><circle cx="588.5" cy="235.8" r="1.29" fill="#cfc8ea" opacity="0.37"/><path d="M 564.6921760253608 287.1 L 565.3 290.4 L 568.6 291.0267491773702 L 565.3 291.7 L 564.6921760253608 294.9 L 564.1 291.7 L 560.8 291.0267491773702 L 564.1 290.4 Z" fill="#f6e6bf" opacity="0.7986573299625888"/><path d="M 411.4893246628344 36.4 L 412.0 39.2 L 414.9 39.75171258347109 L 412.0 40.3 L 411.4893246628344 43.2 L 410.9 40.3 L 408.1 39.75171258347109 L 410.9 39.2 Z" fill="#f6e6bf" opacity="0.7383760215016082"/><path d="M 545.0384644530714 321.4 L 545.5 324.1 L 548.2 324.6292890631594 L 545.5 325.1 L 545.0384644530714 327.8 L 544.5 325.1 L 541.9 324.6292890631594 L 544.5 324.1 Z" fill="#f6e6bf" opacity="0.5112294879043475"/><path d="M 98.9298187084496 544.8 L 99.6 548.1 L 102.9 548.7597465035506 L 99.6 549.4 L 98.9298187084496 552.8 L 98.3 549.4 L 94.9 548.7597465035506 L 98.3 548.1 Z" fill="#f6e6bf" opacity="0.6149333692388609"/><path d="M 349.06656850501895 270.2 L 349.5 272.6 L 351.9 273.0299509973265 L 349.5 273.5 L 349.06656850501895 275.9 L 348.6 273.5 L 346.2 273.0299509973265 L 348.6 272.6 Z" fill="#f6e6bf" opacity="0.6850340398261323"/><path d="M 630.3 13.0 L 315.0 210.4 L 737.0 73.1 L 211.8 378.5 L 689.0 100.5" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="611" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="600" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 594.8 L 16.5 597.5 L 19.2 598 L 16.5 598.5 L 16 601.2 L 15.5 598.5 L 12.8 598 L 15.5 597.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 594.8 L 744.5 597.5 L 747.2 598 L 744.5 598.5 L 744 601.2 L 743.5 598.5 L 740.8 598 L 743.5 597.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">月亮、上升与太阳对比</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#moonrisingsign1zh-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#moonrisingsign1zh-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">月亮所在星座</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">情绪需求、本能、内在安全感</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">内在自我</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">在思考之前就安抚或动摇你的东西</text>
+  <path d="M 380 250.5 L 380.7 254.3 L 384.5 255 L 380.7 255.7 L 380 259.5 L 379.3 255.7 L 375.5 255 L 379.3 254.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="268" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="268" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 266.1 L 380.5 269.0 L 383.4 269.5 L 380.5 270.0 L 380 272.9 L 379.5 270.0 L 376.6 269.5 L 379.5 269.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="297.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">上升所在星座</text>
+  <path d="M 70 326.8 L 70.5 329.5 L 73.2 330 L 70.5 330.5 L 70 333.2 L 69.5 330.5 L 66.8 330 L 69.5 329.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="335.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">外在性格、外显面貌、第一印象</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">外在面貌</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">初次接触时别人遇到的那副姿态</text>
+  <path d="M 380 419.5 L 380.7 423.3 L 384.5 424 L 380.7 424.7 L 380 428.5 L 379.3 424.7 L 375.5 424 L 379.3 423.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="437" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="437" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 435.1 L 380.5 438.0 L 383.4 438.5 L 380.5 439.0 L 380 441.9 L 379.5 439.0 L 376.6 438.5 L 379.5 438.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="466.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">太阳所在星座</text>
+  <path d="M 70 495.8 L 70.5 498.5 L 73.2 499 L 70.5 499.5 L 70 502.2 L 69.5 499.5 L 66.8 499 L 69.5 498.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="504.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">有意识的自我感与目标</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">核心身份</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">你有意识地朝它走去的那个我</text>
+  <path d="M 280.025 585.4 L 280.4 587.6 L 282.6 588 L 280.4 588.4 L 280.025 590.6 L 279.6 588.4 L 277.4 588 L 279.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="592" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">自我反思框架，描述倾向而非预测</text>
+  <path d="M 479.975 585.4 L 480.4 587.6 L 482.6 588 L 480.4 588.4 L 479.975 590.6 L 479.6 588.4 L 477.4 588 L 479.6 587.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

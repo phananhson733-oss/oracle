@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 487" role="img" aria-label="Five Signals of the Leo–Scorpio Blend">
+  <defs>
+    <linearGradient id="karolinamuchovabirthchart0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="karolinamuchovabirthchart0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="karolinamuchovabirthchart0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="karolinamuchovabirthchart0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="karolinamuchovabirthchart0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="karolinamuchovabirthchart0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="484" rx="22" fill="url(#karolinamuchovabirthchart0en-panel)"/>
+  <ellipse cx="198" cy="117" rx="380" ry="166" fill="url(#karolinamuchovabirthchart0en-neb1)"/>
+  <ellipse cx="623" cy="390" rx="334" ry="156" fill="url(#karolinamuchovabirthchart0en-neb2)"/>
+  <circle cx="67.3" cy="122.2" r="1.64" fill="#cfc8ea" opacity="0.30"/><circle cx="597.8" cy="417.6" r="0.99" fill="#cfc8ea" opacity="0.46"/><circle cx="642.8" cy="309.5" r="1.01" fill="#cfc8ea" opacity="0.46"/><circle cx="380.1" cy="70.1" r="1.33" fill="#cfc8ea" opacity="0.21"/><circle cx="216.5" cy="363.7" r="0.90" fill="#cfc8ea" opacity="0.49"/><circle cx="200.2" cy="273.0" r="0.56" fill="#cfc8ea" opacity="0.16"/><circle cx="718.3" cy="222.9" r="0.90" fill="#cfc8ea" opacity="0.33"/><circle cx="102.1" cy="361.8" r="1.55" fill="#cfc8ea" opacity="0.14"/><circle cx="596.5" cy="89.5" r="0.61" fill="#cfc8ea" opacity="0.42"/><circle cx="395.9" cy="399.1" r="0.66" fill="#cfc8ea" opacity="0.39"/><circle cx="385.3" cy="319.3" r="1.66" fill="#cfc8ea" opacity="0.37"/><circle cx="415.6" cy="425.8" r="0.45" fill="#cfc8ea" opacity="0.25"/><circle cx="63.4" cy="380.2" r="0.98" fill="#cfc8ea" opacity="0.19"/><circle cx="573.1" cy="362.7" r="0.94" fill="#cfc8ea" opacity="0.49"/><circle cx="404.8" cy="244.7" r="1.63" fill="#cfc8ea" opacity="0.16"/><circle cx="702.2" cy="185.6" r="1.63" fill="#cfc8ea" opacity="0.30"/><circle cx="221.3" cy="78.8" r="1.40" fill="#cfc8ea" opacity="0.15"/><circle cx="105.9" cy="391.0" r="1.37" fill="#cfc8ea" opacity="0.41"/><circle cx="604.9" cy="29.7" r="1.38" fill="#cfc8ea" opacity="0.35"/><circle cx="695.6" cy="201.0" r="0.70" fill="#cfc8ea" opacity="0.25"/><circle cx="677.5" cy="381.5" r="0.77" fill="#cfc8ea" opacity="0.20"/><circle cx="639.0" cy="67.9" r="1.41" fill="#cfc8ea" opacity="0.39"/><circle cx="405.6" cy="425.8" r="0.58" fill="#cfc8ea" opacity="0.38"/><circle cx="379.7" cy="182.8" r="0.94" fill="#cfc8ea" opacity="0.45"/><circle cx="686.9" cy="329.3" r="0.42" fill="#cfc8ea" opacity="0.49"/><circle cx="496.8" cy="466.3" r="0.50" fill="#cfc8ea" opacity="0.45"/><circle cx="125.4" cy="152.5" r="0.88" fill="#cfc8ea" opacity="0.23"/><circle cx="551.4" cy="398.2" r="1.14" fill="#cfc8ea" opacity="0.18"/><circle cx="67.0" cy="455.1" r="1.20" fill="#cfc8ea" opacity="0.16"/><circle cx="735.3" cy="321.1" r="1.25" fill="#cfc8ea" opacity="0.40"/><circle cx="92.1" cy="419.8" r="0.91" fill="#cfc8ea" opacity="0.24"/><circle cx="103.8" cy="98.8" r="1.62" fill="#cfc8ea" opacity="0.33"/><circle cx="544.8" cy="472.8" r="0.80" fill="#cfc8ea" opacity="0.43"/><circle cx="583.0" cy="108.5" r="0.40" fill="#cfc8ea" opacity="0.40"/><circle cx="652.5" cy="356.2" r="0.42" fill="#cfc8ea" opacity="0.41"/><circle cx="253.0" cy="186.5" r="1.64" fill="#cfc8ea" opacity="0.50"/><circle cx="48.5" cy="157.8" r="1.67" fill="#cfc8ea" opacity="0.17"/><circle cx="681.6" cy="237.9" r="0.78" fill="#cfc8ea" opacity="0.15"/><circle cx="467.4" cy="421.9" r="1.48" fill="#cfc8ea" opacity="0.19"/><circle cx="356.7" cy="311.0" r="1.07" fill="#cfc8ea" opacity="0.20"/><circle cx="611.4" cy="186.8" r="1.13" fill="#cfc8ea" opacity="0.29"/><path d="M 340.28461610898376 45.0 L 340.8 47.8 L 343.7 48.35330673190765 L 340.8 48.9 L 340.28461610898376 51.7 L 339.7 48.9 L 336.9 48.35330673190765 L 339.7 47.8 Z" fill="#f6e6bf" opacity="0.6543699272209779"/><path d="M 680.731679726392 150.7 L 681.4 154.0 L 684.6 154.63435731991194 L 681.4 155.3 L 680.731679726392 158.5 L 680.1 155.3 L 676.8 154.63435731991194 L 680.1 154.0 Z" fill="#f6e6bf" opacity="0.7136241155909374"/><path d="M 627.0938700251281 432.0 L 627.6 434.6 L 630.2 435.0827291577589 L 627.6 435.6 L 627.0938700251281 438.2 L 626.6 435.6 L 624.0 435.0827291577589 L 626.6 434.6 Z" fill="#f6e6bf" opacity="0.5970230294624344"/><path d="M 328.8855436183512 392.9 L 329.3 395.2 L 331.7 395.66910510486923 L 329.3 396.1 L 328.8855436183512 398.4 L 328.4 396.1 L 326.1 395.66910510486923 L 328.4 395.2 Z" fill="#f6e6bf" opacity="0.7752811187179759"/><path d="M 440.55608519539237 156.1 L 441.0 158.3 L 443.2 158.74094948428683 L 441.0 159.2 L 440.55608519539237 161.4 L 440.1 159.2 L 437.9 158.74094948428683 L 440.1 158.3 Z" fill="#f6e6bf" opacity="0.5763893682742491"/><path d="M 695.6 201.0 L 379.7 182.8 L 48.5 157.8 L 467.4 421.9 L 356.7 311.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="484" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="473" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 467.8 L 16.5 470.5 L 19.2 471 L 16.5 471.5 L 16 474.2 L 15.5 471.5 L 12.8 471 L 15.5 470.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 467.8 L 744.5 470.5 L 747.2 471 L 744.5 471.5 L 744 474.2 L 743.5 471.5 L 740.8 471 L 743.5 470.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Signals of the Leo–Scorpio Blend</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#karolinamuchovabirthchart0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#karolinamuchovabirthchart0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="415" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#karolinamuchovabirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#karolinamuchovabirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">A Bright Front, a Private Core</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Warm and expressive in public, but slow to reveal what is actually happening</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">underneath</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#karolinamuchovabirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#karolinamuchovabirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Recognition That Is Earned, Not Begged For</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The Leo drive for visible achievement approached with Scorpio patience and</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">strategy</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#karolinamuchovabirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#karolinamuchovabirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Calm at the Highest Stakes</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Composure that reads as cool but runs on tightly held intensity, most visible</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">in title-deciding moments</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#karolinamuchovabirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#karolinamuchovabirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Delayed Emotional Disclosure</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Feelings tend to surface later and to fewer people, on the person's own timing</text>
+  <circle cx="76" cy="415" r="20.0" fill="url(#karolinamuchovabirthchart0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="415" r="15" fill="url(#karolinamuchovabirthchart0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="410.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="419.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="411.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Fixed Determination</text>
+  <text x="116" y="433.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Both Leo and Scorpio are fixed signs — once a goal is set, it rarely wobbles</text>
+  <path d="M 202.22749999999988 458.4 L 202.6 460.6 L 204.8 461 L 202.6 461.4 L 202.22749999999988 463.6 L 201.8 461.4 L 199.6 461 L 201.8 460.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="465" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 458.4 L 558.2 460.6 L 560.4 461 L 558.2 461.4 L 557.7725000000002 463.6 L 557.4 461.4 L 555.2 461 L 557.4 460.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

@@ -1,0 +1,98 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "magha-nakshatra": {
+      "hero": {
+        "prompt": "An ancient ornate throne standing alone on a sweeping cosmic plain under a vast night sky, the throne radiating a warm inherited golden glow as if lit from within by generations of ancestral presence, translucent ancestor spirit forms rising as luminous teal-and-gold mist from the dark earth around the throne's base, the mist curling upward like sacred smoke dissolving into the indigo heavens, a faint crescent arc hanging low in the far distance — deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "An ancient throne glowing with inherited gold in a vast night landscape, ancestor spirits rising as mist around it",
+        "altZh": "广袤黑夜中一座散发着继承之光的古老王座，祖先群灵化作薄雾在其周围升腾"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Magha in a Chart",
+          "afterHeadingZh": "## 如何在星盘里识别它",
+          "titleEn": "How to Read Magha Nakshatra",
+          "titleZh": "如何识别玛迦星宿",
+          "altEn": "Five-step sequence for reading Magha nakshatra in a birth chart",
+          "altZh": "识别玛迦星宿的五步流程图",
+          "items": [
+            {
+              "nameEn": "Confirm Position",
+              "nameZh": "确认度数",
+              "subEn": "Magha spans 0° to 13°20' of Leo, the first slice of the sign",
+              "subZh": "它占狮子座 0° 到 13°20′，是这个星座最前面的一段"
+            },
+            {
+              "nameEn": "Note Ketu's Rulership",
+              "nameZh": "记住计都主管",
+              "subEn": "Read the placement through lineage and the past, not raw ambition",
+              "subZh": "透过血脉与过去来读这个位置，而非赤裸的野心"
+            },
+            {
+              "nameEn": "Bring in the Pitrs",
+              "nameZh": "引入祖先群灵",
+              "subEn": "Ask what family legacy, name, or inheritance the chart asks to honor",
+              "subZh": "追问星盘在请这个人承接什么样的家族传承、名号或继承"
+            },
+            {
+              "nameEn": "Hold Ketu's Tension",
+              "nameZh": "持守计都的张力",
+              "subEn": "Duty alongside letting go — the core of the reading, not a flaw",
+              "subZh": "一边被责任拉、一边被放下拉——这是解读的核心，而非缺陷"
+            },
+            {
+              "nameEn": "Avoid Shortcuts",
+              "nameZh": "避开捷径",
+              "subEn": "Authority received and reckoned with, not merely a 'natural leader'",
+              "subZh": "权威是被接过来的，然后还要去面对它，而不只是'天生领袖'"
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## Common Misreadings",
+          "afterHeadingZh": "## 常见误读",
+          "titleEn": "Four Common Misreadings of Magha",
+          "titleZh": "玛迦星宿的四种常见误读",
+          "altEn": "Four common misreadings of Magha nakshatra corrected with the inherited-authority framework",
+          "altZh": "四种常见的玛迦星宿误读及其纠正",
+          "items": [
+            {
+              "nameEn": "Destined to Rule",
+              "nameZh": "注定统治",
+              "subEn": "Throne inherited ≠ guaranteed power; Magha points to lineage you carry, not assured outcomes",
+              "subZh": "王座是继承的，并不等于到手的权力；它指向你背着的那脉血缘"
+            },
+            {
+              "nameEn": "Sun or Saturn Should Rule",
+              "nameZh": "太阳或土星主管",
+              "subEn": "Ketu rules Magha; authority looks backward into ancestry, not upward into status",
+              "subZh": "主管它的是计都；这里的权威回望祖先，而不是向上攀附地位"
+            },
+            {
+              "nameEn": "Pure Confidence",
+              "nameZh": "纯粹的自信",
+              "subEn": "Ketu's detachment runs underneath; standing often comes with ambivalence about the legacy",
+              "subZh": "计都的疏离一直潜在底下；这份地位常常带着对传承的矛盾心情"
+            },
+            {
+              "nameEn": "Fame Changes the Frame",
+              "nameZh": "名人用不同读法",
+              "subEn": "The frame is identical for anyone — check inherited dignity first, then how they carry it",
+              "subZh": "框架对谁都一样——先看那份继承来的体面，再读这个人怎么背着它"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

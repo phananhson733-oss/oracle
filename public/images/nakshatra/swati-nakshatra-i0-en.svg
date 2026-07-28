@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 643" role="img" aria-label="Swati, Chitra, Vishakha: Where Desire Points">
+  <defs>
+    <linearGradient id="swatinakshatra0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="swatinakshatra0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="swatinakshatra0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="swatinakshatra0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="640" rx="22" fill="url(#swatinakshatra0en-panel)"/>
+  <ellipse cx="198" cy="154" rx="380" ry="219" fill="url(#swatinakshatra0en-neb1)"/>
+  <ellipse cx="623" cy="514" rx="334" ry="206" fill="url(#swatinakshatra0en-neb2)"/>
+  <circle cx="711.3" cy="168.8" r="0.89" fill="#cfc8ea" opacity="0.43"/><circle cx="350.2" cy="516.9" r="1.06" fill="#cfc8ea" opacity="0.38"/><circle cx="13.7" cy="247.1" r="1.15" fill="#cfc8ea" opacity="0.49"/><circle cx="37.2" cy="245.8" r="1.48" fill="#cfc8ea" opacity="0.39"/><circle cx="71.6" cy="257.8" r="0.71" fill="#cfc8ea" opacity="0.43"/><circle cx="110.7" cy="209.3" r="1.11" fill="#cfc8ea" opacity="0.23"/><circle cx="557.7" cy="168.4" r="1.31" fill="#cfc8ea" opacity="0.50"/><circle cx="446.6" cy="209.3" r="1.54" fill="#cfc8ea" opacity="0.49"/><circle cx="247.5" cy="132.3" r="0.70" fill="#cfc8ea" opacity="0.25"/><circle cx="285.6" cy="220.8" r="1.67" fill="#cfc8ea" opacity="0.19"/><circle cx="607.7" cy="51.3" r="0.53" fill="#cfc8ea" opacity="0.23"/><circle cx="28.2" cy="551.2" r="1.64" fill="#cfc8ea" opacity="0.18"/><circle cx="26.8" cy="557.7" r="0.60" fill="#cfc8ea" opacity="0.43"/><circle cx="316.3" cy="493.6" r="1.30" fill="#cfc8ea" opacity="0.36"/><circle cx="422.6" cy="525.1" r="1.10" fill="#cfc8ea" opacity="0.40"/><circle cx="365.0" cy="499.1" r="1.26" fill="#cfc8ea" opacity="0.25"/><circle cx="714.8" cy="432.6" r="0.84" fill="#cfc8ea" opacity="0.50"/><circle cx="398.0" cy="232.9" r="1.11" fill="#cfc8ea" opacity="0.46"/><circle cx="365.3" cy="455.6" r="1.55" fill="#cfc8ea" opacity="0.50"/><circle cx="180.7" cy="579.0" r="1.39" fill="#cfc8ea" opacity="0.13"/><circle cx="224.5" cy="249.9" r="1.70" fill="#cfc8ea" opacity="0.42"/><circle cx="691.2" cy="486.8" r="1.45" fill="#cfc8ea" opacity="0.29"/><circle cx="534.9" cy="181.6" r="0.95" fill="#cfc8ea" opacity="0.30"/><circle cx="637.4" cy="404.9" r="1.37" fill="#cfc8ea" opacity="0.33"/><circle cx="151.9" cy="508.2" r="1.61" fill="#cfc8ea" opacity="0.41"/><circle cx="289.2" cy="38.6" r="1.15" fill="#cfc8ea" opacity="0.22"/><circle cx="555.3" cy="576.1" r="1.68" fill="#cfc8ea" opacity="0.16"/><circle cx="115.4" cy="617.0" r="1.66" fill="#cfc8ea" opacity="0.46"/><circle cx="224.4" cy="420.0" r="1.66" fill="#cfc8ea" opacity="0.46"/><circle cx="278.5" cy="444.5" r="1.50" fill="#cfc8ea" opacity="0.40"/><circle cx="129.4" cy="264.2" r="1.53" fill="#cfc8ea" opacity="0.29"/><circle cx="565.2" cy="430.7" r="0.64" fill="#cfc8ea" opacity="0.46"/><circle cx="328.5" cy="565.2" r="1.49" fill="#cfc8ea" opacity="0.30"/><circle cx="689.4" cy="302.3" r="1.45" fill="#cfc8ea" opacity="0.30"/><circle cx="415.8" cy="290.2" r="1.28" fill="#cfc8ea" opacity="0.41"/><circle cx="603.5" cy="359.6" r="0.62" fill="#cfc8ea" opacity="0.51"/><circle cx="330.6" cy="290.6" r="0.53" fill="#cfc8ea" opacity="0.41"/><circle cx="458.2" cy="464.5" r="1.14" fill="#cfc8ea" opacity="0.37"/><circle cx="582.8" cy="306.3" r="1.24" fill="#cfc8ea" opacity="0.35"/><circle cx="20.7" cy="26.3" r="1.35" fill="#cfc8ea" opacity="0.36"/><circle cx="599.5" cy="620.4" r="0.92" fill="#cfc8ea" opacity="0.35"/><circle cx="135.4" cy="590.7" r="1.04" fill="#cfc8ea" opacity="0.14"/><circle cx="267.0" cy="218.9" r="0.47" fill="#cfc8ea" opacity="0.21"/><circle cx="72.0" cy="316.5" r="0.95" fill="#cfc8ea" opacity="0.29"/><circle cx="437.0" cy="76.0" r="0.70" fill="#cfc8ea" opacity="0.53"/><circle cx="636.0" cy="396.3" r="1.18" fill="#cfc8ea" opacity="0.15"/><circle cx="453.0" cy="338.6" r="1.31" fill="#cfc8ea" opacity="0.29"/><circle cx="298.7" cy="97.9" r="1.15" fill="#cfc8ea" opacity="0.44"/><circle cx="637.9" cy="48.6" r="1.58" fill="#cfc8ea" opacity="0.22"/><circle cx="342.7" cy="539.3" r="1.63" fill="#cfc8ea" opacity="0.16"/><circle cx="620.7" cy="44.7" r="1.34" fill="#cfc8ea" opacity="0.41"/><circle cx="171.6" cy="164.8" r="1.24" fill="#cfc8ea" opacity="0.45"/><circle cx="391.5" cy="625.4" r="1.03" fill="#cfc8ea" opacity="0.45"/><circle cx="418.4" cy="98.2" r="1.50" fill="#cfc8ea" opacity="0.50"/><path d="M 498.7894335333258 77.1 L 499.2 79.2 L 501.3 79.64748510485515 L 499.2 80.1 L 498.7894335333258 82.2 L 498.4 80.1 L 496.2 79.64748510485515 L 498.4 79.2 Z" fill="#f6e6bf" opacity="0.6281019334681333"/><path d="M 117.0134853888303 40.2 L 117.6 43.5 L 120.9 44.09472678648308 L 117.6 44.7 L 117.0134853888303 48.0 L 116.4 44.7 L 113.1 44.09472678648308 L 116.4 43.5 Z" fill="#f6e6bf" opacity="0.767114370688796"/><path d="M 61.35721514560282 367.9 L 61.8 370.4 L 64.3 370.83323769597337 L 61.8 371.3 L 61.35721514560282 373.8 L 60.9 371.3 L 58.4 370.83323769597337 L 60.9 370.4 Z" fill="#f6e6bf" opacity="0.5462116452865302"/><path d="M 524.8500474710017 21.5 L 525.4 24.5 L 528.5 25.08702520141378 L 525.4 25.7 L 524.8500474710017 28.7 L 524.3 25.7 L 521.2 25.08702520141378 L 524.3 24.5 Z" fill="#f6e6bf" opacity="0.6577370638027787"/><path d="M 154.19068803824484 209.4 L 154.7 211.9 L 157.2 212.408751913812 L 154.7 212.9 L 154.19068803824484 215.4 L 153.7 212.9 L 151.2 212.408751913812 L 153.7 211.9 Z" fill="#f6e6bf" opacity="0.6286832095123828"/><path d="M 71.6 257.8 L 285.6 220.8 L 398.0 232.9 L 691.2 486.8 L 689.4 302.3" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="640" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="629" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 623.8 L 16.5 626.5 L 19.2 627 L 16.5 627.5 L 16 630.2 L 15.5 627.5 L 12.8 627 L 15.5 626.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 623.8 L 744.5 626.5 L 747.2 627 L 744.5 627.5 L 744 630.2 L 743.5 627.5 L 740.8 627 L 743.5 626.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Swati, Chitra, Vishakha: Where Desire Points</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#swatinakshatra0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#swatinakshatra0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Swati</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Rahu-ruled, fully in Libra</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Distributes node to node</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Range and relational reach</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Accumulation feels upstream</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 295.1 L 380.5 298.0 L 383.4 298.5 L 380.5 299.0 L 380 301.9 L 379.5 299.0 L 376.6 298.5 L 379.5 298.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Chitra</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Mars-ruled, partly in Libra</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Builds toward a polished result</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Single-minded constructive drive</text>
+  <path d="M 380 448.5 L 380.7 452.3 L 384.5 453 L 380.7 453.7 L 380 457.5 L 379.3 453.7 L 375.5 453 L 379.3 452.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="466" width="668" height="143.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="466" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 464.1 L 380.5 467.0 L 383.4 467.5 L 380.5 468.0 L 380 470.9 L 379.5 468.0 L 376.6 467.5 L 379.5 467.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="495.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Vishakha</text>
+  <path d="M 70 524.8 L 70.5 527.5 L 73.2 528 L 70.5 528.5 L 70 531.2 L 69.5 528.5 L 66.8 528 L 69.5 527.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="533.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Jupiter-Saturn co-ruled</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Desire aimed at long-term goals</text>
+  <path d="M 70 582.8 L 70.5 585.5 L 73.2 586 L 70.5 586.5 L 70 589.2 L 69.5 586.5 L 66.8 586 L 69.5 585.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Patient, two-phase ambition</text>
+  <path d="M 202.22749999999988 614.4 L 202.6 616.6 L 204.8 617 L 202.6 617.4 L 202.22749999999988 619.6 L 201.8 617.4 L 199.6 617 L 201.8 616.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="621" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 614.4 L 558.2 616.6 L 560.4 617 L 558.2 617.4 L 557.7725000000002 619.6 L 557.4 617.4 L 555.2 617 L 557.4 616.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

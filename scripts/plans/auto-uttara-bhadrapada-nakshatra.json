@@ -1,0 +1,110 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/wzb/.claude/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "uttara-bhadrapada-nakshatra": {
+      "hero": {
+        "prompt": "A vast still ocean at night under a star-filled sky, the calm surface reflecting constellations like a perfect mirror, deep below the waterline a faint golden serpentine coil barely visible in the abyssal darkness, a single ringed planet low on the horizon casting soft teal-gold light across the undisturbed water, depth suggested by gradation from luminous surface to impenetrable black below, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Still night ocean reflecting stars, golden serpentine coil in the deep — Uttara Bhadrapada nakshatra's still waters and hidden wisdom",
+        "altZh": "星空下的静谧深海，金色巨蛇轮廓隐现于深渊——乌塔拉巴德拉帕达星宿的静水与深藏的智慧"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Uttara Bhadrapada vs Adjacent Concepts: How It Works + Trade-offs",
+          "afterHeadingZh": "## 乌塔拉巴德拉帕达星宿与相近概念：运作方式 + 取舍",
+          "titleEn": "Purva vs Uttara Bhadrapada: Fire and Depth",
+          "titleZh": "普尔瓦与乌塔拉巴德拉帕达：火与深",
+          "altEn": "Comparison of Purva Bhadrapada (Jupiter fire, igniting) and Uttara Bhadrapada (Saturn depth, enduring)",
+          "altZh": "普尔瓦巴德拉帕达（木星之火）与乌塔拉巴德拉帕达（土星之深）对比",
+          "columns": [
+            {
+              "nameEn": "Purva Bhadrapada",
+              "nameZh": "普尔瓦巴德拉帕达",
+              "linesEn": [
+                "Ruled by Jupiter",
+                "Deity: Ajaikapada",
+                "Spiritual fire",
+                "Volatile, igniting",
+                "Blazes"
+              ],
+              "linesZh": [
+                "木星主管",
+                "守护神：Ajaikapada",
+                "属灵之火",
+                "易燃、点火",
+                "燃烧"
+              ]
+            },
+            {
+              "nameEn": "Uttara Bhadrapada",
+              "nameZh": "乌塔拉巴德拉帕达",
+              "linesEn": [
+                "Ruled by Saturn",
+                "Deity: Ahirbudhnya",
+                "Still depth",
+                "Grounded, enduring",
+                "Deepens"
+              ],
+              "linesZh": [
+                "土星主管",
+                "守护神：Ahirbudhnya",
+                "静谧之深",
+                "扎根、持久",
+                "向下沉"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read Uttara Bhadrapada in Yourself",
+          "afterHeadingZh": "## 如何在自己身上识别这一宿",
+          "titleEn": "Five Signals of Uttara Bhadrapada",
+          "titleZh": "乌塔拉巴德拉帕达的五个信号",
+          "altEn": "Five signals of Uttara Bhadrapada: still surface, wisdom that waits, Saturn's long horizon, reservoir energy, late-blooming depth",
+          "altZh": "乌塔拉巴德拉帕达的五个信号：静水深流、等待的智慧、土星的长地平线、蓄水池能量、晚熟的深度",
+          "items": [
+            {
+              "nameEn": "Still Surface, Deep Current",
+              "nameZh": "静水深流",
+              "subEn": "Steady composure over genuine intensity held in check",
+              "subZh": "沉稳外表下有意收住的真实强度"
+            },
+            {
+              "nameEn": "Wisdom That Waits",
+              "nameZh": "会等待的智慧",
+              "subEn": "Insight surfaces late and whole, never early and tentative",
+              "subZh": "洞见迟来却完整，而非早来却片面"
+            },
+            {
+              "nameEn": "Saturn's Long Horizon",
+              "nameZh": "土星的长地平线",
+              "subEn": "Natural pull toward enduring work and commitments over quick wins",
+              "subZh": "天然倾向于能存续的工作与投入，而非快速胜利"
+            },
+            {
+              "nameEn": "The Reservoir, Not the Spark",
+              "nameZh": "蓄水池，不是火花",
+              "subEn": "Energy accumulates slowly and releases under pressure",
+              "subZh": "能量缓慢积聚，在压力下释放"
+            },
+            {
+              "nameEn": "Late-Blooming Depth",
+              "nameZh": "晚熟的深度",
+              "subEn": "Gifts mature with time, rarely announcing themselves early",
+              "subZh": "天赋随成熟而至，很少在早年就高调宣告"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

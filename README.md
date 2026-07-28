@@ -1,187 +1,88 @@
-# 太虚之门 (The Void)
+<!-- INPUT: 项目说明、运行方式与环境变量约定（含生产默认 API 地址与 UI 规范门槛）。 -->
+<!-- OUTPUT: 根目录主说明文档（含生产默认 API 地址说明与 UI 规范门槛）。 -->
+<!-- POS: 项目对外说明入口（含 UI 规范门槛）；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。 -->
+<div align="center">
+<img width="1200" height="475" alt="GHBanner" src="https://github.com/user-attachments/assets/0aa67016-6eaf-458a-adb2-6e31a0763ed6" />
+</div>
 
-一款现代心理占星Web应用，将精准天文计算与AI深度洞察相结合。
+# 运行与部署 AI Studio 应用
 
-## 功能特性
+**重要约定**：任何功能、架构、写法更新必须在工作结束后更新相关目录的子文档（各目录的 FOLDER.md 与对应说明文档）。
 
-- **入口与注册**：沉浸式仪式风格的用户注册流程
-- **控制台**：每日宇宙天气，行运双圆盘可视化
-- **个人档案**：本命星盘分析与心理洞察
-- **行运追踪**：4维度行运分析
-- **合盘分析**：关系兼容性分析
-- **神谕**：AI占星问答（3次免费，之后付费）
-- **双语支持**：完整的中英文支持
+本仓库包含本地运行应用所需的全部内容。
 
-## 技术栈
+在 AI Studio 查看应用：https://ai.studio/apps/drive/1qofnbmAyKU93vEEwcxFojkef9_yWZKqJ
 
-### 前端
-- React 18 + TypeScript
-- Vite（构建工具）
-- Tailwind CSS（样式）
-- Framer Motion（动画）
-- Zustand（状态管理）
-- i18next（国际化）
-- Lucide React（图标）
+## UI 规范（唯一基准）
 
-### 后端
-- Vercel Serverless Functions
-- Supabase（PostgreSQL + 认证）
-- DeepSeek API（AI基础模型）
-- Gemini 3.0 Pro（AI高阶报告）
+- 唯一 UI 规范来源：[COLOR_SYSTEM_GUIDE.md](./COLOR_SYSTEM_GUIDE.md)。
+- PR 清单项：UI 变更必须对照 [COLOR_SYSTEM_GUIDE.md](./COLOR_SYSTEM_GUIDE.md) 验证，并勾选模板中的对应项。
+- 评审门槛：UI 变更必须填写「UI 规范符合说明」，缺失则标记为未通过评审门槛。
+- PR 模板：[PULL_REQUEST_TEMPLATE.md](./PULL_REQUEST_TEMPLATE.md)。
 
-### 占星计算
-- swisseph-js（天文计算）
-- 自定义SVG星盘渲染
+## 架构概览
 
-## 快速开始
+项目采用前后端分离架构：
 
-### 环境要求
-- Node.js 18+
-- npm 或 pnpm
-- Supabase 账号
-- DeepSeek API 密钥
+- **前端**：React + TypeScript + Vite
+- **后端**：Node.js + Express + TypeScript（位于 `backend/` 目录）
 
-### 安装步骤
+## 本地运行
+
+**前置条件：** Node.js 18+
+
+### 1. 启动后端服务
 
 ```bash
-# 克隆仓库
-git clone https://github.com/your-username/oracle.git
-cd oracle
-
-# 安装依赖
+cd backend
 npm install
-
-# 复制环境变量配置
-cp .env.example .env.local
-
-# 启动开发服务器
 npm run dev
 ```
 
-### 环境变量
+后端默认运行在 `http://localhost:3001`。
 
-```env
-# Supabase
-VITE_SUPABASE_URL=https://your-project.supabase.co
-VITE_SUPABASE_ANON_KEY=your-anon-key
+### 2. 启动前端服务
 
-# AI APIs
-DEEPSEEK_API_KEY=your-deepseek-api-key
-GEMINI_API_KEY=your-gemini-api-key
-
-# 地理编码（可选）
-VITE_MAPBOX_TOKEN=your-mapbox-token
+```bash
+# 在项目根目录
+npm install
+npm run dev
 ```
 
-### 数据库配置
+前端默认运行在 `http://localhost:5173`。
 
-1. 创建新的 Supabase 项目
-2. 在 SQL Editor 中运行 `supabase/schema.sql`
-3. 启用行级安全策略（已包含在schema中）
+## 环境变量
 
-## 项目结构
+### 前端 (.env.local)
+
+- `VITE_API_BASE_URL`：后端 API 地址（可选；开发默认 `http://localhost:3001/api`，生产默认 `/api`）
+
+### 后端 (backend/.env)
+
+- `PORT`：服务端口（默认 3001）
+- `DEEPSEEK_API_KEY`：DeepSeek API 密钥（全工程统一）
+- `DEEPSEEK_BASE_URL`：DeepSeek API 地址（可选）
+- `REDIS_URL`：Redis 连接 URL（可选，有内存 fallback）
+
+后端会同时读取 `backend/.env` 与项目根目录的 `.env.local`，便于共享同一套 DeepSeek 配置。
+
+## 目录结构
 
 ```
 oracle/
-├── api/                    # Vercel Serverless Functions
-│   ├── daily.ts           # 每日洞察 API
-│   ├── oracle.ts          # AI问答 API
-│   ├── synastry.ts        # 合盘分析 API
-│   └── depth.ts           # 深度报告 API
-├── src/
-│   ├── components/        # React 组件
-│   │   ├── Layout.tsx     # 应用外壳与导航
-│   │   └── AstrologyChart.tsx  # SVG星盘组件
-│   ├── pages/             # 页面组件
-│   │   ├── Landing.tsx    # 入口页
-│   │   ├── Onboarding.tsx # 注册流程
-│   │   ├── Dashboard.tsx  # 控制台
-│   │   ├── Profile.tsx    # 个人档案
-│   │   ├── Oracle.tsx     # 神谕
-│   │   ├── Synastry.tsx   # 合盘
-│   │   └── Settings.tsx   # 设置
-│   ├── lib/               # 工具库
-│   │   ├── supabase.ts    # Supabase 客户端
-│   │   └── astrology.ts   # 占星计算
-│   ├── store.ts           # Zustand 状态管理
-│   ├── i18n.ts            # 国际化翻译
-│   ├── App.tsx            # 路由配置
-│   ├── main.tsx           # 入口文件
-│   └── index.css          # 全局样式
-├── supabase/
-│   └── schema.sql         # 数据库Schema
-├── tailwind.config.js     # Tailwind 配置
-├── vite.config.ts         # Vite 配置
-└── package.json
+├── backend/           # 后端服务
+│   ├── src/
+│   │   ├── api/       # API 路由
+│   │   ├── services/  # 业务服务
+│   │   ├── data/      # 数据源定义
+│   │   ├── prompts/   # Prompt 管理
+│   │   └── cache/     # 缓存层
+│   └── package.json
+├── components/        # React 组件
+│   └── cbt/           # CBT 功能组件
+├── services/          # 前端服务层
+│   ├── apiClient.ts   # 后端 API 客户端
+│   └── cbt/           # CBT 服务
+├── pages/             # 页面组件
+└── types.ts           # 类型定义
 ```
-
-## API 接口
-
-| 方法 | 端点 | 说明 |
-|------|------|------|
-| GET | `/api/daily?date=YYYY-MM-DD` | 获取每日洞察 |
-| POST | `/api/oracle` | 提交神谕问题 |
-| POST | `/api/synastry` | 生成合盘报告 |
-| POST | `/api/depth` | 生成深度报告 |
-
-## 设计系统
-
-详见 `DESIGN_SPEC.md`，包含完整的设计规范：
-- 色彩系统（深空黑 + 暖金色）
-- 字体规范（Inter + JetBrains Mono）
-- 组件样式
-- 动效指南
-
-## 部署
-
-### Vercel（推荐）
-
-```bash
-# 安装 Vercel CLI
-npm i -g vercel
-
-# 部署
-vercel
-```
-
-### Vercel 环境变量配置
-在 Vercel 项目设置中添加 `.env.example` 中的所有变量。
-
-## 开发路线图
-
-### P0（MVP）
-- [x] 入口页面
-- [x] 注册流程
-- [x] 控制台
-- [x] 个人档案 - 本命星盘
-- [x] 设置
-
-### P1
-- [x] 个人档案 - 行运追踪
-- [x] 神谕
-
-### P2
-- [x] 合盘分析
-- [ ] 用户认证（Supabase集成）
-- [ ] 支付集成
-
-### P3
-- [ ] CBT心理日记
-- [ ] 占星知识库
-- [ ] 移动端应用（iOS/Android）
-
-## 贡献指南
-
-1. Fork 本仓库
-2. 创建功能分支
-3. 提交更改
-4. 推送到分支
-5. 发起 Pull Request
-
-## 许可证
-
-MIT License - 详见 LICENSE 文件
-
----
-
-由 The Void Team 用 ✨ 构建

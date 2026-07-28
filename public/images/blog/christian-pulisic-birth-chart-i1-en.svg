@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 561" role="img" aria-label="Reading a Virgo Sun: The Method">
+  <defs>
+    <linearGradient id="christianpulisicbirthchart1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="christianpulisicbirthchart1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="christianpulisicbirthchart1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="christianpulisicbirthchart1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="christianpulisicbirthchart1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="christianpulisicbirthchart1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="558" rx="22" fill="url(#christianpulisicbirthchart1en-panel)"/>
+  <ellipse cx="198" cy="135" rx="380" ry="191" fill="url(#christianpulisicbirthchart1en-neb1)"/>
+  <ellipse cx="623" cy="449" rx="334" ry="180" fill="url(#christianpulisicbirthchart1en-neb2)"/>
+  <circle cx="246.1" cy="73.5" r="0.70" fill="#cfc8ea" opacity="0.38"/><circle cx="471.0" cy="485.3" r="1.50" fill="#cfc8ea" opacity="0.17"/><circle cx="530.1" cy="236.8" r="1.12" fill="#cfc8ea" opacity="0.50"/><circle cx="538.7" cy="492.9" r="0.90" fill="#cfc8ea" opacity="0.16"/><circle cx="399.9" cy="157.5" r="0.75" fill="#cfc8ea" opacity="0.24"/><circle cx="372.4" cy="449.5" r="0.85" fill="#cfc8ea" opacity="0.51"/><circle cx="43.9" cy="272.8" r="0.45" fill="#cfc8ea" opacity="0.51"/><circle cx="534.2" cy="195.4" r="0.83" fill="#cfc8ea" opacity="0.31"/><circle cx="395.0" cy="285.3" r="1.57" fill="#cfc8ea" opacity="0.47"/><circle cx="435.0" cy="448.2" r="0.79" fill="#cfc8ea" opacity="0.26"/><circle cx="242.6" cy="349.2" r="0.60" fill="#cfc8ea" opacity="0.33"/><circle cx="87.0" cy="376.7" r="0.69" fill="#cfc8ea" opacity="0.21"/><circle cx="372.6" cy="31.9" r="0.60" fill="#cfc8ea" opacity="0.39"/><circle cx="66.6" cy="229.1" r="0.81" fill="#cfc8ea" opacity="0.52"/><circle cx="248.9" cy="206.1" r="0.80" fill="#cfc8ea" opacity="0.43"/><circle cx="427.3" cy="288.2" r="1.22" fill="#cfc8ea" opacity="0.31"/><circle cx="276.1" cy="481.8" r="1.24" fill="#cfc8ea" opacity="0.22"/><circle cx="613.2" cy="139.4" r="1.64" fill="#cfc8ea" opacity="0.43"/><circle cx="416.1" cy="473.7" r="0.98" fill="#cfc8ea" opacity="0.52"/><circle cx="569.0" cy="470.4" r="1.04" fill="#cfc8ea" opacity="0.38"/><circle cx="216.3" cy="232.2" r="0.44" fill="#cfc8ea" opacity="0.51"/><circle cx="470.4" cy="253.1" r="1.65" fill="#cfc8ea" opacity="0.31"/><circle cx="75.4" cy="15.0" r="1.25" fill="#cfc8ea" opacity="0.30"/><circle cx="587.5" cy="269.7" r="0.55" fill="#cfc8ea" opacity="0.39"/><circle cx="387.3" cy="278.1" r="1.69" fill="#cfc8ea" opacity="0.52"/><circle cx="540.8" cy="156.4" r="1.58" fill="#cfc8ea" opacity="0.46"/><circle cx="565.1" cy="140.9" r="1.26" fill="#cfc8ea" opacity="0.14"/><circle cx="69.4" cy="295.5" r="0.75" fill="#cfc8ea" opacity="0.40"/><circle cx="82.4" cy="99.4" r="1.32" fill="#cfc8ea" opacity="0.47"/><circle cx="404.2" cy="68.4" r="1.29" fill="#cfc8ea" opacity="0.28"/><circle cx="673.3" cy="501.7" r="0.89" fill="#cfc8ea" opacity="0.42"/><circle cx="529.6" cy="362.0" r="0.96" fill="#cfc8ea" opacity="0.43"/><circle cx="698.0" cy="164.3" r="0.70" fill="#cfc8ea" opacity="0.48"/><circle cx="349.2" cy="355.0" r="1.12" fill="#cfc8ea" opacity="0.24"/><circle cx="514.0" cy="56.4" r="1.43" fill="#cfc8ea" opacity="0.25"/><circle cx="170.3" cy="239.4" r="1.16" fill="#cfc8ea" opacity="0.38"/><circle cx="134.8" cy="418.0" r="0.45" fill="#cfc8ea" opacity="0.53"/><circle cx="305.6" cy="381.2" r="1.31" fill="#cfc8ea" opacity="0.19"/><circle cx="599.3" cy="541.7" r="1.66" fill="#cfc8ea" opacity="0.49"/><circle cx="451.5" cy="470.6" r="0.47" fill="#cfc8ea" opacity="0.17"/><circle cx="40.5" cy="33.8" r="1.44" fill="#cfc8ea" opacity="0.32"/><circle cx="151.8" cy="471.4" r="1.16" fill="#cfc8ea" opacity="0.50"/><circle cx="720.2" cy="335.6" r="1.58" fill="#cfc8ea" opacity="0.30"/><circle cx="702.2" cy="106.0" r="0.79" fill="#cfc8ea" opacity="0.15"/><circle cx="424.9" cy="82.2" r="0.63" fill="#cfc8ea" opacity="0.26"/><circle cx="166.7" cy="138.2" r="0.83" fill="#cfc8ea" opacity="0.22"/><circle cx="486.9" cy="33.8" r="1.11" fill="#cfc8ea" opacity="0.20"/><path d="M 606.7807489987463 158.5 L 607.3 161.4 L 610.3 161.95481281075627 L 607.3 162.5 L 606.7807489987463 165.4 L 606.2 162.5 L 603.3 161.95481281075627 L 606.2 161.4 Z" fill="#f6e6bf" opacity="0.6049677495379001"/><path d="M 50.26444840244949 376.4 L 50.7 378.8 L 53.1 379.2181683946401 L 50.7 379.7 L 50.26444840244949 382.1 L 49.8 379.7 L 47.4 379.2181683946401 L 49.8 378.8 Z" fill="#f6e6bf" opacity="0.7952812898438424"/><path d="M 646.4424516763538 117.1 L 647.0 120.1 L 650.1 120.6981562403962 L 647.0 121.3 L 646.4424516763538 124.3 L 645.9 121.3 L 642.8 120.6981562403962 L 645.9 120.1 Z" fill="#f6e6bf" opacity="0.7026779847685247"/><path d="M 121.35912184230983 45.3 L 122.0 48.6 L 125.3 49.246861699968576 L 122.0 49.9 L 121.35912184230983 53.1 L 120.7 49.9 L 117.5 49.246861699968576 L 120.7 48.6 Z" fill="#f6e6bf" opacity="0.7477159769739956"/><path d="M 519.2737572249025 112.5 L 519.8 115.0 L 522.3 115.47665836382657 L 519.8 116.0 L 519.2737572249025 118.5 L 518.8 116.0 L 516.3 115.47665836382657 L 518.8 115.0 Z" fill="#f6e6bf" opacity="0.748587915347889"/><path d="M 372.4 449.5 L 395.0 285.3 L 427.3 288.2 L 216.3 232.2 L 470.4 253.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="558" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="547" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 541.8 L 16.5 544.5 L 19.2 545 L 16.5 545.5 L 16 548.2 L 15.5 545.5 L 12.8 545 L 15.5 544.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 541.8 L 744.5 544.5 L 747.2 545 L 744.5 545.5 L 744 548.2 L 743.5 545.5 L 740.8 545 L 743.5 544.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Reading a Virgo Sun: The Method</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#christianpulisicbirthchart1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#christianpulisicbirthchart1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="427" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#christianpulisicbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#christianpulisicbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Step 1</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Anchor the verified date</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">18 September 1998 in Hershey, Pennsylvania fixes the Sun at roughly 25 degrees of</text>
+  <text x="132" y="181.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Virgo — the one hard fact the entire reading rests on</text>
+  <circle cx="92" cy="212" r="13.0" fill="url(#christianpulisicbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="212" r="8" fill="url(#christianpulisicbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="209.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 208.0 L 92.6 211.4 L 96.0 212 L 92.6 212.6 L 92 216.0 L 91.4 212.6 L 88.0 212 L 91.4 211.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="217.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Step 2</text>
+  <text x="132" y="240.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Flag the unknown birth time</text>
+  <text x="132" y="263.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">No public birth time means the Moon sign, Ascendant, and houses are unverified —</text>
+  <text x="132" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">state this plainly rather than inventing the gap</text>
+  <circle cx="92" cy="311" r="13.0" fill="url(#christianpulisicbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="311" r="8" fill="url(#christianpulisicbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="308.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 307.0 L 92.6 310.4 L 96.0 311 L 92.6 311.6 L 92 315.0 L 91.4 311.6 L 88.0 311 L 91.4 310.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="316.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Step 3</text>
+  <text x="132" y="339.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Read the Virgo arc as precision and adaptability</text>
+  <text x="132" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Virgo is a mutable earth sign ruled by Mercury: its symbolism maps to craft,</text>
+  <text x="132" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">positional versatility across winger, attacking midfielder, and forward — theme,</text>
+  <text x="132" y="396.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">not destiny</text>
+  <circle cx="92" cy="427" r="13.0" fill="url(#christianpulisicbirthchart1en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="427" r="8" fill="url(#christianpulisicbirthchart1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="424.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 423.0 L 92.6 426.4 L 96.0 427 L 92.6 427.6 L 92 431.0 L 91.4 427.6 L 88.0 427 L 91.4 426.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="432.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Step 4</text>
+  <text x="132" y="455.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Hold Saturn in Aries as collective backdrop</text>
+  <text x="132" y="478.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn transits Aries 2025–2028: a broad structural backdrop shared by everyone</text>
+  <text x="132" y="495.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">under this sky, not a personal marker for one player — hold it all as symbolism,</text>
+  <text x="132" y="512.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">keep results open</text>
+  <path d="M 202.22749999999988 532.4 L 202.6 534.6 L 204.8 535 L 202.6 535.4 L 202.22749999999988 537.6 L 201.8 535.4 L 199.6 535 L 201.8 534.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="539" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 532.4 L 558.2 534.6 L 560.4 535 L 558.2 535.4 L 557.7725000000002 537.6 L 557.4 535.4 L 555.2 535 L 557.4 534.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

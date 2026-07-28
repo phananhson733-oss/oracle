@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="Dhanishta: Capricorn Degrees vs Aquarius Degrees">
+  <defs>
+    <linearGradient id="dhanishtanakshatra1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="dhanishtanakshatra1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="dhanishtanakshatra1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dhanishtanakshatra1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="dhanishtanakshatra1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="dhanishtanakshatra1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#dhanishtanakshatra1en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#dhanishtanakshatra1en-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#dhanishtanakshatra1en-neb2)"/>
+  <circle cx="607.2" cy="362.6" r="1.33" fill="#cfc8ea" opacity="0.29"/><circle cx="157.5" cy="187.1" r="1.00" fill="#cfc8ea" opacity="0.24"/><circle cx="434.8" cy="193.1" r="0.63" fill="#cfc8ea" opacity="0.14"/><circle cx="612.5" cy="410.0" r="1.60" fill="#cfc8ea" opacity="0.44"/><circle cx="677.6" cy="338.0" r="0.66" fill="#cfc8ea" opacity="0.44"/><circle cx="216.3" cy="114.5" r="1.56" fill="#cfc8ea" opacity="0.27"/><circle cx="361.0" cy="162.4" r="1.10" fill="#cfc8ea" opacity="0.41"/><circle cx="181.0" cy="470.3" r="0.48" fill="#cfc8ea" opacity="0.20"/><circle cx="56.7" cy="439.7" r="0.55" fill="#cfc8ea" opacity="0.43"/><circle cx="175.3" cy="63.0" r="1.43" fill="#cfc8ea" opacity="0.27"/><circle cx="332.1" cy="23.4" r="1.64" fill="#cfc8ea" opacity="0.13"/><circle cx="229.6" cy="149.5" r="0.96" fill="#cfc8ea" opacity="0.19"/><circle cx="236.6" cy="314.8" r="1.35" fill="#cfc8ea" opacity="0.28"/><circle cx="332.9" cy="152.6" r="1.59" fill="#cfc8ea" opacity="0.42"/><circle cx="70.0" cy="478.8" r="1.65" fill="#cfc8ea" opacity="0.30"/><circle cx="370.1" cy="396.7" r="0.44" fill="#cfc8ea" opacity="0.48"/><circle cx="422.0" cy="387.5" r="1.40" fill="#cfc8ea" opacity="0.48"/><circle cx="419.0" cy="346.9" r="0.61" fill="#cfc8ea" opacity="0.35"/><circle cx="15.3" cy="352.9" r="0.62" fill="#cfc8ea" opacity="0.52"/><circle cx="130.6" cy="89.0" r="1.08" fill="#cfc8ea" opacity="0.50"/><circle cx="489.7" cy="362.1" r="1.09" fill="#cfc8ea" opacity="0.48"/><circle cx="424.7" cy="401.1" r="0.48" fill="#cfc8ea" opacity="0.25"/><circle cx="293.7" cy="469.7" r="1.69" fill="#cfc8ea" opacity="0.41"/><circle cx="116.4" cy="85.0" r="1.53" fill="#cfc8ea" opacity="0.16"/><circle cx="427.5" cy="266.7" r="0.93" fill="#cfc8ea" opacity="0.35"/><circle cx="14.4" cy="15.1" r="0.71" fill="#cfc8ea" opacity="0.42"/><circle cx="146.7" cy="195.5" r="1.38" fill="#cfc8ea" opacity="0.23"/><circle cx="652.2" cy="107.5" r="1.40" fill="#cfc8ea" opacity="0.45"/><circle cx="403.1" cy="363.7" r="0.64" fill="#cfc8ea" opacity="0.48"/><circle cx="622.2" cy="395.3" r="1.25" fill="#cfc8ea" opacity="0.48"/><circle cx="597.2" cy="38.2" r="1.36" fill="#cfc8ea" opacity="0.52"/><circle cx="264.3" cy="257.1" r="0.90" fill="#cfc8ea" opacity="0.33"/><circle cx="647.1" cy="204.2" r="1.20" fill="#cfc8ea" opacity="0.24"/><circle cx="541.2" cy="408.2" r="1.14" fill="#cfc8ea" opacity="0.45"/><circle cx="57.2" cy="339.4" r="1.21" fill="#cfc8ea" opacity="0.29"/><circle cx="224.3" cy="399.0" r="1.38" fill="#cfc8ea" opacity="0.52"/><circle cx="517.2" cy="95.7" r="1.64" fill="#cfc8ea" opacity="0.39"/><circle cx="724.6" cy="265.3" r="0.89" fill="#cfc8ea" opacity="0.43"/><circle cx="738.7" cy="108.9" r="0.87" fill="#cfc8ea" opacity="0.47"/><circle cx="214.8" cy="364.0" r="1.51" fill="#cfc8ea" opacity="0.29"/><circle cx="711.2" cy="232.8" r="1.12" fill="#cfc8ea" opacity="0.46"/><circle cx="198.0" cy="412.5" r="1.46" fill="#cfc8ea" opacity="0.23"/><path d="M 483.7727079279721 169.0 L 484.3 171.7 L 487.0 172.23848032741807 L 484.3 172.8 L 483.7727079279721 175.5 L 483.3 172.8 L 480.6 172.23848032741807 L 483.3 171.7 Z" fill="#f6e6bf" opacity="0.5682862173067406"/><path d="M 469.01715664193034 351.9 L 469.5 354.4 L 472.0 354.9279180399608 L 469.5 355.4 L 469.01715664193034 357.9 L 468.5 355.4 L 466.0 354.9279180399608 L 468.5 354.4 Z" fill="#f6e6bf" opacity="0.6038385158637538"/><path d="M 444.1574430204928 290.1 L 444.6 292.6 L 447.1 293.0632633899804 L 444.6 293.5 L 444.1574430204928 296.0 L 443.7 293.5 L 441.2 293.0632633899804 L 443.7 292.6 Z" fill="#f6e6bf" opacity="0.5173628972144797"/><path d="M 616.1300122998655 373.8 L 616.7 376.6 L 619.4 377.1537581968587 L 616.7 377.7 L 616.1300122998655 380.5 L 615.6 377.7 L 612.8 377.1537581968587 L 615.6 376.6 Z" fill="#f6e6bf" opacity="0.7575015913927927"/><path d="M 276.21991201117635 136.2 L 276.8 139.3 L 279.9 139.86057222797535 L 276.8 140.4 L 276.21991201117635 143.5 L 275.6 140.4 L 272.5 139.86057222797535 L 275.6 139.3 Z" fill="#f6e6bf" opacity="0.5639807365136221"/><path d="M 612.5 410.0 L 236.6 314.8 L 419.0 346.9 L 293.7 469.7 L 14.4 15.1" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Dhanishta: Capricorn Degrees vs Aquarius Degrees</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#dhanishtanakshatra1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#dhanishtanakshatra1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 97.1 L 380.5 100.0 L 383.4 100.5 L 380.5 101.0 L 380 103.9 L 379.5 101.0 L 376.6 100.5 L 379.5 100.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Capricorn Degrees</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Mars-driven discipline</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Ambition and structure</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Individual stamina and focus</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Building toward tangible results</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="668" height="3.5" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 380 295.1 L 380.5 298.0 L 383.4 298.5 L 380.5 299.0 L 380 301.9 L 379.5 299.0 L 376.6 298.5 L 379.5 298.0 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Aquarius Degrees</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Community and networks</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Shared coordination</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Collective rhythm and belonging</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Prosperity through group harmony</text>
+  <path d="M 202.22749999999988 474.4 L 202.6 476.6 L 204.8 477 L 202.6 477.4 L 202.22749999999988 479.6 L 201.8 477.4 L 199.6 477 L 201.8 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 474.4 L 558.2 476.6 L 560.4 477 L 558.2 477.4 L 557.7725000000002 479.6 L 557.4 477.4 L 555.2 477 L 557.4 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

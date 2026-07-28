@@ -1,0 +1,114 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "matheus-cunha-birth-chart": {
+      "hero": {
+        "prompt": "Twin mercurial currents of golden light weaving and diverging across a vast coastal plain at dusk — one current darting close to the indigo horizon in rapid micro-movements reading each shifting gap, the other sweeping outward in a broader expansive arc, both flowing from the same luminous source point under a starfield, embodying the split-second tactical switching of a Mercury-ruled Gemini intelligence adapting to a constantly shifting defensive landscape in real time, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous landscape scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Matheus Cunha Gemini Sun birth chart — twin golden currents weaving through a deep indigo coastal starfield at dusk",
+        "altZh": "马特乌斯·库尼亚双子座太阳星盘——黄昏深靛蓝星野中两道金色光流在海岸星景间交织流动"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Gemini Sun vs Sagittarius Sun: Where Attacking Style Splits",
+          "afterHeadingZh": "## 双子座太阳与相近概念射手座太阳：运作方式与取舍",
+          "titleEn": "Gemini Sun vs Sagittarius Sun vs Full Natal Read",
+          "titleZh": "双子座太阳、射手座太阳与完整本命解读的对照",
+          "altEn": "Three-column comparison: Gemini Sun short-range scanning, Sagittarius Sun macro-vision, and what a full natal read would require",
+          "altZh": "三列对比：双子座太阳的近身扫描、射手座太阳的宏观视野、以及完整本命解读所需条件",
+          "columns": [
+            {
+              "nameEn": "Gemini Sun (sign-based)",
+              "nameZh": "双子座太阳（基于星座）",
+              "linesEn": [
+                "Mercury-ruled, short-range tactical scanning",
+                "Reads the precise gap that exists right now",
+                "Most dangerous inside compact defensive blocks",
+                "Satisfied by constant micro-variation within tight structure"
+              ],
+              "linesZh": [
+                "水星主管，短距离战术扫描",
+                "阅读此刻存在的那个精确空当",
+                "在紧密防守区块里最具危险性",
+                "在紧密结构内不断的微变化中获得满足"
+              ]
+            },
+            {
+              "nameEn": "Sagittarius Sun (contrast)",
+              "nameZh": "射手座太阳（对照）",
+              "linesEn": [
+                "Jupiter-ruled, macro-vision into open space",
+                "The expansive run, the bold shot from distance",
+                "Restless in tight, possession-heavy systems",
+                "Reduced efficiency inside compact defensive blocks"
+              ],
+              "linesZh": [
+                "木星主管，朝向开阔空间的宏观视野",
+                "扩张性插上，远距离的果敢射门",
+                "在逼仄控球密集体系里容易焦躁",
+                "在紧密防守区块里效率下降"
+              ]
+            },
+            {
+              "nameEn": "A full natal read",
+              "nameZh": "完整本命解读",
+              "linesEn": [
+                "Would weigh Moon, Ascendant, and houses",
+                "Needs a recorded birth time — not public for Cunha",
+                "This article stays at the Gemini Sun level"
+              ],
+              "linesZh": [
+                "会权衡月亮、上升与各宫位",
+                "需要记录的出生时间——库尼亚未公开",
+                "本文只停留在双子座太阳层级"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read a Gemini Sun Birth Chart in Your Analysis",
+          "afterHeadingZh": "## 如何识别双子座太阳星盘中的信号（实操观察）",
+          "titleEn": "4 Signals to Track in a Gemini Sun Birth Chart",
+          "titleZh": "解读双子座太阳星盘的4个关键信号",
+          "altEn": "Four-step sequence for reading a Gemini Sun chart: Mercury rulership, Jupiter transit, mutable stellium density, aspect patterns to Mercury",
+          "altZh": "解读双子座太阳星盘的四步信号：水星守护、木星行运、变动星群密度、与水星的相位模式",
+          "items": [
+            {
+              "nameEn": "Mercury as the Sun-sign ruler",
+              "nameZh": "水星作为太阳星座守护星",
+              "subEn": "Sun in Gemini means Mercury rules and frames core expression; a Sun-sign read works from the sign alone, no birth time required",
+              "subZh": "太阳在双子座意味着水星主管并框定核心表达；太阳星座层级的解读单凭星座本身即可，无需出生时间"
+            },
+            {
+              "nameEn": "Jupiter's transit relative to the Sun sign",
+              "nameZh": "木星行运相对太阳星座的关系",
+              "subEn": "In solar-chart technique, Cancer is the 2nd sign from a Gemini Sun, so Jupiter in Cancer touches a resource and momentum theme — symbolic timing, not a birth-time house",
+              "subZh": "在太阳星座技法里，巨蟹座是从双子座太阳数起的第二个星座，木星行经巨蟹座触及资源与势能主题——象征性时机，而非宫位"
+            },
+            {
+              "nameEn": "Mutable stellium density",
+              "nameZh": "变动星群密度",
+              "subEn": "When planets cluster in Gemini, Virgo, Sagittarius, or Pisces alongside the Sun, adaptability becomes a defining feature across all life domains",
+              "subZh": "当多颗行星与太阳聚集在双子、处女、射手或双鱼座，适应力便成为贯穿所有生活领域的定义性特征"
+            },
+            {
+              "nameEn": "Aspect patterns to Mercury",
+              "nameZh": "与水星形成的相位模式",
+              "subEn": "Hard aspects (squares, oppositions) create friction in decision-speed under pressure; trines and sextiles support the rapid tactical switching that defines Gemini Sun's best output",
+              "subZh": "硬相位（刑、对分）在压力下给决策速度添摩擦；三分相与六分相支持快速战术切换——双子座太阳最佳产出的核心特征"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 523" role="img" aria-label="5 Steps to Spot the Air-Fire Sextile">
+  <defs>
+    <linearGradient id="harrystylesandzokravitz0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="harrystylesandzokravitz0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="harrystylesandzokravitz0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="harrystylesandzokravitz0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="harrystylesandzokravitz0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="harrystylesandzokravitz0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="url(#harrystylesandzokravitz0en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="178" fill="url(#harrystylesandzokravitz0en-neb1)"/>
+  <ellipse cx="623" cy="418" rx="334" ry="167" fill="url(#harrystylesandzokravitz0en-neb2)"/>
+  <circle cx="160.2" cy="18.8" r="1.59" fill="#cfc8ea" opacity="0.49"/><circle cx="283.0" cy="52.7" r="1.65" fill="#cfc8ea" opacity="0.15"/><circle cx="92.4" cy="293.7" r="0.91" fill="#cfc8ea" opacity="0.22"/><circle cx="156.4" cy="293.1" r="0.46" fill="#cfc8ea" opacity="0.32"/><circle cx="377.1" cy="279.8" r="0.66" fill="#cfc8ea" opacity="0.25"/><circle cx="605.3" cy="432.2" r="0.55" fill="#cfc8ea" opacity="0.53"/><circle cx="708.5" cy="402.0" r="0.45" fill="#cfc8ea" opacity="0.29"/><circle cx="531.5" cy="325.2" r="0.96" fill="#cfc8ea" opacity="0.50"/><circle cx="95.6" cy="225.8" r="1.48" fill="#cfc8ea" opacity="0.28"/><circle cx="663.5" cy="425.5" r="0.69" fill="#cfc8ea" opacity="0.52"/><circle cx="336.1" cy="94.7" r="1.23" fill="#cfc8ea" opacity="0.15"/><circle cx="430.6" cy="92.8" r="1.59" fill="#cfc8ea" opacity="0.22"/><circle cx="401.6" cy="496.2" r="1.18" fill="#cfc8ea" opacity="0.43"/><circle cx="220.1" cy="27.4" r="0.54" fill="#cfc8ea" opacity="0.29"/><circle cx="513.1" cy="383.0" r="0.41" fill="#cfc8ea" opacity="0.52"/><circle cx="678.4" cy="163.6" r="1.41" fill="#cfc8ea" opacity="0.45"/><circle cx="33.0" cy="312.6" r="1.11" fill="#cfc8ea" opacity="0.48"/><circle cx="557.6" cy="489.4" r="0.43" fill="#cfc8ea" opacity="0.41"/><circle cx="233.7" cy="465.5" r="1.29" fill="#cfc8ea" opacity="0.21"/><circle cx="524.2" cy="270.0" r="1.05" fill="#cfc8ea" opacity="0.12"/><circle cx="456.1" cy="164.2" r="0.79" fill="#cfc8ea" opacity="0.48"/><circle cx="115.6" cy="216.4" r="1.38" fill="#cfc8ea" opacity="0.44"/><circle cx="221.1" cy="196.0" r="0.77" fill="#cfc8ea" opacity="0.44"/><circle cx="276.7" cy="374.4" r="0.80" fill="#cfc8ea" opacity="0.19"/><circle cx="34.8" cy="427.2" r="1.60" fill="#cfc8ea" opacity="0.36"/><circle cx="285.3" cy="106.3" r="0.66" fill="#cfc8ea" opacity="0.42"/><circle cx="255.7" cy="469.1" r="0.63" fill="#cfc8ea" opacity="0.18"/><circle cx="555.9" cy="109.8" r="1.42" fill="#cfc8ea" opacity="0.33"/><circle cx="350.9" cy="40.1" r="1.40" fill="#cfc8ea" opacity="0.15"/><circle cx="398.4" cy="220.1" r="1.09" fill="#cfc8ea" opacity="0.18"/><circle cx="562.9" cy="219.6" r="0.89" fill="#cfc8ea" opacity="0.43"/><circle cx="105.2" cy="251.8" r="1.63" fill="#cfc8ea" opacity="0.31"/><circle cx="75.1" cy="484.4" r="0.41" fill="#cfc8ea" opacity="0.35"/><circle cx="136.7" cy="233.5" r="1.05" fill="#cfc8ea" opacity="0.31"/><circle cx="51.5" cy="336.4" r="0.59" fill="#cfc8ea" opacity="0.53"/><circle cx="179.5" cy="23.9" r="0.71" fill="#cfc8ea" opacity="0.40"/><circle cx="553.2" cy="480.3" r="1.41" fill="#cfc8ea" opacity="0.13"/><circle cx="542.3" cy="279.6" r="0.79" fill="#cfc8ea" opacity="0.18"/><circle cx="566.0" cy="464.7" r="1.33" fill="#cfc8ea" opacity="0.30"/><circle cx="156.5" cy="129.9" r="0.78" fill="#cfc8ea" opacity="0.39"/><circle cx="345.7" cy="369.8" r="0.74" fill="#cfc8ea" opacity="0.37"/><circle cx="144.0" cy="410.8" r="0.49" fill="#cfc8ea" opacity="0.17"/><circle cx="745.0" cy="242.6" r="0.59" fill="#cfc8ea" opacity="0.24"/><circle cx="115.0" cy="75.2" r="0.81" fill="#cfc8ea" opacity="0.32"/><path d="M 309.4543568138033 345.4 L 310.1 348.7 L 313.4 349.3033313131891 L 310.1 349.9 L 309.4543568138033 353.2 L 308.8 349.9 L 305.5 349.3033313131891 L 308.8 348.7 Z" fill="#f6e6bf" opacity="0.5291436166502536"/><path d="M 135.6957097519189 382.2 L 136.1 384.3 L 138.2 384.6600096751936 L 136.1 385.1 L 135.6957097519189 387.1 L 135.3 385.1 L 133.2 384.6600096751936 L 135.3 384.3 Z" fill="#f6e6bf" opacity="0.5105169259011746"/><path d="M 396.7586677763611 183.8 L 397.2 185.9 L 399.3 186.25587389199063 L 397.2 186.7 L 396.7586677763611 188.8 L 396.4 186.7 L 394.3 186.25587389199063 L 396.4 185.9 Z" fill="#f6e6bf" opacity="0.5997034012340009"/><path d="M 197.4161858279258 324.8 L 197.8 326.8 L 199.8 327.1641382561065 L 197.8 327.6 L 197.4161858279258 329.6 L 197.0 327.6 L 195.0 327.1641382561065 L 197.0 326.8 Z" fill="#f6e6bf" opacity="0.7181219717487692"/><path d="M 612.5851092282683 294.0 L 613.1 296.9 L 616.0 297.39815301587805 L 613.1 297.9 L 612.5851092282683 300.8 L 612.0 297.9 L 609.2 297.39815301587805 L 612.0 296.9 Z" fill="#f6e6bf" opacity="0.6247461167164147"/><path d="M 283.0 52.7 L 92.4 293.7 L 401.6 496.2 L 233.7 465.5 L 524.2 270.0" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="520" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="509" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 503.8 L 16.5 506.5 L 19.2 507 L 16.5 507.5 L 16 510.2 L 15.5 507.5 L 12.8 507 L 15.5 506.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 503.8 L 744.5 506.5 L 747.2 507 L 744.5 507.5 L 744 510.2 L 743.5 507.5 L 740.8 507 L 743.5 506.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">5 Steps to Spot the Air-Fire Sextile</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#harrystylesandzokravitz0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#harrystylesandzokravitz0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="433" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#harrystylesandzokravitz0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#harrystylesandzokravitz0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Find the Elements First</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Confirm one partner leads with an air sign (Aquarius) and the other with a fire</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">sign (Sagittarius)</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#harrystylesandzokravitz0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#harrystylesandzokravitz0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Check the Angle</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A sextile sits roughly 60 degrees apart — two placements about two signs apart,</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">give or take a few degrees</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#harrystylesandzokravitz0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#harrystylesandzokravitz0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Watch How Distance Feels</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Air-fire sextiles often read as comfortable space, with partners lighting up</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">around each other's plans</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#harrystylesandzokravitz0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#harrystylesandzokravitz0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Notice the Recharge Pattern</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Each person tends to return energized after time apart, rather than anxious</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">about the separation</text>
+  <circle cx="76" cy="433" r="20.0" fill="url(#harrystylesandzokravitz0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="433" r="15" fill="url(#harrystylesandzokravitz0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="428.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="437.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="429.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Look Past the Sun</text>
+  <text x="116" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Let a Sun-sign sextile open the read; Moon, Venus, and Mars contacts are where</text>
+  <text x="116" y="469.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">real relating happens</text>
+  <path d="M 202.22749999999988 494.4 L 202.6 496.6 L 204.8 497 L 202.6 497.4 L 202.22749999999988 499.6 L 201.8 497.4 L 199.6 497 L 201.8 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="501" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 494.4 L 558.2 496.6 L 560.4 497 L 558.2 497.4 L 557.7725000000002 499.6 L 557.4 497.4 L 555.2 497 L 557.4 496.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

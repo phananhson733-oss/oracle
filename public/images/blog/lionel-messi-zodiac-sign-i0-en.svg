@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 451" role="img" aria-label="Five Steps to Read a Cancer Sun Chart">
+  <defs>
+    <linearGradient id="lionelmessizodiacsign0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="lionelmessizodiacsign0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="lionelmessizodiacsign0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lionelmessizodiacsign0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="lionelmessizodiacsign0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="lionelmessizodiacsign0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="448" rx="22" fill="url(#lionelmessizodiacsign0en-panel)"/>
+  <ellipse cx="198" cy="108" rx="380" ry="153" fill="url(#lionelmessizodiacsign0en-neb1)"/>
+  <ellipse cx="623" cy="361" rx="334" ry="144" fill="url(#lionelmessizodiacsign0en-neb2)"/>
+  <circle cx="721.1" cy="93.0" r="1.30" fill="#cfc8ea" opacity="0.34"/><circle cx="171.0" cy="43.0" r="0.58" fill="#cfc8ea" opacity="0.53"/><circle cx="176.5" cy="304.0" r="0.93" fill="#cfc8ea" opacity="0.42"/><circle cx="486.7" cy="30.9" r="0.43" fill="#cfc8ea" opacity="0.12"/><circle cx="342.8" cy="336.8" r="0.95" fill="#cfc8ea" opacity="0.20"/><circle cx="76.4" cy="399.6" r="0.65" fill="#cfc8ea" opacity="0.34"/><circle cx="583.3" cy="390.5" r="1.23" fill="#cfc8ea" opacity="0.29"/><circle cx="394.4" cy="261.7" r="1.38" fill="#cfc8ea" opacity="0.26"/><circle cx="40.0" cy="331.7" r="1.16" fill="#cfc8ea" opacity="0.22"/><circle cx="565.2" cy="394.5" r="1.58" fill="#cfc8ea" opacity="0.45"/><circle cx="514.0" cy="405.4" r="1.41" fill="#cfc8ea" opacity="0.17"/><circle cx="698.3" cy="25.5" r="1.20" fill="#cfc8ea" opacity="0.18"/><circle cx="340.5" cy="31.3" r="0.96" fill="#cfc8ea" opacity="0.19"/><circle cx="651.0" cy="63.3" r="1.69" fill="#cfc8ea" opacity="0.12"/><circle cx="406.6" cy="124.4" r="0.93" fill="#cfc8ea" opacity="0.30"/><circle cx="537.8" cy="260.1" r="1.58" fill="#cfc8ea" opacity="0.24"/><circle cx="352.6" cy="326.5" r="0.82" fill="#cfc8ea" opacity="0.23"/><circle cx="492.5" cy="69.9" r="1.07" fill="#cfc8ea" opacity="0.13"/><circle cx="399.3" cy="80.5" r="0.45" fill="#cfc8ea" opacity="0.30"/><circle cx="611.7" cy="154.6" r="0.84" fill="#cfc8ea" opacity="0.29"/><circle cx="509.1" cy="246.0" r="0.42" fill="#cfc8ea" opacity="0.13"/><circle cx="219.6" cy="153.9" r="1.51" fill="#cfc8ea" opacity="0.25"/><circle cx="198.8" cy="22.8" r="1.14" fill="#cfc8ea" opacity="0.22"/><circle cx="225.7" cy="431.7" r="1.60" fill="#cfc8ea" opacity="0.13"/><circle cx="356.4" cy="120.2" r="0.56" fill="#cfc8ea" opacity="0.40"/><circle cx="80.2" cy="63.0" r="1.43" fill="#cfc8ea" opacity="0.48"/><circle cx="300.6" cy="101.2" r="0.63" fill="#cfc8ea" opacity="0.31"/><circle cx="104.2" cy="364.8" r="1.21" fill="#cfc8ea" opacity="0.27"/><circle cx="368.3" cy="306.5" r="1.58" fill="#cfc8ea" opacity="0.27"/><circle cx="354.8" cy="229.7" r="0.82" fill="#cfc8ea" opacity="0.34"/><circle cx="18.7" cy="404.3" r="1.15" fill="#cfc8ea" opacity="0.31"/><circle cx="675.2" cy="147.0" r="1.00" fill="#cfc8ea" opacity="0.47"/><circle cx="24.1" cy="128.0" r="0.42" fill="#cfc8ea" opacity="0.18"/><circle cx="405.9" cy="409.3" r="1.63" fill="#cfc8ea" opacity="0.43"/><circle cx="478.5" cy="139.9" r="1.61" fill="#cfc8ea" opacity="0.40"/><circle cx="439.4" cy="263.9" r="1.57" fill="#cfc8ea" opacity="0.27"/><circle cx="26.7" cy="71.7" r="0.47" fill="#cfc8ea" opacity="0.52"/><circle cx="95.5" cy="157.3" r="0.91" fill="#cfc8ea" opacity="0.18"/><path d="M 302.5594585184008 407.0 L 303.1 410.0 L 306.2 410.5902886032127 L 303.1 411.2 L 302.5594585184008 414.2 L 302.0 411.2 L 298.9 410.5902886032127 L 302.0 410.0 Z" fill="#f6e6bf" opacity="0.5438668296672404"/><path d="M 514.6126724947244 400.1 L 515.2 403.1 L 518.1 403.61424003215507 L 515.2 404.2 L 514.6126724947244 407.1 L 514.1 404.2 L 511.1 403.61424003215507 L 514.1 403.1 Z" fill="#f6e6bf" opacity="0.7013898171484471"/><path d="M 637.7348365280777 349.0 L 638.3 352.0 L 641.3 352.53328148974106 L 638.3 353.1 L 637.7348365280777 356.1 L 637.2 353.1 L 634.2 352.53328148974106 L 637.2 352.0 Z" fill="#f6e6bf" opacity="0.6024639620445669"/><path d="M 737.3087688405067 82.5 L 737.7 84.7 L 739.9 85.06849065655842 L 737.7 85.5 L 737.3087688405067 87.6 L 736.9 85.5 L 734.7 85.06849065655842 L 736.9 84.7 Z" fill="#f6e6bf" opacity="0.6416344141587615"/><path d="M 729.5564905349165 45.6 L 730.2 49.0 L 733.5 49.59772545611486 L 730.2 50.2 L 729.5564905349165 53.5 L 728.9 50.2 L 725.6 49.59772545611486 L 728.9 49.0 Z" fill="#f6e6bf" opacity="0.673364154715091"/><path d="M 721.1 93.0 L 219.6 153.9 L 26.7 71.7" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="448" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="437" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 431.8 L 16.5 434.5 L 19.2 435 L 16.5 435.5 L 16 438.2 L 15.5 435.5 L 12.8 435 L 15.5 434.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 431.8 L 744.5 434.5 L 747.2 435 L 744.5 435.5 L 744 438.2 L 743.5 435.5 L 740.8 435 L 743.5 434.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Steps to Read a Cancer Sun Chart</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#lionelmessizodiacsign0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#lionelmessizodiacsign0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="379" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#lionelmessizodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#lionelmessizodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Locate the Cancer Sun</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Read it as a security-and-belonging theme, not a fixed mood</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#lionelmessizodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#lionelmessizodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Check the Moon</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Cancer's ruler; its sign and house color how that security is sought</text>
+  <circle cx="76" cy="241" r="20.0" fill="url(#lionelmessizodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="241" r="15" fill="url(#lionelmessizodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="236.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="245.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="237.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Note the Cancer-Capricorn Axis</text>
+  <text x="116" y="259.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">If Capricorn rising is confirmed, the pull between private safety and public</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">mastery</text>
+  <circle cx="76" cy="319" r="20.0" fill="url(#lionelmessizodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="319" r="15" fill="url(#lionelmessizodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="314.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="323.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="315.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Track Jupiter Through Cancer</text>
+  <text x="116" y="337.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">A same-sign backdrop until June 30, 2026 — not an exact degree contact</text>
+  <circle cx="76" cy="379" r="20.0" fill="url(#lionelmessizodiacsign0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="379" r="15" fill="url(#lionelmessizodiacsign0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="374.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="383.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="375.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Treat Rising Signs as Provisional</text>
+  <text x="116" y="397.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Until a confirmed birth time, any rising-sign claim stays speculative</text>
+  <path d="M 202.22749999999988 422.4 L 202.6 424.6 L 204.8 425 L 202.6 425.4 L 202.22749999999988 427.6 L 201.8 425.4 L 199.6 425 L 201.8 424.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="429" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 422.4 L 558.2 424.6 L 560.4 425 L 558.2 425.4 L 557.7725000000002 427.6 L 557.4 425.4 L 555.2 425 L 557.4 424.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>
