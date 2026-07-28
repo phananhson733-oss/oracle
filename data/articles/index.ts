@@ -389,6 +389,13 @@ import { marsInScorpioEn } from "./mars-in-scorpio";
 import { survivingSaturnReturnEn } from "./surviving-saturn-return";
 import { theMostCommonMbtiTypesForEachZodiacSignEn } from "./the-most-common-mbti-types-for-each-zodiac-sign";
 import { whatIsMyThemeForThisYearEn } from "./what-is-my-theme-for-this-year";
+import { jangWonyoungBirthChartEn } from "./jang-wonyoung-birth-chart";
+import { marsInAriesEn } from "./mars-in-aries";
+import { taylorSwiftTravisKelceWeddingAstrologyEn } from "./taylor-swift-travis-kelce-wedding-astrology";
+import { jenniferLopezBirthChartEn } from "./jennifer-lopez-birth-chart";
+import { scorpioMbtiTypeEn } from "./scorpio-mbti-type";
+import { saturnReturnCareerChangeEn } from "./saturn-return-career-change";
+import { venusInTaurusEn } from "./venus-in-taurus";
 // All articles organized by language
 
 import {
@@ -769,6 +776,13 @@ const ARTICLES_EN: WikiArticle[] = [
   survivingSaturnReturnEn,
   theMostCommonMbtiTypesForEachZodiacSignEn,
   whatIsMyThemeForThisYearEn,
+  jangWonyoungBirthChartEn,
+  marsInAriesEn,
+  taylorSwiftTravisKelceWeddingAstrologyEn,
+  jenniferLopezBirthChartEn,
+  scorpioMbtiTypeEn,
+  saturnReturnCareerChangeEn,
+  venusInTaurusEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

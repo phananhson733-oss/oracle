@@ -108,6 +108,10 @@ Not on its own. A Gemini Sun offers a framework for his adaptability and quick r
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *overview of the Gemini zodiac sign* — go deeper on the Sun sign anchoring this whole read
 - *explainer on how planet clusters work in a birth chart* — see why several placements in one sign amplify a theme
 - [guide to major aspects like squares and trines](/en/wiki/astrology-terms) — see how placements interact once you move past single signs

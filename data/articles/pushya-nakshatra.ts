@@ -105,6 +105,9 @@ The muhurta tradition treats Pushya transits as favorable for lasting beginnings
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *Cancer zodiac sign in Vedic astrology* — the sign that houses Pushya and how Cancer's emotional instinct interacts with Saturn's structure across all three of its nakshatras
 - *Saturn in Jyotish overview* — how Saturn's expression varies across different nakshatra placements and why Pushya represents one of its most counterintuitive configurations
 - *Ashlesha nakshatra explainer* — the third Cancer nakshatra, ruled by Mercury, for a direct contrast with Pushya's Saturn-led approach to care and sustenance

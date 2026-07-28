@@ -104,6 +104,9 @@ Most readers experience it as a two-year passage, with the pressure building, pe
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [explainer on the ascendant and rising sign](/en/wiki/ascendant-meaning) — helps you see how the whole chart frames where Saturn's pressure shows up.
 - [guide to the lunar nodes in a birth chart](/en/wiki/north-node-vs-south-node) — pairs well when the return coincides with a shift in life direction.
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — background on the transit as an astrological milestone.

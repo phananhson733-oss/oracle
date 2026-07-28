@@ -102,6 +102,10 @@ His Moon is most often placed in Pisces, which is associated with emotional sens
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart* — a fellow tennis champion's chart for a celebrity-to-celebrity comparison
 - [north and south node meaning](/en/wiki/north-node-vs-south-node) — his Aries North Node adds a growth-direction layer beyond the Sun sign
 - [synastry compatibility overview](/en/wiki/synastry-chart-compatibility) — how a Gemini Sun tends to pair with other charts

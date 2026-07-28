@@ -106,6 +106,10 @@ It tends to seek closeness that feels total rather than casual, valuing loyalty 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Mars In Aries](/en/wiki/mars-in-aries)
+- [Free Birth Chart Calculator](/en/birth-chart-calculator)
+<!-- gg-cluster-links:end -->
 - *North and South Nodes meaning* — connects your drive to the chart's axis of past patterns and growth direction.
 - [meaning of the eighth house](/en/wiki/8th-house-meaning) — the life arena most resonant with Scorpio's themes of intimacy, shared resources, and change.
 - [Scorpio (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/Scorpio_(astrology)) — a neutral overview of the sign's astronomical and cultural roots.

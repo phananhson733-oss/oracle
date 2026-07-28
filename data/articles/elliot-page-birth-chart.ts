@@ -117,6 +117,10 @@ Structurally, no — every chart uses the same signs, planets, and houses. The d
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [companion reading of Teyana Taylor's birth chart](/en/wiki/teyana-taylor-birth-chart) — compare how the same symbolic method reads a different public performer.
 - [the 12th house that Pisces traditionally rules](/en/wiki/12th-house-astrology) — go deeper on the house tied to Pisces, the sign most often linked to this chart.
 - [overview of synastry and compatibility charts](/en/wiki/synastry-chart-compatibility) — see how two charts get read together rather than one alone.

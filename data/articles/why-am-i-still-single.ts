@@ -113,6 +113,10 @@ Nothing in a chart is a permanent status. Placements describe patterns you can w
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 - [seventh house of partnership meaning](/en/wiki/7th-house-astrology) — the chart area most tied to one-to-one relationships and what you seek in a partner.
 - [rising sign meaning](/en/wiki/ascendant-meaning) — how your outward approach shapes first impressions and early attraction.
 - [Astrological aspect (Wikipedia)](https://en.wikipedia.org/wiki/Astrological_aspect) — a plain overview of how aspects work.

@@ -108,6 +108,10 @@ News cycles pull attention to familiar figures, and readers use a celebrity char
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [explainer on the twelve astrological houses](/en/wiki/astrology-houses) — where the missing birth time would otherwise place his planets
 - [guide to major chart aspects like squares and trines](/en/wiki/astrology-terms) — how planets link into tension or ease across any chart
 - *Cancer Sun sign meaning* — a deeper look at the one placement we can confirm for him

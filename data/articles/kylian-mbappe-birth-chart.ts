@@ -126,6 +126,9 @@ Mars and the Sun tend to get the most attention, since they speak to drive and c
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [explainer on the rising sign and ascendant](/en/wiki/ascendant-meaning) — because his chart's houses hinge on a birth time, this covers the layer left open.
 - [guide to major aspects like squares and trines](/en/wiki/astrology-terms) — for reading the tensions between planets as inner dynamics.
 - [overview of the twelve astrological houses](/en/wiki/astrology-houses) — where placements land once a verified birth time is known.

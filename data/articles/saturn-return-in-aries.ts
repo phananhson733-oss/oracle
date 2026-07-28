@@ -101,6 +101,9 @@ A birth date and year usually confirm whether Saturn is in Aries. An exact time 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - *overview of the Saturn return across all signs* — how the same cycle reads through other sign placements
 - *meaning of Saturn in astrology* — the planet's broader themes of structure, limits, and time
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — a plain-language overview of the concept

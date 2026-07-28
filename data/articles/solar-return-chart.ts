@@ -108,6 +108,9 @@ Returns can look intense on paper without producing intense events. The check is
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Solar Return](/en/wiki/solar-return)
+<!-- gg-cluster-links:end -->
 - *explainer on secondary progressions* — the inner-development technique that complements the externalized return
 - *overview of relocation astrology* — relevant because the return ascendant follows your physical location, not your birthplace
 - *comparison of major predictive astrology techniques* — places the return wheel inside the wider toolkit

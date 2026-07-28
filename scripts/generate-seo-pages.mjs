@@ -252,6 +252,9 @@ const buildHead = ({
   article.content h3 { font-size: 1.2rem; margin: 1.9rem 0 0.5rem; padding-left: 0.85rem; border-left: 3px solid rgba(127, 94, 54, 0.5); color: #7f5e36; }
   article.content blockquote { margin: 1rem 0; padding-left: 1rem; border-left: 3px solid #c9bfaf; color: #4a4540; }
   article.content li { line-height: 1.6; }
+  .related-reading-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 0.75rem; margin: 1.25rem 0 2rem; }
+  .related-reading-card { display: block; padding: 0.9rem 1rem; border: 1px solid #d8cfbf; border-radius: 12px; background: #fffdf9; font-weight: 600; line-height: 1.35; }
+  .related-reading-card:hover { background: #efeae1; }
   .meta { margin-top: 1.5rem; font-size: 0.95rem; color: #4a4540; }
   a { color: #7f5e36; text-decoration: none; border-bottom: 1px solid rgba(127, 94, 54, 0.35); }
   a:hover { color: #5f442b; }
@@ -852,6 +855,13 @@ const ARTICLE_SLUGS = [
 // to the sitemap would produce 404s for Google. Listed separately and
 // emitted into the sitemap with /en/wiki/ only (see loop below).
 const ARTICLE_SLUGS_EN_ONLY = [
+  'venus-in-taurus',
+  'saturn-return-career-change',
+  'scorpio-mbti-type',
+  'jennifer-lopez-birth-chart',
+  'taylor-swift-travis-kelce-wedding-astrology',
+  'mars-in-aries',
+  'jang-wonyoung-birth-chart',
   'argentina-vs-spain-world-cup-final-astrology-2026',
   'venus-in-gemini',
   'saturn-return-in-cancer',

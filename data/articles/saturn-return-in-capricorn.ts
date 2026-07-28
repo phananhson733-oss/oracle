@@ -117,6 +117,9 @@ It tends to concentrate on authority, career, and long-term structure. The speci
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - [birth chart reading guide](/en/wiki/how-to-read-birth-chart) — to locate which house your natal Saturn occupies.
 - [explainer on Saturn square timing](/en/wiki/square-astrology) — to keep the return separate from passing hard angles.
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return)

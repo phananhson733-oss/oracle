@@ -107,6 +107,9 @@ Agni's function is purification — fire as transformative force aimed at clarif
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *overview of all 27 nakshatras in Vedic astrology* — for placing Krittika in the full nakshatra sequence and understanding how the mansion system maps across the sidereal zodiac
 - *Rohini nakshatra profile* — follows Krittika in Taurus and shares the Venus-ruled sign, but centers on abundance and receptivity rather than precision and refinement
 - [Krittika (Wikipedia)](https://en.wikipedia.org/wiki/Krittika)

@@ -117,6 +117,9 @@ Use it as symbolic reflection alongside the documented result, not as evidence f
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — the base skill behind every paired-chart comparison here.
 - [ascendant meaning](/en/wiki/ascendant-meaning) — context for how chart angles are interpreted.
 - [astrology houses](/en/wiki/astrology-houses) — a guide to house-based chart reading.

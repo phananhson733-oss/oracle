@@ -114,6 +114,9 @@ The core trait tends to stay stable, but how strongly it affects you can shift w
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Famous Highly Sensitive Person](/en/wiki/famous-highly-sensitive-person)
+<!-- gg-cluster-links:end -->
 For the research framing behind the trait, the [Sensory processing sensitivity (Wikipedia)](https://en.wikipedia.org/wiki/Sensory_processing_sensitivity) offers a neutral overview of how high sensitivity has been studied, which pairs well with the more personal lens used here.
 
 ## Take Action

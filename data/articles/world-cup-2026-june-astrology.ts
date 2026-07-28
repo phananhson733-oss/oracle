@@ -105,6 +105,9 @@ The mid-month New Moon works as a reset for the group stage, while the late-June
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [what Jupiter in Cancer means](/en/wiki/9th-house-astrology) — the standout transit behind the June mood
 
 ## Take Action

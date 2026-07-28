@@ -116,6 +116,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Moon In Capricorn](/en/wiki/moon-in-capricorn)
+- [Free Birth Chart Calculator](/en/birth-chart-calculator)
+<!-- gg-cluster-links:end -->
 - [how the square aspect works between planets](/en/wiki/square-astrology) — useful if your Moon forms a tense angle to Saturn or another planet.
 - [meaning of the Ascendant in a birth chart](/en/wiki/ascendant-meaning) — shows how your outward style can differ from this inner emotional layer.
 - [guide to the lunar nodes north and south](/en/wiki/north-node-vs-south-node) — adds context on the Moon's karmic axis in both Vedic and Western charts.

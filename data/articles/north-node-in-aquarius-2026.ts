@@ -106,6 +106,10 @@ No. The house it falls in, and any planets nearby, shape how noticeable and pers
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [South Node](/en/wiki/south-node)
+- [North Node In Gemini](/en/wiki/north-node-in-gemini)
+<!-- gg-cluster-links:end -->
 - [South Node in Leo meaning page](/en/wiki/north-node-vs-south-node) — the opposite point that gives this axis its full context
 - *Leo sign meaning page* — the sign your South Node occupies, worth reading for the comfort zone
 - [overview of the lunar nodes in a birth chart](/en/wiki/north-node-vs-south-node) — background on how the North and South Nodes are calculated and used

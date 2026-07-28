@@ -121,6 +121,9 @@ A betting tip commits to an outcome; this framing deliberately doesn't. It offer
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [World Cup 2026 astrology overview](/en/wiki/world-cup-2026-astrology-prediction) — the hub this fixture page branches from, tying every team reading together.
 - [Jupiter guide](/en/wiki/jupiter) — background on the Jupiter-in-Cancer motif that frames the whole tournament.
 - [guide to rising sign and ascendant meaning](/en/wiki/ascendant-meaning) — how a chart's rising sign shapes the "character" this reading leans on.

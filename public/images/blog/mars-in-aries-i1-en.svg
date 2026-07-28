@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 445" role="img" aria-label="4 Common Misreadings of Mars in Aries">
+  <defs>
+    <linearGradient id="marsinaries1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="marsinaries1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="marsinaries1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marsinaries1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="marsinaries1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="marsinaries1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="url(#marsinaries1en-panel)"/>
+  <ellipse cx="198" cy="107" rx="380" ry="151" fill="url(#marsinaries1en-neb1)"/>
+  <ellipse cx="623" cy="356" rx="334" ry="142" fill="url(#marsinaries1en-neb2)"/>
+  <circle cx="551.1" cy="57.0" r="1.24" fill="#cfc8ea" opacity="0.25"/><circle cx="193.8" cy="325.0" r="1.65" fill="#cfc8ea" opacity="0.20"/><circle cx="420.7" cy="285.0" r="0.69" fill="#cfc8ea" opacity="0.45"/><circle cx="456.7" cy="245.7" r="0.41" fill="#cfc8ea" opacity="0.15"/><circle cx="645.1" cy="249.4" r="1.42" fill="#cfc8ea" opacity="0.27"/><circle cx="590.6" cy="328.8" r="1.21" fill="#cfc8ea" opacity="0.21"/><circle cx="563.3" cy="369.8" r="0.67" fill="#cfc8ea" opacity="0.20"/><circle cx="717.5" cy="252.7" r="0.54" fill="#cfc8ea" opacity="0.41"/><circle cx="657.5" cy="393.1" r="0.89" fill="#cfc8ea" opacity="0.22"/><circle cx="687.4" cy="253.0" r="1.00" fill="#cfc8ea" opacity="0.38"/><circle cx="156.0" cy="308.5" r="1.28" fill="#cfc8ea" opacity="0.30"/><circle cx="733.9" cy="201.3" r="0.87" fill="#cfc8ea" opacity="0.45"/><circle cx="564.7" cy="80.0" r="1.65" fill="#cfc8ea" opacity="0.44"/><circle cx="285.7" cy="64.2" r="0.46" fill="#cfc8ea" opacity="0.18"/><circle cx="404.4" cy="347.8" r="1.52" fill="#cfc8ea" opacity="0.37"/><circle cx="612.0" cy="378.3" r="1.23" fill="#cfc8ea" opacity="0.50"/><circle cx="198.9" cy="352.9" r="1.37" fill="#cfc8ea" opacity="0.48"/><circle cx="195.3" cy="107.2" r="1.44" fill="#cfc8ea" opacity="0.27"/><circle cx="616.8" cy="323.5" r="0.73" fill="#cfc8ea" opacity="0.24"/><circle cx="369.1" cy="387.1" r="0.47" fill="#cfc8ea" opacity="0.42"/><circle cx="561.8" cy="197.0" r="0.90" fill="#cfc8ea" opacity="0.41"/><circle cx="454.4" cy="330.4" r="1.48" fill="#cfc8ea" opacity="0.34"/><circle cx="603.1" cy="330.7" r="0.67" fill="#cfc8ea" opacity="0.41"/><circle cx="497.2" cy="117.8" r="0.93" fill="#cfc8ea" opacity="0.40"/><circle cx="423.6" cy="286.6" r="0.69" fill="#cfc8ea" opacity="0.52"/><circle cx="250.1" cy="153.9" r="0.47" fill="#cfc8ea" opacity="0.14"/><circle cx="711.4" cy="35.2" r="1.65" fill="#cfc8ea" opacity="0.19"/><circle cx="667.5" cy="151.8" r="1.27" fill="#cfc8ea" opacity="0.35"/><circle cx="317.2" cy="46.3" r="1.30" fill="#cfc8ea" opacity="0.45"/><circle cx="377.6" cy="168.8" r="0.91" fill="#cfc8ea" opacity="0.40"/><circle cx="295.4" cy="420.8" r="1.04" fill="#cfc8ea" opacity="0.28"/><circle cx="451.1" cy="107.8" r="0.83" fill="#cfc8ea" opacity="0.47"/><circle cx="461.1" cy="296.7" r="1.15" fill="#cfc8ea" opacity="0.16"/><circle cx="431.5" cy="230.1" r="0.56" fill="#cfc8ea" opacity="0.22"/><circle cx="742.3" cy="84.8" r="0.95" fill="#cfc8ea" opacity="0.28"/><circle cx="227.1" cy="277.8" r="1.62" fill="#cfc8ea" opacity="0.31"/><circle cx="673.0" cy="280.4" r="0.75" fill="#cfc8ea" opacity="0.24"/><circle cx="29.4" cy="393.7" r="1.05" fill="#cfc8ea" opacity="0.52"/><path d="M 240.7153737116605 189.6 L 241.3 192.8 L 244.6 193.450271199923 L 241.3 194.1 L 240.7153737116605 197.3 L 240.1 194.1 L 236.9 193.450271199923 L 240.1 192.8 Z" fill="#f6e6bf" opacity="0.6731556858867407"/><path d="M 110.3270058427006 363.2 L 110.8 365.9 L 113.5 366.421023175586 L 110.8 366.9 L 110.3270058427006 369.6 L 109.8 366.9 L 107.1 366.421023175586 L 109.8 365.9 Z" fill="#f6e6bf" opacity="0.7909882071428"/><path d="M 55.59048712439835 148.3 L 56.0 150.7 L 58.4 151.15074059879407 L 56.0 151.6 L 55.59048712439835 154.0 L 55.1 151.6 L 52.7 151.15074059879407 L 55.1 150.7 Z" fill="#f6e6bf" opacity="0.6947957778349518"/><path d="M 290.0219060424715 275.2 L 290.5 277.6 L 292.9 278.06916175270453 L 290.5 278.5 L 290.0219060424715 281.0 L 289.6 278.5 L 287.1 278.06916175270453 L 289.6 277.6 Z" fill="#f6e6bf" opacity="0.6221300632692873"/><path d="M 536.2377844322473 154.4 L 536.7 156.7 L 539.0 157.1945754881017 L 536.7 157.6 L 536.2377844322473 160.0 L 535.8 157.6 L 533.4 157.1945754881017 L 535.8 156.7 Z" fill="#f6e6bf" opacity="0.6716995738446713"/><path d="M 420.7 285.0 L 645.1 249.4 L 687.4 253.0 L 564.7 80.0 L 195.3 107.2" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="442" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="431" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 425.8 L 16.5 428.5 L 19.2 429 L 16.5 429.5 L 16 432.2 L 15.5 429.5 L 12.8 429 L 15.5 428.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 425.8 L 744.5 428.5 L 747.2 429 L 744.5 429.5 L 744 432.2 L 743.5 429.5 L 740.8 429 L 743.5 428.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">4 Common Misreadings of Mars in Aries</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#marsinaries1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#marsinaries1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="355" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#marsinaries1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#marsinaries1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">&quot;Always angry&quot;</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">The placement can describe a quick ignition point but does not measure</text>
+  <text x="116" y="157.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">emotional maturity or frequency of anger</text>
+  <circle cx="76" cy="199" r="20.0" fill="url(#marsinaries1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="199" r="15" fill="url(#marsinaries1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="194.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="203.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="195.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">&quot;Same as being an Aries&quot;</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sun sign and Mars placement describe different chart functions; the rest of the</text>
+  <text x="116" y="235.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">chart still matters</text>
+  <circle cx="76" cy="277" r="20.0" fill="url(#marsinaries1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="277" r="15" fill="url(#marsinaries1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="272.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="281.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="273.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">&quot;Direct means rude&quot;</text>
+  <text x="116" y="295.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Directness can be concise, brave, and respectful—the issue is checking timing</text>
+  <text x="116" y="313.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">and impact, not whether you speak plainly</text>
+  <circle cx="76" cy="355" r="20.0" fill="url(#marsinaries1en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="355" r="15" fill="url(#marsinaries1en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="350.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="359.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="351.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">&quot;Guarantees leadership&quot;</text>
+  <text x="116" y="373.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">It can support a willingness to start or take visible risk, but leadership also</text>
+  <text x="116" y="391.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">depends on judgment, skill, and relationships</text>
+  <path d="M 202.22749999999988 416.4 L 202.6 418.6 L 204.8 419 L 202.6 419.4 L 202.22749999999988 421.6 L 201.8 419.4 L 199.6 419 L 201.8 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="423" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 416.4 L 558.2 418.6 L 560.4 419 L 558.2 419.4 L 557.7725000000002 421.6 L 557.4 419.4 L 555.2 419 L 557.4 418.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

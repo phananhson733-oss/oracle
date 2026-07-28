@@ -108,6 +108,9 @@ A precise Moon and rising sign need a verified birth time, which is not publicly
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [guide to the twelve astrological houses](/en/wiki/astrology-houses) — see how house placements add detail beyond the Sun sign.
 - [explainer on major chart aspects like the trine and square](/en/wiki/trine-in-astrology) — learn how planets interact once you move past a single placement.
 - [guide to the lunar nodes in a birth chart](/en/wiki/north-node-vs-south-node) — explore the axis themes many readers pair with a Sun-sign profile.

@@ -108,6 +108,9 @@ Its classic symbol is the ox-cart or chariot, a sign of steady movement toward h
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *comparison with Krittika nakshatra* — the neighboring station with the opposite, Sun-ruled temperament, useful for feeling the contrast.
 - *guide to reading your moon sign* — because this placement is ultimately a concentrated flavor of the Moon.
 - [Rohini (nakshatra) (Wikipedia)](https://en.wikipedia.org/wiki/Rohini_(nakshatra))

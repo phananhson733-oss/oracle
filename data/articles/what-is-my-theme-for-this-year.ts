@@ -112,6 +112,10 @@ Many astrologers begin at the birthday return and revisit the chart across the f
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 - [guide to zodiac houses](/en/wiki/astrology-houses) — Houses clarify which part of life a Solar Return emphasis is describing.
 - [north node meaning](/en/wiki/north-node-vs-south-node) — North Node symbolism offers another way to consider long-term developmental questions in a natal chart.
 

@@ -107,6 +107,10 @@ No — taking a real stance is the growth, and you can revise it as you learn. S
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [South Node](/en/wiki/south-node)
+- [North Node In Gemini](/en/wiki/north-node-in-gemini)
+<!-- gg-cluster-links:end -->
 - *Gemini sign overview page* — the south-node energy you are growing out of, and why it feels so natural to fall back on.
 - [explainer on the south node in Gemini](/en/wiki/north-node-vs-south-node) — a closer look at the past-pattern half of this nodal axis.
 - [Lunar node (Wikipedia)](https://en.wikipedia.org/wiki/Lunar_node) — background on what the nodes physically are.

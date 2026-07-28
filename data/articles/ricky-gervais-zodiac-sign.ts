@@ -107,6 +107,10 @@ No. A stronger reading sees Cancer as a shell-and-softness pattern, where emotio
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [how to read a birth chart](/en/wiki/how-to-read-birth-chart) — Useful for separating confirmed placements from guesses based on public behavior.
 - [elements in astrology](/en/wiki/elements) — Helps place Gervais's Cancer Sun inside the wider water-sign tradition.
 - [moon rising sign](/en/wiki/moon-rising-sign) — Relevant because his Ascendant is unconfirmed and should not be overclaimed.

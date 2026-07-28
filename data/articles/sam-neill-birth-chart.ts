@@ -110,6 +110,10 @@ No. This reading describes tendencies and symbolic patterns, not outcomes. It re
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [sextile aspect explainer](/en/wiki/sextile-astrology) — how supportive planetary angles shape a natal reading.
 - [sixth house meaning in a birth chart](/en/wiki/6th-house-astrology) — the house most linked to Virgo's craft and service themes.
 - *Serena Williams's birth chart profile* — a companion single-chart reading of a public figure through one dominant emphasis.

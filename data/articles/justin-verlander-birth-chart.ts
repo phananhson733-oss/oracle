@@ -127,6 +127,10 @@ The clean takeaway is an early Pisces Sun supported by analytical Mercury-in-Aqu
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Pisces guide](/en/wiki/pisces) — the Sun sign that anchors this reading.
 - [Mercury in astrology](/en/wiki/mercury) — how thinking style can differ from Sun-sign identity.
 - [pillar guide to reading a birth chart](/en/wiki/how-to-read-birth-chart) — how to separate confirmed placements from birth-time-sensitive guesses.

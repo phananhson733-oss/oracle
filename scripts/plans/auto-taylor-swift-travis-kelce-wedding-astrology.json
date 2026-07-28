@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "taylor-swift-travis-kelce-wedding-astrology": {
+      "hero": {
+        "prompt": "Two stylized editorial figures—a luminous woman in a flowing golden gown and a tall broad-shouldered man in a dark tailored suit—stand together beneath a vast Leo constellation arc reaching across the sky, soft teal-gold nebula swirling around them, Jupiter radiating warm amber light above, Saturn's ringed silhouette rising on the horizon, Mercury's retrograde loop traced in silver dust curving between them; deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals",
+        "altEn": "Two stylized figures representing a celebrity couple stand beneath a Leo constellation arc with Jupiter, Saturn, and Mercury's retrograde arc in a painterly celestial wedding scene"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read the Swift-Kelce Wedding Chart",
+          "titleEn": "5 Steps to Read the Swift-Kelce Wedding Chart",
+          "altEn": "Five sequential steps for reading the Swift-Kelce wedding astrology chart from event date to natal context",
+          "items": [
+            {
+              "nameEn": "Start with the event date",
+              "subEn": "Treat July 3, 2026 as an electional snapshot and list visible transits without assigning a verdict"
+            },
+            {
+              "nameEn": "Separate Jupiter from the spectacle",
+              "subEn": "Jupiter in Leo points to generosity and theatrical presentation, not only public attention"
+            },
+            {
+              "nameEn": "Read Mercury retrograde as revision",
+              "subEn": "Notice themes of revisiting plans and conversations rather than assuming communication must fail"
+            },
+            {
+              "nameEn": "Place Saturn beside commitment",
+              "subEn": "Saturn highlights duty, tradition, boundaries, and long-term structure in ceremonial settings"
+            },
+            {
+              "nameEn": "Return to natal context",
+              "subEn": "Check how the date's transits contact both natal charts before claiming one transit speaks equally to each partner"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Composite Chart Reading vs Electional Astrology for a Wedding Date",
+          "titleEn": "Composite Chart Reading vs Electional Astrology",
+          "altEn": "Comparison of composite chart reading and electional astrology as two methods for interpreting a wedding date",
+          "columns": [
+            {
+              "nameEn": "Composite Chart Reading",
+              "linesEn": [
+                "Blends both partners' natal placements into a relationship-centered map",
+                "Describes the partnership as a shared symbolic pattern",
+                "Best for exploring ongoing relationship themes and angles",
+                "Less precise for reading the mood of a single ceremony date"
+              ]
+            },
+            {
+              "nameEn": "Electional Astrology",
+              "linesEn": [
+                "Centers the chosen event date and its moving transits",
+                "Reads the symbolic atmosphere of one particular moment",
+                "Best for understanding why a date feels grand, formal, or celebratory",
+                "Cannot replace the personal context supplied by both natal charts"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

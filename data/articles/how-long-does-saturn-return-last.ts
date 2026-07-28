@@ -110,6 +110,9 @@ Many people describe the second return as reflective rather than upheaval-driven
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Saturn Return Guide](/en/wiki/saturn-return-guide)
+<!-- gg-cluster-links:end -->
 - *natal Saturn placement in a birth chart* — see what Saturn means in your own chart before you time the return.
 - [tenth house meaning in a birth chart](/en/wiki/astrology-houses) — Saturn's home ground for career and public life often lights up during the return.
 - [Saturn return (Wikipedia)](https://en.wikipedia.org/wiki/Saturn_return) — a neutral summary of the cycle's timing.

@@ -115,6 +115,9 @@ Not always; stress, poor sleep, and sensory overload can produce the same surfac
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [3 Gunas](/en/wiki/3-gunas)
+<!-- gg-cluster-links:end -->
 - *guide to the three gunas of sattva, rajas, and tamas* — goes deeper on the mental qualities that sit alongside the doshas.
 - *overview of Ayurvedic daily routine basics* — the rhythm-first habits that steady Vata without a full overhaul.
 - [Dosha (Wikipedia)](https://en.wikipedia.org/wiki/Dosha) — a neutral overview of where the idea comes from.

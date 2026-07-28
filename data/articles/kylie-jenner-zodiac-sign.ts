@@ -113,6 +113,10 @@ Astrology offers a symbolic framework, not a cause. The Leo–Capricorn blend is
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *guide to the twelve rising signs and first impressions* — expands on how the ascendant shapes the posture discussed here.
 - *explainer on Leo Sun traits and public identity* — goes deeper on the visibility instinct behind her brand.
 - *comparison of other celebrity birth charts* — places this read alongside other trending public-figure charts.

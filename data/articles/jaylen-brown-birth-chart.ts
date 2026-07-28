@@ -115,6 +115,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart* — another athlete's chart read as a full portrait rather than a single Sun sign.
 - [explainer on how a square aspect works between planets](/en/wiki/square-astrology) — unpacks the hard aspects behind competitive drive.
 - [guide to the north and south lunar nodes](/en/wiki/north-node-vs-south-node) — adds a layer about direction and growth in any chart.
