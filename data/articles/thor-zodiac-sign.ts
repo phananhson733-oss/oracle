@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const thorZodiacSignEn: WikiArticle = {
   slug: "thor-zodiac-sign",
+  image: "/images/blog/thor-zodiac-sign.jpg",
+  image_alt: "A Norse thunder-god archetype stands on a rain-slick basalt cliff, hammer lowered, storm light breaking behind him.",
   title: "What the Thor Zodiac Sign Really Means in Astrology",
   description: "Thor Zodiac Sign is a Jupiter-ruled Sagittarius-style protector archetype for reading Thor through astrology, not a literal birth chart.",
   authorId: "marcus-orion",

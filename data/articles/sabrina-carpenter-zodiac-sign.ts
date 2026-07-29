@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const sabrinaCarpenterZodiacSignEn: WikiArticle = {
   slug: "sabrina-carpenter-zodiac-sign",
+  image: "/images/blog/sabrina-carpenter-zodiac-sign.jpg",
+  image_alt: "A pop-performer archetype turns from a mirrored dressing-room vanity to read an unlabeled circular natal chart held in both hands.",
   title: "Sabrina Carpenter Zodiac Sign and What It Actually Shows",
   description: "Sabrina Carpenter is an American singer, songwriter, and actress whose public birth date makes her Sun sign Taurus.",
   authorId: "marcus-orion",

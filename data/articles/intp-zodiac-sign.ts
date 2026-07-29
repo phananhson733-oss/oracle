@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const intpZodiacSignEn: WikiArticle = {
   slug: "intp-zodiac-sign",
+  image: "/images/blog/intp-zodiac-sign.jpg",
+  image_alt: "Hands sort four paired brass markers on a late-night study desk beside an unlabeled circular zodiac wheel and scattered graph paper.",
   title: "Reading the INTP Zodiac Sign Without Blurring Systems",
   description: "INTP zodiac sign is a symbolic MBTI-to-zodiac comparison within the broader how to read a birth chart, not a single sign assignment or a final personality verdict.",
   authorId: "julian-thorne",

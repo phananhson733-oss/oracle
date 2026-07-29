@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const wandaMaximoffZodiacSignEn: WikiArticle = {
   slug: "wanda-maximoff-zodiac-sign",
+  image: "/images/blog/wanda-maximoff-zodiac-sign.jpg",
+  image_alt: "A lone figure in a red-toned coat stands in a suburban living room half-dissolving into painted stage scenery, gold light trailing from her hands.",
   title: "Wanda Maximoff Zodiac Sign Reads Grief Through Aquarius",
   description: "Wanda Maximoff Zodiac Sign is the astrology label that reads Wanda Maximoff as an Aquarius Sun, using her fictional arc as symbolic material rather than proof of personality.",
   authorId: "marcus-orion",

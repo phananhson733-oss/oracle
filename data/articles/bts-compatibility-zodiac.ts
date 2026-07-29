@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const btsCompatibilityZodiacEn: WikiArticle = {
   slug: "bts-compatibility-zodiac",
+  image: "/images/blog/bts-compatibility-zodiac.jpg",
+  image_alt: "Seven microphone stands arranged in a loose arc on an empty rehearsal-room floor, a gold cable threading between them beneath a small zodiac wheel.",
   title: "BTS Compatibility Zodiac Without Matchmaking Myths",
   description: "BTS compatibility zodiac is symbolic Sun-sign compatibility for BTS fans.",
   authorId: "marcus-orion",

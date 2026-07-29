@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const esfpZodiacSignEn: WikiArticle = {
   slug: "esfp-zodiac-sign",
+  image: "/images/blog/esfp-zodiac-sign.jpg",
+  image_alt: "Hands lay four paired brass markers across a lit backstage vanity counter, an unlabeled circular zodiac wheel reflected in the mirror behind.",
   title: "Reading the ESFP Zodiac Sign Without Fixed Labels",
   description: "ESFP zodiac sign is a symbolic astrology-MBTI archetype for expressive sensing.",
   authorId: "julian-thorne",

@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const marvelCharactersZodiacSignsEn: WikiArticle = {
   slug: "marvel-characters-zodiac-signs",
+  image: "/images/blog/marvel-characters-zodiac-signs.jpg",
+  image_alt: "An ensemble of original invented superhero archetypes in a vaulted stone hall hung with gold zodiac glyphs, no real emblems or likenesses.",
   title: "Marvel Characters Zodiac Signs Without Canon Confusion",
   description: "Marvel Characters Zodiac Signs is a symbolic way to compare Marvel heroes and villains through the twelve zodiac archetypes while separating rare canon birthdate clues from fan-made sign attributions.",
   authorId: "marcus-orion",

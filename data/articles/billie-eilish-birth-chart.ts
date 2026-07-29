@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const billieEilishBirthChartEn: WikiArticle = {
   slug: "billie-eilish-birth-chart",
+  image: "/images/blog/billie-eilish-birth-chart.jpg",
+  image_alt: "An alt-pop-musician archetype sits on the floor of a home recording booth studying an unlabeled circular natal chart beside a plain birth-data card.",
   title: "Billie Eilish Birth Chart Without Guessing Her Rising Sign",
   description: "Billie Eilish is an American singer-songwriter whose public birth date lets astrology readers calculate a Sun-sign-only chart, while her private birth time keeps rising sign, houses, and exact Moon degree unverified.",
   authorId: "marcus-orion",

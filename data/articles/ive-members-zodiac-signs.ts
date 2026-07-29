@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const iveMembersZodiacSignsEn: WikiArticle = {
   slug: "ive-members-zodiac-signs",
+  image: "/images/blog/ive-members-zodiac-signs.jpg",
+  image_alt: "A row of microphone stands and lit standing mirrors across an empty rehearsal room, a small zodiac wheel glowing at the right.",
   title: "IVE Members Zodiac Signs Read as a Verified Sun-Sign Map",
   description: "IVE members zodiac signs is a verified Sun-sign reference for IVE's six members.",
   authorId: "marcus-orion",

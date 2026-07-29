@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const seventeenZodiacSignsEn: WikiArticle = {
   slug: "seventeen-zodiac-signs",
+  image: "/images/blog/seventeen-zodiac-signs.jpg",
+  image_alt: "Two converging rows of microphone stands on a wide empty concert stage under warm spotlights, a small zodiac wheel on the back wall.",
   title: "SEVENTEEN Zodiac Signs by Member With Official Dates",
   description: "SEVENTEEN Zodiac Signs is a verified member-by-member Sun-sign roster that matches each SEVENTEEN member's official birth date to the Western tropical zodiac, keeping the reading at date level rather than turning it into a full birth chart.",
   authorId: "marcus-orion",

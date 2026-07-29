@@ -4,6 +4,8 @@ import type { WikiArticle } from "../../types";
 
 export const enfpGeminiEn: WikiArticle = {
   slug: "enfp-gemini",
+  image: "/images/blog/enfp-gemini.jpg",
+  image_alt: "Hands hold brass markers over two half-overlapping unlabeled zodiac wheels on a cluttered creative worktable lit by twin desk lamps.",
   title: "Reading ENFP Gemini Without Blurring Type and Sign",
   description: "ENFP Gemini is an interpretive pairing of the ENFP personality type with Gemini's mutable air symbolism, used to compare curiosity, language, and social responsiveness without making either system a fate claim.",
   authorId: "julian-thorne",
