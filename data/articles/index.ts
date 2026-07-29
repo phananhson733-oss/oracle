@@ -410,6 +410,17 @@ import { rmBtsBirthChartEn } from "./rm-bts-birth-chart";
 import { jisooBirthChartEn } from "./jisoo-birth-chart";
 import { severusSnapeZodiacSignEn } from "./severus-snape-zodiac-sign";
 import { dumbledoreZodiacSignEn } from "./dumbledore-zodiac-sign";
+import { intpZodiacSignEn } from "./intp-zodiac-sign";
+import { esfpZodiacSignEn } from "./esfp-zodiac-sign";
+import { enfpGeminiEn } from "./enfp-gemini";
+import { btsCompatibilityZodiacEn } from "./bts-compatibility-zodiac";
+import { iveMembersZodiacSignsEn } from "./ive-members-zodiac-signs";
+import { seventeenZodiacSignsEn } from "./seventeen-zodiac-signs";
+import { marvelCharactersZodiacSignsEn } from "./marvel-characters-zodiac-signs";
+import { wandaMaximoffZodiacSignEn } from "./wanda-maximoff-zodiac-sign";
+import { thorZodiacSignEn } from "./thor-zodiac-sign";
+import { billieEilishBirthChartEn } from "./billie-eilish-birth-chart";
+import { sabrinaCarpenterZodiacSignEn } from "./sabrina-carpenter-zodiac-sign";
 // All articles organized by language
 
 import {
@@ -811,6 +822,17 @@ const ARTICLES_EN: WikiArticle[] = [
   jisooBirthChartEn,
   severusSnapeZodiacSignEn,
   dumbledoreZodiacSignEn,
+  intpZodiacSignEn,
+  esfpZodiacSignEn,
+  enfpGeminiEn,
+  btsCompatibilityZodiacEn,
+  iveMembersZodiacSignsEn,
+  seventeenZodiacSignsEn,
+  marvelCharactersZodiacSignsEn,
+  wandaMaximoffZodiacSignEn,
+  thorZodiacSignEn,
+  billieEilishBirthChartEn,
+  sabrinaCarpenterZodiacSignEn,
 ];
 
 const ARTICLES_ZH: WikiArticle[] = [

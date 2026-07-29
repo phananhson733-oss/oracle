@@ -980,6 +980,17 @@ const ARTICLE_SLUGS_EN_ONLY = [
   // tool-led prove-chain 桥页：写静态 stub（noindex,follow，给直达/内链访客兜底），
   // 但 article.seo.sitemap===false 使其不进 sitemap（转化实验，不求收录）。
   'aura-moon-venus-rising-bridge',
+  'intp-zodiac-sign',
+  'esfp-zodiac-sign',
+  'enfp-gemini',
+  'bts-compatibility-zodiac',
+  'ive-members-zodiac-signs',
+  'seventeen-zodiac-signs',
+  'marvel-characters-zodiac-signs',
+  'wanda-maximoff-zodiac-sign',
+  'thor-zodiac-sign',
+  'billie-eilish-birth-chart',
+  'sabrina-carpenter-zodiac-sign',
 ];
 
 const generate = async () => {
