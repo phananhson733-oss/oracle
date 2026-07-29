@@ -100,10 +100,10 @@ No. Sagittarius can be used as a symbolic comparison point, but it does not prov
 
 ## Related Reading
 
-- [Billie Eilish zodiac sign](/en/wiki/billie-eilish-birth-chart) — Useful when the reader wants only the verified Sagittarius Sun answer.
-- [Billie Eilish sun sign](/en/wiki/billie-eilish-birth-chart) — Narrows the discussion to the date-based placement instead of a full chart.
-- [Billie Eilish rising sign](/en/wiki/billie-eilish-birth-chart) — Explains why an ascendant claim depends on a verified birth time.
-- [Billie Eilish moon sign](/en/wiki/billie-eilish-birth-chart) — Helps separate broad lunar talk from exact degree or house claims.
+- *Billie Eilish zodiac sign* — Useful when the reader wants only the verified Sagittarius Sun answer.
+- *Billie Eilish sun sign* — Narrows the discussion to the date-based placement instead of a full chart.
+- *Billie Eilish rising sign* — Explains why an ascendant claim depends on a verified birth time.
+- *Billie Eilish moon sign* — Helps separate broad lunar talk from exact degree or house claims.
 - [Billie Eilish (Wikipedia)](https://en.wikipedia.org/wiki/Billie_Eilish) — Supports checking the public biography before chart interpretation.
 
 ## Take Action
