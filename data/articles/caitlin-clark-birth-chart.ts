@@ -115,7 +115,9 @@ The Aquarius stellium and Mars in Aries are the headline contrast: cool, systems
 
 ## Related Reading
 
-- *birth chart profile of Serena Williams* — another athlete's chart read as symbolic archetype rather than a scorecard.
+- [Jalen Brunson's birth chart](/en/wiki/jalen-brunson-birth-chart) — another basketball chart read as symbolic archetype rather than a scorecard.
+- [Shohei Ohtani's birth chart](/en/wiki/shohei-ohtani-birth-chart) — a two-way athlete's chart handled with the same evidence limits.
+- [Victor Wembanyama's zodiac sign](/en/wiki/victor-wembanyama-zodiac-sign) — a Sun-sign reading kept separate from performance claims.
 - *guide to what an Aquarius Sun means* — unpacks the sign at the center of her stellium.
 - *explainer on how planet clusters work in a birth chart* — background on stelliums like the one in her chart.
 - [Caitlin Clark (Wikipedia)](https://en.wikipedia.org/wiki/Caitlin_Clark) — the public record behind the symbolism.

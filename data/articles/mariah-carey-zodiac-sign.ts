@@ -106,6 +106,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+- [Rihanna's birth chart](/en/wiki/rihanna-birth-chart) — another music-industry chart read with its birth-time limits stated up front
+- [Selena Gomez's birth chart](/en/wiki/selena-gomez-birth-chart) — a pop chart where the date is public and the timed placements are not
+- [BTS members' zodiac signs](/en/wiki/bts-members-zodiac-signs) — the same date-only method applied across a group roster
+- [BLACKPINK zodiac signs](/en/wiki/blackpink-zodiac-signs) — a second group comparison built on officially listed birth dates
 - [Kylie Jenner's zodiac sign](/en/wiki/kylie-jenner-zodiac-sign) — another celebrity whose public brand outruns the one-line Sun read
 - [Sharon Osbourne's zodiac sign](/en/wiki/sharon-osbourne-zodiac-sign) — a chart where the rising sign stays debated, much like the limits flagged here
 - [Mariah Carey (Wikipedia)](https://en.wikipedia.org/wiki/Mariah_Carey)

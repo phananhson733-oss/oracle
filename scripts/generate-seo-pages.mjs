@@ -877,7 +877,6 @@ const ARTICLE_SLUGS_EN_ONLY = [
   'victor-wembanyama-zodiac-sign',
   'robert-downey-jr-birth-chart',
   'shohei-ohtani-birth-chart',
-  'taylor-swift-travis-kelce-synastry',
   'saturn-return-in-cancer-meaning',
   'saturn-return-age-30',
   'saturn-return-age-29',

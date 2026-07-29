@@ -114,6 +114,8 @@ No. Canon records only that she was born in 97 AC — no month, no day — and W
 
 ## Related Reading
 
+- [Harry Potter characters' zodiac signs](/en/wiki/harry-potter-characters-zodiac-signs) — a cast read the same way, separating canon dates from fan assignment.
+- [Severus Snape zodiac sign](/en/wiki/severus-snape-zodiac-sign) — the rare fictional character canon gives a full birthday, so the Sun sign is a calculation.
 - [persephone goddess](/en/wiki/persephone-goddess) — another mythic figure read through archetype rather than a birth date.
 - [north node in taurus](/en/wiki/north-node-in-taurus) — the Taurus side of the fixed-sign debate, for contrast.
 - [Rhaenyra Targaryen (Wikipedia)](https://en.wikipedia.org/wiki/Rhaenyra_Targaryen) — context on her arc across the series.

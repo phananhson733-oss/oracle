@@ -106,6 +106,7 @@ It can provide a playful symbolic vocabulary when the canon boundary is explicit
 ## Related Reading
 
 - [Harry Potter characters’ zodiac signs](/en/wiki/harry-potter-characters-zodiac-signs) — A canon-aware guide to symbolic readings of the cast.
+- [Severus Snape zodiac sign](/en/wiki/severus-snape-zodiac-sign) — The contrasting case: canon gives Snape a full birthday, so his Capricorn Sun is a calculation rather than an interpretation.
 - [How to read a birth chart](/en/wiki/how-to-read-birth-chart) — Why a calculated chart needs documented inputs.
 - [What the Ascendant means](/en/wiki/ascendant-meaning) — A focused guide to the time-sensitive part of a natal chart.
 

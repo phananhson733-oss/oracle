@@ -99,9 +99,10 @@ BLACKPINK zodiac signs offers a symbolic frame for noticing archetype contrast w
 
 ## Related Reading
 
-- *Capricorn sign meaning* — covers the cardinal earth archetype in full; useful context for the sign Jisoo and Jennie share
-- *Aquarius sign meaning* — Rosé's sign in detail; explains the fixed-air archetype's relationship to individuality and emotional expression
-- *Aries sign meaning* — Lisa's sign; covers the cardinal fire archetype behind the stage-command patterns fans observe
+- [Jisoo birth chart](/en/wiki/jisoo-birth-chart) — the same date-based method applied to one member in depth, including what the missing birth time rules out
+- [Capricorn sign meaning](/en/wiki/capricorn) — covers the cardinal earth archetype in full; useful context for the sign Jisoo and Jennie share
+- [Aquarius sign meaning](/en/wiki/aquarius) — Rosé's sign in detail; explains the fixed-air archetype's relationship to individuality and emotional expression
+- [Aries sign meaning](/en/wiki/aries) — Lisa's sign; covers the cardinal fire archetype behind the stage-command patterns fans observe
 - [BLACKPINK (Wikipedia)](https://en.wikipedia.org/wiki/BLACKPINK)
 
 ## Take Action

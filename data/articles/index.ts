@@ -363,7 +363,6 @@ import { jalenBrunsonBirthChartEn } from "./jalen-brunson-birth-chart";
 import { victorWembanyamaZodiacSignEn } from "./victor-wembanyama-zodiac-sign";
 import { robertDowneyJrBirthChartEn } from "./robert-downey-jr-birth-chart";
 import { shoheiOhtaniBirthChartEn } from "./shohei-ohtani-birth-chart";
-import { taylorSwiftTravisKelceSynastryEn } from "./taylor-swift-travis-kelce-synastry";
 import { saturnReturnAge29En } from "./saturn-return-age-29";
 import { saturnReturnInCapricornEn } from "./saturn-return-in-capricorn";
 import { saturnReturnAge30En } from "./saturn-return-age-30";
@@ -737,7 +736,6 @@ const ARTICLES_EN: WikiArticle[] = [
   victorWembanyamaZodiacSignEn,
   robertDowneyJrBirthChartEn,
   shoheiOhtaniBirthChartEn,
-  taylorSwiftTravisKelceSynastryEn,
   saturnReturnAge29En,
   saturnReturnInCapricornEn,
   saturnReturnAge30En,

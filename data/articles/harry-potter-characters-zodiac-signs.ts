@@ -45,7 +45,7 @@ According to a 2017 Pew Research Center survey, about 29% of U.S. adults said th
 
 ## Character Zodiac Readings vs. Actor Birth Charts: Where the Line Falls
 
-The most persistent confusion in character archetype content is treating character readings and actor readings as interchangeable. A performer's birth data describes a real person; Harry Potter's July 31 birthday gives this article a separate character-side datum. These readings don't reinforce each other—they answer different questions about different people. The *Leo zodiac sign meaning* archetype looks very different when applied to a fictional hero's story arc than to a real person's natal placement. Pulling actor data into character analysis doesn't add nuance; it introduces a category error that makes the archetype harder to read clearly.
+The most persistent confusion in character archetype content is treating character readings and actor readings as interchangeable. A performer's birth data describes a real person; Harry Potter's July 31 birthday gives this article a separate character-side datum. These readings don't reinforce each other—they answer different questions about different people. The [Leo zodiac sign meaning](/en/wiki/leo) archetype looks very different when applied to a fictional hero's story arc than to a real person's natal placement. Pulling actor data into character analysis doesn't add nuance; it introduces a category error that makes the archetype harder to read clearly.
 
 Harry Potter characters zodiac signs as an interpretive framework stops at the character's page in the story. The trade-off is real and worth naming directly: to get clean symbolic alignment—a reading that tells you something precise about how an archetype functions in a narrative—you give up biographical texture. An actor's chart requires a real person's birth data and reflects their actual life experience; a character's sign assignment reflects the story's logic and the narrative role that character fills. Questions about a performer’s natal placements belong in a different article.
 
@@ -110,6 +110,8 @@ Tom Riddle's December 31 birthday places him at the edge of Capricorn. His arc i
 
 ## Related Reading
 
+- [Severus Snape zodiac sign](/en/wiki/severus-snape-zodiac-sign) — the one major character canon gives a full birthday, so his Capricorn Sun is a calculation rather than a fan assignment
+- [Dumbledore zodiac sign](/en/wiki/dumbledore-zodiac-sign) — the contrasting case: canon fixes only a birth year, so no Sun sign can be settled
 - [pillar page on how to read a birth chart](/en/wiki/how-to-read-birth-chart) — for readers who want to move from character archetype mapping into actual natal chart analysis
 - *guide to zodiac sign archetypes and their shadow patterns* — the broader symbolic framework these character readings draw from
 
@@ -120,6 +122,6 @@ Tom Riddle's December 31 birthday places him at the edge of Capricorn. His arc i
 ## Sources
 
 - J.K. Rowling — Harry Potter series and published supplementary material; canon birthdays and story-behavior cues that anchor the character references on this page
-- Pew Research Center — 2017 Religious Landscape Study; survey data on U.S. adult belief in astrology cited in the self-awareness section
+- Pew Research Center — 2017 survey on New Age beliefs (reported October 2018); the 29% U.S.-adult belief-in-astrology figure cited in the self-awareness section
 `,
 };

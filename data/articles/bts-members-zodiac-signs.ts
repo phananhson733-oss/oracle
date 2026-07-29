@@ -104,7 +104,9 @@ Earth appears most often among the six date-stable placements, covering RM and J
 
 ## Related Reading
 
-- *Virgo Sun sign meaning*
+- [Suga BTS birth chart](/en/wiki/suga-bts-birth-chart) — the same date-based method applied to one member in depth, including what the missing birth time rules out.
+- [RM BTS birth chart](/en/wiki/rm-bts-birth-chart) — a second single-member reading, useful for seeing how two Sun signs in the same group get handled identically.
+- [Virgo Sun sign meaning](/en/wiki/virgo)
 - *how Sun-sign boundary dates work*
 - *birth chart reading guide*
 
