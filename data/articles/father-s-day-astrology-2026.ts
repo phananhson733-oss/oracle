@@ -109,6 +109,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Neptune In Pisces](/en/wiki/neptune-in-pisces)
+- [Chiron In Taurus 2026 Astrology](/en/wiki/chiron-in-taurus-2026-astrology)
+<!-- gg-cluster-links:end -->
 - [Cancer season themes](/en/wiki/cancer) — unpacks the home-and-family mood that opens on this exact date.
 - [How transits work](/en/wiki/transits) — explains how a planet moving through a sign colors a whole season.
 - [Reading natal chart transits](/en/wiki/natal-chart-transits) — shows where this Cancer emphasis actually lands in your own chart.

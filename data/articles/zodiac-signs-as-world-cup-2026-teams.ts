@@ -125,6 +125,9 @@ Yes. Start with the Sun for the cleanest style read, then add Moon and rising if
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - *best soccer players by zodiac sign* — the data-side companion to this archetypal lens, matching real birth-date patterns to the elements
 
 ## Take Action

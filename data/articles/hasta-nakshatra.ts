@@ -114,6 +114,9 @@ Hasta shares Virgo with Uttara Phalguni and Chitra, but Savitar's artisanal infl
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *Savitar and presiding deities in Vedic nakshatra symbolism* — background on how Savitar's artisanal quality encodes the psychological pattern of this lunar mansion
 - *nakshatra lord system in Vedic astrology* — how Moon's role as nakshatra lord amplifies and interacts with its natal placement
 - *Kanya rashi meaning and characteristics* — Virgo's influence across all three of its nakshatras and what that Virgo frame means for Hasta specifically

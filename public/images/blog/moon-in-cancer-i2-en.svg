@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 701" role="img" aria-label="Cancer Moon Properties at a Glance">
+  <defs>
+    <linearGradient id="moonincancer2en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="moonincancer2en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="moonincancer2en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonincancer2en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonincancer2en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonincancer2en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="url(#moonincancer2en-panel)"/>
+  <ellipse cx="198" cy="168" rx="380" ry="238" fill="url(#moonincancer2en-neb1)"/>
+  <ellipse cx="623" cy="561" rx="334" ry="224" fill="url(#moonincancer2en-neb2)"/>
+  <circle cx="193.0" cy="371.9" r="0.55" fill="#cfc8ea" opacity="0.34"/><circle cx="424.7" cy="318.3" r="1.53" fill="#cfc8ea" opacity="0.20"/><circle cx="210.2" cy="433.8" r="1.34" fill="#cfc8ea" opacity="0.14"/><circle cx="21.1" cy="154.2" r="1.09" fill="#cfc8ea" opacity="0.28"/><circle cx="307.4" cy="412.9" r="1.60" fill="#cfc8ea" opacity="0.14"/><circle cx="145.3" cy="113.8" r="0.42" fill="#cfc8ea" opacity="0.43"/><circle cx="717.9" cy="326.1" r="1.33" fill="#cfc8ea" opacity="0.28"/><circle cx="741.5" cy="475.9" r="1.47" fill="#cfc8ea" opacity="0.19"/><circle cx="354.5" cy="177.4" r="1.22" fill="#cfc8ea" opacity="0.21"/><circle cx="683.7" cy="279.0" r="0.64" fill="#cfc8ea" opacity="0.13"/><circle cx="356.5" cy="656.4" r="1.18" fill="#cfc8ea" opacity="0.18"/><circle cx="713.9" cy="311.2" r="1.20" fill="#cfc8ea" opacity="0.47"/><circle cx="265.6" cy="401.7" r="0.92" fill="#cfc8ea" opacity="0.13"/><circle cx="330.2" cy="20.2" r="0.85" fill="#cfc8ea" opacity="0.31"/><circle cx="28.8" cy="350.3" r="0.85" fill="#cfc8ea" opacity="0.37"/><circle cx="294.5" cy="422.9" r="1.31" fill="#cfc8ea" opacity="0.33"/><circle cx="535.4" cy="375.5" r="0.87" fill="#cfc8ea" opacity="0.14"/><circle cx="343.5" cy="261.8" r="1.34" fill="#cfc8ea" opacity="0.12"/><circle cx="282.0" cy="349.0" r="0.44" fill="#cfc8ea" opacity="0.30"/><circle cx="305.7" cy="51.5" r="0.93" fill="#cfc8ea" opacity="0.36"/><circle cx="56.6" cy="196.8" r="1.24" fill="#cfc8ea" opacity="0.53"/><circle cx="92.6" cy="529.3" r="1.49" fill="#cfc8ea" opacity="0.13"/><circle cx="323.0" cy="196.8" r="1.46" fill="#cfc8ea" opacity="0.44"/><circle cx="381.3" cy="130.3" r="1.65" fill="#cfc8ea" opacity="0.39"/><circle cx="229.8" cy="568.5" r="1.28" fill="#cfc8ea" opacity="0.32"/><circle cx="391.9" cy="56.3" r="0.49" fill="#cfc8ea" opacity="0.36"/><circle cx="304.0" cy="213.3" r="1.19" fill="#cfc8ea" opacity="0.47"/><circle cx="360.7" cy="636.7" r="1.29" fill="#cfc8ea" opacity="0.51"/><circle cx="366.7" cy="357.6" r="0.49" fill="#cfc8ea" opacity="0.40"/><circle cx="736.6" cy="79.9" r="1.21" fill="#cfc8ea" opacity="0.24"/><circle cx="80.5" cy="419.2" r="1.59" fill="#cfc8ea" opacity="0.52"/><circle cx="464.4" cy="640.6" r="1.10" fill="#cfc8ea" opacity="0.37"/><circle cx="496.9" cy="433.8" r="1.04" fill="#cfc8ea" opacity="0.13"/><circle cx="616.3" cy="395.1" r="1.25" fill="#cfc8ea" opacity="0.25"/><circle cx="342.8" cy="415.3" r="1.03" fill="#cfc8ea" opacity="0.31"/><circle cx="584.8" cy="296.1" r="0.98" fill="#cfc8ea" opacity="0.32"/><circle cx="641.8" cy="130.4" r="1.02" fill="#cfc8ea" opacity="0.35"/><circle cx="546.5" cy="334.3" r="1.66" fill="#cfc8ea" opacity="0.37"/><circle cx="426.7" cy="520.1" r="1.20" fill="#cfc8ea" opacity="0.49"/><circle cx="681.9" cy="134.0" r="0.82" fill="#cfc8ea" opacity="0.51"/><circle cx="523.7" cy="597.3" r="0.41" fill="#cfc8ea" opacity="0.34"/><circle cx="117.3" cy="289.8" r="1.14" fill="#cfc8ea" opacity="0.51"/><circle cx="544.4" cy="581.3" r="0.79" fill="#cfc8ea" opacity="0.36"/><circle cx="40.7" cy="627.7" r="1.49" fill="#cfc8ea" opacity="0.49"/><circle cx="181.2" cy="374.7" r="0.71" fill="#cfc8ea" opacity="0.20"/><circle cx="107.6" cy="65.5" r="1.53" fill="#cfc8ea" opacity="0.37"/><circle cx="166.2" cy="491.4" r="1.20" fill="#cfc8ea" opacity="0.29"/><circle cx="692.9" cy="434.6" r="0.66" fill="#cfc8ea" opacity="0.20"/><circle cx="674.0" cy="503.5" r="1.51" fill="#cfc8ea" opacity="0.23"/><circle cx="443.4" cy="671.1" r="1.02" fill="#cfc8ea" opacity="0.48"/><circle cx="660.8" cy="512.9" r="1.57" fill="#cfc8ea" opacity="0.23"/><circle cx="615.6" cy="686.3" r="1.26" fill="#cfc8ea" opacity="0.17"/><circle cx="565.9" cy="100.2" r="1.44" fill="#cfc8ea" opacity="0.49"/><circle cx="680.1" cy="88.1" r="1.36" fill="#cfc8ea" opacity="0.27"/><circle cx="613.9" cy="366.9" r="1.39" fill="#cfc8ea" opacity="0.40"/><circle cx="40.9" cy="528.3" r="1.01" fill="#cfc8ea" opacity="0.29"/><circle cx="247.5" cy="51.2" r="1.01" fill="#cfc8ea" opacity="0.32"/><circle cx="308.4" cy="116.7" r="1.14" fill="#cfc8ea" opacity="0.47"/><circle cx="396.2" cy="268.4" r="1.57" fill="#cfc8ea" opacity="0.31"/><path d="M 234.64530349336565 419.3 L 235.1 421.8 L 237.6 422.2880028197542 L 235.1 422.8 L 234.64530349336565 425.3 L 234.2 422.8 L 231.6 422.2880028197542 L 234.2 421.8 Z" fill="#f6e6bf" opacity="0.5254114419687539"/><path d="M 383.0659283082932 538.4 L 383.5 540.7 L 385.8 541.0984496753663 L 383.5 541.5 L 383.0659283082932 543.8 L 382.6 541.5 L 380.3 541.0984496753663 L 382.6 540.7 Z" fill="#f6e6bf" opacity="0.6486472442280501"/><path d="M 76.712984373793 385.2 L 77.1 387.2 L 79.2 387.63727895449847 L 77.1 388.0 L 76.712984373793 390.1 L 76.3 388.0 L 74.2 387.63727895449847 L 76.3 387.2 Z" fill="#f6e6bf" opacity="0.6171391709242016"/><path d="M 135.64194311015308 559.6 L 136.1 561.9 L 138.5 562.396002240479 L 136.1 562.8 L 135.64194311015308 565.2 L 135.2 562.8 L 132.8 562.396002240479 L 135.2 561.9 Z" fill="#f6e6bf" opacity="0.6388461825903505"/><path d="M 532.6290706153959 180.3 L 533.2 183.2 L 536.1 183.75091581512243 L 533.2 184.3 L 532.6290706153959 187.3 L 532.1 184.3 L 529.1 183.75091581512243 L 532.1 183.2 Z" fill="#f6e6bf" opacity="0.7398451444227249"/><path d="M 535.4 375.5 L 305.7 51.5 L 92.6 529.3 L 360.7 636.7 L 736.6 79.9" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="698" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="687" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 681.8 L 16.5 684.5 L 19.2 685 L 16.5 685.5 L 16 688.2 L 15.5 685.5 L 12.8 685 L 15.5 684.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 681.8 L 744.5 684.5 L 747.2 685 L 744.5 685.5 L 744 688.2 L 743.5 685.5 L 740.8 685 L 743.5 684.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Cancer Moon Properties at a Glance</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#moonincancer2en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#moonincancer2en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Property</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Element: Water</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Modality: Cardinal</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Ruler: The Moon</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Core need: Security</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">How It Works</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Processes life through feeling and instinct</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Initiates and protects</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Dignified in its own sign — instincts run strong and unguarded</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Seeks belonging and familiar routine</text>
+  <path d="M 380 477.5 L 380.7 481.3 L 384.5 482 L 380.7 482.7 L 380 486.5 L 379.3 482.7 L 375.5 482 L 379.3 481.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="495" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="495" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 504.6 L 48.3 507.5 L 51.1 508 L 48.3 508.5 L 47.75 511.4 L 47.2 508.5 L 44.4 508 L 47.2 507.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="524.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Watch-Out</text>
+  <path d="M 70 553.8 L 70.5 556.5 L 73.2 557 L 70.5 557.5 L 70 560.2 L 69.5 557.5 L 66.8 557 L 69.5 556.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="562.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Can absorb others' moods until overwhelmed</text>
+  <path d="M 70 582.8 L 70.5 585.5 L 73.2 586 L 70.5 586.5 L 70 589.2 L 69.5 586.5 L 66.8 586 L 69.5 585.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="591.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Protectiveness can slide into controlling care</text>
+  <path d="M 70 611.8 L 70.5 614.5 L 73.2 615 L 70.5 615.5 L 70 618.2 L 69.5 615.5 L 66.8 615 L 69.5 614.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="620.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Strong feelings can override objective judgment</text>
+  <path d="M 70 640.8 L 70.5 643.5 L 73.2 644 L 70.5 644.5 L 70 647.2 L 69.5 644.5 L 66.8 644 L 69.5 643.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="649.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Change and distance can trigger real anxiety</text>
+  <path d="M 202.22749999999988 672.4 L 202.6 674.6 L 204.8 675 L 202.6 675.4 L 202.22749999999988 677.6 L 201.8 675.4 L 199.6 675 L 201.8 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="679" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 672.4 L 558.2 674.6 L 560.4 675 L 558.2 675.4 L 557.7725000000002 677.6 L 557.4 675.4 L 555.2 675 L 557.4 674.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

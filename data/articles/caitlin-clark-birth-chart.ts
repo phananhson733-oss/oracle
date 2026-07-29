@@ -115,6 +115,10 @@ The Aquarius stellium and Mars in Aries are the headline contrast: cool, systems
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Jalen Brunson's birth chart](/en/wiki/jalen-brunson-birth-chart) — another basketball chart read as symbolic archetype rather than a scorecard.
 - [Shohei Ohtani's birth chart](/en/wiki/shohei-ohtani-birth-chart) — a two-way athlete's chart handled with the same evidence limits.
 - [Victor Wembanyama's zodiac sign](/en/wiki/victor-wembanyama-zodiac-sign) — a Sun-sign reading kept separate from performance claims.

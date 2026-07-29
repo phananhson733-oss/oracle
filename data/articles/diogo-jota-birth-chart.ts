@@ -109,6 +109,10 @@ Interest surged around his death in July 2025 and the tributes that followed, as
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *birth chart profile of Serena Williams* — another public-figure chart read as persona, useful for comparing interpretive styles
 - [meaning of the trine aspect in a birth chart](/en/wiki/trine-in-astrology) — explains one of the aspect patterns that shape a full-chart reading
 - [guide to the twelve astrological houses](/en/wiki/astrology-houses) — shows why an unknown birth time leaves so much of a chart open

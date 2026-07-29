@@ -108,6 +108,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [guide to rising sign profiles](/en/wiki/ascendant-meaning) — for the piece of the chart her unknown birth time leaves open.
 - *birth chart profile of Serena Williams* — a companion athlete reading to compare competitive archetypes.
 - [explainer on Scorpio Sun personality](/en/wiki/north-node-in-scorpio) — a deeper look at the sign that anchors this chart.

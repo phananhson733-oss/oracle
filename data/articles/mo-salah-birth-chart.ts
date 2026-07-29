@@ -108,6 +108,9 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [guide to reading any footballer's birth chart](/en/wiki/how-to-read-birth-chart) — a step-by-step for applying this method to other players.
 - [the Erling Haaland birth chart](/en/wiki/erling-haaland-birth-chart) — a contrasting World Cup forward read through the same lens.
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — how Gemini and other signs show up across top footballers.

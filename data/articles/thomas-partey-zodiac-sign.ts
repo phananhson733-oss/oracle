@@ -104,6 +104,9 @@ No. A sign offers a symbolic lens on style and tendencies, not a forecast of mat
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [best soccer players by zodiac sign](/en/wiki/best-soccer-players-zodiac-sign) — how other players' signs stack up across the game.
 - [Lionel Messi zodiac sign](/en/wiki/lionel-messi-zodiac-sign) — another World Cup player's chart read in the same series.
 - [Christian Pulisic birth chart](/en/wiki/christian-pulisic-birth-chart) — a fellow World Cup forward's placements.

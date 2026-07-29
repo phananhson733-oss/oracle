@@ -105,6 +105,10 @@ A familiar public figure gives you a shared reference point for practicing symbo
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *birth chart profile of Serena Williams* — another public figure's chart read through the same symbolic method
 - [explainer on the trine aspect in a birth chart](/en/wiki/trine-in-astrology) — helps you interpret the standout aspects mentioned above
 - [Cancer (astrology) (Wikipedia)](https://en.wikipedia.org/wiki/Cancer_(astrology)) — neutral context on the sign anchoring this reading

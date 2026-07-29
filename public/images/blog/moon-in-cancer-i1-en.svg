@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 503" role="img" aria-label="Cancer Moon: Common Misreadings vs Reality">
+  <defs>
+    <linearGradient id="moonincancer1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="moonincancer1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="moonincancer1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonincancer1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="moonincancer1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="moonincancer1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="url(#moonincancer1en-panel)"/>
+  <ellipse cx="198" cy="121" rx="380" ry="171" fill="url(#moonincancer1en-neb1)"/>
+  <ellipse cx="623" cy="402" rx="334" ry="161" fill="url(#moonincancer1en-neb2)"/>
+  <circle cx="652.7" cy="99.0" r="1.21" fill="#cfc8ea" opacity="0.31"/><circle cx="608.6" cy="409.7" r="1.22" fill="#cfc8ea" opacity="0.16"/><circle cx="69.6" cy="318.8" r="1.25" fill="#cfc8ea" opacity="0.23"/><circle cx="74.8" cy="105.1" r="1.01" fill="#cfc8ea" opacity="0.32"/><circle cx="364.5" cy="151.8" r="0.90" fill="#cfc8ea" opacity="0.51"/><circle cx="684.6" cy="233.8" r="1.59" fill="#cfc8ea" opacity="0.36"/><circle cx="256.3" cy="76.7" r="1.42" fill="#cfc8ea" opacity="0.42"/><circle cx="154.4" cy="425.6" r="1.12" fill="#cfc8ea" opacity="0.36"/><circle cx="380.7" cy="267.1" r="0.63" fill="#cfc8ea" opacity="0.53"/><circle cx="159.9" cy="67.2" r="0.91" fill="#cfc8ea" opacity="0.39"/><circle cx="487.4" cy="346.8" r="0.51" fill="#cfc8ea" opacity="0.17"/><circle cx="378.1" cy="231.8" r="0.81" fill="#cfc8ea" opacity="0.28"/><circle cx="241.9" cy="113.6" r="1.46" fill="#cfc8ea" opacity="0.50"/><circle cx="178.2" cy="35.9" r="0.88" fill="#cfc8ea" opacity="0.47"/><circle cx="256.2" cy="45.1" r="1.54" fill="#cfc8ea" opacity="0.14"/><circle cx="167.1" cy="219.6" r="1.68" fill="#cfc8ea" opacity="0.50"/><circle cx="399.7" cy="461.6" r="1.35" fill="#cfc8ea" opacity="0.16"/><circle cx="633.3" cy="438.5" r="1.06" fill="#cfc8ea" opacity="0.42"/><circle cx="705.0" cy="307.4" r="0.81" fill="#cfc8ea" opacity="0.23"/><circle cx="149.4" cy="299.8" r="0.50" fill="#cfc8ea" opacity="0.25"/><circle cx="178.5" cy="293.7" r="0.58" fill="#cfc8ea" opacity="0.28"/><circle cx="233.1" cy="416.7" r="1.62" fill="#cfc8ea" opacity="0.35"/><circle cx="366.8" cy="416.5" r="0.63" fill="#cfc8ea" opacity="0.37"/><circle cx="318.0" cy="226.8" r="0.95" fill="#cfc8ea" opacity="0.13"/><circle cx="280.6" cy="21.6" r="0.99" fill="#cfc8ea" opacity="0.27"/><circle cx="299.2" cy="207.2" r="0.58" fill="#cfc8ea" opacity="0.41"/><circle cx="468.9" cy="152.6" r="1.05" fill="#cfc8ea" opacity="0.24"/><circle cx="665.6" cy="340.5" r="1.39" fill="#cfc8ea" opacity="0.34"/><circle cx="47.7" cy="338.4" r="1.36" fill="#cfc8ea" opacity="0.44"/><circle cx="77.0" cy="307.8" r="0.99" fill="#cfc8ea" opacity="0.40"/><circle cx="170.0" cy="73.6" r="1.12" fill="#cfc8ea" opacity="0.46"/><circle cx="257.9" cy="362.2" r="0.42" fill="#cfc8ea" opacity="0.46"/><circle cx="485.6" cy="246.2" r="0.69" fill="#cfc8ea" opacity="0.19"/><circle cx="220.1" cy="107.6" r="1.32" fill="#cfc8ea" opacity="0.50"/><circle cx="555.1" cy="450.4" r="1.38" fill="#cfc8ea" opacity="0.52"/><circle cx="463.1" cy="54.7" r="1.32" fill="#cfc8ea" opacity="0.31"/><circle cx="687.0" cy="313.4" r="0.86" fill="#cfc8ea" opacity="0.35"/><circle cx="384.8" cy="91.9" r="0.68" fill="#cfc8ea" opacity="0.26"/><circle cx="333.1" cy="181.6" r="1.13" fill="#cfc8ea" opacity="0.16"/><circle cx="571.4" cy="406.9" r="0.51" fill="#cfc8ea" opacity="0.45"/><circle cx="501.4" cy="93.0" r="1.44" fill="#cfc8ea" opacity="0.51"/><circle cx="606.0" cy="354.8" r="0.58" fill="#cfc8ea" opacity="0.54"/><path d="M 225.8575558681041 480.5 L 226.4 483.3 L 229.2 483.8055619490333 L 226.4 484.3 L 225.8575558681041 487.1 L 225.3 484.3 L 222.6 483.8055619490333 L 225.3 483.3 Z" fill="#f6e6bf" opacity="0.7419979402795434"/><path d="M 482.80378916300833 468.1 L 483.3 470.9 L 486.1 471.39240291295573 L 483.3 471.9 L 482.80378916300833 474.7 L 482.3 471.9 L 479.5 471.39240291295573 L 482.3 470.9 Z" fill="#f6e6bf" opacity="0.7395961598493159"/><path d="M 425.605740474537 161.5 L 426.1 164.2 L 428.8 164.73476635152474 L 426.1 165.3 L 425.605740474537 168.0 L 425.1 165.3 L 422.4 164.73476635152474 L 425.1 164.2 Z" fill="#f6e6bf" opacity="0.6851326532661914"/><path d="M 259.8758728001267 330.6 L 260.5 333.8 L 263.7 334.38366025080904 L 260.5 335.0 L 259.8758728001267 338.2 L 259.3 335.0 L 256.0 334.38366025080904 L 259.3 333.8 Z" fill="#f6e6bf" opacity="0.5429771705530584"/><path d="M 369.4081371743232 71.2 L 369.8 73.2 L 371.8 73.6278817509301 L 369.8 74.0 L 369.4081371743232 76.1 L 369.0 74.0 L 367.0 73.6278817509301 L 369.0 73.2 Z" fill="#f6e6bf" opacity="0.6647183185443282"/><path d="M 69.6 318.8 L 380.7 267.1 L 159.9 67.2 L 178.2 35.9 L 705.0 307.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="500" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="489" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 483.8 L 16.5 486.5 L 19.2 487 L 16.5 487.5 L 16 490.2 L 15.5 487.5 L 12.8 487 L 15.5 486.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 483.8 L 744.5 486.5 L 747.2 487 L 744.5 487.5 L 744 490.2 L 743.5 487.5 L 740.8 487 L 743.5 486.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Cancer Moon: Common Misreadings vs Reality</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#moonincancer1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#moonincancer1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Common Misread</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Constantly moody</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Clingy or needy</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Soft and passive</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Fixed, unchangeable personality</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Reality</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">High responsiveness — moods settle once safety returns</text>
+  <path d="M 70 384.8 L 70.5 387.5 L 73.2 388 L 70.5 388.5 L 70 391.2 L 69.5 388.5 L 66.8 388 L 69.5 387.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="393.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Real need is belonging — fierce loyalty as often as dependence</text>
+  <path d="M 70 413.8 L 70.5 416.5 L 73.2 417 L 70.5 417.5 L 70 420.2 L 69.5 417.5 L 66.8 417 L 69.5 416.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="422.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Cancer is cardinal — active, protective, and initiating</text>
+  <path d="M 70 442.8 L 70.5 445.5 L 73.2 446 L 70.5 446.5 L 70 449.2 L 69.5 446.5 L 66.8 446 L 69.5 445.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="451.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Describes tendencies to work with and grow around, not a locked outcome</text>
+  <path d="M 202.22749999999988 474.4 L 202.6 476.6 L 204.8 477 L 202.6 477.4 L 202.22749999999988 479.6 L 201.8 477.4 L 199.6 477 L 201.8 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="481" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 474.4 L 558.2 476.6 L 560.4 477 L 558.2 477.4 L 557.7725000000002 479.6 L 557.4 477.4 L 555.2 477 L 557.4 476.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

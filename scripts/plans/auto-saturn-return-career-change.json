@@ -1,0 +1,78 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "saturn-return-career-change": {
+      "hero": {
+        "prompt": "Saturn with its iconic rings suspended in a vast indigo cosmos slowly completing its orbital arc back toward a luminous gold natal-degree marker; soft teal nebula currents swirl beneath the planetary curve; below Saturn, faint gold architectural lines — a desk silhouette, a scaffold of thin intersecting beams — suggest a career structure being re-examined under celestial light; painterly brushwork, cinematic depth, warm gold light emanating from Saturn's equatorial belt against cold deep-space indigo, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Saturn completing its 29-year return arc toward a gold natal-degree marker, faint career-structure lines below, deep indigo cosmos"
+      },
+      "inline": [
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Transit in Your Timing",
+          "titleEn": "Five Steps to Read Your Saturn Return Career Timing",
+          "altEn": "Five-step sequence: locate natal Saturn, check return period, name work structure, compare promises with capacity, track repeated questions",
+          "items": [
+            {
+              "nameEn": "Locate Natal Saturn",
+              "subEn": "Note its house, sign, and close aspects — the house often names the life area where responsibility is emphasized"
+            },
+            {
+              "nameEn": "Check the Exact Return Period",
+              "subEn": "Look for Saturn nearing, crossing, or revisiting its natal degree, including retrograde passes"
+            },
+            {
+              "nameEn": "Name the Work Structure",
+              "subEn": "List the title, schedule, pay arrangement, authority level, and expectations that currently define the role"
+            },
+            {
+              "nameEn": "Compare Promises with Capacity",
+              "subEn": "Notice where a commitment asks for skills, limits, or decisions that have not yet been made explicit"
+            },
+            {
+              "nameEn": "Track Repeated Practical Questions",
+              "subEn": "Pay attention when the same concern returns around training, management, self-employment, or leaving an unsustainable arrangement"
+            }
+          ]
+        },
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## This Career Passage at a Glance",
+          "titleEn": "Saturn Return Career Passage at a Glance",
+          "altEn": "Three-column comparison: what Saturn return tracks, what it reveals about career tension, and what it cannot do as an interpretive tool",
+          "columns": [
+            {
+              "nameEn": "What It Tracks",
+              "linesEn": [
+                "Saturn returns to its natal degree, typically around ages 29 and 58",
+                "Unfolds through several passes including retrograde periods"
+              ]
+            },
+            {
+              "nameEn": "What It Reveals",
+              "linesEn": [
+                "Work duties, authority patterns, and long-term vocational commitments",
+                "Where promises need firmer terms or clearer revision"
+              ]
+            },
+            {
+              "nameEn": "What It Cannot Do",
+              "linesEn": [
+                "Cannot predict a required external event or career outcome",
+                "Cannot replace budget, contract, or real-world workplace context"
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

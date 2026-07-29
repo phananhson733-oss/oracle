@@ -106,6 +106,10 @@ Leo Sun places solar identity in the self-expression domain. Leo rising determin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Libra Rising Houses](/en/wiki/libra-rising-houses)
+- [Scorpio Rising Houses](/en/wiki/scorpio-rising-houses)
+<!-- gg-cluster-links:end -->
 - [explainer on Saturn as a planetary ruler and how it structures the houses it governs](/en/wiki/astrology-houses) — relevant to why the 7th house carries Saturnine weight for Leo rising and how Saturn's natal placement modulates that
 - [overview of all twelve houses and their life domains](/en/wiki/astrology-houses) — full house reference for comparing rulerships across different rising signs
 - [what the ascendant means and how to find yours](/en/wiki/ascendant-meaning) — the rising-sign foundation this whole house map is built on

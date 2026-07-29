@@ -119,6 +119,9 @@ The Bukayo Saka zodiac sign works as a symbolic lens, not a cause. The Virgo–A
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [England World Cup 2026 astrology](/en/wiki/england-world-cup-2026-astrology) — the team-chart backdrop to Saka's tournament
 - [Vinicius Jr's zodiac sign](/en/wiki/vinicius-jr-zodiac-sign) — another World Cup winger read through his chart
 - [Cancer zodiac World Cup 2026](/en/wiki/cancer-zodiac-world-cup-2026) — how one sign's archetype maps onto the tournament

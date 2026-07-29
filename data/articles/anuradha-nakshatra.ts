@@ -108,6 +108,9 @@ It is usually shown as a lotus or a triumphal archway. Both images point to devo
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - [guide to the Scorpio moon sign](/en/wiki/north-node-in-scorpio) — because this lunar mansion sits inside Scorpio and shares its emotional depth.
 - *explainer on Saturn in Vedic astrology* — since Saturn rules the star and shapes its patience and discipline.
 - *comparison with Jyeshtha nakshatra* — the neighboring lunar mansion it is most often confused with.

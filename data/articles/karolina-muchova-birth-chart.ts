@@ -118,6 +118,10 @@ Both are fixed signs, which means they share a quality of sustained focus and re
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Leo Sun sign personality profile* — for the fire-sign public register on its own terms.
 - [guide to the North Node in Scorpio](/en/wiki/north-node-in-scorpio) — for the guarded water layer working under the surface.
 - *how planet clusters work in a birth chart* — for reading placements together instead of in isolation.

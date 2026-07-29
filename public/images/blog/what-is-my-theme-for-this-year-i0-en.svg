@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 451" role="img" aria-label="Five Life Domains Your Solar Return May Emphasize">
+  <defs>
+    <linearGradient id="whatismythemeforthisyear0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="whatismythemeforthisyear0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="whatismythemeforthisyear0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatismythemeforthisyear0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="whatismythemeforthisyear0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="whatismythemeforthisyear0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="448" rx="22" fill="url(#whatismythemeforthisyear0en-panel)"/>
+  <ellipse cx="198" cy="108" rx="380" ry="153" fill="url(#whatismythemeforthisyear0en-neb1)"/>
+  <ellipse cx="623" cy="361" rx="334" ry="144" fill="url(#whatismythemeforthisyear0en-neb2)"/>
+  <circle cx="233.4" cy="301.3" r="0.52" fill="#cfc8ea" opacity="0.23"/><circle cx="70.0" cy="200.9" r="0.77" fill="#cfc8ea" opacity="0.54"/><circle cx="242.4" cy="83.0" r="1.12" fill="#cfc8ea" opacity="0.13"/><circle cx="727.0" cy="237.6" r="0.91" fill="#cfc8ea" opacity="0.44"/><circle cx="441.5" cy="314.0" r="0.81" fill="#cfc8ea" opacity="0.12"/><circle cx="663.3" cy="73.9" r="1.12" fill="#cfc8ea" opacity="0.31"/><circle cx="157.9" cy="223.1" r="0.74" fill="#cfc8ea" opacity="0.45"/><circle cx="354.8" cy="144.5" r="1.37" fill="#cfc8ea" opacity="0.21"/><circle cx="670.2" cy="386.7" r="0.72" fill="#cfc8ea" opacity="0.36"/><circle cx="29.6" cy="412.4" r="1.59" fill="#cfc8ea" opacity="0.39"/><circle cx="678.1" cy="129.7" r="1.32" fill="#cfc8ea" opacity="0.53"/><circle cx="315.8" cy="321.6" r="1.63" fill="#cfc8ea" opacity="0.48"/><circle cx="711.0" cy="364.9" r="1.27" fill="#cfc8ea" opacity="0.35"/><circle cx="217.0" cy="274.5" r="1.46" fill="#cfc8ea" opacity="0.23"/><circle cx="339.1" cy="406.7" r="1.25" fill="#cfc8ea" opacity="0.43"/><circle cx="635.8" cy="180.8" r="1.50" fill="#cfc8ea" opacity="0.41"/><circle cx="311.3" cy="224.2" r="0.94" fill="#cfc8ea" opacity="0.31"/><circle cx="421.2" cy="182.0" r="1.41" fill="#cfc8ea" opacity="0.26"/><circle cx="56.9" cy="131.1" r="0.81" fill="#cfc8ea" opacity="0.33"/><circle cx="256.2" cy="101.8" r="0.67" fill="#cfc8ea" opacity="0.46"/><circle cx="290.0" cy="359.5" r="1.42" fill="#cfc8ea" opacity="0.32"/><circle cx="375.8" cy="403.3" r="0.86" fill="#cfc8ea" opacity="0.18"/><circle cx="574.4" cy="102.1" r="1.23" fill="#cfc8ea" opacity="0.16"/><circle cx="657.6" cy="86.2" r="1.33" fill="#cfc8ea" opacity="0.40"/><circle cx="330.9" cy="83.6" r="1.55" fill="#cfc8ea" opacity="0.49"/><circle cx="164.1" cy="213.6" r="0.88" fill="#cfc8ea" opacity="0.26"/><circle cx="499.8" cy="101.7" r="1.35" fill="#cfc8ea" opacity="0.23"/><circle cx="597.5" cy="353.3" r="1.16" fill="#cfc8ea" opacity="0.27"/><circle cx="593.7" cy="375.7" r="1.63" fill="#cfc8ea" opacity="0.17"/><circle cx="419.7" cy="302.2" r="0.88" fill="#cfc8ea" opacity="0.19"/><circle cx="332.4" cy="99.6" r="1.58" fill="#cfc8ea" opacity="0.41"/><circle cx="741.6" cy="335.7" r="1.63" fill="#cfc8ea" opacity="0.51"/><circle cx="486.5" cy="369.5" r="1.04" fill="#cfc8ea" opacity="0.29"/><circle cx="443.3" cy="352.1" r="1.27" fill="#cfc8ea" opacity="0.30"/><circle cx="388.2" cy="73.3" r="0.44" fill="#cfc8ea" opacity="0.35"/><circle cx="352.7" cy="323.4" r="0.85" fill="#cfc8ea" opacity="0.35"/><circle cx="634.9" cy="239.4" r="1.40" fill="#cfc8ea" opacity="0.26"/><circle cx="43.6" cy="153.7" r="1.05" fill="#cfc8ea" opacity="0.42"/><path d="M 592.7019831929356 48.8 L 593.1 51.0 L 595.4 51.437652963679284 L 593.1 51.9 L 592.7019831929356 54.1 L 592.3 51.9 L 590.0 51.437652963679284 L 592.3 51.0 Z" fill="#f6e6bf" opacity="0.794884196203202"/><path d="M 471.013411404565 21.3 L 471.6 24.2 L 474.5 24.735175079200417 L 471.6 25.3 L 471.013411404565 28.2 L 470.5 25.3 L 467.6 24.735175079200417 L 470.5 24.2 Z" fill="#f6e6bf" opacity="0.5351498300209642"/><path d="M 117.03678360022604 145.9 L 117.5 148.4 L 120.0 148.84847823670134 L 117.5 149.3 L 117.03678360022604 151.8 L 116.6 149.3 L 114.0 148.84847823670134 L 116.6 148.4 Z" fill="#f6e6bf" opacity="0.6235492647625506"/><path d="M 42.08491067774594 306.7 L 42.6 309.7 L 45.6 310.2181606856175 L 42.6 310.8 L 42.08491067774594 313.7 L 41.5 310.8 L 38.6 310.2181606856175 L 41.5 309.7 Z" fill="#f6e6bf" opacity="0.5168598584830761"/><path d="M 566.2756267283112 404.9 L 566.7 407.2 L 569.0 407.6209222073667 L 566.7 408.0 L 566.2756267283112 410.3 L 565.8 408.0 L 563.6 407.6209222073667 L 565.8 407.2 Z" fill="#f6e6bf" opacity="0.5070819764398038"/><path d="M 315.8 321.6 L 421.2 182.0 L 332.4 99.6 L 352.7 323.4" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="448" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="437" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 431.8 L 16.5 434.5 L 19.2 435 L 16.5 435.5 L 16 438.2 L 15.5 435.5 L 12.8 435 L 15.5 434.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 431.8 L 744.5 434.5 L 747.2 435 L 744.5 435.5 L 744 438.2 L 743.5 435.5 L 740.8 435 L 743.5 434.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Five Life Domains Your Solar Return May Emphasize</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#whatismythemeforthisyear0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#whatismythemeforthisyear0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="76" y1="121" x2="76" y2="379" stroke="#d4af6a" stroke-opacity="0.28" stroke-width="1.5"/>
+  <circle cx="76" cy="121" r="20.0" fill="url(#whatismythemeforthisyear0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="121" r="15" fill="url(#whatismythemeforthisyear0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="116.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="125.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">1</text>
+  <text x="116" y="117.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Career &amp; Standing</text>
+  <text x="116" y="139.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Tenth-house emphasis: public goals, reputation, and authority come into view</text>
+  <circle cx="76" cy="181" r="20.0" fill="url(#whatismythemeforthisyear0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="181" r="15" fill="url(#whatismythemeforthisyear0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="176.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="185.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">2</text>
+  <text x="116" y="177.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Home &amp; Belonging</text>
+  <text x="116" y="199.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Fourth-house emphasis: family patterns, privacy, or the need for a steadier</text>
+  <text x="116" y="217.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">base</text>
+  <circle cx="76" cy="259" r="20.0" fill="url(#whatismythemeforthisyear0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="259" r="15" fill="url(#whatismythemeforthisyear0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="254.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="263.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">3</text>
+  <text x="116" y="255.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Relationships</text>
+  <text x="116" y="277.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Seventh-house emphasis: collaboration, agreements, and clearer boundaries</text>
+  <circle cx="76" cy="319" r="20.0" fill="url(#whatismythemeforthisyear0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="319" r="15" fill="url(#whatismythemeforthisyear0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="314.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="323.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">4</text>
+  <text x="116" y="315.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Health &amp; Rhythm</text>
+  <text x="116" y="337.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Sixth-house emphasis: daily routines, workload, and the body's maintenance</text>
+  <circle cx="76" cy="379" r="20.0" fill="url(#whatismythemeforthisyear0en-glow)" opacity="0.5"/>
+    <circle cx="76" cy="379" r="15" fill="url(#whatismythemeforthisyear0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="76" cy="374.8" r="9.0" fill="#ffffff" opacity="0.10"/>
+    <text x="76" y="383.5" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="13" font-weight="700" fill="#3a2c12">5</text>
+  <text x="116" y="375.0" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.3" fill="#f3effb">Learning &amp; Travel</text>
+  <text x="116" y="397.0" font-family="Helvetica, Arial, sans-serif" font-size="15.5" fill="#a59cc0">Ninth-house emphasis: study, long trips, and shifts in worldview</text>
+  <path d="M 202.22749999999988 422.4 L 202.6 424.6 L 204.8 425 L 202.6 425.4 L 202.22749999999988 427.6 L 201.8 425.4 L 199.6 425 L 201.8 424.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="429" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 422.4 L 558.2 424.6 L 560.4 425 L 558.2 425.4 L 557.7725000000002 427.6 L 557.4 425.4 L 555.2 425 L 557.4 424.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

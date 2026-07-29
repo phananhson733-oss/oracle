@@ -117,6 +117,10 @@ A percentage is a quick summary, not a reading. It can flag ease or tension, but
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [synastry calculator tool page for two-person charts](/en/wiki/composite-chart-calculator) — run the full two-chart comparison instead of leaning on a single score.
 - [rising sign profiles overview](/en/wiki/ascendant-meaning) — see how each partner's rising sign reshapes the way their elements come across.
 - [the Taylor Swift and Travis Kelce synastry read](/en/wiki/taylor-swift-and-travis-kelce) — compare this air-fire read against another current-cycle celebrity match.

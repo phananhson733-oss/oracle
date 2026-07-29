@@ -105,6 +105,10 @@ No. A sign describes leanings and style, not outcomes, and it can't account for 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning explainer](/en/wiki/ascendant-meaning) — why a confirmed birth time changes everything a chart can say.
 - *Serena Williams's birth chart breakdown* — a companion athlete profile to compare placements against.
 - [Coco Gauff (Wikipedia)](https://en.wikipedia.org/wiki/Coco_Gauff) — source for the Boca Raton birth-location and Delray Beach family context behind this reading.

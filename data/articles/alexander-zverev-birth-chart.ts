@@ -115,6 +115,10 @@ It can describe temperament — focus, patience, a self-critical streak — but 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - *Serena Williams's birth chart profile* — another athlete's chart read as archetypes, useful for comparing how stellium patterns show up
 - *meaning of the Moon sign in a birth chart* — goes deeper on the Libra Moon theme touched on above
 - [Alexander Zverev (Wikipedia)](https://en.wikipedia.org/wiki/Alexander_Zverev) — factual biography behind the birth data used here

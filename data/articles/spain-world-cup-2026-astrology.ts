@@ -101,6 +101,9 @@ In *Planets in Transit* (1976), Robert Hand systematized reading how transiting 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [World Cup 2026 astrology prediction](/en/wiki/world-cup-2026-astrology-prediction) — foundational context for reading tournament progressions as symbolic timing frameworks
 - [June 2026 transit calendar](/en/wiki/world-cup-2026-june-astrology) — broader framework for how Jupiter in Cancer and other June transits shape the tournament window
 - [Spain national football team (Wikipedia)](https://en.wikipedia.org/wiki/Spain_national_football_team)

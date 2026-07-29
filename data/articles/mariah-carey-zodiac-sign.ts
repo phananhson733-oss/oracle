@@ -106,6 +106,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Rihanna's birth chart](/en/wiki/rihanna-birth-chart) — another music-industry chart read with its birth-time limits stated up front
 - [Selena Gomez's birth chart](/en/wiki/selena-gomez-birth-chart) — a pop chart where the date is public and the timed placements are not
 - [BTS members' zodiac signs](/en/wiki/bts-members-zodiac-signs) — the same date-only method applied across a group roster

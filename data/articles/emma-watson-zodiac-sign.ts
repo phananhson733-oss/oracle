@@ -118,6 +118,10 @@ Not really. The Rising routes the Sun's energy rather than canceling it, so an a
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+- [Kylie Jenner Zodiac Sign](/en/wiki/kylie-jenner-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Robert Downey Jr's birth chart](/en/wiki/robert-downey-jr-birth-chart) — a fellow Harry Potter-era screen figure whose chart is read as archetype, not résumé
 - [Kylie Jenner's zodiac sign](/en/wiki/kylie-jenner-zodiac-sign) — another public figure whose Sun-sign label hides a more strategic chart
 - [Greta Lee's zodiac sign](/en/wiki/greta-lee-zodiac-sign) — a celebrity chart where an unconfirmed birth time limits what can be claimed

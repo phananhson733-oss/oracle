@@ -1,0 +1,75 @@
+{
+  "imagesDir": "public/images/blog",
+  "urlBase": "/images/blog",
+  "articlesDir": "data/articles",
+  "geminiSkill": "/Users/awayer_mini/.openclaw/workspace/skills/baoyu-danger-gemini-web/scripts/main.ts",
+  "optimize": {
+    "heroWidth": 1200,
+    "heroHeight": 675,
+    "quality": 82
+  },
+  "articles": {
+    "jupiter-in-cancer": {
+      "hero": {
+        "prompt": "A vast twilight ocean scene viewed from warm candlelit cliffs, Jupiter enormous and luminous low on the horizon casting rippling gold light across dark water, a crab silhouette resting among tidal rocks in the foreground midground, cascading vines and a glowing hearth visible in a clifftop dwelling behind, deep indigo-to-near-black palette (#16112c fading to #0b0a1b), soft gold accents (#d4af6a), teal-and-gold nebula wash overhead, painterly editorial illustration, full-bleed wide 16:9 composition that fills the entire frame, ONE single continuous scene, no split screen, no diptych, no two panels, no diagram, no chart wheel, no central framed card, no text or letters or numerals, no human faces",
+        "altEn": "Jupiter glowing gold above a coastal home at twilight, symbolizing growth through nurturing and belonging in Jupiter in Cancer"
+      },
+      "inline": [
+        {
+          "kind": "compare",
+          "afterHeadingEn": "## Jupiter in Cancer vs the Moon in Cancer: What Actually Differs",
+          "titleEn": "Jupiter in Cancer vs Moon in Cancer: Key Differences",
+          "altEn": "Side-by-side comparison of Jupiter in Cancer and Moon in Cancer showing how each placement differs in a birth chart",
+          "columns": [
+            {
+              "nameEn": "Moon in Cancer",
+              "linesEn": [
+                "Describes your baseline emotional needs",
+                "How you self-soothe day to day",
+                "What makes you feel safe",
+                "Your emotional home"
+              ]
+            },
+            {
+              "nameEn": "Jupiter in Cancer",
+              "linesEn": [
+                "Describes where you seek to grow and give",
+                "How you expand through caring for others",
+                "Where you widen your sense of family",
+                "Your emotional generosity"
+              ]
+            }
+          ]
+        },
+        {
+          "kind": "sequence",
+          "afterHeadingEn": "## How to Read This Placement in Your Chart",
+          "titleEn": "How to Read Jupiter in Cancer in Your Birth Chart",
+          "altEn": "Five steps to read Jupiter in Cancer in your birth chart from locating the glyph to checking the house placement",
+          "items": [
+            {
+              "nameEn": "Find Jupiter's Sign",
+              "subEn": "Locate the Jupiter glyph in your birth chart; if it falls in Cancer, this reading applies"
+            },
+            {
+              "nameEn": "Watch Where You Expand Through Care",
+              "subEn": "Notice areas of life where doing more for people feels like growth rather than obligation"
+            },
+            {
+              "nameEn": "Track the Home Theme",
+              "subEn": "Look for a recurring pull toward a bigger family, fuller home, or wider circle to nurture"
+            },
+            {
+              "nameEn": "Notice the Over-Give Tell",
+              "subEn": "Pay attention to when your generosity outruns your capacity and quiet resentment creeps in"
+            },
+            {
+              "nameEn": "Check the House It Sits In",
+              "subEn": "The house colors where this expansive caretaking plays out in your life"
+            }
+          ]
+        }
+      ]
+    }
+  }
+}

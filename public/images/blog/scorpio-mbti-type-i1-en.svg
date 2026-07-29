@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 777" role="img" aria-label="Scorpio Archetype Properties at a Glance">
+  <defs>
+    <linearGradient id="scorpiombtitype1en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="scorpiombtitype1en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="scorpiombtitype1en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="scorpiombtitype1en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="scorpiombtitype1en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="scorpiombtitype1en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="774" rx="22" fill="url(#scorpiombtitype1en-panel)"/>
+  <ellipse cx="198" cy="186" rx="380" ry="264" fill="url(#scorpiombtitype1en-neb1)"/>
+  <ellipse cx="623" cy="622" rx="334" ry="249" fill="url(#scorpiombtitype1en-neb2)"/>
+  <circle cx="478.9" cy="289.2" r="1.42" fill="#cfc8ea" opacity="0.14"/><circle cx="324.8" cy="461.4" r="1.45" fill="#cfc8ea" opacity="0.52"/><circle cx="366.1" cy="403.8" r="0.50" fill="#cfc8ea" opacity="0.48"/><circle cx="414.3" cy="272.3" r="1.47" fill="#cfc8ea" opacity="0.14"/><circle cx="31.0" cy="762.8" r="1.04" fill="#cfc8ea" opacity="0.31"/><circle cx="278.8" cy="709.4" r="1.66" fill="#cfc8ea" opacity="0.38"/><circle cx="725.7" cy="69.4" r="0.92" fill="#cfc8ea" opacity="0.23"/><circle cx="615.2" cy="678.4" r="0.65" fill="#cfc8ea" opacity="0.41"/><circle cx="688.4" cy="12.9" r="0.57" fill="#cfc8ea" opacity="0.50"/><circle cx="602.4" cy="177.7" r="0.82" fill="#cfc8ea" opacity="0.24"/><circle cx="272.6" cy="660.9" r="1.26" fill="#cfc8ea" opacity="0.47"/><circle cx="666.7" cy="28.4" r="0.67" fill="#cfc8ea" opacity="0.20"/><circle cx="702.0" cy="209.9" r="0.82" fill="#cfc8ea" opacity="0.31"/><circle cx="678.0" cy="428.2" r="1.01" fill="#cfc8ea" opacity="0.36"/><circle cx="722.7" cy="502.8" r="1.12" fill="#cfc8ea" opacity="0.26"/><circle cx="105.2" cy="588.5" r="1.49" fill="#cfc8ea" opacity="0.40"/><circle cx="118.9" cy="471.6" r="1.45" fill="#cfc8ea" opacity="0.28"/><circle cx="277.1" cy="42.1" r="1.24" fill="#cfc8ea" opacity="0.48"/><circle cx="367.0" cy="614.8" r="0.82" fill="#cfc8ea" opacity="0.22"/><circle cx="358.0" cy="468.9" r="0.96" fill="#cfc8ea" opacity="0.47"/><circle cx="173.6" cy="500.0" r="1.67" fill="#cfc8ea" opacity="0.13"/><circle cx="381.8" cy="428.7" r="1.55" fill="#cfc8ea" opacity="0.53"/><circle cx="198.1" cy="620.2" r="1.11" fill="#cfc8ea" opacity="0.33"/><circle cx="569.0" cy="580.6" r="0.85" fill="#cfc8ea" opacity="0.48"/><circle cx="467.4" cy="47.1" r="1.44" fill="#cfc8ea" opacity="0.35"/><circle cx="124.0" cy="307.9" r="0.48" fill="#cfc8ea" opacity="0.47"/><circle cx="220.6" cy="749.1" r="1.31" fill="#cfc8ea" opacity="0.30"/><circle cx="405.3" cy="153.3" r="1.31" fill="#cfc8ea" opacity="0.47"/><circle cx="667.0" cy="105.1" r="0.60" fill="#cfc8ea" opacity="0.50"/><circle cx="207.4" cy="714.4" r="0.63" fill="#cfc8ea" opacity="0.34"/><circle cx="122.2" cy="489.5" r="0.88" fill="#cfc8ea" opacity="0.54"/><circle cx="59.5" cy="499.1" r="1.63" fill="#cfc8ea" opacity="0.50"/><circle cx="382.8" cy="609.2" r="0.89" fill="#cfc8ea" opacity="0.44"/><circle cx="538.5" cy="393.7" r="0.63" fill="#cfc8ea" opacity="0.46"/><circle cx="271.5" cy="438.6" r="0.57" fill="#cfc8ea" opacity="0.43"/><circle cx="354.7" cy="749.7" r="0.85" fill="#cfc8ea" opacity="0.54"/><circle cx="643.3" cy="170.7" r="0.83" fill="#cfc8ea" opacity="0.27"/><circle cx="590.5" cy="48.9" r="0.58" fill="#cfc8ea" opacity="0.26"/><circle cx="659.8" cy="543.9" r="1.29" fill="#cfc8ea" opacity="0.54"/><circle cx="161.1" cy="356.5" r="1.37" fill="#cfc8ea" opacity="0.26"/><circle cx="262.9" cy="534.1" r="1.20" fill="#cfc8ea" opacity="0.38"/><circle cx="164.1" cy="202.7" r="1.28" fill="#cfc8ea" opacity="0.42"/><circle cx="744.8" cy="156.0" r="1.35" fill="#cfc8ea" opacity="0.12"/><circle cx="285.9" cy="741.6" r="0.64" fill="#cfc8ea" opacity="0.34"/><circle cx="451.0" cy="570.4" r="1.15" fill="#cfc8ea" opacity="0.37"/><circle cx="603.4" cy="216.4" r="1.56" fill="#cfc8ea" opacity="0.19"/><circle cx="389.0" cy="236.0" r="1.11" fill="#cfc8ea" opacity="0.34"/><circle cx="373.5" cy="181.4" r="0.55" fill="#cfc8ea" opacity="0.34"/><circle cx="289.6" cy="194.5" r="0.58" fill="#cfc8ea" opacity="0.28"/><circle cx="84.8" cy="170.9" r="0.60" fill="#cfc8ea" opacity="0.47"/><circle cx="67.2" cy="715.2" r="0.88" fill="#cfc8ea" opacity="0.31"/><circle cx="555.0" cy="288.6" r="0.98" fill="#cfc8ea" opacity="0.54"/><circle cx="476.3" cy="148.3" r="1.45" fill="#cfc8ea" opacity="0.21"/><circle cx="331.0" cy="728.7" r="1.14" fill="#cfc8ea" opacity="0.32"/><circle cx="167.2" cy="504.2" r="0.42" fill="#cfc8ea" opacity="0.12"/><circle cx="637.6" cy="479.4" r="1.19" fill="#cfc8ea" opacity="0.54"/><circle cx="533.5" cy="343.2" r="0.71" fill="#cfc8ea" opacity="0.54"/><circle cx="337.1" cy="45.3" r="0.44" fill="#cfc8ea" opacity="0.31"/><circle cx="135.3" cy="301.5" r="0.88" fill="#cfc8ea" opacity="0.26"/><circle cx="111.4" cy="674.9" r="0.72" fill="#cfc8ea" opacity="0.36"/><circle cx="627.0" cy="397.3" r="0.74" fill="#cfc8ea" opacity="0.42"/><circle cx="717.3" cy="544.6" r="1.68" fill="#cfc8ea" opacity="0.22"/><circle cx="602.0" cy="262.2" r="1.12" fill="#cfc8ea" opacity="0.29"/><circle cx="226.8" cy="293.0" r="1.03" fill="#cfc8ea" opacity="0.18"/><circle cx="184.9" cy="167.7" r="0.75" fill="#cfc8ea" opacity="0.33"/><circle cx="514.4" cy="155.6" r="1.08" fill="#cfc8ea" opacity="0.29"/><path d="M 42.1164274699986 581.8 L 42.5 583.9 L 44.6 584.281175483251 L 42.5 584.7 L 42.1164274699986 586.8 L 41.7 584.7 L 39.6 584.281175483251 L 41.7 583.9 Z" fill="#f6e6bf" opacity="0.5082950341748074"/><path d="M 410.52798376604915 10.4 L 411.1 13.5 L 414.2 14.036696047754958 L 411.1 14.6 L 410.52798376604915 17.7 L 409.9 14.6 L 406.9 14.036696047754958 L 409.9 13.5 Z" fill="#f6e6bf" opacity="0.6855054123559967"/><path d="M 422.03534415736794 637.4 L 422.6 640.1 L 425.3 640.6609605832491 L 422.6 641.2 L 422.03534415736794 643.9 L 421.5 641.2 L 418.8 640.6609605832491 L 421.5 640.1 Z" fill="#f6e6bf" opacity="0.7043042444856837"/><path d="M 242.58496364578605 105.3 L 243.2 108.5 L 246.4 109.1373897001613 L 243.2 109.7 L 242.58496364578605 113.0 L 242.0 109.7 L 238.8 109.1373897001613 L 242.0 108.5 Z" fill="#f6e6bf" opacity="0.5543158162618056"/><path d="M 27.850805778056383 264.0 L 28.4 266.9 L 31.3 267.45131517224945 L 28.4 268.0 L 27.850805778056383 270.9 L 27.3 268.0 L 24.4 267.45131517224945 L 27.3 266.9 Z" fill="#f6e6bf" opacity="0.532508087088354"/><path d="M 118.9 471.6 L 367.0 614.8 L 358.0 468.9 L 603.4 216.4 L 717.3 544.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="774" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="763" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 757.8 L 16.5 760.5 L 19.2 761 L 16.5 761.5 L 16 764.2 L 15.5 761.5 L 12.8 761 L 15.5 760.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 757.8 L 744.5 760.5 L 747.2 761 L 744.5 761.5 L 744 764.2 L 743.5 761.5 L 740.8 761 L 743.5 760.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">Scorpio Archetype Properties at a Glance</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#scorpiombtitype1en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#scorpiombtitype1en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+
+  <rect x="46" y="99" width="668" height="172.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="99" width="3.5" height="172.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 108.6 L 48.3 111.5 L 51.1 112 L 48.3 112.5 L 47.75 115.4 L 47.2 112.5 L 44.4 112 L 47.2 111.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="128.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Scorpio Trait</text>
+  <path d="M 70 157.8 L 70.5 160.5 L 73.2 161 L 70.5 161.5 L 70 164.2 L 69.5 161.5 L 66.8 161 L 69.5 160.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="166.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Privacy</text>
+  <path d="M 70 186.8 L 70.5 189.5 L 73.2 190 L 70.5 190.5 L 70 193.2 L 69.5 190.5 L 66.8 190 L 69.5 189.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="195.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Investigation</text>
+  <path d="M 70 215.8 L 70.5 218.5 L 73.2 219 L 70.5 219.5 L 70 222.2 L 69.5 219.5 L 66.8 219 L 69.5 218.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="224.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Loyalty</text>
+  <path d="M 70 244.8 L 70.5 247.5 L 73.2 248 L 70.5 248.5 L 70 251.2 L 69.5 248.5 L 66.8 248 L 69.5 247.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="253.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">MBTI Resonance</text>
+  <path d="M 380 279.5 L 380.7 283.3 L 384.5 284 L 380.7 284.7 L 380 288.5 L 379.3 284.7 L 375.5 284 L 379.3 283.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="297" width="668" height="229.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="297" width="3.5" height="229.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 306.6 L 48.3 309.5 L 51.1 310 L 48.3 310.5 L 47.75 313.4 L 47.2 310.5 L 44.4 310 L 47.2 309.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="326.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">Core Quality</text>
+  <path d="M 70 355.8 L 70.5 358.5 L 73.2 359 L 70.5 359.5 L 70 362.2 L 69.5 359.5 L 66.8 359 L 69.5 358.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="364.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Selective disclosure protects what feels significant and leaves time to</text>
+  <text x="84" y="383.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">assess trust</text>
+  <path d="M 70 403.8 L 70.5 406.5 L 73.2 407 L 70.5 407.5 L 70 410.2 L 69.5 407.5 L 66.8 407 L 69.5 406.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="412.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Attention stays with hidden motives and patterns rather than the first</text>
+  <text x="84" y="431.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">explanation</text>
+  <path d="M 70 451.8 L 70.5 454.5 L 73.2 455 L 70.5 455.5 L 70 458.2 L 69.5 455.5 L 66.8 455 L 69.5 454.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="460.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Commitment deepens when a bond has earned confidence, though endings feel</text>
+  <text x="84" y="479.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">weightier</text>
+  <path d="M 70 499.8 L 70.5 502.5 L 73.2 503 L 70.5 503.5 L 70 506.2 L 69.5 503.5 L 66.8 503 L 69.5 502.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="508.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Descriptions may echo preferences without proving any one type</text>
+  <path d="M 380 534.5 L 380.7 538.3 L 384.5 539 L 380.7 539.7 L 380 543.5 L 379.3 539.7 L 375.5 539 L 379.3 538.3 Z" fill="#d4af6a" opacity="0.65"/>
+  <rect x="46" y="552" width="668" height="191.0" rx="14" fill="#1d1740" fill-opacity="0.5" stroke="#d4af6a" stroke-opacity="0.22" stroke-width="0.9"/>
+  <rect x="46" y="552" width="3.5" height="191.0" rx="1.8" fill="#d4af6a" fill-opacity="0.6"/>
+  <path d="M 47.75 561.6 L 48.3 564.5 L 51.1 565 L 48.3 565.5 L 47.75 568.4 L 47.2 565.5 L 44.4 565 L 47.2 564.5 Z" fill="#f6e6bf" opacity="0.7"/>
+  <text x="380" y="581.0" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="21" font-weight="700" letter-spacing="0.3" fill="#f3effb">How to Observe</text>
+  <path d="M 70 610.8 L 70.5 613.5 L 73.2 614 L 70.5 614.5 L 70 617.2 L 69.5 614.5 L 66.8 614 L 69.5 613.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="619.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Notice when trust changes what you are willing to share</text>
+  <path d="M 70 639.8 L 70.5 642.5 L 73.2 643 L 70.5 643.5 L 70 646.2 L 69.5 643.5 L 66.8 643 L 69.5 642.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="648.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Watch whether you keep asking after others accept a surface answer</text>
+  <path d="M 70 668.8 L 70.5 671.5 L 73.2 672 L 70.5 672.5 L 70 675.2 L 69.5 672.5 L 66.8 672 L 69.5 671.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="677.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Recall how you respond when a friend needs steadiness over excitement</text>
+  <path d="M 70 697.8 L 70.5 700.5 L 73.2 701 L 70.5 701.5 L 70 704.2 L 69.5 701.5 L 66.8 701 L 69.5 700.5 Z" fill="#d4af6a" opacity="0.8"/>
+  <text x="84" y="706.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">Compare repeated choices with an actual assessment result across several</text>
+  <text x="84" y="725.0" font-family="Helvetica, Arial, sans-serif" font-size="16" fill="#a59cc0">settings</text>
+  <path d="M 202.22749999999988 748.4 L 202.6 750.6 L 204.8 751 L 202.6 751.4 L 202.22749999999988 753.6 L 201.8 751.4 L 199.6 751 L 201.8 750.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="755" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 748.4 L 558.2 750.6 L 560.4 751 L 558.2 751.4 L 557.7725000000002 753.6 L 557.4 751.4 L 555.2 751 L 557.4 750.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

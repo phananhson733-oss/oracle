@@ -114,6 +114,10 @@ No. Canon records only that she was born in 97 AC — no month, no day — and W
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Juno Astrology](/en/wiki/juno-astrology)
+- [Niko Birth Chart](/en/wiki/niko-birth-chart)
+<!-- gg-cluster-links:end -->
 - [Harry Potter characters' zodiac signs](/en/wiki/harry-potter-characters-zodiac-signs) — a cast read the same way, separating canon dates from fan assignment.
 - [Severus Snape zodiac sign](/en/wiki/severus-snape-zodiac-sign) — the rare fictional character canon gives a full birthday, so the Sun sign is a calculation.
 - [persephone goddess](/en/wiki/persephone-goddess) — another mythic figure read through archetype rather than a birth date.

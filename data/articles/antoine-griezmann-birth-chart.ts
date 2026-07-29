@@ -105,6 +105,10 @@ Yes, with limits. Planetary signs stay reliable, so personality themes still com
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Serena Williams birth chart profile](/en/wiki/serena-williams-birth-chart) — a companion celebrity chart to compare interpretive style against.
 - [north and south node meaning guide](/en/wiki/north-node-vs-south-node) — explains the nodal axis as a general astrology concept.
 - [Antoine Griezmann (Wikipedia)](https://en.wikipedia.org/wiki/Antoine_Griezmann) — source for the birth data behind the read.

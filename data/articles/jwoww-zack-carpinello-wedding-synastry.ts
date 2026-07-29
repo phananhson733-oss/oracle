@@ -117,6 +117,10 @@ The public reveal echoes Pisces themes of secrecy and emotional atmosphere along
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 For readers using jwoww zack carpinello wedding synastry as a starting point, these connected pages help separate celebrity symbolism from broader chart technique.
 
 - [synastry chart compatibility](/en/wiki/synastry-chart-compatibility) — Helps readers compare relationship patterns beyond Sun signs.

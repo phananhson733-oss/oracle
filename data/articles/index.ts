@@ -372,6 +372,34 @@ import { whatIsMyLoveLanguageEn } from "./what-is-my-love-language";
 import { whatDoINeedToLetGoOfEn } from "./what-do-i-need-to-let-go-of";
 import { elvisBirthChartEn } from "./elvis-birth-chart";
 import { birthChartInterpretationEn } from "./birth-chart-interpretation";
+import { amIOnTheRightPathEn } from "./am-i-on-the-right-path";
+import { saturnReturnAge27En } from "./saturn-return-age-27";
+import { saturnReturnInCancerEn } from "./saturn-return-in-cancer";
+import { venusInGeminiEn } from "./venus-in-gemini";
+import { argentinaVsSpainWorldCupFinalAstrology2026En } from "./argentina-vs-spain-world-cup-final-astrology-2026";
+import { tomBradyBirthChartEn } from "./tom-brady-birth-chart";
+import { howDoIStopBurnoutEn } from "./how-do-i-stop-burnout";
+import { franceEngland3rdPlaceMatchAstrologyPredictionEn } from "./france-england-3rd-place-match-astrology-prediction";
+import { moonInCapricornEn } from "./moon-in-capricorn";
+import { moonInCancerEn } from "./moon-in-cancer";
+import { saturnReturnInAriesEn } from "./saturn-return-in-aries";
+import { jupiterInCancerEn } from "./jupiter-in-cancer";
+import { saturnReturnInTaurusEn } from "./saturn-return-in-taurus";
+import { messiVsYamalAstrologyEn } from "./messi-vs-yamal-astrology";
+import { amIMeantToBeMyOwnBossEn } from "./am-i-meant-to-be-my-own-boss";
+import { leandroParedesBirthChartEn } from "./leandro-paredes-birth-chart";
+import { ferranTorresBirthChartEn } from "./ferran-torres-birth-chart";
+import { marsInScorpioEn } from "./mars-in-scorpio";
+import { survivingSaturnReturnEn } from "./surviving-saturn-return";
+import { theMostCommonMbtiTypesForEachZodiacSignEn } from "./the-most-common-mbti-types-for-each-zodiac-sign";
+import { whatIsMyThemeForThisYearEn } from "./what-is-my-theme-for-this-year";
+import { jangWonyoungBirthChartEn } from "./jang-wonyoung-birth-chart";
+import { marsInAriesEn } from "./mars-in-aries";
+import { taylorSwiftTravisKelceWeddingAstrologyEn } from "./taylor-swift-travis-kelce-wedding-astrology";
+import { jenniferLopezBirthChartEn } from "./jennifer-lopez-birth-chart";
+import { scorpioMbtiTypeEn } from "./scorpio-mbti-type";
+import { saturnReturnCareerChangeEn } from "./saturn-return-career-change";
+import { venusInTaurusEn } from "./venus-in-taurus";
 import { btsMembersZodiacSignsEn } from "./bts-members-zodiac-signs";
 import { blackpinkZodiacSignsEn } from "./blackpink-zodiac-signs";
 import { harryPotterCharactersZodiacSignsEn } from "./harry-potter-characters-zodiac-signs";
@@ -745,6 +773,34 @@ const ARTICLES_EN: WikiArticle[] = [
   whatDoINeedToLetGoOfEn,
   elvisBirthChartEn,
   birthChartInterpretationEn,
+  amIOnTheRightPathEn,
+  saturnReturnAge27En,
+  saturnReturnInCancerEn,
+  venusInGeminiEn,
+  argentinaVsSpainWorldCupFinalAstrology2026En,
+  tomBradyBirthChartEn,
+  howDoIStopBurnoutEn,
+  franceEngland3rdPlaceMatchAstrologyPredictionEn,
+  moonInCapricornEn,
+  moonInCancerEn,
+  saturnReturnInAriesEn,
+  jupiterInCancerEn,
+  saturnReturnInTaurusEn,
+  messiVsYamalAstrologyEn,
+  amIMeantToBeMyOwnBossEn,
+  leandroParedesBirthChartEn,
+  ferranTorresBirthChartEn,
+  marsInScorpioEn,
+  survivingSaturnReturnEn,
+  theMostCommonMbtiTypesForEachZodiacSignEn,
+  whatIsMyThemeForThisYearEn,
+  jangWonyoungBirthChartEn,
+  marsInAriesEn,
+  taylorSwiftTravisKelceWeddingAstrologyEn,
+  jenniferLopezBirthChartEn,
+  scorpioMbtiTypeEn,
+  saturnReturnCareerChangeEn,
+  venusInTaurusEn,
   btsMembersZodiacSignsEn,
   blackpinkZodiacSignsEn,
   harryPotterCharactersZodiacSignsEn,

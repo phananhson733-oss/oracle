@@ -110,6 +110,10 @@ You can read planet-to-planet contacts reasonably well, since the personal plane
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [composite chart calculator](/en/wiki/composite-chart-calculator) — run any two charts side by side the way this reading does.
 - [ascendant meaning overview](/en/wiki/ascendant-meaning) — see why ascendants need accurate birth times before house overlays mean much.
 - [companion piece on a Sagittarius Sun stack](/en/wiki/9th-house-astrology) — go deeper on the sign anchoring Swift's chart.

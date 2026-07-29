@@ -110,6 +110,10 @@ No chart predicts a specific role or award. It can frame tendencies — timing, 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 These pages go deeper on the ideas this chart raises:
 
 - *guide to Venus sign meaning in a birth chart* — for how a Libra Venus shapes taste and timing.

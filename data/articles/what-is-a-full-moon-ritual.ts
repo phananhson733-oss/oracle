@@ -144,6 +144,15 @@ Yes. Lunar energy across the three-day window around peak is functionally simila
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Why Full Moon Energy Feels Amplified and How to Read It](/en/wiki/full-moon-energy)
+- [What To Do On A Full Moon Spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually)
+- [Full Moon June 2026](/en/wiki/full-moon-june-2026)
+- [Full Moon July 2026 Peaks After Mercury Retrograde — Use It to Integrate What Changed](/en/wiki/full-moon-july-2026)
+- [Moon Journal](/en/wiki/moon-journal)
+- [Full Moon Journal Prompts](/en/wiki/full-moon-journal-prompts)
+- [New Moon Journal Prompts](/en/wiki/new-moon-journal-prompts)
+<!-- gg-cluster-links:end -->
 - [Full moon energy](/en/wiki/full-moon-energy) — why the peak feels amplified and how to read which house and aspects it activates for you.
 - [What to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually) — the wider set of practices beyond a single release ritual.
 - [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — questions to surface what you are actually ready to release before the ceremony.

@@ -112,6 +112,10 @@ No. Astrology here works best as symbolic self-reflection, not sports prediction
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [Cancer zodiac sign](/en/wiki/cancer) - unpacks the sign that anchors the chart.
 - [guide to the lunar nodes in a birth chart](/en/wiki/north-node-vs-south-node) - gives more context for the Gemini nodal axis.
 - [guide to synastry compatibility](/en/wiki/synastry-chart-compatibility) - shows how individual placements can be compared in a two-person chart.

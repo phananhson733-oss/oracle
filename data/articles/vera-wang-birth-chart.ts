@@ -106,6 +106,10 @@ A birth chart is the fixed map of the sky at your birth, while a horoscope is a 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [guide to the twelve houses in a birth chart](/en/wiki/astrology-houses) — how houses would refine her provisional placements once a birth time is confirmed.
 - *explainer on Cancer Sun sign traits* — a closer look at the archetype that anchors this reading.
 - [overview of major aspects like the trine and square](/en/wiki/trine-in-astrology) — how planets connect, which shapes any full chart interpretation.

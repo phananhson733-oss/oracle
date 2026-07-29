@@ -117,6 +117,10 @@ The contrast between water-sign sensitivity and top-level competitive drive. It 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [meaning of the rising sign or Ascendant](/en/wiki/ascendant-meaning) — because the public "mask" of any chart hinges on it, and hers is unconfirmed.
 - *birth chart of Serena Williams* — a fellow tennis champion's chart makes a natural side-by-side comparison.
 - *how planet clusters work in a birth chart* — for when a chart concentrates several placements in one area.

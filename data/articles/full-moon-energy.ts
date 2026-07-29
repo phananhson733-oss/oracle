@@ -142,6 +142,9 @@ The full moon lines up with the brightest part of the cycle, which many people e
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [What a Full Moon Ritual Really Does in the 48 Hours After](/en/wiki/what-is-a-full-moon-ritual)
+<!-- gg-cluster-links:end -->
 - [What a full moon ritual really does](/en/wiki/what-is-a-full-moon-ritual) — how to turn the peak charge described here into a structured release-and-reclamation practice.
 - [What to do on a full moon spiritually](/en/wiki/what-to-do-on-a-full-moon-spiritually) — concrete practices for working with this energy instead of being caught off guard by it.
 - [Full moon journal prompts](/en/wiki/full-moon-journal-prompts) — reflective questions timed to the completion-and-release phase you feel peaking here.

@@ -105,6 +105,10 @@ Not at all. Venus simply describes how you relate and what you value; challengin
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Am I Meant To Be My Own Boss](/en/wiki/am-i-meant-to-be-my-own-boss)
+- [How Do I Stop Burnout](/en/wiki/how-do-i-stop-burnout)
+<!-- gg-cluster-links:end -->
 - *guide to Venus placements in the birth chart* — how Venus shapes the way you love and value closeness.
 - [explainer on the Saturn square aspect](/en/wiki/square-astrology) — the hard aspect most often linked to cautious commitment.
 - [Saturn (Wikipedia)](https://en.wikipedia.org/wiki/Saturn) — context on the body these readings draw on.

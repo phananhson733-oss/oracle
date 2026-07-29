@@ -110,6 +110,10 @@ This is not a clinical interpretation or mental health advice.
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Emma Watson Zodiac Sign](/en/wiki/emma-watson-zodiac-sign)
+- [Greta Lee Zodiac Sign](/en/wiki/greta-lee-zodiac-sign)
+<!-- gg-cluster-links:end -->
 - [rising sign and ascendant meaning](/en/wiki/ascendant-meaning) — why an unknown birth time keeps his ascendant open to interpretation.
 - *Libra sun sign personality profile* — a closer look at the sign that anchors his whole chart.
 - [how planet clusters and stelliums work in a birth chart](/en/wiki/how-to-read-birth-chart) — the idea behind reading concentrated chart themes.

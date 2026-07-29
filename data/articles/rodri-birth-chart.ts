@@ -112,6 +112,10 @@ A well-known chart is a low-stakes way to practice symbolic interpretation. The 
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Elvis Birth Chart](/en/wiki/elvis-birth-chart)
+- [Birth Chart Interpretation](/en/wiki/birth-chart-interpretation)
+<!-- gg-cluster-links:end -->
 - [explainer on the twelve houses in a birth chart](/en/wiki/astrology-houses) — deepens how each bhava carries its own themes.
 - [comparison of Vedic and Western astrology](/en/wiki/vedic-vs-western-astrology) — clarifies why the two systems produce different placements.
 - [Hindu astrology (Wikipedia)](https://en.wikipedia.org/wiki/Hindu_astrology) — overview of the system's history and structure.

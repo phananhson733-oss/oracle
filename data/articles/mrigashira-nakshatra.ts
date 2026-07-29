@@ -105,6 +105,9 @@ Vedic tradition describes the deer tracking the scent of musk without knowing th
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [Nakshatra](/en/wiki/nakshatra)
+<!-- gg-cluster-links:end -->
 - *Rohini nakshatra overview* — the neighboring placement that resolves Taurus's beauty into settled arrival rather than continued seeking; a useful contrast for understanding what Mrigashira keeps moving toward
 - *Ardra nakshatra overview* — the nakshatra that follows, where Rahu's seeking takes on storm energy and disruptive breakthrough rather than scent-following
 - *Mars in Vedic astrology guide* — how Mars as ruling planet shapes momentum and drive across different nakshatra placements

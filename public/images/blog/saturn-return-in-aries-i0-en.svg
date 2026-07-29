@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 527" role="img" aria-label="The Three Acts of Saturn Return in Aries (2025–2026)">
+  <defs>
+    <linearGradient id="saturnreturninaries0en-panel" x1="0" y1="0" x2="0.4" y2="1">
+      <stop offset="0" stop-color="#1a1433"/><stop offset="0.55" stop-color="#120e26"/><stop offset="1" stop-color="#09081a"/>
+    </linearGradient>
+    <radialGradient id="saturnreturninaries0en-foil" cx="0.42" cy="0.34" r="0.75">
+      <stop offset="0" stop-color="#fbf0d2"/><stop offset="0.5" stop-color="#e8c882"/><stop offset="1" stop-color="#b8923f"/>
+    </radialGradient>
+    <radialGradient id="saturnreturninaries0en-glow" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#f6e6bf"/><stop offset="1" stop-color="#f6e6bf" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturninaries0en-neb1" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#6f4bb0" stop-opacity="0.28"/><stop offset="1" stop-color="#6f4bb0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="saturnreturninaries0en-neb2" cx="0.5" cy="0.5" r="0.5">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0.16"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="saturnreturninaries0en-rule" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#d4af6a" stop-opacity="0"/><stop offset="0.5" stop-color="#d4af6a" stop-opacity="0.6"/><stop offset="1" stop-color="#d4af6a" stop-opacity="0"/>
+    </linearGradient>
+  </defs>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="url(#saturnreturninaries0en-panel)"/>
+  <ellipse cx="198" cy="126" rx="380" ry="179" fill="url(#saturnreturninaries0en-neb1)"/>
+  <ellipse cx="623" cy="422" rx="334" ry="169" fill="url(#saturnreturninaries0en-neb2)"/>
+  <circle cx="229.0" cy="286.7" r="0.58" fill="#cfc8ea" opacity="0.43"/><circle cx="312.4" cy="309.3" r="1.02" fill="#cfc8ea" opacity="0.47"/><circle cx="597.8" cy="44.3" r="0.56" fill="#cfc8ea" opacity="0.24"/><circle cx="170.8" cy="125.3" r="0.82" fill="#cfc8ea" opacity="0.41"/><circle cx="525.8" cy="85.3" r="1.18" fill="#cfc8ea" opacity="0.53"/><circle cx="311.7" cy="383.2" r="1.68" fill="#cfc8ea" opacity="0.44"/><circle cx="559.7" cy="83.0" r="1.43" fill="#cfc8ea" opacity="0.17"/><circle cx="145.6" cy="191.6" r="1.09" fill="#cfc8ea" opacity="0.28"/><circle cx="631.5" cy="509.1" r="0.68" fill="#cfc8ea" opacity="0.40"/><circle cx="591.6" cy="252.3" r="1.03" fill="#cfc8ea" opacity="0.36"/><circle cx="204.3" cy="55.6" r="0.76" fill="#cfc8ea" opacity="0.16"/><circle cx="538.5" cy="485.1" r="0.71" fill="#cfc8ea" opacity="0.19"/><circle cx="211.1" cy="104.4" r="1.47" fill="#cfc8ea" opacity="0.49"/><circle cx="305.2" cy="58.0" r="1.09" fill="#cfc8ea" opacity="0.24"/><circle cx="565.7" cy="456.7" r="0.72" fill="#cfc8ea" opacity="0.43"/><circle cx="44.8" cy="200.6" r="1.39" fill="#cfc8ea" opacity="0.34"/><circle cx="559.3" cy="436.4" r="0.55" fill="#cfc8ea" opacity="0.22"/><circle cx="415.8" cy="508.6" r="0.93" fill="#cfc8ea" opacity="0.20"/><circle cx="328.2" cy="56.3" r="1.42" fill="#cfc8ea" opacity="0.52"/><circle cx="624.7" cy="421.5" r="0.80" fill="#cfc8ea" opacity="0.48"/><circle cx="218.9" cy="155.2" r="1.64" fill="#cfc8ea" opacity="0.50"/><circle cx="376.6" cy="158.0" r="1.29" fill="#cfc8ea" opacity="0.32"/><circle cx="389.5" cy="397.6" r="0.55" fill="#cfc8ea" opacity="0.18"/><circle cx="661.2" cy="153.0" r="0.45" fill="#cfc8ea" opacity="0.16"/><circle cx="165.4" cy="361.2" r="0.81" fill="#cfc8ea" opacity="0.54"/><circle cx="499.7" cy="208.0" r="1.26" fill="#cfc8ea" opacity="0.39"/><circle cx="78.0" cy="281.2" r="0.41" fill="#cfc8ea" opacity="0.33"/><circle cx="251.0" cy="306.5" r="0.66" fill="#cfc8ea" opacity="0.53"/><circle cx="260.6" cy="55.7" r="0.88" fill="#cfc8ea" opacity="0.40"/><circle cx="500.8" cy="243.3" r="1.68" fill="#cfc8ea" opacity="0.33"/><circle cx="676.7" cy="82.8" r="1.46" fill="#cfc8ea" opacity="0.44"/><circle cx="746.2" cy="115.8" r="0.43" fill="#cfc8ea" opacity="0.19"/><circle cx="511.1" cy="328.1" r="1.66" fill="#cfc8ea" opacity="0.37"/><circle cx="350.6" cy="123.3" r="1.53" fill="#cfc8ea" opacity="0.39"/><circle cx="440.7" cy="161.1" r="0.85" fill="#cfc8ea" opacity="0.25"/><circle cx="720.1" cy="262.0" r="1.20" fill="#cfc8ea" opacity="0.48"/><circle cx="243.2" cy="341.5" r="1.17" fill="#cfc8ea" opacity="0.19"/><circle cx="179.0" cy="240.7" r="1.25" fill="#cfc8ea" opacity="0.27"/><circle cx="71.1" cy="373.6" r="1.40" fill="#cfc8ea" opacity="0.50"/><circle cx="282.9" cy="457.0" r="0.53" fill="#cfc8ea" opacity="0.16"/><circle cx="266.2" cy="499.9" r="0.92" fill="#cfc8ea" opacity="0.50"/><circle cx="575.3" cy="30.7" r="1.17" fill="#cfc8ea" opacity="0.41"/><circle cx="258.6" cy="300.9" r="0.93" fill="#cfc8ea" opacity="0.20"/><circle cx="96.4" cy="483.4" r="1.17" fill="#cfc8ea" opacity="0.43"/><circle cx="29.5" cy="132.2" r="0.59" fill="#cfc8ea" opacity="0.24"/><path d="M 400.8380162436515 268.3 L 401.3 270.5 L 403.5 270.93389928760007 L 401.3 271.4 L 400.8380162436515 273.6 L 400.4 271.4 L 398.2 270.93389928760007 L 400.4 270.5 Z" fill="#f6e6bf" opacity="0.7957765271887183"/><path d="M 488.5671088639647 220.6 L 489.2 223.7 L 492.2 224.2512338492088 L 489.2 224.8 L 488.5671088639647 227.9 L 488.0 224.8 L 484.9 224.2512338492088 L 488.0 223.7 Z" fill="#f6e6bf" opacity="0.5568299648351968"/><path d="M 423.7714797426015 210.5 L 424.2 212.5 L 426.2 212.89813594752923 L 424.2 213.3 L 423.7714797426015 215.3 L 423.4 213.3 L 421.4 212.89813594752923 L 423.4 212.5 Z" fill="#f6e6bf" opacity="0.6329461384564639"/><path d="M 603.094719806686 214.7 L 603.7 217.9 L 606.9 218.49658028921112 L 603.7 219.1 L 603.094719806686 222.3 L 602.5 219.1 L 599.3 218.49658028921112 L 602.5 217.9 Z" fill="#f6e6bf" opacity="0.6453597272746265"/><path d="M 430.62557989545166 438.5 L 431.1 440.8 L 433.3 441.1885267798789 L 431.1 441.6 L 430.62557989545166 443.9 L 430.2 441.6 L 428.0 441.1885267798789 L 430.2 440.8 Z" fill="#f6e6bf" opacity="0.755527197010815"/><path d="M 204.3 55.6 L 565.7 456.7 L 440.7 161.1 L 71.1 373.6" fill="none" stroke="#d4af6a" stroke-width="0.6" opacity="0.12"/>
+  <rect x="1.5" y="1.5" width="757" height="524" rx="22" fill="none" stroke="#d4af6a" stroke-opacity="0.34" stroke-width="1.2"/>
+  <rect x="7" y="7" width="746" height="513" rx="17" fill="none" stroke="#d4af6a" stroke-opacity="0.12" stroke-width="0.8"/>
+  <path d="M 16 12.8 L 16.5 15.5 L 19.2 16 L 16.5 16.5 L 16 19.2 L 15.5 16.5 L 12.8 16 L 15.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 12.8 L 744.5 15.5 L 747.2 16 L 744.5 16.5 L 744 19.2 L 743.5 16.5 L 740.8 16 L 743.5 15.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 16 507.8 L 16.5 510.5 L 19.2 511 L 16.5 511.5 L 16 514.2 L 15.5 511.5 L 12.8 511 L 15.5 510.5 Z" fill="#d4af6a" opacity="0.4"/><path d="M 744 507.8 L 744.5 510.5 L 747.2 511 L 744.5 511.5 L 744 514.2 L 743.5 511.5 L 740.8 511 L 743.5 510.5 Z" fill="#d4af6a" opacity="0.4"/>
+  <text x="380" y="46" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-size="22" letter-spacing="0.4" fill="#efeaf8">The Three Acts of Saturn Return in Aries (2025–2026)</text>
+  <line x1="230" y1="67" x2="368" y2="67" stroke="url(#saturnreturninaries0en-rule)" stroke-width="1"/>
+  <line x1="392" y1="67" x2="530" y2="67" stroke="url(#saturnreturninaries0en-rule)" stroke-width="1"/>
+  <path d="M 380 62.0 L 380.8 66.2 L 385.0 67 L 380.8 67.8 L 380 72.0 L 379.2 67.8 L 375.0 67 L 379.2 66.2 Z" fill="#d4af6a" opacity="0.85"/>
+  <line x1="92" y1="113" x2="92" y2="410" stroke="#d4af6a" stroke-opacity="0.3" stroke-width="1.6"/>
+  <circle cx="92" cy="113" r="13.0" fill="url(#saturnreturninaries0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="113" r="8" fill="url(#saturnreturninaries0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="110.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 109.0 L 92.6 112.4 L 96.0 113 L 92.6 113.6 L 92 117.0 L 91.4 113.6 L 88.0 113 L 91.4 112.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="118.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">2025</text>
+  <text x="132" y="141.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Act One: The Opening</text>
+  <text x="132" y="164.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn enters Aries; first identity questions surface around work, direction, or a</text>
+  <text x="132" y="181.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">role quietly outgrown.</text>
+  <circle cx="92" cy="212" r="13.0" fill="url(#saturnreturninaries0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="212" r="8" fill="url(#saturnreturninaries0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="209.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 208.0 L 92.6 211.4 L 96.0 212 L 92.6 212.6 L 92 216.0 L 91.4 212.6 L 88.0 212 L 91.4 211.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="217.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">September 2025</text>
+  <text x="132" y="240.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Act Two: The Retreat</text>
+  <text x="132" y="263.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn steps back into Pisces; the theme goes quiet or turns inward before it fully</text>
+  <text x="132" y="280.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">resolves.</text>
+  <circle cx="92" cy="311" r="13.0" fill="url(#saturnreturninaries0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="311" r="8" fill="url(#saturnreturninaries0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="308.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 307.0 L 92.6 310.4 L 96.0 311 L 92.6 311.6 L 92 315.0 L 91.4 311.6 L 88.0 311 L 91.4 310.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="316.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">February 2026</text>
+  <text x="132" y="339.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">Act Three: The Re-entry</text>
+  <text x="132" y="362.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">Saturn returns to Aries; earlier prompts come back asking for a firmer, more</text>
+  <text x="132" y="379.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">committed answer.</text>
+  <circle cx="92" cy="410" r="13.0" fill="url(#saturnreturninaries0en-glow)" opacity="0.5"/>
+    <circle cx="92" cy="410" r="8" fill="url(#saturnreturninaries0en-foil)" stroke="#f6e6bf" stroke-opacity="0.5" stroke-width="0.8"/>
+    <circle cx="92" cy="407.8" r="4.8" fill="#ffffff" opacity="0.10"/>
+    <path d="M 92 406.0 L 92.6 409.4 L 96.0 410 L 92.6 410.6 L 92 414.0 L 91.4 410.6 L 88.0 410 L 91.4 409.4 Z" fill="#3a2c12" opacity="0.85"/>
+  <text x="132" y="415.0" font-family="Georgia, 'Times New Roman', serif" font-size="19" font-weight="700" letter-spacing="0.4" fill="#f6e6bf">Throughout</text>
+  <text x="132" y="438.0" font-family="Georgia, 'Times New Roman', serif" font-size="20.5" fill="#f3effb">The House Lens</text>
+  <text x="132" y="461.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">The house holding Aries in your chart shows where the review concentrates —</text>
+  <text x="132" y="478.0" font-family="Helvetica, Arial, sans-serif" font-size="14.5" fill="#a59cc0">career, partnership, home, or self-image.</text>
+  <path d="M 202.22749999999988 498.4 L 202.6 500.6 L 204.8 501 L 202.6 501.4 L 202.22749999999988 503.6 L 201.8 501.4 L 199.6 501 L 201.8 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+  <text x="380" y="505" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="11.5" fill="#7b738f">A self-reflection framework — tendencies, not predictions</text>
+  <path d="M 557.7725000000002 498.4 L 558.2 500.6 L 560.4 501 L 558.2 501.4 L 557.7725000000002 503.6 L 557.4 501.4 L 555.2 501 L 557.4 500.6 Z" fill="#d4af6a" opacity="0.5"/>
+</svg>

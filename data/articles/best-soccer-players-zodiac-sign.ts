@@ -103,6 +103,9 @@ Yes — as symbolism, not statistics. Read the sign for fun and personality, but
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - *World Cup 2026 astrology themes pillar* — the hub that frames the tournament's wider astrology
 - *zodiac signs as World Cup 2026 teams* — the playful companion to this data-first piece
 - *what the Relative Age Effect is* — the calendar cause behind the birth-month pattern

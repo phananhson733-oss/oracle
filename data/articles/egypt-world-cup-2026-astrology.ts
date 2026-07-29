@@ -118,6 +118,9 @@ National charts are debated even among astrologers, so they are best held as a b
 
 ## Related Reading
 
+<!-- gg-cluster-links:start -->
+- [World Cup 2026 Astrology Prediction](/en/wiki/world-cup-2026-astrology-prediction)
+<!-- gg-cluster-links:end -->
 - [rising sign meaning explainer](/en/wiki/ascendant-meaning) — helps you read the "public face" of a chart, useful when sketching player narratives.
 - [guide to reading planetary transits in a birth chart](/en/wiki/transits) — the transit-events background this whole reading depends on.
 - [2026 FIFA World Cup (Wikipedia)](https://en.wikipedia.org/wiki/2026_FIFA_World_Cup)
