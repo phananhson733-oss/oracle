@@ -77,7 +77,28 @@ if (typeof window !== "undefined" && API_BASE.startsWith("http")) {
 const REQUEST_TIMEOUT_MS = 15000;
 const LONG_REQUEST_TIMEOUT_MS = 0;
 const SYNASTRY_REQUEST_TIMEOUT_MS = 0;
-const LOCAL_CACHE_PREFIX = "astro_cache_v2";
+// v3：小行星（Chiron/Ceres/Pallas/Juno/Vesta）位置修复。缺 seas_18.se1 时后端曾用
+// mockPlanetPosition 编造这五颗星的位置，本地缓存**没有 TTL**（readLocalCache 读到什么算什么），
+// 所以已经看过星盘的用户会永久留着假数据，修复上线也看不到正确值。natal / synastry facts /
+// 由它们派生的 AI 解读全部受污染，逐个 key bump 有漏面风险，直接换前缀一次性失效。
+const LOCAL_CACHE_PREFIX = "astro_cache_v3";
+const STALE_CACHE_PREFIXES = ["astro_cache_v2:", "astro_cache:"];
+
+// 清掉旧前缀残留。不只是卫生问题：writeLocalCache 吞掉 quota 异常，旧数据占满配额会让
+// 新缓存写入静默失败，本地缓存等于永久失效。
+const purgeStaleLocalCache = () => {
+  if (typeof window === "undefined") return;
+  try {
+    const doomed = Object.keys(localStorage).filter((key) =>
+      STALE_CACHE_PREFIXES.some((prefix) => key.startsWith(prefix)),
+    );
+    for (const key of doomed) localStorage.removeItem(key);
+  } catch {
+    // localStorage 不可用（隐私模式 / 配额异常）时忽略，不影响请求路径。
+  }
+};
+
+purgeStaleLocalCache();
 // v5：P1-1 给 house-5/elements/transit-chart 加了 seo.canonicalPath。bump 版本失效旧缓存，
 // 否则部署前缓存过这些 item 的用户读到无 seo 字段的旧体，运行时把 canonical 算回自指、不抑制 hreflang，
 // 令 canonical 收口对老缓存用户失效。

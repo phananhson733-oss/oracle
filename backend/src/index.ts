@@ -10,6 +10,7 @@ import helmet from "helmet";
 import rateLimit from "express-rate-limit";
 import dotenv from "dotenv";
 import { logger } from "./utils/logger.js";
+import { asteroidEphemerisReady } from "./services/ephemeris.js";
 import { natalRouter } from "./api/natal.js";
 import { dailyRouter } from "./api/daily.js";
 import { askRouter } from "./api/ask.js";
@@ -478,7 +479,12 @@ app.use(
 );
 
 // Health check
-app.get("/health", (_, res) => res.json({ status: "ok" }));
+// asteroidEphemeris 暴露 seas_18.se1 是否真的随部署落地。缺它时 Chiron/Ceres/Pallas/
+// Juno/Vesta 会被静默省略——上一次这个故障在生产潜伏了三个月才由用户发现，所以把它做成
+// 一条 curl 就能查的信号，部署后必查。
+app.get("/health", (_, res) =>
+  res.json({ status: "ok", asteroidEphemeris: asteroidEphemerisReady }),
+);
 
 app.listen(PORT, () => {
   logger.info("Backend running", { port: PORT });

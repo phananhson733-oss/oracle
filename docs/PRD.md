@@ -1,7 +1,7 @@
 # AstrologyWiki — Product Requirements Document (PRD)
 
-> **Version**: 2.50
-> **Last Updated**: 2026-07-17
+> **Version**: 2.51
+> **Last Updated**: 2026-08-14
 > **Status**: Living Document — synced with codebase
 
 ---
@@ -709,6 +709,8 @@ AI 生成的深度心理分析，每个维度独立解读：
 │   │   │   ├── common.ts       # 类型 + 工具函数
 │   │   │   └── manager.ts      # 注册表 + 所有模板
 │   │   └── db/                 # 数据库 Schema
+│   ├── ephe/                   # Swiss Ephemeris 星历数据（seas_18.se1）——小行星计算必需，
+│   │                           # 由 vercel.json includeFiles 显式打包（nft 不追踪纯数据文件）
 │   └── migrations/             # 数据库迁移文件
 ├── public/                     # 静态资源
 ├── scripts/                    # SEO 构建脚本（generate-seo-pages / inject-spa-into-stubs）

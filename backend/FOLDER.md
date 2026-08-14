@@ -19,6 +19,7 @@
 - package-lock.json｜地位：依赖锁定｜功能：锁定后端依赖版本。
 - tsconfig.json｜地位：编译配置｜功能：TypeScript 编译器选项。
 - data/｜地位：经典拆解数据源｜功能：经典书籍 Markdown 拆解内容（zh/en）。
+- ephe/｜地位：Swiss Ephemeris 星历数据资产｜功能：`seas_18.se1`（小行星星历，1800–2399）。**运行时必需**，缺失时 Chiron/Ceres/Pallas/Juno/Vesta 无法计算；由 `vercel.json` 的 `includeFiles` 显式打包（@vercel/nft 不追踪纯数据文件），详见 ephe/FOLDER.md。
 - migrations/｜地位：数据库迁移目录｜功能：维护 Supabase/Postgres schema、RPC 与支付/权益相关表结构变更。
 - src/｜地位：源码目录｜功能：后端路由、服务与类型定义。
 - dist/｜地位：构建产物｜功能：编译后的后端运行文件。
@@ -37,6 +38,7 @@
 ```
 backend/
 ├── data/              # 经典书籍 Markdown 拆解内容
+├── ephe/              # Swiss Ephemeris 星历数据（seas_18.se1，小行星必需）
 ├── src/
 │   ├── api/           # API 路由
 │   │   ├── natal.ts   # 本命盘端点

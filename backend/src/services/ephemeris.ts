@@ -1,8 +1,12 @@
-// INPUT: Swiss Ephemeris 封装实现（含敏感点位派生、行运 ASC 相位与本命盘/行运缓存）。
+// INPUT: Swiss Ephemeris 封装实现 + backend/ephe/seas_18.se1 星历数据（含敏感点位派生、行运 ASC 相位与本命盘/行运缓存）。
 // OUTPUT: 导出星历计算服务（含 SHA-256 哈希化的本命盘缓存键、派生点位、行运缓存与 AI 摘要数据）。
 // POS: 星历计算服务；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
+// 契约：任何天体算不出来一律从 positions 省略并记入 mockedPlanets，绝不填充估算/编造值。
 
 import { createHash } from "node:crypto";
+import { existsSync } from "node:fs";
+import { dirname, resolve } from "node:path";
+import { fileURLToPath } from "node:url";
 import type {
   BirthInput,
   PlanetPosition,
@@ -60,25 +64,86 @@ const PLANET_IDS: Record<string, number> = {
   "North Node": SE_TRUE_NODE,
 };
 
-// 尝试加载 swisseph。加载失败时 getPlanetPositions 会把 usedMockFallback 设为 true，
-// 由 /api/astro/today 的完整性门拒绝（不再落到 day cache）。
+// 尝试加载 swisseph。加载失败时天体会被标记为不可用（记入 mockedPlanets 并从
+// positions 中省略），由上游完整性门拒绝，绝不填充编造值。
 let swisseph: any = null;
+
+// 小行星（Chiron/Ceres/Pallas/Juno/Vesta）必须读 seas_18.se1 才能计算——主行星有
+// swisseph 内置的 Moshier 解析理论兜底，小行星没有。该文件是纯数据，JS 侧无 require
+// 指向它，@vercel/nft 不会把它追踪进 serverless bundle，故由 vercel.json 的
+// includeFiles 显式带上 backend/ephe/**。不显式调用 swe_set_ephe_path 时，swisseph 会用
+// 编译进去的默认路径 `.:/users/ephe2/:/users/ephe/`，在任何部署环境下都必然找不到文件。
+const ASTEROID_EPHE_FILE = "seas_18.se1";
+
+// 星历目录候选，按序探测第一个真正含 seas_18.se1 的目录。覆盖 Vercel lambda
+// （cwd=/var/task）、本地 tsx 直跑 src、以及 tsc 编译后跑 dist 三种布局。
+const ephemerisDirCandidates = (): string[] => {
+  const moduleDir = dirname(fileURLToPath(import.meta.url));
+  return [
+    process.env.SWISSEPH_PATH,
+    resolve(process.cwd(), "backend/ephe"),
+    resolve(process.cwd(), "ephe"),
+    resolve(moduleDir, "../../ephe"),
+    resolve(moduleDir, "../../../ephe"),
+  ].filter((dir): dir is string => !!dir);
+};
+
+const resolveEphemerisDir = (): string | null =>
+  ephemerisDirCandidates().find((dir) =>
+    existsSync(resolve(dir, ASTEROID_EPHE_FILE)),
+  ) ?? null;
+
+// 自检：算一次已知的 Chiron 位置。星历目录没接上时这里会拿到 swisseph 的 error
+// 字符串，必须大声报错——上一次这个故障静默跑了三个月，线上给用户返回编造的小行星位置。
+const verifyAsteroidEphemeris = (ephemerisDir: string | null): boolean => {
+  try {
+    const probe = swisseph.swe_calc_ut(2451545, SE_CHIRON, SEFLG_SPEED);
+    if (probe?.error || !Number.isFinite(probe?.longitude)) {
+      logger.error(
+        "Swiss Ephemeris asteroid data unavailable: Chiron/Ceres/Pallas/Juno/Vesta will be OMITTED from charts. Ensure backend/ephe/seas_18.se1 ships with the deployment.",
+        { ephemerisDir, error: probe?.error ?? "non-finite longitude" },
+      );
+      return false;
+    }
+    return true;
+  } catch (err) {
+    logger.error("Swiss Ephemeris asteroid self-check threw", {
+      ephemerisDir,
+      error: err instanceof Error ? err.message : String(err),
+    });
+    return false;
+  }
+};
+
+// 小行星星历是否可用。false 时小行星会被省略而不是编造，供健康检查与日志使用。
+export let asteroidEphemerisReady = false;
 
 try {
   const swissephModule = await import("swisseph");
   // 处理 ESM 默认导出
   swisseph = swissephModule.default || swissephModule;
 
-  // 设置星历数据路径（如果有自定义路径可在环境变量中配置）
-  const ephePath = process.env.SWISSEPH_PATH || "";
-  if (ephePath && typeof swisseph.swe_set_ephe_path === "function") {
-    swisseph.swe_set_ephe_path(ephePath);
+  const ephemerisDir = resolveEphemerisDir();
+  if (ephemerisDir && typeof swisseph.swe_set_ephe_path === "function") {
+    swisseph.swe_set_ephe_path(ephemerisDir);
+  } else {
+    logger.error(
+      `Swiss Ephemeris data directory not found (looked for ${ASTEROID_EPHE_FILE}); asteroid positions will be omitted`,
+      { candidates: ephemerisDirCandidates() },
+    );
   }
 
-  logger.info("Swiss Ephemeris loaded successfully (NASA JPL DE431 precision)");
+  asteroidEphemerisReady = verifyAsteroidEphemeris(ephemerisDir);
+  logger.info(
+    "Swiss Ephemeris loaded successfully (NASA JPL DE431 precision)",
+    {
+      ephemerisDir,
+      asteroidEphemerisReady,
+    },
+  );
 } catch (err) {
   logger.warn(
-    "Swiss Ephemeris not available, using mock calculations; for production accuracy ensure swisseph native module is compiled",
+    "Swiss Ephemeris not available; every body will be reported as unavailable rather than estimated. For production accuracy ensure the swisseph native module is compiled",
     { error: err instanceof Error ? err.message : String(err) },
   );
 }
@@ -285,28 +350,13 @@ function calculateAspectsBetween(positions: PlanetPosition[]): Aspect[] {
   return aspects;
 }
 
-// Mock 计算（当 swisseph 不可用时）
-// 使用黄金角度 (137.5°) 进行分布，同时引入基于真实轨道周期的偏移
-// 这样可以产生更加多样化的相位（合、冲、刑、拱、六合）
-const MOCK_ORBITAL_PERIODS = [
-  1, // Sun (基准)
-  0.0748, // Moon (27.3天 / 365天)
-  0.241, // Mercury
-  0.615, // Venus
-  1.881, // Mars
-  11.86, // Jupiter
-  29.46, // Saturn
-  84.01, // Uranus
-  164.8, // Neptune
-  248.1, // Pluto
-  50.76, // Chiron
-  4.6, // Ceres
-  4.62, // Pallas
-  4.36, // Juno
-  3.63, // Vesta
-  18.6, // North Node (月交点周期)
-];
-
+// 曾经这里有一个 mockPlanetPosition()：swe_calc_ut 失败时用黄金角度 + 假轨道周期 +
+// 硬编码 seed 数组编一个位置出来顶上。它在生产环境把 Chiron/Ceres/Pallas/Juno/Vesta
+// 的位置整整编造了几个月（真实用户发现并反馈），因为缺 seas_18.se1 时小行星必然算失败，
+// 而这个兜底把失败静默地变成了看起来合理的假数据。
+//
+// 现在的契约：算不出来就把该天体从 positions 中省略，并把名字记进 mockedPlanets，
+// 由上游完整性门决定降级还是拒绝。占星产品少显示一个天体是可接受的；显示一个假位置不是。
 const DEFAULT_LAT = 31.23;
 const DEFAULT_LON = 121.47;
 const NATAL_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
@@ -422,27 +472,24 @@ export const buildCompactTransitSummary = (transits: TransitData) => {
   };
 };
 
-function mockPlanetPosition(
-  name: string,
+// 单个天体的黄经/黄纬/速度取数。算不出来一律返回 null——调用方据此省略该天体，
+// 不存在"填一个近似值顶上"的分支。
+function calcBody(
   jd: number,
-  index: number,
-): { lon: number; speed: number } {
-  // 使用真实轨道周期产生更真实的相对位置
-  const period = MOCK_ORBITAL_PERIODS[index] || 1;
-  const daysSinceJ2000 = jd - 2451545; // J2000 epoch
-
-  // 每颗行星基于其轨道周期计算位置，加上随机种子偏移以产生多样化相位
-  const seedOffset =
-    [0, 45, 120, 180, 90, 60, 150, 30, 75, 135, 100, 50, 170, 85, 115, 45][
-      index
-    ] || 0;
-  const baseDegree =
-    ((360 * daysSinceJ2000) / (period * 365.25) + seedOffset) % 360;
-
-  return {
-    lon: (baseDegree + 360) % 360,
-    speed: index > 1 && (Math.floor(jd) + index) % 5 === 0 ? -0.1 : 0.5,
-  };
+  planetId: number | undefined,
+): { lon: number; lat: number; speed: number } | null {
+  if (!swisseph || planetId === undefined) return null;
+  try {
+    const result = swisseph.swe_calc_ut(jd, planetId, SEFLG_SPEED);
+    if (result?.error || !Number.isFinite(result?.longitude)) return null;
+    return {
+      lon: result.longitude,
+      lat: Number.isFinite(result.latitude) ? result.latitude : 0,
+      speed: Number.isFinite(result.longitudeSpeed) ? result.longitudeSpeed : 0,
+    };
+  } catch {
+    return null;
+  }
 }
 
 export class SwissEphemerisService implements EphemerisService {
@@ -470,17 +517,17 @@ export class SwissEphemerisService implements EphemerisService {
     }
     const positions: PlanetPosition[] = [];
     const longitudes: Record<string, number> = {};
-    // Mock-fallback tracking: every time we substitute mockPlanetPosition() for a real
-    // ephemeris value, set the flag and record the body name. Consumers (e.g. astro/today)
-    // must refuse to cache or serve payloads where usedMockFallback === true; otherwise
-    // mock data poisons day-long caches with finite-but-fictitious degrees/signs.
+    // 降级追踪：任何一个天体算不出来，就把名字记进 mockedPlanets 并置位 usedMockFallback，
+    // 同时**不把它写进 positions**。字段名保留是为了不动 9 个下游消费者（astro / astrocartography /
+    // solar-return / saturn-return / newsletterSky / transit 等），它们的语义仍然正确：
+    // 出现在 mockedPlanets 里 = 这个天体不可信，要么跳过要么整体拒绝。
     let usedMockFallback = false;
     const mockedPlanets: string[] = [];
-    const markMockUsed = (bodyName: string) => {
+    const markUnavailable = (bodyName: string) => {
       usedMockFallback = true;
       mockedPlanets.push(bodyName);
     };
-    // If swisseph itself failed to load at module init, every position is mock.
+    // swisseph 在模块初始化时就没加载成功 → 整盘不可用。
     if (!this.useRealEphemeris) {
       usedMockFallback = true;
     }
@@ -517,52 +564,27 @@ export class SwissEphemerisService implements EphemerisService {
       houses = Array.from({ length: 12 }, (_, i) => (ascendant + i * 30) % 360);
     }
 
-    // 计算行星位置
+    // 计算行星位置。算不出来的天体（典型场景：缺 seas_18.se1 或出生年份超出星历
+    // 覆盖范围时的小行星）直接跳过，不进 positions、不进 longitudes。
     const allBodies = [...PLANETS, ...ASTEROIDS];
-    for (let i = 0; i < allBodies.length; i++) {
-      const name = allBodies[i];
-      const planetId = PLANET_IDS[name];
-
-      let longitude = 0;
-      let speed = 0;
-
-      if (this.useRealEphemeris && planetId !== undefined) {
-        try {
-          const result = swisseph.swe_calc_ut(jd, planetId, SEFLG_SPEED);
-          const resultLon = result?.longitude;
-          const resultSpeed = result?.longitudeSpeed;
-          if (result?.error || !Number.isFinite(resultLon)) {
-            throw new Error(result?.error || "Invalid ephemeris data");
-          }
-          longitude = resultLon;
-          speed = Number.isFinite(resultSpeed) ? resultSpeed : 0;
-        } catch {
-          const mock = mockPlanetPosition(name, jd, i);
-          longitude = mock.lon;
-          speed = mock.speed;
-          markMockUsed(name);
-        }
-      } else {
-        const mock = mockPlanetPosition(name, jd, i);
-        longitude = mock.lon;
-        speed = mock.speed;
-        markMockUsed(name);
+    for (const name of allBodies) {
+      const body = calcBody(jd, PLANET_IDS[name]);
+      if (!body) {
+        markUnavailable(name);
+        continue;
       }
 
-      const normalized = normalizeLongitude(longitude);
+      const normalized = normalizeLongitude(body.lon);
       longitudes[name] = normalized;
       const { sign, degree, minute } = degreeToSign(normalized);
-
-      // 计算宫位
-      const house = resolveHouse(normalized, houses);
 
       positions.push({
         name,
         sign,
         degree,
         minute,
-        house,
-        isRetrograde: speed < 0,
+        house: resolveHouse(normalized, houses),
+        isRetrograde: body.speed < 0,
       });
     }
 
@@ -651,77 +673,28 @@ export class SwissEphemerisService implements EphemerisService {
       });
     }
 
-    const lilithLon = (() => {
-      const lilithId = swisseph?.SE_MEAN_APOG ?? swisseph?.SE_OSCU_APOG;
-      if (this.useRealEphemeris && lilithId !== undefined) {
-        try {
-          const result = swisseph.swe_calc_ut(jd, lilithId, SEFLG_SPEED);
-          if (result?.error || !Number.isFinite(result?.longitude))
-            return undefined;
-          return normalizeLongitude(result.longitude);
-        } catch {
-          return undefined;
-        }
+    // 派生点：算得出来就加入盘中，算不出来就标记不可用并省略。
+    const pushDerivedPoint = (name: string, longitude: number | undefined) => {
+      if (longitude === undefined || !Number.isFinite(longitude)) {
+        markUnavailable(name);
+        return;
       }
-      return undefined;
-    })();
+      const normalized = normalizeLongitude(longitude);
+      const { sign, degree, minute } = degreeToSign(normalized);
+      positions.push({
+        name,
+        sign,
+        degree,
+        minute,
+        house: resolveHouse(normalized, houses),
+        isRetrograde: false,
+      });
+    };
 
-    let resolvedLilithLon: number;
-    if (lilithLon !== undefined) {
-      resolvedLilithLon = lilithLon;
-    } else {
-      resolvedLilithLon = normalizeLongitude(
-        mockPlanetPosition("Lilith", jd, allBodies.length + 11).lon,
-      );
-      markMockUsed("Lilith");
-    }
-    const lilithSign = degreeToSign(resolvedLilithLon);
-    positions.push({
-      name: "Lilith",
-      sign: lilithSign.sign,
-      degree: lilithSign.degree,
-      minute: lilithSign.minute,
-      house: resolveHouse(resolvedLilithLon, houses),
-      isRetrograde: false,
-    });
-
-    let vertexLon: number;
-    if (vertex !== undefined) {
-      vertexLon = vertex;
-    } else {
-      vertexLon = normalizeLongitude(
-        mockPlanetPosition("Vertex", jd, allBodies.length + 12).lon,
-      );
-      markMockUsed("Vertex");
-    }
-    const vertexSign = degreeToSign(vertexLon);
-    positions.push({
-      name: "Vertex",
-      sign: vertexSign.sign,
-      degree: vertexSign.degree,
-      minute: vertexSign.minute,
-      house: resolveHouse(vertexLon, houses),
-      isRetrograde: false,
-    });
-
-    let eastPointLon: number;
-    if (equatorialAscendant !== undefined) {
-      eastPointLon = equatorialAscendant;
-    } else {
-      eastPointLon = normalizeLongitude(
-        mockPlanetPosition("East Point", jd, allBodies.length + 13).lon,
-      );
-      markMockUsed("East Point");
-    }
-    const eastPointSign = degreeToSign(eastPointLon);
-    positions.push({
-      name: "East Point",
-      sign: eastPointSign.sign,
-      degree: eastPointSign.degree,
-      minute: eastPointSign.minute,
-      house: resolveHouse(eastPointLon, houses),
-      isRetrograde: false,
-    });
+    const lilithId = swisseph?.SE_MEAN_APOG ?? swisseph?.SE_OSCU_APOG;
+    pushDerivedPoint("Lilith", calcBody(jd, lilithId)?.lon);
+    pushDerivedPoint("Vertex", vertex);
+    pushDerivedPoint("East Point", equatorialAscendant);
 
     return { positions, houseCusps: houses, usedMockFallback, mockedPlanets };
   }
@@ -746,52 +719,18 @@ export class SwissEphemerisService implements EphemerisService {
     const speeds: Record<string, number> = {};
     let usedMockFallback = false;
     const mockedPlanets: string[] = [];
-    const allBodies: readonly string[] = [...PLANETS, ...ASTEROIDS];
 
     for (const name of bodies) {
-      const planetId = PLANET_IDS[name];
-      const mockIndex = allBodies.indexOf(name);
-      let longitude = 0;
-      let speed = 0;
-      let mocked = false;
-
-      if (this.useRealEphemeris && planetId !== undefined) {
-        try {
-          const result = swisseph.swe_calc_ut(jd, planetId, SEFLG_SPEED);
-          const resultLon = result?.longitude;
-          const resultSpeed = result?.longitudeSpeed;
-          if (result?.error || !Number.isFinite(resultLon)) {
-            throw new Error(result?.error || "Invalid ephemeris data");
-          }
-          longitude = resultLon;
-          speed = Number.isFinite(resultSpeed) ? resultSpeed : 0;
-        } catch {
-          const mock = mockPlanetPosition(
-            name,
-            jd,
-            mockIndex >= 0 ? mockIndex : 0,
-          );
-          longitude = mock.lon;
-          speed = mock.speed;
-          mocked = true;
-        }
-      } else {
-        const mock = mockPlanetPosition(
-          name,
-          jd,
-          mockIndex >= 0 ? mockIndex : 0,
-        );
-        longitude = mock.lon;
-        speed = mock.speed;
-        mocked = true;
-      }
-
-      if (mocked) {
+      const body = calcBody(jd, PLANET_IDS[name]);
+      // 算不出来就不写这个 key。所有消费者（transit timeline / lifeArc / astro）
+      // 都在读 longitudes[name] 之前先查 mockedPlanets 并跳过。
+      if (!body) {
         usedMockFallback = true;
         mockedPlanets.push(name);
+        continue;
       }
-      longitudes[name] = normalizeLongitude(longitude);
-      speeds[name] = speed;
+      longitudes[name] = normalizeLongitude(body.lon);
+      speeds[name] = body.speed;
     }
 
     return { longitudes, speeds, usedMockFallback, mockedPlanets };
@@ -816,51 +755,16 @@ export class SwissEphemerisService implements EphemerisService {
     const ecliptic: Record<string, { lon: number; lat: number }> = {};
     let usedMockFallback = false;
     const mockedPlanets: string[] = [];
-    const allBodies: readonly string[] = [...PLANETS, ...ASTEROIDS];
 
     for (const name of bodies) {
-      const planetId = PLANET_IDS[name];
-      const mockIndex = allBodies.indexOf(name);
-      let lon = 0;
-      let lat = 0;
-      let mocked = false;
-
-      if (this.useRealEphemeris && planetId !== undefined) {
-        try {
-          const result = swisseph.swe_calc_ut(jd, planetId, SEFLG_SPEED);
-          const resultLon = result?.longitude;
-          const resultLat = result?.latitude;
-          if (result?.error || !Number.isFinite(resultLon)) {
-            throw new Error(result?.error || "Invalid ephemeris data");
-          }
-          lon = resultLon;
-          lat = Number.isFinite(resultLat) ? resultLat : 0;
-        } catch {
-          const mock = mockPlanetPosition(
-            name,
-            jd,
-            mockIndex >= 0 ? mockIndex : 0,
-          );
-          lon = mock.lon;
-          lat = 0;
-          mocked = true;
-        }
-      } else {
-        const mock = mockPlanetPosition(
-          name,
-          jd,
-          mockIndex >= 0 ? mockIndex : 0,
-        );
-        lon = mock.lon;
-        lat = 0;
-        mocked = true;
-      }
-
-      if (mocked) {
+      const body = calcBody(jd, PLANET_IDS[name]);
+      // 算不出来就不写这个 key；astrocartography 端点在 mockedPlanets 非空时整体 503。
+      if (!body) {
         usedMockFallback = true;
         mockedPlanets.push(name);
+        continue;
       }
-      ecliptic[name] = { lon: normalizeLongitude(lon), lat };
+      ecliptic[name] = { lon: normalizeLongitude(body.lon), lat: body.lat };
     }
 
     return { ecliptic, jd, usedMockFallback, mockedPlanets };
