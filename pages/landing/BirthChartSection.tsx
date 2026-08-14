@@ -39,6 +39,7 @@ import {
   DateSelectGroup,
   DEFAULT_MONTH_NAMES_EN,
 } from "../../components/forms/DateSelectGroup";
+import { TimeSelectGroup } from "../../components/forms/TimeSelectGroup";
 import { TECH_DATA } from "../../constants";
 import type {
   AccuracyLevel,
@@ -173,6 +174,8 @@ const BirthChartSection: React.FC = () => {
   // documented in PR #29's hotfix.
   const [birthDate, setBirthDate] = useState("");
   const [birthTime, setBirthTime] = useState("");
+  // 时间只选了一部分（如漏了 AM/PM）。不拦住会静默落成 time_unknown 并按正午出盘。
+  const [timePartial, setTimePartial] = useState(false);
   const [timeUnknown, setTimeUnknown] = useState(false);
   const [birthCity, setBirthCity] = useState("");
   // Geocoded coordinates from autocomplete selection. When present, we pass
@@ -269,6 +272,12 @@ const BirthChartSection: React.FC = () => {
         setValidationError(
           landing.birth_chart_form_city_required ||
             "Please enter the city where you were born.",
+        );
+        return;
+      }
+      if (timePartial) {
+        setValidationError(
+          language === "zh" ? "出生时间没填完（需要小时、分钟和上午/下午）。补齐，或三项都留空表示时间未知。" : "Your birth time is incomplete — pick hour, minute and AM/PM. Or leave all three blank if you don't know it.",
         );
         return;
       }
@@ -545,12 +554,28 @@ const BirthChartSection: React.FC = () => {
               {landing.birth_chart_form_time_label || "Birth time"}
             </label>
             {!timeUnknown ? (
-              <input
-                id="bc-time"
-                type="time"
+              <TimeSelectGroup
                 value={birthTime}
-                onChange={(e) => setBirthTime(e.target.value)}
-                className={`mt-2 ${inputClass}`}
+                onChange={(next, partial) => {
+                  setBirthTime(next);
+                  setTimePartial(partial);
+                }}
+                idPrefix="bc"
+                className="mt-2 grid grid-cols-3 gap-2"
+                selectClassName={inputClass}
+                labels={
+                  language === "zh"
+                    ? {
+                        hour: "时",
+                        minute: "分",
+                        meridiem: "上午或下午",
+                        meridiemPlaceholder: "上午/下午",
+                        am: "上午",
+                        pm: "下午",
+                        groupLabel: "出生时间",
+                      }
+                    : undefined
+                }
               />
             ) : (
               <div

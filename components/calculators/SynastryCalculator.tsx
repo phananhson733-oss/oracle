@@ -52,6 +52,15 @@ export const SynastryCalculator: React.FC = () => {
     e.preventDefault();
     const birthA = personToBirth(personA.current);
     const birthB = personToBirth(personB.current);
+    if (personA.current.timePartial || personB.current.timePartial) {
+      setErrorMessage(
+        lang === "zh"
+          ? "出生时间没填完（需要小时、分钟和上午/下午）。补齐，或三项都留空表示时间未知。"
+          : "A birth time is incomplete — pick hour, minute and AM/PM. Or leave all three blank if it's unknown.",
+      );
+      setState("error");
+      return;
+    }
     if (!birthA || !birthB) {
       setErrorMessage(
         lang === "zh"

@@ -1,4 +1,4 @@
-// INPUT: React、types（Language）、useCityAutocomplete、DateSelectGroup、services/apiClient（searchCities）、BirthDataCalculator（GeoResult）。
+// INPUT: React、types（Language）、useCityAutocomplete、DateSelectGroup、TimeSelectGroup、services/apiClient（searchCities）、BirthDataCalculator（GeoResult）。
 // OUTPUT: PersonBirthFields 单人出生字段子组件 + PersonState/FieldsTheme 类型 + emptyPerson/personToBirth 助手。
 // POS: 关系类计算器（Synastry / Composite）共享的"一个人的出生表单"。姓名仅本地（隐私 #4）；
 //      各实例独立持 useCityAutocomplete。若更新此文件，务必更新 calculators/FOLDER.md。
@@ -7,6 +7,7 @@ import React, { useCallback, useEffect, useState } from "react";
 import type { Language } from "../../types";
 import { useCityAutocomplete } from "../../hooks/useCityAutocomplete";
 import { DateSelectGroup } from "../forms/DateSelectGroup";
+import { TimeSelectGroup } from "../forms/TimeSelectGroup";
 import { searchCities } from "../../services/apiClient";
 import type { CalculatorBirth, GeoResult } from "./BirthDataCalculator";
 
@@ -30,6 +31,9 @@ export interface PersonState {
   date: string;
   time: string;
   city: GeoResult | null;
+  // 用户选了一部分时间段但没选完。父组件必须据此拦住提交，否则半填状态会被
+  // personToBirth 静默当成「时间未知」并按正午出盘（原生 <input type="time"> 的老 bug）。
+  timePartial: boolean;
 }
 
 export const emptyPerson = (): PersonState => ({
@@ -37,6 +41,7 @@ export const emptyPerson = (): PersonState => ({
   date: "",
   time: "",
   city: null,
+  timePartial: false,
 });
 
 // PersonState → 喂给 fetchNatalChart 的最小出生数据；日期或城市缺失返回 null（提交前校验）。
@@ -85,12 +90,13 @@ export const PersonBirthFields: React.FC<{
   const [name, setName] = useState("");
   const [date, setDate] = useState("");
   const [time, setTime] = useState("");
+  const [timePartial, setTimePartial] = useState(false);
   const [cityQuery, setCityQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState<GeoResult | null>(null);
 
   useEffect(() => {
-    onChange({ name, date, time, city: selectedCity });
-  }, [name, date, time, selectedCity, onChange]);
+    onChange({ name, date, time, city: selectedCity, timePartial });
+  }, [name, date, time, timePartial, selectedCity, onChange]);
 
   const citySearch = useCallback(
     async (q: string): Promise<readonly GeoResult[]> => {
@@ -181,7 +187,7 @@ export const PersonBirthFields: React.FC<{
 
       <div className="mb-4">
         <label
-          htmlFor={`${idPrefix}-time`}
+          htmlFor={`${idPrefix}-time-hour`}
           className={`block text-sm font-medium mb-1.5 ${th.textPrimary}`}
         >
           {lang === "zh" ? "出生时间" : "Birth Time"}{" "}
@@ -193,12 +199,28 @@ export const PersonBirthFields: React.FC<{
             </span>
           )}
         </label>
-        <input
-          id={`${idPrefix}-time`}
-          type="time"
+        <TimeSelectGroup
           value={time}
-          onChange={(e) => setTime(e.target.value)}
-          className={`w-full px-4 py-3 rounded-lg border ${th.inputBorder} ${th.inputBg} ${th.inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
+          onChange={(next, partial) => {
+            setTime(next);
+            setTimePartial(partial);
+          }}
+          idPrefix={idPrefix}
+          className="grid grid-cols-3 gap-2"
+          selectClassName={`w-full px-4 py-3 rounded-lg border ${th.inputBorder} ${th.inputBg} ${th.inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
+          labels={
+            lang === "zh"
+              ? {
+                  hour: "时",
+                  minute: "分",
+                  meridiem: "上午或下午",
+                  meridiemPlaceholder: "上午/下午",
+                  am: "上午",
+                  pm: "下午",
+                  groupLabel: "出生时间",
+                }
+              : undefined
+          }
         />
       </div>
 

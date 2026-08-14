@@ -153,6 +153,15 @@ export const AstrocartographyTool: React.FC<{
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     const birth = personToBirth(person.current);
+    if (person.current.timePartial) {
+      setErrorMessage(
+        lang === "zh"
+          ? "出生时间没填完（需要小时、分钟和上午/下午）。补齐，或三项都留空表示时间未知。"
+          : "Your birth time is incomplete — pick hour, minute and AM/PM. Or leave all three blank if it's unknown.",
+      );
+      setState("error");
+      return;
+    }
     if (!birth) {
       setErrorMessage(
         lang === "zh"

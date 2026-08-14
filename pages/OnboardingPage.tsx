@@ -29,6 +29,7 @@ import {
   DateSelectGroup,
   DEFAULT_MONTH_NAMES_EN,
 } from "../components/forms/DateSelectGroup";
+import { TimeSelectGroup } from "../components/forms/TimeSelectGroup";
 import * as T from "../types";
 import {
   searchCitiesWithFallback,
@@ -37,6 +38,17 @@ import {
   type City,
 } from "../utils/city-search";
 import { getLocationQueryMinLength } from "../utils/astro-helpers";
+
+// accuracyLevel 必须由实际是否有出生时间派生，不能默认 "exact"。
+// 旧实现默认 "exact" 且只由「我不知道时间」复选框翻转：用户不填时间又不勾复选框时，
+// 档案会声称时间精确，而后端 birthToUtcDate 实际按 12:00 出盘——上升与宫位是编的，
+// 却被标成精确。用户明确勾选了「未知」时尊重该选择。
+const resolveAccuracy = (
+  draft: Partial<T.UserProfile>,
+): T.UserProfile["accuracyLevel"] => {
+  if (draft.accuracyLevel === "time_unknown") return "time_unknown";
+  return draft.birthTime ? "exact" : "time_unknown";
+};
 import { useCityAutocomplete } from "../hooks/useCityAutocomplete";
 
 // Shape of the prefill envelope passed via React Router state from the landing
@@ -101,6 +113,8 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
   // has nothing left to ask — fire onComplete on the next tick so the user lands
   // directly on the destination dashboard without seeing the wizard flash.
   // Guarded by a ref to prevent double-fire on re-render / Strict Mode.
+  // 出生时间只选了一部分（如漏了 AM/PM）。不拦住就会静默落成 time_unknown 并按正午出盘。
+  const [timePartial, setTimePartial] = useState(false);
   const autoCompletedRef = useRef(false);
   useEffect(() => {
     const p = prefillRef.current;
@@ -116,7 +130,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
       autoCompletedRef.current = true;
       onComplete({
         ...data,
-        accuracyLevel: data.accuracyLevel ?? "exact",
+        accuracyLevel: resolveAccuracy(data),
         focusTags: data.focusTags ?? [],
       } as T.UserProfile);
     }
@@ -258,25 +272,54 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
                   <label className={labelClass}>
                     {t.onboarding.label_time}
                   </label>
-                  <GlassInput
-                    type="time"
-                    onChange={(e) =>
-                      setData({ ...data, birthTime: e.target.value })
+                  <TimeSelectGroup
+                    value={data.birthTime ?? ""}
+                    onChange={(next, partial) => {
+                      setTimePartial(partial);
+                      setData({ ...data, birthTime: next || undefined });
+                    }}
+                    idPrefix="onboarding"
+                    className="grid grid-cols-3 gap-2"
+                    labels={
+                      language === "zh"
+                        ? {
+                            hour: "时",
+                            minute: "分",
+                            meridiem: "上午或下午",
+                            meridiemPlaceholder: "上午/下午",
+                            am: "上午",
+                            pm: "下午",
+                            groupLabel: "出生时间",
+                          }
+                        : undefined
                     }
                   />
+                  {timePartial && (
+                    <p className="mt-1 text-sm text-rose-400" role="alert">
+                      {language === "zh"
+                        ? "出生时间没填完（需要时、分、上午/下午）。补齐，或三项都留空表示未知。"
+                        : "Birth time is incomplete — pick hour, minute and AM/PM, or leave all three blank."}
+                    </p>
+                  )}
                 </div>
                 <div className="flex items-center gap-3 pt-2 opacity-90 hover:opacity-100 transition-opacity">
                   <input
                     type="checkbox"
                     className="accent-gold-500 w-4 h-4 rounded cursor-pointer"
-                    onChange={(e) =>
+                    onChange={(e) => {
+                      // 勾选即「时间未知」：连同已填的时间一起清掉，否则档案会同时带着
+                      // 一个具体时间和一个 time_unknown 标记，下游无从判断该信哪个。
+                      if (e.target.checked) setTimePartial(false);
                       setData({
                         ...data,
+                        birthTime: e.target.checked ? undefined : data.birthTime,
                         accuracyLevel: e.target.checked
                           ? "time_unknown"
-                          : "exact",
-                      })
-                    }
+                          : data.birthTime
+                            ? "exact"
+                            : "time_unknown",
+                      });
+                    }}
                   />
                   <label className="text-sm cursor-pointer">
                     {t.onboarding.label_unknown}
@@ -286,7 +329,7 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
               <ActionButton
                 className="mt-10 w-full max-w-xs mx-auto"
                 onClick={() => setStep(2)}
-                disabled={!data.birthDate}
+                disabled={!data.birthDate || timePartial}
               >
                 {t.onboarding.btn_next}
               </ActionButton>
@@ -419,7 +462,12 @@ const OnboardingPage: React.FC<{ onComplete: (p: T.UserProfile) => void }> = ({
               </div>
               <ActionButton
                 className="w-full max-w-xs mx-auto"
-                onClick={() => onComplete(data as T.UserProfile)}
+                onClick={() =>
+                  onComplete({
+                    ...data,
+                    accuracyLevel: resolveAccuracy(data),
+                  } as T.UserProfile)
+                }
                 disabled={!data.name}
               >
                 {t.onboarding.btn_analyze}

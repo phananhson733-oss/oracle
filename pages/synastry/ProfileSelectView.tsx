@@ -2,7 +2,7 @@
 // OUTPUT: ProfileSelectView —— 合盘档案选择视图（view === "select"）：档案列表 + 关系类型选择 + 配额提示 + 生成按钮 + Add/Edit 档案弹窗（含双 city combobox）。
 // POS: SynastryPage 选择态的展示组件。若更新此文件，务必更新本头注释与所属 FOLDER.md。
 
-import React from "react";
+import React, { useState } from "react";
 import { SEO } from "../../components/SEO";
 import {
   Container,
@@ -18,6 +18,7 @@ import { RELATIONSHIP_TYPES, LOGIN_GATE_MODE } from "../../constants";
 import { type City } from "../../utils/city-search";
 import { type CityAutocompleteApi } from "../../hooks/useCityAutocomplete";
 import { DateSelectGroup } from "../../components/forms/DateSelectGroup";
+import { TimeSelectGroup } from "../../components/forms/TimeSelectGroup";
 import { getLocationQueryMinLength } from "../../utils/astro-helpers";
 
 type CityInputProps = CityAutocompleteApi<City>["inputProps"];
@@ -129,6 +130,9 @@ const ProfileSelectView: React.FC<ProfileSelectViewProps> = ({
 }) => {
   const { t, language } = useLanguage();
   const { theme } = useTheme();
+  // 出生时间只选了一部分（如漏了 AM/PM）。不拦住会静默存成「时间未知」的档案，
+  // 之后每次合盘都按正午 12:00 出盘（原生 <input type="time"> 的老 bug）。
+  const [timePartial, setTimePartial] = useState(false);
 
     const topOptions =
       suggestions.length > 0
@@ -417,14 +421,26 @@ const ProfileSelectView: React.FC<ProfileSelectViewProps> = ({
                   <label className="text-xs font-bold uppercase tracking-widest opacity-70 mb-2 block">
                     {t.onboarding.label_time}
                   </label>
-                  <GlassInput
-                    type="time"
+                  <TimeSelectGroup
                     value={formData.birthTime || ""}
-                    onChange={(e) =>
-                      setFormData((prev) => ({
-                        ...prev,
-                        birthTime: e.target.value,
-                      }))
+                    onChange={(next, partial) => {
+                      setTimePartial(partial);
+                      setFormData((prev) => ({ ...prev, birthTime: next }));
+                    }}
+                    idPrefix="synastry-profile"
+                    className="grid grid-cols-3 gap-2"
+                    labels={
+                      language === "zh"
+                        ? {
+                            hour: "时",
+                            minute: "分",
+                            meridiem: "上午或下午",
+                            meridiemPlaceholder: "上午/下午",
+                            am: "上午",
+                            pm: "下午",
+                            groupLabel: "出生时间",
+                          }
+                        : undefined
                     }
                   />
                 </div>
@@ -606,11 +622,21 @@ const ProfileSelectView: React.FC<ProfileSelectViewProps> = ({
                     </div>
                   )}
               </div>
+              {timePartial && (
+                <p className="mb-2 text-sm text-rose-400" role="alert">
+                  {language === "zh"
+                    ? "出生时间没填完（需要时、分、上午/下午）。补齐，或三项都留空表示未知。"
+                    : "Birth time is incomplete — pick hour, minute and AM/PM, or leave all three blank."}
+                </p>
+              )}
               <ActionButton
                 className="w-full"
                 onClick={handleSaveProfile}
                 disabled={
-                  !formData.name || !formData.birthDate || !formData.birthCity
+                  !formData.name ||
+                  !formData.birthDate ||
+                  !formData.birthCity ||
+                  timePartial
                 }
               >
                 {editingProfile ? t.us.btn_edit : t.us.btn_add_profile}

@@ -26,6 +26,7 @@ import {
   DateSelectGroup,
   DEFAULT_MONTH_NAMES_EN,
 } from "./forms/DateSelectGroup";
+import { TimeSelectGroup } from "./forms/TimeSelectGroup";
 import { useCalculatorTheme } from "./calculators/useCalculatorTheme";
 import { GlyphBadge } from "./calculators/GlyphBadge";
 import { ToolFunnelCTA } from "./calculators/ToolFunnelCTA";
@@ -124,6 +125,8 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
 
   const [birthDate, setBirthDate] = useState("");
   const [birthTime, setBirthTime] = useState("");
+  // 时间只选了一部分（如漏了 AM/PM）。不拦住会静默按「时间未知」算，土星回归窗口随之偏移。
+  const [timePartial, setTimePartial] = useState(false);
   const [cityQuery, setCityQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState<GeoResult | null>(null);
 
@@ -224,6 +227,11 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     if (!validateDate(birthDate)) return;
+    if (timePartial) {
+      setState("error");
+      setErrorMessage(language === "zh" ? "出生时间没填完（需要小时、分钟和上午/下午）。补齐，或三项都留空表示时间未知。" : "Your birth time is incomplete — pick hour, minute and AM/PM. Or leave all three blank if you don't know it.");
+      return;
+    }
 
     setState("loading");
     setErrorMessage("");
@@ -487,14 +495,28 @@ export const SaturnReturnCalculator: React.FC<SaturnReturnCalculatorProps> = ({
                 ({sr?.optional || "optional"})
               </span>
             </label>
-            <input
-              id="birth-time"
-              type="time"
+            <TimeSelectGroup
               value={birthTime}
-              onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                setBirthTime(e.target.value)
+              onChange={(next, partial) => {
+                setBirthTime(next);
+                setTimePartial(partial);
+              }}
+              idPrefix="birth"
+              className="grid grid-cols-3 gap-2"
+              selectClassName={`w-full px-4 py-3 rounded-lg border ${inputBorder} ${inputBg} ${inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
+              labels={
+                language === "zh"
+                  ? {
+                      hour: "时",
+                      minute: "分",
+                      meridiem: "上午或下午",
+                      meridiemPlaceholder: "上午/下午",
+                      am: "上午",
+                      pm: "下午",
+                      groupLabel: "出生时间",
+                    }
+                  : undefined
               }
-              className={`w-full px-4 py-3 rounded-lg border ${inputBorder} ${inputBg} ${inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
             />
             <p className={`mt-1 text-xs ${textSecondary}`}>
               {sr?.time_hint ||

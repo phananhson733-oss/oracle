@@ -19,6 +19,7 @@ import { useLanguage } from "../UIComponents";
 import { useCalculatorTheme } from "./useCalculatorTheme";
 import { useCityAutocomplete } from "../../hooks/useCityAutocomplete";
 import { DateSelectGroup } from "../forms/DateSelectGroup";
+import { TimeSelectGroup } from "../forms/TimeSelectGroup";
 import { searchCities } from "../../services/apiClient";
 import { trackEvent } from "../../services/analytics";
 import { ToolPageShell } from "./ToolPageShell";
@@ -215,6 +216,8 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
 
   const [birthDate, setBirthDate] = useState("");
   const [birthTime, setBirthTime] = useState("");
+  // 用户选了一部分时间段但没选完。必须拦住提交：静默当成「时间未知」正是本 bug 的病灶。
+  const [timePartial, setTimePartial] = useState(false);
   const [cityQuery, setCityQuery] = useState("");
   const [selectedCity, setSelectedCity] = useState<GeoResult | null>(null);
   const [state, setState] = useState<State>("idle");
@@ -318,6 +321,16 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
       setState("error");
       return;
     }
+    // 时间填了一半就提交，会被静默记成「时间未知」并按正午出盘——先让用户补齐或清空。
+    if (timePartial) {
+      setErrorMessage(
+        lang === "zh"
+          ? "出生时间没填完（需要小时、分钟和上午/下午）。补齐，或三项都留空表示时间未知。"
+          : "Your birth time is incomplete — pick hour, minute and AM/PM. Or leave all three blank if you don't know it.",
+      );
+      setState("error");
+      return;
+    }
     // needsTime 的计算器（上升/日月升）必须有出生时间，否则上升/宫位无意义。
     if (config.needsTime && !birthTime) {
       setErrorMessage(
@@ -416,7 +429,7 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
 
         <div className="mb-5">
           <label
-            htmlFor={`${config.idPrefix}-time`}
+            htmlFor={`${config.idPrefix}-time-hour`}
             className={`block text-sm font-medium mb-1.5 ${textPrimary}`}
           >
             {lang === "zh" ? "出生时间" : "Birth Time"}{" "}
@@ -430,12 +443,31 @@ export const BirthDataCalculator: React.FC<{ config: CalculatorConfig }> = ({
               )
             </span>
           </label>
-          <input
-            id={`${config.idPrefix}-time`}
-            type="time"
+          <TimeSelectGroup
             value={birthTime}
-            onChange={(e) => setBirthTime(e.target.value)}
-            className={`w-full px-4 py-3 rounded-lg border ${inputBorder} ${inputBg} ${inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
+            onChange={(next, partial) => {
+              setBirthTime(next);
+              setTimePartial(partial);
+              if (state === "error") setErrorMessage("");
+            }}
+            idPrefix={config.idPrefix}
+            className="grid grid-cols-3 gap-2"
+            selectClassName={`w-full px-4 py-3 rounded-lg border ${
+              timePartial ? "border-red-400" : inputBorder
+            } ${inputBg} ${inputText} focus:outline-none focus:ring-2 focus:ring-gold-500/50 min-h-[44px]`}
+            labels={
+              lang === "zh"
+                ? {
+                    hour: "时",
+                    minute: "分",
+                    meridiem: "上午或下午",
+                    meridiemPlaceholder: "上午/下午",
+                    am: "上午",
+                    pm: "下午",
+                    groupLabel: "出生时间",
+                  }
+                : undefined
+            }
           />
           {config.needsTime && (
             <p className={`mt-1 text-xs ${textSecondary}`}>
