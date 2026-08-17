@@ -777,6 +777,10 @@ export const AstroChart: React.FC<AstroChartProps> = ({
   const R_POSITION_INFO = isBiWheel ? R_POSITION_INFO_INNER : R_POSITION_INFO_SINGLE;
 
   const houseNumbers = Array.from({ length: 12 }, (_, i) => i + 1);
+  // 后端在出生时间未知时不返回宫头（见 ephemeris.ts TIME_DEPENDENT_POINTS）。
+  // 此时绝不能退回"等宫制 + ascendantLongitude 缺省 0"——那会把上升画成白羊 0°，
+  // 等于在图上断言一个我们明确表示不知道的点。没有宫头就不画宫位。
+  const hasHouses = houseCusps.length === 12;
   const legend = legendLabels || {
     conjunction: 'Conjunction',
     opposition: 'Opposition',
@@ -908,9 +912,8 @@ export const AstroChart: React.FC<AstroChartProps> = ({
             <circle cx="200" cy="200" r={R_ZODIAC_INNER} fill="none" stroke={colors.strokePrimary} strokeWidth="1" />
 
             {/* Layer 1.5: House Cusp Labels - 格式: 度数 [星座icon] 分 */}
-            {Array.from({ length: 12 }).map((_, i) => {
-              const fallbackCusp = normalizeAngle(ascendantLongitude + i * 30);
-              const cuspLongitude = houseCusps[i] ?? fallbackCusp;
+            {hasHouses && Array.from({ length: 12 }).map((_, i) => {
+              const cuspLongitude = houseCusps[i];
               const normalizedLongitude = normalizeAngle(cuspLongitude);
               let signIndex = Math.floor(normalizedLongitude / 30);
               const degreeFloat = normalizedLongitude % 30;
@@ -1020,9 +1023,8 @@ export const AstroChart: React.FC<AstroChartProps> = ({
             />
 
             {/* House Lines - 从中心延伸到星座环边界，使用 Placidus 宫头数据 */}
-            {Array.from({ length: 12 }).map((_, i) => {
-              // 使用 Placidus 宫头经度，如果没有数据则退回等宫制
-              const cuspLongitude = houseCusps[i] ?? normalizeAngle(ascendantLongitude + i * 30);
+            {hasHouses && Array.from({ length: 12 }).map((_, i) => {
+              const cuspLongitude = houseCusps[i];
               const angle = toChartAngle(cuspLongitude);
               const p1 = getCoords(angle, R_INNER_HUB);
               const p2 = getCoords(angle, R_ZODIAC_INNER);
@@ -1054,10 +1056,10 @@ export const AstroChart: React.FC<AstroChartProps> = ({
             )}
 
             {/* House Numbers - 位于宫位中央，使用 Placidus 宫头数据 */}
-            {houseNumbers.map((num) => {
+            {hasHouses && houseNumbers.map((num) => {
               // 宫位数字位于两个宫头之间的中点
-              const cuspStart = houseCusps[num - 1] ?? normalizeAngle(ascendantLongitude + (num - 1) * 30);
-              const cuspEnd = houseCusps[num % 12] ?? normalizeAngle(ascendantLongitude + (num % 12) * 30);
+              const cuspStart = houseCusps[num - 1];
+              const cuspEnd = houseCusps[num % 12];
               // 计算中点角度（处理跨 0° 的情况）
               let midAngle = (cuspStart + cuspEnd) / 2;
               if (Math.abs(cuspEnd - cuspStart) > 180) {
