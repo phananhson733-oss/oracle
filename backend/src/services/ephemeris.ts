@@ -357,6 +357,18 @@ function calculateAspectsBetween(positions: PlanetPosition[]): Aspect[] {
 //
 // 现在的契约：算不出来就把该天体从 positions 中省略，并把名字记进 mockedPlanets，
 // 由上游完整性门决定降级还是拒绝。占星产品少显示一个天体是可接受的；显示一个假位置不是。
+// 位置完全由出生时刻决定的点位。出生时间未知时这些不能出现在本命盘里——
+// 详见 calculateNatalChartRaw 里的说明。
+const TIME_DEPENDENT_POINTS = new Set([
+  "Ascendant",
+  "Midheaven",
+  "Descendant",
+  "IC",
+  "Vertex",
+  "East Point",
+  "Fortune",
+]);
+
 const DEFAULT_LAT = 31.23;
 const DEFAULT_LON = 121.47;
 const NATAL_CACHE_TTL_MS = 7 * 24 * 60 * 60 * 1000;
@@ -781,11 +793,20 @@ export class SwissEphemerisService implements EphemerisService {
     const lat = birth.lat ?? DEFAULT_LAT;
     const lon = birth.lon ?? DEFAULT_LON;
 
-    const { positions, houseCusps } = await this.getPlanetPositions(
-      birthDateUTC,
-      lat,
-      lon,
-    );
+    const raw = await this.getPlanetPositions(birthDateUTC, lat, lon);
+    // 出生时间未知时，birthToUtcDate 会兜底成当地 12:00。行星按这个时刻算最多偏几度，
+    // 星座基本不变；但四轴、宫位与 Vertex/East Point/Fortune **完全**由时刻决定——
+    // 上升每 4 分钟走 1°，一天走满 360°，命中正确星座的概率只有 1/12。
+    // 给出「Aries 19°57'」不是精度差一点，是把掷骰子的结果排版成事实。
+    // 与小行星同一套契约：算不准就不给，由前端引导用户补出生时间。
+    const timeUnknown = !birth.time || birth.accuracy === "time_unknown";
+    const positions = timeUnknown
+      ? raw.positions
+          .filter((p) => !TIME_DEPENDENT_POINTS.has(p.name))
+          // house 归属同样由上升推导，一并去掉，避免「9H」这种同样是猜的标注。
+          .map(({ house: _house, ...rest }) => rest)
+      : raw.positions;
+    const houseCusps = timeUnknown ? [] : raw.houseCusps;
     // 相位计算包含：10大行星 + 四轴 + North Node
     const aspectBodies = [
       ...PLANETS,

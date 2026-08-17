@@ -15,7 +15,7 @@
 - FOLDER.md｜地位：目录索引文档｜功能：记录 services 目录结构与文件清单。
 - ai.ts｜地位：AI 服务｜功能：DeepSeek 调用、缓存与 Markdown/JSON 解析。
 - ai.observability.test.ts｜地位：DeepSeek 调用可观测性单测｜功能：覆盖实际 provider 回包写入模型、耗时及输入/输出/缓存 token 用量，断言 prompt 内容不进入日志。
-- ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。模块初始化时按序探测 `backend/ephe/` 并调用 `swe_set_ephe_path()`（小行星必须读 seas_18.se1，否则 swe_calc_ut 必然失败），随后跑 Chiron 自检并导出 `asteroidEphemerisReady`。**契约：任何天体算不出来一律从 positions 省略并记入 mockedPlanets，绝不填充编造值。**
+- ephemeris.ts｜地位：星历服务｜功能：星盘计算与行运行星数据（本命缓存键采用 SHA-256 脱敏）。模块初始化时按序探测 `backend/ephe/` 并调用 `swe_set_ephe_path()`（小行星必须读 seas_18.se1，否则 swe_calc_ut 必然失败），随后跑 Chiron 自检并导出 `asteroidEphemerisReady`。**契约：任何天体算不出来一律从 positions 省略并记入 mockedPlanets，绝不填充编造值。** 出生时间未知（无 time 或 accuracy=time_unknown）时，`calculateNatalChartRaw` 另行剔除 `TIME_DEPENDENT_POINTS`（四轴 / Vertex / East Point / Fortune）、清空 houseCusps 并去掉各天体的 house——这些点位完全由出生时刻决定，猜一个等于编。
 - saturn-return.ts｜地位：土星回归服务｜功能：基于 Swiss Ephemeris 求解 2° orb 边界与合相经过；完整时间/时区返回 UTC 精确 pass，日期模式返回估算最近日期。
 - saturn-return-math.ts｜地位：土星回归数值原语｜功能：角度差归一化、根区间/局部极小区间发现、二分根收敛与站点触碰最小值收敛；不含星历 I/O。
 - saturn-return.test.ts｜地位：土星回归服务单测｜功能：守护 estimated/exact 契约、时间顺序、方向和回归窗口。
@@ -25,6 +25,7 @@
 - cbtMoodPoints.ts｜地位：CBT 情绪叠加层投影（纯，#23）｜功能：projectMoodPoints —— 把 CBT 记录按 viewer 本地日聚合成 `{date,intensity,moodCount}`，输入类型仅含 timestamp+强度数值（结构性数据最小化），绝不触碰任何自由文本（隐私红线 #1，设计 §10）。供 `GET /api/cbt/mood-points` 调用。
 - cbtMoodPoints.test.ts｜地位：投影单测｜功能：锁隐私不变量（仅出 date/intensity/moodCount）、final/initial 取舍、按日均值聚合、TTL 过滤、viewer tz 分日、排序。
 - ephemeris.test.ts｜地位：星历服务测试｜功能：验证本命缓存键的确定性、字段敏感性与敏感字段脱敏。
+- ephemeris.unknown-time.test.ts｜地位：未知出生时间诚实性回归测试｜功能：钉死时间未知时不输出四轴/宫位/Vertex/East Point/Fortune、不带 house 归属、不产生涉及四轴的相位；同时钉死时间已知时一切照旧（防过度收缩）。
 - ephemeris.asteroids.test.ts｜地位：小行星真实性回归测试｜功能：钉死 Chiron/Ceres/Pallas/Juno/Vesta 返回真实星历值（对照 Astrodienst）、J2000 历元不得等于旧 mock 的硬编码 seed 值（编造签名回归钉）、超出星历覆盖范围时天体被省略而非编造。
 - geocoding.ts｜地位：地理服务｜功能：城市搜索与坐标解析（Redis 缓存键经 SHA-256 hashInput 摘要，原始城市名永不入键；输入硬上限 CITY_MAX_LENGTH=200）。
 - airwallexService.ts｜地位：Airwallex 支付服务｜功能：订阅/积分/续费 REST 调用与定价；导出 `currencyKeyOf`（货币→price 块键，USD 兜底）+ `resolvePriceIdWithFallback`（EUR/GBP price ID 未配置时回退 USD price ID + warn，绝不编造金额），支持 USD/CNY/EUR/GBP 四币种。新增 `listSubscriptions`/`getBillingCustomer`（对账驱动器用，端点已实测）+ 导出 `AirwallexSubscriptionListItem`。

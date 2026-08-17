@@ -31,6 +31,18 @@ const ui = (lang: Language) => ({
   date: lang === "zh" ? "日期" : "Date",
   time: lang === "zh" ? "时间" : "Time",
   notProvided: lang === "zh" ? "未提供" : "Not provided",
+  noTimeTitle:
+    lang === "zh"
+      ? "上升、宫位与四轴需要出生时间"
+      : "Rising, houses and angles need your birth time",
+  noTimeBody:
+    lang === "zh"
+      ? "上升点每 4 分钟移动 1 度，一天走完全部 12 个星座。没有出生时间就无法确定它落在哪里——我们宁可不显示，也不给你一个看起来精确、实际上是猜的数字。太阳、月亮、行星与小行星不受影响，上面的结果都准确。"
+      : "The Ascendant moves one degree every four minutes and travels all twelve signs in a day. Without your birth time there is no way to know where it lands, so we leave it out rather than show a precise-looking guess. Your Sun, Moon, planets and asteroids are unaffected and accurate above.",
+  noTimeCta:
+    lang === "zh"
+      ? "知道出生时间？填进去就能解锁上升与宫位。"
+      : "Know your birth time? Add it to unlock your Rising and houses.",
   city: lang === "zh" ? "城市" : "City",
   timezone: lang === "zh" ? "时区" : "Timezone",
   coordinates: lang === "zh" ? "坐标" : "Coordinates",
@@ -170,6 +182,10 @@ export const BirthChartResultView: React.FC<{
   const chart = result.birthChart;
   if (!chart) return null;
   const t = ui(lang);
+  // 后端在出生时间未知时会省略四轴/宫位/Vertex/EP/Fortune（见 ephemeris.ts 的
+  // TIME_DEPENDENT_POINTS）。这里据此把「静默缺失」换成明确的解释与补录引导，
+  // 否则用户只会觉得上升那一格莫名其妙不见了。
+  const timeUnknown = !chart.birth.time;
   const metadataRows = [
     { label: t.date, value: formatDate(chart.birth.date, lang) },
     { label: t.time, value: chart.birth.time || t.notProvided },
@@ -240,6 +256,22 @@ export const BirthChartResultView: React.FC<{
                   {t.core}
                 </div>
                 <CoreGrid points={chart.core} />
+              </div>
+            )}
+            {timeUnknown && (
+              <div
+                className="rounded-xl border border-gold-500/30 bg-gold-500/5 p-4"
+                role="note"
+              >
+                <div className="mb-1.5 text-sm font-semibold text-paper-800 dark:text-star-100">
+                  {t.noTimeTitle}
+                </div>
+                <p className="text-sm leading-relaxed text-paper-600 dark:text-star-300">
+                  {t.noTimeBody}
+                </p>
+                <p className="mt-2 text-sm font-medium text-gold-700 dark:text-gold-400">
+                  {t.noTimeCta}
+                </p>
               </div>
             )}
             <div>
