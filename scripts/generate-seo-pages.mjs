@@ -12,6 +12,7 @@ import { mdToHtml, stripInlineMarkdown } from './lib/md-to-html.mjs';
 import { contentHash, parseSitemapLastmods, resolveLastmods } from './seo-lastmod.mjs';
 import { resolveCanonicalUrl, includeInSitemap } from './lib/seo-canonical.mjs';
 import { buildFaqSchemaFromMarkdown } from './lib/faq-jsonld.mjs';
+import { buildAdsenseHeadTag } from './lib/adsense-head-tag.mjs';
 import {
   renderSaturnReturnLandingHtml,
   saturnReturnBreadcrumbSchema,
@@ -219,6 +220,9 @@ const buildHead = ({
   const headParts = [
     '<meta charset="UTF-8" />',
     '<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
+    // AdSense loader：默认门控关闭时为空串，用 filter(Boolean) 剔除，不留空行。
+    // 必须写进静态 stub 的原始 HTML —— 审核抓原始 HTML 而非渲染后 DOM。
+    buildAdsenseHeadTag(),
     `<title>${escapeHtml(title)}</title>`,
     `<meta name="description" content="${escapeHtml(desc)}" />`,
     `<meta name="robots" content="${escapeHtml(robots || 'index,follow')}" />`,
@@ -266,7 +270,7 @@ const buildHead = ({
 </style>
 `);
 
-  return headParts.join('\n');
+  return headParts.filter(Boolean).join('\n');
 };
 
 const buildBody = ({ lang, title, heading, description, heroSubtitle, trustLine, ctaText, spaPath, contentHtml, bootstrap, heroImage, heroAlt }) => {
@@ -607,6 +611,9 @@ const buildLandingV2Html = (lang) => {
   const headParts = [
     '<meta charset="UTF-8" />',
     '<meta name="viewport" content="width=device-width, initial-scale=1.0" />',
+    // AdSense loader：默认门控关闭时为空串，用 filter(Boolean) 剔除，不留空行。
+    // 必须写进静态 stub 的原始 HTML —— 审核抓原始 HTML 而非渲染后 DOM。
+    buildAdsenseHeadTag(),
     `<title>${escapeHtml(copy.title)}</title>`,
     `<meta name="description" content="${escapeHtml(description)}" />`,
     `<meta name="robots" content="index,follow" />`,
@@ -657,7 +664,7 @@ const buildLandingV2Html = (lang) => {
   return `<!DOCTYPE html>
 <html lang="${lang}">
   <head>
-${headParts.join('\n')}
+${headParts.filter(Boolean).join('\n')}
   </head>
   <body data-astro-lang="${lang}">
     <main>

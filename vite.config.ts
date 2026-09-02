@@ -5,6 +5,7 @@
 import path from 'path';
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
+import { buildAdsenseHeadTag } from './scripts/lib/adsense-head-tag.mjs';
 
 const MAIN_CSS_LINK_RE =
   /<link\b(?=[^>]*\brel=["']stylesheet["'])(?=[^>]*\bhref=["'](\/assets\/index-[^"']+\.css)["'])[^>]*>/;
@@ -17,17 +18,14 @@ export default defineConfig(({ mode }) => {
       },
       plugins: [
         react(),
-        // AdSense <head> loader（SPA 壳 dist/index.html）：仅当 VITE_ADSENSE_HEAD_LOADER_ENABLED=true
-        // 且 VITE_ADSENSE_CLIENT_ID 为合法 ca-pub-XXXX 时注入原始 HTML <head>，供 Google 审核验证 + CMP 全站加载。
-        // 默认关闭，避免首页 PageSpeed 首字节必拉广告脚本、第三方 cookie 与 CSP report-only 噪音。格式校验防注入。
-        // 与前端 loadAdsense 共用 id='astro-adsense'。SEO stub 的同一注入见 generate-seo-pages.mjs。
+        // AdSense <head> loader（SPA 壳 dist/index.html）：门控（HEAD_LOADER_ENABLED + client id
+        // 格式校验）收口在 scripts/lib/adsense-head-tag.mjs，与 SEO stub（generate-seo-pages.mjs）
+        // 共用同一真相源，避免两处逻辑漂移。默认关闭，平时首字节零第三方脚本。
         {
           name: 'adsense-head-loader',
           transformIndexHtml(html) {
-            if (process.env.VITE_ADSENSE_HEAD_LOADER_ENABLED !== 'true') return html;
-            const client = (process.env.VITE_ADSENSE_CLIENT_ID || '').trim();
-            if (!/^ca-pub-\d{10,25}$/.test(client)) return html;
-            const tag = `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=${client}" crossorigin="anonymous" id="astro-adsense"></script>`;
+            const tag = buildAdsenseHeadTag();
+            if (!tag) return html;
             return html.replace('</head>', `    ${tag}\n  </head>`);
           },
         },
