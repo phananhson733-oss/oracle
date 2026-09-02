@@ -1,5 +1,5 @@
 # Google AdSense — authorized digital sellers (IAB ads.txt).
-# PR1（plumbing）阶段留空占位：仅注释，无有效 seller 行 → AdSense 视同无 ads.txt，无副作用。
-# 激活（PR2）时取消下一行注释，并把 pub-XXXXXXXXXXXXXXXX 替换为
-# VITE_ADSENSE_CLIENT_ID（ca-pub-XXXXXXXXXXXXXXXX）的数字部分：
-# google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0
+# 授权 Google 作为 astrologywiki.com 的直接广告卖家（DIRECT）。
+# pub-XXXX 数字部分与 VITE_ADSENSE_CLIENT_ID（ca-pub-XXXX）保持一致；
+# f08c47fec0942fa0 是 Google 在 IAB Tech Lab 的固定认证机构 ID（TAG ID），勿改。
+google.com, pub-2217119707453176, DIRECT, f08c47fec0942fa0

@@ -16,6 +16,7 @@
 - icon-512.png｜地位：PWA 图标｜功能：web manifest 512px 图标。
 - og-image.png｜地位：分享图｜功能：默认社交分享预览图。
 - robots.txt｜地位：爬虫配置｜功能：索引规则与 sitemap 入口。
+- ads.txt｜地位：IAB 广告卖家授权｜功能：声明 Google AdSense 为 astrologywiki.com 的 DIRECT 卖家（pub ID 与 VITE_ADSENSE_CLIENT_ID 数字部分一致），AdSense 审核与投放的前置校验文件。
 - llms.txt｜地位：GEO/LLM 入口｜功能：llmstxt.org 规范的站点导览（定位、wiki/工具/政策 hub 链接），供 LLM 爬虫理解站点；仅列已上线稳定 hub。
 - site.webmanifest｜地位：PWA 清单｜功能：站点名称与图标配置。
 - sitemap.xml｜地位：SEO 入口｜功能：公开页面索引清单。
@@ -29,6 +30,7 @@
 - newsletter｜地位：周报 hero 图床｜功能：周报头图 `<ISO周slug>.png`（gemini-web 离线生成，best-effort），线上 `/newsletter/<slug>.png`；详见 newsletter/FOLDER.md。
 
 近期更新
+- ads.txt 从 PR1 的纯注释占位改为真实 seller 行（`google.com, pub-2217119707453176, DIRECT, f08c47fec0942fa0`）；此前 AdSense 后台「Ads.txt 状态」一直报「未找到」，因为无有效 seller 行等同于无 ads.txt。
 - robots.txt 明确保留公开 wiki/政策页可抓取，同时 disallow `/api/`、私有应用页、支付页、短链跳转、admin/internal/gm 等非内容路径，配合后端 API noindex 防止 AI/crawler 把成本和私有入口当作公开内容。
 - 新增 og/articles 构建期 OG 图（scripts/generate-og-images.mjs，satori+resvg+sharp）；文章 og:image 指向 /og/articles/&lt;slug&gt;.png（zh 为 .zh.png）。
 - 新增 brand/logo-mark-32/64/128/192.png 与 brand/logo-schema-512.png；导航/页脚/JSON-LD 改用压缩派生图，PWA icon-192/512 同步重压。
