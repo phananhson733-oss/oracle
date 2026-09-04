@@ -10,6 +10,8 @@
 
 **站点同源（`'self'`）= `https://www.astrologywiki.com`**（✓ verified `index.html:16` canonical、`vercel.json` redirect 把裸域 301 到 `www`）。
 
+**AdSense（2026-09-04 补充）**：`vercel.json` 的 report-only CSP 原本不含任何 Google 广告域名，而 AdSense head loader 已在生产投放。下列 AdSense 条目标 ✓ 的来自当天生产站控制台的真实 violation，标 ⚠ 的是官方投放链路上的域名（实测时广告 `data-ad-status="unfilled"`，未加载素材故未触发）。
+
 **标注约定**：
 - ✓ verified (file:line) = 从仓库代码确证的加载点。
 - ⚠ UNVERIFIED = 该域名未在仓库直接出现，来自对官方 SDK 的知识（Google GIS / Apple Sign-In / Airwallex / PayPal 的官方 CSP 文档要求）。这类条目**必须先用 Report-Only 实测确认**后再写入 enforce 策略，切勿当作确定事实。
@@ -33,6 +35,12 @@
 | `https://checkout-demo.airwallex.com` | Airwallex HPP SDK（demo 环境） | ✓ verified `services/airwallexCheckout.ts:12,16` |
 | `https://appleid.cdn-apple.com` | Apple Sign-In JS（`appleid.auth.js`） | ⚠ UNVERIFIED-as-active — 域名 ✓ verified `utils/load-sdk.ts:31`（`loadAppleSDK`），但当前**仅 `loadGoogleSDK` 被调用**（`LoginModal.tsx:136`），`loadAppleSDK` 已定义未引用。若 #8 时 Apple 登录仍未启用可暂不放行；启用 Apple 登录时必须加回。 |
 | `https://www.gstatic.com` | Google GIS / GTM 运行时常拉取的静态 JS chunk | ⚠ UNVERIFIED — 未在仓库直接出现 `src`，但 GIS 与 gtag 运行时常从 gstatic 加载子模块。Report-Only 实测确认。 |
+| `https://pagead2.googlesyndication.com` | AdSense loader（`adsbygoogle.js`）+ 运行时 `show_ads_impl_fy2021.js` | ✓ verified 生产站 report-only violation 实测（2026-09-04，www.astrologywiki.com 控制台）；注入点 `scripts/lib/adsense-head-tag.mjs`（构建期 head loader）与 `services/adsense.ts`（运行时 `loadAdsense` 单例注入） |
+| `https://*.adtrafficquality.google` | AdSense 反作弊/流量质量（`sodar2.js`） | ✓ verified 生产站 report-only violation 实测（2026-09-04，www.astrologywiki.com 控制台） |
+| `https://tpc.googlesyndication.com` | 广告素材与安全帧宿主 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
+| `https://partner.googleadservices.com` | AdSense 合作伙伴投放脚本 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
+| `https://adservice.google.com` | AdSense 广告选择服务 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
+| `https://www.google.com` | AdSense 运行时子资源 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到（frame 侧已实测触发） |
 
 **关于内联 JSON-LD `<script type="application/ld+json">`**：`App.tsx:138`、`components/SEO.tsx:190`、`components/legal/HelpPage.tsx:143` 以及 `index.html:145-152` 的字体回调内联 `<script>` 均存在。JSON-LD 是惰性数据块（不执行 JS），多数 CSP 实现不要求为其放 `'unsafe-inline'`；但 `index.html:145-152` 是**可执行的内联脚本**（`document.fonts.ready` 回调）。处理方式二选一（#8 决策）：(a) 给该内联脚本加 `nonce-`/`hash-` 并在 `script-src` 放行对应 nonce/hash；(b) 把该回调抽到外部 `/assets` 文件。✓ verified `index.html:145-152`。**不要**为省事直接上 `'unsafe-inline'`。
 
@@ -68,6 +76,11 @@
 | `https://www.transparenttextures.com` | CBT 分析视图 CSS 背景纹理（`bg-[url(...)]`） | ✓ verified `components/cbt/AnalysisViews.tsx:161`（`bg-[url('https://www.transparenttextures.com/patterns/stardust.png')]`） |
 | `https://www.googletagmanager.com` | GA/GTM 可能的像素/信标 img 请求 | ⚠ UNVERIFIED — GTM/GA 有时用 img beacon；未在仓库见显式 img。Report-Only 实测确认。 |
 | `https://*.airwallex.com` | Airwallex SDK 可能加载的品牌/卡组织图标 | ⚠ UNVERIFIED — 来自支付 SDK 知识；Report-Only 实测确认。 |
+| `https://*.googlesyndication.com` | 广告素材、计费/展示像素 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
+| `https://*.g.doubleclick.net` | 广告素材与展示信标 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
+| `https://*.adtrafficquality.google` | sodar 反作弊信标（`/pagead/sodar?...`） | ✓ verified 生产站 report-only violation 实测（2026-09-04，www.astrologywiki.com 控制台） |
+| `https://www.google.com` | AdSense 像素 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
+| `https://*.gstatic.com` | 广告 UI 静态图标 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
 
 ---
 
@@ -82,6 +95,10 @@
 | `https://accounts.google.com` | Google GIS 登录 token/凭据交换（XHR） | ⚠ UNVERIFIED-as-connect — script-src 已 ✓ verified（`utils/load-sdk.ts:28`）；GIS 运行时还会 connect 到 accounts.google.com。Report-Only 实测确认。 |
 | `https://checkout.airwallex.com` / `https://checkout-demo.airwallex.com` | Airwallex HPP SDK 运行时 XHR | ⚠ UNVERIFIED-as-connect — script-src ✓ verified；SDK 运行时会向同域/`*.airwallex.com` 发 API 请求。Report-Only 实测确认。 |
 | `https://*.airwallex.com` | Airwallex SDK 后端 API（`api.airwallex.com` / `pci-api.airwallex.com` 等） | ⚠ UNVERIFIED — 浏览器侧 SDK 的后端调用域名；`api.airwallex.com`/`api-demo.airwallex.com` 在仓库是**服务端**用途（`backend/src/config/airwallex.ts:21-23`，server-to-server，不进浏览器 CSP）。SDK 浏览器侧实际 connect 域名需 Report-Only 实测。 |
+| `https://pagead2.googlesyndication.com` / `https://*.googlesyndication.com` | 广告请求与配置拉取 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
+| `https://*.g.doubleclick.net` | 广告竞价/回传 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
+| `https://*.adtrafficquality.google` | `getconfig/sodar` 配置拉取 | ✓ verified 生产站 report-only violation 实测（2026-09-04，www.astrologywiki.com 控制台） |
+| `https://www.google.com` | AdSense 运行时回传 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
 
 > **注意（server-to-server，不进 CSP）**：`backend/src/config/paypal.ts:19-21`（`api-m.paypal.com` / `api-m.sandbox.paypal.com`）与 `backend/src/config/airwallex.ts:21-23`（`api.airwallex.com` / `api-demo.airwallex.com`）是**后端 Node 进程**发起的请求，不受浏览器 CSP 约束，**不应**写入本 allowlist。列在此处仅为说明它们已被排除。
 >
@@ -97,6 +114,10 @@
 | `https://accounts.google.com` | Google GIS 登录 iframe（One Tap / button 渲染） | ⚠ UNVERIFIED-as-frame — script-src ✓ verified；GIS 用 iframe 渲染登录 UI（官方要求 frame-src 放行 accounts.google.com）。Report-Only 实测确认。 |
 | `https://checkout.airwallex.com` / `https://checkout-demo.airwallex.com` | Airwallex Elements/HPP iframe | ⚠ UNVERIFIED-as-frame — 当前集成走 `redirectToCheckout()`（整页跳转，非 iframe，见 `airwallexCheckout.ts:42-49`），故**当前可能不需要** frame-src。若改用嵌入式 Airwallex Elements 则需放行。Report-Only 实测确认。 |
 | `https://appleid.apple.com` | Apple Sign-In 弹窗/iframe | ⚠ UNVERIFIED — 仅当启用 Apple 登录时需要（当前 `loadAppleSDK` 未被调用，见 script-src 说明）。Report-Only 实测确认。 |
+| `https://googleads.g.doubleclick.net` | 广告 iframe（`aswift_*`） | ✓ verified 生产站 report-only violation 实测（2026-09-04，www.astrologywiki.com 控制台） |
+| `https://*.adtrafficquality.google` | sodar 反作弊 iframe | ✓ verified 生产站 report-only violation 实测（2026-09-04，www.astrologywiki.com 控制台） |
+| `https://www.google.com` | AdSense 内嵌帧 | ✓ verified 生产站 report-only violation 实测（2026-09-04，www.astrologywiki.com 控制台） |
+| `https://tpc.googlesyndication.com` / `https://*.googlesyndication.com` | 广告安全帧宿主 | ⚠ UNVERIFIED — AdSense 官方投放链路域名；本次实测广告为 unfilled（未加载素材）故未触发，填充后会用到 |
 
 > **PayPal 注意**：当前 PayPal 订阅走**整页跳转**到 `data.approveUrl`（`services/paymentClient.ts:296-310` → `window.location.href = ...`），属顶层导航而非 iframe/subresource，**不需要** PayPal 进任何 subresource directive。若未来改用 PayPal JS SDK（`www.paypal.com/sdk/js`）嵌入按钮，则需补 script-src + frame-src（`www.paypal.com` / `www.sandbox.paypal.com` / `c.paypal.com`）——届时再 discovery。
 

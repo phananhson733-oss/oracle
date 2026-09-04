@@ -20,3 +20,4 @@
 
 近期更新
 - 新建 ads/ 目录（AdSense 接入 PR1）：AdSlot 组件 + adPlacements 配置。消费方为 WikiArticleDetailPage（文末，仅非漏斗/非心理敏感文章）。flag 默认关，PR1 全站零广告。
+- 挂载点回归修复（2026-09-04）：AdSlot 的唯一消费方 WikiArticleDetailPage 在合并 `cc5500ae`（2026-07-13）中被大重构分支覆盖，import 与 JSX 一并丢失 → Vite tree-shaking 摘掉整个 AdSlot，线上 bundle 零 `adsbygoogle`。已恢复挂载点并新增 `tests/unit/wiki-article-ad-slot.test.tsx` 钉住，同时给 vercel.json 的 CSP 补齐 Google 广告域名白名单。

@@ -17,7 +17,7 @@
 | `WikiEnergyRadar.tsx`       | 每日能量雷达子组件，独占 recharts、经 props 收数据与主题色，供 WikiHomePage 懒加载                                                    |
 | `WikiIndexPage.tsx`         | Wiki 百科页，包含主题分区卡片与条目索引                                                                                               |
 | `WikiDetailPage.tsx`        | Wiki 详情页，包含核心解读、能量地图与关联条目                                                                                         |
-| `WikiArticleDetailPage.tsx` | 静态文章详情模板，输出 Article/FAQ schema、正文、相关文章与 Wiki→Birth Chart 的 Sticky/Lead/Bottom CTA                              |
+| `WikiArticleDetailPage.tsx` | 静态文章详情模板，输出 Article/FAQ schema、正文、相关文章与 Wiki→Birth Chart 的 Sticky/Lead/Bottom CTA，以及文末 AdSense 广告位（经 isAdEligibleArticle 排除漏斗/心理敏感文章）                              |
 | `WikiChartCTA.tsx`          | 共享 Nav/Sticky/Lead/Bottom 免费出生盘 CTA；语言感知直达工具、名人名解析并统一发送 `tool_click` 模块归因                             |
 | `WikiClassicsPage.tsx`      | Wiki 经典书籍页，呈现书架列表并使用类型安全占位渲染                                                                                   |
 | `WikiClassicDetailPage.tsx` | Wiki 经典书籍详情页，展示长文解读                                                                                                     |
@@ -82,3 +82,4 @@
 - Wiki 首页每日星象内容按天缓存，避免重复刷新。
 - 四大支柱图标强制 Unicode 文本呈现，避免 emoji 显示。
 - Wiki 条目与关联条目图标统一加文本变体，阻止 emoji 渲染。
+- WikiArticleDetailPage 恢复文末 `<AdSlot>` 挂载点：2026-07-13 的合并 `cc5500ae` 取了大重构侧（基于 AdSense PR 之前的旧文件）的版本，静默丢弃该挂载点，全站近两个月零广告位。回归由 `tests/unit/wiki-article-ad-slot.test.tsx` 钉住。
