@@ -2,7 +2,7 @@
 //        驱动 ChartMiniCalc、article.psychAdjacent 驱动 SafetyFooter。
 // OUTPUT: 导出 Wiki 文章详情页组件（含压缩 publisher logo 的 Article/FAQPage schema、面包屑、Markdown 渲染，
 //         以及 Sticky/Lead/Bottom 免费出生盘 CTA、tool-led 嵌入：embeddedTool→ChartMiniCalc + 抑制底部 WikiChartCTA、
-//         psychAdjacent→SafetyFooter，仅 SPA 渲染，不进静态 stub）。
+//         psychAdjacent→SafetyFooter，文末 AdSlot（仅 isAdEligibleArticle 通过的文章），仅 SPA 渲染，不进静态 stub）。
 // POS: Wiki 文章详情模块；若更新此文件，务必更新本头注释与所属文件夹的 FOLDER.md。
 
 import React, { useEffect, useMemo, useRef, useState } from "react";
@@ -25,6 +25,9 @@ import { useLangPath } from "../../hooks/useLangPath";
 import WikiChartCTA, { deriveCelebrityName } from "./WikiChartCTA";
 import ChartMiniCalc from "../ChartMiniCalc";
 import SafetyFooter from "../SafetyFooter";
+import AdSlot from "../ads/AdSlot";
+import { WIKI_ARTICLE_END } from "../ads/adPlacements";
+import { isAdEligibleArticle } from "../ads/adEligibility";
 import { BIRTH_CHART_ANCHOR_ID } from "../../hooks/useScrollToBirthChart";
 
 // Safe Markdown renderer with error handling
@@ -257,7 +260,9 @@ const renderMarkdownContent = (
     );
   };
 
-  const renderManagedClusterLinks = (items: string[]): React.ReactNode | null => {
+  const renderManagedClusterLinks = (
+    items: string[],
+  ): React.ReactNode | null => {
     const links = items
       .map((item) => item.match(/^[-*+]\s+\[([^\]]+)\]\(([^()\s]+)\)$/))
       .filter((match): match is RegExpMatchArray => Boolean(match));
@@ -282,7 +287,12 @@ const renderMarkdownContent = (
               className={className}
             >
               <span>{title}</span>
-              <span aria-hidden="true" className="ml-2 transition-transform group-hover:translate-x-0.5">→</span>
+              <span
+                aria-hidden="true"
+                className="ml-2 transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
             </Link>
           ) : (
             <a
@@ -294,7 +304,12 @@ const renderMarkdownContent = (
               className={className}
             >
               <span>{title}</span>
-              <span aria-hidden="true" className="ml-2 transition-transform group-hover:translate-x-0.5">→</span>
+              <span
+                aria-hidden="true"
+                className="ml-2 transition-transform group-hover:translate-x-0.5"
+              >
+                →
+              </span>
             </a>
           );
         })}
@@ -331,7 +346,9 @@ const renderMarkdownContent = (
       continue;
     }
     if (trimmed === "<!-- gg-cluster-links:end -->") {
-      const cards = managedClusterLinks ? renderManagedClusterLinks(managedClusterLinks) : null;
+      const cards = managedClusterLinks
+        ? renderManagedClusterLinks(managedClusterLinks)
+        : null;
       if (cards) elements.push(cards);
       managedClusterLinks = null;
       currentIndex++;
@@ -760,7 +777,10 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
         schema={[articleSchema, breadcrumbSchema, faqSchema].filter(Boolean)}
       />
 
-      <WikiChartCTA variant="sticky" celebrityName={celebrityName || undefined} />
+      <WikiChartCTA
+        variant="sticky"
+        celebrityName={celebrityName || undefined}
+      />
 
       <Breadcrumb items={breadcrumbItems} homePath={langPath("/wiki")} />
 
@@ -847,6 +867,22 @@ const WikiArticleDetailPage: React.FC<WikiArticleDetailPageProps> = ({
             }
           />
         </article>
+
+        {/* AdSense 广告位（文末）。仅非漏斗(embeddedTool)、非心理敏感(psychAdjacent)文章展示：
+            保护 tool-led 转化 + 心理安全页面不投广告，排除规则收口在 adEligibility.ts。
+            付费/登录用户、非同意、EEA-无CMP、flag 关 等情形由 AdSlot 内部四重门控拦截
+            （返回 null，零占位）。仅 SPA 渲染，不进静态 stub。
+            回归钉：tests/unit/wiki-article-ad-slot.test.tsx —— 此挂载点曾在 2026-07-13 的
+            合并 cc5500ae 中被大重构分支静默覆盖，导致全站零广告位近两个月。 */}
+        {isAdEligibleArticle(article) && (
+          <AdSlot
+            key={article.slug}
+            slot={WIKI_ARTICLE_END.slot}
+            format={WIKI_ARTICLE_END.format}
+            minHeight={WIKI_ARTICLE_END.minHeight}
+            className="my-8"
+          />
+        )}
 
         {/* tool-led prove-chain：正文后挂载轻量构件（北交点迷你计算器）。仅 SPA 渲染，
             绝不进静态 stub（generate-seo-pages 的 contentHtml 只含正文 markdown），以免破坏
